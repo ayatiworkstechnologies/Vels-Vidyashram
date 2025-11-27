@@ -32,8 +32,8 @@ export default function HeroSection() {
     <>
       <div className="relative w-full h-[450px] md:h-[550px] overflow-hidden">
 
-        {/* 🔵 CENTER LOGO */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
+        {/* 🔵 STICKY / FIXED CENTER LOGO */}
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
           <div className="flex items-center justify-center px-2 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.2)] border border-white/40 bg-white/20 backdrop-blur-base">
             <Image
               src="/main/vels-logo.svg"
@@ -80,7 +80,6 @@ export default function HeroSection() {
                       font-primary font-primary-semibold text-black 
                       text-sm sm:text-base md:text-xl leading-tight 
                       bg-white/90 px-2 py-2 md:px-3 md:py-2 w-fit 
-                      
                     "
                   >
                     Inspiring Young Minds for a Brighter Tomorrow

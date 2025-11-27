@@ -35,7 +35,7 @@ export default function ExploreCampus() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-5 bg-white">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-primary-bold text-black tracking-wide">
           WISDOM IS STRENGTH

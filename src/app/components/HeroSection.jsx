@@ -11,10 +11,7 @@ import "swiper/css/effect-fade";
 export default function HeroSection() {
   const slides = [
     { id: 1, image: "/main/Banner-web.jpg", mobileImage: "/main/mob.jpg" },
-    { id: 2, image: "/main/Banner-web.jpg", mobileImage: "/main/mob.jpg" },
-    { id: 3, image: "/main/Banner-web.jpg", mobileImage: "/main/mob.jpg" },
-    { id: 4, image: "/main/Banner-web.jpg", mobileImage: "/main/mob.jpg" },
-    { id: 5, image: "/main/Banner-web.jpg", mobileImage: "/main/mob.jpg" },
+ 
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,14 +35,14 @@ export default function HeroSection() {
 
         {/* 🔵 CENTER LOGO (Responsive) */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
-          <div className="flex items-center justify-center px-4 py-2 md:px-6 md:py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.2)] border border-white/40 bg-white/20 backdrop-blur-md">
+          <div className="flex items-center justify-center px-2 py-2  rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.2)] border border-white/40 bg-white/20 backdrop-blur-base">
             <Image
               src="/main/vels-logo.svg"
               alt="Logo"
               width={0}
               height={0}
               sizes="100vw"
-              className="w-[160px] md:w-[240px] h-auto"
+              className="w-[160px] md:w-[240px] h-auto rounded-full"
             />
           </div>
         </div>

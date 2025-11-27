@@ -15,20 +15,22 @@ export default function CampusHighlight() {
       exploreUrl: "#",
       admissionUrl: "#",
     },
-    {
-      name: "Thalambur Campus",
-      tagline: "Safe. Supportive. Student-Centric.",
-      description:
-        "A secure campus where every child feels valued and encouraged. Holistic learning backed by modern facilities and dedicated faculty.",
-      image: "/main/thalambur-large.jpg",
-      exploreUrl: "#",
-      admissionUrl: "#",
-    },
+
     {
       name: "Cantonment Campus",
       tagline: "Education Beyond The Classroom",
       description:
         "Blending academics, activities, and values for balanced development. Designed to help students explore, learn, and excel confidently.",
+         image: "/main/thalambur-large.jpg",
+     
+      exploreUrl: "#",
+      admissionUrl: "#",
+    },
+        {
+      name: "Thalambur Campus",
+      tagline: "Safe. Supportive. Student-Centric.",
+      description:
+        "A secure campus where every child feels valued and encouraged. Holistic learning backed by modern facilities and dedicated faculty.",
       image: "/main/cantonment-large.jpg",
       exploreUrl: "#",
       admissionUrl: "#",
@@ -73,7 +75,6 @@ export default function CampusHighlight() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative rounded-none overflow-visible">
-            
             {/* Desktop right gradient background */}
             <div className="hidden md:block absolute inset-y-0 right-0 w-[68%] bg-[#F5F5F5]" />
 
@@ -133,28 +134,28 @@ export default function CampusHighlight() {
               </div>
 
               {/* PAGINATION */}
-              <div className="absolute left-12 bottom-2 flex items-center gap-3 text-xs font-secondary-regular text-tertiary mt-4">
+              <div className="absolute left-12 bottom-2 flex items-center gap-3 text-xs font-secondary-regular text-tertiary mt-4 z-10">
                 {campuses.map((_, index) => {
                   const isActive = index === activeIndex;
 
                   return (
                     <button
                       key={index}
+                      type="button"
                       onClick={() => changeSlide(index)}
-                      className="cursor-pointer flex items-center justify-center"
+                      className="group cursor-pointer flex items-center justify-center"
                     >
                       {isActive ? (
-                        <span className="font-primary-bold text-tertiary tracking-wider">
+                        <span className="font-primary-bold text-tertiary tracking-wider cursor-pointer group-hover:opacity-80">
                           {String(activeIndex + 1).padStart(2, "0")}
                         </span>
                       ) : (
-                        <span className="block w-4 h-[1px] bg-tertiary"></span>
+                        <span className="block w-4 h-[1px] bg-tertiary cursor-pointer group-hover:w-6 transition-all duration-200"></span>
                       )}
                     </button>
                   );
                 })}
               </div>
-
             </div>
           </div>
         </div>

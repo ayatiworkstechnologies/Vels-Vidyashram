@@ -14,16 +14,18 @@ export default function ExploreCampus() {
       image: "/main/pallavaram-1.jpg",
       url: "#",
     },
-    {
-      name: "Thalambur Campus",
-      helpline: "74016 51975",
-      image: "/main/thalambur-1.jpg",
-      url: "#",
-    },
+
     {
       name: "Cantonment Campus",
       helpline: "99625 31941",
-      image: "/main/cantonment-1.jpg",
+       image: "/main/thalambur-1.jpg",
+
+      url: "#",
+    },
+        {
+      name: "Thalambur Campus",
+      helpline: "74016 51975",
+           image: "/main/cantonment-1.jpg",
       url: "#",
     },
     {

@@ -76,10 +76,10 @@ export default function HeroSection() {
 
                   {/* BUTTONS — MOBILE WRAP */}
                   <div className="flex flex-col sm:flex-row gap-3 mt-2 md:mt-6">
-                    <button className="bg-tertiary text-white py-2 px-5 font-primary font-primary-semibold text-sm md:text-base shadow-md">
+                    <button className="bg-tertiary text-white py-2 px-5 font-primary font-primary-semibold text-sm md:text-base shadow-md hover:bg-[#2b2070]">
                       Admission
                     </button>
-                    <button className="border border-tertiary text-white py-2 px-5 font-primary font-primary-bold text-sm md:text-base shadow-md">
+                    <button className="border border-tertiary text-white py-2 px-5 font-primary font-primary-bold text-sm md:text-base hover:bg-[#2b2070] shadow-md">
                       Online fees Payment
                     </button>
                   </div>

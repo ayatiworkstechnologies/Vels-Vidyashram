@@ -82,21 +82,31 @@ export default function WhyVels() {
       {/* Bottom Marquee Scrolling Strip */}
       {/* ------------------------ */}
       <div className="w-full bg-primary text-white py-2 mt-14 overflow-hidden">
-        <marquee
-          behavior="scroll"
-          direction="left"
-          scrollamount="8"
-          className="font-secondary font-secondary-light"
-        >
-          ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp; ★
-          Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp; ★
-          Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp; ★
-          Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp; ★
-          Vijayadasami Admission Open 2025–2026 ★ Vijayadasami Admission Open
-          2025–2026 &nbsp;&nbsp;&nbsp; ★ Vijayadasami Admission Open 2025–2026
-          &nbsp;&nbsp;&nbsp; ★ Vijayadasami Admission Open 2025–2026
-        </marquee>
-      </div>
+  <marquee
+    behavior="scroll"
+    direction="left"
+    scrollamount="6"
+    className="font-secondary font-secondary-light whitespace-nowrap"
+  >
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+
+    
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+     ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026 &nbsp;&nbsp;&nbsp;
+    ★ Vijayadasami Admission Open 2025–2026
+  </marquee>
+</div>
+
     </section>
   );
 }

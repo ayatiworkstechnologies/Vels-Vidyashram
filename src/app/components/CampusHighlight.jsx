@@ -12,35 +12,35 @@ export default function CampusHighlight() {
       description:
         "A well-structured campus built for excellence and holistic development. Led by experienced educators and supported by state-of-the-art facilities. Ensuring a safe, nurturing, and inspiring environment for learners.",
       image: "/main/pallavaram-large.jpg",
-      exploreUrl: "/campuses/pallavaram",
-      admissionUrl: "/admission",
+      exploreUrl: "#",
+      admissionUrl: "#",
     },
     {
       name: "Thalambur Campus",
-      tagline: "Nurturing Innovation and Curiosity",
+      tagline: "Safe. Supportive. Student-Centric.",
       description:
-        "A vibrant learning environment that encourages creativity, collaboration, and critical thinking through modern teaching methods and co-curricular exposure.",
+        "A secure campus where every child feels valued and encouraged. Holistic learning backed by modern facilities and dedicated faculty.",
       image: "/main/thalambur-large.jpg",
-      exploreUrl: "/campuses/thalambur",
-      admissionUrl: "/admission",
+      exploreUrl: "#",
+      admissionUrl: "#",
     },
     {
       name: "Cantonment Campus",
-      tagline: "Strong Foundations for Bright Futures",
+      tagline: "Education Beyond The Classroom",
       description:
-        "Focused on building strong academic foundations along with value-based learning, ensuring every child grows with confidence and character.",
+        "Blending academics, activities, and values for balanced development. Designed to help students explore, learn, and excel confidently.",
       image: "/main/cantonment-large.jpg",
-      exploreUrl: "/campuses/cantonment",
-      admissionUrl: "/admission",
+      exploreUrl: "#",
+      admissionUrl: "#",
     },
     {
       name: "Darga Road Campus",
-      tagline: "Learning with Care and Compassion",
+      tagline: "Excellence In Every Step",
       description:
-        "A safe, student-centered campus that balances discipline with encouragement, helping learners discover their strengths in a supportive atmosphere.",
+        "Guided by experienced educators who focus on individual progress. A structured system that ensures consistent academic improvement.",
       image: "/main/dargaroad-large.jpg",
-      exploreUrl: "/campuses/darga-road",
-      admissionUrl: "/admission",
+      exploreUrl: "#",
+      admissionUrl: "#",
     },
   ];
 

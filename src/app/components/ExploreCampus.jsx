@@ -12,25 +12,25 @@ export default function ExploreCampus() {
       name: "Pallavaram Campus",
       helpline: "74016 51975",
       image: "/main/pallavaram-1.jpg",
-      url: "/pallavaram",
+      url: "#",
     },
     {
       name: "Thalambur Campus",
       helpline: "74016 51975",
       image: "/main/thalambur-1.jpg",
-      url: "/thalambur",
+      url: "#",
     },
     {
       name: "Cantonment Campus",
       helpline: "99625 31941",
       image: "/main/cantonment-1.jpg",
-      url: "/cantonment",
+      url: "#",
     },
     {
       name: "Darga Road Campus",
       helpline: "99625 06539",
       image: "/main/dargaroad-1.jpg",
-      url: "/darga-road",
+      url: "#",
     },
   ];
 

@@ -45,7 +45,7 @@ export default function WhyVels() {
               <div
                 key={index}
                 className={`
-                  p-8 rounded-lg transition-all duration-300 ease-out transform
+                  p-8 transition-all duration-300 ease-out transform
                   ${
                     isHighlight
                       ? "bg-primary shadow-[0_8px_30px_rgba(0,0,0,0.12)]"

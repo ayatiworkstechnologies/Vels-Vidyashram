@@ -10,13 +10,37 @@ import "swiper/css/effect-fade";
 
 export default function HeroSection() {
   const slides = [
-    { id: 1, image: "/main/Banner-web.jpg", mobileImage: "/main/banner-mob.jpg" },
+    {
+      id: 1,
+      image: "/main/dargaroad.jpg",
+      mobileImage: "/main/dargaroad-mob.jpg",
+      heading: "Inspiring Young Minds for a Brighter Tomorrow (DargaRoad)",
+    },
+    {
+      id: 2,
+      image: "/main/thalambur-web.jpg",
+      mobileImage: "/main/thalambur-mob-2.jpg",
+      heading: "Where Values Meet Future-Ready Learning (Thalambur)",
+    },
+    {
+      id: 3,
+      image: "/main/pallavaram.jpg",
+      mobileImage: "/main/pallavaram-mob.jpg",
+      heading: "Building Confident, Curious Learners (Pallavaram)",
+    },
+    {
+      id: 4,
+      image: "/main/cantonment.jpg",
+      mobileImage: "/main/cantonment-mob.jpg",
+      heading: "Building Confident, Curious Learners (Cantonment)",
+    },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const swiperRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
+  // detect mobile
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
@@ -24,16 +48,19 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // click on pagination
   const goToSlide = (index) => {
-    if (swiperRef.current) swiperRef.current.slideTo(index);
+    if (swiperRef.current && typeof swiperRef.current.slideTo === "function") {
+      swiperRef.current.slideTo(index);
+    }
   };
 
   return (
     <>
       <div className="relative w-full h-[450px] md:h-[550px] overflow-hidden">
-        {/* 🔵 CENTER LOGO (NOT STICKY, BUT ABOVE SLIDER) */}
+        {/* LOGO */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
-          <div className="flex items-center justify-center px-2 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.2)] border border-white/40 bg-white/20 backdrop-blur-base">
+          <div className="flex items-center justify-center px-2 py-2 rounded-full shadow-lg border border-white/40 bg-white/30 backdrop-blur-md">
             <Image
               src="/main/vels-logo.svg"
               alt="Logo"
@@ -49,10 +76,14 @@ export default function HeroSection() {
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          loop={true}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={false} // keep indexes simple
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.activeIndex);
+          }}
           className="h-full"
         >
           {slides.map((slide) => (
@@ -65,32 +96,25 @@ export default function HeroSection() {
                   })`,
                 }}
               >
-                {/* LEFT TEXT + BUTTONS — FULLY RESPONSIVE */}
+                {/* TEXT + BUTTONS */}
                 <div
-                  className="
-                    absolute left-4 right-4 md:left-10 md:right-auto
-                    bottom-20 md:bottom-24 text-white 
-                    space-y-3 md:space-y-4 max-w-full md:max-w-xl 
-                    drop-shadow-lg flex flex-col items-start
-                  "
+                  className="absolute left-4 right-4 md:left-10 bottom-20 md:bottom-24 
+                  text-white space-y-4 max-w-full md:max-w-xl drop-shadow-lg"
                 >
                   <h2
-                    className="
-                      font-primary font-primary-semibold text-black 
-                      text-sm sm:text-base md:text-xl leading-tight 
-                      bg-white/90 px-2 py-2 md:px-3 md:py-2 w-fit 
-                    "
+                    className="font-primary font-primary-semibold text-black text-sm sm:text-base md:text-xl 
+                    bg-white/90 px-3 py-2 w-fit"
                   >
-                    Inspiring Young Minds for a Brighter Tomorrow
+                    {slide.heading}
                   </h2>
 
-                  <div className="flex flex-col sm:flex-row gap-3 mt-2 md:mt-6 w-full">
-                    <button className="w-fit bg-tertiary text-white py-2 px-5 font-primary font-primary-semibold text-sm md:text-base shadow-md hover:bg-[#2b2070]">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button className="w-fit bg-tertiary text-white py-2 px-5 font-primary font-primary-semibold shadow-md hover:bg-[#2b2070]">
                       Admission
                     </button>
 
-                    <button className="w-fit border border-tertiary text-white py-2 px-5 font-primary font-primary-bold text-sm md:text-base shadow-md hover:bg-[#2b2070]">
-                      Online fees Payment
+                    <button className="w-fit border border-tertiary text-white py-2 px-5 font-primary font-primary-bold shadow-md hover:bg-[#2b2070]">
+                      Online Fees Payment
                     </button>
                   </div>
                 </div>
@@ -98,24 +122,20 @@ export default function HeroSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
 
-      {/* 🔵 BOTTOM BAR */}
-      {/* <div className="w-full bg-primary text-white py-3">
-        <div className="max-w-3xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-sm md:text-lg font-primary font-primary-medium">
-          <div className="flex items-center gap-2">
-            <span>Admission Helpline :</span>
-            <Image src="/main/phone.svg" alt="phone" width={18} height={18} />
-            <span>78248 30871</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span>Email :</span>
-            <Image src="/main/mail-01.svg" alt="mail" width={18} height={18} />
-            <span>register@velsvidyashram.ac.in</span>
-          </div>
+        {/* LEFT-ALIGNED NUMBER / UNDERSCORE PAGINATION */}
+        <div className="absolute bottom-6 left-6 md:left-10 z-40 flex items-center gap-4">
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
+              className="cursor-pointer text-sm tracking-[0.3em] text-white/80 hover:text-white transition-colors"
+            >
+              {activeIndex === idx ? String(idx + 1).padStart(2, "0") : "_"}
+            </button>
+          ))}
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

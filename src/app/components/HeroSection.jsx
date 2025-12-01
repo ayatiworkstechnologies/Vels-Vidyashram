@@ -31,9 +31,8 @@ export default function HeroSection() {
   return (
     <>
       <div className="relative w-full h-[450px] md:h-[550px] overflow-hidden">
-
-        {/* 🔵 STICKY / FIXED CENTER LOGO */}
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+        {/* 🔵 CENTER LOGO (NOT STICKY, BUT ABOVE SLIDER) */}
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
           <div className="flex items-center justify-center px-2 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.2)] border border-white/40 bg-white/20 backdrop-blur-base">
             <Image
               src="/main/vels-logo.svg"
@@ -102,9 +101,8 @@ export default function HeroSection() {
       </div>
 
       {/* 🔵 BOTTOM BAR */}
-      <div className="w-full bg-primary text-white py-3">
+      {/* <div className="w-full bg-primary text-white py-3">
         <div className="max-w-3xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-sm md:text-lg font-primary font-primary-medium">
-
           <div className="flex items-center gap-2">
             <span>Admission Helpline :</span>
             <Image src="/main/phone.svg" alt="phone" width={18} height={18} />
@@ -117,7 +115,7 @@ export default function HeroSection() {
             <span>register@velsvidyashram.ac.in</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

@@ -12,7 +12,7 @@ export default function CampusHighlight() {
       description:
         "A well-structured campus built for excellence and holistic development. Led by experienced educators and supported by state-of-the-art facilities. Ensuring a safe, nurturing, and inspiring environment for learners.",
       image: "/main/pallavaram-large.jpg",
-      exploreUrl: "#",
+      exploreUrl: "/pallavaram",
       admissionUrl: "#",
     },
 

@@ -32,7 +32,7 @@ export default function ExploreCampus() {
       name: "Darga Road Campus",
       helpline: "99625 06539",
       image: "/main/dargaroad-1.jpg",
-      url: "#",
+      url: "/dargaroad",
     },
   ];
 

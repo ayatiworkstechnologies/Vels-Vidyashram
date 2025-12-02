@@ -41,7 +41,7 @@ export default function CampusHighlight() {
       description:
         "Guided by experienced educators who focus on individual progress. A structured system that ensures consistent academic improvement.",
       image: "/main/dargaroad-large.jpg",
-      exploreUrl: "#",
+      exploreUrl: "/dargaroad",
       admissionUrl: "#",
     },
   ];

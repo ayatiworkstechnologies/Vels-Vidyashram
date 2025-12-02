@@ -23,7 +23,7 @@ export default function About() {
           {/* RIGHT: CONTENT */}
           <div className="space-y-4 md:space-y-5">
             {/* Heading */}
-            <h2 className="text-xl md:text-2xl lg:text-[26px] font-primary font-primary-bold leading-snug text-slate-900 pt-10">
+            <h2 className="text-xl md:text-2xl lg:text-xl font-primary font-primary-bold  pt-10">
               Vaels Education Trust was established in 1992 with the aim of
               transforming an individual with character and ability, committed
               to national service and development.
@@ -33,7 +33,7 @@ export default function About() {
             <div className="w-30 h-[1px] bg-[#F1A544]"></div>
 
             {/* Paragraph */}
-            <p className="text-sm md:text-[15px] leading-relaxed font-secondary font-secondary-regular text-slate-700">
+            <p className="text-sm md:text-[18px]  font-secondary font-secondary-regular">
               The trust was founded by Dr. Ishari K. Ganesh, a visionary and an
               eminent educationist, in fond memory of his father Shri. Isari
               Velan. Vaels Education Trust has always served to take education
@@ -51,7 +51,7 @@ export default function About() {
             </h3>
 
             {/* Designation */}
-            <p className="text-sm md:text-lg leading-relaxed text-slate-800 font-secondary font-secondary-light">
+            <p className="text-sm md:text-xl font-secondary font-secondary-light">
               Founder &amp; Chancellor of Vels University
               <br />
               Chairman, Vels Group of Institutions &amp; Companies
@@ -60,5 +60,6 @@ export default function About() {
         </div>
       </div>
     </section>
+    
   );
 }

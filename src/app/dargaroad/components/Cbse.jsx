@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Cbse() {
   const items = [
     {
@@ -24,31 +26,59 @@ export default function Cbse() {
   ];
 
   return (
-    <section className="py-10 bg-white relative">
-      {/* Heading */}
+    <motion.section
+      className="py-10 bg-white relative"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }} // 👈 triggers when ~30% of section is in view
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      {/* ========================
+          HEADING
+      ========================== */}
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-primary font-primary-semibold text-black">
+        <h2 className="text-3xl font-primary font-primary-bold text-black">
           Vels Vidyashram CBSE School in Chennai
         </h2>
 
         <div className="w-40 h-[1px] bg-secondary mx-auto mt-2 mb-4" />
 
-        <p className="text-black mt-2 font-secondary font-secondary-regular">
+        <p className="text-black text-md mt-2 font-secondary md:max-w-4xl mx-auto text-center font-secondary-semibold">
           Vels Vidyashram took its humble birth in 2018. The founder of the
           school Dr.Ishari K.Ganesh a great visionary wanted to build up a
           school with excellence as its watchword in all aspects.
         </p>
 
-        {/* 3 Feature Boxes */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* ========================
+            FEATURE BOXES
+        ========================== */}
+        <motion.div
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: {},
+            show: {
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
           {items.map((item, index) => {
             const isHighlight = item.highlight;
 
             return (
-              <div
+              <motion.div
                 key={index}
-                className={`
-                  p-8 transition-all duration-300 ease-out transform
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.6, ease: "easeOut" },
+                  },
+                }}
+                className={`p-8 transition-all duration-300 ease-out transform
                   ${
                     isHighlight
                       ? "bg-primary shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
@@ -72,30 +102,27 @@ export default function Cbse() {
 
                 {/* Title */}
                 <h3
-                  className={`
-                    mt-4 text-lg font-primary font-primary-semibold
-                    text-left leading-snug
-                    ${isHighlight ? "text-white" : "text-white"}
-                  `}
+                  className={`mt-4 text-lg font-primary font-primary-semibold text-left leading-snug ${
+                    isHighlight ? "text-white" : "text-white"
+                  }`}
                   dangerouslySetInnerHTML={{ __html: item.title }}
                 />
 
-                {/* Description */}
+                {/* Subtitle */}
                 <p
-                  className={`
-                    mt-6 text-sm font-secondary font-secondary-regular text-left
-                    ${isHighlight ? "text-white" : "text-white"}
-                  `}
+                  className={`mt-6 text-sm font-secondary font-secondary-regular text-left ${
+                    isHighlight ? "text-white" : "text-white"
+                  }`}
                 >
                   {item.subtitle}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Bottom Marquee */}
+      {/* MARQUEE – no change */}
       <div className="w-full bg-primary text-white py-2 mt-14 overflow-hidden">
         <marquee
           behavior="scroll"
@@ -104,33 +131,13 @@ export default function Cbse() {
           className="font-secondary font-secondary-light whitespace-nowrap"
         >
           *NIOS accredited Study Centre 190191 (courses offered: Secondary and
-          senior secondary with science subjects) &nbsp;&nbsp;&nbsp;  *NIOS
+          senior secondary with science subjects) &nbsp;&nbsp;&nbsp; *NIOS
           accredited Study Centre 190191 (courses offered: Secondary and senior
-          secondary with science subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited
+          secondary with science subjects) &nbsp;&nbsp;&nbsp; *NIOS accredited
           Study Centre 190191 (courses offered: Secondary and senior secondary
-          with science subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study
-          Centre 190191 (courses offered: Secondary and senior secondary with
-          science subjects) &nbsp;&nbsp;&nbsp; *NIOS accredited Study Centre
-          190191 (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects) &nbsp;&nbsp;&nbsp;  *NIOS accredited Study Centre 190191
-          (courses offered: Secondary and senior secondary with science
-          subjects)
+          with science subjects)
         </marquee>
       </div>
-    </section>
+    </motion.section>
   );
 }

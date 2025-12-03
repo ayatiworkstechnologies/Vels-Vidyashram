@@ -4,6 +4,9 @@ import WhyVels from '../components/WhyVels';
 import Cbse from './components/Cbse';
 import About from '../components/About';
 import Video from './components/Video';
+import BestCbseSection from './components/BestCbseSection';
+import UpcomingEvents from './components/UpcomingEvents';
+
 
 export default function Dargaroad() {
   return (
@@ -12,6 +15,8 @@ export default function Dargaroad() {
         <Cbse />
         <About />
         <Video />
+        <BestCbseSection />
+        <UpcomingEvents />
     
     </main>
   );

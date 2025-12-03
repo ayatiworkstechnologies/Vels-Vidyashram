@@ -4,7 +4,7 @@ export default function Footer() {
       {/* TOP LINKS AREA */}
       <div className="bg-[#F5F5F5] py-6">
         {/* ROW 1 */}
-        <div className="flex flex-wrap justify-center gap-15 text-sm font-medium text-black mb-4">
+        <div className="flex flex-wrap justify-center gap-15 text-sm font-primary font-primary-semibold text-black mb-4">
           <a href="/online-fees-payment" className="hover:text-primary transition">
             Online Fees Payment
           </a>
@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
 
         {/* ROW 2 */}
-        <div className="flex flex-wrap justify-center gap-10 text-sm font-medium text-black">
+        <div className="flex flex-wrap justify-center gap-10 text-sm font-medium text-black mt-10">
           <a href="/" className="hover:text-primary transition">
             Home
           </a>

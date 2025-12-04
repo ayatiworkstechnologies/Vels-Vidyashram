@@ -5,17 +5,17 @@ export default function Footer() {
       <div className="bg-[#F5F5F5] py-6">
         {/* ROW 1 */}
         <div className="flex flex-wrap justify-center gap-15 text-sm font-primary font-primary-semibold text-black mb-4">
-          <a href="/online-fees-payment" className="hover:text-primary transition">
-            Online Fees Payment
-          </a>
           <a href="/academics" className="hover:text-primary transition">
-            Academics
+           Academics
           </a>
           <a href="/admissions" className="hover:text-primary transition">
-            Admission
+            Admissions
           </a>
-          <a href="/jobs" className="hover:text-primary transition">
-            Job Openings @ Vels
+          <a href="/recruitment" className="hover:text-primary transition">
+            Recruitment
+          </a>
+          <a href="/our-group" className="hover:text-primary transition">
+            Our Group
           </a>
         </div>
 

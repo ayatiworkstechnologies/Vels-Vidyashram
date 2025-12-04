@@ -42,7 +42,7 @@ export default function UpcomingEvents() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#F8F8F8] transition"
+          className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#F8F8F8] transition min-h-[64px]"
         >
           <div className="flex items-center justify-center gap-4 px-5 py-3">
             <Image src="/dargaroad/calendar.svg" alt="calendar" width={22} height={22} />
@@ -56,7 +56,7 @@ export default function UpcomingEvents() {
             </div>
           </div>
 
-          <div className="h-full w-px bg-secondary" />
+          <div className="w-px h-full bg-secondary" />
 
           <div className="flex items-center justify-center px-5 py-3 font-secondary font-secondary-bold">
             {exam.note}
@@ -97,7 +97,7 @@ export default function UpcomingEvents() {
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#F8F8F8] transition"
+              className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#F8F8F8] transition min-h-[64px]"
             >
               <div className="flex items-center justify-center gap-4 px-5 py-3">
                 <Image src="/dargaroad/calendar.svg" alt="calendar" width={22} height={22} />
@@ -111,7 +111,7 @@ export default function UpcomingEvents() {
                 </div>
               </div>
 
-              <div className="h-full w-px bg-secondary" />
+              <div className="w-px h-full bg-secondary" />
 
               <div className="flex items-center justify-center px-5 py-3 font-secondary font-secondary-bold">
                 {event.note}

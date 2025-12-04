@@ -131,54 +131,7 @@ export default function BestCbseSection() {
         </div>
       </section>
 
-      {/* CTA BAR */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="w-full flex justify-center py-10"
-      >
-        <div className="w-full max-w-4xl bg-[#211637] py-8 flex flex-col items-center text-center">
-          <h3 className="text-white font-primary font-primary-semibold text-base md:text-lg">
-            School Admission Open Now
-          </h3>
 
-          <button className="mt-4 px-8 py-2 border border-white text-white text-sm font-secondary font-secondary-semibold hover:bg-white/10 transition">
-            Apply Now
-          </button>
-        </div>
-      </motion.section>
-
-      {/* CLUBS SECTION */}
-      <motion.section
-        initial={{ opacity: 0, y: 35 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="w-full py-12 flex justify-center"
-      >
-        <div className="text-center max-w-2xl px-4">
-          <h2 className="text-xl md:text-2xl font-primary font-primary-semibold text-black">
-            About Vels Vidyashram Clubs
-          </h2>
-
-          <div className="w-28 h-[1px] bg-secondary mx-auto mt-2 mb-4" />
-
-          <p className="text-sm md:text-base text-black/80 leading-normal font-primary font-primary-medium">
-            A series of Club Activities to promote and cultivate the talents of{" "}
-            <br />
-            students are conducted
-          </p>
-
-          <a
-            href="#"
-            className="block mt-4 text-sm font-primary font-primary-bold text-[#2D2A41] hover:text-black transition"
-          >
-            Know More
-          </a>
-        </div>
-      </motion.section>
     </>
   );
 }

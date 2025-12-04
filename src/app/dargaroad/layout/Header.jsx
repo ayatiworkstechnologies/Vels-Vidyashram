@@ -90,8 +90,8 @@ export default function Header() {
             <Image
               src="/dargaroad/dargaroad-logo.svg"
               alt="Vels Vidyashram"
-              width={170}
-              height={50}
+              width={350}
+              height={96}
               priority
             />
           </Link>

@@ -88,7 +88,7 @@ export default function Header() {
           {/* Center logo */}
           <Link href="/" className="flex items-center mx-auto">
             <Image
-              src="/dargaroad/dargaroad-logo.jpg"
+              src="/dargaroad/dargaroad-logo.svg"
               alt="Vels Vidyashram"
               width={170}
               height={50}

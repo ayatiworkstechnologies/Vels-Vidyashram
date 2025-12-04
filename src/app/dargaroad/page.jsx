@@ -7,6 +7,7 @@ import Video from './components/Video';
 import BestCbseSection from './components/BestCbseSection';
 import UpcomingEvents from './components/UpcomingEvents';
 import FooterSection from './components/FooterSection';
+import Events from './components/Events';
 
 
 export default function Dargaroad() {
@@ -17,6 +18,7 @@ export default function Dargaroad() {
         <About />
         <Video />
         <BestCbseSection />
+         <Events />
         <UpcomingEvents />
         <FooterSection />
         

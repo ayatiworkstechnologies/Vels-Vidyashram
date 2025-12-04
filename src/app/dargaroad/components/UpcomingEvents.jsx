@@ -22,46 +22,9 @@ export default function UpcomingEvents() {
     <section className="w-full py-12">
       <div className="max-w-4xl mx-auto px-4">
 
-        {/* TITLE */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
-          <h2 className="text-lg md:text-2xl font-primary font-primary-bold text-black">
-            Exam Schedule
-          </h2>
-          <div className="w-28 h-[1px] bg-secondary mx-auto mt-2 mb-4" />
-        </motion.div>
+       
 
-        {/* EXAM ROW */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#F8F8F8] transition min-h-[64px]"
-        >
-          <div className="flex items-center justify-center gap-4 px-5 py-3">
-            <Image src="/dargaroad/calendar.svg" alt="calendar" width={22} height={22} />
-
-            <div className="flex items-center gap-2 font-primary font-primary-semibold">
-              <span>{exam.day}</span>
-              <span className="text-gray-400">|</span>
-              <span>{exam.month}</span>
-              <span className="text-gray-400">|</span>
-              <span>{exam.year}</span>
-            </div>
-          </div>
-
-          <div className="w-px h-full bg-secondary" />
-
-          <div className="flex items-center justify-center px-5 py-3 font-secondary font-secondary-bold">
-            {exam.note}
-          </div>
-        </motion.div>
+        
 
         {/* UPCOMING EVENTS TITLE */}
         <motion.div
@@ -69,7 +32,7 @@ export default function UpcomingEvents() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-14 text-center mb-8"
+          className="mt-5 text-center mb-8"
         >
           <h2 className="text-lg md:text-2xl font-primary font-primary-bold text-black">
             Upcoming Events–November
@@ -88,7 +51,7 @@ export default function UpcomingEvents() {
               transition: { staggerChildren: 0.15 },
             },
           }}
-          className="space-y-2"
+          className="space-y-1"
         >
           {upcomingEvents.map((event, idx) => (
             <motion.div
@@ -97,7 +60,7 @@ export default function UpcomingEvents() {
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#F8F8F8] transition min-h-[64px]"
+              className="grid grid-cols-[auto_1px_1fr] items-center bg-white text-sm text-black hover:bg-[#231834] hover:text-white transition min-h-[64px]"
             >
               <div className="flex items-center justify-center gap-4 px-5 py-3">
                 <Image src="/dargaroad/calendar.svg" alt="calendar" width={22} height={22} />
@@ -111,9 +74,9 @@ export default function UpcomingEvents() {
                 </div>
               </div>
 
-              <div className="w-px h-full bg-secondary" />
+              <div className="w-[1px] h-[20px] bg-secondary" />
 
-              <div className="flex items-center justify-center px-5 py-3 font-secondary font-secondary-bold">
+              <div className="flex items-center justify-center px-5 py-2 font-secondary font-secondary-bold">
                 {event.note}
               </div>
             </motion.div>

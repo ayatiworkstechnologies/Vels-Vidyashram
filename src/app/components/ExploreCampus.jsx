@@ -54,7 +54,9 @@ export default function ExploreCampus() {
             <Link
               key={i}
               href={campus.url}
-              className="group block  overflow-hidden shadow-lg hover:scale-[1.03] transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden shadow-lg hover:scale-[1.03] transition-all"
             >
               <div className="relative w-full">
                 <Image

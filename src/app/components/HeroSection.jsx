@@ -98,12 +98,10 @@ export default function HeroSection() {
               >
                 {/* TEXT + BUTTONS */}
                 <div
-                  className="absolute left-4 right-4 md:left-10 bottom-20 md:bottom-24 
-                  text-white space-y-4 max-w-full md:max-w-xl drop-shadow-lg"
+                  className="absolute left-4 right-4 md:left-10 bottom-20 md:bottom-24 text-white space-y-4 max-w-full md:max-w-xl drop-shadow-lg"
                 >
                   <h2
-                    className="font-primary font-primary-semibold text-black text-sm sm:text-base md:text-xl 
-                    bg-white/90 px-3 py-2 w-fit"
+                    className="font-primary font-primary-semibold text-black text-sm sm:text-base md:text-xl bg-white/90 px-3 py-2 w-fit"
                   >
                     {slide.heading}
                   </h2>

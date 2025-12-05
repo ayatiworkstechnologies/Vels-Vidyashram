@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navItems = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/dargaroad" },
 
   {
     label: "About Us",

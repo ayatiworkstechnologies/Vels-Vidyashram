@@ -21,8 +21,6 @@ export default function Dargaroad() {
          <Events />
         <UpcomingEvents />
         <FooterSection />
-        
-    
     </main>
   );
 }

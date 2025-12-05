@@ -11,9 +11,9 @@ const navItems = [
     label: "About Us",
     href: "/about",
     submenu: [
-      { label: "Leadership & Legacy", href: "/about/leadership-and-legacy" },
-      { label: "Our Group", href: "/about/our-group" },
-      { label: "School Information", href: "/about/school-information" },
+      { label: "Vision And Mission", href: "/dargaroad/vision-mission" },
+      { label: "Our Group", href: "/dargaroad/our-group" },
+      { label: "School Information", href: "/dargaroad/school-information" },
     ],
   },
 

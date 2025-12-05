@@ -232,28 +232,34 @@ export default function Events() {
 
 
       {/* ==================== ABOUT CLUBS BLOCK ==================== */}
-      <section className="w-full py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-5 text-center">
-          <h3 className="text-xl md:text-3xl font-primary font-primary-semibold text-[#111827]">
-            About Vels Vidyashram Clubs
-          </h3>
-            <div className="w-30 h-[1px] bg-secondary mx-auto mt-3" />
+<section className="w-full py-10 relative bg-tertiary text-white overflow-hidden flex items-center justify-center">
+{/* Overlay */}
+<div className="absolute inset-0 bg-black/30" />
 
-          <p className="mt-4 text-sm md:text-lg text-[#4B5563] leading-relaxed font-primary font-primary-semibold">
-            A series of Club Activities to promote and cultivate the talents of<br/>
-            students are conducted.
-          </p>
 
-          <div className="mt-8">
-            <Link
-              href="/beyond-academics#clubs"
-              className="inline-flex items-center justify-center px-6 py-2 border border-[#1a1233] text-[#1a1233] text-sm font-primary font-primary-semibold hover:bg-[#1a1233] hover:text-white transition-colors duration-200"
-            >
-              Know More
-            </Link>
-          </div>
-        </div>
-      </section>
+<div className="relative max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center w-full">
+<h3 className="text-2xl md:text-4xl text-white font-primary font-primary-semibold">
+About Vels Vidyashram Clubs
+</h3>
+<div className="w-30 h-[1px] bg-secondary mt-3 mx-auto" />
+
+
+<p className="mt-6 text-sm md:text-lg leading-relaxed font-primary font-primary-semibold max-w-2xl mx-auto">
+A series of Club Activities to promote and cultivate the talents of<br />
+students are conducted.
+</p>
+
+
+<div className="mt-10 flex justify-center">
+<a
+href="/beyond-academics#clubs"
+className="inline-flex items-center justify-center px-7 py-3 border border-white text-white text-sm md:text-base font-primary font-primary-semibold hover:bg-white hover:text-black transition-colors duration-300 rounded-lg shadow-md"
+>
+Know More
+</a>
+</div>
+</div>
+</section>
     
 
 

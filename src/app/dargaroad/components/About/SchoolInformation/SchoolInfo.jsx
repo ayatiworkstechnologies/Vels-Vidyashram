@@ -17,7 +17,6 @@ const ITEMS = [
   { id: 12, title: "PTA", icon: "/dargaroad/pdf/pta.png", pdf: "/dargaroad/pdf/PTA.pdf" },
   { id: 13, title: "Result", icon: "/dargaroad/pdf/results.png", pdf: "/dargaroad/pdf/staff-details.pdf" },
   { id: 14, title: "Self Darga Road", icon: "/dargaroad/pdf/self-darga.png", pdf: "/dargaroad/pdf/Self-DargaRoad.pdf" },
-  
   { id: 15, title: "Self Affidavit", icon: "/dargaroad/pdf/self.png", pdf: "/dargaroad/pdf/self-affidavit.pdf" },
   { id: 16, title: "Tc Sample", icon: "/dargaroad/pdf/tc.png", pdf: "/dargaroad/pdf/Transfer-Certificate-2023-2024.pdf" },
   { id: 17, title: "Land Certificate", icon: "/dargaroad/pdf/land-certificate.png", pdf: "/dargaroad/pdf/land-certificate.pdf" },
@@ -36,76 +35,57 @@ export default function SchoolInfoPage() {
 
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-20">
-      
       {/* Heading */}
       <div className="max-w-5xl mx-auto text-center mb-8">
         <h1 className="text-2xl md:text-3xl font-semibold">School Information</h1>
-        <p className="text-sm text-gray-500 mt-2">
-          Where strong values meet future-ready learning.
-        </p>
+        <p className="text-sm text-gray-500 mt-2">Where strong values meet future-ready learning.</p>
       </div>
 
       {/* Grid */}
-     <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
-  {ITEMS.map((it) => (
-    <button
-      key={it.id}
-      onClick={() => setOpenPdf({ pdf: it.pdf, title: it.title })}
-      className="group bg-white rounded shadow-sm overflow-hidden transition 
-                 flex flex-col w-[240px] h-[240px]"
-      style={{ transition: "0.25s" }}
-    >
-      {/* Icon area */}
-      <div
-        className="flex-1 bg-gray-50 flex items-center justify-center transition"
-        style={{
-          transition: "0.25s",
-        }}
-      >
-        <img
-          src={it.icon}
-          alt=""
-          className="w-12 h-12 transition-transform group-hover:scale-110"
-        />
+      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+        {ITEMS.map((it) => (
+          <button
+            key={it.id}
+            onClick={() => setOpenPdf({ pdf: it.pdf, title: it.title })}
+            className="group bg-white rounded shadow-sm overflow-hidden transition flex flex-col w-[240px] h-[240px]"
+            style={{ transition: "0.25s" }}
+            aria-label={it.title}
+          >
+            {/* Icon area */}
+            <div
+              className="flex-1 bg-gray-50 flex items-center justify-center transition"
+              style={{ transition: "0.25s" }}
+            >
+              <img src={it.icon} alt="" className="w-12 h-12 transition-transform group-hover:scale-110" />
+            </div>
+
+            {/* Title */}
+            <div className="px-4 py-3 flex items-center justify-between bg-white transition">
+              <span className="text-sm text-black mx-auto font-medium">{it.title}</span>
+              <span className="text-secondary text-xl">→</span>
+            </div>
+
+            {/* Hover styling */}
+            <style jsx>{`
+              button.group:hover {
+                background-color: #1c1533;
+              }
+              button.group:hover div:first-child {
+                background-color: #1c1533;
+              }
+            `}</style>
+          </button>
+        ))}
       </div>
-
-      {/* Title */}
-      <div className="px-4 py-3 flex items-center justify-between  bg-white transition">
-        <span className="text-sm text-black mx-auto font-medium ">
-          {it.title}
-        </span>
-        <span className="text-secondary  text-xl ">→</span>
-      </div>
-
-      {/* Hover styling */}
-      <style jsx>{`
-        button.group:hover {
-          background-color: #1C1533; /* entire card background */
-        }
-        button.group:hover div:first-child {
-          background-color: #1C1533; /* icon area background */
-        }
-     
-      `}</style>
-    </button>
-  ))}
-</div>
-
 
       {/* PDF Modal */}
       {openPdf && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          
           {/* backdrop */}
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setOpenPdf(null)}
-          />
+          <div className="absolute inset-0 bg-black/50" onClick={() => setOpenPdf(null)} />
 
           {/* Modal content */}
-          <div className="relative bg-white rounded-lg shadow-xl 
-                          w-full max-w-4xl h-[80vh] overflow-hidden z-10">
-            
+          <div className="relative bg-white rounded-lg shadow-xl w-full max-w-4xl h-[80vh] overflow-hidden z-10">
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b">
               <h3 className="text-lg font-medium">{openPdf.title}</h3>
@@ -128,10 +108,7 @@ export default function SchoolInfoPage() {
                   Open New Tab
                 </a>
 
-                <button
-                  onClick={() => setOpenPdf(null)}
-                  className="p-2 rounded hover:bg-gray-100"
-                >
+                <button onClick={() => setOpenPdf(null)} className="p-2 rounded hover:bg-gray-100" aria-label="Close">
                   ✕
                 </button>
               </div>
@@ -139,17 +116,11 @@ export default function SchoolInfoPage() {
 
             {/* PDF Preview */}
             <div className="w-full h-full bg-gray-100">
-              <iframe
-                src={openPdf.pdf}
-                className="w-full h-full"
-                frameBorder="0"
-              />
+              <iframe src={openPdf.pdf} className="w-full h-full" frameBorder="0" />
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }

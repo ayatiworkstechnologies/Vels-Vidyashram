@@ -22,8 +22,8 @@ const navItems = [
     href: "/academics",
     submenu: [
       { label: "Curriculum", href: "/dargaroad/curriculum" },
-      { label: "Circular", href: "/academics/circular" },
-      { label: "Homework", href: "/academics/homework" },
+      { label: "Circular", href: "/dargaroad/circular-2025-2026" },
+      { label: "Messages", href: "/dargaroad/general-messages" },
       { label: "Scholastic Resources", href: "/academics/resources" },
     ],
   },

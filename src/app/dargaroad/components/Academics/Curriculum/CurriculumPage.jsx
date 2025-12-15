@@ -152,272 +152,165 @@ export default function ExtractDesign() {
       </div>
 
       {/* Sections */}
-      <section className="py-12 px-6 lg:px-20 bg-white">
-        <div className="max-w-7xl mx-auto space-y-20">
-          {SECTIONS.map((sec, idx) => {
-            const isEven = idx % 2 === 1;
+     {/* TAB CONTENT */}
+<section className="py-12 px-6 lg:px-20 bg-white">
+  <div className="max-w-7xl mx-auto">
 
-            return (
-              <article
-                key={idx}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
-              >
-                {/* IF ODD SECTION → TEXT LEFT, IMAGE RIGHT */}
-                {isEven ? (
-                  <>
-                    {/* TEXT FIRST */}
-                    <div className="w-full">
-                      <h2 className="text-2xl md:text-3xl font-primary font-primary-bold leading-tight text-gray-900">
-                        {(sec.title)}
-                      </h2>
-
-                      <div className="mt-3 mb-6">
-                        <div className="w-20 h-0.5 bg-secondary" />
-                      </div>
-
-                      {sec.subtitle && (
-                        <div className="mb-6">
-                          <h3 className="text-lg font-secondary text-black mb-3">
-                            {sec.subtitle}
-                          </h3>
-                          <ul className="list-disc pl-5 font-secondary text-sm text-black space-y-2">
-                            {sec.bullets?.map((b, i) => (
-                              <li key={i}>{b}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {sec.extraTitle && (
-                        <div className="mb-6">
-                          <h3 className="text-lg font-secondary text-black mb-3">
-                            {sec.extraTitle}
-                          </h3>
-                          <ul className="list-disc pl-5 font-secondary text-sm text-black space-y-2">
-                            {sec.extraBullets?.map((b, i) => (
-                              <li key={i}>{b}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {sec.paragraph && (
-                        <p className="text-sm font-secondary text-black leading-relaxed">
-                          {sec.paragraph}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* IMAGE SECOND */}
-                    <div className="w-full">
-                      <div className="overflow-hidden rounded-md shadow-md">
-                        <img
-                          src={sec.img}
-                          alt={sec.imgAlt}
-                          className="w-full h-[420px] object-cover md:h-[480px] lg:h-[520px]"
-                        />
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    {/* DEFAULT: IMAGE LEFT */}
-                    <div className="w-full">
-                      <div className="overflow-hidden rounded-md shadow-md">
-                        <img
-                          src={sec.img}
-                          alt={sec.imgAlt}
-                          className="w-full h-[420px] object-cover md:h-[480px] lg:h-[520px]"
-                        />
-                      </div>
-                    </div>
-
-                    {/* TEXT RIGHT */}
-                    <div className="w-full">
-                      <h2 className="text-2xl md:text-3xl font-primary font-primary-bold leading-tight text-gray-900">
-                        {renderTitleWithBreak(sec.title)}
-                      </h2>
-
-                      <div className="mt-3 mb-6">
-                        <div className="w-20 h-0.5 bg-orange-500 rounded" />
-                      </div>
-
-                      {sec.subtitle && (
-                        <div className="mb-6">
-                          <h3 className="text-2xl  font-primary font-primary-semibold text-black mb-5">
-                            {sec.subtitle}
-                          </h3>
-                          <ul className="list-disc pl-5 font-secondary text-sm text-black space-y-2">
-                            {sec.bullets?.map((b, i) => (
-                              <li key={i}>{b}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {sec.extraTitle && (
-                        <div className="mb-8">
-                          <h3 className="text-2xl  font-primary font-primary-semibold text-gray-800 mb-5">
-                            {sec.extraTitle}
-                          </h3>
-                          <ul className="list-disc pl-5 font-secondary text-sm text-black space-y-2">
-                            {sec.extraBullets?.map((b, i) => (
-                              <li key={i}>{b}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {sec.paragraph && (
-                        <p className="text-sm font-secondary text-black leading-relaxed">
-                          {sec.paragraph}
-                        </p>
-                      )}
-                    </div>
-                  </>
-                )}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="bg-white py-12 px-6 lg:px-20">
-        <div className="max-w-6xl mx-auto space-y-12">
-          {/* STRUCTURE OF XSEED METHODLOGY */}
-          <div>
-            <h2 className="text-center text-2xl lg:text-3xl font-primary font-primary-bold tracking-tight">
-              STRUCTURE OF{" "}
-              <span className="text-black">XSEED METHODOLOGY</span>
-            </h2>
-
-            <div className="flex justify-center mt-3">
-              <div className="w-24 h-[1px] bg-secondary " />
+    {/* TAB 0 & 1 → IMAGE + TEXT SECTIONS */}
+    {(activeIndex === 0 || activeIndex === 1) && (
+      <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {activeIndex === 0 ? (
+          <>
+            {/* IMAGE */}
+            <div className="w-full">
+              <img
+                src={SECTIONS[0].img}
+                alt={SECTIONS[0].imgAlt}
+                className="w-full h-[420px] object-cover rounded-md shadow-md"
+              />
             </div>
 
-            {/* Table container */}
-            <div className="mt-8">
-              <div className="overflow-x-auto">
-                <table className="min-w-full border-collapse">
-                  <thead>
-                    <tr>
-                      <th className="bg-primary text-white text-left text-sm font-primary font-primary-bold px-4 py-3">
-                        Programme
-                      </th>
-                      <th className="bg-primary text-white text-left text-sm font-primary font-primary-bold px-4 py-3">
-                        GROUP
-                      </th>
-                      <th className="bg-primary text-white text-left text-sm font-primary font-primary-bold px-4 py-3">
-                        SUBJECTS
-                      </th>
-                    </tr>
-                  </thead>
+            {/* TEXT */}
+            <div>
+              <h2 className="text-3xl font-primary font-primary-bold">
+                {SECTIONS[0].title}
+              </h2>
 
-                  <tbody>
-                    {STRUCTURE_ROWS.map((r, idx) => (
-                      <tr
-                        key={idx}
-                        className={
-                          r.highlighted
-                            ? "bg-secondary text-white"
-                            : idx % 2 === 1
-                            ? "bg-white"
-                            : "bg-white"
-                        }
-                      >
-                        <td
-                          className={`px-4 py-3 align-top font-secondary text-sm ${
-                            r.highlighted ? "font-semibold" : ""
-                          }`}
-                        >
-                          {r.programme}
-                        </td>
-                        <td className="px-4 py-3 align-top font-secondary text-sm">
-                          {r.group}
-                        </td>
-                        <td className="px-4 py-3 align-top font-secondary text-sm">
-                          {r.subjects}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <div className="mt-4 mb-6 w-20 h-0.5 bg-secondary" />
+
+              <h3 className="text-lg font-secondary mb-3">
+                {SECTIONS[0].subtitle}
+              </h3>
+
+              <ul className="list-disc pl-5 text-sm space-y-2">
+                {SECTIONS[0].bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
+              </ul>
+
+              <h3 className="text-lg font-secondary mt-6 mb-3">
+                {SECTIONS[0].extraTitle}
+              </h3>
+
+              <ul className="list-disc pl-5 text-sm space-y-2">
+                {SECTIONS[0].extraBullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </>
+        ) : (
+          <>
+            {/* TEXT */}
+            <div>
+              <h2 className="text-3xl font-primary font-primary-bold">
+                {SECTIONS[1].title}
+              </h2>
 
-          {/* GROUPS OFFERED */}
-          <div className="pt-8">
-            <h3 className="text-center text-3xl font-bold">
-              GROUPS OFFERED
-            </h3>
+              <div className="mt-4 mb-6 w-20 h-0.5 bg-secondary" />
 
-             <div className="flex justify-center mt-3">
-              <div className="w-24 h-[1px] bg-secondary " />
-            </div>
-            <p className="text-center font-secondary  text-md text-black mt-2">
-              Where strong values meet future-ready learning.
-            </p>
-
-
-            <div className="mt-8">
-              <div className="overflow-x-auto">
-                <table className="min-w-full border-collapse">
-                  <thead>
-                    <tr>
-                      <th className="bg-primary text-white text-left text-sm font-primary font-primary-bold px-4 py-3 w-16">
-                        S.NO
-                      </th>
-                      <th className="bg-primary text-white text-left text-sm font-primary font-primary-bold px-4 py-3 w-40">
-                        GROUP
-                      </th>
-                      <th className="bg-primary text-white text-left text-sm font-primary font-primary-bold px-4 py-3">
-                        SUBJECTS
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {GROUPS.map((g, i) => (
-                      <tr
-                        key={i}
-                        className={
-                          g.highlighted
-                            ? "bg-orange-500 text-white"
-                            : "bg-white"
-                        }
-                      >
-                        <td className="px-4 py-3 align-top font-secondary text-sm font-medium">
-                          {g.sno}
-                        </td>
-                        <td className="px-4 py-3 align-top font-secondary text-sm font-medium">
-                          {g.group}
-                        </td>
-                        <td className="px-4 py-3 align-top font-secondary text-sm">
-                          {g.subjects}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              <p className="mt-6 text-sm font-secondary text-black">
-                • Note: Physical Education is a compulsory additional subject
-                for all the above groups.
+              <p className="text-sm leading-relaxed">
+                {SECTIONS[1].paragraph}
               </p>
             </div>
-          </div>
+
+            {/* IMAGE */}
+            <div className="w-full">
+              <img
+                src={SECTIONS[1].img}
+                alt={SECTIONS[1].imgAlt}
+                className="w-full h-[420px] object-cover rounded-md shadow-md"
+              />
+            </div>
+          </>
+        )}
+      </article>
+    )}
+
+    {/* TAB 2 → STRUCTURE TABLE */}
+    {activeIndex === 2 && (
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-center text-3xl font-primary font-primary-bold">
+          STRUCTURE OF XSEED METHODOLOGY
+        </h2>
+
+        <div className="flex justify-center mt-3">
+          <div className="w-24 h-[1px] bg-secondary" />
         </div>
-      </section>
+
+        <div className="overflow-x-auto mt-8">
+          <table className="min-w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="bg-primary text-white px-4 py-3">Programme</th>
+                <th className="bg-primary text-white px-4 py-3">Group</th>
+                <th className="bg-primary text-white px-4 py-3">Subjects</th>
+              </tr>
+            </thead>
+            <tbody>
+              {STRUCTURE_ROWS.map((r, i) => (
+                <tr
+                  key={i}
+                  className={r.highlighted ? "bg-secondary text-white" : ""}
+                >
+                  <td className="px-4 py-3">{r.programme}</td>
+                  <td className="px-4 py-3">{r.group}</td>
+                  <td className="px-4 py-3">{r.subjects}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+    {/* TAB 3 → GROUPS OFFERED */}
+    {activeIndex === 3 && (
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-center text-3xl font-primary font-primary-bold">
+          GROUPS OFFERED
+        </h2>
+
+        <div className="flex justify-center mt-3">
+          <div className="w-24 h-[1px] bg-secondary" />
+        </div>
+
+        <div className="overflow-x-auto mt-8">
+          <table className="min-w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="bg-primary text-white px-4 py-3">S.NO</th>
+                <th className="bg-primary text-white px-4 py-3">Group</th>
+                <th className="bg-primary text-white px-4 py-3">Subjects</th>
+              </tr>
+            </thead>
+            <tbody>
+              {GROUPS.map((g, i) => (
+                <tr
+                  key={i}
+                  className={g.highlighted ? "bg-orange-500 text-white" : ""}
+                >
+                  <td className="px-4 py-3">{g.sno}</td>
+                  <td className="px-4 py-3">{g.group}</td>
+                  <td className="px-4 py-3">{g.subjects}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+  </div>
+</section>
+
+
+    
     </>
   );
 }
 
-/**
- * Helper: insert a line break after the ' – ' dash so titles match your design.
- * If no dash present, returns the whole title as one node.
- */
+
 function renderTitleWithBreak(title) {
   const split = title.split(" – ");
   if (split.length === 2) {

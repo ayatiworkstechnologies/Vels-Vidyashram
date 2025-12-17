@@ -20,7 +20,7 @@ const CIRCULARS = [
   {
     id: 3,
     title: "Know More",
-    image: "/dargaroad/June.jpg",
+    image: "/dargaroad/june.jpg",
     pdf: "/dargaroad/pdf/june-month.pdf",
   },
   {

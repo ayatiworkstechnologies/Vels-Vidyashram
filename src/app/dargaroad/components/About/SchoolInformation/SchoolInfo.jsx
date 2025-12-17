@@ -143,7 +143,7 @@ export default function SchoolInfoPage() {
             }
           >
             {/* Icon area */}
-            <div className="flex-1 bg-gray-50 flex items-center justify-center transition duration-200 group-hover:bg-[#1c1533] p-6 sm:p-0">
+            <div className="flex-1 bg-gray-50 flex items-center justify-center transition duration-200 group-hover:bg-[#1c1533] p-6 sm:p-0 cursor-pointer">
               <img
                 src={it.icon}
                 alt=""
@@ -152,7 +152,7 @@ export default function SchoolInfoPage() {
             </div>
 
             {/* Title */}
-            <div className="px-4 py-3 flex items-center justify-between bg-white transition duration-200">
+            <div className="px-4 py-3 flex items-center justify-between bg-white transition duration-200 cursor-pointer">
               <span className="text-sm text-black mx-auto font-medium truncate">{it.title}</span>
               <span className="text-secondary text-xl">→</span>
             </div>

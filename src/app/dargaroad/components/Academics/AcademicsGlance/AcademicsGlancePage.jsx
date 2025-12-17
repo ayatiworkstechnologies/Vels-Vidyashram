@@ -5,110 +5,45 @@ import { useState, useEffect } from "react";
 const ITEMS = [
   {
     id: 1,
-    title: "Mandatory Disclosure",
-    icon: "/dargaroad/pdf/mandatory-disclosure.png",
+    title: "Results",
+    icon: "/dargaroad/pdf/results.png",
     pdf: "/dargaroad/pdf/Mandatory-disclosure.pdf",
   },
   {
     id: 2,
-    title: "Affiliations",
-    icon: "/dargaroad/pdf/affliation.png",
-    pdf: "/dargaroad/pdf/AFFILIATION.pdf",
+    title: "Lists of Books",
+    icon: "/dargaroad/pdf/list-of-books.png",
+    pdf: "/dargaroad/pdf/listofbooks.pdf",
   },
   {
     id: 3,
-    title: "NOC",
-    icon: "/dargaroad/pdf/noc.png",
-    pdf: "/dargaroad/pdf/NOC.pdf",
+    title: "Home Woerk Policy",
+    icon: "/dargaroad/pdf/home-work-policy.png",
+    pdf: "/dargaroad/pdf/HOMEWORK-POLICY.pdf",
   },
   {
     id: 4,
-    title: "Trust",
-    icon: "/dargaroad/pdf/trust.png",
-    pdf: "/dargaroad/pdf/TRUST.pdf",
+    title: "Annual Report",
+    icon: "/dargaroad/pdf/annual-report.png",
+    pdf: "/dargaroad/pdf/Annual-report.pdf",
   },
   {
     id: 5,
-    title: "Building",
-    icon: "/dargaroad/pdf/building.png",
-    pdf: "/dargaroad/pdf/Building.pdf",
+    title: "Strength Details",
+    icon: "/dargaroad/pdf/strength-details.png",
+    pdf: "/dargaroad/pdf/strength.pdf",
   },
   {
     id: 6,
-    title: "Fire",
-    icon: "/dargaroad/pdf/fire.png",
-    pdf: "/dargaroad/pdf/fire-certificate.pdf",
+    title: "Teacher Details",
+    icon: "/dargaroad/pdf/teacher-details.png",
+    pdf: "/dargaroad/pdf/teacher.pdf",
   },
-  {
-    id: 7,
-    title: "Sanitary",
-    icon: "/dargaroad/pdf/sanitary.png",
-    pdf: "/dargaroad/pdf/sanitary-certificate.pdf",
-  },
-  {
-    id: 8,
-    title: "FEE structure",
-    icon: "/dargaroad/pdf/fee-structure.png",
-    pdf: "/dargaroad/pdf/fee-structure.pdf",
-  },
-  {
-    id: 9,
-    title: "Calendar",
-    icon: "/dargaroad/pdf/calendar.png",
-    pdf: "/dargaroad/pdf/academic-calendar.pdf",
-  },
-  {
-    id: 10,
-    title: "SMC",
-    icon: "/dargaroad/pdf/smc.png",
-    pdf: "/dargaroad/pdf/Smc.pdf",
-  },
-  {
-    id: 11,
-    title: "Recognition",
-    icon: "/dargaroad/pdf/recognition.png",
-    pdf: "/dargaroad/pdf/Recognition.pdf",
-  },
-  {
-    id: 12,
-    title: "PTA",
-    icon: "/dargaroad/pdf/pta.png",
-    pdf: "/dargaroad/pdf/PTA.pdf",
-  },
-  {
-    id: 13,
-    title: "Result",
-    icon: "/dargaroad/pdf/results.png",
-    pdf: "/dargaroad/pdf/staff-details.pdf",
-  },
-  {
-    id: 14,
-    title: "Self Darga Road",
-    icon: "/dargaroad/pdf/self-darga.png",
-    pdf: "/dargaroad/pdf/Self-DargaRoad.pdf",
-  },
-  {
-    id: 15,
-    title: "Self Affidavit",
-    icon: "/dargaroad/pdf/self.png",
-    pdf: "/dargaroad/pdf/self-affidavit.pdf",
-  },
-  {
-    id: 16,
-    title: "Tc Sample",
-    icon: "/dargaroad/pdf/tc.png",
-    pdf: "/dargaroad/pdf/Transfer-Certificate-2023-2024.pdf",
-  },
-  {
-    id: 17,
-    title: "Land Certificate",
-    icon: "/dargaroad/pdf/land-certificate.png",
-    pdf: "/dargaroad/pdf/land-certificate.pdf",
-  },
+
 ];
 
 
-export default function SchoolInfoPage() {
+export default function AcademicsGlancePage() {
   const [openPdf, setOpenPdf] = useState(null);
 
   useEffect(() => {
@@ -123,7 +58,7 @@ export default function SchoolInfoPage() {
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-20">
       {/* Heading */}
       <div className="max-w-5xl mx-auto text-center mb-8">
-        <h1 className="text-2xl md:text-3xl font-primary font-primary-bold">School Information</h1>
+        <h1 className="text-2xl md:text-3xl font-primary font-primary-bold">Academics at a Glance</h1>
         <div className="flex justify-center mt-3">
           <div className="w-24 h-[1px] bg-secondary" />
         </div>

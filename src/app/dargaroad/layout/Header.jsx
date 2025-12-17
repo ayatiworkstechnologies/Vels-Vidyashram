@@ -22,13 +22,14 @@ const navItems = [
     href: "/academics",
     submenu: [
       { label: "Curriculum", href: "/dargaroad/curriculum" },
+      { label: "Academics at a Glance", href: "/dargaroad/academics-at-a-glance" },
       { label: "Circular", href: "/dargaroad/circular-2025-2026" },
       { label: "Messages", href: "/dargaroad/general-messages" },
-      { label: "Scholastic Resources", href: "/academics/resources" },
+      
     ],
   },
 
-  { label: "Beyond Academics", href: "/beyond-academics" },
+  { label: "Beyond Academics", href: "/dargaroad/beyond-academics" },
 
   {
     label: "Admissions",

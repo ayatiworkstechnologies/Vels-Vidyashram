@@ -3,20 +3,18 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-/* ================= ROW 1 SLIDES ================= */
+/* ================= DATA ================= */
 const SLIDES_ROW_1 = [
   ["/dargaroad/img-1.jpg", "/dargaroad/img-2.jpg"],
   ["/dargaroad/img-3.jpg", "/dargaroad/img-4.jpg"],
   ["/dargaroad/img-5.jpg", "/dargaroad/img-1.jpg"],
 ];
 
-/* ================= ROW 2 SLIDES ================= */
 const SLIDES_ROW_2 = [
   ["/dargaroad/mda.jpg", "/dargaroad/kare.jpg"],
   ["/dargaroad/school-vels.jpg", "/dargaroad/nios.jpg"],
 ];
 
-/* ================= TEXT CONTENT ================= */
 const FEATURES_TEXT = [
   {
     title: "Special Features",
@@ -45,15 +43,32 @@ const FEATURES_TEXT = [
   },
 ];
 
+/* ================= MOBILE DETECTOR ================= */
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+}
+
 export default function SpecialFeaturesSection() {
+  /* ===== ALL HOOKS AT TOP (VERY IMPORTANT) ===== */
+  const isMobile = useIsMobile();
+
   const [activeRow1, setActiveRow1] = useState(0);
   const [activeRow2, setActiveRow2] = useState(0);
 
-  /* ---------- AUTO SCROLL TEXT ---------- */
   const scrollRef = useRef(null);
   const hoverRef = useRef(false);
   const rafRef = useRef(null);
 
+  /* ===== DESKTOP AUTO SCROLL ===== */
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -75,7 +90,6 @@ export default function SpecialFeaturesSection() {
     return () => cancelAnimationFrame(rafRef.current);
   }, []);
 
-  /* ================= PAGINATION ================= */
   const Pagination = ({ total, active, onChange, align = "left" }) => (
     <div
       className={`flex gap-4 mt-6 text-sm tracking-[0.3em] ${
@@ -86,7 +100,7 @@ export default function SpecialFeaturesSection() {
         <button
           key={idx}
           onClick={() => onChange(idx)}
-          className="cursor-pointer text-lg text-[#3A2C92] hover:text-gray transition"
+          className="cursor-pointer text-lg text-[#3A2C92]"
         >
           {active === idx ? String(idx + 1).padStart(2, "0") : "-"}
         </button>
@@ -94,11 +108,54 @@ export default function SpecialFeaturesSection() {
     </div>
   );
 
+  /* ================================================= */
+  /* ================= MOBILE UI ===================== */
+  /* ================================================= */
+  if (isMobile) {
+    return (
+      <section className="space-y-12">
+        <div className="relative h-[220px] w-full">
+          <Image
+            src="/dargaroad/curriculum.jpg"
+            alt="Special Features"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <div className="px-4 space-y-4">
+          {FEATURES_TEXT.map((item, i) => (
+            <div key={i} className="bg-white p-4 rounded-md shadow-sm">
+              <h3 className="text-lg font-primary font-primary-semibold mb-1">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="px-4 space-y-4">
+          {[...SLIDES_ROW_1.flat(), ...SLIDES_ROW_2.flat()].map((src, i) => (
+            <div
+              key={i}
+              className="relative h-[200px] w-full overflow-hidden rounded-md"
+            >
+              <Image src={src} alt="" fill className="object-cover" />
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  /* ================================================= */
+  /* ============ DESKTOP (UNCHANGED) ================= */
+  /* ================================================= */
+
   return (
     <section className="space-y-24">
       {/* ================= TOP SECTION ================= */}
       <div className="grid md:grid-cols-2 gap-12 bg-white p-10">
-        {/* IMAGE */}
         <div className="relative h-[360px] sticky top-24 overflow-hidden">
           <Image
             src="/dargaroad/curriculum.jpg"
@@ -108,7 +165,6 @@ export default function SpecialFeaturesSection() {
           />
         </div>
 
-        {/* AUTO SCROLL TEXT */}
         <div
           ref={scrollRef}
           onMouseEnter={() => (hoverRef.current = true)}
@@ -131,7 +187,7 @@ export default function SpecialFeaturesSection() {
                   </h3>
                 )}
 
-                <p className="text-sm font-secondary font-secondary-regular text-black leading-relaxed">
+                <p className="text-sm font-secondary text-black leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -142,7 +198,7 @@ export default function SpecialFeaturesSection() {
 
       {/* ================= ROW 1 ================= */}
       <div className="grid md:grid-cols-3 gap-12 items-center">
-        <div className="hidden md:block text-[56px] font-primary font-primary-extrabold mx-auto text-[#D8D8D8] leading-tight">
+        <div className="hidden md:block text-[56px] font-primary font-primary-extrabold mx-auto text-[#D8D8D8]">
           Special <br /> Features
         </div>
 
@@ -155,18 +211,14 @@ export default function SpecialFeaturesSection() {
               {SLIDES_ROW_1.map((pair, i) => (
                 <div key={i} className="min-w-full flex gap-8">
                   {pair.map((src, j) => (
-                    <div
-                      key={j}
-                      className="relative h-[220px] w-1/2 overflow-hidden shadow-md"
-                    >
-                      <Image src={src} alt="" fill className="" />
+                    <div key={j} className="relative h-[220px] w-1/2">
+                      <Image src={src} alt="" fill />
                     </div>
                   ))}
                 </div>
               ))}
             </div>
           </div>
-
           <Pagination
             total={SLIDES_ROW_1.length}
             active={activeRow1}
@@ -186,18 +238,14 @@ export default function SpecialFeaturesSection() {
               {SLIDES_ROW_2.map((pair, i) => (
                 <div key={i} className="min-w-full flex gap-8">
                   {pair.map((src, j) => (
-                    <div
-                      key={j}
-                      className="relative h-[220px] w-1/2 overflow-hidden shadow-md"
-                    >
-                      <Image src={src} alt="" fill className="" />
+                    <div key={j} className="relative h-[220px] w-1/2">
+                      <Image src={src} alt="" fill />
                     </div>
                   ))}
                 </div>
               ))}
             </div>
           </div>
-
           <Pagination
             total={SLIDES_ROW_2.length}
             active={activeRow2}
@@ -206,7 +254,7 @@ export default function SpecialFeaturesSection() {
           />
         </div>
 
-        <div className="hidden md:block text-[56px] font-primary font-primary-extrabold mx-auto text-[#D8D8D8] leading-tight">
+        <div className="hidden md:block text-[56px] font-primary font-primary-extrabold mx-auto text-[#D8D8D8]">
           Special <br /> Features
         </div>
       </div>

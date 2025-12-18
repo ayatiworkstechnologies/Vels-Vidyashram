@@ -71,10 +71,9 @@ export default function Header() {
 
   return (
     <header className="w-full shadow-sm">
-      {/* TOP BAR */}
+      {/* ================= TOP BAR ================= */}
       <div className="bg-white px-4 py-2">
         <div className="relative max-w-6xl mx-auto flex items-center justify-between">
-
           {/* LOGO */}
           <Link href="/" className="mx-auto flex justify-center">
             <Image
@@ -115,6 +114,7 @@ export default function Header() {
           <button
             className="lg:hidden absolute right-0 inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#2B158F]/40"
             onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-[5px]">
               <span className="w-5 h-[2px] bg-[#2B158F]" />
@@ -125,8 +125,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* DESKTOP NAV */}
-      <nav className="bg-[#2B158F] text-white text-sm font-primary">
+      {/* ================= DESKTOP NAV ================= */}
+      <nav className="bg-[#2B158F] text-white text-sm font-primary relative">
         <div className="max-w-6xl mx-auto px-4">
           <ul className="hidden lg:flex justify-between">
             {navItems.map((item) => (
@@ -156,7 +156,66 @@ export default function Header() {
           </ul>
         </div>
 
-        {/* MOBILE MENU unchanged */}
+        {/* ================= MOBILE MENU ================= */}
+        {mobileOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#2B158F] z-50 border-t border-white/20">
+            <div className="px-4 py-4 space-y-3 max-h-[80vh] overflow-y-auto">
+
+              {/* OTHER CAMPUS – MOBILE */}
+              <div className="border-b border-white/20 pb-2">
+                <button
+                  onClick={() => setCampusOpen((v) => !v)}
+                  className="w-full flex justify-between items-center text-white font-primary font-primary-semibold py-2"
+                >
+                  <span>Other Campus</span>
+                  <span>{campusOpen ? "−" : "+"}</span>
+                </button>
+
+                {campusOpen && (
+                  <div className="pl-4 space-y-1 text-sm text-gray-200">
+                    <Link href="/thalambur" onClick={() => setMobileOpen(false)} className="block py-1">
+                      Thalambur
+                    </Link>
+                    <Link href="/pallavaram" onClick={() => setMobileOpen(false)} className="block py-1">
+                      Pallavaram
+                    </Link>
+                    <Link href="/cantonment" onClick={() => setMobileOpen(false)} className="block py-1">
+                      Cantonment
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* MAIN NAV ITEMS */}
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="block py-2 text-white hover:text-[#F9B233]"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+
+                  {item.submenu && (
+                    <div className="pl-4 space-y-1 text-xs text-gray-200">
+                      {item.submenu.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          className="block py-1"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-export default function Footer() {
+export default function Footer () {
   return (
-    <footer className="w-full mt-10">
+    <footer className="w-full mt-10 pb-[45px] md:pb-0">
       {/* TOP LINKS AREA */}
       <div className="bg-[#F5F5F5] py-6">
         {/* ROW 1 */}
@@ -112,6 +112,64 @@ export default function Footer() {
           Copyright ©2025 VelsVidyashram – All right reserved | Designed &
           Developed by Ayatiworks
         </p>
+      </div>
+      <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-50 items-center gap-3">
+        <button
+          onClick={() =>
+            window.open (
+              'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+              '_blank'
+            )}
+          className="bg-white text-black text-sm px-3 py-1 font-primary font-primary-semibold shadow hover:bg-gray-100"
+        >
+          Admissions Open | Apply Now
+        </button>
+
+        <button
+          onClick={() =>
+            window.open (
+              'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+              '_blank'
+            )}
+          className="h-12 w-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:bg-gray-100"
+        >
+          <Image
+            src="/dargaroad/icon-1.png"
+            alt="Admissions"
+            width={42}
+            height={42}
+          />
+        </button>
+      </div>
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t shadow-lg">
+        <div className="flex divide-x">
+          {/* Enquiry */}
+          <button
+            onClick={() =>
+              window.open (
+                'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+                '_blank'
+              )}
+            className="flex-1 py-3 flex items-center justify-center gap-2 bg-tertiary text-white text-sm font-primary font-primary-semibold"
+          >
+            <Image
+              src="/main/mail-01.svg"
+              alt="enquiry"
+              width={18}
+              height={18}
+            />
+            Enquiry Now
+          </button>
+
+          {/* Call */}
+          <a
+            href="tel:9962506639"
+            className="flex-1 py-3 flex items-center justify-center gap-2 bg-primary text-white text-sm font-primary font-primary-semibold"
+          >
+            <Image src="/main/phone.svg" alt="call" width={18} height={18} />
+            Call Now
+          </a>
+        </div>
       </div>
     </footer>
   );

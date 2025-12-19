@@ -42,7 +42,7 @@ export default function Dargaroad() {
         <About />
         <Video />
         <BestCbseSection />
-         <Events />
+        <Events />
         <UpcomingEvents />
         <FooterSection />
     </main>

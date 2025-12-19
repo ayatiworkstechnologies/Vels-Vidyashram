@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import SpecialFeaturesSection from "./SpecialFeatuesSection";
@@ -126,6 +127,16 @@ const CONTENT = {
 /* ================= COMPONENT ================= */
 
 export default function ActivitiesSection() {
+
+const scrollTabs = (dir) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    container.scrollBy({
+      left: dir === "left" ? -260 : 260,
+      behavior: "smooth",
+    });
+  };
   const [activeIndex, setActiveIndex] = useState(0);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
@@ -158,8 +169,38 @@ export default function ActivitiesSection() {
   return (
     <section>
       {/* ================= TOP TABS (UNCHANGED) ================= */}
-      <div className="bg-white px-6 py-8">
-        <div className="bg-[#f5f5f5] max-w-6xl mx-auto flex gap-6 flex-wrap justify-center py-8 rounded-sm">
+       <div className="bg-white px-4 py-8">
+      {/* RELATIVE WRAPPER (IMPORTANT) */}
+      <div className="relative max-w-6xl mx-auto">
+
+        {/* LEFT ARROW */}
+        <button
+          type="button"
+          onClick={() => scrollTabs("left")}
+          className="
+            md:hidden
+            absolute left-0 top-1/2 -translate-y-1/2 z-20
+            bg-white shadow-lg rounded-full
+            w-9 h-9 flex items-center justify-center
+          "
+        >
+          ‹
+        </button>
+
+        {/* SCROLL CONTAINER */}
+        <div
+          ref={scrollRef}
+          className="
+            bg-[#f5f5f5]
+            flex gap-4
+            overflow-x-auto md:overflow-visible
+            flex-nowrap md:flex-wrap
+            justify-start md:justify-center
+            py-6 px-10
+            rounded-sm
+            scrollbar-hide
+          "
+        >
           {TABS.map((title, i) => (
             <button
               key={i}
@@ -167,12 +208,13 @@ export default function ActivitiesSection() {
                 setActiveIndex(i);
                 setTestimonialIndex(0);
               }}
-              className={`w-[240px] h-[70px] shadow-md flex flex-col items-center justify-center
-              ${
-                i === activeIndex
-                  ? "bg-primary font-primary font-primary-bold text-white"
-                  : "bg-white hover:scale-[1.02]"
-              }`}
+              className={`min-w-[240px] h-[70px] shrink-0 shadow-md
+                flex flex-col items-center justify-center transition
+                ${
+                  i === activeIndex
+                    ? "bg-primary font-primary font-primary-bold text-white"
+                    : "bg-white hover:scale-[1.02]"
+                }`}
             >
               <p className="text-center font-semibold text-[15px] px-4">
                 {title}
@@ -183,7 +225,24 @@ export default function ActivitiesSection() {
             </button>
           ))}
         </div>
+
+        {/* RIGHT ARROW */}
+        <button
+          type="button"
+          onClick={() => scrollTabs("right")}
+          className="
+            md:hidden
+            absolute right-0 top-1/2 -translate-y-1/2 z-20
+            bg-white shadow-lg rounded-full
+            w-9 h-9 flex items-center justify-center
+          "
+        >
+          ›
+        </button>
+
       </div>
+    </div>
+
 
       {/* ================= CONTENT ================= */}
       <div className="max-w-7xl mx-auto px-6 py-16">

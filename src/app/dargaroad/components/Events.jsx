@@ -199,7 +199,8 @@ export default function Events() {
  
       {/* ==================== TOP BANNER ==================== */}
      
-<section className="relative max-w-4xl mx-auto my-10">
+<section className="relative max-w-4xl mx-auto my-10 hidden md:block">
+
   <div className="relative overflow-hidden rounded-md">
     {/* Background image with girl on the right */}
     <img

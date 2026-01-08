@@ -50,7 +50,8 @@ const navItems = [
     label: "Gallery",
     href: "/gallery",
     submenu: [
-      { label: "Photo Gallery", href: "/gallery/photos" },
+       { label: "Facilities", href: "/dargaroad/facilities" },
+      { label: "Photo Gallery", href: "/dargaroad/photo-gallery" },
       { label: "Video Gallery", href: "/gallery/videos" },
     ],
   },

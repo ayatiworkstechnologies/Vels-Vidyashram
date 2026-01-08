@@ -15,7 +15,7 @@ export default function Footer () {
           <a href="/admissions" className="hover:text-primary transition">
             Admissions
           </a>
-          <a href="/recruitment" className="hover:text-primary transition">
+          <a href="/dargaroad/recruitment" className="hover:text-primary transition">
             Recruitment
           </a>
           <a href="/our-group" className="hover:text-primary transition">

@@ -26,7 +26,7 @@ export default function ExploreCampus() {
       name: "Thalambur Campus",
       helpline: "74016 51975",
       image: "/main/cantonment-1.jpg",
-      url: "#",
+      url: "/thalambur",
     },
     {
       name: "Darga Road Campus",

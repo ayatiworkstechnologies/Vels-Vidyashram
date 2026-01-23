@@ -1,79 +1,89 @@
 /* =======================================================
    GOOGLE FONTS
-   - Merriweather Sans (primary)
-   - Source Sans Pro (secondary)
+   - PRIMARY: Libre Baskerville
+   - SECONDARY: Roboto
 ======================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* =======================================================
    TAILWIND CORE
 ======================================================= */
 @import "tailwindcss";
 
-
 /* =======================================================
-   BASE LAYER — GLOBAL RESET + TYPO
+   BASE LAYER — GLOBAL RESET + TYPOGRAPHY
 ======================================================= */
 @layer base {
-  html, body {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
     margin: 0;
     padding: 0;
   }
 
   body {
-    font-family: "Merriweather Sans", system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
     color: #000000;
     background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  /* Optional: make headings use primary font by default */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Merriweather Sans", system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
-    font-weight: 600;
+  /* Headings — PRIMARY FONT */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
     color: #231834;
+    line-height: 1.2;
   }
 
+  /* Paragraphs — SECONDARY FONT */
   p {
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
     margin: 0;
   }
 }
-
 
 /* =======================================================
    UTILITIES — FONT FAMILIES & WEIGHTS
 ======================================================= */
 @layer utilities {
-  /* ---------------------------
-     PRIMARY FONT — Merriweather Sans
-  --------------------------- */
+  /* ===========================
+     PRIMARY FONT — Libre Baskerville
+  =========================== */
   .font-primary {
-    font-family: "Merriweather Sans", system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
+    font-family: "Libre Baskerville", serif;
   }
 
-  .font-primary-light { font-weight: 300; }
   .font-primary-regular { font-weight: 400; }
-  .font-primary-medium { font-weight: 500; }
-  .font-primary-semibold { font-weight: 600; }
   .font-primary-bold { font-weight: 700; }
-  .font-primary-extrabold { font-weight: 800; }
 
-  /* ---------------------------
-     SECONDARY FONT — Source Sans Pro
-  --------------------------- */
+  /* ===========================
+     SECONDARY FONT — Roboto
+  =========================== */
   .font-secondary {
-    font-family: "Source Sans Pro", system-ui, -apple-system, BlinkMacSystemFont,
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
       "Segoe UI", sans-serif;
   }
 
-  .font-secondary-extralight { font-weight: 200; }
+  .font-secondary-thin { font-weight: 100; }
   .font-secondary-light { font-weight: 300; }
   .font-secondary-regular { font-weight: 400; }
+  .font-secondary-medium { font-weight: 500; }
   .font-secondary-semibold { font-weight: 600; }
   .font-secondary-bold { font-weight: 700; }
   .font-secondary-black { font-weight: 900; }
@@ -83,17 +93,17 @@
   ===================================================== */
 
   /* Backgrounds */
-  .bg-primary { background-color: #231834; }
+  .bg-primary { background-color: #232A95; }
   .bg-secondary { background-color: #FF8700; }
   .bg-tertiary { background-color: #3A2C92; }
 
   /* Borders */
-  .border-primary { border-color: #231834; }
+  .border-primary { border-color: #232A95; }
   .border-secondary { border-color: #FF8700; }
   .border-tertiary { border-color: #3A2C92; }
 
   /* Text colors */
-  .text-primary { color: #231834; }
+  .text-primary { color: #232A95; }
   .text-secondary { color: #FF8700; }
   .text-tertiary { color: #3A2C92; }
 }

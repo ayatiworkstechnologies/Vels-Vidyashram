@@ -46,10 +46,10 @@ export default function Thalambur() {
     <main>
       <BannerSlider />
       <LetterSection />
+      <AboutSchool />
       <InspireSection />
       <VelsThalamburSection />
       <OurMottoSection />
-      <AboutSchool />
       <InfrastructureSlider />
       <GalleryGrid />
       <EventsSchedule />

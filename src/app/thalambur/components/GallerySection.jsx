@@ -3,12 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const galleryItems = [
-  { id: 1, title: "Minimal", description: "Clean lines", img: "/thalambur/sch-1.jpg" },
-  { id: 2, title: "Light", description: "Glass work", img: "/thalambur/sch-2.jpg" },
-  { id: 3, title: "Minimal", description: "Clean lines", img: "/thalambur/sch-3.jpg" },
-  { id: 4, title: "Light", description: "Glass work", img: "/thalambur/sch-4.jpg" },
-  { id: 5, title: "Minimal", description: "Clean lines", img: "/thalambur/sch-5.jpg" },
-  { id: 6, title: "Light", description: "Glass work", img: "/thalambur/sch-6.jpg" },
+  { id: 1, title: "Vels Football Club Inauguration", description: "", img: "/thalambur/vels-football-club-inauguration.png" },
+  { id: 2, title: "Awards", description: "", img: "/thalambur/awards.png" },
+  { id: 3, title: "Laboratory", description: "", img: "/thalambur/laboratory.png" },
+  { id: 4, title: "Activities", description: "", img: "/thalambur/event.png" },
+  { id: 5, title: "Sports", description: "", img: "/thalambur/sports.png" },
+  { id: 6, title: "Computer Lab", description: "", img: "/thalambur/computer-lab.png" },
 ];
 
 export default function GalleryGrid() {

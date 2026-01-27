@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef, useState, useMemo } from 'react';
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import React, { useRef, useState, useMemo, useEffect } from 'react';
+import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 
 const allScheduleData = [
   {
@@ -50,6 +50,8 @@ const allScheduleData = [
 export default function EventsSchedule() {
   const [activeTab, setActiveTab] = useState("Events");
   const containerRef = useRef(null);
+  const leftSideRef = useRef(null);
+  const isLeftSideInView = useInView(leftSideRef, { once: false, amount: 0.3 });
 
   const filteredData = useMemo(() => {
     return allScheduleData.filter(item => item.tag === activeTab);
@@ -70,42 +72,78 @@ export default function EventsSchedule() {
     <div className="flex flex-col lg:flex-row min-h-screen bg-white">
       
       {/* LEFT SIDE: STICKY CONTENT */}
-      <div className="lg:w-[35%] bg-[#2d3a9d] text-white p-10 lg:p-16 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center">
-        <div className="mb-6">
+      <div ref={leftSideRef} className="lg:w-[35%] bg-[#2d3a9d] text-white p-10 lg:p-16 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center">
+        <motion.div 
+          className="mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={isLeftSideInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="bg-[#f39200] text-white text-[10px] font-bold py-1.5 px-3 rounded uppercase tracking-wider">
             Events And Examinations
           </span>
-        </div>
+        </motion.div>
         
-        <h1 className="text-3xl lg:text-4xl text-white font-bold leading-tight mb-8">
+        <motion.h1 
+          className="text-3xl lg:text-4xl text-white font-bold leading-tight mb-8"
+          initial={{ opacity: 0, x: -30 }}
+          animate={isLeftSideInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           January Events <br /> and Examinations
           Schedule
-        </h1>
+        </motion.h1>
         
-        <p className="text-blue-100/80 text-sm leading-relaxed mb-10 max-w-md">
+        <motion.p 
+          className="text-blue-100/80 text-sm leading-relaxed mb-10 max-w-md"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isLeftSideInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+        >
           Stay updated with key school activities this month. 
-        </p>
+        </motion.p>
         
-        <div className="flex gap-2">
-          {["Events", "Exams", "Updates"].map((tag) => (
-            <span key={tag} className="border border-white/30 text-[11px] px-3 py-1 rounded">
+        <motion.div 
+          className="flex gap-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isLeftSideInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+        >
+          {["Events", "Exams", "Updates"].map((tag, index) => (
+            <motion.span 
+              key={tag} 
+              className="border border-white/30 text-[11px] px-3 py-1 rounded"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isLeftSideInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+            >
               {tag}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* RIGHT SIDE: SCROLLING CONTENT */}
       <div ref={containerRef} className="lg:w-[65%] p-8 lg:p-20 relative bg-gray-50/30">
         
-        <div className="flex items-center gap-4 mb-12 border-b border-gray-200 pb-4">
-          {["Events", "Exams"].map((tab) => (
-            <button
+        <motion.div 
+          className="flex items-center gap-4 mb-12 border-b border-gray-200 pb-4"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
+          {["Events", "Exams"].map((tab, index) => (
+            <motion.button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`relative px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
                 activeTab === tab ? "text-[#2d3a9d]" : "text-gray-400 hover:text-gray-600"
               }`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {tab}
               {activeTab === tab && (
@@ -114,13 +152,19 @@ export default function EventsSchedule() {
                   className="absolute bottom-[-17px] left-0 right-0 h-[3px] bg-[#2d3a9d]"
                 />
               )}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
-        <h2 className="text-[#2d3a9d] text-2xl lg:text-3xl font-serif font-bold mb-16">
+        <motion.h2 
+          className="text-[#2d3a9d] text-2xl lg:text-3xl font-serif font-bold mb-16"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           Upcoming {activeTab} - January
-        </h2>
+        </motion.h2>
 
         <div className="relative max-w-2xl">
           <div className="absolute left-[20px] lg:left-[45px] top-4 bottom-4 w-[2px] bg-gray-200">
@@ -137,7 +181,7 @@ export default function EventsSchedule() {
                 transition={{ duration: 0.3 }}
               >
                 {filteredData.map((event, index) => (
-                  <TimelineItem key={`${activeTab}-${index}`} event={event} />
+                  <TimelineItem key={`${activeTab}-${index}`} event={event} index={index} />
                 ))}
               </motion.div>
             </AnimatePresence>
@@ -148,8 +192,10 @@ export default function EventsSchedule() {
   );
 }
 
-function TimelineItem({ event }) {
-  // We use "!" (important) to force these colors over any other CSS rules
+function TimelineItem({ event, index }) {
+  const itemRef = useRef(null);
+  const isInView = useInView(itemRef, { once: false, amount: 0.5 });
+
   const textColor = event.isHighlighted ? "!text-white" : "!text-gray-900";
   const subTextColor = event.isHighlighted ? "!text-white/70" : "!text-gray-500";
   const cardBg = event.isHighlighted ? "bg-[#2d3a9d]" : "bg-white";
@@ -158,30 +204,68 @@ function TimelineItem({ event }) {
   const badgeStyles = event.isHighlighted ? "bg-white !text-[#2d3a9d]" : "bg-[#2d3a9d] !text-white";
 
   return (
-    <div className="flex items-start gap-8 lg:gap-14 relative group mb-10 last:mb-0">
+    <motion.div 
+      ref={itemRef}
+      className="flex items-start gap-8 lg:gap-14 relative group mb-10 last:mb-0"
+      initial={{ opacity: 0, x: -50 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+    >
       
-      <div className="absolute left-[14.5px] lg:left-[39.5px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white border-[3px] border-[#2d3a9d] z-10" />
+      <motion.div 
+        className="absolute left-[14.5px] lg:left-[39.5px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white border-[3px] border-[#2d3a9d] z-10"
+        initial={{ scale: 0 }}
+        animate={isInView ? { scale: 1 } : { scale: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+      />
 
-      <div className={`flex w-full overflow-hidden rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] border transition-all duration-300 hover:shadow-xl ${cardBg} ${borderColor}`}>
+      <motion.div 
+        className={`flex w-full overflow-hidden rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] border transition-all duration-300 hover:shadow-xl ${cardBg} ${borderColor}`}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.5, delay: index * 0.1 + 0.1 }}
+      >
         
         {/* DATE BLOCK */}
         <div className={`py-8 px-6 lg:px-10 flex flex-col justify-center items-center min-w-[120px] lg:min-w-[160px] border-r ${dividerColor}`}>
-          <span className={`text-5xl font-bold font-serif ${textColor}`}>{event.date}</span>
-          <span className={`text-[10px] uppercase tracking-[0.15em] mt-1 font-bold text-center ${subTextColor}`}>
+          <motion.span 
+            className={`text-5xl font-bold font-serif ${textColor}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+          >
+            {event.date}
+          </motion.span>
+          <motion.span 
+            className={`text-[10px] uppercase tracking-[0.15em] mt-1 font-bold text-center ${subTextColor}`}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+          >
             {event.monthYear}
-          </span>
+          </motion.span>
         </div>
 
         {/* CONTENT BLOCK */}
         <div className="p-8 flex flex-col justify-center flex-1">
-          <h3 className={`text-xl lg:text-2xl font-bold mb-4 tracking-tight leading-snug ${textColor}`}>
+          <motion.h3 
+            className={`text-xl lg:text-2xl font-bold mb-4 tracking-tight leading-snug ${textColor}`}
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+          >
             {event.title}
-          </h3>
-          <span className={`text-[10px] font-black py-1.5 px-5 rounded w-fit uppercase tracking-widest shadow-sm ${badgeStyles}`}>
+          </motion.h3>
+          <motion.span 
+            className={`text-[10px] font-black py-1.5 px-5 rounded w-fit uppercase tracking-widest shadow-sm ${badgeStyles}`}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
+          >
             {event.tag}
-          </span>
+          </motion.span>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

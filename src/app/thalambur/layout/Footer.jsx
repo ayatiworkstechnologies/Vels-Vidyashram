@@ -17,8 +17,8 @@ export default function Footer() {
       >
         <div className="bg-[#39278F] text-white px-3 py-6 rounded-l-lg shadow-xl hover:bg-[#2B158F] transition-all duration-300 cursor-pointer">
           <span 
-            className="block text-sm font-bold tracking-widest uppercase"
-            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+            className="block text-sm  tracking-widest font-secondary"
+            style={{ writingMode: 'vertical-rl' }}
           >
             Admission
           </span>

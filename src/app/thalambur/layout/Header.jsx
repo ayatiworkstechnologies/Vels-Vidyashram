@@ -74,124 +74,99 @@ export default function Header() {
   const [campusOpen, setCampusOpen] = useState(false);
 
   return (
-    <header className="w-full relative z-50">
-
+    <header className="w-full relative z-50 overflow-x-hidden">
       {/* ================= TOP BAR ================= */}
-      <div className="bg-[#2B158F] text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-
-          {/* LEFT */}
-          <div className="hidden md:flex gap-6">
-            <span className="flex items-center gap-2">
-              <img src="/thalambur/phone.png" className="w-3" />
-              7401 65 7975 / 7401 65 1975
+      <div className="bg-[#2B158F] text-white text-[10px] sm:text-xs md:text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          
+          {/* LEFT - Hidden on mobile, shows contact info on Desktop */}
+          <div className="hidden md:flex gap-6 items-center">
+            <span className="flex items-center gap-2 whitespace-nowrap">
+              <img src="/thalambur/phone.png" className="w-3" alt="phone" />
+              7401 65 7975 / 1975
             </span>
-            <span className="flex items-center gap-2">
-              <img src="/thalambur/mail.png" className="w-3" />
+            <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
+              <img src="/thalambur/mail.png" className="w-3" alt="mail" />
               admissions@velsvidyashram.ac.in
             </span>
           </div>
 
-          {/* RIGHT */}
-          <div className="flex items-center gap-3 ml-auto">
-            <Link href="#" className="whitespace-nowrap">
+          {/* RIGHT - Adjusted for Mobile Responsiveness */}
+          <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
+            {/* Annual Day Link - Now visible on mobile */}
+            <Link href="#" className="whitespace-nowrap hover:underline text-[10px] sm:text-xs md:text-sm">
               Annual Day Photos 2025
             </Link>
 
-            <Link
-              href="#"
-              className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium whitespace-nowrap"
-            >
-              Online Fees Payment
-            </Link>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <Link
+                href="#"
+                className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition text-[10px] sm:text-xs md:text-sm"
+              >
+                Fees Payment
+              </Link>
 
-            {/* MOBILE HAMBURGER */}
-            <button
-              className="md:hidden text-3xl"
-              onClick={() => setMobileOpen(!mobileOpen)}
-            >
-              ☰
-            </button>
+              {/* Other Campus - Desktop only */}
+              <div className="relative group hidden lg:block">
+                <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
+                  Other Campus
+                </button>
+                <div className="absolute right-0 top-full w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] border-t-2 border-[#FF8700]">
+                  {["Dargaroad", "Pallavaram", "Cantonment"].map((campus) => (
+                    <Link
+                      key={campus}
+                      href={`/${campus.toLowerCase()}`}
+                      className="block px-4 py-3 text-[#2B158F] hover:bg-gray-50 border-b border-gray-100 last:border-0"
+                    >
+                      {campus}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
-            {/* DESKTOP OTHER CAMPUS */}
-            <div className="relative group hidden md:block z-[9999]">
-  <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full text-sm font-medium">
-    Other Campus
-  </button>
-
-  {/* DROPDOWN */}
-  <div className="absolute right-0 top-full w-56 bg-white shadow-lg
-                  opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                  transition pointer-events-none group-hover:pointer-events-auto">
-    <Link
-      href="/dargaroad"
-      className="block px-4 py-2 bg-[#2B158F] text-white hover:bg-[#24127A]"
-    >
-      Dargaroad
-    </Link>
-    <Link
-      href="/pallavaram"
-      className="block px-4 py-2 text-[#2B158F] hover:bg-gray-100"
-    >
-      Pallavaram
-    </Link>
-    <Link
-      href="/cantonment"
-      className="block px-4 py-2 text-[#2B158F] hover:bg-gray-100"
-    >
-      Cantonment
-    </Link>
-  </div>
-</div>
-
+              {/* Mobile Hamburger - Always visible on mobile */}
+              <button
+                className="lg:hidden text-2xl sm:text-3xl focus:outline-none"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle Menu"
+              >
+                {mobileOpen ? "✕" : "☰"}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* ================= DESKTOP NAV ================= */}
       <nav className="hidden lg:block bg-white border-t border-b">
-        <div className="max-w-7xl mx-auto px-6">
-          <ul className="flex justify-center gap-16 text-sm font-medium">
+        <div className="max-w-7xl mx-auto px-4">
+          <ul className="flex justify-center gap-4 xl:gap-12 text-[13px] xl:text-sm font-medium">
             {navItems.map((item) => {
-              const isActive =
-                pathname === item.href ||
-                pathname.startsWith(item.href + "/");
-
+              const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
               return (
                 <li key={item.label} className="relative group">
                   <Link
                     href={item.href}
-                    className={`py-4 inline-block transition ${
-                      isActive
-                        ? "text-[#FF8700]"
-                        : "text-[#2B158F] hover:text-[#FF8700]"
+                    className={`py-5 inline-block transition-colors ${
+                      isActive ? "text-[#FF8700] border-b-2 border-[#FF8700]" : "text-[#2B158F] hover:text-[#FF8700]"
                     }`}
                   >
                     {item.label}
                   </Link>
 
-                  {/* DROPDOWN */}
                   {item.submenu && (
-                    <div className="absolute left-0 top-full min-w-[260px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-[9999]">
+                    <div className="absolute left-0 top-full min-w-[220px] bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] border-t-2 border-[#FF8700]">
                       <ul className="py-2">
-                        {item.submenu.map((sub) => {
-                          const subActive = pathname === sub.href;
-
-                          return (
-                            <li key={sub.label}>
-                              <Link
-                                href={sub.href}
-                                className={`block px-5 py-2 text-sm transition ${
-                                  subActive
-                                    ? "bg-[#2B158F] text-white"
-                                    : "text-[#2B158F] hover:bg-[#2B158F] hover:text-white"
-                                }`}
-                              >
-                                {sub.label}
-                              </Link>
-                            </li>
-                          );
-                        })}
+                        {item.submenu.map((sub) => (
+                          <li key={sub.label}>
+                            <Link
+                              href={sub.href}
+                              className="block px-5 py-3 text-[13px] text-[#2B158F] hover:bg-[#2B158F] hover:text-white transition"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   )}
@@ -203,90 +178,111 @@ export default function Header() {
       </nav>
 
       {/* ================= LOGO ================= */}
-      <div className="bg-white py-4 flex justify-center">
-        <Image
-          src="/dargaroad/dargaroad-logo.svg"
-          alt="Vels Vidyashram"
-          width={360}
-          height={100}
-        />
+      <div className="bg-white py-4 md:py-6 flex justify-center px-4">
+        <div className="w-[240px] sm:w-[300px] md:w-[360px]">
+          <Image
+            src="/dargaroad/dargaroad-logo.svg"
+            alt="Vels Vidyashram"
+            width={360}
+            height={100}
+            priority
+            className="w-full h-auto"
+          />
+        </div>
       </div>
 
-      {/* ================= MOBILE MENU ================= */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white shadow-md">
+      {/* ================= MOBILE DRAWER MENU ================= */}
+      <div
+        className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden z-[100] ${
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
+      
+      <div
+        className={`fixed top-0 left-0 w-[80%] sm:w-[350px] h-full bg-white shadow-2xl z-[101] transition-transform duration-300 lg:hidden overflow-y-auto ${
+          mobileOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="p-5 flex justify-between items-center border-b">
+          <span className="font-bold text-[#2B158F]">Menu</span>
+          <button onClick={() => setMobileOpen(false)} className="text-2xl">✕</button>
+        </div>
 
-          {/* OTHER CAMPUS */}
+        <div className="border-b">
           <button
             onClick={() => setCampusOpen(!campusOpen)}
-            className="w-full px-4 py-3 flex justify-between font-semibold text-[#2B158F]"
+            className="w-full px-5 py-4 flex justify-between items-center font-semibold text-[#2B158F] hover:bg-gray-50"
           >
             Other Campus
-            <span>{campusOpen ? "−" : "+"}</span>
+            <span className="text-xl">{campusOpen ? "−" : "+"}</span>
           </button>
-
           {campusOpen && (
-            <div className="px-6 pb-3 space-y-2 text-sm">
-              <Link href="/dargaroad">Dargaroad</Link>
-              <Link href="/pallavaram">Pallavaram</Link>
-              <Link href="/cantonment">Cantonment</Link>
+            <div className="bg-gray-50 px-8 py-2">
+              {["Dargaroad", "Pallavaram", "Cantonment"].map((c) => (
+                <Link key={c} href="#" className="block py-3 text-sm text-[#2B158F]" onClick={() => setMobileOpen(false)}>
+                  {c}
+                </Link>
+              ))}
             </div>
           )}
-
-          {/* NAV ITEMS */}
-          <ul className="px-4 py-4 space-y-3">
-            {navItems.map((item) => (
-              <MobileNavItem
-                key={item.label}
-                item={item}
-                pathname={pathname}
-                closeMenu={() => setMobileOpen(false)}
-              />
-            ))}
-          </ul>
         </div>
-      )}
+
+        <ul className="p-2">
+          {navItems.map((item) => (
+            <MobileNavItem
+              key={item.label}
+              item={item}
+              pathname={pathname}
+              closeMenu={() => setMobileOpen(false)}
+            />
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }
 
-/* ================= MOBILE ITEM ================= */
 function MobileNavItem({ item, pathname, closeMenu }) {
   const [open, setOpen] = useState(false);
-
-  const isActive =
-    pathname === item.href || pathname.startsWith(item.href + "/");
+  const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
 
   return (
-    <li className="border-b pb-2">
-      <div className="flex justify-between">
+    <li className="border-b border-gray-100 last:border-0">
+      <div className="flex items-center justify-between">
         <Link
           href={item.href}
           onClick={closeMenu}
-          className={isActive ? "text-[#FF8700]" : "text-[#2B158F]"}
+          className={`flex-1 px-4 py-4 font-medium transition ${
+            isActive ? "text-[#FF8700]" : "text-[#2B158F]"
+          }`}
         >
           {item.label}
         </Link>
 
         {item.submenu && (
-          <button onClick={() => setOpen(!open)}>
-            {open ? "−" : "+"}
+          <button
+            onClick={() => setOpen(!open)}
+            className="px-5 py-4 text-[#2B158F]"
+            aria-label="Toggle Submenu"
+          >
+            <span className={`inline-block transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
+              +
+            </span>
           </button>
         )}
       </div>
 
       {item.submenu && open && (
-        <ul className="ml-3 mt-2 text-sm space-y-1">
+        <ul className="bg-gray-50 py-2 border-t border-gray-100">
           {item.submenu.map((sub) => (
             <li key={sub.label}>
               <Link
                 href={sub.href}
                 onClick={closeMenu}
-                className={
-                  pathname === sub.href
-                    ? "text-[#FF8700]"
-                    : "text-[#2B158F]"
-                }
+                className={`block px-8 py-3 text-sm transition ${
+                  pathname === sub.href ? "text-[#FF8700] font-bold" : "text-gray-600"
+                }`}
               >
                 {sub.label}
               </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -68,18 +68,33 @@ const navItems = [
   { label: "Contact us", href: "/contact" },
 ];
 
+const campuses = [
+  { label: "Dargaroad", href: "/dargaroad" },
+  { label: "Pallavaram", href: "/pallavaram" },
+  { label: "Cantonment", href: "/cantonment" },
+];
+
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [campusOpen, setCampusOpen] = useState(false);
 
+  // Prevent background scroll when mobile menu is active
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [mobileOpen]);
+
   return (
-    <header className="w-full relative z-50 overflow-x-hidden">
+    <header className="w-full relative z-[100] bg-white">
       {/* ================= TOP BAR ================= */}
       <div className="bg-[#2B158F] text-white text-[10px] sm:text-xs md:text-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           
-          {/* LEFT - Hidden on mobile, shows contact info on Desktop */}
+          {/* LEFT - Desktop Contact (Hidden on mobile) */}
           <div className="hidden md:flex gap-6 items-center">
             <span className="flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/phone.png" className="w-3" alt="phone" />
@@ -91,10 +106,9 @@ export default function Header() {
             </span>
           </div>
 
-          {/* RIGHT - Adjusted for Mobile Responsiveness */}
+          {/* RIGHT - Responsive Header Links */}
           <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
-            {/* Annual Day Link - Now visible on mobile */}
-            <Link href="#" className="whitespace-nowrap hover:underline text-[10px] sm:text-xs md:text-sm">
+            <Link href="/thalambur/photo-gallery" className="whitespace-nowrap hover:underline text-[10px] sm:text-xs md:text-sm">
               Annual Day Photos 2025
             </Link>
 
@@ -103,32 +117,33 @@ export default function Header() {
                 href="#"
                 className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition text-[10px] sm:text-xs md:text-sm"
               >
-                Fees Payment
+                Online Fees Payment
               </Link>
 
-              {/* Other Campus - Desktop only */}
+              {/* FIXED DROPDOWN: Other Campus */}
               <div className="relative group hidden lg:block">
                 <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
                   Other Campus
                 </button>
-                <div className="absolute right-0 top-full w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] border-t-2 border-[#FF8700]">
-                  {["Dargaroad", "Pallavaram", "Cantonment"].map((campus) => (
-                    <Link
-                      key={campus}
-                      href={`/${campus.toLowerCase()}`}
-                      className="block px-4 py-3 text-[#2B158F] hover:bg-gray-50 border-b border-gray-100 last:border-0"
-                    >
-                      {campus}
-                    </Link>
-                  ))}
+                {/* Pointer events and visibility fixes */}
+                <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] pointer-events-none group-hover:pointer-events-auto">
+                  <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
+                    {campuses.map((campus) => (
+                      <Link
+                        key={campus.label}
+                        href={campus.href}
+                        className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"
+                      >
+                        {campus.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Mobile Hamburger - Always visible on mobile */}
               <button
                 className="lg:hidden text-2xl sm:text-3xl focus:outline-none"
                 onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label="Toggle Menu"
               >
                 {mobileOpen ? "✕" : "☰"}
               </button>
@@ -138,7 +153,7 @@ export default function Header() {
       </div>
 
       {/* ================= DESKTOP NAV ================= */}
-      <nav className="hidden lg:block bg-white border-t border-b">
+      <nav className="hidden lg:block bg-white border-b">
         <div className="max-w-7xl mx-auto px-4">
           <ul className="flex justify-center gap-4 xl:gap-12 text-[13px] xl:text-sm font-medium">
             {navItems.map((item) => {
@@ -155,8 +170,8 @@ export default function Header() {
                   </Link>
 
                   {item.submenu && (
-                    <div className="absolute left-0 top-full min-w-[220px] bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] border-t-2 border-[#FF8700]">
-                      <ul className="py-2">
+                    <div className="absolute left-0 top-full pt-1 min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] pointer-events-none group-hover:pointer-events-auto">
+                      <ul className="bg-white shadow-2xl border-t-2 border-[#FF8700] py-2">
                         {item.submenu.map((sub) => (
                           <li key={sub.label}>
                             <Link
@@ -178,7 +193,7 @@ export default function Header() {
       </nav>
 
       {/* ================= LOGO ================= */}
-      <div className="bg-white py-4 md:py-6 flex justify-center px-4">
+      <div className="bg-white flex justify-center px-4">
         <div className="w-[240px] sm:w-[300px] md:w-[360px]">
           <Image
             src="/dargaroad/dargaroad-logo.svg"
@@ -191,53 +206,65 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ================= MOBILE DRAWER MENU ================= */}
+      {/* ================= MOBILE DRAWER ================= */}
       <div
-        className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden z-[100] ${
+        className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden z-[110] ${
           mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setMobileOpen(false)}
       />
       
       <div
-        className={`fixed top-0 left-0 w-[80%] sm:w-[350px] h-full bg-white shadow-2xl z-[101] transition-transform duration-300 lg:hidden overflow-y-auto ${
+        className={`fixed top-0 left-0 w-[80%] sm:w-[350px] h-full bg-white shadow-2xl z-[120] transition-transform duration-300 lg:hidden flex flex-col ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="p-5 flex justify-between items-center border-b">
+        <div className="p-5 flex justify-between items-center border-b shrink-0">
           <span className="font-bold text-[#2B158F]">Menu</span>
           <button onClick={() => setMobileOpen(false)} className="text-2xl">✕</button>
         </div>
 
-        <div className="border-b">
-          <button
-            onClick={() => setCampusOpen(!campusOpen)}
-            className="w-full px-5 py-4 flex justify-between items-center font-semibold text-[#2B158F] hover:bg-gray-50"
-          >
-            Other Campus
-            <span className="text-xl">{campusOpen ? "−" : "+"}</span>
-          </button>
-          {campusOpen && (
-            <div className="bg-gray-50 px-8 py-2">
-              {["Dargaroad", "Pallavaram", "Cantonment"].map((c) => (
-                <Link key={c} href="#" className="block py-3 text-sm text-[#2B158F]" onClick={() => setMobileOpen(false)}>
-                  {c}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
+        <div className="overflow-y-auto flex-1">
+          <div className="border-b">
+            <button
+              onClick={() => setCampusOpen(!campusOpen)}
+              className="w-full px-5 py-4 flex justify-between items-center font-semibold text-[#2B158F] hover:bg-gray-50 transition"
+            >
+              Other Campus
+              <span className={`transition-transform duration-200 ${campusOpen ? "rotate-180" : ""}`}>
+                ▼
+              </span>
+            </button>
+            {campusOpen && (
+              <div className="bg-gray-50 border-t">
+                {campuses.map((c) => (
+                  <Link 
+                    key={c.label} 
+                    href={c.href} 
+                    className="block px-10 py-3 text-sm text-[#2B158F] hover:bg-gray-100" 
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setCampusOpen(false);
+                    }}
+                  >
+                    {c.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
-        <ul className="p-2">
-          {navItems.map((item) => (
-            <MobileNavItem
-              key={item.label}
-              item={item}
-              pathname={pathname}
-              closeMenu={() => setMobileOpen(false)}
-            />
-          ))}
-        </ul>
+          <ul className="p-2">
+            {navItems.map((item) => (
+              <MobileNavItem
+                key={item.label}
+                item={item}
+                pathname={pathname}
+                closeMenu={() => setMobileOpen(false)}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     </header>
   );
@@ -264,7 +291,6 @@ function MobileNavItem({ item, pathname, closeMenu }) {
           <button
             onClick={() => setOpen(!open)}
             className="px-5 py-4 text-[#2B158F]"
-            aria-label="Toggle Submenu"
           >
             <span className={`inline-block transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
               +
@@ -274,7 +300,7 @@ function MobileNavItem({ item, pathname, closeMenu }) {
       </div>
 
       {item.submenu && open && (
-        <ul className="bg-gray-50 py-2 border-t border-gray-100">
+        <ul className="bg-gray-50 py-2 border-t">
           {item.submenu.map((sub) => (
             <li key={sub.label}>
               <Link

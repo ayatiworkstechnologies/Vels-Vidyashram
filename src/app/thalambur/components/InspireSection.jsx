@@ -27,10 +27,12 @@ export default function InspireSection() {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef}
-      className="relative bg-white py-16 md:py-32 overflow-hidden"
-    >
+    <section
+  ref={sectionRef}
+  className="relative py-16 md:py-32 overflow-hidden
+             bg-[url('/thalambur/bg.png')]
+             bg-cover bg-center bg-no-repeat"
+>
       <div className="relative max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-center min-h-[500px]">
         
         {/* LEFT IMAGE - Slide in from left with fade and scale */}

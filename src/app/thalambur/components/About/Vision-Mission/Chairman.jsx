@@ -2,8 +2,18 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
+// CONFIGURATION FOR SPEEDS
+const SPEEDS = {
+  paragraph: 15, // Lower is faster
+  quote: 40,     // Slower for dramatic effect
+  pauseBetween: 500, // Pause after each paragraph
+};
+
 export default function Chairman() {
   const sectionRef = useRef(null);
+  const [started, setStarted] = useState(false);
+  const [typedText, setTypedText] = useState([]);
+  const [typedQuote, setTypedQuote] = useState("");
 
   const paragraphs = [
     "Education is the basis of all progress. It is for this very reason that we forayed into education, about 28 years ago. Over a decade and a half of experience has taught us that progress is possible only, if men and women are equally well-educated.",
@@ -15,14 +25,9 @@ export default function Chairman() {
     "We are confident that this school is the best place for your child. We welcome your active interest and involvement in the progress and activities of your child. We look forward to your continuous support.",
   ];
 
-  const quote =
-    "Sky is the limit. Together let us achieve more. My best wishes to all our students, staff and parents";
+  const quote = "Sky is the limit. Together let us achieve more. My best wishes to all our students, staff and parents";
 
-  const [typedText, setTypedText] = useState([]);
-  const [typedQuote, setTypedQuote] = useState("");
-  const [started, setStarted] = useState(false);
-
-  /* Start animation on scroll */
+  // Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -31,91 +36,73 @@ export default function Chairman() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
-
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  /* Typing logic */
+  // Typing Logic
   useEffect(() => {
     if (!started) return;
 
-    let pIndex = 0;
-    let cIndex = 0;
-    let current = "";
-    let typingQuote = false;
-    let qIndex = 0;
+    let pIdx = 0;
+    let charIdx = 0;
+    let quoteCharIdx = 0;
 
-    const interval = setInterval(() => {
-      // PARAGRAPH TYPING (SLOW)
-      if (!typingQuote) {
-        if (pIndex >= paragraphs.length) {
-          // pause before quote
-          typingQuote = true;
-          return;
+    const typeChar = () => {
+      // 1. Handle Paragraphs
+      if (pIdx < paragraphs.length) {
+        const currentPara = paragraphs[pIdx];
+        
+        if (charIdx < currentPara.length) {
+          setTypedText((prev) => {
+            const newText = [...prev];
+            newText[pIdx] = currentPara.slice(0, charIdx + 1);
+            return newText;
+          });
+          charIdx++;
+          setTimeout(typeChar, SPEEDS.paragraph);
+        } else {
+          // Finished a paragraph, move to next after a small pause
+          pIdx++;
+          charIdx = 0;
+          setTimeout(typeChar, SPEEDS.pauseBetween);
         }
-
-        current += paragraphs[pIndex][cIndex];
-        cIndex++;
-
-        setTypedText((prev) => {
-          const copy = [...prev];
-          copy[pIndex] = current;
-          return copy;
-        });
-
-        if (cIndex === paragraphs[pIndex].length) {
-          pIndex++;
-          cIndex = 0;
-          current = "";
-        }
+      } 
+      // 2. Handle Quote
+      else if (quoteCharIdx < quote.length) {
+        setTypedQuote(quote.slice(0, quoteCharIdx + 1));
+        quoteCharIdx++;
+        setTimeout(typeChar, SPEEDS.quote);
       }
+    };
 
-      // QUOTE TYPING (SLOWER & DRAMATIC)
-      else {
-        setTypedQuote((prev) => prev + quote[qIndex]);
-        qIndex++;
-
-        if (qIndex === quote.length) {
-          clearInterval(interval);
-        }
-      }
-    }, typingQuote ? 45 : 35); // 👈 KEY FIX
-
-    return () => clearInterval(interval);
+    typeChar();
   }, [started]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white"
-    >
+    <section ref={sectionRef} className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 text-center">
           Education is an investment…
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT TEXT */}
-          <div className="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed min-h-[400px]">
             {paragraphs.map((_, index) => (
-              <p key={index}>
+              <p key={index} className="relative">
                 {typedText[index]}
-                {typedText[index] &&
-                  typedText[index].length <
-                    paragraphs[index].length && (
-                    <span className="inline-block w-[2px] h-5 bg-gray-500 ml-1 animate-pulse" />
-                  )}
+                {/* Cursor logic: only show cursor on the paragraph currently being typed */}
+                {typedText[index] !== undefined && typedText[index].length < paragraphs[index].length && (
+                  <span className="inline-block w-[2px] h-5 bg-blue-600 ml-1 animate-pulse" />
+                )}
               </p>
             ))}
 
-            {/* QUOTE */}
             {typedQuote && (
-              <div className="mt-14 text-center">
-                <p className="text-2xl md:text-3xl font-bold text-[#2b1b5a] leading-snug">
+              <div className="mt-14 p-6 bg-white rounded-xl shadow-sm border-l-4 border-[#2b1b5a]">
+                <p className="text-2xl md:text-3xl font-bold text-[#2b1b5a] italic leading-snug">
                   “{typedQuote}”
                   {typedQuote.length < quote.length && (
                     <span className="inline-block w-[3px] h-6 bg-[#2b1b5a] ml-1 animate-pulse" />
@@ -125,13 +112,13 @@ export default function Chairman() {
             )}
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-[400px] lg:h-[600px] overflow-hidden ">
             <Image
-              src="/thalambur/education-image.jpg"
+              src="/thalambur/education.jpg"
               alt="Education at Vels Vidyashram"
               fill
-              className="object-cover"
+              className=""
+              priority
             />
           </div>
         </div>

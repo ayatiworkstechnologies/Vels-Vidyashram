@@ -90,7 +90,7 @@ export default function HeroSection() {
             aboutVisible ? "opacity-100 scale-100" : "opacity-0 scale-110"
           }`}
           style={{
-            backgroundImage: "url('/thalambur/about-bg.png')",
+            backgroundImage: "url('/thalambur/bg-2.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-white/40 lg:bg-transparent" />
@@ -196,13 +196,13 @@ export default function HeroSection() {
                   : "opacity-0 translate-x-10 scale-95"
               }`}
             >
-              <div className="rounded-2xl overflow-hidden shadow-md aspect-square lg:aspect-auto hover:scale-105 transition-transform duration-500">
+              <div className=" overflow-hidden aspect-square lg:aspect-auto hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/thalambur/chairman.jpg"
+                  src="/thalambur/founder.webp"
                   alt="Students studying"
                   width={400}
                   height={400}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
                 />
               </div>
             </div>

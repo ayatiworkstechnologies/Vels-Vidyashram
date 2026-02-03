@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-/* ================= NAV ITEMS ================= */
+/* ================= DATA CONFIGURATION ================= */
 const navItems = [
   { label: "Home", href: "/thalambur" },
   {
@@ -74,6 +74,7 @@ const campuses = [
   { label: "Cantonment", href: "/cantonment" },
 ];
 
+/* ================= MAIN HEADER COMPONENT ================= */
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -94,7 +95,7 @@ export default function Header() {
       <div className="bg-[#2B158F] text-white text-[10px] sm:text-xs md:text-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           
-          {/* LEFT - Desktop Contact (Hidden on mobile) */}
+          {/* LEFT - Desktop Contact */}
           <div className="hidden md:flex gap-6 items-center">
             <span className="flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/phone.png" className="w-3" alt="phone" />
@@ -108,24 +109,23 @@ export default function Header() {
 
           {/* RIGHT - Responsive Header Links */}
           <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
-            <Link href="/thalambur/photo-gallery" className="whitespace-nowrap hover:underline text-[10px] sm:text-xs md:text-sm">
+            <Link href="/thalambur/photo-gallery" className="whitespace-nowrap hover:underline">
               Annual Day Photos 2025
             </Link>
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link
                 href="#"
-                className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition text-[10px] sm:text-xs md:text-sm"
+                className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition"
               >
                 Online Fees Payment
               </Link>
 
-              {/* FIXED DROPDOWN: Other Campus */}
+              {/* DESKTOP DROPDOWN: Other Campus */}
               <div className="relative group hidden lg:block">
                 <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
                   Other Campus
                 </button>
-                {/* Pointer events and visibility fixes */}
                 <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] pointer-events-none group-hover:pointer-events-auto">
                   <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
                     {campuses.map((campus) => (
@@ -155,15 +155,21 @@ export default function Header() {
       {/* ================= DESKTOP NAV ================= */}
       <nav className="hidden lg:block bg-white border-b">
         <div className="max-w-7xl mx-auto px-4">
-          <ul className="flex justify-center gap-4 xl:gap-12 text-[13px] xl:text-sm font-medium">
+          <ul className="flex justify-center gap-4 xl:gap-10 text-[13px] xl:text-sm font-medium">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+              // HIGHLIGHT LOGIC: Check parent and children
+              const isParentActive = pathname === item.href;
+              const isSubActive = item.submenu?.some((sub) => pathname === sub.href);
+              const isActive = isParentActive || isSubActive;
+
               return (
                 <li key={item.label} className="relative group">
                   <Link
                     href={item.href}
-                    className={`py-5 inline-block transition-colors ${
-                      isActive ? "text-[#FF8700] border-b-2 border-[#FF8700]" : "text-[#2B158F] hover:text-[#FF8700]"
+                    className={`py-5 inline-block transition-colors border-b-2 ${
+                      isActive 
+                        ? "text-[#FF8700] border-[#FF8700]" 
+                        : "text-[#2B158F] border-transparent hover:text-[#FF8700]"
                     }`}
                   >
                     {item.label}
@@ -176,7 +182,11 @@ export default function Header() {
                           <li key={sub.label}>
                             <Link
                               href={sub.href}
-                              className="block px-5 py-3 text-[13px] text-[#2B158F] hover:bg-[#2B158F] hover:text-white transition"
+                              className={`block px-5 py-3 transition ${
+                                pathname === sub.href 
+                                  ? "bg-gray-50 text-[#FF8700] font-bold" 
+                                  : "text-[#2B158F] hover:bg-[#2B158F] hover:text-white"
+                              }`}
                             >
                               {sub.label}
                             </Link>
@@ -193,7 +203,7 @@ export default function Header() {
       </nav>
 
       {/* ================= LOGO ================= */}
-      <div className="bg-white flex justify-center px-4">
+      <div className="bg-white flex justify-center py-4 px-4">
         <div className="w-[240px] sm:w-[300px] md:w-[360px]">
           <Image
             src="/dargaroad/dargaroad-logo.svg"
@@ -225,23 +235,24 @@ export default function Header() {
         </div>
 
         <div className="overflow-y-auto flex-1">
-          <div className="border-b">
+          {/* MOBILE OTHER CAMPUS DROPDOWN */}
+          <div className="border-b bg-gray-50/50">
             <button
               onClick={() => setCampusOpen(!campusOpen)}
-              className="w-full px-5 py-4 flex justify-between items-center font-semibold text-[#2B158F] hover:bg-gray-50 transition"
+              className="w-full px-5 py-4 flex justify-between items-center font-bold text-[#2B158F] hover:bg-gray-100 transition"
             >
               Other Campus
-              <span className={`transition-transform duration-200 ${campusOpen ? "rotate-180" : ""}`}>
+              <span className={`transition-transform duration-200 text-xs ${campusOpen ? "rotate-180" : ""}`}>
                 ▼
               </span>
             </button>
             {campusOpen && (
-              <div className="bg-gray-50 border-t">
+              <div className="bg-white border-t border-gray-100">
                 {campuses.map((c) => (
                   <Link 
                     key={c.label} 
                     href={c.href} 
-                    className="block px-10 py-3 text-sm text-[#2B158F] hover:bg-gray-100" 
+                    className="block px-10 py-3 text-sm text-[#2B158F] border-b border-gray-50 last:border-0" 
                     onClick={() => {
                       setMobileOpen(false);
                       setCampusOpen(false);
@@ -270,9 +281,15 @@ export default function Header() {
   );
 }
 
+/* ================= MOBILE NAV ITEM SUB-COMPONENT ================= */
 function MobileNavItem({ item, pathname, closeMenu }) {
-  const [open, setOpen] = useState(false);
-  const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+  // HIGHLIGHT LOGIC: Check parent and children
+  const isParentActive = pathname === item.href;
+  const isSubActive = item.submenu?.some((sub) => pathname === sub.href);
+  const isActive = isParentActive || isSubActive;
+
+  // Auto-expand the accordion if an item inside is active
+  const [open, setOpen] = useState(isActive);
 
   return (
     <li className="border-b border-gray-100 last:border-0">
@@ -290,9 +307,9 @@ function MobileNavItem({ item, pathname, closeMenu }) {
         {item.submenu && (
           <button
             onClick={() => setOpen(!open)}
-            className="px-5 py-4 text-[#2B158F]"
+            className={`px-5 py-4 transition-colors ${open ? "text-[#FF8700]" : "text-[#2B158F]"}`}
           >
-            <span className={`inline-block transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
+            <span className={`inline-block transition-transform duration-200 font-bold ${open ? "rotate-45" : ""}`}>
               +
             </span>
           </button>
@@ -306,8 +323,10 @@ function MobileNavItem({ item, pathname, closeMenu }) {
               <Link
                 href={sub.href}
                 onClick={closeMenu}
-                className={`block px-8 py-3 text-sm transition ${
-                  pathname === sub.href ? "text-[#FF8700] font-bold" : "text-gray-600"
+                className={`block px-8 py-3 text-sm transition-all ${
+                  pathname === sub.href 
+                    ? "text-[#FF8700] font-bold border-l-4 border-[#FF8700] bg-white" 
+                    : "text-gray-600 hover:text-[#2B158F]"
                 }`}
               >
                 {sub.label}

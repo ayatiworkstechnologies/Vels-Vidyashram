@@ -64,7 +64,7 @@ export default function SchoolInfoPage() {
               </h3>
             </div>
             
-            <div className="flex items-center text-sm font-medium text-orange-500 group-hover:text-orange-600">
+            <div className="flex items-center text-sm font-medium text-orange-500 group-hover:text-orange-600 cursor-pointer">
               View Document
               <svg 
                 className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" 

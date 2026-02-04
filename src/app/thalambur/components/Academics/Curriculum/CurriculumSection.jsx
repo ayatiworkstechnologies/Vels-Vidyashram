@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState , useRef , useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ACADEMIC_LEVELS = [
@@ -85,6 +85,20 @@ const ACADEMIC_LEVELS = [
 
 export default function AcademicStructure() {
   const [activeTab, setActiveTab] = useState(ACADEMIC_LEVELS[0]);
+  
+  // This ref will target the top of the content area
+  const contentTopRef = useRef(null);
+
+  useEffect(() => {
+    // Only scroll if we are on a smaller screen (mobile) 
+    // or if the user has scrolled past the header
+    if (contentTopRef.current) {
+      contentTopRef.current.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start" 
+      });
+    }
+  }, [activeTab.id]);
 
   return (
     <div className="bg-[#fafafa] min-h-screen py-20 px-6 lg:px-24">
@@ -95,6 +109,9 @@ export default function AcademicStructure() {
             We are the best CBSE school in Chennai, providing an excellent learning structure to prepare students for the future through a joyous, experience-led curriculum.
           </p>
         </header>
+
+        {/* This anchor ensures the scroll lands exactly where the layout starts */}
+        <div ref={contentTopRef} className="scroll-mt-24" />
 
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           <aside className="w-full lg:w-[320px] lg:sticky lg:top-24">
@@ -139,11 +156,6 @@ export default function AcademicStructure() {
                   </p>
                 </div>
 
-                {/* Special Visualization for Middle Level Pyramid */}
-                {activeTab.id === "middle" && (
-                    <div className="flex justify-center"></div>
-                )}
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   {activeTab.highlights?.map((item, idx) => (
                     <div key={idx} className="space-y-2">
@@ -157,14 +169,14 @@ export default function AcademicStructure() {
                 </div>
 
                 {activeTab.images && (
-                  <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 mt-8">
+                  <div className="grid grid-cols-1 gap-4 mt-8">
                     {activeTab.images.map((img, i) => (
                       <motion.div 
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{ scale: 1.01 }}
                         key={i} 
-                        className=" overflow-hidden"
+                        className="rounded-xl overflow-hidden shadow-md"
                       >
-                        <img src={img} alt="School environment" className="w-full h-full" />
+                        <img src={img} alt="Academic activity" className="w-full h-auto " />
                       </motion.div>
                     ))}
                   </div>

@@ -83,46 +83,49 @@ export default function Chairman() {
 
   return (
     <section ref={sectionRef} className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 text-center">
-          Education is an investment…
-        </h2>
+  <div className="container mx-auto px-4 max-w-6xl">
+    <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 text-center">
+      Education is an investment…
+    </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed min-h-[400px]">
-            {paragraphs.map((_, index) => (
-              <p key={index} className="relative">
-                {typedText[index]}
-                {/* Cursor logic: only show cursor on the paragraph currently being typed */}
-                {typedText[index] !== undefined && typedText[index].length < paragraphs[index].length && (
-                  <span className="inline-block w-[2px] h-5 bg-blue-600 ml-1 animate-pulse" />
-                )}
-              </p>
-            ))}
-
-            {typedQuote && (
-              <div className="mt-14 p-6 bg-white rounded-xl shadow-sm border-l-4 border-[#2b1b5a]">
-                <p className="text-2xl md:text-3xl font-bold text-[#2b1b5a] italic leading-snug">
-                  “{typedQuote}”
-                  {typedQuote.length < quote.length && (
-                    <span className="inline-block w-[3px] h-6 bg-[#2b1b5a] ml-1 animate-pulse" />
-                  )}
-                </p>
-              </div>
+    {/* Changed to grid-cols-10 for exact 70/30 split on desktop */}
+    <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-start">
+      
+      {/* Text Container: Spans 7 out of 10 columns (70%) */}
+      <div className="lg:col-span-7 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed min-h-[400px]">
+        {paragraphs.map((_, index) => (
+          <p key={index} className="relative">
+            {typedText[index]}
+            {typedText[index] !== undefined && typedText[index].length < paragraphs[index].length && (
+              <span className="inline-block w-[2px] h-5 bg-blue-600 ml-1 animate-pulse" />
             )}
-          </div>
+          </p>
+        ))}
 
-          <div className="relative h-[400px] lg:h-[600px] overflow-hidden ">
-            <Image
-              src="/thalambur/education.jpg"
-              alt="Education at Vels Vidyashram"
-              fill
-              className=""
-              priority
-            />
+        {typedQuote && (
+          <div className="mt-14 p-6 bg-white rounded-xl shadow-sm border-l-4 border-[#2b1b5a]">
+            <p className="text-2xl md:text-3xl font-bold text-[#2b1b5a] italic leading-snug">
+              “{typedQuote}”
+              {typedQuote.length < quote.length && (
+                <span className="inline-block w-[3px] h-6 bg-[#2b1b5a] ml-1 animate-pulse" />
+              )}
+            </p>
           </div>
-        </div>
+        )}
       </div>
-    </section>
+
+      {/* Image Container: Spans 3 out of 10 columns (30%) */}
+      <div className="lg:col-span-3 relative h-[400px] lg:h-[500px] overflow-hidden rounded-2xl">
+        <Image
+          src="/thalambur/education.jpg"
+          alt="Education at Vels Vidyashram"
+          fill
+          className="object-cover" // Added object-cover to ensure the image fills the 30% width nicely
+          priority
+        />
+      </div>
+    </div>
+  </div>
+</section>
   );
 }

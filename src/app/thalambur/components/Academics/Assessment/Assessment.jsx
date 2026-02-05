@@ -5,7 +5,7 @@ export default function AssessmentStructure() {
   return (
     <>
       {/* Class VI to VIII */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-8 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4">
           {/* Title */}
           <motion.h2
@@ -32,7 +32,7 @@ export default function AssessmentStructure() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="grid grid-cols-4 bg-gradient-to-r from-slate-800 to-slate-700 font-semibold text-white text-sm"
+                className="grid grid-cols-4 bg-primary font-semibold text-white text-sm"
               >
                 <div className="p-4 border-r border-slate-600">Subjects</div>
                 <div className="p-4 border-r border-slate-600">
@@ -78,7 +78,7 @@ export default function AssessmentStructure() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: 0.5 + i * 0.1 }}
-                        whileHover={{ x: 5, color: '#3b82f6' }}
+                        whileHover={{ x: 5, color: '#113164' }}
                       >
                         {subject}
                       </motion.p>
@@ -96,7 +96,7 @@ export default function AssessmentStructure() {
                   className="p-4 border-r space-y-4"
                 >
                   <div>
-                    <p className="font-semibold mb-1 text-blue-700">PA – 20 Marks</p>
+                    <p className="font-semibold mb-1 text-primary">PA – 20 Marks</p>
                     <ul className="list-disc ml-5 space-y-1">
                       <li>Periodic Test – 10 Marks (syllabus covered till announcement of test dates)</li>
                       <li>Notebook Submission – 5 Marks (term-end)</li>
@@ -105,7 +105,7 @@ export default function AssessmentStructure() {
                   </div>
 
                   <div>
-                    <p className="font-semibold mb-1 text-blue-700">Half Yearly Examination – 80 Marks</p>
+                    <p className="font-semibold mb-1 text-primary">Half Yearly Examination – 80 Marks</p>
                     <p>
                       Written examination for 80 marks with syllabus covered till the announcement of Half Yearly
                       examination dates by the school.
@@ -123,7 +123,7 @@ export default function AssessmentStructure() {
                   className="p-4 border-r space-y-4"
                 >
                   <div>
-                    <p className="font-semibold mb-1 text-blue-700">PA – 20 Marks</p>
+                    <p className="font-semibold mb-1 text-primary">PA – 20 Marks</p>
                     <ul className="list-disc ml-5 space-y-1">
                       <li>Periodic Test – 10 Marks (syllabus covered till announcement of test dates)</li>
                       <li>Notebook Submission – 5 Marks (term-end)</li>
@@ -132,7 +132,7 @@ export default function AssessmentStructure() {
                   </div>
 
                   <div>
-                    <p className="font-semibold mb-1 text-blue-700">Term End Examination – 80 Marks</p>
+                    <p className="font-semibold mb-1 text-primary">Term End Examination – 80 Marks</p>
                     <p>Written examination for 80 marks with syllabus prescribed for Term II.</p>
                   </div>
                 </motion.div>
@@ -146,7 +146,7 @@ export default function AssessmentStructure() {
                   whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
                   className="p-4 space-y-2"
                 >
-                  <p className="font-semibold text-blue-700">Written Examination – 80 Marks</p>
+                  <p className="font-semibold text-primary">Written Examination – 80 Marks</p>
                   <p className="font-semibold mt-2">Syllabus Coverage:</p>
                   <ul className="list-disc ml-5 space-y-1">
                     <li>
@@ -164,7 +164,7 @@ export default function AssessmentStructure() {
       </section>
 
       {/* Class IX & X */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-8 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           {/* Title */}
           <motion.div
@@ -192,7 +192,7 @@ export default function AssessmentStructure() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="grid grid-cols-6 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-sm rounded-t-xl"
+                className="grid grid-cols-6 bg-primary text-white text-sm rounded-t-xl"
               >
                 <div className="p-4 border-r border-slate-700">Subjects</div>
 
@@ -344,7 +344,7 @@ export default function AssessmentStructure() {
       </section>
 
       {/* Class XI & XII */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-12 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4">
           {/* Title */}
           <motion.div
@@ -384,7 +384,7 @@ export default function AssessmentStructure() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="grid grid-cols-6 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-sm rounded-t-xl"
+                  className="grid grid-cols-6 bg-primary text-white text-sm rounded-t-xl"
                 >
                   <div className="p-4 col-span-1 font-semibold">Group</div>
                   <div className="p-4 col-span-5 font-semibold">Subjects</div>
@@ -427,8 +427,8 @@ export default function AssessmentStructure() {
                   >
                     <div className="p-4 font-semibold bg-slate-50">
                       <motion.div
-                        whileHover={{ scale: 1.2, color: '#3b82f6' }}
-                        className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+                        whileHover={{ scale: 1.2, color: 'white' }}
+                        className="w-10 h-10 bg-primary  rounded-full flex items-center justify-center text-white font-bold"
                       >
                         {item.group}
                       </motion.div>
@@ -466,7 +466,7 @@ export default function AssessmentStructure() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="grid grid-cols-2 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-sm rounded-t-xl"
+                  className="grid grid-cols-2 bg-primary text-white text-sm rounded-t-xl"
                 >
                   <div className="p-4 font-semibold border-r border-slate-700">Class XI</div>
                   <div className="p-4 font-semibold">Class XII</div>
@@ -497,7 +497,7 @@ export default function AssessmentStructure() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: 0.5 + i * 0.1 }}
-                        whileHover={{ x: 5, color: '#3b82f6' }}
+                        whileHover={{ x: 5, color: 'black' }}
                       >
                         {item}
                       </motion.p>
@@ -529,7 +529,7 @@ export default function AssessmentStructure() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: 0.6 + i * 0.1 }}
-                        whileHover={{ x: 5, color: '#3b82f6' }}
+                        whileHover={{ x: 5, color: 'black' }}
                       >
                         {item}
                       </motion.p>
@@ -545,7 +545,7 @@ export default function AssessmentStructure() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm text-slate-600 mt-6 bg-amber-50 p-4 rounded-lg border border-amber-200"
+              className="text-sm text-white mt-6 bg-secondary p-4 rounded-lg border border-white"
             >
               <strong>Note:</strong> Promotion to Class X & XII will be based on performance throughout the academic year.
             </motion.p>

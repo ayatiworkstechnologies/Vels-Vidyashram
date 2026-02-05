@@ -24,7 +24,7 @@ const navItems = [
       { label: "Curriculum", href: "/thalambur/curriculum" },
       { label: "Scheme of Studies", href: "/thalambur/scheme-of-study" },
       { label: "Assessment Structure", href: "/thalambur/assessment-structure" },
-      { label: "Circular", href: "/thalambur/circular-2025-2026" },
+      { label: "Circular", href: "/thalambur/circular" },
       { label: "Messages", href: "/thalambur/general-messages" },
     ],
   },

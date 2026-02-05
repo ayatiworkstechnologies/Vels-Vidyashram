@@ -249,7 +249,7 @@ const TeachersContent = () => (
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: i * 0.1 }}
           whileHover={{ x: 5, scale: 1.02 }}
-          className="flex gap-3 items-start p-4 bg-white shadow-sm border rounded-lg"
+          className="flex gap-3 items-start p-4 bg-white shadow-sm border border-slate-200 rounded-lg"
         >
           <div className="" />
           <p className="text-slate-700 font-medium">{text}</p>

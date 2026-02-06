@@ -207,7 +207,7 @@ export default function Header() {
       <div className="bg-white flex justify-center py-4 px-4">
         <div className="w-[240px] sm:w-[300px] md:w-[360px]">
           <Image
-            src="/dargaroad/dargaroad-logo.svg"
+            src="/thalambur/logo-th.png"
             alt="Vels Vidyashram"
             width={360}
             height={100}

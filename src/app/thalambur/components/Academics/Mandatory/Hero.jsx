@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-export default function HeroSection() {
+export default function Hero() {
   const [aboutVisible, setAboutVisible] = useState(false);
   const aboutRef = useRef(null);
   const textContainerRef = useRef(null);
@@ -76,22 +76,11 @@ export default function HeroSection() {
           <li className="text-gray-400">/</li>
 
           {/* Current Page */}
-          <li className="text-black font-medium capitalize">About Us</li>
+          <li className="text-black font-medium capitalize">Mandatory Disclosure</li>
         </ol>
       </div>
 
-      
-
-      {/* Hide scrollbar styles */}
-      <style jsx global>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+  
 
    
     </>

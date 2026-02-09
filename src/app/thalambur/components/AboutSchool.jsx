@@ -114,16 +114,16 @@ export default function AboutSchool() {
       </section>
 
       {/* FOUNDER SECTION */}
-      <section ref={founderRef} className="w-full py-8 md:py-16">
+      {/* <section ref={founderRef} className="w-full py-8 md:py-16">
         <div className="max-w-5xl mx-auto px-4 md:px-6">
-          {/* CARD */}
+          
           <div className={`relative rounded-3xl overflow-hidden shadow-2xl min-h-[500px] md:h-[420px] flex items-center transition-all duration-1000 ${
             founderVisible 
               ? 'opacity-100 scale-100' 
               : 'opacity-0 scale-95'
           }`}>
 
-            {/* BACKGROUND IMAGE */}
+            
             <div
               className={`absolute inset-0 bg-cover bg-right md:bg-center transition-all duration-1000 delay-200 ${
                 founderVisible 
@@ -135,13 +135,13 @@ export default function AboutSchool() {
               }}
             />
 
-            {/* DARK GRADIENT OVERLAY */}
+          
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent" />
 
-            {/* CONTENT */}
+            
             <div className="relative z-10 flex w-full h-full items-end md:items-center p-6 md:px-12">
 
-              {/* TEXT BOX */}
+              
               <div className="max-w-xl text-white">
                 <p className={`text-xs md:text-sm leading-relaxed font-secondary text-white/90 mb-6 transition-all duration-1000 delay-500 ${
                   founderVisible 
@@ -170,7 +170,7 @@ export default function AboutSchool() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

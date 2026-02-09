@@ -43,7 +43,7 @@ export default function InspireSection() {
               : 'opacity-0 -translate-x-32 scale-90'
           }`}
         >
-          <div className="relative w-[260px] h-[220px] xl:w-[300px] xl:h-[260px] rounded-[32px] overflow-hidden shadow-2xl rotate-[-3deg] hover:rotate-[-1deg] hover:scale-105 transition-transform duration-500">
+          <div className="relative w-[260px] h-[220px] xl:w-[350px] xl:h-[300px] rounded-[32px] overflow-hidden shadow-2xl rotate-[-3deg] hover:rotate-[-1deg] hover:scale-105 transition-transform duration-500">
             <Image
               src="/thalambur/in-1.png"
               alt="Students learning"
@@ -119,7 +119,7 @@ export default function InspireSection() {
               : 'opacity-0 translate-x-32 scale-90'
           }`}
         >
-          <div className="relative w-[260px] h-[220px] xl:w-[300px] xl:h-[260px] rounded-[32px] overflow-hidden shadow-2xl rotate-[3deg] hover:rotate-[1deg] hover:scale-105 transition-transform duration-500">
+          <div className="relative w-[260px] h-[220px] xl:w-[350px] xl:h-[300px] rounded-[32px] overflow-hidden shadow-2xl rotate-[3deg] hover:rotate-[1deg] hover:scale-105 transition-transform duration-500">
             <Image
               src="/thalambur/in-2.png"
               alt="Students classroom"

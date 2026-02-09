@@ -10,7 +10,7 @@ const navItems = [
   { label: "Home", href: "/thalambur" },
   {
     label: "About Us",
-    href: "/about",
+    href: "#",
     submenu: [
       { label: "Vision And Mission", href: "/thalambur/vision-mission" },
       { label: "Our Group", href: "/thalambur/our-group" },
@@ -19,7 +19,7 @@ const navItems = [
   },
   {
     label: "Academics",
-    href: "/academics",
+    href: "#",
     submenu: [
       { label: "Curriculum", href: "/thalambur/curriculum" },
       { label: "Scheme of Studies", href: "/thalambur/scheme-of-study" },
@@ -31,11 +31,12 @@ const navItems = [
   { label: "Beyond Academics", href: "/thalambur/beyond-academics" },
   {
     label: "Admissions",
-    href: "/admissions",
+    href: "#",
     submenu: [
-      { label: "Procedure", href: "/admissions/procedure" },
-      { label: "Enquiry", href: "/admissions/enquiry" },
-      { label: "Transport", href: "/admissions/transport" },
+      { label: "Procedure", href: "/thalambur/procedure" },
+      { label: "Enquiry", href: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" },
+      {label: "Online Fee Payment", href: "https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"},
+      { label: "Transport", href: "/thalambur/transport" },
     ],
   },
   {

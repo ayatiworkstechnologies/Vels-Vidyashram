@@ -102,7 +102,8 @@ const galleryData = {
 
   ],
 
-  "Club Activities": [
+  
+    "Club Activities": [
     {
       title: "Literary Club",
       description: "The objectives are to enhance the following skills: Oratory, Writing, Debating, Reading.",
@@ -239,6 +240,18 @@ export default function Gallery() {
     return () => clearTimeout(timer);
   }, [activeTab]);
 
+  // SOLUTION: Lock scroll to prevent Header from interfering when modal is open
+  useEffect(() => {
+    if (modal.isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [modal.isOpen]);
+
   const tabs = ["Activities", "Special Features", "Club Activities", "STEP Activity"];
   const openModal = (images, index) => setModal({ isOpen: true, images, index });
 
@@ -260,12 +273,12 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* Gallery Sections */}
+      {/* Gallery Sections (Fixes Activities, Club Activities, and Special Features) */}
       <div className={`max-w-6xl mx-auto space-y-24 px-4 transition-all duration-500 ${animate ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`}>
-        {galleryData[activeTab].map((section, idx) => (
+        {/* The optional chaining (?.) handles empty tabs like Club Activities safely */}
+        {galleryData[activeTab]?.map((section, idx) => (
           <div key={idx} className={`flex flex-col md:flex-row gap-12 items-center ${section.reverse ? 'md:flex-row-reverse' : ''}`}>
             
-            {/* Text Content */}
             <div className="w-full md:w-1/3">
               <h2 className="text-3xl font-bold text-primary mb-4">{section.title}</h2>
               <div className="text-gray-600 leading-relaxed text-sm md:text-base">
@@ -273,37 +286,48 @@ export default function Gallery() {
               </div>
             </div>
 
-            {/* Photo Grid - Exactly matching the image provided */}
+            {/* Photo Grid - Consistent for all categories */}
             <div className="w-full md:w-2/3 grid grid-cols-4 grid-rows-3 gap-3 h-[500px]">
-              {/* Image 1: Large Vertical/Square Left */}
               <div className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden rounded-xl shadow-md" onClick={() => openModal(section.images, 0)}>
                 <Image src={section.images[0]} alt="img" fill className="object-cover group-hover:scale-110 transition duration-700" />
               </div>
-              {/* Image 2: Wide Top Right */}
               <div className="col-span-2 row-span-1 relative group cursor-pointer overflow-hidden rounded-xl shadow-md" onClick={() => openModal(section.images, 1)}>
                 <Image src={section.images[1]} alt="img" fill className="object-cover group-hover:scale-110 transition duration-700" />
               </div>
-              {/* Image 3: Wide Middle Right */}
               <div className="col-span-2 row-span-1 relative group cursor-pointer overflow-hidden rounded-xl shadow-md" onClick={() => openModal(section.images, 2)}>
                 <Image src={section.images[2]} alt="img" fill className="object-cover group-hover:scale-110 transition duration-700" />
               </div>
-              {/* Image 4: Wide Bottom Left */}
               <div className="col-span-2 row-span-1 relative group cursor-pointer overflow-hidden rounded-xl shadow-md" onClick={() => openModal(section.images, 3)}>
                 <Image src={section.images[3]} alt="img" fill className="object-cover group-hover:scale-110 transition duration-700" />
               </div>
-              {/* Image 5: Wide Bottom Right */}
               <div className="col-span-2 row-span-1 relative group cursor-pointer overflow-hidden rounded-xl shadow-md" onClick={() => openModal(section.images, 4)}>
                 <Image src={section.images[4]} alt="img" fill className="object-cover group-hover:scale-110 transition duration-700" />
               </div>
             </div>
           </div>
         ))}
+        
+        {/* Fallback if a tab is empty */}
+        {(!galleryData[activeTab] || galleryData[activeTab].length === 0) && (
+          <div className="text-center py-20 text-gray-400">
+            No content available for {activeTab} yet.
+          </div>
+        )}
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal - GLOBAL FIX FOR ALL TABS */}
       {modal.isOpen && (
-        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm">
-          <button onClick={() => setModal({ ...modal, isOpen: false })} className="absolute top-5 right-5 text-white text-4xl hover:text-primary transition-colors"><FaTimes /></button>
+        <div 
+          className="fixed inset-0 flex items-center justify-center p-4 backdrop-blur-sm bg-black/95" 
+          style={{ zIndex: 9999 }} // Ensures it sits above the Header
+        >
+          <button 
+            onClick={() => setModal({ ...modal, isOpen: false })} 
+            className="absolute top-5 right-5 text-white text-4xl hover:text-primary transition-colors z-[10000]"
+          >
+            <FaTimes />
+          </button>
+          
           <div className="relative w-full max-w-5xl h-[80vh]">
              <Image src={modal.images[modal.index]} alt="Zoomed" fill className="object-contain" />
              <button className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/20 p-4 rounded-full hover:bg-white/40 transition" onClick={() => setModal({...modal, index: (modal.index - 1 + modal.images.length) % modal.images.length})}><FaArrowLeft /></button>

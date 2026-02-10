@@ -61,13 +61,12 @@ const navItems = [
   },
   {
     label: "Parent Login",
-    href: "/parent-login",
+    href: "#",
     submenu: [
-      { label: "Login", href: "/parent-login/login" },
-      { label: "Do’s and Don’ts", href: "/parent-login/dos-and-donts" },
+      { label: "Login", href: "https://parent.neverskip.com/" }
     ],
   },
-  { label: "Contact us", href: "/contact" },
+  { label: "Contact us", href: "/thalambur/contact-us" },
 ];
 
 const campuses = [

@@ -41,13 +41,15 @@ const navItems = [
   },
   {
     label: "R&D@Vels",
-    href: "/rnd",
+    href: "#",
     submenu: [
-      { label: "Vels Research Foundation", href: "/rnd/vels-research-foundation" },
-      { label: "VELSR", href: "/rnd/velsr" },
-      { label: "CICFL", href: "/rnd/cicfl" },
-      { label: "Newsletter", href: "/rnd/newsletter" },
-      { label: "Central R&D", href: "/rnd/central-rnd" },
+      { label: "Genesis", href: "/thalambur/genesis" },
+      { label: "About KKIC", href: "/thalambur/about-kkic" },
+      { label: "Centre for Professional Development", href: "/thalambur/centre-for-professional-development" },
+       { label: "VSkill", href: "/thalambur/vskill" },
+        { label: "CICTL", href: "/thalambur/cictl" },
+      { label: "Newsletter", href: "/thalambur/pdf/newsletter.pdf" },
+   
     ],
   },
   {

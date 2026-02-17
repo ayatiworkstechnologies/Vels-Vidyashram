@@ -1,38 +1,242 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, Quote, X, ChevronDown, Calendar, GraduationCap, Users } from "lucide-react";
+import { Play, Quote, X, ChevronDown, Calendar, GraduationCap } from "lucide-react";
 
 const VIDEO_DATA = {
-  videos: [
-    {
-      id: 1,
-      title: "School Annual Day 2024",
-      thumbnail: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=400&fit=crop",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "5:30",
-      category: "Events",
-      year: "2024"
-    },
-    {
-      id: 2,
-      title: "Campus Tour",
-      thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "3:45",
-      category: "Campus",
-      year: "2024"
-    },
-    {
-      id: 3,
-      title: "Sports Day Highlights",
-      thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "4:20",
-      category: "Sports",
-      year: "2023"
-    }
-  ],
+  videosByYear: {
+    "2025 - 2026": [
+      {
+        id: 1,
+        title: "Independence day celebration ",
+        thumbnail: "/thalambur/thumbnail/thum-1.jpg",
+        videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
+      },
+      {
+        id: 2,
+        title: "KG- Yellow day celebration ",
+        thumbnail: "/thalambur/thumbnail/thum-2.jpg",
+        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
+      },
+      {
+        id: 3,
+        title: "KG- Red day celebration",
+        thumbnail: "/thalambur/thumbnail/thum-3.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 4,
+        title: "Empowering educators through STEM",
+        thumbnail: "/thalambur/thumbnail/thum-4.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 5,
+        title: "No Bag day ",
+        thumbnail: "/thalambur/thumbnail/thum-5.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 6,
+        title: "Investiture ceremony",
+        thumbnail: "/thalambur/thumbnail/thum-6.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 7,
+        title: "Campus visit to Vels Medical College & Hospital",
+        thumbnail: "/thalambur/thumbnail/thum-7.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 8,
+        title: "Father's Day celebration",
+        thumbnail: "/thalambur/thumbnail/thum-8.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 9,
+        title: "Vels Football club Inauguration",
+        thumbnail: "/thalambur/thumbnail/thum-9.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 10,
+        title: "No-Bag Day 2025",
+        thumbnail: "/thalambur/thumbnail/thum-10.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+    
+      {
+        id: 11,
+        title: "EVS Culmination day Grade I & II",
+        thumbnail: "/thalambur/thumbnail/thum-11.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 12,
+        title: "KG- Culmination day 2025 ",
+        thumbnail: "/thalambur/thumbnail/thum-12.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+      },
+      {
+         id: 13,
+        title: "Grade IX-XII field trip ",
+        thumbnail: "/thalambur/thumbnail/thum-13.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+
+      },
+      {
+        id: 14,
+        title: "Grade VI-VIII field trip ",
+        thumbnail: "/thalambur/thumbnail/thum-14.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 15,
+        title: "Grade III-V field trip",
+        thumbnail: "/thalambur/thumbnail/thum-15.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+     
+      {
+        id: 16,
+        title: "Diwali celebration",
+        thumbnail: "/thalambur/thumbnail/thum-16.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 17,
+        title: "Happy Vidyarambham",
+        thumbnail: "/thalambur/thumbnail/thum-17.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 18,
+        title: "Pongal celebration 2026",
+        thumbnail: "/thalambur/thumbnail/thum-18.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+
+      },
+      {
+        id: 19,
+        title: "Interschool sports meet 2025-26",
+        thumbnail: "/thalambur/thumbnail/thum-19.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 20,
+        title: "Sandhai celebration",
+        thumbnail: "/thalambur/thumbnail/thum-20.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 21,
+        title: "Grandparents Day ",
+        thumbnail: "/thalambur/thumbnail/thum-21.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+
+      },
+      {
+        id: 22,
+        title: "KG- Purple day celebration ",
+        thumbnail: "/thalambur/thumbnail/thum-22.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+      },
+      {
+        id: 23,
+        title: "Melange 2025- Interschool competition ",
+        thumbnail: "/thalambur/thumbnail/thum-23.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 24,
+        title: "International Yoga day",
+        thumbnail: "/thalambur/thumbnail/thum-24.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 25,
+        title: "Voices of tomorrow: Student council nominees 2025",
+        thumbnail: "/thalambur/thumbnail/thum-25.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 26,
+        title: "Step Orientation",
+        thumbnail: "/thalambur/thumbnail/thum-26.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+      },
+      {
+        id: 27,
+        title: "Personal safety education session",
+        thumbnail: "/thalambur/thumbnail/thum-27.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 28,
+        title: "World scholar's cup - Chennai round 2025",
+        thumbnail: "/thalambur/thumbnail/thum-28.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 29,
+        title: "Parent orientation program 2025-26",
+        thumbnail: "/thalambur/thumbnail/thum-29.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 30,
+        title: "Salangai poojai",
+        thumbnail: "/thalambur/thumbnail/thum-30.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 31,
+        title: "KG Graduation day 2025 & Annual proficiency award cerem",
+        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      }
+
+       
+    ],
+
+    "2024 - 2025": [
+      {
+        id: 11,
+        title: "Campus Tour",
+        thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 12,
+        title: "Annual Sports Day",
+        thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 13,
+        title: "Christmas Celebration",
+        thumbnail: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&h=300&fit=crop",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 14,
+        title: "School Assembly",
+        thumbnail: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: 15,
+        title: "Music Competition",
+        thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      }
+    ]
+  },
 
   testimonialSections: [
     {
@@ -42,40 +246,10 @@ const VIDEO_DATA = {
         {
           id: 101,
           parentName: "Mrs. Priya Sharma",
-          studentName: "Aarav",
-          grade: "Grade 2",
           testimonial:
             "The school has provided an excellent environment for my son's overall development.",
           image:
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
-          videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-        },
-        {
-          id: 102,
-          parentName: "Mr. Rajesh Kumar",
-          studentName: "Diya",
-          grade: "Grade 1",
-          testimonial:
-            "Outstanding school with excellent faculty. My daughter has shown remarkable improvement.",
-          image:
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
-          videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-        }
-      ]
-    },
-    {
-      category: "KG Culmination Day",
-      icon: <Users className="w-5 h-5" />,
-      items: [
-        {
-          id: 201,
-          parentName: "Mrs. Anita Reddy",
-          studentName: "Arjun",
-          grade: "UKG",
-          testimonial:
-            "The personalized attention and career guidance provided here are commendable.",
-          image:
-            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop",
           videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
         }
       ]
@@ -88,99 +262,101 @@ export default function VideoSection() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [selectedYear, setSelectedYear] = useState("All Years");
 
+  /* LOCK BODY SCROLL WHEN POPUP OPEN */
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [selectedVideo]);
+
+  /* YEAR LIST */
   const years = useMemo(() => {
-    const uniqueYears = [...new Set(VIDEO_DATA.videos.map(v => v.year))];
-    return ["All Years", ...uniqueYears.sort((a, b) => b - a)];
+    return ["All Years", ...Object.keys(VIDEO_DATA.videosByYear)];
   }, []);
 
+  /* FILTER VIDEOS */
   const filteredVideos = useMemo(() => {
-    if (selectedYear === "All Years") return VIDEO_DATA.videos;
-    return VIDEO_DATA.videos.filter(v => v.year === selectedYear);
+    if (selectedYear === "All Years") {
+      return Object.values(VIDEO_DATA.videosByYear).flat();
+    }
+    return VIDEO_DATA.videosByYear[selectedYear] || [];
   }, [selectedYear]);
 
+  const openVideo = (video) => setSelectedVideo(video);
+  const closeVideo = () => setSelectedVideo(null);
+
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 md:p-12 max-w-7xl mx-auto font-sans">
+    <>
+      {/* PAGE CONTENT */}
+      <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 md:p-12 max-w-7xl mx-auto font-sans">
 
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-3 tracking-tight">
-          Media Gallery
-        </h1>
-        <p className="text-slate-600 text-lg">Watch our stories come to life</p>
-      </div>
-
-      {/* Tabs */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
-        <div className="hidden md:block w-48"></div>
-
-        <div className="inline-flex bg-white p-1.5 rounded-2xl border-2 border-slate-200 shadow-lg">
-          <button
-            onClick={() => setActiveTab("videos")}
-            className={`relative px-8 py-3 text-sm font-bold uppercase rounded-xl ${
-              activeTab === "videos" ? "text-white" : "text-slate-600"
-            }`}
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <Play size={18} /> Videos
-            </span>
-            {activeTab === "videos" && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl"
-              />
-            )}
-          </button>
-
-          <button
-            onClick={() => setActiveTab("testimonials")}
-            className={`relative px-8 py-3 text-sm font-bold uppercase rounded-xl ${
-              activeTab === "testimonials" ? "text-white" : "text-slate-600"
-            }`}
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <Quote size={18} /> Testimonials
-            </span>
-            {activeTab === "testimonials" && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl"
-              />
-            )}
-          </button>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-black text-slate-800">
+            Video Gallery
+          </h1>
         </div>
 
-        {/* Year filter */}
-        <div className={`${activeTab === "videos" ? "" : "opacity-0 pointer-events-none"}`}>
-          <div className="relative">
-            <select
-              value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
-              className="appearance-none bg-white border-2 border-slate-200 py-3 pl-11 pr-10 rounded-xl font-bold text-sm"
+        {/* TABS */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+          <div className="hidden md:block w-48"></div>
+
+          <div className="inline-flex bg-white p-1.5 rounded-2xl border-2 border-slate-200 shadow-lg">
+            <button
+              onClick={() => setActiveTab("videos")}
+              className={`relative px-8 py-3 text-sm font-bold uppercase rounded-xl ${
+                activeTab === "videos" ? "text-white" : "text-slate-600"
+              }`}
             >
-              {years.map(year => (
-                <option key={year}>{year}</option>
-              ))}
-            </select>
-            <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-600" size={18} />
-            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+              <span className="relative z-10 flex items-center gap-2">
+                <Play size={18} /> Videos
+              </span>
+              {activeTab === "videos" && (
+                <motion.div layoutId="activeTab" className="absolute inset-0 bg-primary rounded-xl" />
+              )}
+            </button>
+
+            <button
+              onClick={() => setActiveTab("testimonials")}
+              className={`relative px-8 py-3 text-sm font-bold uppercase rounded-xl ${
+                activeTab === "testimonials" ? "text-white" : "text-slate-600"
+              }`}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Testimonials
+              </span>
+              {activeTab === "testimonials" && (
+                <motion.div layoutId="activeTab" className="absolute inset-0 bg-primary rounded-xl" />
+              )}
+            </button>
+          </div>
+
+          {/* YEAR FILTER */}
+          <div className={`${activeTab === "videos" ? "" : "opacity-0 pointer-events-none"}`}>
+            <div className="relative">
+              <select
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(e.target.value)}
+                className="appearance-none bg-white border-2 border-slate-200 py-3 pl-11 pr-10 rounded-xl font-bold text-sm"
+              >
+                {years.map(year => (
+                  <option key={year}>{year}</option>
+                ))}
+              </select>
+              <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+            </div>
           </div>
         </div>
-      </div>
-
-      <AnimatePresence mode="wait">
 
         {/* VIDEOS */}
         {activeTab === "videos" && (
-          <motion.div
-            key="videos"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {filteredVideos.map((video) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredVideos.map(video => (
               <div
                 key={video.id}
-                onClick={() => setSelectedVideo(video)}
+                onClick={() => openVideo(video)}
                 className="relative overflow-hidden rounded-3xl bg-slate-900 cursor-pointer h-64"
               >
                 <img src={video.thumbnail} className="h-full w-full object-cover" />
@@ -189,88 +365,82 @@ export default function VideoSection() {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         )}
 
-        {/* TESTIMONIALS TAB — YOUTUBE GRID */}
-          {activeTab === "testimonials" && (
-            <div className="space-y-16">
-
-              {/* Grade 1 & 2 */}
-              <div>
-                <h2 className="text-center text-2xl font-bold mb-8">
-                  Parents Testimonials during Grade 1 and 2 Culmination Day
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {VIDEO_DATA.testimonialSections[0].items.map((item) => (
-                    <div key={item.id} className="w-full aspect-video">
-                      <iframe
-                        src={item.videoUrl}
-                        className="w-full h-full rounded-lg shadow-md"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  ))}
-                </div>
+        {/* TESTIMONIALS */}
+        {activeTab === "testimonials" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {VIDEO_DATA.testimonialSections[0].items.map(item => (
+              <div
+                key={item.id}
+                onClick={() => openVideo(item)}
+                className="relative overflow-hidden rounded-3xl bg-slate-900 cursor-pointer h-64"
+              >
+                <img src={item.image} className="h-full w-full object-cover" />
               </div>
+            ))}
+          </div>
+        )}
+      </div>
 
-              {/* KG */}
-              <div>
-                <h2 className="text-center text-2xl font-bold mb-8">
-                  Parents Testimonials during KG Culmination Day
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {VIDEO_DATA.testimonialSections[1].items.map((item) => (
-                    <div key={item.id} className="w-full aspect-video">
-                      <iframe
-                        src={item.videoUrl}
-                        className="w-full h-full rounded-lg shadow-md"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          )}
-
-      </AnimatePresence>
-
-      {/* VIDEO MODAL */}
+      {/* GLOBAL BLUR POPUP */}
       <AnimatePresence>
         {selectedVideo && (
           <motion.div
-            className="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50"
-            onClick={() => setSelectedVideo(null)}
+            style={{ position: "fixed", inset: 0, zIndex: 999999 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <motion.div
-              className="w-full max-w-5xl bg-white rounded-2xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="aspect-video">
-                <iframe src={selectedVideo.videoUrl} className="w-full h-full" allowFullScreen />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">
-                  {selectedVideo.title || selectedVideo.parentName}
-                </h3>
-                <p className="text-slate-600">
-                  {selectedVideo.testimonial || "Experience our school moments."}
-                </p>
-              </div>
-            </motion.div>
+            <div
+              onClick={closeVideo}
+              style={{
+                position: "fixed",
+                inset: 0,
+                background: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)"
+              }}
+            />
 
-            <button className="absolute top-6 right-6 text-white">
-              <X size={28} />
-            </button>
+            <div className="fixed inset-0 flex items-center justify-center p-4">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="relative w-[92vw] md:w-[70vw] lg:w-[55vw] xl:w-[45vw] max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+              >
+                <div className="w-full h-[260px] md:h-[320px] lg:h-[380px] bg-black">
+                  <iframe
+                    src={selectedVideo.videoUrl + "?autoplay=1"}
+                    className="w-full h-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  />
+                </div>
+
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-1">
+                    {selectedVideo.title || selectedVideo.parentName}
+                  </h3>
+                  <p className="text-sm text-slate-600">
+                    {selectedVideo.testimonial || "Experience our school moments."}
+                  </p>
+                </div>
+
+                <button
+                  onClick={closeVideo}
+                  className="absolute top-3 right-3 bg-black text-white rounded-full p-2"
+                >
+                  <X size={18} />
+                </button>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }

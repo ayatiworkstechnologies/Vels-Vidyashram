@@ -54,7 +54,7 @@ const navItems = [
   },
   {
     label: "Gallery",
-    href: "/gallery",
+    href: "#",
     submenu: [
     
       { label: "Photo Gallery", href: "/thalambur/photo-gallery" },

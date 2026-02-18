@@ -29,18 +29,18 @@ export default function Footer() {
       <div className="bg-[#F5F5F5] py-6">
         {/* ROW 1 */}
         <div className="flex flex-wrap justify-center gap-15 text-sm font-primary font-primary-semibold text-black mb-4">
-          <a href="/academics" className="hover:text-primary transition">Academics</a>
-          <a href="/admissions" className="hover:text-primary transition">Admissions</a>
+          <a href="/thalambur/curriculum" className="hover:text-primary transition">Academics</a>
+          <a href="/thalambur/procedure" className="hover:text-primary transition">Admissions</a>
           <a href="/dargaroad/recruitment" className="hover:text-primary transition">Recruitment</a>
-          <a href="/our-group" className="hover:text-primary transition">Our Group</a>
+          <a href="/thalambur/our-group" className="hover:text-primary transition">Our Group</a>
           <a href="/thalambur/mandatory-disclosure" className="hover:text-primary transition">Mandatory Disclosure</a>
         </div>
 
         {/* ROW 2 */}
         <div className="flex flex-wrap justify-center gap-10 text-sm font-medium text-black mt-10">
           <a href="/" className="hover:text-primary transition">Home</a>
-          <a href="/about-us" className="hover:text-primary transition">About Us</a>
-          <a href="/contact-us" className="hover:text-primary transition">Contact Us</a>
+          <a href="/thalambur/vision-mission" className="hover:text-primary transition">About Us</a>
+          <a href="/thalambur/contact-us" className="hover:text-primary transition">Contact Us</a>
         </div>
 
         {/* SOCIALS */}

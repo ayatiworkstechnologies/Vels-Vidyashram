@@ -6,200 +6,230 @@ import { Play, Quote, X, ChevronDown, Calendar, GraduationCap } from "lucide-rea
 const VIDEO_DATA = {
   videosByYear: {
     "2025 - 2026": [
-      {
-        id: 1,
-        title: "Independence day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-1.jpg",
-        videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
-      },
-      {
-        id: 2,
-        title: "KG- Yellow day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-2.jpg",
-        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
-      },
-      {
-        id: 3,
-        title: "KG- Red day celebration",
-        thumbnail: "/thalambur/thumbnail/thum-3.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 4,
-        title: "Empowering educators through STEM",
-        thumbnail: "/thalambur/thumbnail/thum-4.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 5,
-        title: "No Bag day ",
-        thumbnail: "/thalambur/thumbnail/thum-5.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 6,
-        title: "Investiture ceremony",
-        thumbnail: "/thalambur/thumbnail/thum-6.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 7,
-        title: "Campus visit to Vels Medical College & Hospital",
-        thumbnail: "/thalambur/thumbnail/thum-7.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 8,
-        title: "Father's Day celebration",
-        thumbnail: "/thalambur/thumbnail/thum-8.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 9,
-        title: "Vels Football club Inauguration",
-        thumbnail: "/thalambur/thumbnail/thum-9.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 10,
-        title: "No-Bag Day 2025",
-        thumbnail: "/thalambur/thumbnail/thum-10.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-    
-      {
+       {
         id: 11,
-        title: "EVS Culmination day Grade I & II",
-        thumbnail: "/thalambur/thumbnail/thum-11.jpg",
+        title: "Campus Tour",
+        thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
       {
         id: 12,
-        title: "KG- Culmination day 2025 ",
-        thumbnail: "/thalambur/thumbnail/thum-12.jpg",
+        title: "Annual Sports Day",
+        thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      
       },
       {
-         id: 13,
-        title: "Grade IX-XII field trip ",
-        thumbnail: "/thalambur/thumbnail/thum-13.jpg",
+        id: 13,
+        title: "Christmas Celebration",
+        thumbnail: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&h=300&fit=crop",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-
       },
       {
         id: 14,
-        title: "Grade VI-VIII field trip ",
-        thumbnail: "/thalambur/thumbnail/thum-14.jpg",
+        title: "School Assembly",
+        thumbnail: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
       {
         id: 15,
-        title: "Grade III-V field trip",
-        thumbnail: "/thalambur/thumbnail/thum-15.jpg",
+        title: "Music Competition",
+        thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
+      // {
+      //   id: 1,
+      //   title: "Independence day celebration ",
+      //   thumbnail: "/thalambur/thumbnail/thum-1.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
+      // },
+      // {
+      //   id: 2,
+      //   title: "KG- Yellow day celebration ",
+      //   thumbnail: "/thalambur/thumbnail/thum-2.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
+      // },
+      // {
+      //   id: 3,
+      //   title: "KG- Red day celebration",
+      //   thumbnail: "/thalambur/thumbnail/thum-3.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 4,
+      //   title: "Empowering educators through STEM",
+      //   thumbnail: "/thalambur/thumbnail/thum-4.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 5,
+      //   title: "No Bag day ",
+      //   thumbnail: "/thalambur/thumbnail/thum-5.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 6,
+      //   title: "Investiture ceremony",
+      //   thumbnail: "/thalambur/thumbnail/thum-6.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 7,
+      //   title: "Campus visit to Vels Medical College & Hospital",
+      //   thumbnail: "/thalambur/thumbnail/thum-7.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 8,
+      //   title: "Father's Day celebration",
+      //   thumbnail: "/thalambur/thumbnail/thum-8.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 9,
+      //   title: "Vels Football club Inauguration",
+      //   thumbnail: "/thalambur/thumbnail/thum-9.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 10,
+      //   title: "No-Bag Day 2025",
+      //   thumbnail: "/thalambur/thumbnail/thum-10.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+    
+      // {
+      //   id: 11,
+      //   title: "EVS Culmination day Grade I & II",
+      //   thumbnail: "/thalambur/thumbnail/thum-11.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 12,
+      //   title: "KG- Culmination day 2025 ",
+      //   thumbnail: "/thalambur/thumbnail/thum-12.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+      // },
+      // {
+      //    id: 13,
+      //   title: "Grade IX-XII field trip ",
+      //   thumbnail: "/thalambur/thumbnail/thum-13.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+
+      // },
+      // {
+      //   id: 14,
+      //   title: "Grade VI-VIII field trip ",
+      //   thumbnail: "/thalambur/thumbnail/thum-14.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 15,
+      //   title: "Grade III-V field trip",
+      //   thumbnail: "/thalambur/thumbnail/thum-15.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
      
-      {
-        id: 16,
-        title: "Diwali celebration",
-        thumbnail: "/thalambur/thumbnail/thum-16.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 17,
-        title: "Happy Vidyarambham",
-        thumbnail: "/thalambur/thumbnail/thum-17.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 18,
-        title: "Pongal celebration 2026",
-        thumbnail: "/thalambur/thumbnail/thum-18.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // {
+      //   id: 16,
+      //   title: "Diwali celebration",
+      //   thumbnail: "/thalambur/thumbnail/thum-16.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 17,
+      //   title: "Happy Vidyarambham",
+      //   thumbnail: "/thalambur/thumbnail/thum-17.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 18,
+      //   title: "Pongal celebration 2026",
+      //   thumbnail: "/thalambur/thumbnail/thum-18.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
 
-      },
-      {
-        id: 19,
-        title: "Interschool sports meet 2025-26",
-        thumbnail: "/thalambur/thumbnail/thum-19.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 20,
-        title: "Sandhai celebration",
-        thumbnail: "/thalambur/thumbnail/thum-20.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 21,
-        title: "Grandparents Day ",
-        thumbnail: "/thalambur/thumbnail/thum-21.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 19,
+      //   title: "Interschool sports meet 2025-26",
+      //   thumbnail: "/thalambur/thumbnail/thum-19.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 20,
+      //   title: "Sandhai celebration",
+      //   thumbnail: "/thalambur/thumbnail/thum-20.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 21,
+      //   title: "Grandparents Day ",
+      //   thumbnail: "/thalambur/thumbnail/thum-21.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
 
-      },
-      {
-        id: 22,
-        title: "KG- Purple day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-22.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 22,
+      //   title: "KG- Purple day celebration ",
+      //   thumbnail: "/thalambur/thumbnail/thum-22.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       
-      },
-      {
-        id: 23,
-        title: "Melange 2025- Interschool competition ",
-        thumbnail: "/thalambur/thumbnail/thum-23.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 24,
-        title: "International Yoga day",
-        thumbnail: "/thalambur/thumbnail/thum-24.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 25,
-        title: "Voices of tomorrow: Student council nominees 2025",
-        thumbnail: "/thalambur/thumbnail/thum-25.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 26,
-        title: "Step Orientation",
-        thumbnail: "/thalambur/thumbnail/thum-26.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 23,
+      //   title: "Melange 2025- Interschool competition ",
+      //   thumbnail: "/thalambur/thumbnail/thum-23.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 24,
+      //   title: "International Yoga day",
+      //   thumbnail: "/thalambur/thumbnail/thum-24.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 25,
+      //   title: "Voices of tomorrow: Student council nominees 2025",
+      //   thumbnail: "/thalambur/thumbnail/thum-25.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 26,
+      //   title: "Step Orientation",
+      //   thumbnail: "/thalambur/thumbnail/thum-26.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       
-      },
-      {
-        id: 27,
-        title: "Personal safety education session",
-        thumbnail: "/thalambur/thumbnail/thum-27.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 28,
-        title: "World scholar's cup - Chennai round 2025",
-        thumbnail: "/thalambur/thumbnail/thum-28.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 29,
-        title: "Parent orientation program 2025-26",
-        thumbnail: "/thalambur/thumbnail/thum-29.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 30,
-        title: "Salangai poojai",
-        thumbnail: "/thalambur/thumbnail/thum-30.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 31,
-        title: "KG Graduation day 2025 & Annual proficiency award cerem",
-        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      }
+      // },
+      // {
+      //   id: 27,
+      //   title: "Personal safety education session",
+      //   thumbnail: "/thalambur/thumbnail/thum-27.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 28,
+      //   title: "World scholar's cup - Chennai round 2025",
+      //   thumbnail: "/thalambur/thumbnail/thum-28.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 29,
+      //   title: "Parent orientation program 2025-26",
+      //   thumbnail: "/thalambur/thumbnail/thum-29.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 30,
+      //   title: "Salangai poojai",
+      //   thumbnail: "/thalambur/thumbnail/thum-30.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // },
+      // {
+      //   id: 31,
+      //   title: "KG Graduation day 2025 & Annual proficiency award cerem",
+      //   thumbnail: "/thalambur/thumbnail/thum-31.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      // }
 
        
     ],

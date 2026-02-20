@@ -35,7 +35,7 @@ const MessageSection = () => {
         {/* Header with Year Dropdown */}
         <header className="mb-12 border-b border-slate-200 pb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <h1 className="text-6xl font-black text-slate-900 tracking-tighter transition-all">
+            <h1 className="text-6xl font-black text-slate-900 tracking-tighter transition-all font-primary">
               {selectedYear}
             </h1>
             <p className="text-slate-500 mt-2 font-medium">Monthly Archive & Reports</p>
@@ -43,14 +43,14 @@ const MessageSection = () => {
 
           {/* Custom Styled Dropdown */}
           <div className="relative group min-w-[160px]">
-            <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 font-secondary">
               Select Year
             </label>
             <div className="relative">
               <select 
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className="block w-full appearance-none bg-white border border-slate-200 text-slate-700 py-3 px-4 pr-10 rounded-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#232A95] focus:border-transparent cursor-pointer transition-all hover:border-[#232A95]"
+                className="block w-full appearance-none bg-white border border-slate-200 text-slate-700 py-3 px-4 pr-10 rounded-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#232A95] focus:border-transparent cursor-pointer transition-all hover:border-[#232A95] font-secondary"
               >
                 <option value="2025">Year 2025</option>
                 <option value="2024">Year 2024</option>
@@ -76,7 +76,7 @@ const MessageSection = () => {
               className="group relative flex items-center justify-between p-6 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:border-[#232A95] hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
             >
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-slate-800 group-hover:text-[#232A95] transition-colors">
+                <span className="text-xl font-bold text-slate-800 group-hover:text-[#232A95] transition-colors font-secondary">
                   {report.month}
                 </span>
               </div>
@@ -99,7 +99,7 @@ const MessageSection = () => {
         {/* Empty State (Optional) */}
         {allReports[selectedYear].length === 0 && (
           <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-slate-200">
-            <p className="text-slate-400">No reports found for this year.</p>
+            <p className="text-slate-400 font-secondary">No reports found for this year.</p>
           </div>
         )}
         

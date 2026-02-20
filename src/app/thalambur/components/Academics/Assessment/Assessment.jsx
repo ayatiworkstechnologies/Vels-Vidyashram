@@ -13,7 +13,7 @@ export default function AssessmentStructure() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-semibold text-slate-800 mb-8"
+            className="text-2xl font-semibold text-slate-800 mb-8 font-primary"
           >
             Assessment Structure for Class VI to VIII
           </motion.h2>
@@ -34,11 +34,11 @@ export default function AssessmentStructure() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="grid grid-cols-4 bg-primary font-semibold text-white text-sm"
               >
-                <div className="p-4 border-r border-slate-600">Subjects</div>
-                <div className="p-4 border-r border-slate-600">
+                <div className="p-4 border-r border-slate-600 font-primary">Subjects</div>
+                <div className="p-4 border-r border-slate-600 font-primary">
                   TERM – I (100 MARKS)
                   <br />
-                  <span className="font-normal text-xs opacity-90">
+                  <span className="font-normal text-xs opacity-90 font-secondary">
                     (First half of the academic session)
                     <br />
                     20 Marks – Periodic Assessment (PA)
@@ -46,10 +46,10 @@ export default function AssessmentStructure() {
                     80 Marks – Half Yearly Examination
                   </span>
                 </div>
-                <div className="p-4 border-r border-slate-600">
+                <div className="p-4 border-r border-slate-600 font-primary">
                   TERM – II (100 MARKS)
                   <br />
-                  <span className="font-normal text-xs opacity-90">
+                  <span className="font-normal text-xs opacity-90 font-secondary">
                     (Second half of the academic session)
                     <br />
                     20 Marks – Periodic Assessment (PA)
@@ -57,11 +57,11 @@ export default function AssessmentStructure() {
                     80 Marks – Term End Examination
                   </span>
                 </div>
-                <div className="p-4">Yearly Examination</div>
+                <div className="p-4 font-primary">Yearly Examination</div>
               </motion.div>
 
               {/* Content Row */}
-              <div className="grid grid-cols-4 text-sm text-slate-700">
+              <div className="grid grid-cols-4 text-sm text-slate-700 font-secondary divide-x">
                 {/* Subjects */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -96,8 +96,8 @@ export default function AssessmentStructure() {
                   className="p-4 border-r space-y-4"
                 >
                   <div>
-                    <p className="font-semibold mb-1 text-primary">PA – 20 Marks</p>
-                    <ul className="list-disc ml-5 space-y-1">
+                    <p className="font-semibold mb-1 text-primary font-primary">PA – 20 Marks</p>
+                    <ul className="list-disc ml-5 space-y-1 font-secondary">
                       <li>Periodic Test – 10 Marks (syllabus covered till announcement of test dates)</li>
                       <li>Notebook Submission – 5 Marks (term-end)</li>
                       <li>Subject Enrichment Activity – 5 Marks (term-end)</li>
@@ -105,7 +105,7 @@ export default function AssessmentStructure() {
                   </div>
 
                   <div>
-                    <p className="font-semibold mb-1 text-primary">Half Yearly Examination – 80 Marks</p>
+                    <p className="font-semibold mb-1 text-primary font-primary">Half Yearly Examination – 80 Marks</p>
                     <p>
                       Written examination for 80 marks with syllabus covered till the announcement of Half Yearly
                       examination dates by the school.
@@ -123,8 +123,8 @@ export default function AssessmentStructure() {
                   className="p-4 border-r space-y-4"
                 >
                   <div>
-                    <p className="font-semibold mb-1 text-primary">PA – 20 Marks</p>
-                    <ul className="list-disc ml-5 space-y-1">
+                    <p className="font-semibold mb-1 text-primary font-primary">PA – 20 Marks</p>
+                    <ul className="list-disc ml-5 space-y-1 font-secondary">
                       <li>Periodic Test – 10 Marks (syllabus covered till announcement of test dates)</li>
                       <li>Notebook Submission – 5 Marks (term-end)</li>
                       <li>Subject Enrichment Activity – 5 Marks (term-end)</li>
@@ -132,7 +132,7 @@ export default function AssessmentStructure() {
                   </div>
 
                   <div>
-                    <p className="font-semibold mb-1 text-primary">Term End Examination – 80 Marks</p>
+                    <p className="font-semibold mb-1 text-primary font-primary">Term End Examination – 80 Marks</p>
                     <p>Written examination for 80 marks with syllabus prescribed for Term II.</p>
                   </div>
                 </motion.div>
@@ -146,9 +146,9 @@ export default function AssessmentStructure() {
                   whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
                   className="p-4 space-y-2"
                 >
-                  <p className="font-semibold text-primary">Written Examination – 80 Marks</p>
+                  <p className="font-semibold text-primary font-primary">Written Examination – 80 Marks</p>
                   <p className="font-semibold mt-2">Syllabus Coverage:</p>
-                  <ul className="list-disc ml-5 space-y-1">
+                  <ul className="list-disc ml-5 space-y-1 font-secondary">
                     <li>
                       <strong>Class VI:</strong> 10% of Term I (significant topics) + entire Term II syllabus
                     </li>
@@ -174,8 +174,8 @@ export default function AssessmentStructure() {
             transition={{ duration: 0.5 }}
             className="mb-10"
           >
-            <h2 className="text-3xl font-bold text-slate-800">Assessment Structure for Class IX & X</h2>
-            <p className="text-sm text-slate-600 mt-2">Total 100 Marks (Assessment will be based on whole year syllabus)</p>
+            <h2 className="text-3xl font-bold text-slate-800 font-primary">Assessment Structure for Class IX & X</h2>
+            <p className="text-sm text-slate-600 mt-2 font-secondary">Total 100 Marks (Assessment will be based on whole year syllabus)</p>
           </motion.div>
 
           <div className="overflow-x-auto">
@@ -194,11 +194,11 @@ export default function AssessmentStructure() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="grid grid-cols-6 bg-primary text-white text-sm rounded-t-xl"
               >
-                <div className="p-4 border-r border-slate-700">Subjects</div>
+                <div className="p-4 border-r border-slate-700 font-primary">Subjects</div>
 
                 <div className="p-4 border-r border-slate-700">
-                  <p className="font-semibold">80 Marks</p>
-                  <p className="text-xs text-slate-300">
+                  <p className="font-semibold font-primary">80 Marks</p>
+                  <p className="text-xs text-slate-300 mt-1 font-secondary">
                     Board Examination
                     <br />
                     Minimum 33% in each subject
@@ -206,8 +206,8 @@ export default function AssessmentStructure() {
                 </div>
 
                 <div className="p-4 col-span-4">
-                  <p className="font-semibold">20 Marks – Internal Assessment</p>
-                  <p className="text-xs text-slate-300 mt-1">Minimum 33% out of overall 20 marks in each subject</p>
+                  <p className="font-semibold font-primary">20 Marks – Internal Assessment</p>
+                  <p className="text-xs text-slate-300 mt-1 font-secondary">Minimum 33% out of overall 20 marks in each subject</p>
                 </div>
               </motion.div>
 
@@ -221,12 +221,12 @@ export default function AssessmentStructure() {
               >
                 <div className="p-4 border-r"></div>
                 <div className="p-4 border-r"></div>
-                <div className="p-4 border-r text-center">
+                <div className="p-4 border-r text-center font-primary">
                   Periodic Test
                   <br />
                   (10 Marks)
                 </div>
-                <div className="p-4 border-r text-center">
+                <div className="p-4 border-r text-center font-primary">
                   Notebook Submission
                   <br />
                   (5 Marks)
@@ -240,7 +240,7 @@ export default function AssessmentStructure() {
               </motion.div>
 
               {/* Body */}
-              <div className="grid grid-cols-6 text-sm text-slate-700 divide-x">
+              <div className="grid grid-cols-6 text-sm text-slate-700 divide-x font-secondary">
                 {/* Subjects */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -270,7 +270,7 @@ export default function AssessmentStructure() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                   whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
-                  className="p-5 space-y-3"
+                  className="p-5 space-y-3 font-secondary"
                 >
                   <p>Board will conduct Class X examination for 80 marks in each subject covering 100% syllabus of Class X only.</p>
                   <p>Marks and grades will be awarded for individual subjects.</p>
@@ -284,7 +284,7 @@ export default function AssessmentStructure() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.7 }}
                   whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
-                  className="p-5 space-y-3"
+                  className="p-5 space-y-3 font-secondary"
                 >
                   <p>Periodic written tests restricted to three per subject in an academic year.</p>
                   <p>Average of the best two tests will be considered for final marks submission.</p>
@@ -297,9 +297,9 @@ export default function AssessmentStructure() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                   whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
-                  className="p-5 space-y-2"
+                  className="p-5 space-y-2 font-secondary"
                 >
-                  <p className="font-medium">This will cover:</p>
+                  <p className="font-medium ">This will cover:</p>
                   <ul className="list-disc ml-5 space-y-1">
                     <li>Regularity</li>
                     <li>Assignment completion</li>
@@ -314,7 +314,7 @@ export default function AssessmentStructure() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.9 }}
                   whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
-                  className="p-5 space-y-2"
+                  className="p-5 space-y-2 font-secondary"
                 >
                   <ul className="list-disc ml-5 space-y-1">
                     <li>Speaking and listening skills</li>
@@ -333,9 +333,9 @@ export default function AssessmentStructure() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 1.0 }}
-                className="grid grid-cols-6 border-t bg-gradient-to-r from-blue-50 to-indigo-50 text-sm"
+                className="grid grid-cols-6 border-t bg-gradient-to-r from-blue-50 to-indigo-50 text-sm font-secondary"
               >
-                <div className="p-4 font-semibold border-r">6th Additional Subject</div>
+                <div className="p-4 font-semibold border-r ">6th Additional Subject</div>
                 <div className="p-4 col-span-5">Scheme of studies to be followed</div>
               </motion.div>
             </motion.div>
@@ -354,8 +354,8 @@ export default function AssessmentStructure() {
             transition={{ duration: 0.5 }}
             className="mb-10"
           >
-            <h2 className="text-3xl font-bold text-slate-800">Scheme of Studies & Assessment Structure</h2>
-            <p className="text-sm text-slate-600 mt-1">Class XI & XII : CBSE Senior Secondary</p>
+            <h2 className="text-3xl font-bold text-slate-800 font-primary">Scheme of Studies & Assessment Structure</h2>
+            <p className="text-sm text-slate-600 mt-1 font-secondary">Class XI & XII : CBSE Senior Secondary</p>
           </motion.div>
 
           {/* ================= Scheme of Studies ================= */}
@@ -365,7 +365,7 @@ export default function AssessmentStructure() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-xl font-semibold text-slate-800 mb-4"
+              className="text-xl font-semibold text-slate-800 mb-4 font-primary"
             >
               Scheme of Studies
             </motion.h3>
@@ -386,8 +386,8 @@ export default function AssessmentStructure() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="grid grid-cols-6 bg-primary text-white text-sm rounded-t-xl"
                 >
-                  <div className="p-4 col-span-1 font-semibold">Group</div>
-                  <div className="p-4 col-span-5 font-semibold">Subjects</div>
+                  <div className="p-4 col-span-1 font-semibold font-primary">Group</div>
+                  <div className="p-4 col-span-5 font-semibold font-secondary">Subjects</div>
                 </motion.div>
 
                 {/* Rows */}
@@ -423,17 +423,17 @@ export default function AssessmentStructure() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)', x: 5 }}
-                    className="grid grid-cols-6 border-t text-sm text-slate-700"
+                    className="grid grid-cols-6 border-t text-sm text-slate-700 divide-x font-secondary"
                   >
                     <div className="p-4 font-semibold bg-slate-50">
                       <motion.div
                         whileHover={{ scale: 1.2, color: 'white' }}
-                        className="w-10 h-10 bg-primary  rounded-full flex items-center justify-center text-white font-bold"
+                        className="w-10 h-10 bg-primary  rounded-full flex items-center justify-center text-white font-bold font-primary"
                       >
                         {item.group}
                       </motion.div>
                     </div>
-                    <div className="p-4 col-span-5">{item.subjects}</div>
+                    <div className="p-4 col-span-5 font-secondary">{item.subjects}</div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -447,7 +447,7 @@ export default function AssessmentStructure() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-xl font-semibold text-slate-800 mb-4"
+              className="text-xl font-semibold text-slate-800 mb-4 font-primary"
             >
               Assessment for Class XI & XII
             </motion.h3>
@@ -458,7 +458,7 @@ export default function AssessmentStructure() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="min-w-[900px] bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden"
+                className="min-w-[900px] bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden "
               >
                 {/* Header */}
                 <motion.div
@@ -468,12 +468,12 @@ export default function AssessmentStructure() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="grid grid-cols-2 bg-primary text-white text-sm rounded-t-xl"
                 >
-                  <div className="p-4 font-semibold border-r border-slate-700">Class XI</div>
-                  <div className="p-4 font-semibold">Class XII</div>
+                  <div className="p-4 font-semibold border-r border-slate-700 font-primary">Class XI</div>
+                  <div className="p-4 font-semibold font-primary">Class XII</div>
                 </motion.div>
 
                 {/* Body */}
-                <div className="grid grid-cols-2 text-sm text-slate-700 divide-x">
+                <div className="grid grid-cols-2 text-sm text-slate-700 divide-x font-secondary">
                   {/* Class XI */}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -511,7 +511,7 @@ export default function AssessmentStructure() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                     whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
-                    className="p-4 space-y-3"
+                    className="p-4 space-y-3 font-secondary"
                   >
                     {[
                       'Mid Term – I',
@@ -545,7 +545,7 @@ export default function AssessmentStructure() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm text-white mt-6 bg-secondary p-4 rounded-lg border border-white"
+              className="text-sm text-white mt-6 bg-secondary p-4 rounded-lg border border-white font-secondary"
             >
               <strong>Note:</strong> Promotion to Class X & XII will be based on performance throughout the academic year.
             </motion.p>

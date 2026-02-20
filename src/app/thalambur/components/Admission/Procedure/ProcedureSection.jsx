@@ -40,7 +40,7 @@ const AdmissionRedesign = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold font-primary text-primary tracking-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold font-primary text-primary tracking-tight mb-4 ">
             Admission Procedure
           </h1>
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
@@ -79,7 +79,7 @@ const AdmissionRedesign = () => {
                 <div className="bg-slate-100 p-5 rounded-2xl border border-dashed border-slate-300 flex items-center justify-center">
                   <div className="text-center">
                     <p className="text-xs font-bold text-secondary font-secondary uppercase">Grade 2 & Above</p>
-                    <p className="text-xs font-medium text-slate-500">Based on previous class promotion</p>
+                    <p className="text-xs font-medium text-slate-500 font-secondary">Based on previous class promotion</p>
                   </div>
                 </div>
               </div>
@@ -123,8 +123,8 @@ const AdmissionRedesign = () => {
               className="flex flex-col items-center justify-center p-8 bg-primary rounded-3xl text-white shadow-xl shadow-primary-200 text-center group transition-all"
             >
               <FileDown size={48} className="mb-4 group-hover:bounce transition-transform" />
-              <span className="text-xl font-bold uppercase tracking-tight">Download Application</span>
-              <p className="text-primary-100 text-xs mt-2 opacity-80 underline underline-offset-4 font-medium">
+              <span className="text-xl font-bold uppercase tracking-tight font-secondary">Download Application</span>
+              <p className="text-primary-100 text-xs mt-2 opacity-80 underline underline-offset-4 font-medium font-secondary">
                 Click to download PDF form
               </p>
             </motion.a>
@@ -133,11 +133,11 @@ const AdmissionRedesign = () => {
             <div className="bg-secondary rounded-3xl p-8 text-white">
               <div className="flex items-center gap-3 mb-4">
                 <Wallet className="text-primary" size={24} />
-                <h4 className="font-bold text-white">Registration Fee</h4>
+                <h4 className="font-bold text-white font-secondary">Registration Fee</h4>
               </div>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-black text-white">INR 500</span>
-                <span className="text-white text-xs uppercase font-bold tracking-tighter">Non-Refundable</span>
+                <span className="text-4xl font-black text-white font-secondary">INR 500</span>
+                <span className="text-white text-xs uppercase font-bold tracking-tighter font-secondary">Non-Refundable</span>
               </div>
               <p className="text-xs text-white font-secondary leading-relaxed">
                 To be paid in cash along with the hard copy of the filled application at the school office.
@@ -145,15 +145,15 @@ const AdmissionRedesign = () => {
             </div>
 
             {/* Acceptance & Contact */}
-            <div className="bg-white font-secondary border border-slate-200 rounded-3xl p-6 space-y-6 shadow-sm">
+            <div className="bg-white font-secondary border border-slate-200 rounded-3xl p-6 space-y-6 shadow-sm font-secondary">
               <div className="pb-4 border-b border-slate-100">
-                <p className="text-[10px] font-black uppercase text-slate-400 mb-2">Formal Acceptance</p>
+                <p className="text-[10px] font-black uppercase text-slate-400 mb-2 ">Formal Acceptance</p>
                 <p className="text-sm font-semibold text-slate-800 leading-snug">
                   Acceptance will be posted within 7 working days of submission.
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 font-secondary">
                 <p className="text-[10px] font-black uppercase text-slate-400">Support & Clarifications</p>
                 <div className="flex items-center gap-3 text-slate-700 hover:text-primary transition-colors cursor-pointer">
                   <Phone size={18} />

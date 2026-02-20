@@ -22,7 +22,7 @@ const GenesisSection = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-primary font-black text-slate-900 tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-primary font-black text-slate-900 tracking-tight">
             GENESIS OF <span className="text-primary">R&D @ VELS</span>
           </h2>
        
@@ -37,7 +37,7 @@ const GenesisSection = () => {
           >
             <div className="relative z-10">
              
-              <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
+              <div className="space-y-4 text-slate-600 leading-relaxed text-lg font-secondary">
                 <p>
                   The present day demands of holistic development of a child (economic, social and technological changes), poses enormous challenges for the existing school systems, especially for the teaching forces in urban areas, developing/ developed countries.
                 </p>
@@ -65,11 +65,11 @@ const GenesisSection = () => {
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-6">
                 
-                <h3 className="text-2xl md:text-3xl text-white font-bold">What is R&D @ VELS?</h3>
+                <h3 className="text-2xl md:text-3xl text-white font-bold font-primary">What is R&D @ VELS?</h3>
               </div>
               
-              <p className="text-indigo-100 text-xl leading-relaxed mb-8">
-                It is to  <span className="text-white font-medium underline underline-offset-8 decoration-indigo-400">expand the frontiers</span> of human understanding and improve our society as a whole. Gather new knowledge leading to new products and process.
+              <p className="text-indigo-100 text-xl leading-relaxed mb-8 font-secondary">
+                It is to  <span className="text-white font-medium underline underline-offset-8 decoration-white">expand the frontiers</span> of human understanding and improve our society as a whole. Gather new knowledge leading to new products and process.
               </p>
 
              

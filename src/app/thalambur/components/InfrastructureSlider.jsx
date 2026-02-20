@@ -102,13 +102,13 @@ export default function InfrastructureSlider() {
         }}
       >
          <div className="text-center max-w-xl mx-auto px-4">
-          <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 mb-3">
+          <span className="inline-block text-xs font-primary font-medium px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 mb-3">
             Pre KG through 12
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-secondary font-bold mb-3 text-gray-900 leading-tight">
             The Motto of the School is Wisdom is Strength.
           </h2>
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-500 font-secondary text-sm leading-relaxed">
             Our mission is to impart knowledge with values and ethics. To prepare the younger generation for a better future by improving their capabilities to face the challenges of the outside world.
           </p>
         </div>
@@ -159,16 +159,16 @@ export default function InfrastructureSlider() {
                           />
                         </div>
 
-                        <h3 className="text-4xl md:text-5xl font-bold mb-5 text-gray-900">
+                        <h3 className="text-4xl md:text-5xl font-primary font-bold mb-5 text-gray-900">
                           {slide.title}
                         </h3>
 
-                        <p className="text-gray-700 text-sm leading-relaxed mb-8 max-w-md">
+                        <p className="text-gray-700 font-secondary text-sm leading-relaxed mb-8 max-w-md">
                           {slide.description}
                         </p>
 
                         <button className="inline-flex items-center gap-3 font-semibold text-base group w-fit">
-                          <span className="text-gray-900">Learn More</span>
+                          <span className="text-gray-900 font-secondary">Learn More</span>
                           <span className="w-11 h-11 rounded-full bg-tertiary text-white flex items-center justify-center transition-all group-hover:bg-blue-700 shadow-md">
                             <svg
                               className="w-5 h-5"

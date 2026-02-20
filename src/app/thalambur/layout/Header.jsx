@@ -206,18 +206,18 @@ export default function Header() {
       </nav>
 
       {/* ================= LOGO ================= */}
-      <div className="bg-white flex justify-center py-4 px-4">
-        <div className="w-[240px] sm:w-[300px] md:w-[360px]">
-          <Image
-            src="/thalambur/logo-th.png"
-            alt="Vels Vidyashram"
-            width={360}
-            height={100}
-            priority
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
+     <div className="bg-white flex justify-center py-2 px-2">
+  <div className="max-w-[400px] w-full">
+    <Image
+  src="/thalambur/3.png"
+  alt="Vels Vidyashram"
+  width={2880}
+  height={670}
+  priority
+  className="h-full "
+/>
+  </div>
+</div>
 
       {/* ================= MOBILE DRAWER ================= */}
       <div

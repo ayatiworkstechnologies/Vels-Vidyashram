@@ -22,20 +22,18 @@ export default function VSkillFinalRedesign() {
       {/* --- SECTION 1: EXACT CONTENT EXTRACTED --- */}
       <header className="max-w-6xl mx-auto px-6 pb-12">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-black text-indigo-950 tracking-tighter mb-2">VSKILL</h1>
-          <div className="flex justify-center gap-1.5 text-indigo-900 text-lg">
-            <span>◆</span><span>◆</span><span>◆</span><span>◆</span><span>◆</span>
-          </div>
+          <h1 className="text-4xl font-black text-primary font-primary tracking-tighter mb-2">VSKILL</h1>
+         
         </div>
 
         <div className="space-y-8 max-w-5xl mx-auto">
           {/* Exact Paragraph 1 & 2 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="md:col-span-3 space-y-6">
-              <p className="text-lg leading-relaxed text-slate-700">
+              <p className="text-lg leading-relaxed text-slate-700 font-secondary">
                 <span className="font-bold text-indigo-900">V Skill Centre for Professional Development</span> has 15-year-old history in developing competent and qualified educators to run a Centre for Professional Development for Teachers.
               </p>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed font-secondary">
                 This venture was formed by a team of experienced, qualified and knowledgeable professionals and backed up by a board of R & D members of Vels Group of Institutions.
               </p>
             </div>
@@ -44,10 +42,10 @@ export default function VSkillFinalRedesign() {
 
           {/* Exact Paragraph 3 & 4 */}
           <div className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100">
-            <p className="text-slate-600 leading-relaxed mb-6">
+            <p className="text-slate-600 leading-relaxed mb-6 font-secondary">
               The <span className="font-bold italic text-indigo-900 text-lg">V SKILL</span> spells <span className="font-bold italic text-indigo-900 text-lg">QUALITY</span>. It is highly regarded for its contribution in the academic field, especially in Chennai city. The PCE offered by V SKILL will not only be a pioneering effort for qualifying the teachers, but it facilitates all other institutions to depute their best teachers to get trained here. This course comes out with a Certification which may well be recognised by the institutions of repute throughout the Nation. The teachers at some point of time in their academic career would have to complete such a course for their career Progression.
             </p>
-            <p className="text-slate-600 leading-relaxed font-medium border-l-4 border-[#232A95] pl-6">
+            <p className="text-slate-600 leading-relaxed font-medium border-l-4 border-[#232A95] pl-6 font-secondary">
               This Professional Development effort, very <span className="font-bold">uniquely attempted</span> by the <span className="font-bold">V Skill – Centre for Professional Development</span> is a path breaking venture welcomed by Educators and Academicians alike including Vels Group of Institutions. This hands-on and in-house course will help Skill Development at any stage for the teachers with experience and is developed in accordance with emphasis placed on Continuous Professional Development for teachers under NEP 2020.
             </p>
           </div>
@@ -55,10 +53,10 @@ export default function VSkillFinalRedesign() {
           {/* Exact Paragraph 5 */}
           <div className="relative overflow-hidden bg-indigo-900 text-white rounded-[2.5rem] p-10 shadow-2xl shadow-indigo-200">
             <div className="relative z-10">
-              <p className="leading-relaxed mb-4 text-indigo-100">
+              <p className="leading-relaxed mb-4 text-indigo-100 font-secondary">
                 The ever-changing syllabi and its contours need continuous upgradation. The materials and course content designed by experienced senior hands in this field is sure to help fulfil the objectives for which the course is being launched. The infra structure, gadgets and all material support is liberally flowing from the philanthropic minded Management of the VELS.
               </p>
-              <h3 className="text-2xl font-bold tracking-wide text-white">
+              <h3 className="text-2xl font-bold tracking-wide text-white leading-snug font-primary">
                 The uptake of competencies, skill upgradation and development of teaching prowess would definitely result in a <span className="text-secondary">“LEARNERS DELIGHT”</span> environment.
               </h3>
             </div>
@@ -77,7 +75,7 @@ export default function VSkillFinalRedesign() {
               className={`flex items-center gap-3 px-10 py-4 rounded-xl font-bold transition-all duration-300 ${
                 activeTab === 'courses' 
                 ? 'bg-white text-indigo-900 shadow-lg scale-105' 
-                : 'text-slate-500 hover:text-[#232A95]'
+                : 'text-slate-500 hover:text-[#232A95] font-primary'
               }`}
             >
               <BookOpen size={20} /> Courses Offered
@@ -87,7 +85,7 @@ export default function VSkillFinalRedesign() {
               className={`flex items-center gap-3 px-10 py-4 rounded-xl font-bold transition-all duration-300 ${
                 activeTab === 'testimonials' 
                 ? 'bg-white text-indigo-900 shadow-lg scale-105' 
-                : 'text-slate-500 hover:text-[#232A95]'
+                : 'text-slate-500 hover:text-[#232A95] font-primary'
               }`}
             >
               <Quote size={20} /> Testimonials VSkill
@@ -112,18 +110,27 @@ export default function VSkillFinalRedesign() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-indigo-200 text-xs font-black uppercase tracking-[0.2em] mb-6">
             <Zap size={14} className="text-amber-400" /> Syllabus Aims & Objectives
           </div>
-          <h3 className="text-4xl font-bold text-white leading-tight mb-6">
+          <h3 className="text-4xl font-bold text-white leading-tight mb-6 font-primary">
             Click Here to View
           </h3>
          
         </div>
 
-        <div className="mt-2">
-          <button className="w-full py-4 bg-white text-indigo-900 rounded-2xl font-black hover:bg-indigo-50 transition-all flex items-center justify-center gap-3 group/btn shadow-xl shadow-indigo-950/50">
-             VSkill Brochure 
-            <CheckCircle2 size={20} className="group-hover/btn:scale-110 transition-transform" />
-          </button>
-        </div>
+                <div className="mt-2">
+                  <a
+                    href="/thalambur/pdf/vskill.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="w-full py-4 bg-white text-indigo-900 rounded-2xl font-black hover:bg-indigo-50 transition-all flex items-center justify-center gap-3 group/btn shadow-xl shadow-indigo-950/50 font-secondary">
+                      VSkill Brochure
+                      <CheckCircle2
+                        size={20}
+                        className="group-hover/btn:scale-110 transition-transform"
+                      />
+                    </button>
+                  </a>
+                </div>
       </div>
     </div>
   </div>
@@ -143,7 +150,7 @@ export default function VSkillFinalRedesign() {
             </span>
           </div>
           
-          <p className="text-slate-700 font-bold leading-snug group-hover:text-indigo-950 transition-colors">
+          <p className="text-slate-700 font-bold leading-snug group-hover:text-indigo-950 transition-colors font-secondary">
             {text}
           </p>
         </div>
@@ -174,10 +181,10 @@ export default function VSkillFinalRedesign() {
       
       {/* Label with Modern Typography */}
       <div className="flex flex-col items-center md:items-start">
-        <h4 className="text-secondary text-[10px] uppercase tracking-[0.4em] font-black mb-1.5">
+        <h4 className="text-secondary text-[10px] uppercase tracking-[0.4em] font-black mb-1.5 font-primary">
           Get in Touch
         </h4>
-        <p className="text-white font-bold text-xl tracking-tight">
+        <p className="text-white font-bold text-xl tracking-tight font-secondary">
           Connect with VSkill
         </p>
       </div>

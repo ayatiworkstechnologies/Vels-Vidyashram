@@ -19,10 +19,10 @@ const TransportSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-16 space-y-4"
         >
-          <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
+          <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto font-secondary">
             Well organized transport system to ply students to and fro. A safe journey is ensured by well supervised system. Child’s comfort is prioritised and the child is taken care by van assistants.
           </p>
-          <div className="flex justify-center gap-8 pt-4">
+          <div className="flex justify-center gap-8 pt-4 font-secondary">
             <div className="flex items-center gap-2 text-sm font-semibold text-gray-800">
               <ShieldCheck className="text-primary" size={20} /> Well Supervised
             </div>
@@ -37,7 +37,7 @@ const TransportSection = () => {
           {/* Left Side: Full Route Content (No Internal Scroll) */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 border-b border-gray-100 pb-4">
-              <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Routes Covered</h2>
+              <h2 className="text-2xl font-bold text-gray-900 tracking-tight font-primary">Routes Covered</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">

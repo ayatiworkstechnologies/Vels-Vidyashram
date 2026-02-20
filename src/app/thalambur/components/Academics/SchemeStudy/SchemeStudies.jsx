@@ -14,7 +14,7 @@ const SchemeStudies = () => {
   const [activeTab, setActiveTab] = useState('scheme');
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-slate-50 min-h-screen font-sans">
+    <div className="max-w-6xl mx-auto p-6 bg-slate-50 min-h-screen">
       {/* Tab Navigation */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
@@ -23,16 +23,16 @@ const SchemeStudies = () => {
         className="mb-12 bg-white p-2 rounded-2xl shadow-sm border border-slate-200"
       >
         <div className="
-  flex 
-  gap-2 
-  overflow-x-auto 
-  scrollbar-hide 
-  snap-x 
-  snap-mandatory
-  md:overflow-visible 
-  md:flex-wrap 
-  md:justify-center
-">
+          flex 
+          gap-2 
+          overflow-x-auto 
+          scrollbar-hide 
+          snap-x 
+          snap-mandatory
+          md:overflow-visible 
+          md:flex-wrap 
+          md:justify-center
+        ">
 
           {tabs.map((tab, index) => (
             <motion.button
@@ -43,7 +43,7 @@ const SchemeStudies = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap snap-center flex-shrink-0 ${
+              className={`relative flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap font-primary snap-center flex-shrink-0 ${
                 activeTab === tab.id ? 'text-secondary' : 'text-slate-500 hover:bg-slate-50'
               }`}
             >
@@ -128,8 +128,8 @@ const SchemeContent = () => (
       whileHover={{ scale: 1.02 }}
       className="mt-8 p-6 bg-primary text-white rounded-2xl"
     >
-      <h3 className="text-xl font-bold mb-4 text-white">Class 11 Specializations</h3>
-      <div className="grid sm:grid-cols-2 gap-4 text-sm opacity-90">
+      <h3 className="text-xl font-bold mb-4 text-white font-primary">Class 11 Specializations</h3>
+      <div className="grid sm:grid-cols-2 gap-4 text-sm opacity-90 font-secondary">
         {[
           { label: "Choice 1:", text: "English, Mathematics, Physics, Chemistry, Biology." },
           { label: "Choice 2:", text: "English, Mathematics, Physics, Chemistry, Information Practices." },
@@ -151,7 +151,7 @@ const SchemeContent = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.9 }}
-        className="mt-4 text-xs italic border-t border-white pt-4"
+        className="mt-4 text-xs italic border-t border-white pt-4 font-secondary"
       >
         * Physical Education is a compulsory additional subject for all the above groups.
       </motion.p>
@@ -170,7 +170,7 @@ const MethodologyContent = () => (
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-slate-600 leading-relaxed text-lg mb-8"
+      className="text-slate-600 leading-relaxed text-lg mb-8 font-secondary"
     >
       The school offers proven and research based program of XSEED to make the child unafraid and to compete for the 21st century.
     </motion.p>
@@ -178,7 +178,7 @@ const MethodologyContent = () => (
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="text-3xl font-bold text-slate-800 italic mb-6"
+      className="text-3xl font-bold text-slate-800 italic mb-6 font-primary"
     >
       What is XSEED?
     </motion.h2>
@@ -186,7 +186,7 @@ const MethodologyContent = () => (
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="text-slate-600 leading-relaxed text-lg mb-8"
+      className="text-slate-600 leading-relaxed text-lg mb-8 font-secondary"
     >
      XSEED is a proven and research based academic program for schools that builds thinking skills & problem solving confidence in children. <br/>
      XSEED children ask more questions, can write in their own words, like doing word problems in mathematics, can complete their homework on their own, are not afraid to speak-up in English, persist longer in solving problems, and score well on tests. <br/>
@@ -227,11 +227,11 @@ const TeachersContent = () => (
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-3xl font-bold text-slate-800 italic"
+      className="text-3xl font-bold text-slate-800 italic font-primary mb-6"
     >
       What our teachers do?
     </motion.h2>
-    <div className="grid md:grid-cols-2 gap-4">
+    <div className="grid md:grid-cols-2 gap-4 font-secondary">
       {[
         "Carry out interactive teaching and learning.",
         "Excellent teaching practice makes students receptive enabling them to think for themselves, be creative and flexible in handling complexity and uncertainty.",
@@ -252,7 +252,7 @@ const TeachersContent = () => (
           className="flex gap-3 items-start p-4 bg-white shadow-sm border border-slate-200 rounded-lg"
         >
           <div className="" />
-          <p className="text-slate-700 font-medium">{text}</p>
+          <p className="text-slate-700 font-medium font-secondary">{text}</p>
         </motion.div>
       ))}
     </div>
@@ -292,7 +292,7 @@ const SportsContent = () => {
               className="h-[170px] w-full md:w-[250px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <p className="text-white font-bold text-lg">{sport.name}</p>
+              <p className="text-white font-bold text-lg font-secondary">{sport.name}</p>
             </div>
           </motion.div>
         ))}

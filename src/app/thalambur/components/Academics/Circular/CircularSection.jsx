@@ -17,10 +17,10 @@ const CircularSection = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="mb-12 border-b border-slate-200 pb-6">
-          <h1 className="text-6xl font-black text-slate-900 tracking-tighter">
+          <h1 className="text-6xl font-black text-slate-900 tracking-tighter font-primary">
             2025
           </h1>
-          <p className="text-slate-500 mt-2 font-medium">Monthly Archive & Reports</p>
+          <p className="text-slate-500 mt-2 font-medium font-secondary">Monthly Archive & Reports</p>
         </header>
 
         {/* Grid Container */}

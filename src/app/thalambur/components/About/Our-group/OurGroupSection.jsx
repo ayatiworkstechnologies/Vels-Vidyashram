@@ -171,15 +171,15 @@ export default function OurGroupSection() {
 
                 {/* Card Body */}
                 <div className="bg-yellow-50 rounded-xl p-8 pt-32 shadow-sm text-center flex flex-col items-center min-h-[350px] mt-5 hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4 leading-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold font-primary text-gray-800 mb-4 leading-tight group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6 max-w-sm">
+                  <p className="text-gray-600 font-secondary text-sm mb-6 max-w-sm">
                     {item.desc}
                   </p>
                   
                   {/* Button Link */}
-                  <span className="mt-auto px-6 py-2 bg-primary text-white font-medium rounded-md hover:bg-tertiary transition-colors inline-block">
+                  <span className="mt-auto px-6 py-2 bg-primary text-white font-medium rounded-md hover:bg-tertiary font-secondary transition-colors inline-block">
                     {item.buttonText || "Learn More"}
                   </span>
                 </div>

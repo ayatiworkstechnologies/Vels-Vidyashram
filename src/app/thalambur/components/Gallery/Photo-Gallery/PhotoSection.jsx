@@ -62,12 +62,12 @@ export default function InfrastructurePage() {
 
       {/* Tabs */}
       <div className="flex justify-center mb-10">
-        <div className="inline-flex bg-gray-100 p-1 rounded-xl border border-gray-200">
+        <div className="inline-flex bg-gray-100 p-1 rounded-xl border border-gray-200 font-primary">
           {CATEGORIES.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`relative px-6 py-2 text-xs font-bold uppercase transition-all rounded-lg ${
+              className={`relative px-6 py-2 text-xs font-bold uppercase font-primary transition-all rounded-lg ${
                 activeTab === tab ? "text-white" : "text-gray-500"
               }`}
             >
@@ -75,7 +75,7 @@ export default function InfrastructurePage() {
               {activeTab === tab && (
                 <motion.div
                   layoutId="pill"
-                  className="absolute inset-0 bg-primary rounded-lg shadow-sm"
+                  className="absolute inset-0 bg-primary rounded-lg font-primary shadow-sm"
                 />
               )}
             </button>
@@ -93,12 +93,12 @@ export default function InfrastructurePage() {
             <div className="mb-8 p-7 bg-slate-50 rounded-3xl border border-slate-100">
 
   {/* Heading */}
-  <h2 className="text-xl font-semibold mb-5 tracking-tight">
+  <h2 className="text-xl font-semibold mb-5 tracking-tight font-primary">
     Facilities
   </h2>
 
   {/* Facilities List */}
-  <div className="grid md:grid-cols-3 gap-y-4 gap-x-6">
+  <div className="grid md:grid-cols-3 gap-y-4 gap-x-6 font-secondary">
 
     {INFRA_DATA.facilities.map((text, i) => (
       <div

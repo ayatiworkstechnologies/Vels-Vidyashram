@@ -117,14 +117,14 @@ export default function VisionMission() {
                 </div>
 
                 <h3
-                  className={`text-3xl font-bold text-gray-800 text-center mb-4 transition-all duration-500 ${
+                  className={`text-3xl font-bold font-primary text-gray-800 text-center mb-4 transition-all duration-500 ${
                     activeCard === card.id ? "text-blue-600" : ""
                   }`}
                 >
                   {card.title}
                 </h3>
 
-                <p className="text-gray-600 text-center leading-relaxed">
+                <p className="text-gray-600 text-center font-secondary leading-relaxed">
                   {card.text}
                 </p>
               </div>

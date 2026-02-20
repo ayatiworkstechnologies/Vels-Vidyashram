@@ -79,13 +79,13 @@ export default function EventsSchedule() {
           animate={isLeftSideInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="bg-[#f39200] text-white text-[10px] font-bold py-1.5 px-3 rounded uppercase tracking-wider">
+          <span className="bg-secondary text-white text-[10px] font-bold py-1.5 px-3 rounded uppercase tracking-wider font-primary">
             Events And Examinations
           </span>
         </motion.div>
         
         <motion.h1 
-          className="text-3xl lg:text-4xl text-white font-bold leading-tight mb-8"
+          className="text-3xl lg:text-4xl text-white font-primary font-bold leading-tight mb-8"
           initial={{ opacity: 0, x: -30 }}
           animate={isLeftSideInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -95,7 +95,7 @@ export default function EventsSchedule() {
         </motion.h1>
         
         <motion.p 
-          className="text-blue-100/80 text-sm leading-relaxed mb-10 max-w-md"
+          className="text-blue-100/80 text-sm font-secondary leading-relaxed mb-10 max-w-md"
           initial={{ opacity: 0, y: 20 }}
           animate={isLeftSideInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.7, delay: 0.4 }}
@@ -137,7 +137,7 @@ export default function EventsSchedule() {
             <motion.button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`relative px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
+              className={`relative px-8 py-3 text-sm font-primary font-bold uppercase tracking-widest transition-all duration-300 ${
                 activeTab === tab ? "text-[#2d3a9d]" : "text-gray-400 hover:text-gray-600"
               }`}
               initial={{ opacity: 0, x: -20 }}
@@ -149,7 +149,7 @@ export default function EventsSchedule() {
               {activeTab === tab && (
                 <motion.div 
                   layoutId="activeTab"
-                  className="absolute bottom-[-17px] left-0 right-0 h-[3px] bg-[#2d3a9d]"
+                  className="absolute bottom-[-17px] font-primary left-0 right-0 h-[3px] bg-[#2d3a9d]"
                 />
               )}
             </motion.button>
@@ -157,7 +157,7 @@ export default function EventsSchedule() {
         </motion.div>
 
         <motion.h2 
-          className="text-[#2d3a9d] text-2xl lg:text-3xl font-serif font-bold mb-16"
+          className="text-[#2d3a9d] text-2xl lg:text-3xl font-primary font-bold mb-16"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.5 }}

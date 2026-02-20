@@ -30,7 +30,7 @@ export default function CICTLSection() {
       <section className="relative min-h-screen flex flex-col justify-center py-20">
         {/* Added max-w-full and overflow-hidden to the background text container */}
         <div className="absolute top-10 left-10 opacity-[0.03] select-none pointer-events-none max-w-full overflow-hidden">
-          <h1 className="text-[15vw] font-bold leading-none whitespace-nowrap">CAMBRIDGE</h1>
+          <h1 className="text-[15vw] font-bold leading-none whitespace-nowrap font-primary">CAMBRIDGE</h1>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full">
@@ -43,7 +43,7 @@ export default function CICTLSection() {
               transition={{ duration: 1 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700">
                 <Image
                   src="/thalambur/cictl-img.jpeg"
                   alt="CICTL Poster"
@@ -59,9 +59,9 @@ export default function CICTLSection() {
             {/* Content Side */}
             <div className="order-1 lg:order-2 space-y-12">
               <motion.div variants={fadeInUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
-                <h2 className="text-sm uppercase tracking-[6px] text-blue-600 font-semibold mb-4">Established 2007</h2>
-                <h3 className="text-6xl md:text-8xl font-black text-[#1f2b6c] leading-none mb-6">CICTL.</h3>
-                <p className="text-xl font-medium text-slate-500 max-w-md">
+                <h2 className="text-sm uppercase tracking-[6px] text-primary font-semibold mb-4 font-primary">Established 2007</h2>
+                <h3 className="text-6xl md:text-8xl font-black text-black leading-none mb-6 font-primary">CICTL.</h3>
+                <p className="text-xl font-medium text-slate-500 max-w-md font-secondary">
                   Cambridge International Certificate in Teaching & Learning
                 </p>
               </motion.div>
@@ -80,7 +80,7 @@ export default function CICTLSection() {
                     className="pl-8 relative"
                   >
                     <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-[#1f2b6c]" />
-                    <p className="text-lg text-slate-700 leading-relaxed italic font-serif">
+                    <p className="text-lg text-slate-700 leading-relaxed italic font-secondary">
                       "{text}"
                     </p>
                   </motion.div>
@@ -101,10 +101,11 @@ export default function CICTLSection() {
               variants={fadeInUp} initial="hidden" whileInView="show"
               className="md:col-span-2 bg-[#1f2b6c] p-12 rounded-3xl text-white flex flex-col justify-end min-h-[400px]"
             >
-              <h2 className="text-4xl font-bold mb-6">A BRIEF INTRODUCTION OF THE COURSE</h2>
-              <div className="h-1 w-20 bg-blue-400 mb-6" />
-              <p className="text-blue-100 text-lg leading-relaxed">
-                What is the Cambridge International Certificate/ Diploma for Teaching and Learning? Addressing the need for continuing professional development, the Cambridge International Certificate in Teaching and Learning has been designed to help teachers develop skills that will enhance their practice by becoming more resourceful and versatile... (cont.)
+              <h2 className="text-2xl font-bold mb-6 text-white font-primary">A BRIEF INTRODUCTION OF THE COURSE</h2>
+              <div className="h-1 w-20 bg-white mb-6" />
+              <p className="text-blue-100 text-lg leading-relaxed font-secondary">
+                What is the Cambridge International Certificate/ Diploma for Teaching and Learning? Addressing the need for continuing professional development, the Cambridge International Certificate in Teaching and Learning has been designed to help teachers develop skills that will enhance their practice by becoming more resourceful and versatile.
+                These skills are assessed and accredited, providing you with proof of your competence. There have been many changes in the teaching world and teachers’ and trainers’ roles are becoming increasingly complex, demanding and wide ranging. The Diploma will enable you to demonstrate your ability to plan, manage and evaluate systematically; Design and deliver learning programmes using a range of methods; and develop personal skills that improve your professional practice. Cambridge International Certificate for Teaching and Learning.
               </p>
             </motion.div>
 
@@ -116,7 +117,7 @@ export default function CICTLSection() {
                   variants={fadeInUp} initial="hidden" whileInView="show"
                   className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
                  >
-                   <p className="text-slate-600 text-sm leading-relaxed">{text}</p>
+                   <p className="text-slate-600 text-sm leading-relaxed font-secondary">{text}</p>
                  </motion.div>
                ))}
             </div>
@@ -127,7 +128,7 @@ export default function CICTLSection() {
           <div className="grid lg:grid-cols-3 gap-12 mt-20 border-t border-slate-200 pt-20">
             
             <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
-              <h4 className="font-bold text-[#1f2b6c] mb-4 text-xl tracking-tight">The Pedagogy</h4>
+              <h4 className="font-bold text-[#1f2b6c] mb-4 text-xl tracking-tight font-secondary">The Pedagogy</h4>
               <ul className="space-y-4 text-slate-600 text-sm">
                 <li className="flex gap-3"><span>•</span> Has been developed by Cambridge in consultation with partners and centres.</li>
                 <li className="flex gap-3"><span>•</span> Created with an international audience in mind for globally accepted best practice.</li>
@@ -136,8 +137,8 @@ export default function CICTLSection() {
             </motion.div>
 
             <motion.div variants={fadeInUp} initial="hidden" whileInView="show" className="lg:col-span-2">
-              <h4 className="font-bold text-[#1f2b6c] mb-6 text-xl tracking-tight">Course Delivery & Evaluation</h4>
-              <div className="columns-1 md:columns-2 gap-8 text-slate-600 text-sm leading-relaxed space-y-4">
+              <h4 className="font-bold text-[#1f2b6c] mb-6 text-xl tracking-tight font-secondary">Course Delivery & Evaluation</h4>
+              <div className="columns-1 md:columns-2 gap-8 text-slate-600 text-sm leading-relaxed space-y-4 font-secondary">
                 <p>
                   About CAIE Cambridge Assessment International Education (CAIE) is a part of University of Cambridge and their qualifications are taken in over 150 different countries and are recognized by universities, education providers and employers across the globe. CAIE offers a wide range of academic and professional qualifications for people of all ages and abilities.
                 </p>
@@ -157,17 +158,7 @@ export default function CICTLSection() {
         </div>
       </section>
 
-      {/* --- CTA SECTION --- */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-           <motion.div 
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-            className="inline-block px-8 py-4 bg-slate-50 border border-slate-200 rounded-full text-[#1f2b6c] font-medium"
-           >
-             Registered CAIE Centre: Vaels International School
-           </motion.div>
-        </div>
-      </section>
+      
     </div>
   );
 }

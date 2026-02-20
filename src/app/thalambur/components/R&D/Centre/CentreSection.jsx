@@ -32,25 +32,25 @@ const ProfessionalRedesign = () => {
           className="lg:col-span-7 z-10"
         >
           <div className="relative p-8 md:p-12 bg-white border border-white/10 rounded-[3rem] shadow-2xl">
-            <h1 className="text-4xl font-black leading-tight mb-6">
+            <h1 className="text-4xl font-black leading-tight mb-6 font-primary">
               Centre for <br/>
               <span className="text-primary">
                 Professional Development
               </span>
             </h1>
 
-            <p className="text-slate-400 text-lg leading-relaxed mb-10">
+            <p className="text-slate-400 text-lg leading-relaxed mb-10 font-secondary">
               High International Standards of Modern Teaching Methods are imparted and Superior Training and Coaching is done Resulting in the Award of a Unique Certificate viz., <span className="text-primary font-semibold">Professional Certificate for Educators (PCE)</span> offering National and International courses.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="p-6 rounded-2xl bg-tertiary border border-white/5 hover:border-indigo-500/50 transition-colors group">
-                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-indigo-300">VSKILL</h3>
-                <p className="text-base text-slate-400 leading-snug">Professional Certificate for Educators (PCE) accredited by VISTAS National level</p>
+                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-indigo-300 font-primary">VSKILL</h3>
+                <p className="text-base font-secondary text-white leading-snug">Professional Certificate for Educators (PCE) accredited by VISTAS National level</p>
               </div>
               <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-[#232A95] transition-colors group">
-                <h3 className="text-primary font-bold text-xl mb-2 group-hover:text-tertiary">CICTL</h3>
-                <p className="text-base text-slate-400 leading-snug">Cambridge International Certificate for Teaching and Learning for teacher candidates accredited by Cambridge Assessment for International Education at Vaels International School- IN868.</p>
+                <h3 className="text-primary font-primary font-bold text-xl mb-2 group-hover:text-tertiary">CICTL</h3>
+                <p className="text-base text-slate-400 leading-snug font-secondary">Cambridge International Certificate for Teaching and Learning for teacher candidates accredited by Cambridge Assessment for International Education at Vaels International School- IN868.</p>
               </div>
             </div>
           </div>

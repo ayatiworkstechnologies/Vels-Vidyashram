@@ -323,13 +323,13 @@ export default function VideoSection() {
       <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 md:p-12 max-w-7xl mx-auto font-sans">
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black text-slate-800">
+          <h1 className="text-2xl md:text-4xl font-black text-slate-800 font-primary">
             Video Gallery
           </h1>
         </div>
 
         {/* TABS */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 font-primary">
           <div className="hidden md:block w-48"></div>
 
           <div className="inline-flex bg-white p-1.5 rounded-2xl border-2 border-slate-200 shadow-lg">

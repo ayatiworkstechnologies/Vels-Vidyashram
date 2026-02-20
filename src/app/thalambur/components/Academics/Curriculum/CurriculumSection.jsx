@@ -104,8 +104,8 @@ export default function AcademicStructure() {
     <div className="bg-[#fafafa] min-h-screen py-20 px-6 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <header className="mb-16 max-w-3xl">
-          <h1 className="text-4xl font-bold text-[#1c1533] mb-6 tracking-tight">Academic Structure</h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <h1 className="text-4xl font-primary font-bold text-[#1c1533] mb-6 tracking-tight">Academic Structure</h1>
+          <p className="text-lg font-secondary text-gray-600 leading-relaxed">
             We are the best CBSE school in Chennai, providing an excellent learning structure to prepare students for the future through a joyous, experience-led curriculum.
           </p>
         </header>
@@ -120,17 +120,17 @@ export default function AcademicStructure() {
                 <button
                   key={level.id}
                   onClick={() => setActiveTab(level)}
-                  className="group relative py-6 px-4 text-left transition-all duration-300"
+                  className="group relative py-6 px-4 text-left font-primary transition-all duration-300"
                 >
                   {activeTab.id === level.id && (
                     <motion.div
                       layoutId="activeSideBar"
-                      className="absolute left-0 top-0 bottom-0 w-1 bg-orange-500 z-10"
+                      className="absolute left-0 top-0 bottom-0 w-1 font-primary bg-orange-500 z-10"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
                   <div className={`absolute inset-0 transition-colors duration-200 ${activeTab.id === level.id ? 'bg-white shadow-sm' : 'group-hover:bg-gray-100/50'}`} />
-                  <span className={`relative z-20 text-md font-bold uppercase tracking-wider transition-colors duration-300 ${activeTab.id === level.id ? "text-[#1c1533]" : "text-gray-400 group-hover:text-gray-600"}`}>
+                  <span className={`relative z-20 text-md font-bold uppercase tracking-wider transition-colors duration-300 ${activeTab.id === level.id ? "text-[#1c1533]" : "text-gray-400 group-hover:text-gray-600 font-secondary"}`}>
                     {level.title}
                   </span>
                 </button>
@@ -149,9 +149,9 @@ export default function AcademicStructure() {
                 className="p-8 md:p-12"
               >
                 <div className="mb-10">
-                  <h2 className="text-orange-500 font-bold text-sm uppercase mb-3 tracking-[0.2em]">{activeTab.title}</h2>
-                  <h3 className="text-3xl font-bold text-[#1c1533] mb-6 leading-tight">{activeTab.subtitle}</h3>
-                  <p className="text-md text-gray-600 leading-relaxed italic border-l-4 border-gray-100 pl-6 mb-8">
+                  <h2 className="text-orange-500 font-bold font-primary text-sm uppercase mb-3 tracking-[0.2em]">{activeTab.title}</h2>
+                  <h3 className="text-3xl font-secondary font-bold text-[#1c1533] mb-6 leading-tight">{activeTab.subtitle}</h3>
+                  <p className="text-md font-secondary text-gray-600 leading-relaxed italic border-l-4 border-gray-100 pl-6 mb-8">
                     {activeTab.description}
                   </p>
                 </div>
@@ -159,11 +159,11 @@ export default function AcademicStructure() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   {activeTab.highlights?.map((item, idx) => (
                     <div key={idx} className="space-y-2">
-                      <h4 className="font-bold text-[#1c1533] flex items-center gap-2">
+                      <h4 className="font-bold font-primary text-[#1c1533] flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                         {item.label}
                       </h4>
-                      <p className="text-gray-500 leading-relaxed text-sm">{item.text}</p>
+                      <p className="text-gray-500 leading-relaxed font-secondary text-sm">{item.text}</p>
                     </div>
                   ))}
                 </div>

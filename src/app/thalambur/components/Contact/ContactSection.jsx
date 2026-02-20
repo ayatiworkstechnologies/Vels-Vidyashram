@@ -7,8 +7,8 @@ const ContactSection = () => {
     <div className="bg-white min-h-screen font-sans">
       {/* Hero Section - Minimalist & Bold */}
       <div className="bg-[#3f2b96] pt-20 pb-32 px-6 text-center text-white">
-        <h1 className="text-5xl font-extrabold mb-4 tracking-tight text-white">Contact Us</h1>
-        <p className="text-xl opacity-80 max-w-2xl mx-auto">
+        <h1 className="text-5xl font-extrabold mb-4 tracking-tight text-white font-primary">Contact Us</h1>
+        <p className="text-xl opacity-80 max-w-2xl mx-auto font-secondary">
           Reach out to our Thalambur campus directly for admissions, academic inquiries, or campus tours.
         </p>
       </div>
@@ -19,8 +19,8 @@ const ContactSection = () => {
           {/* Main Info Card */}
           <div className="lg:col-span-2 bg-white rounded-3xl shadow-xl shadow-gray-200/50 p-10 border border-gray-100 flex flex-col justify-center">
             <div className="mb-10">
-              <h2 className="text-3xl font-bold text-[#3f2b96] mb-2">Vels Vidyashram</h2>
-              <p className="text-primary font-semibold text-lg uppercase tracking-wide">Senior Secondary School — Thalambur</p>
+              <h2 className="text-3xl font-bold text-[#3f2b96] mb-2 font-primary">Vels Vidyashram</h2>
+              <p className="text-primary font-semibold text-lg uppercase tracking-wide font-secondary">Senior Secondary School — Thalambur</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -30,8 +30,8 @@ const ContactSection = () => {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">Our Location</h4>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 font-primary">Our Location</h4>
+                  <p className="text-gray-600 leading-relaxed text-sm font-secondary">
                     Old Mahabalipuram Road (OMR) IT Highway,<br />
                     Navalur, Adjacent to Sri Venkateswara Dental College,<br />
                     Thalambur, Chennai - 600 130
@@ -46,9 +46,9 @@ const ContactSection = () => {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600 text-sm font-medium hover:text-primary transition cursor-pointer">7401 65 7975</p>
-                    <p className="text-gray-600 text-sm font-medium hover:text-primary transition cursor-pointer">7401 65 1975</p>
+                    <h4 className="text-lg font-bold text-gray-900 mb-1 font-primary">Phone</h4>
+                    <p className="text-gray-600 text-sm font-medium hover:text-primary transition cursor-pointer font-secondary">7401 65 7975</p>
+                    <p className="text-gray-600 text-sm font-medium hover:text-primary transition cursor-pointer font-secondary">7401 65 1975</p>
                   </div>
                 </div>
 
@@ -57,8 +57,8 @@ const ContactSection = () => {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600 text-sm font-medium break-all">admissions@velsvidyashram.ac.in</p>
+                    <h4 className="text-lg font-bold text-gray-900 mb-1 font-primary">Email</h4>
+                    <p className="text-gray-600 text-sm font-medium break-all font-secondary">admissions@velsvidyashram.ac.in</p>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const ContactSection = () => {
               className="group flex flex-1 items-center justify-between bg-white hover:bg-primary text-primary p-8 rounded-3xl font-bold transition-all duration-300 shadow-lg shadow-[#00bcd4]/20"
             >
               <div className="flex flex-col">
-                <span className="text-xs opacity-80 uppercase tracking-widest mb-1">Admission Portal</span>
+                <span className="text-xs opacity-80 uppercase tracking-widest mb-1 font-secondary">Admission Portal</span>
                 <span className="text-2xl">Enroll Today</span>
               </div>
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={28} />
@@ -94,8 +94,8 @@ const ContactSection = () => {
                 <MessageCircle size={24} />
               </div>
               <div>
-                <p className="text-gray-900 font-bold">Need Help?</p>
-                <p className="text-gray-500 text-xs">Visit our help desk during school hours.</p>
+                <p className="text-gray-900 font-bold font-secondary">Need Help?</p>
+                <p className="text-gray-500 text-xs font-secondary">Visit our help desk during school hours.</p>
               </div>
             </div>
           </div>

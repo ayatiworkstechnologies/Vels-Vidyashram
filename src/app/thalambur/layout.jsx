@@ -1,6 +1,7 @@
 import "../globals.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata = {
   title: "Vels Vidyashram",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         <main className="relative z-0">
           {children}
         </main>
+        <ScrollToTop />
 
         <Footer />
       </body>

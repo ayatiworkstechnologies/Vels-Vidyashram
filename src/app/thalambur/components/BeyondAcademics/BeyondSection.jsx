@@ -265,7 +265,7 @@ export default function Gallery() {
             onClick={() => setActiveTab(tab)}
             className={`px-6 py-2 rounded-md font-bold text-sm transition-all duration-300 border-2 
               ${activeTab === tab 
-                ? "bg-primary border-primary text-white shadow-lg scale-105" 
+                ? "bg-primary border-primary font-primary text-white shadow-lg scale-105" 
                 : "bg-white border-primary text-primary hover:border-secondary"}`}
           >
             {tab.toUpperCase()}
@@ -280,8 +280,8 @@ export default function Gallery() {
           <div key={idx} className={`flex flex-col md:flex-row gap-12 items-center ${section.reverse ? 'md:flex-row-reverse' : ''}`}>
             
             <div className="w-full md:w-1/3">
-              <h2 className="text-3xl font-bold text-primary mb-4">{section.title}</h2>
-              <div className="text-gray-600 leading-relaxed text-sm md:text-base">
+              <h2 className="text-3xl font-bold text-primary mb-4 font-primary">{section.title}</h2>
+              <div className="text-gray-600 leading-relaxed text-sm md:text-base font-secondary">
                 {section.description}
               </div>
             </div>

@@ -16,11 +16,11 @@ export default function GalleryGrid() {
     <section className="py-12 md:py-20 bg-white px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
-          <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
+          <span className="bg-orange-100 text-orange-600 px-3 py-1 font-primary rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
             Gallery
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-4">Life at School</h2>
-          <p className="text-gray-500 mt-2 text-sm md:text-base">
+          <h2 className="text-3xl md:text-4xl font-secondary font-bold mt-4">Life at School</h2>
+          <p className="text-gray-500 mt-2 font-secondary text-sm md:text-base">
             Snapshots of learning, events, and joyful moments.
           </p>
         </div>
@@ -43,7 +43,7 @@ function RevealCard({ item }) {
       whileHover="hover"
       whileTap="hover" // Enables the reveal on mobile tap
       animate="rest"
-      className="relative h-[350px] sm:h-[400px] md:h-[480px] w-full bg-white overflow-hidden cursor-pointer border border-gray-100 rounded-xl shadow-sm"
+      className="relative h-[350px] sm:h-[400px] md:h-[480px] w-full bg-white overflow-hidden cursor-pointer font-primary border border-gray-100 rounded-xl shadow-sm"
     >
       {/* 1. THE CONTENT BOX */}
       <motion.div
@@ -56,7 +56,7 @@ function RevealCard({ item }) {
         transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
       >
         <motion.h3 
-          className="text-white text-xl md:text-2xl font-bold"
+          className="text-white text-xl font-primary md:text-2xl font-bold"
           variants={{ rest: { opacity: 0, y: -10 }, hover: { opacity: 1, y: 0 } }}
         >
           {item.title}
@@ -104,7 +104,7 @@ function RevealCard({ item }) {
         }}
         transition={{ delay: 0.2 }}
       >
-        <span className="text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] text-gray-900">MORE</span>
+        <span className="text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] text-gray-900 font-secondary">MORE</span>
         <span className="text-lg md:text-xl text-gray-900 transition-transform duration-300">↗</span>
       </motion.div>
 

@@ -6,129 +6,99 @@ import { Play, Quote, X, ChevronDown, Calendar, GraduationCap } from "lucide-rea
 const VIDEO_DATA = {
   videosByYear: {
     "2025 - 2026": [
-       {
+      {
+        id: 1,
+        title: "Independence day celebration ",
+        thumbnail: "/thalambur/thumbnail/thum-1.jpg",
+        videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
+      },
+      {
+        id: 2,
+        title: "KG- Yellow day celebration ",
+        thumbnail: "/thalambur/thumbnail/thum-2.jpg",
+        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
+      },
+      {
+        id: 3,
+        title: "KG- Red day celebration",
+        thumbnail: "/thalambur/thumbnail/thum-3.jpg",
+        videoUrl: "https://www.youtube.com/embed/AVH_Dkse7LY?si=adTVbrSBeQ3LjvEC"
+      },
+      {
+        id: 4,
+        title: "Empowering educators through STEM",
+        thumbnail: "/thalambur/thumbnail/thum-4.jpg",
+        videoUrl: "https://www.youtube.com/embed/wia-jhd6dTA?si=OkT91GpEw7DpBjLa"
+      },
+      {
+        id: 5,
+        title: "No Bag day ",
+        thumbnail: "/thalambur/thumbnail/thum-5.jpg",
+        videoUrl: "https://www.youtube.com/embed/zSJivDnKOBM?si=8xqNiMbnCKyrCA0L"
+      },
+      {
+        id: 6,
+        title: "Investiture ceremony",
+        thumbnail: "/thalambur/thumbnail/thum-6.jpg",
+        videoUrl: "https://www.youtube.com/embed/rkxadX1MFa8?si=SPeHF_OSe_5lFGYQ"
+      },
+      {
+        id: 7,
+        title: "Campus visit to Vels Medical College & Hospital",
+        thumbnail: "/thalambur/thumbnail/thum-7.jpg",
+        videoUrl: "https://www.youtube.com/embed/_IxOrTmWF4Y?si=YXND2SdpVG4h-W-S"
+      },
+      {
+        id: 8,
+        title: "Father's Day celebration",
+        thumbnail: "/thalambur/thumbnail/thum-8.jpg",
+        videoUrl: "https://www.youtube.com/embed/jFrVGTsUFsQ?si=aqCrdY-wEo5ra5jp"
+      },
+      {
+        id: 9,
+        title: "Vels Football club Inauguration",
+        thumbnail: "/thalambur/thumbnail/thum-9.jpg",
+        videoUrl: "https://www.youtube.com/embed/fPgGO-yCNWE?si=EiLl1TqIDA9Oie6q"
+      },
+      {
+        id: 10,
+        title: "No-Bag Day 2025",
+        thumbnail: "/thalambur/thumbnail/thum-10.jpg",
+        videoUrl: "https://www.youtube.com/embed/aMH9OWNBmww?si=iLziC4utO1v3rAcY"
+      },
+   
+      {
         id: 11,
-        title: "Campus Tour",
-        thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title: "EVS Culmination day Grade I & II",
+        thumbnail: "/thalambur/thumbnail/thum-11.jpg",
+        videoUrl: "https://www.youtube.com/embed/sbImD_yjKJc?si=ILy7kA9A1nU7GNMQ"
       },
       {
         id: 12,
-        title: "Annual Sports Day",
-        thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title: "KG- Culmination day 2025 ",
+        thumbnail: "/thalambur/thumbnail/thum-12.jpg",
+        videoUrl: "https://www.youtube.com/embed/R5KPASt5FLQ?si=DkIQs70ZQXk47ThQ"
+     
       },
       {
-        id: 13,
-        title: "Christmas Celebration",
-        thumbnail: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+         id: 13,
+        title: "Grade IX-XII field trip ",
+        thumbnail: "/thalambur/thumbnail/thum-13.jpg",
+        videoUrl: "https://www.youtube.com/embed/-TvogdGuf40?si=3XFfla0QsHCdxr05"
+ 
       },
       {
         id: 14,
-        title: "School Assembly",
-        thumbnail: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title: "Grade VI-VIII field trip ",
+        thumbnail: "/thalambur/thumbnail/thum-14.jpg",
+        videoUrl: "https://www.youtube.com/embed/4zc-NoB6e-0?si=NoY7htZ4IAQVt6Oi"
       },
       {
         id: 15,
-        title: "Music Competition",
-        thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title: "Grade III-V field trip",
+        thumbnail: "/thalambur/thumbnail/thum-15.jpg",
+        videoUrl: "https://www.youtube.com/embed/eNWYoOH6jG8?si=36Dt8pajlOa9b_Co"
       },
-      // {
-      //   id: 1,
-      //   title: "Independence day celebration ",
-      //   thumbnail: "/thalambur/thumbnail/thum-1.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
-      // },
-      // {
-      //   id: 2,
-      //   title: "KG- Yellow day celebration ",
-      //   thumbnail: "/thalambur/thumbnail/thum-2.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
-      // },
-      // {
-      //   id: 3,
-      //   title: "KG- Red day celebration",
-      //   thumbnail: "/thalambur/thumbnail/thum-3.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 4,
-      //   title: "Empowering educators through STEM",
-      //   thumbnail: "/thalambur/thumbnail/thum-4.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 5,
-      //   title: "No Bag day ",
-      //   thumbnail: "/thalambur/thumbnail/thum-5.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 6,
-      //   title: "Investiture ceremony",
-      //   thumbnail: "/thalambur/thumbnail/thum-6.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 7,
-      //   title: "Campus visit to Vels Medical College & Hospital",
-      //   thumbnail: "/thalambur/thumbnail/thum-7.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 8,
-      //   title: "Father's Day celebration",
-      //   thumbnail: "/thalambur/thumbnail/thum-8.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 9,
-      //   title: "Vels Football club Inauguration",
-      //   thumbnail: "/thalambur/thumbnail/thum-9.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 10,
-      //   title: "No-Bag Day 2025",
-      //   thumbnail: "/thalambur/thumbnail/thum-10.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-    
-      // {
-      //   id: 11,
-      //   title: "EVS Culmination day Grade I & II",
-      //   thumbnail: "/thalambur/thumbnail/thum-11.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 12,
-      //   title: "KG- Culmination day 2025 ",
-      //   thumbnail: "/thalambur/thumbnail/thum-12.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      
-      // },
-      // {
-      //    id: 13,
-      //   title: "Grade IX-XII field trip ",
-      //   thumbnail: "/thalambur/thumbnail/thum-13.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-
-      // },
-      // {
-      //   id: 14,
-      //   title: "Grade VI-VIII field trip ",
-      //   thumbnail: "/thalambur/thumbnail/thum-14.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
-      // {
-      //   id: 15,
-      //   title: "Grade III-V field trip",
-      //   thumbnail: "/thalambur/thumbnail/thum-15.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      // },
      
       // {
       //   id: 16,
@@ -147,7 +117,7 @@ const VIDEO_DATA = {
       //   title: "Pongal celebration 2026",
       //   thumbnail: "/thalambur/thumbnail/thum-18.jpg",
       //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-
+ 
       // },
       // {
       //   id: 19,
@@ -166,14 +136,14 @@ const VIDEO_DATA = {
       //   title: "Grandparents Day ",
       //   thumbnail: "/thalambur/thumbnail/thum-21.jpg",
       //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-
+ 
       // },
       // {
       //   id: 22,
       //   title: "KG- Purple day celebration ",
       //   thumbnail: "/thalambur/thumbnail/thum-22.jpg",
       //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      
+     
       // },
       // {
       //   id: 23,
@@ -198,7 +168,7 @@ const VIDEO_DATA = {
       //   title: "Step Orientation",
       //   thumbnail: "/thalambur/thumbnail/thum-26.jpg",
       //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      
+     
       // },
       // {
       //   id: 27,
@@ -230,10 +200,10 @@ const VIDEO_DATA = {
       //   thumbnail: "/thalambur/thumbnail/thum-31.jpg",
       //   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       // }
-
+ 
        
     ],
-
+ 
     "2024 - 2025": [
       {
         id: 11,
@@ -267,7 +237,7 @@ const VIDEO_DATA = {
       }
     ]
   },
-
+ 
   testimonialSections: [
     {
       category: "Grade 1 and 2 Culmination Day",

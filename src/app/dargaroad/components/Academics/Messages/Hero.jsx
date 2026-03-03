@@ -76,12 +76,9 @@ export default function Hero() {
           <li className="text-gray-400">/</li>
 
           {/* Current Page */}
-          <li className="text-black font-medium capitalize">School Information</li>
+          <li className="text-black font-medium capitalize">General Messages</li>
         </ol>
       </div>
-
-  
-
    
     </>
   );

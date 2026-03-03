@@ -1,9 +1,7 @@
+import Chairman from "../components/About/VisionMission/Chairman";
+import Hero from "../components/About/VisionMission/Hero";
+import VisionMission from "../components/About/VisionMission/VisionMission";
 
-import Education from '../components/About/VisionMission/Education';
-import FeaturesSection from '../components/About/VisionMission/FeaturesSection';
-import Founder from '../components/About/VisionMission/Founder';
-import Hero from '../components/About/VisionMission/Hero';
-import VisionMission from '../components/About/VisionMission/VisionMission';
 
 
 const siteTitle = "About Us  | Vels Vidyashram";
@@ -33,9 +31,9 @@ export default function Page() {
   return (
     <main>
         <Hero />
-        <Founder />
-        <FeaturesSection />
-        <Education />
+        <VisionMission />
+       <Chairman />
+        
     </main>
   );
 }

@@ -1,5 +1,6 @@
-import Hero from "@/app/thalambur/components/About/School-Information/Hero";
-import SchoolInfoPage from "../components/About/SchoolInformation/SchoolInfo";
+import Hero from "../components/About/OurGroup/Hero";
+import OurGroupSection from "../components/About/OurGroup/OurGroupSection";
+import VelsGlobal from "../components/About/OurGroup/VelsGlobal";
 
 
 
@@ -29,8 +30,9 @@ export const metadata = {
 export default function Page() {
   return (
     <main>
-       <Hero />
-       <SchoolInfoPage />
+        <Hero />
+        <VelsGlobal />
+    
     
     </main>
   );

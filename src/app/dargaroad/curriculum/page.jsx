@@ -1,7 +1,7 @@
 
-import OurGroupDarkGrid from '../components/About/OurGroup/OurGroupGrid';
-import Hero from '../components/About/VisionMission/Hero';
-import CurriculumPage from '../components/Academics/Curriculum/CurriculumPage';
+
+import Hero from '@/app/thalambur/components/Academics/Curriculum/Hero';
+import CurriculumSection from '../components/Academics/Curriculum/CurriculumPage';
 
 const siteTitle = "Vels Vidyashram - Pallavaram";
 const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
@@ -30,7 +30,7 @@ export default function Page() {
   return (
     <main>
         <Hero />
-        <CurriculumPage />
+        <CurriculumSection />
     
     </main>
   );

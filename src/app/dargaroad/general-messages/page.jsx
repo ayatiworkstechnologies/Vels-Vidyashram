@@ -1,7 +1,7 @@
+import Hero from "@/app/thalambur/components/Academics/Messages/Hero";
+import MessageSection from "../components/Academics/Messages/MessageSection";
 
-import Hero from '../components/About/VisionMission/Hero';
-import CircularSlider from '../components/Academics/Circular/CircularSlider';
-import GeneralMessages from '../components/Academics/Messages/GeneralMessges';
+
 
 const siteTitle = "Vels Vidyashram - Pallavaram";
 const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
@@ -29,8 +29,8 @@ export const metadata = {
 export default function Page() {
   return (
     <main>
-        <Hero />
-        <GeneralMessages />
+       <Hero />
+       <MessageSection />
     </main>
   );
 }

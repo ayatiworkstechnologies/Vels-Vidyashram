@@ -79,9 +79,6 @@ export default function Hero() {
           <li className="text-black font-medium capitalize">School Information</li>
         </ol>
       </div>
-
-  
-
    
     </>
   );

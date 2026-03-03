@@ -3,94 +3,17 @@
 import { useState, useEffect } from "react";
 
 const ITEMS = [
-  {
-    id: 1,
-    title: "Mandatory Disclosure",
-    pdf: "/dargaroad/pdf/Mandatory-disclosure.pdf",
-  },
-  {
-    id: 2,
-    title: "Affiliations",
-    pdf: "/dargaroad/pdf/AFFILIATION.pdf",
-  },
-  {
-    id: 3,
-    title: "NOC",
-    pdf: "/dargaroad/pdf/NOC.pdf",
-  },
-  {
-    id: 4,
-    title: "Trust",
-    pdf: "/dargaroad/pdf/TRUST.pdf",
-  },
-  {
-    id: 5,
-    title: "Building",
-    pdf: "/dargaroad/pdf/Building.pdf",
-  },
-  {
-    id: 6,
-    title: "Fire",
-    pdf: "/dargaroad/pdf/fire-certificate.pdf",
-  },
-  {
-    id: 7,
-    title: "Sanitary",
-    pdf: "/dargaroad/pdf/sanitary-certificate.pdf",
-  },
-  {
-    id: 8,
-    title: "FEE structure",
-    pdf: "/dargaroad/pdf/fee-structure.pdf",
-  },
-  {
-    id: 9,
-    title: "Calendar",
-    pdf: "/dargaroad/pdf/academic-calendar.pdf",
-  },
-  {
-    id: 10,
-    title: "SMC",
-    pdf: "/dargaroad/pdf/Smc.pdf",
-  },
-  {
-    id: 11,
-    title: "Recognition",
-    pdf: "/dargaroad/pdf/Recognition.pdf",
-  },
-  {
-    id: 12,
-    title: "PTA",
-    pdf: "/dargaroad/pdf/PTA.pdf",
-  },
-  {
-    id: 13,
-    title: "Result",
-    pdf: "/dargaroad/pdf/staff-details.pdf",
-  },
-  {
-    id: 14,
-    title: "Self Darga Road",
-    pdf: "/dargaroad/pdf/Self-DargaRoad.pdf",
-  },
-  {
-    id: 15,
-    title: "Self Affidavit",
-    pdf: "/dargaroad/pdf/self-affidavit.pdf",
-  },
-  {
-    id: 16,
-    title: "Tc Sample",
-    pdf: "/dargaroad/pdf/Transfer-Certificate-2023-2024.pdf",
-  },
-  {
-    id: 17,
-    title: "Land Certificate",
-    pdf: "/dargaroad/pdf/land-certificate.pdf",
-  },
+  { id: 1, title: "Calendar", pdf: "/thalambur/pdf/calendar.pdf" },
+  { id: 2, title: "List of Books", pdf: "/thalambur/pdf/list-of-books.pdf" },
+  { id: 3, title: "Home Work Policy", pdf: "/thalambur/pdf/homework-policy.pdf" },
+  { id: 4, title: "Annual Report", pdf: "/thalambur/pdf/annual-report.pdf" },
+  { id: 5, title: "Teacher Details", pdf: "/thalambur/pdf/teacher-details.pdf" },
+  { id: 6, title: "Strength Details", pdf: "/thalambur/pdf/student-strength.pdf" },
+
+
 ];
 
-export default function SchoolInfoPage() {
+export default function MandatorySection() {
   const [openPdf, setOpenPdf] = useState(null);
 
   useEffect(() => {
@@ -110,13 +33,11 @@ export default function SchoolInfoPage() {
     <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 min-h-screen">
       {/* Heading Section */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold font-primary text-[#1c1533]">School Information</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[#1c1533]">Mandatory Disclosure</h1>
         <div className="flex justify-center mt-4">
           <div className="w-16 h-1 bg-orange-500 rounded-full" />
         </div>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg font-secondary">
-          Access and download official documentation, certifications, and academic structures.
-        </p>
+     
       </div>
 
       {/* Alternate Grid Design: Text-Focused Cards */}
@@ -125,16 +46,16 @@ export default function SchoolInfoPage() {
           <button
             key={it.id}
             onClick={() => setOpenPdf({ pdf: it.pdf, title: it.title })}
-            className="group relative flex flex-col justify-between items-start p-6 bg-white border border-gray-100 rounded-xl font-secondary shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-200 hover:-translate-y-1 text-left"
+            className="group relative flex flex-col justify-between items-start p-6 bg-white border border-gray-100 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-200 hover:-translate-y-1 text-left"
           >
             <div className="mb-4">
              
-              <h3 className="text-lg font-semibold font-primary text-gray-800 group-hover:text-[#1c1533] transition-colors leading-tight">
+              <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#1c1533] transition-colors leading-tight">
                 {it.title}
               </h3>
             </div>
             
-            <div className="flex items-center font-secondary text-sm font-medium text-orange-500 group-hover:text-orange-600 cursor-pointer">
+            <div className="flex items-center text-sm font-medium text-orange-500 group-hover:text-orange-600 cursor-pointer">
               View Document
               <svg 
                 className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" 
@@ -157,19 +78,19 @@ export default function SchoolInfoPage() {
           <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-5xl h-[85vh] overflow-hidden z-10">
             {/* Modal Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b bg-white">
-              <h3 className="text-xl font-bold text-gray-800 font-primary">{openPdf.title}</h3>
+              <h3 className="text-xl font-bold text-gray-800">{openPdf.title}</h3>
 
               <div className="flex items-center gap-3">
                 <a
                   href={openPdf.pdf}
                   download
-                  className="hidden sm:flex items-center px-4 py-2 rounded-lg bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors font-secondary"
+                  className="hidden sm:flex items-center px-4 py-2 rounded-lg bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors"
                 >
                   Download PDF
                 </a>
                 <button 
                   onClick={() => setOpenPdf(null)} 
-                  className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-500 font-secondary"
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-500"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />

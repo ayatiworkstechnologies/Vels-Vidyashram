@@ -1,7 +1,7 @@
+import Hero from "../components/Gallery/PhotoGallery/Hero";
+import PhotoSection from "../components/Gallery/PhotoGallery/PhotoSection";
 
-import Hero from '../components/About/VisionMission/Hero';
-import TabSection from '../components/Gallery/Facilities/TabSection';
-import GalleryTabs from '../components/Gallery/PhotoGallery/GalleryTab';
+
 
 
 const siteTitle = "Vels Vidyashram - Pallavaram";
@@ -30,8 +30,8 @@ export const metadata = {
 export default function Page() {
   return (
     <main>
-        <Hero />
-        <GalleryTabs />
+      <Hero />
+      <PhotoSection />
        
          
     </main>

@@ -26,15 +26,14 @@ const navItems = [
       { label: "Messages", href: "/dargaroad/general-messages" },
     ],
   },
-  { label: "Beyond Academics", href: "/thalambur/beyond-academics" },
+  { label: "Beyond Academics", href: "/dargaroad/beyond-academics" },
   {
     label: "Admissions",
     href: "#",
     submenu: [
-      { label: "Procedure", href: "/thalambur/procedure" },
-      { label: "Enquiry", href: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" },
+      { label: "Admission Enquiry", href: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" },
       {label: "Online Fee Payment", href: "https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"},
-      { label: "Transport", href: "/thalambur/transport" },
+      { label: "Transport", href: "/dargaroad/transport-facilities" },
     ],
   },
   {
@@ -42,18 +41,19 @@ const navItems = [
     href: "#",
     submenu: [
     
-      { label: "Photo Gallery", href: "/thalambur/photo-gallery" },
-      { label: "Video Gallery", href: "/thalambur/video" },
+      { label: "Photo Gallery", href: "/dargaroad/photo-gallery" },
+      { label: "Video Gallery", href: "/dargaroad/video-gallery" },
     ],
   },
   {
     label: "Parent Login",
     href: "#",
     submenu: [
-      { label: "Login", href: "https://parent.neverskip.com/" }
+      { label: "Login", href: "https://parent.neverskip.com/" },
+      { label: "Feedback", href: "https://docs.google.com/forms/d/e/1FAIpQLSeGTCV8u4EPUh194loksUnxmwutnnKGOo2V1BA8X1fPse9l2Q/viewform" }
     ],
   },
-  { label: "Contact us", href: "/thalambur/contact-us" },
+  { label: "Contact us", href: "/dargaroad/contact" },
 ];
 
 const campuses = [

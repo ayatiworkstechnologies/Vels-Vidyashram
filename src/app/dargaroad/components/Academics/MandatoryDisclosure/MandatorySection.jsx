@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 
 const ITEMS = [
-  { id: 1, title: "Calendar", pdf: "/thalambur/pdf/calendar.pdf" },
-  { id: 2, title: "List of Books", pdf: "/thalambur/pdf/list-of-books.pdf" },
-  { id: 3, title: "Home Work Policy", pdf: "/thalambur/pdf/homework-policy.pdf" },
-  { id: 4, title: "Annual Report", pdf: "/thalambur/pdf/annual-report.pdf" },
-  { id: 5, title: "Teacher Details", pdf: "/thalambur/pdf/teacher-details.pdf" },
-  { id: 6, title: "Strength Details", pdf: "/thalambur/pdf/student-strength.pdf" },
+  { id: 1, title: "Results", pdf: "/dargaroad/pdf/results.pdf" },
+  { id: 2, title: "List of Books", pdf: "/dargaroad/pdf/listofbooks.pdf" },
+  { id: 3, title: "Home Work Policy", pdf: "/dargaroad/pdf/home-work-policy.pdf" },
+  { id: 4, title: "Annual Report", pdf: "/dargaroad/pdf/annual-report.pdf" },
+  { id: 5, title: "Teacher Details", pdf: "/dargaroad/pdf/teacher.pdf" },
+  { id: 6, title: "Strength Details", pdf: "/dargaroad/pdf/strength.pdf" },
 
 
 ];

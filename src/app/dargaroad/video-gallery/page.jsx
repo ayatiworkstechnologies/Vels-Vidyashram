@@ -1,5 +1,8 @@
-import BeyondSection from "../components/BeyondAcademics/BeyondSection";
-import Hero from "../components/BeyondAcademics/Hero";
+import Hero from "../components/Gallery/VideoGallery/Hero";
+import VideoSection from "../components/Gallery/VideoGallery/VideoSection";
+import Video from "../components/Video";
+
+
 
 
 
@@ -29,9 +32,10 @@ export const metadata = {
 export default function Page() {
   return (
     <main>
+   
        <Hero />
-       <BeyondSection /> 
-    
+       <VideoSection />
+         
     </main>
   );
 }

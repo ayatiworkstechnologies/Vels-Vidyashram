@@ -1,12 +1,6 @@
 import Hero from "../components/Admission/Transport/Hero";
 import TransportSection from "../components/Admission/Transport/TransportSection";
 
-
-
-
-
-
-
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
 const siteDescription = "";
 const siteUrl = "https://yourwebsite.com";

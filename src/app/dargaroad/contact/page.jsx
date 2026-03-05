@@ -1,5 +1,7 @@
-import BeyondSection from "../components/BeyondAcademics/BeyondSection";
-import Hero from "../components/BeyondAcademics/Hero";
+import ContactSection from "../components/Contact/ContactSection";
+import Hero from "../components/Contact/Hero";
+
+
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -33,13 +35,12 @@ export const metadata = {
   viewport: "width=device-width, initial-scale=1",
 };
 
-export default function Thalambur() {
+export default function Dargaroad() {
   return (
     <main>
-        <Hero />
-        <BeyondSection />
-     
-
+       
+      <Hero />
+      <ContactSection/>
     </main>
   );
 }

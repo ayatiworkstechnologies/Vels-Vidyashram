@@ -16,8 +16,8 @@ export default function LetterSection() {
           whitespace-nowrap
         "
       >
-        Welcome to Vels Vidyashram, Thalambur where learning, values, and
-        excellence come together.
+        NIOS accredited Study Centre 190191 (courses offered: Secondary and
+          senior secondary with science subjects)
       </marquee>
     </section>
   );

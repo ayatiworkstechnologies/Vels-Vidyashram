@@ -6,141 +6,130 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 const AWARDS_DATA = {
   awards: [
     {
-      title: "Karate",
+      title: "SOF -National Science Olympiad (NSO) – Medal Holders",
      
       id: 1,
       images: [
-        "/thalambur/karate-1.jpg",
-        "/thalambur/karate-2.jpg",
+        "/dargaroad/awards/nso.png",
      
       ],
     },
     {
-      title: "Archery",
-      category: "Science",
+      title: "Grade 6 -PT4 Proficiency certificate holders",
       id: 2,
       images: [
-        "/thalambur/archery-1.jpg",
-        "/thalambur/archery-2.jpg",
+        "/dargaroad/awards/grade-6-1.png",
+        "/dargaroad/awards/grade-6-2.png",
  
       ],
     },
     {
-      title: "SOF and IOF Gold Medal winners",
-      category: "Sports",
+      title: "Grade 5-PT4 Proficiency certificate holders",
       id: 3,
       images: [
-        "/thalambur/sof.jpg",
+        "/dargaroad/awards/grade-5.png",
        
       ],
     },
     {
-      title: "Swimming Competition",
+      title: "Grade 2 -PT4 Proficiency certificate holders",
       category: "Excellence",
       id: 4,
       images: [
-        "/thalambur/vv-1.jpg",
-        "/thalambur/vv-2.jpg",
+        "/dargaroad/awards/grade-2-1.png",
+        "/dargaroad/awards/grade-2-2.png",
+        "/dargaroad/awards/grade-2-3.png",
+        "/dargaroad/awards/grade-2-4.png",
        
       ],
     },
     {
-      title: "Singhania Leadership Conference",
-      category: "Academic",
+      title: "Grade 1 -PT4 Proficiency certificate holders",
       id: 5,
       images: [
-        "/thalambur/singh.jpg",
-   
+        "/dargaroad/awards/grade-1-1.png",
+        "/dargaroad/awards/grade-1-2.png"
        
       ],
     },
     {
-      title: "Prithun Prasath of Grade 3 won silver medal in Skating which was conducted by Decathlon.",
+      title: "SOF International English Olympiad (IEO) – Medal Holders",
       category: "Technology",
       id: 6,
       images: [
-        "/thalambur/p-1.jpg",
-        "/thalambur/p-2.jpg",
+        "/dargaroad/awards/ieo-1.png",
+        "/dargaroad/awards/ieo-2.png",
+        "/dargaroad/awards/ieo-3.png",
+
        
       ],
     },
     {
-      title: "Sangamithrai of grade 3 for performing Silambam continuously for 3 hours",
+      title: "SOF OLYMPIAD – INTERNATIONAL GENERAL KNOWLEDGE OLYMPIAD(IGKO) MEDAL HOLDERS",
      
       id: 7,
       images: [
-        "/thalambur/san.jpg",
+        "/dargaroad/awards/igko.png",
        
       ],
     },
     {
-      title: "Sai Sree Rohit- placed 3rd in chengalpat district level chess competition",
+      title: "SOF International Commerce Olympiad (ICO) – Medal Holders",
       category: "Arts",
       id: 8,
       images: [
-        "/thalambur/chess-1.jpg",
-        "/thalambur/chess-2.jpg",
-        "/thalambur/chess-3.jpg",
-        "/thalambur/chess-4.jpg",
-
+        "/dargaroad/awards/ico.png",
 
       ],
     },
       {
-      title: "Lakshana G of VVT who is placed 1st in chengalpat district level chess competition",
-      category: "Arts",
+      title: "Grade 2 – PT 3 merit certificate holders",
       id: 9,
       images: [
-        "/thalambur/chess-5.jpg",
-        "/thalambur/chess-6.jpg",
-        "/thalambur/chess-7.jpg",
-        "/thalambur/chess-8.jpg",
-
-
+        "/dargaroad/awards/grade-pt3-1.png",
+        "/dargaroad/awards/grade-pt3-2.png",
+        "/dargaroad/awards/grade-pt3-3.png",
+        "/dargaroad/awards/grade-pt3-4.png",
+        "/dargaroad/awards/grade-pt3-5.png",
       ],
     },
         {
-      title: "Council for International American Accreditation",
-      category: "Arts",
+      title: "Women Edupreneur Award at the Times Education Icons 2025-26",
       id: 10,
       images: [
-        "/thalambur/ciaa-1.jpg",
-        "/thalambur/ciaa-2.jpg",
-        "/thalambur/ciaa-3.jpg",
+        "/dargaroad/awards/women-1.png",
+        "/dargaroad/awards/women-2.png",
+        "/dargaroad/awards/women-3.png",
 
       ],
     },
             {
-      title: "Dynamic school award",
-      category: "Arts",
+      title: "Grade 1-PT 3 merit certificate holders",
       id: 11,
       images: [
-        "/thalambur/dynamic.jpg",
+        "/dargaroad/awards/grade1-pt3-1.png",
+        "/dargaroad/awards/grade1-pt3-2.png",
+        "/dargaroad/awards/grade1-pt3-3.png",
+        "/dargaroad/awards/grade1-pt3-4.png",
      
-
       ],
     },
     {
-      title: "Green Campus Programme Award",
-      category: "Arts",
+      title: "Terminal 1 Proficiency Certificate Holders – Grade 5",
         id: 12,
       images: [
-        "/thalambur/green-1.jpg",
-        "/thalambur/green-2.jpg",
-        "/thalambur/green-3.png",
+        "/dargaroad/awards/grade5-1.png",
+        "/dargaroad/awards/grade5-2.png",
+        "/dargaroad/awards/grade5-3.png",
       ],
     },
      {
-      title: "𝑬𝒙𝒄𝒆𝒍𝒍𝒆𝒏𝒄𝒆 𝒊𝒏 𝑬𝒅𝒖-𝑺𝒑𝒐𝒓𝒕𝒔 𝒂𝒏𝒅 𝑺𝒐𝒄𝒊𝒂𝒍 𝑽𝒂𝒍𝒖𝒆 𝑬𝒅𝒖𝒄𝒂𝒕𝒊𝒐𝒏",
-      category: "Arts",
+      title: "Grade 3 – PT 3 merit certificate holders",
         id: 13,
       images: [
-        "/thalambur/ex-1.jpg",
-        "/thalambur/ex-2.jpg",
-        "/thalambur/ex-3.jpg",
-        "/thalambur/ex-4.jpg",
-        "/thalambur/ex-5.jpg",
-        "/thalambur/ex-6.jpg",
+        "/dargaroad/awards/grade3-1.png",
+        "/dargaroad/awards/grade3-2.png",
+     
       ],
     },
 

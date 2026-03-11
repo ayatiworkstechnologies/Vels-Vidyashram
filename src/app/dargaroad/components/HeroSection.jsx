@@ -1,226 +1,244 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import "swiper/css";
-import "swiper/css/effect-fade";
-
-export default function HeroSection() {
-  const slides = [
+const slides = [
     {
       id: 1,
       image: "/dargaroad/darga-web1.jpg",
       mobileImage: "/dargaroad/darga-mob1.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+      subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
     {
       id: 2,
       image: "/dargaroad/darga-web2.jpg",
       mobileImage: "/dargaroad/darga-mob2.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+      subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
     {
       id: 3,
       image: "/dargaroad/darga-web3.jpg",
       mobileImage: "/dargaroad/darga-mob3.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+      subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
     {
       id: 4,
       image: "/dargaroad/darga-web4.jpg",
       mobileImage: "/dargaroad/darga-mob4.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+      subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
     {
       id: 5,
       image: "/dargaroad/darga-web5.jpg",
       mobileImage: "/dargaroad/darga-mob5.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+      subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
     {
       id: 6,
       image: "/dargaroad/darga-web6.jpg",
       mobileImage: "/dargaroad/darga-mob6.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+      subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
     {
       id: 7,
       image: "/dargaroad/darga-web7.jpg",
       mobileImage: "/dargaroad/darga-mob7.jpg",
-      heading: "Inspiring Young Minds for a Brighter Tomorrow",
+      title: "Welcome to",
+       subtitle: "Vels Vidyashram\nSenior Secondary School",
     },
   ];
 
-  const swiperRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function HeroSection() {
+  const [active, setActive] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const timer = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActive((prev) => (prev + 1) % slides.length);
+        setIsAnimating(false);
+      }, 700);
+    }, 5000);
+
+    return () => clearInterval(timer);
   }, []);
 
-  const goToSlide = (index) => {
-    if (swiperRef.current?.slideTo) {
-      swiperRef.current.slideTo(index);
+  const handleDotClick = (index) => {
+    if (index !== active) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActive(index);
+        setIsAnimating(false);
+      }, 700);
     }
   };
 
   return (
-    <>
-      {/* ================= HERO SLIDER ================= */}
-      <div className="relative w-full h-[450px] md:h-[550px] overflow-hidden">
-        <Swiper
-          modules={[Autoplay, EffectFade]}
-          effect="fade"
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          loop={false}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          className="h-full"
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${
-                    isMobile ? slide.mobileImage : slide.image
-                  })`,
-                }}
-              >
-                {/* TEXT OVERLAY */}
-                <div className="absolute left-4 right-4 md:left-10 bottom-20 md:bottom-24 text-white space-y-4 max-w-full md:max-w-xl">
-                  <h2 className="font-primary font-primary-semibold text-black text-sm sm:text-base md:text-xl bg-white/90 px-3 py-2 w-fit">
-                    {slide.heading}
-                  </h2>
+    <section className="w-full">
+      {/* MOBILE LAYOUT (YOUR ORIGINAL) */}
+      <div className="flex flex-col lg:hidden h-[520px] w-full">
 
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <button
-                      onClick={() =>
-                        window.open(
-                          "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
-                          "_blank"
-                        )
-                      }
-                      className="w-fit bg-tertiary text-white py-2 px-5 font-primary font-primary-semibold shadow-md hover:bg-[#2b2070]"
-                    >
-                      Admission
-                    </button>
+        {/* LEFT PANEL */}
+        <div className="relative bg-[#F7931E] text-white w-full overflow-hidden">
+          {slides.map((s, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 flex items-center transition-all duration-700 ease-out ${
+                i === active
+                  ? "translate-y-0 opacity-100"
+                  : i < active
+                  ? "translate-y-full opacity-0"
+                  : "-translate-y-full opacity-0"
+              }`}
+            >
+              <div className="px-8">
+                <h4 className="text-3xl mb-2 text-white font-primary">
+                  {s.title}
+                </h4>
 
-                    <button
-                      onClick={() =>
-                        window.open(
-                          "https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp",
-                          "_blank"
-                        )
-                      }
-                      className="w-fit border border-tertiary text-white py-2 px-5 font-primary font-primary-bold shadow-md hover:bg-[#2b2070]"
-                    >
-                      Online Fees Payment
-                    </button>
+                <h1 className="text-3xl font-semibold text-white leading-tight whitespace-pre-line font-primary">
+                  {s.subtitle}
+                </h1>
+
+                <a
+                  href="/admissions"
+                  className="inline-block mt-6 bg-[#2B158F] px-6 py-2 rounded-full text-md font-medium hover:bg-[#1e0f63] transition-colors font-secondary"
+                >
+                  Admission
+                </a>
+
+                <div className="mt-16 flex items-center gap-2">
+                  <span className="font-medium">
+                    {String(active + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="flex gap-3">
+                    {slides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleDotClick(idx)}
+                        className={`h-[1px] w-8 transition-all duration-300 ${
+                          idx === active ? "bg-white" : "bg-white/40"
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </div>
 
-        {/* LEFT PAGINATION */}
-        <div className="absolute bottom-6 left-6 md:left-10 z-40 flex items-center gap-4">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              className="text-sm tracking-[0.3em] text-white/80 hover:text-white"
+        {/* IMAGE */}
+        <div className="relative w-full h-full overflow-hidden">
+          {slides.map((s, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                i === active
+                  ? "translate-x-0 opacity-100"
+                  : i < active
+                  ? "-translate-x-full opacity-0"
+                  : "translate-x-full opacity-0"
+              }`}
             >
-              {activeIndex === idx ? String(idx + 1).padStart(2, "0") : "_"}
-            </button>
+              <img
+                src={s.image}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* DESKTOP LAYOUT (OVERLAP VERSION) */}
+      <div className="hidden lg:block relative h-[620px] w-full overflow-hidden">
+
+        {/* FULL IMAGE */}
+        <div className="absolute inset-0">
+          {slides.map((s, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transition-all duration-700 ${
+                i === active
+                  ? "translate-x-0 opacity-100"
+                  : i < active
+                  ? "-translate-x-full opacity-0"
+                  : "translate-x-full opacity-0"
+              }`}
+            >
+              <img
+                src={s.image}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
           ))}
         </div>
 
-        {/* ================= DESKTOP STICKY CTA ================= */}
-        {/* <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-50 items-center gap-3">
-          <button
-            onClick={() =>
-              window.open(
-                "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
-                "_blank"
-              )
-            }
-            className="bg-white text-black text-sm px-3 py-1 font-primary font-primary-semibold shadow hover:bg-gray-100"
-          >
-            Admissions Open | Apply Now
-          </button>
+        {/* OVERLAP PANEL */}
+        <div className="absolute left-0 top-0 h-full w-[430px] bg-[#F7931E]/90 backdrop-blur-sm text-white z-20">
 
-          <button
-            onClick={() =>
-              window.open(
-                "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
-                "_blank"
-              )
-            }
-            className="h-12 w-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:bg-gray-100"
-          >
-            <Image
-              src="/dargaroad/icon-1.png"
-              alt="Admissions"
-              width={42}
-              height={42}
-            />
-          </button>
-        </div> */}
-      </div>
+          {slides.map((s, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 flex items-center transition-all duration-700 ${
+                i === active
+                  ? "translate-y-0 opacity-100"
+                  : i < active
+                  ? "translate-y-full opacity-0"
+                  : "-translate-y-full opacity-0"
+              }`}
+            >
+              <div className="px-8">
 
-      {/* ================= INFO BAR ================= */}
-      <div className="w-full bg-primary text-white py-3">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-sm md:text-lg font-primary">
-          <div className="flex items-center gap-2">
-            <span>Admission Helpline :</span>
-            <Image src="/main/phone.svg" alt="phone" width={18} height={18} />
-            <span>99625 06639 , 99625 06349</span>
-          </div>
+                <h4 className="text-3xl mb-2 text-white font-primary">
+                  {s.title}
+                </h4>
 
-          <div className="flex items-center gap-2">
-            <span>Email :</span>
-            <Image src="/main/mail-01.svg" alt="mail" width={18} height={18} />
-            <span>apply@velsvidyashram.ac.in</span>
-          </div>
+                <h1 className="text-4xl font-semibold text-white leading-tight whitespace-pre-line font-primary">
+                  {s.subtitle}
+                </h1>
+
+                <a
+                  href="/admissions"
+                  className="inline-block mt-6 bg-[#2B158F] px-6 py-2 rounded-full text-md font-medium hover:bg-[#1e0f63] transition-colors font-secondary"
+                >
+                  Admission
+                </a>
+
+                <div className="mt-16 flex items-center gap-2">
+                  <span className="font-medium">
+                    {String(active + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="flex gap-3">
+                    {slides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleDotClick(idx)}
+                        className={`h-[1px] w-8 transition-all duration-300 ${
+                          idx === active ? "bg-white" : "bg-white/40"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+
         </div>
       </div>
-
-      {/* ================= MOBILE STICKY CTA ================= */}
-      {/* <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t shadow-lg">
-        <div className="flex divide-x">
-   
-          <button
-            onClick={() =>
-              window.open(
-                "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
-                "_blank"
-              )
-            }
-            className="flex-1 py-3 flex items-center justify-center gap-2 bg-tertiary text-white text-sm font-primary font-primary-semibold"
-          >
-            <Image src="/main/mail-01.svg" alt="enquiry" width={18} height={18} />
-            Enquiry Now
-          </button>
-
-       
-          <a
-            href="tel:9962506639"
-            className="flex-1 py-3 flex items-center justify-center gap-2 bg-primary text-white text-sm font-primary font-primary-semibold"
-          >
-            <Image src="/main/phone.svg" alt="call" width={18} height={18} />
-            Call Now
-          </a>
-        </div>
-      </div> */}
-    </>
+    </section>
   );
 }

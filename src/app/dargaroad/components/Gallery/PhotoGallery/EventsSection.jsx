@@ -404,11 +404,8 @@ const EVENTS_DATA = {
           "/dargaroad/events/water-4.jpeg",
 
         ]
-      },
+      },    
     
-     
-
-
     ],
     '2024-2025': [
       {

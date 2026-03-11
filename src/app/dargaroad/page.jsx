@@ -8,6 +8,12 @@ import BestCbseSection from './components/BestCbseSection';
 import UpcomingEvents from './components/UpcomingEvents';
 import FooterSection from './components/FooterSection';
 import Events from './components/Events';
+import LetterSection from './components/LetterSection';
+import OurMottoSection from './components/OurMottoSection';
+import VelsDargaroad from './components/VelsDargaroad';
+import GalleryGrid from './components/GallerySection';
+import EventsSchedule from './components/EventSection';
+import AboutSchool from './components/AboutSchool';
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -38,13 +44,19 @@ export default function Dargaroad() {
   return (
     <main>
         <HeroSection />
-        <Cbse />
+        <LetterSection />
+        <OurMottoSection />
+        <AboutSchool />
+        <VelsDargaroad />
+        <GalleryGrid />
+        <EventsSchedule />
+        {/* <Cbse />
         <About />
         <Video />
         <BestCbseSection />
         <Events />
         <UpcomingEvents />
-        <FooterSection />
+        <FooterSection /> */}
     </main>
   );
 }

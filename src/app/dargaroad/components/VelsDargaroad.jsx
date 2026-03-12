@@ -91,7 +91,7 @@ export default function VelsDargaroad() {
             }`}
           >
             <Image
-              src="/thalambur/ramya-thalambur.png"
+              src="/dargaroad/evolve.png"
               alt="Students"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"
@@ -108,7 +108,7 @@ export default function VelsDargaroad() {
         }`}
       >
         <Image
-          src="/thalambur/bg-vels.png"
+          src="/dargaroad/vels-bg.png"
           alt="Vels Campus"
           fill
           className="object-cover"
@@ -141,7 +141,7 @@ export default function VelsDargaroad() {
             }`}
           >
             <Image
-              src="/thalambur/play.png"
+              src="/dargaroad/why.png"
               alt="Classroom"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"

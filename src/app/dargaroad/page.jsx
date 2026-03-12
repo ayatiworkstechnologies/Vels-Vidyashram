@@ -7,6 +7,7 @@ import VelsDargaroad from './components/VelsDargaroad';
 import GalleryGrid from './components/GallerySection';
 import EventsSchedule from './components/EventSection';
 import AboutSchool from './components/AboutSchool';
+import VideoSection from './components/VideoSection';
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -39,6 +40,7 @@ export default function Dargaroad() {
         <HeroSection />
         <LetterSection />
         <OurMottoSection />
+        <VideoSection />
         <AboutSchool />
         <VelsDargaroad />
         <GalleryGrid />

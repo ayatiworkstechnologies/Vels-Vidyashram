@@ -3,12 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const galleryItems = [
-  { id: 1, title: "Vels Football Club Inauguration", description: "", img: "/thalambur/vels-football-club-inauguration.png" },
-  { id: 2, title: "Awards", description: "", img: "/thalambur/awards.png" },
-  { id: 3, title: "Laboratory", description: "", img: "/thalambur/laboratory.png" },
-  { id: 4, title: "Activities", description: "", img: "/thalambur/event.png" },
-  { id: 5, title: "Sports", description: "", img: "/thalambur/sports.png" },
-  { id: 6, title: "Computer Lab", description: "", img: "/thalambur/computer-lab.png" },
+  { id: 1, title: "Infrastructure", description: "", img: "/dargaroad/in.png" },
+  { id: 2, title: "Awards", description: "", img: "/dargaroad/aw.png" },
+  { id: 3, title: "Laboratory", description: "", img: "/dargaroad/la.png" },
+  { id: 4, title: "Activities", description: "", img: "/dargaroad/ac.png" },
+  { id: 5, title: "Sports", description: "", img: "/dargaroad/sp.png" },
+  { id: 6, title: "AARAMBH 2025", description: "", img: "/dargaroad/aa.png" },
 ];
 
 export default function GalleryGrid() {

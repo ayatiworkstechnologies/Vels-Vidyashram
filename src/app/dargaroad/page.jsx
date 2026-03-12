@@ -1,13 +1,6 @@
 
 import HeroSection from '../dargaroad/components/HeroSection'
-import WhyVels from '../components/WhyVels';
-import Cbse from './components/Cbse';
-import About from '../components/About';
-import Video from './components/Video';
-import BestCbseSection from './components/BestCbseSection';
-import UpcomingEvents from './components/UpcomingEvents';
-import FooterSection from './components/FooterSection';
-import Events from './components/Events';
+
 import LetterSection from './components/LetterSection';
 import OurMottoSection from './components/OurMottoSection';
 import VelsDargaroad from './components/VelsDargaroad';

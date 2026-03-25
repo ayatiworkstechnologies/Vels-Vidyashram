@@ -1,9 +1,9 @@
-import OurMottoSection from "../thalambur/components/OurMottoSection";
-import BannerSlider from "./components/BannerSection";
-import EventsSchedule from "./components/EventSection";
-import GalleryGrid from "./components/GallerySection";
-import InfrastructureSlider from "./components/InfrastructureSlider";
-import LetterSection from "./components/LetterSection";
+import HeroSection from "../components/About/School-Infromation/HeroSection";
+import SchoolInfoPage from "../components/About/School-Infromation/SchoolSection";
+
+
+
+
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -37,16 +37,12 @@ export const metadata = {
   viewport: "width=device-width, initial-scale=1",
 };
 
-export default function Pallavaram() {
+export default function Thalambur() {
   return (
     <main>
-      <BannerSlider />
-      <LetterSection />
-      <OurMottoSection />
-      <InfrastructureSlider />
-      <GalleryGrid />
-      <EventsSchedule />
-     
+     <HeroSection />
+     <SchoolInfoPage />
+      
     </main>
   );
 }

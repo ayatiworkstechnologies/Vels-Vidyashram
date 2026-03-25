@@ -1,12 +1,10 @@
+
 "use client";
 
 export default function LetterSection() {
   const items = [
-    "Welcome to Vels Vidyashram",
-    "Learning with Purpose",
-    "Values and Excellence",
-    "Shaping Future Leaders",
-    "Inspiring Young Minds",
+    "* Vijayadasami Admission Open 2025-2026",
+   
   ];
 
   const loopItems = [...items, ...items];
@@ -21,7 +19,7 @@ export default function LetterSection() {
         .marquee-track {
           display: flex;
           width: max-content;
-          animation: marquee 30s linear infinite;
+          animation: marquee 8s linear infinite;
         }
         .marquee-track:hover {
           animation-play-state: paused;

@@ -7,14 +7,14 @@ import { usePathname } from "next/navigation";
 
 /* ================= DATA CONFIGURATION ================= */
 const navItems = [
-  { label: "Home", href: "/pallavaram" },
+  { label: "Home", href: "/thalambur" },
   {
     label: "About Us",
     href: "#",
     submenu: [
-      { label: "Vision And Mission", href: "/pallavaram/vision-mission" },
-      { label: "Our Group", href: "/pallavaram/our-group" },
-      { label: "School Information", href: "/pallavaram/school-information" },
+      { label: "Vision And Mission", href: "/thalambur/vision-mission" },
+      { label: "Our Group", href: "/thalambur/our-group" },
+      { label: "School Information", href: "/thalambur/school-information" },
     ],
   },
   {
@@ -102,12 +102,12 @@ export default function Header() {
           <div className="hidden md:flex gap-6 items-center">
             <span className="flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-               782 483 0871
+              7401 65 7975 / 1975
             </span>
             <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/mail.png" className="w-3" alt="mail" />
-                register@velsvidyashram.ac.in            
-                </span>
+              admissions@velsvidyashram.ac.in
+            </span>
           </div>
 
           {/* RIGHT - Responsive Header Links */}
@@ -207,17 +207,17 @@ export default function Header() {
 
       {/* ================= LOGO ================= */}
      <div className="bg-white flex justify-center py-2 px-2">
-      <div className="max-w-[400px] w-full">
-        <Image
-      src="/pallavaram/logo.png"
-      alt="Vels Vidyashram"
-      width={2880}
-      height={670}
-      priority
-      className="h-full "
-    />
-      </div>
-     </div>
+  <div className="max-w-[400px] w-full">
+    <Image
+  src="/thalambur/3.png"
+  alt="Vels Vidyashram"
+  width={2880}
+  height={670}
+  priority
+  className="h-full "
+/>
+  </div>
+</div>
 
       {/* ================= MOBILE DRAWER ================= */}
       <div

@@ -9,6 +9,7 @@ const ITEMS = [
   { id: 4, title: "Annual Report", pdf: "/thalambur/pdf/annual-report.pdf" },
   { id: 5, title: "Teacher Details", pdf: "/thalambur/pdf/teacher-details.pdf" },
   { id: 6, title: "Strength Details", pdf: "/thalambur/pdf/student-strength.pdf" },
+  { id: 7, title: "Results", pdf: "/thalambur/pdf/thalambur-results.pdf" },
 
 
 ];

@@ -66,7 +66,7 @@ const ITEMS = [
   {
     id: 13,
     title: "Result",
-    pdf: "/dargaroad/pdf/staff-details.pdf",
+    pdf: "/dargaroad/pdf/dargaroad-results.pdf",
   },
   {
     id: 14,

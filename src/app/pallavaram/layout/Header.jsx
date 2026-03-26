@@ -21,11 +21,9 @@ const navItems = [
     label: "Academics",
     href: "#",
     submenu: [
-      { label: "Curriculum", href: "/thalambur/curriculum" },
-      { label: "Scheme of Studies", href: "/thalambur/scheme-of-study" },
-      { label: "Assessment Structure", href: "/thalambur/assessment-structure" },
-      { label: "Circular", href: "/thalambur/circular" },
-      { label: "Messages", href: "/thalambur/general-messages" },
+      { label: "Curriculum", href: "/pallavaram/curriculum" },
+      { label: "Circular", href: "/pallavaram/circulars" },
+      { label: "Messages", href: "/pallavaram/message" },
     ],
   },
   { label: "Beyond Academics", href: "/thalambur/beyond-academics" },
@@ -33,22 +31,21 @@ const navItems = [
     label: "Admissions",
     href: "#",
     submenu: [
-      { label: "Procedure", href: "/thalambur/procedure" },
+      { label: "Procedure", href: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" },
       { label: "Enquiry", href: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" },
-      {label: "Online Fee Payment", href: "https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"},
-      { label: "Transport", href: "/thalambur/transport" },
+      { label: "Transport", href: "/pallavaram/transport" },
     ],
   },
   {
     label: "R&D@Vels",
     href: "#",
     submenu: [
-      { label: "Genesis", href: "/thalambur/genesis" },
-      { label: "About KKIC", href: "/thalambur/about-kkic" },
-      { label: "Centre for Professional Development", href: "/thalambur/centre-for-professional-development" },
-       { label: "VSkill", href: "/thalambur/vskill" },
-        { label: "CICTL", href: "/thalambur/cictl" },
-      { label: "Newsletter", href: "/thalambur/pdf/newsletter.pdf" },
+      { label: "Genesis", href: "/pallavaram/genesis" },
+      { label: "About KKIC", href: "/pallavaram/about-kkic" },
+      { label: "Centre for Professional Development", href: "/pallavaram/centre-for-professional-development" },
+       { label: "VSkill", href: "/pallavaram/vskill" },
+        { label: "CICTL", href: "/pallavaram/cictl" },
+      { label: "Newsletter", href: "/pallavaram/pdf/Yellow-and-Black-Modern-Light-Bulb-Newsletter.pdf" },
    
     ],
   },
@@ -65,15 +62,20 @@ const navItems = [
     label: "Parent Login",
     href: "#",
     submenu: [
-      { label: "Login", href: "https://parent.neverskip.com/" }
+      { label: "Login", href: "https://parent.neverskip.com/" },
+      { label: "Student’s Do’s and Don’t", href: "https://parent.neverskip.com/" },
+      { label: "Parent’s Do’s and Don’t", href: "https://parent.neverskip.com/" },
+      { label: "PC Do’s", href: "https://parent.neverskip.com/" },
+      { label: "Mobile Do’s", href: "https://parent.neverskip.com/" },
+
     ],
   },
-  { label: "Contact us", href: "/thalambur/contact-us" },
+  { label: "Contact us", href: "/pallavaram/contact-us" },
 ];
 
 const campuses = [
   { label: "Dargaroad", href: "/dargaroad" },
-  { label: "Pallavaram", href: "/pallavaram" },
+  { label: "Thalambur", href: "/thalambur" },
   { label: "Cantonment", href: "/cantonment" },
 ];
 
@@ -112,9 +114,7 @@ export default function Header() {
 
           {/* RIGHT - Responsive Header Links */}
           <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
-            <Link href="/thalambur/photo-gallery" className="whitespace-nowrap hover:underline">
-              Annual Day Photos 2025
-            </Link>
+           
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link

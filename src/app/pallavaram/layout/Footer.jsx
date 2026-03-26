@@ -33,7 +33,7 @@ export default function Footer() {
           <a href="/thalambur/procedure" className="hover:text-primary transition">Admissions</a>
           <a href="/dargaroad/recruitment" className="hover:text-primary transition">Recruitment</a>
           <a href="/thalambur/our-group" className="hover:text-primary transition">Our Group</a>
-          <a href="/thalambur/mandatory-disclosure" className="hover:text-primary transition">Mandatory Disclosure</a>
+          <a href="/pallavaram/mandatory-disclosure" className="hover:text-primary transition">Mandatory Disclosure</a>
         </div>
 
         {/* ROW 2 */}

@@ -26,7 +26,7 @@ const navItems = [
       { label: "Messages", href: "/pallavaram/message" },
     ],
   },
-  { label: "Beyond Academics", href: "/thalambur/beyond-academics" },
+  { label: "Beyond Academics", href: "/pallavaram/beyond-academics" },
   {
     label: "Admissions",
     href: "#",
@@ -54,8 +54,8 @@ const navItems = [
     href: "#",
     submenu: [
     
-      { label: "Photo Gallery", href: "/thalambur/photo-gallery" },
-      { label: "Video Gallery", href: "/thalambur/video" },
+      { label: "Photo Gallery", href: "/pallavaram/photo-gallery" },
+      { label: "Video Gallery", href: "/pallavaram/video" },
     ],
   },
   {

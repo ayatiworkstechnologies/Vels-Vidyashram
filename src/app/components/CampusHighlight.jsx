@@ -23,7 +23,7 @@ export default function CampusHighlight() {
         "Blending academics, activities, and values for balanced development. Designed to help students explore, learn, and excel confidently.",
          image: "/main/thalambur-large.jpg",
      
-      exploreUrl: "#",
+      exploreUrl: "/cantonment",
       admissionUrl: "#",
     },
         {
@@ -32,7 +32,7 @@ export default function CampusHighlight() {
       description:
         "A secure campus where every child feels valued and encouraged. Holistic learning backed by modern facilities and dedicated faculty.",
       image: "/main/cantonment-large.jpg",
-      exploreUrl: "#",
+      exploreUrl: "/thalambur",
       admissionUrl: "#",
     },
     {

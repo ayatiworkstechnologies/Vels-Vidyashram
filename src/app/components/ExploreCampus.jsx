@@ -20,7 +20,7 @@ export default function ExploreCampus() {
       helpline: "99625 31941",
       image: "/main/thalambur-1.jpg",
 
-      url: "#",
+      url: "/cantonment",
     },
     {
       name: "Thalambur Campus",

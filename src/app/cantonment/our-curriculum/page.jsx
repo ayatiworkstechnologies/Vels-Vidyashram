@@ -1,5 +1,10 @@
-import HeroSection from "../components/About/Our-group/HeroSection";
-import OurGroupSection from "../components/About/Our-group/OurGroupSection";
+import CurriculumSection from "../components/Academic/Our-Curriculum/CurriculumSection";
+import Hero from "../components/Academic/Our-Curriculum/Hero";
+
+
+
+
+
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
 const siteDescription = "";
@@ -32,11 +37,12 @@ export const metadata = {
   viewport: "width=device-width, initial-scale=1",
 };
 
-export default function Thalambur() {
+export default function Cantonment() {
   return (
     <main>
-       <HeroSection />
-       <OurGroupSection />
+         <Hero />
+         <CurriculumSection />
+      
       
     </main>
   );

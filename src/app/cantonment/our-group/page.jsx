@@ -1,4 +1,4 @@
-import HeroSection from "../components/About/Our-group/HeroSection";
+import Hero from "../components/About/Our-group/Hero";
 import OurGroupSection from "../components/About/Our-group/OurGroupSection";
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -35,7 +35,7 @@ export const metadata = {
 export default function Thalambur() {
   return (
     <main>
-       <HeroSection />
+       <Hero />
        <OurGroupSection />
       
     </main>

@@ -38,12 +38,12 @@ const navItems = [
     label: "R&D@Vels",
     href: "#",
     submenu: [
-      { label: "Genesis", href: "/thalambur/genesis" },
-      { label: "About KKIC", href: "/thalambur/about-kkic" },
-      { label: "Centre for Professional Development", href: "/thalambur/centre-for-professional-development" },
-       { label: "VSkill", href: "/thalambur/vskill" },
-        { label: "CICTL", href: "/thalambur/cictl" },
-      { label: "Newsletter", href: "/thalambur/pdf/newsletter.pdf" },
+      { label: "Genesis", href: "/cantonment/genesis" },
+      { label: "About KKIC", href: "/cantonment/about-kkic" },
+      { label: "Centre for Professional Development", href: "/cantonment/centre-for-professional-development" },
+       { label: "VSkill", href: "/cantonment/vskill" },
+        { label: "CICTL", href: "/cantonment/cictl" },
+      { label: "Newsletter", href: "/cantonment/pdf/Yellow-and-Black-Modern-Light-Bulb-Newsletter.pdf" },
    
     ],
   },
@@ -52,8 +52,8 @@ const navItems = [
     href: "#",
     submenu: [
     
-      { label: "Photo Gallery", href: "/thalambur/photo-gallery" },
-      { label: "Video Gallery", href: "/thalambur/video" },
+      { label: "Photo Gallery", href: "/cantonment/photo-gallery" },
+      { label: "Video Gallery", href: "/cantonment/video" },
     ],
   },
   {
@@ -69,13 +69,13 @@ const navItems = [
 
     ],
   },
-  { label: "Contact us", href: "/thalambur/contact-us" },
+  { label: "Contact us", href: "/cantonment/contact-us" },
 ];
 
 const campuses = [
   { label: "Dargaroad", href: "/dargaroad" },
   { label: "Pallavaram", href: "/pallavaram" },
-  { label: "Cantonment", href: "/cantonment" },
+  { label: "Thalambur", href: "/thalambur" },
 ];
 
 /* ================= MAIN HEADER COMPONENT ================= */

@@ -101,15 +101,37 @@ export default function Header() {
           
           {/* LEFT - Desktop Contact */}
           <div className="hidden md:flex gap-6 items-center">
-            <span className="flex items-center gap-2 whitespace-nowrap">
-              <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-              9962531941 , 8939995397
+  
+          {/* Phone */}
+          <span className="flex items-center gap-2 whitespace-nowrap">
+            <img src="/thalambur/phone.png" className="w-3" alt="phone" />
 
-            </span>
-            <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
-              <img src="/thalambur/mail.png" className="w-3" alt="mail" />
-              inquiries@velsvidyashram.ac.in
-            </span>
+            <a
+              href="tel:9962531941"
+              className="transition-all duration-300 hover:text-white"
+            >
+              9962531941
+            </a>
+
+            <span>,</span>
+
+            <a
+              href="tel:8939995397"
+              className="transition-all duration-300 hover:text-white"
+            >
+              8939995397
+            </a>
+          </span>
+
+          {/* Email */}
+          <a
+            href="mailto:inquiries@velsvidyashram.ac.in"
+            className="hidden lg:flex items-center gap-2 whitespace-nowrap transition-all duration-300 hover:text-white"
+          >
+            <img src="/thalambur/mail.png" className="w-3" alt="mail" />
+            inquiries@velsvidyashram.ac.in
+          </a>
+
           </div>
 
           {/* RIGHT - Responsive Header Links */}
@@ -118,7 +140,9 @@ export default function Header() {
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link
-                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
                 className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition"
               >
                 Online Fees Payment

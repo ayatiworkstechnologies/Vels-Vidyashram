@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 const admissionData = [
   {
     title: "Pre KG - Class 1",

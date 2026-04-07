@@ -9,17 +9,23 @@ const EVENTS_DATA = {
     '2025-2026': [
       // Row 1: Large (spans 2 cols) + Medium (1 col)
       {
-        title: "WINNERS OF THE NATIONAL LEVEL ART COMPETITION",
+        title: "Blue Day",
         id: 1,
         size: 'large',
         images: [
-          "/thalambur/winner.jpg",
+          "/cantonment/blue-1.png",
+          "/cantonment/blue-2.png",
+          "/cantonment/blue-3.png",
+          "/cantonment/blue-4.png",
+          "/cantonment/blue-5.png",
+          "/cantonment/blue-6.png",
+          "/cantonment/blue-7.png",
          
         ],
        
       },
       {
-        title: "No bag day II",
+        title: "Doctor's day",
         id: 2,
         size: 'medium',
         images: [
@@ -35,7 +41,7 @@ const EVENTS_DATA = {
       },
       // Row 2: Three equal small cards
       {
-        title: "Melange 2025",
+        title: "Healthy and Junk food",
         id: 3,
         size: 'small',
         images: [
@@ -52,7 +58,7 @@ const EVENTS_DATA = {
         ]
       },
       {
-        title: "Vels Football Club Inauguration",
+        title: "Red day",
         categoryTitle: "Annual Fest",
         id: 4,
         size: 'small',
@@ -68,7 +74,7 @@ const EVENTS_DATA = {
         ]
       },
       {
-        title: "Grade III to V ",
+        title: "Vels organic sandhai",
         id: 5,
         size: 'medium',
         images: [
@@ -82,7 +88,7 @@ const EVENTS_DATA = {
       },
       // Row 3: Medium + Large (spans 2 cols)
       {
-        categoryTitle: "FIELD TRIP",
+        categoryTitle: "Yellow day",
         title: "Diwali Celebration",
         id: 6,
         size: 'medium',
@@ -95,7 +101,7 @@ const EVENTS_DATA = {
         ]
       },
       {
-        title: "English Language Day",
+        title: "Yoga day",
         id: 7,
         size: 'large',
         images: [

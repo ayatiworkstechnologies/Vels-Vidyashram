@@ -9,272 +9,237 @@ const EVENTS_DATA = {
     '2025-2026': [
       // Row 1: Large (spans 2 cols) + Medium (1 col)
       {
-        title: "WINNERS OF THE NATIONAL LEVEL ART COMPETITION",
+        title: "Graduation day",
         id: 1,
-        size: 'large',
+        size: 'small',
         images: [
-          "/thalambur/winner.jpg",
+          "/pallavaram/events/graduation-1.jpg",
+          "/pallavaram/events/graduation-2.jpg",
+          "/pallavaram/events/graduation-3.jpg",
+          "/pallavaram/events/graduation-4.jpg",
          
         ],
        
       },
       {
-        title: "No bag day II",
+        title: "Vels Run 2026",
         id: 2,
         size: 'medium',
         images: [
-          "/thalambur/bag-1.jpg",
-          "/thalambur/bag-2.jpg",
-          "/thalambur/bag-3.jpg",
-          "/thalambur/bag-4.jpg",
-          "/thalambur/bag-5.jpg",
-          "/thalambur/bag-6.jpg",
-          "/thalambur/bag-7.jpg",
+          "/pallavaram/events/Vels - 1.jpeg",
+          "/pallavaram/events/Vels - 2.jpeg",
+          "/pallavaram/events/Vels - 3.jpeg",
+          "/pallavaram/events/Vels - 4.jpeg",
+          "/pallavaram/events/Vels - 5.jpeg",
           
         ]
       },
       // Row 2: Three equal small cards
       {
-        title: "Melange 2025",
+        title: "World Mental Health",
         id: 3,
         size: 'small',
         images: [
-          "/thalambur/melange-1.jpg",
-          "/thalambur/melange-2.jpg",
-          "/thalambur/melange-3.jpg",
-          "/thalambur/melange-4.jpg",
-          "/thalambur/melange-5.jpg",
-          "/thalambur/melange-6.jpg",
-          "/thalambur/melange-7.jpg",
-          "/thalambur/melange-8.jpg",
-          "/thalambur/melange-9.jpg",
-          "/thalambur/melange-10.jpg",
+          "/pallavaram/events/Observance - 1.jpeg",
+          "/pallavaram/events/Observance - 2.jpeg",
+          "/pallavaram/events/Observance - 3.jpeg",
+          "/pallavaram/events/Observance - 4.jpeg",
+          "/pallavaram/events/Observance - 5.jpeg",
         ]
+        
       },
       {
-        title: "Vels Football Club Inauguration",
-        categoryTitle: "Annual Fest",
+        title: "EVS culmination event",
         id: 4,
         size: 'small',
         images: [
-          "/thalambur/football-1.jpg",
-          "/thalambur/football-2.jpg",
-          "/thalambur/football-3.jpg",
-          "/thalambur/football-4.jpg",
-          "/thalambur/football-5.jpg",
-          "/thalambur/football-6.jpg",
-          "/thalambur/football-7.jpg",
-          "/thalambur/football-8.jpg",
+          "/pallavaram/events/Evs -1.jpeg",
+          "/pallavaram/events/Evs -2.jpg",
+          "/pallavaram/events/Evs -3.jpg",
+          "/pallavaram/events/Evs -4.jpg",
+          "/pallavaram/events/Evs -5.jpg",
+          "/pallavaram/events/Evs -6.jpg",
+          "/pallavaram/events/Evs -7.jpg",
+         
         ]
       },
       {
-        title: "Grade III to V ",
+        title: "Proficiency Prize winners",
         id: 5,
         size: 'medium',
         images: [
-          "/thalambur/grade-1.jpg",
-          "/thalambur/grade-2.jpg",
-          "/thalambur/grade-3.jpg",
-          "/thalambur/grade-4.jpg",
-          "/thalambur/grade-5.jpg",
+          "/pallavaram/events/Prize winners -1.jpeg",
+          "/pallavaram/events/Prize winners -2.jpeg",
+          "/pallavaram/events/Prize winners -3.jpeg",
+          "/pallavaram/events/Prize winners - 4.jpeg",
+          "/pallavaram/events/Prize winners -5.jpeg",
+          "/pallavaram/events/Prize winners -6.jpeg",
+          "/pallavaram/events/Prize winners - 7.jpeg",
       
         ]
       },
       // Row 3: Medium + Large (spans 2 cols)
       {
-        categoryTitle: "FIELD TRIP",
         title: "Diwali Celebration",
         id: 6,
         size: 'medium',
         images: [
-          "/thalambur/diwali-1.jpg",
-          "/thalambur/diwali-2.jpg",
-          "/thalambur/diwali-3.jpg",
-          "/thalambur/diwali-4.jpg",
-          "/thalambur/diwali-5.jpg",
+          "/pallavaram/events/Diwali celebrations - 1.jpeg",
+          "/pallavaram/events/Diwali celebrations - 2.jpeg",
+          "/pallavaram/events/Diwali celebrations - 3.jpeg",
+          "/pallavaram/events/Diwali celebrations -4.jpeg",
+        
         ]
       },
       {
-        title: "English Language Day",
+        title: "NavDurga Puja",
         id: 7,
-        size: 'large',
+        size: 'medium',
         images: [
-          "/thalambur/english-1.jpg",
-          "/thalambur/english-2.jpg",
-          "/thalambur/english-3.jpg"
+          "/pallavaram/events/NavDurga Puja -1.jpeg",
+          "/pallavaram/events/NavDurga Puja -2.jpeg",
+          "/pallavaram/events/NavDurga Puja -3.jpeg"
         ]
       },
       // Row 4: Three equal small cards
       {
-        categoryTitle: "Toppers",
-        title: "Toppers",
+       
+        title: "Phonics Day",
         id: 8,
         size: 'small',
         images: [
-          "/thalambur/topper-1.jpg",
-          "/thalambur/topper-2.jpg",
-          "/thalambur/topper-3.jpg"
+          "/pallavaram/events/Phonics Day -1.jpeg",
+          "/pallavaram/events/Phonics Day -2.jpeg",
+          "/pallavaram/events/Phonics Day -3.jpeg",
+          "/pallavaram/events/Phonics Day -4.jpeg",
+          "/pallavaram/events/Phonics Day -5.jpeg",
+          "/pallavaram/events/Phonics Day -6.jpeg",
+          
         ]
       },
       {
-        title: "STARS OF VVT -THALAMBUR",
+        title: "Central Board Of School Education",
         id: 9,
         size: 'small',
         images: [
-          "/thalambur/star-1.jpeg",
-          "/thalambur/star-2.jpg",
-          "/thalambur/star-3.jpeg",
-          "/thalambur/star-4.jpeg",
+          "/pallavaram/events/central.jpeg",
+         
         ]
       },
       {
-        title: "JEE Mains Session 2",
+        title: "Sports Day",
         id: 10,
         size: 'small',
         images: [
-          "/thalambur/jee.jpg",
+          "/pallavaram/events/Sports Day -1.jpg",
+          "/pallavaram/events/Sports Day -2.jpg",
+          "/pallavaram/events/Sports Day -3.jpg",
+          "/pallavaram/events/Sports Day -4.jpg",
           
         ]
       },
       // Row 1: Large (spans 2 cols) + Medium (1 col)
       {
-        title: "Personal Safety Education session for students of Grades I to XII",
+        title: "No Bag Day, Robotics Day, and the grand Annual Scout Launch!",
         id: 1,
         size: 'large',
         images: [
-          "/thalambur/safe-1.jpg",
-          "/thalambur/safe-2.jpg",
-          "/thalambur/safe-3.jpg",
-          "/thalambur/safe-4.jpg",
-          "/thalambur/safe-5.jpg",
+          "/pallavaram/events/Celebrated -1.jpg",
+          "/pallavaram/events/Celebrated-2.jpg",
+          "/pallavaram/events/Celebrated-3.jpg",
+          "/pallavaram/events/Celebrated-4.jpg",
+          "/pallavaram/events/Celebrated-5.jpg",
+          "/pallavaram/events/Celebrated-6.jpg",
+          "/pallavaram/events/Celebrated-7.jpg",
+          "/pallavaram/events/Celebrated-8.jpg",
+          "/pallavaram/events/Celebrated-9.jpg",
+          "/pallavaram/events/Celebrated-10.jpg",
          
         ],
        
       },
       {
-        title: "Rakshabhandhan",
+        title: "Investiture Ceremony ",
         id: 2,
         size: 'medium',
         images: [
-          "/thalambur/raksha-1.jpg",
-          "/thalambur/raksha-2.jpg",
-          "/thalambur/raksha-3.jpg",
-          "/thalambur/raksha-4.jpg",
-          "/thalambur/raksha-5.jpg",
+          "/pallavaram/events/ProudMoment-1.jpg",
+          "/pallavaram/events/ProudMoment-2.jpg",
+          "/pallavaram/events/ProudMoment-3.jpg",
+          "/pallavaram/events/ProudMoment-4.jpg",
+          "/pallavaram/events/ProudMoment-5.jpg",
         ]
       },
       // Row 2: Three equal small cards
       {
-        title: "Friendship Day",
+        title: "Field Trip",
         id: 3,
         size: 'small',
         images: [
-          "/thalambur/friend-1.jpeg",
-          "/thalambur/friend-2.jpeg",
-          "/thalambur/friend-3.jpeg",
-          "/thalambur/friend-4.jpeg",
+          "/pallavaram/events/Field Trip-1.jpeg",
+          "/pallavaram/events/Field Trip-2.jpeg",
+          "/pallavaram/events/Field Trip-3.jpeg",
+          "/pallavaram/events/Field Trip-4.jpeg",
+          "/pallavaram/events/Field Trip-5.jpeg",
+          "/pallavaram/events/Field Trip-6.jpeg",
 
         ]
       },
       {
-        title: "Blue Day",
-        categoryTitle: "Annual Fest",
+        title: "LEAD a symposium for Teachers",
+       
         id: 4,
         size: 'small',
         images: [
-          "/thalambur/blue-1.jpg",
-          "/thalambur/blue-2.jpg",
-          "/thalambur/blue-3.jpg",
-          "/thalambur/blue-4.jpg",
-          "/thalambur/blue-5.jpg",
+          "/pallavaram/events/LEAD-1.jpeg",
+          "/pallavaram/events/LEAD-2.jpeg",
+          "/pallavaram/events/LEAD-3.jpeg",
+      
+       
         
         ]
       },
       {
-        title: "Book Exhibition Reading India Project 2025 ",
+        title: "World Ocean day",
         id: 5,
         size: 'medium',
         images: [
-          "/thalambur/book-1.jpg",
-          "/thalambur/book-2.jpg",
-          "/thalambur/book-3.jpg",
-          "/thalambur/book-4.jpg",
-          "/thalambur/book-5.jpg",
+          "/pallavaram/events/activityWorld Ocean day -1.jpeg",
+          "/pallavaram/events/activityWorld Ocean day -2.jpeg",
+          "/pallavaram/events/activityWorld Ocean day -3.jpeg",
+          "/pallavaram/events/activityWorld Ocean day -4.jpeg",
+          "/pallavaram/events/activityWorld Ocean day -5.jpeg",
       
         ]
       },
       // Row 3: Medium + Large (spans 2 cols)
       {
-        categoryTitle: "FIELD TRIP",
-        title: "Krishna Jeyanthi",
+       
+        title: "Vels Exotic 25-26",
         id: 6,
         size: 'medium',
         images: [
-          "/thalambur/krishna-1.jpeg",
-          "/thalambur/krishna-2.jpeg",
-          "/thalambur/krishna-3.jpeg",
-          "/thalambur/krishna-4.jpeg",
+          "/pallavaram/events/exotic1.jpeg",
+          "/pallavaram/events/exotic2.jpeg",
+          "/pallavaram/events/exotic3.jpeg",
+          "/pallavaram/events/exotic4.jpeg",
+          "/pallavaram/events/exotic5.jpeg",
+          "/pallavaram/events/exotic6.jpeg",
         
         ]
       },
       {
-        title: "Merit Awards PT I",
+        title: "Onam Celebration",
         id: 7,
-        size: 'large',
-        images: [
-          "/thalambur/merit-1.jpg",
-          "/thalambur/merit-2.jpg",
-          "/thalambur/merit-3.jpg"
-        ]
-      },
-      // Row 4: Three equal small cards
-      {
-        categoryTitle: "",
-        title: "STARS OF VVT (JUNE)",
-        id: 8,
         size: 'small',
         images: [
-          "/thalambur/vvt-1.jpg",
-          "/thalambur/vvt-2.jpg",
-          "/thalambur/vvt-3.jpg",
-          "/thalambur/vvt-4.jpg",
+          "/pallavaram/events/onam1.jpeg",
+          "/pallavaram/events/onam2.jpeg",
+          "/pallavaram/events/onam3.jpeg",
+          "/pallavaram/events/onam4.jpeg",
         ]
       },
-      {
-        title: "India K-12 Awards(IKA) - 2025",
-        id: 9,
-        size: 'small',
-        images: [
-          "/thalambur/india.jpg",
-         
-        ]
-      },
-      {
-        title: "Ganesh Chaturthi",
-        id: 10,
-        size: 'small',
-        images: [
-          "/thalambur/ganesh-1.jpg",
-          "/thalambur/ganesh-2.jpg",
-          "/thalambur/ganesh-3.jpg",
-          
-        ]
-      },
-      {
-        title: "TECHTOPIA",
-        id: 10,
-        size: 'small',
-        images: [
-          "/thalambur/tech-1.jpg",
-          "/thalambur/tech-2.jpg",
-          "/thalambur/tech-3.jpg",
-          "/thalambur/tech-4.jpg",
-          "/thalambur/tech-5.jpg",
-          "/thalambur/tech-6.jpg",
-          "/thalambur/tech-7.jpg",
-          
-        ]
-      },
+     
 
     ],
     '2024-2025': [

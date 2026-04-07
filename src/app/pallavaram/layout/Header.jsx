@@ -102,15 +102,22 @@ export default function Header() {
           
           {/* LEFT - Desktop Contact */}
           <div className="hidden md:flex gap-6 items-center">
-            <span className="flex items-center gap-2 whitespace-nowrap">
-              <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-               782 483 0871
-            </span>
-            <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
-              <img src="/thalambur/mail.png" className="w-3" alt="mail" />
-                register@velsvidyashram.ac.in            
-                </span>
-          </div>
+              <a
+                href="tel:7824830871"
+                className="flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-white no-underline"
+              >
+                <img src="/thalambur/phone.png" className="w-3" alt="phone" />
+                782 483 0871
+              </a>
+
+              <a
+                href="mailto:register@velsvidyashram.ac.in"
+                className="hidden lg:flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-white no-underline"
+              >
+                <img src="/thalambur/mail.png" className="w-3" alt="mail" />
+                register@velsvidyashram.ac.in
+              </a>
+            </div>
 
           {/* RIGHT - Responsive Header Links */}
           <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
@@ -118,7 +125,9 @@ export default function Header() {
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link
-                href="#"
+                 target="_blank"
+                rel="noopener noreferrer"
+                href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
                 className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition"
               >
                 Online Fees Payment

@@ -8,234 +8,115 @@ const VIDEO_DATA = {
     "2025 - 2026": [
       {
         id: 1,
-        title: "Independence day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-1.jpg",
-        videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
+        title: "Grandparents Day",
+        thumbnail: "/dargaroad/thumbnail/thumb1.jpg",
+        videoUrl: "https://www.youtube.com/embed/GpN7BEemT8k?si=y-8zMppSQPsNEV-m"
       },
       {
         id: 2,
-        title: "KG- Yellow day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-2.jpg",
-        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
+        title: "Christmas Celebration",
+        thumbnail: "/dargaroad/thumbnail/thumb2.jpg",
+        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTWhttps://www.youtube.com/embed/xdB1WsU96Yg?si=lGck3mTKXn3SbN3n"
       },
       {
         id: 3,
-        title: "KG- Red day celebration",
-        thumbnail: "/thalambur/thumbnail/thum-3.jpg",
-        videoUrl: "https://www.youtube.com/embed/AVH_Dkse7LY?si=adTVbrSBeQ3LjvEC"
+        title: "Vels expo @ vels",
+        thumbnail: "/dargaroad/thumbnail/thumb3.jpg",
+        videoUrl: "https://www.youtube.com/embed/TSmlvNCpFZo?si=vYw6jbP8NeyxhT06"
       },
       {
         id: 4,
-        title: "Empowering educators through STEM",
-        thumbnail: "/thalambur/thumbnail/thum-4.jpg",
-        videoUrl: "https://www.youtube.com/embed/wia-jhd6dTA?si=OkT91GpEw7DpBjLa"
+        title: "December Glimpses",
+        thumbnail: "/dargaroad/thumbnail/thumb4.jpg",
+        videoUrl: "https://www.youtube.com/embed/4C8tLUzbslo?si=HdjdBdte1fG7GVhN"
       },
       {
         id: 5,
-        title: "No Bag day ",
-        thumbnail: "/thalambur/thumbnail/thum-5.jpg",
-        videoUrl: "https://www.youtube.com/embed/zSJivDnKOBM?si=8xqNiMbnCKyrCA0L"
+        title: "Navarasa navaratri @Vels",
+        thumbnail: "/dargaroad/thumbnail/thumb5.jpg",
+        videoUrl: "https://www.youtube.com/embed/SJoxRUBASoY?si=4j81h81jwsUNJxmX"
       },
       {
         id: 6,
-        title: "Investiture ceremony",
-        thumbnail: "/thalambur/thumbnail/thum-6.jpg",
-        videoUrl: "https://www.youtube.com/embed/rkxadX1MFa8?si=SPeHF_OSe_5lFGYQ"
+        title: "Dandiya Raas",
+        thumbnail: "/dargaroad/thumbnail/thumb6.jpg",
+        videoUrl: "https://www.youtube.com/embed/DmjUNSnGxmY?si=4zsue6jiadpEZ5ag"
       },
       {
         id: 7,
-        title: "Campus visit to Vels Medical College & Hospital",
-        thumbnail: "/thalambur/thumbnail/thum-7.jpg",
-        videoUrl: "https://www.youtube.com/embed/_IxOrTmWF4Y?si=YXND2SdpVG4h-W-S"
+        title: "November Glimpses",
+        thumbnail: "/dargaroad/thumbnail/thumb7.jpg",
+        videoUrl: "https://www.youtube.com/embed/npJnTyObAAs?si=RZck9_WmHUlcyVhN"
       },
       {
         id: 8,
-        title: "Father's Day celebration",
-        thumbnail: "/thalambur/thumbnail/thum-8.jpg",
-        videoUrl: "https://www.youtube.com/embed/jFrVGTsUFsQ?si=aqCrdY-wEo5ra5jp"
+        title: "July Glimpses 2025",
+        thumbnail: "/dargaroad/thumbnail/thumb8.jpg",
+        videoUrl: "https://www.youtube.com/embed/FiL-3Aa7yfE?si=8M0OdlTRLlj8rb-H"
       },
       {
         id: 9,
-        title: "Vels Football club Inauguration",
-        thumbnail: "/thalambur/thumbnail/thum-9.jpg",
-        videoUrl: "https://www.youtube.com/embed/fPgGO-yCNWE?si=EiLl1TqIDA9Oie6q"
+        title: " Continuous Professional Development 2025",
+        thumbnail: "/dargaroad/thumbnail/thumb9.jpg",
+        videoUrl: "https://www.youtube.com/embed/rsUah1Jzl58?si=N_u2fn0jBCdXAoCR"
       },
       {
         id: 10,
-        title: "No-Bag Day 2025",
-        thumbnail: "/thalambur/thumbnail/thum-10.jpg",
-        videoUrl: "https://www.youtube.com/embed/aMH9OWNBmww?si=iLziC4utO1v3rAcY"
+        title: "AARAMBH 2025",
+        thumbnail: "/dargaroad/thumbnail/thumb10.jpg",
+        videoUrl: "https://www.youtube.com/embed/unrYcfP9oZk?si=RrvcK3ejbrghWb_w"
       },
    
       {
         id: 11,
-        title: "EVS Culmination day Grade I & II",
-        thumbnail: "/thalambur/thumbnail/thum-11.jpg",
-        videoUrl: "https://www.youtube.com/embed/sbImD_yjKJc?si=ILy7kA9A1nU7GNMQ"
+        title: "April Glimpses",
+        thumbnail: "/dargaroad/thumbnail/thumb11.jpg",
+        videoUrl: "https://www.youtube.com/embed/96zGdwfuH34?si=yKIOgEYwj8qCcZTj"
       },
       {
         id: 12,
-        title: "KG- Culmination day 2025 ",
-        thumbnail: "/thalambur/thumbnail/thum-12.jpg",
-        videoUrl: "https://www.youtube.com/embed/R5KPASt5FLQ?si=DkIQs70ZQXk47ThQ"
+        title: "Investiture Ceremony",
+        thumbnail: "/dargaroad/thumbnail/thumb12.jpg",
+        videoUrl: "https://www.youtube.com/embed/1vnkxsP0Umc?si=ACf9WoyrWCTtoGZm"
      
       },
       {
          id: 13,
-        title: "Grade IX-XII field trip ",
-        thumbnail: "/thalambur/thumbnail/thum-13.jpg",
-        videoUrl: "https://www.youtube.com/embed/-TvogdGuf40?si=3XFfla0QsHCdxr05"
+        title: "Inter School Bhajan Competition",
+        thumbnail: "/dargaroad/thumbnail/thumb13.jpg",
+        videoUrl: "https://www.youtube.com/embed/1XqYAZIuuk0?si=vj0vYFsiyeUR4nYw"
  
       },
       {
         id: 14,
-        title: "Grade VI-VIII field trip ",
-        thumbnail: "/thalambur/thumbnail/thum-14.jpg",
-        videoUrl: "https://www.youtube.com/embed/4zc-NoB6e-0?si=NoY7htZ4IAQVt6Oi"
+        title: "August Glimpses 2025",
+        thumbnail: "/dargaroad/thumbnail/thumb14.jpg",
+        videoUrl: "https://www.youtube.com/embed/hFbu2g2nNok?si=GhAMB6JmJLY1OxUr"
       },
       {
         id: 15,
-        title: "Grade III-V field trip",
-        thumbnail: "/thalambur/thumbnail/thum-15.jpg",
-        videoUrl: "https://www.youtube.com/embed/eNWYoOH6jG8?si=36Dt8pajlOa9b_Co"
+        title: "June Glimpses 2025",
+        thumbnail: "/dargaroad/thumbnail/thumb15.jpg",
+        videoUrl: "https://www.youtube.com/embed/4u5ZB6IYW6c?si=6WMYwu--auagN6d_"
       },
      
       {
         id: 16,
-        title: "Diwali celebration",
-        thumbnail: "/thalambur/thumbnail/thum-16.jpg",
-        videoUrl: "https://www.youtube.com/embed/wmZ2yCDQuhs?si=nu9Z2v3C0hHPKwCA"
+        title: "Diwali Celebration",
+        thumbnail: "/dargaroad/thumbnail/thumb16.jpg",
+        videoUrl: "https://www.youtube.com/embed/GvKCD9ytSdo?si=Cu3wt4djiW3v12n4"
       },
       {
         id: 17,
-        title: "Happy Vidyarambham",
-        thumbnail: "/thalambur/thumbnail/thum-17.jpg",
-        videoUrl: "https://www.youtube.com/embed/Lw_NpnD95EE?si=YTEq_T7PeDuzyZYx"
+        title: "Awareness on oil-free cooking and healthy living",
+        thumbnail: "/dargaroad/thumbnail/thumb17.jpg",
+        videoUrl: "https://www.youtube.com/embed/N-mxgDKNcbs?si=mQ_pSGk6pkuKA5bC"
       },
-      {
-        id: 18,
-        title: "Pongal celebration 2026",
-        thumbnail: "/thalambur/thumbnail/thum-18.jpg",
-        videoUrl: "https://www.youtube.com/embed/m45zSDBJ6Ng?si=xJGsIKGxztIRWInj"
- 
-      },
-      {
-        id: 19,
-        title: "Interschool sports meet 2025-26",
-        thumbnail: "/thalambur/thumbnail/thum-19.jpg",
-        videoUrl: "https://www.youtube.com/embed/oXcKnuoKoYA?si=NEWQkq_w0h4Q-JXj"
-      },
-      {
-        id: 20,
-        title: "Sandhai celebration",
-        thumbnail: "/thalambur/thumbnail/thum-20.jpg",
-        videoUrl: "https://www.youtube.com/embed/2GvMTDKJVEA?si=TeweIstQyM4pFE4C"
-      },
-      {
-        id: 21,
-        title: "Grandparents Day ",
-        thumbnail: "/thalambur/thumbnail/thum-21.jpg",
-        videoUrl: "https://www.youtube.com/embed/h7hY0DPRs4Y?si=84eh1lbIBjWyRVDv"
- 
-      },
-      {
-        id: 22,
-        title: "KG- Purple day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-22.jpg",
-        videoUrl: "https://www.youtube.com/embed/rLNjxQA00xM?si=UAEIjSI9_XiBcF8k"
-     
-      },
-      {
-        id: 23,
-        title: "Melange 2025- Interschool competition ",
-        thumbnail: "/thalambur/thumbnail/thum-23.jpg",
-        videoUrl: "https://www.youtube.com/embed/PYcqsCFPjgM?si=r8kTmGCRN4kdrTMy"
-      },
-      {
-        id: 24,
-        title: "International Yoga day",
-        thumbnail: "/thalambur/thumbnail/thum-24.jpg",
-        videoUrl: "https://www.youtube.com/embed/CDfbwO-t768?si=F9aklcYL_c4IWZJB"
-      },
-      {
-        id: 25,
-        title: "Voices of tomorrow: Student council nominees 2025",
-        thumbnail: "/thalambur/thumbnail/thum-25.jpg",
-        videoUrl: "https://www.youtube.com/embed/3A9ITGjlJFw?si=0-mcYAZCCSH-PoG1"
-      },
-      {
-        id: 26,
-        title: "Step Orientation",
-        thumbnail: "/thalambur/thumbnail/thum-26.jpg",
-        videoUrl: "https://www.youtube.com/embed/TaDylNNBBfc?si=9LLjsl_v7FBFT2nE"
-     
-      },
-      {
-        id: 27,
-        title: "Personal safety education session",
-        thumbnail: "/thalambur/thumbnail/thum-27.jpg",
-        videoUrl: "https://www.youtube.com/embed/d07ky5ErJSs?si=bobuw53eX9YGnj7e"
-      },
-      {
-        id: 28,
-        title: "World scholar's cup - Chennai round 2025",
-        thumbnail: "/thalambur/thumbnail/thum-28.jpg",
-        videoUrl: "https://www.youtube.com/embed/WPh7s296eYw?si=zSB-YMELED5Sv1mZ"
-      },
-      {
-        id: 29,
-        title: "Parent orientation program 2025-26",
-        thumbnail: "/thalambur/thumbnail/thum-29.jpg",
-        videoUrl: "https://www.youtube.com/embed/6HvW_x8hTNo?si=raRcolcwTssop9hI"
-      },
-      {
-        id: 30,
-        title: "Salangai poojai",
-        thumbnail: "/thalambur/thumbnail/thum-30.jpg",
-        videoUrl: "https://www.youtube.com/embed/kBTEl5PdV-4?si=bJzD4NfGAgXUQlhE"
-      },
-      {
-        id: 31,
-        title: "KG Graduation day 2025 & Annual proficiency award cerem",
-        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
-        videoUrl: "https://www.youtube.com/embed/KtybeWopBQU?si=SMr5cieWxl4nQd4e"
-      }
  
        
     ],
  
-    "2024 - 2025": [
-      {
-        id: 11,
-        title: "Campus Tour",
-        thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 12,
-        title: "Annual Sports Day",
-        thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 13,
-        title: "Christmas Celebration",
-        thumbnail: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 14,
-        title: "School Assembly",
-        thumbnail: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 15,
-        title: "Music Competition",
-        thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      }
-    ]
+  
   },
  
  testimonialSections: [

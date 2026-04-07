@@ -68,7 +68,7 @@ const ContactSection = () => {
 
           {/* Quick Actions Sidebar */}
           <div className="flex flex-col gap-4">
-            <a 
+            <a
               href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" 
               className="group flex flex-1 items-center justify-between bg-white hover:bg-primary text-primary p-8 rounded-3xl font-bold transition-all duration-300 shadow-lg shadow-[#00bcd4]/20"
             >

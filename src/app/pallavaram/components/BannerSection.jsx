@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const slides = [
@@ -93,12 +93,14 @@ export default function BannerSection() {
                   {s.subtitle}
                 </h1>
 
-                <a
+                <Link
                   href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
-                  className="inline-block mt-6 bg-[#2B158F] px-6 py-2 rounded-full text-md font-medium hover:bg-[#1e0f63] transition-colors font-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 rounded-full bg-[#2B158F] px-6 py-2 text-md font-medium transition-colors hover:bg-[#1e0f63] font-secondary"
                 >
                   Admission
-                </a>
+                </Link>
 
                 <div className="mt-16 flex items-center gap-2">
                   <span className="font-medium">
@@ -194,12 +196,14 @@ export default function BannerSection() {
                   {s.subtitle}
                 </h1>
 
-                <a
+                <Link
                   href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
-                  className="inline-block mt-6 bg-[#2B158F] px-6 py-2 rounded-full text-md font-medium hover:bg-[#1e0f63] transition-colors font-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 rounded-full bg-[#2B158F] px-6 py-2 text-md font-medium transition-colors hover:bg-[#1e0f63] font-secondary"
                 >
                   Admission
-                </a>
+                </Link>
 
                 <div className="mt-16 flex items-center gap-2">
                   <span className="font-medium">

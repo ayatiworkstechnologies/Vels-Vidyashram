@@ -57,7 +57,7 @@ export default function HeroSection() {
           {/* Home */}
           <li>
             <Link
-              href="/"
+              href="/thalambur"
               className="flex items-center gap-1 hover:text-black transition"
             >
               <svg

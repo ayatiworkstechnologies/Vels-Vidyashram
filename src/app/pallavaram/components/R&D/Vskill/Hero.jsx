@@ -57,7 +57,7 @@ export default function Hero() {
           {/* Home */}
           <li>
             <Link
-              href="/"
+              href="/pallavaram"
               className="flex items-center gap-1 hover:text-black transition"
             >
               <svg

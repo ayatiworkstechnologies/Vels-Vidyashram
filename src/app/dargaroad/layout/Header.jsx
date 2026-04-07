@@ -85,14 +85,33 @@ export default function Header() {
           
           {/* LEFT - Desktop Contact */}
           <div className="hidden md:flex gap-6 items-center">
-            <span className="flex items-center gap-2 whitespace-nowrap">
-              <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-                    99625 06639 , 99625 06349        
-                    </span>
-            <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
-              <img src="/thalambur/mail.png" className="w-3" alt="mail" />
-              apply@velsvidyashram.ac.in
-             </span>
+  <span className="flex items-center gap-2 whitespace-nowrap">
+    <img src="/thalambur/phone.png" className="w-3" alt="phone" />
+    
+    <a
+      href="tel:9962506639"
+      className="transition-colors duration-300 hover:text-white"
+    >
+      99625 06639
+    </a>
+
+    <span>,</span>
+
+    <a
+      href="tel:9962506349"
+      className="transition-colors duration-300 hover:text-white"
+    >
+      99625 06349
+    </a>
+  </span>
+
+  <a
+    href="mailto:apply@velsvidyashram.ac.in"
+    className="hidden lg:flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-white"
+  >
+    <img src="/thalambur/mail.png" className="w-3" alt="mail" />
+    apply@velsvidyashram.ac.in
+  </a>
           </div>
 
           {/* RIGHT - Responsive Header Links */}
@@ -101,8 +120,10 @@ export default function Header() {
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link
-                href="#"
-                className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition"
+                href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whitespace-nowrap rounded-full bg-white px-2 py-1 font-medium text-[#2B158F] transition hover:bg-gray-100 sm:px-4"
               >
                 Online Fees Payment
               </Link>

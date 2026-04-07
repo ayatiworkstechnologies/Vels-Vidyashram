@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const galleryItems = [
@@ -96,17 +97,26 @@ function RevealCard({ item }) {
       </motion.div>
 
       {/* 3. THE "MORE" BUTTON */}
-      <motion.div
-        className="absolute bottom-6 right-6 md:bottom-12 md:right-10 flex items-center gap-2 group z-30"
-        variants={{
-          rest: { opacity: 0, x: 10 },
-          hover: { opacity: 1, x: 0 }
-        }}
-        transition={{ delay: 0.2 }}
-      >
-        <span className="text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] text-gray-900 font-secondary">MORE</span>
-        <span className="text-lg md:text-xl text-gray-900 transition-transform duration-300">↗</span>
-      </motion.div>
+      <Link
+  href="/pallavaram/photo-gallery"
+  className="absolute bottom-6 right-6 z-30 md:bottom-12 md:right-10"
+>
+  <motion.div
+    className="flex items-center gap-2 group"
+    variants={{
+      rest: { opacity: 0, x: 10 },
+      hover: { opacity: 1, x: 0 },
+    }}
+    transition={{ delay: 0.2 }}
+  >
+    <span className="text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] text-gray-900 font-secondary">
+      MORE
+    </span>
+    <span className="text-lg md:text-xl text-gray-900 transition-transform duration-300">
+      ↗
+    </span>
+  </motion.div>
+      </Link>
 
       {/* 4. BACKGROUND FILLER */}
       <div className="absolute inset-0 bg-white -z-10" />

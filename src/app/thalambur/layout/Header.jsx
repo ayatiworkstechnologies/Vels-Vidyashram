@@ -100,14 +100,37 @@ export default function Header() {
           
           {/* LEFT - Desktop Contact */}
           <div className="hidden md:flex gap-6 items-center">
+            
+            {/* Phone */}
             <span className="flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-              7401 65 7975 / 7401 65 1975 
+
+              <a
+                href="tel:7401657975"
+                className="transition-colors duration-300 hover:text-white no-underline hover:no-underline"
+              >
+                7401 65 7975
+              </a>
+
+              <span>/</span>
+
+              <a
+                href="tel:7401651975"
+                className="transition-colors duration-300 hover:text-white no-underline hover:no-underline"
+              >
+                7401 65 1975
+              </a>
             </span>
-            <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
+
+            {/* Email */}
+            <a
+              href="mailto:admissions@velsvidyashram.ac.in"
+              className="hidden lg:flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-white no-underline hover:no-underline"
+            >
               <img src="/thalambur/mail.png" className="w-3" alt="mail" />
               admissions@velsvidyashram.ac.in
-            </span>
+            </a>
+
           </div>
 
           {/* RIGHT - Responsive Header Links */}
@@ -116,7 +139,9 @@ export default function Header() {
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link
-                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
                 className="bg-white text-[#2B158F] px-2 sm:px-4 py-1 rounded-full font-medium whitespace-nowrap hover:bg-gray-100 transition"
               >
                 Online Fees Payment

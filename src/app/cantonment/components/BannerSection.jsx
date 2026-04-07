@@ -94,7 +94,7 @@ export default function BannerSection() {
                 </h1>
 
                 <a
-                  href="/admissions"
+                  href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
                   className="inline-block mt-6 bg-[#2B158F] px-6 py-2 rounded-full text-md font-medium hover:bg-[#1e0f63] transition-colors font-secondary"
                 >
                   Admission
@@ -147,7 +147,6 @@ export default function BannerSection() {
 
       {/* DESKTOP LAYOUT (OVERLAP VERSION) */}
       <div className="hidden lg:block relative h-[620px] w-full overflow-hidden">
-
         {/* FULL IMAGE */}
         <div className="absolute inset-0">
           {slides.map((s, i) => (
@@ -195,7 +194,7 @@ export default function BannerSection() {
                 </h1>
 
                 <a
-                  href="/admissions"
+                  href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
                   className="inline-block mt-6 bg-[#2B158F] px-6 py-2 rounded-full text-md font-medium hover:bg-[#1e0f63] transition-colors font-secondary"
                 >
                   Admission
@@ -218,7 +217,6 @@ export default function BannerSection() {
                     ))}
                   </div>
                 </div>
-
               </div>
             </div>
           ))}

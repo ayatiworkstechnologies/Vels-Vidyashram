@@ -102,7 +102,7 @@ export default function Header() {
           <div className="hidden md:flex gap-6 items-center">
             <span className="flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-              7401 65 7975 / 1975
+              7401 65 7975 / 7401 65 1975 
             </span>
             <span className="hidden lg:flex items-center gap-2 whitespace-nowrap">
               <img src="/thalambur/mail.png" className="w-3" alt="mail" />
@@ -112,9 +112,7 @@ export default function Header() {
 
           {/* RIGHT - Responsive Header Links */}
           <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
-            <Link href="/thalambur/photo-gallery" className="whitespace-nowrap hover:underline">
-              Annual Day Photos 2025
-            </Link>
+            
 
             <div className="flex items-center gap-2 sm:gap-4">
               <Link

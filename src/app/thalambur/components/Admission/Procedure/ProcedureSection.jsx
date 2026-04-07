@@ -153,16 +153,37 @@ const AdmissionRedesign = () => {
                 </p>
               </div>
 
-              <div className="space-y-4 font-secondary">
-                <p className="text-[10px] font-black uppercase text-slate-400">Support & Clarifications</p>
-                <div className="flex items-center gap-3 text-slate-700 hover:text-primary transition-colors cursor-pointer">
-                  <Phone size={18} />
-                  <span className="text-sm font-bold">98844 84490 / 74016 57975</span>
+             <div className="space-y-4 font-secondary">
+                <p className="text-[10px] font-black uppercase text-slate-400">
+                  Support & Clarifications
+                </p>
+
+                <div className="flex items-center gap-3 text-slate-700 transition-colors">
+                  <Phone size={18} className="text-slate-700" />
+                  <a
+                    href="tel:+919884484490"
+                    className="text-sm font-bold transition-colors duration-300 hover:text-primary"
+                  >
+                    98844 84490
+                  </a>
+                  <span className="text-slate-400">/</span>
+                  <a
+                    href="tel:+917401657975"
+                    className="text-sm font-bold transition-colors duration-300 hover:text-primary"
+                  >
+                    74016 57975
+                  </a>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700 hover:text-primary transition-colors cursor-pointer">
+
+                <a
+                  href="mailto:admissions@velsvidyashram.ac.in"
+                  className="flex items-center gap-3 text-slate-700 transition-colors duration-300 hover:text-primary"
+                >
                   <Mail size={18} />
-                  <span className="text-sm font-bold">admissions@velsvidyashram.ac.in</span>
-                </div>
+                  <span className="text-sm font-bold">
+                    admissions@velsvidyashram.ac.in
+                  </span>
+                </a>
               </div>
             </div>
 

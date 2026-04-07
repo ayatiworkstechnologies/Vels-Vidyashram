@@ -106,7 +106,7 @@ export default function InfrastructureSlider() {
             Pre KG through 12
           </span>
           <h2 className="text-3xl md:text-4xl font-secondary font-bold mb-3 text-gray-900 leading-tight">
-            The Motto of the School is Wisdom is Strength.
+            Why Vels Vidyashram is best Solution for Education ?
           </h2>
           <p className="text-gray-500 font-secondary text-sm leading-relaxed">
             Our mission is to impart knowledge with values and ethics. To prepare the younger generation for a better future by improving their capabilities to face the challenges of the outside world.

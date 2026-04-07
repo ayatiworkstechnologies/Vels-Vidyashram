@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OurMottoSection() {
   const [expandedCard, setExpandedCard] = useState(0);
@@ -13,37 +14,39 @@ export default function OurMottoSection() {
       text: "A trusted group of institutions dedicated to academic excellence and values. Shaping young minds through quality education and innovation.",
       image: "/thalambur/group.png",
       showButton: true,
+      link: "/cantonment/our-group",
     },
     {
       title: "Academics",
       text: "Strong academic foundation supported by modern teaching methods and dedicated faculty.",
       image: "/thalambur/academics.png",
       showButton: true,
+      link: "/cantonment/our-curriculum",
     },
     {
       title: "Admissions / Enquiry",
       text: "Simple, transparent admission process with guidance for parents and students.",
       image: "/thalambur/enquiry.png",
       showButton: true,
+      link: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
     },
     {
       title: "Activities / Events",
       text: "Cultural, sports, and extracurricular activities that nurture creativity and confidence.",
       image: "/thalambur/girl.png",
       showButton: true,
+      link: "/cantonment/photo-gallery",
     },
   ];
 
-  // Auto slider effect
   useEffect(() => {
     const interval = setInterval(() => {
       setExpandedCard((prev) => (prev + 1) % cards.length);
-    }, 4000); // Change card every 4 seconds
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [cards.length]);
 
-  // Intersection Observer for text animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -65,32 +68,30 @@ export default function OurMottoSection() {
 
   return (
     <section ref={sectionRef} className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-      {/* TOP TEXT */}
       <div className="mb-8 md:mb-12">
-        <span className={`inline-block text-xs font-semibold text-secondary bg-orange-50 px-3 py-1 rounded-full mb-4 transition-all duration-1000 ${
-          isVisible 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 -translate-y-5'
-        }`}>
+        <span
+          className={`inline-block text-xs font-semibold text-secondary bg-orange-50 px-3 py-1 rounded-full mb-4 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
+          }`}
+        >
           Our motto
         </span>
 
-        <h2 className={`text-3xl md:text-5xl font-regular font-primary text-gray-900 leading-tight max-w-2xl transition-all duration-1000 delay-200 ${
-          isVisible 
-            ? 'opacity-100 translate-x-0' 
-            : 'opacity-0 -translate-x-10'
-        }`}>
+        <h2
+          className={`text-3xl md:text-5xl font-regular font-primary text-gray-900 leading-tight max-w-2xl transition-all duration-1000 delay-200 ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+          }`}
+        >
           The Motto of the School is <br />
           Wisdom is Strength.
         </h2>
       </div>
 
-      {/* CARDS CONTAINER */}
-      <div className={`flex flex-col md:flex-row gap-6 md:gap-4 h-auto md:h-[360px] transition-all duration-1000 delay-400 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-10'
-      }`}>
+      <div
+        className={`flex flex-col md:flex-row gap-6 md:gap-4 h-auto md:h-[360px] transition-all duration-1000 delay-400 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         {cards.map((card, index) => (
           <Card
             key={index}
@@ -104,9 +105,7 @@ export default function OurMottoSection() {
   );
 }
 
-/* ================= CARD COMPONENT ================= */
-
-function Card({ title, text, image, showButton, isExpanded, onClick }) {
+function Card({ title, text, image, showButton, link, isExpanded, onClick }) {
   return (
     <div
       onClick={onClick}
@@ -121,27 +120,25 @@ function Card({ title, text, image, showButton, isExpanded, onClick }) {
       {/* MOBILE DESIGN */}
       <div className="flex flex-col md:hidden bg-white">
         <div className="relative h-48 w-full">
-          <Image 
-            src={image} 
-            alt={title} 
-            fill 
-            className="object-cover"
-          />
+          <Image src={image} alt={title} fill className="object-cover" />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-2 font-primary">
             {title}
           </h3>
-          <p className="text-sm text-gray-600 leading-relaxed mb-4">
-            {text}
-          </p>
+          <p className="text-sm text-gray-600 leading-relaxed mb-4">{text}</p>
+
           {showButton && (
-            <button className="inline-flex items-center gap-3 font-semibold text-sm text-gray-900 hover:gap-4 transition-all">
+            <Link
+              href={link}
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-3 font-semibold text-sm text-gray-900 hover:gap-4 transition-all"
+            >
               Learn More
               <span className="w-8 h-8 rounded-full bg-tertiary text-white flex items-center justify-center">
                 →
               </span>
-            </button>
+            </Link>
           )}
         </div>
       </div>
@@ -150,43 +147,54 @@ function Card({ title, text, image, showButton, isExpanded, onClick }) {
       <div className="hidden md:block h-full w-full">
         {isExpanded ? (
           <div className="absolute inset-0 flex bg-gray-100">
-            {/* LEFT CONTENT */}
             <div className="w-1/2 p-8 flex flex-col justify-between">
               <div>
-                <h3 className={`text-3xl font-bold text-gray-900 mb-4 font-primary transition-all duration-700 ${
-                  isExpanded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                }`}>
+                <h3
+                  className={`text-3xl font-bold text-gray-900 mb-4 font-primary transition-all duration-700 ${
+                    isExpanded
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 -translate-x-10"
+                  }`}
+                >
                   {title}
                 </h3>
-                <p className={`text-sm text-gray-600 leading-relaxed transition-all duration-700 delay-200 ${
-                  isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-                }`}>
+                <p
+                  className={`text-sm text-gray-600 leading-relaxed transition-all duration-700 delay-200 ${
+                    isExpanded
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
+                  }`}
+                >
                   {text}
                 </p>
               </div>
 
               {showButton && (
-                <button className={`inline-flex items-center gap-3 font-semibold text-sm text-gray-900 hover:gap-4 transition-all duration-700 delay-400 ${
-                  isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-                }`}>
+                <Link
+                  href={link}
+                  onClick={(e) => e.stopPropagation()}
+                  className={`inline-flex items-center gap-3 font-semibold text-sm text-gray-900 hover:gap-4 transition-all duration-700 delay-400 ${
+                    isExpanded
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
+                  }`}
+                >
                   Learn More
                   <span className="w-10 h-10 rounded-full bg-tertiary text-white flex items-center justify-center">
                     →
                   </span>
-                </button>
+                </Link>
               )}
             </div>
 
-            {/* RIGHT IMAGE */}
             <div
               className={`w-1/2 bg-cover bg-center transition-all duration-700 ${
-                isExpanded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                isExpanded ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
               style={{ backgroundImage: `url(${image})` }}
             />
           </div>
         ) : (
-          /* COLLAPSED CARD */
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-500"
             style={{ backgroundImage: `url(${image})` }}

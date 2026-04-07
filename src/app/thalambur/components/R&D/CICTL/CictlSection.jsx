@@ -93,69 +93,125 @@ export default function CICTLSection() {
 
       {/* --- SECTION 2: BENTO GRID CONTENT --- */}
       <section className="bg-slate-50 py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            
-            {/* Main Title Block */}
-            <motion.div 
-              variants={fadeInUp} initial="hidden" whileInView="show"
-              className="md:col-span-2 bg-[#1f2b6c] p-12 rounded-3xl text-white flex flex-col justify-end min-h-[400px]"
-            >
-              <h2 className="text-2xl font-bold mb-6 text-white font-primary">A BRIEF INTRODUCTION OF THE COURSE</h2>
-              <div className="h-1 w-20 bg-white mb-6" />
-              <p className="text-blue-100 text-lg leading-relaxed font-secondary">
-                What is the Cambridge International Certificate/ Diploma for Teaching and Learning? Addressing the need for continuing professional development, the Cambridge International Certificate in Teaching and Learning has been designed to help teachers develop skills that will enhance their practice by becoming more resourceful and versatile.
-                These skills are assessed and accredited, providing you with proof of your competence. There have been many changes in the teaching world and teachers’ and trainers’ roles are becoming increasingly complex, demanding and wide ranging. The Diploma will enable you to demonstrate your ability to plan, manage and evaluate systematically; Design and deliver learning programmes using a range of methods; and develop personal skills that improve your professional practice. Cambridge International Certificate for Teaching and Learning.
-              </p>
-            </motion.div>
+  <div className="max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-3 gap-8">
+      
+      {/* Main Title Block */}
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="show"
+        className="md:col-span-2 bg-[#1f2b6c] p-12 rounded-3xl text-white flex flex-col justify-end min-h-[400px]"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-white font-primary uppercase">
+          A BRIEF INTRODUCTION OF THE COURSE
+        </h2>
+        <div className="h-1 w-20 bg-white mb-6" />
+        <h3 className="text-xl font-bold text-white mb-6 font-secondary">
+          Cambridge International Certificate for Teaching and Learning
+        </h3>
+        <p className="text-blue-100 text-lg leading-relaxed font-secondary">
+          <span className="font-bold">
+            What is the Cambridge International Certificate/ Diploma for Teaching and Learning?
+          </span>{" "}
+          Addressing the need for continuing professional development, the Cambridge International
+          Certificate in Teaching and Learning has been designed to help teachers develop skills that
+          will enhance their practice by becoming more resourceful and versatile. These skills are
+          assessed and accredited, providing you with proof of your competence. There have been many
+          changes in the teaching world and teachers’ and trainers’ roles are becoming increasingly
+          complex, demanding and wide ranging. The Diploma will enable you to demonstrate your ability
+          to plan, manage and evaluate systematically; Design and deliver learning programmes using a
+          range of methods; and develop personal skills that improve your professional practice.
+          <span className="font-bold">
+            {" "}Cambridge International Certificate for Teaching and Learning
+          </span>
+        </p>
+      </motion.div>
 
-            {/* Sidebar Info Blocks */}
-            <div className="space-y-8">
-               {paragraphs.slice(3).map((text, i) => (
-                 <motion.div 
-                  key={i}
-                  variants={fadeInUp} initial="hidden" whileInView="show"
-                  className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
-                 >
-                   <p className="text-slate-600 text-sm leading-relaxed font-secondary">{text}</p>
-                 </motion.div>
-               ))}
-            </div>
+      {/* Sidebar Info Blocks */}
+      <div className="space-y-6">
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
+        >
+          <ul className="space-y-4 text-slate-600 text-sm leading-relaxed font-secondary list-disc pl-5">
+            <li>
+              Has been developed by Cambridge in consultation with partners and centers to ensure
+              that a range of different teaching and learning contexts are covered.
+            </li>
+            <li>
+              Was created with an international audience in mind so that globally accepted best
+              practice can be taught while being sensitive to a local context and environments.
+            </li>
+            <li>
+              Offers a flexible modular structure, which reflects the teaching and learning cycle.
+            </li>
+          </ul>
+        </motion.div>
+      </div>
+    </div>
 
-          </div>
+    {/* Details Grid */}
+    <div className="grid lg:grid-cols-3 gap-12 mt-20 border-t border-slate-200 pt-20">
+      
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="show"
+      >
+        <h4 className="font-bold text-[#1f2b6c] mb-4 text-xl tracking-tight font-secondary">
+          About CAIE
+        </h4>
+        <p className="text-slate-600 text-sm leading-relaxed font-secondary">
+          Cambridge Assessment International Education (CAIE) is a part of University of Cambridge and
+          their qualifications are taken in over 150 different countries and are recognized by
+          universities, education providers and employers across the globe. CAIE offers a wide range of
+          academic and professional qualifications for people of all ages and abilities.
+        </p>
+      </motion.div>
 
-          {/* Details Grid */}
-          <div className="grid lg:grid-cols-3 gap-12 mt-20 border-t border-slate-200 pt-20">
-            
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="show">
-              <h4 className="font-bold text-[#1f2b6c] mb-4 text-xl tracking-tight font-secondary">The Pedagogy</h4>
-              <ul className="space-y-4 text-slate-600 text-sm">
-                <li className="flex gap-3"><span>•</span> Has been developed by Cambridge in consultation with partners and centres.</li>
-                <li className="flex gap-3"><span>•</span> Created with an international audience in mind for globally accepted best practice.</li>
-                <li className="flex gap-3"><span>•</span> Offers a flexible modular structure reflecting the teaching cycle.</li>
-              </ul>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="show" className="lg:col-span-2">
-              <h4 className="font-bold text-[#1f2b6c] mb-6 text-xl tracking-tight font-secondary">Course Delivery & Evaluation</h4>
-              <div className="columns-1 md:columns-2 gap-8 text-slate-600 text-sm leading-relaxed space-y-4 font-secondary">
-                <p>
-                  About CAIE Cambridge Assessment International Education (CAIE) is a part of University of Cambridge and their qualifications are taken in over 150 different countries and are recognized by universities, education providers and employers across the globe. CAIE offers a wide range of academic and professional qualifications for people of all ages and abilities.
-                </p>
-                <p>
-                  The Certification course is ideal for anyone in a teaching or training role who wish to update their skills. It is not limited to one particular subject area or level of education and focuses instead on transferable skills and knowledge that can be used in any teaching or training context.
-                </p>
-                <p>
-                  All candidates are supported by an experienced teacher who acts as a mentor. You will work with a ‘toolkit’ of resources, approaches and ideas which you can apply to your own teaching, as the focus of the Diploma is professional practice.
-                </p>
-                <p>
-                  Each module is assessed by a professional practice assignment, which should be submitted in the form of a portfolio report. You can work with your Centre to identify the most appropriate opportunities to apply the skills and knowledge you have developed.
-                </p>
-              </div>
-            </motion.div>
-            
-          </div>
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="show"
+        className="lg:col-span-2"
+      >
+        <h4 className="font-bold text-[#1f2b6c] mb-6 text-xl tracking-tight font-secondary">
+          Course Delivery & Evaluation
+        </h4>
+        <div className="columns-1 md:columns-2 gap-8 text-slate-600 text-sm leading-relaxed space-y-4 font-secondary">
+          <p>
+            <span className="font-bold">Who can take the Course?</span> The Certification course is
+            ideal for anyone in a teaching or training role who wish to update their skills. It is
+            not limited to one particular subject area or level of education and focuses instead on
+            transferable skills and knowledge that can be used in any teaching or training context.
+          </p>
+          <p>
+            <span className="font-bold">How is it taught?</span> All candidates are supported by an
+            experienced teacher who acts as a mentor. You will work with a ‘toolkit’ of resources,
+            approaches and ideas which you can apply to your own teaching, as the focus of the Diploma
+            is professional practice. Candidates must enter for the Diploma through a registered CAIE
+            Centre (Vaels International School)
+          </p>
+          <p>
+            <span className="font-bold">What does each module cover?</span> Each module sets out
+            performance standards for a particular stage in the teaching cycle, consisting of
+            performance criteria, the related skills, knowledge and understanding.
+          </p>
+          <p>
+            Each module is assessed by a professional practice assignment, which should be submitted in
+            the form of a portfolio report. You can work with your Centre to identify the most
+            appropriate opportunities to apply the skills and knowledge you have developed, then enter
+            for an assessment at a time convenient to you rather than waiting for a fixed examination
+            session.
+          </p>
         </div>
+      </motion.div>
+      
+    </div>
+  </div>
       </section>
 
       

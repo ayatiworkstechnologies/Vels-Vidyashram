@@ -1,94 +1,89 @@
-'use client';
-
-import Image from 'next/image';
-
-export default function Footer() {
+export default function ContactFooter() {
   return (
-    <footer className="w-full mt-10 pb-[45px] md:pb-0">
-      
-      {/* =========================================================
-          STICKY ADMISSION SIDE TAB (Visible on all devices)
-          ========================================================= */}
-      <a
-        href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-[60] flex items-center"
-      >
-        <div className="bg-[#39278F] text-white px-3 py-6 rounded-l-lg shadow-xl hover:bg-[#2B158F] transition-all duration-300 cursor-pointer">
-          <span 
-            className="block text-sm  tracking-widest font-secondary"
-            style={{ writingMode: 'vertical-rl' }}
-          >
-            Admission
-          </span>
-        </div>
-      </a>
+    <section className="w-full bg-[#e9e9e9] py-10 px-4">
+      <div className="max-w-6xl mx-auto bg-[#252c9c] rounded-[22px] px-8 md:px-12 py-8 md:py-10 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-start">
+          <div>
+            <h3 className="text-[26px] font-bold mb-5">Contact Us</h3>
+            <p className="text-[15px] leading-[1.8] text-white/95">
+              Vels Vidyashram,
+              <br />
+              Old Mahabalipuram Road (OMR),
+              <br />
+              IT Highway, Navalur, Thalambur,
+              <br />
+              Chennai - 600 130 Tamil Nadu, India
+            </p>
 
-      {/* TOP LINKS AREA */}
-      <div className="bg-[#F5F5F5] py-6">
-        {/* ROW 1 */}
-        <div className="flex flex-wrap justify-center gap-15 text-sm font-primary font-primary-semibold text-black mb-4">
-          <a href="/thalambur/curriculum" className="hover:text-primary transition">Academics</a>
-          <a href="/thalambur/procedure" className="hover:text-primary transition">Admissions</a>
-          <a href="/dargaroad/recruitment" className="hover:text-primary transition">Recruitment</a>
-          <a href="/thalambur/our-group" className="hover:text-primary transition">Our Group</a>
-          <a href="/pallavaram/mandatory-disclosure" className="hover:text-primary transition">Mandatory Disclosure</a>
+            <div className="mt-6 space-y-3 text-[15px]">
+              <p>
+                <span className="font-bold">Phone:</span> 7401 65 7975, 7401 65 1975
+              </p>
+              <p>
+                <span className="font-bold">Mail:</span> admissions@velsvidyashram.ac.in
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-[26px] font-bold mb-5">Quick Navigation</h3>
+            <ul className="space-y-1 text-[15px] list-disc pl-5 marker:text-white">
+              <li>Home</li>
+              <li>Profile</li>
+              <li>Academics</li>
+              <li>Admissions</li>
+              <li>Our Group</li>
+              <li>Contact us</li>
+              <li>Job Openings @ Vels</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[26px] font-bold mb-5">Campus Location</h3>
+            <div className="overflow-hidden rounded-[14px] shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop"
+                alt="Campus Location Map"
+                className="w-full h-[210px] object-cover"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* ROW 2 */}
-        <div className="flex flex-wrap justify-center gap-10 text-sm font-medium text-black mt-10">
-          <a href="/" className="hover:text-primary transition">Home</a>
-          <a href="/thalambur/vision-mission" className="hover:text-primary transition">About Us</a>
-          <a href="/thalambur/contact-us" className="hover:text-primary transition">Contact Us</a>
-        </div>
+        <div className="mt-8 bg-white rounded-[18px] px-6 md:px-10 py-5">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center text-[#1f1f1f] items-center">
+            <a href="#" className="flex flex-col items-center justify-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold">▶</div>
+              <span className="text-[14px] font-medium">Youtube</span>
+            </a>
 
-        {/* SOCIALS */}
-        <div className="flex justify-center mt-6">
-          <div className="flex items-center gap-3">
-            <SocialIcon href="https://facebook.com/..." src="/dargaroad/facebook.svg" label="Facebook" />
-            <SocialIcon href="https://instagram.com/..." src="/dargaroad/instagram.svg" label="Instagram" />
-            <SocialIcon href="https://youtube.com/..." src="/dargaroad/youtube.svg" label="YouTube" />
-            <SocialIcon href="https://wa.me/..." src="/dargaroad/whatsapp.svg" label="WhatsApp" />
+            <a href="#" className="flex flex-col items-center justify-center gap-2">
+              <div className="w-8 h-8 rounded bg-[#1877F2] text-white flex items-center justify-center text-sm font-bold">f</div>
+              <span className="text-[14px] font-medium">Facebook</span>
+            </a>
+
+            <a href="#" className="flex flex-col items-center justify-center gap-2">
+              <div className="w-8 h-8 rounded bg-[#1DA1F2] text-white flex items-center justify-center text-sm font-bold">↗</div>
+              <span className="text-[14px] font-medium">Registration Link</span>
+            </a>
+
+            <a href="tel:9500057620" className="flex flex-col items-center justify-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-[#0d6efd] text-white flex items-center justify-center text-sm font-bold">☎</div>
+              <span className="text-[14px] font-medium">9500057620</span>
+            </a>
+
+            <a
+              href="mailto:vaels.researchanddevelopment@gmail.com"
+              className="flex flex-col items-center justify-center gap-2 break-all"
+            >
+              <div className="w-8 h-8 rounded bg-[#1976d2] text-white flex items-center justify-center text-sm font-bold">✉</div>
+              <span className="text-[12px] md:text-[13px] font-medium leading-snug">
+                vaels.researchanddevelopment@gmail.com
+              </span>
+            </a>
           </div>
         </div>
       </div>
-
-      {/* COPYRIGHT BAR */}
-      <div className="bg-[#39278F] py-3 text-center">
-        <p className="text-white text-sm font-medium px-4">
-          Copyright ©2025 VelsVidyashram – All right reserved | Designed & Developed by Ayatiworks
-        </p>
-      </div>
-
-      {/* MOBILE BOTTOM NAVIGATION (Phone only) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-        <div className="flex divide-x">
-          <button
-            onClick={() => window.open('https://erp.vistas.ac.in/...', '_blank')}
-            className="flex-1 py-4 flex items-center justify-center gap-2 bg-[#FF8700] text-white text-sm font-bold uppercase"
-          >
-            <Image src="/main/mail-01.svg" alt="enquiry" width={18} height={18} />
-            Enquiry Now
-          </button>
-          <a
-            href="tel:9962506639"
-            className="flex-1 py-4 flex items-center justify-center gap-2 bg-[#2B158F] text-white text-sm font-bold uppercase"
-          >
-            <Image src="/main/phone.svg" alt="call" width={18} height={18} />
-            Call Now
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-// Helper component for social icons to keep code clean
-function SocialIcon({ href, src, label }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition" aria-label={label}>
-      <Image src={src} alt={label} width={36} height={36} />
-    </a>
+    </section>
   );
 }

@@ -53,7 +53,6 @@ const EVENTS_DATA = {
       },
       {
         title: "Vels Football Club Inauguration",
-        categoryTitle: "Annual Fest",
         id: 4,
         size: 'small',
         images: [
@@ -82,7 +81,6 @@ const EVENTS_DATA = {
       },
       // Row 3: Medium + Large (spans 2 cols)
       {
-        categoryTitle: "FIELD TRIP",
         title: "Diwali Celebration",
         id: 6,
         size: 'medium',
@@ -106,7 +104,6 @@ const EVENTS_DATA = {
       },
       // Row 4: Three equal small cards
       {
-        categoryTitle: "Toppers",
         title: "Toppers",
         id: 8,
         size: 'small',
@@ -178,7 +175,6 @@ const EVENTS_DATA = {
       },
       {
         title: "Blue Day",
-        categoryTitle: "Annual Fest",
         id: 4,
         size: 'small',
         images: [
@@ -205,7 +201,6 @@ const EVENTS_DATA = {
       },
       // Row 3: Medium + Large (spans 2 cols)
       {
-        categoryTitle: "FIELD TRIP",
         title: "Krishna Jeyanthi",
         id: 6,
         size: 'medium',
@@ -229,7 +224,6 @@ const EVENTS_DATA = {
       },
       // Row 4: Three equal small cards
       {
-        categoryTitle: "",
         title: "STARS OF VVT (JUNE)",
         id: 8,
         size: 'small',

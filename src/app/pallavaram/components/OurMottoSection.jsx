@@ -12,30 +12,30 @@ export default function OurMottoSection() {
     {
       title: "Our Group",
       text: "A trusted group of institutions dedicated to academic excellence and values. Shaping young minds through quality education and innovation.",
-      image: "/thalambur/group.png",
+      image: "/pallavaram/our-group.png",
       showButton: true,
-      link: "/thalambur/our-group",
+      link: "/pallavaram/our-group",
     },
     {
       title: "Academics",
       text: "Strong academic foundation supported by modern teaching methods and dedicated faculty.",
-      image: "/thalambur/academics.png",
+      image: "/pallavaram/Academics.png",
       showButton: true,
-      link: "/thalambur/curriculum",
+      link: "/pallavaram/curriculum",
     },
     {
       title: "Admissions / Enquiry",
       text: "Simple, transparent admission process with guidance for parents and students.",
-      image: "/thalambur/enquiry.png",
+      image: "/pallavaram/Enquiry.jpg",
       showButton: true,
       link: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
     },
     {
       title: "Activities / Events",
       text: "Cultural, sports, and extracurricular activities that nurture creativity and confidence.",
-      image: "/thalambur/girl.png",
+      image: "/pallavaram/Activities.png",
       showButton: true,
-      link: "/thalambur/photo-gallery",
+      link: "/pallavaram/photo-gallery",
     },
   ];
 

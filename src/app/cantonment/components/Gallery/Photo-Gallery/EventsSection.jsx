@@ -1,17 +1,17 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 const EVENTS_DATA = {
-  years: ['2025-2026', '2024-2025'],
+  years: ["2022-2023"],
   eventsByYear: {
-    '2025-2026': [
-      // Row 1: Large (spans 2 cols) + Medium (1 col)
+    "2022-2023": [
       {
         title: "Blue Day",
         id: 1,
-        size: 'large',
+        size: "medium",
         images: [
           "/cantonment/blue-1.png",
           "/cantonment/blue-2.png",
@@ -20,339 +20,118 @@ const EVENTS_DATA = {
           "/cantonment/blue-5.png",
           "/cantonment/blue-6.png",
           "/cantonment/blue-7.png",
-         
         ],
-       
       },
       {
-        title: "Doctor's day",
+        title: "Doctor's Day",
         id: 2,
-        size: 'medium',
+        size: "medium",
         images: [
-          "/thalambur/bag-1.jpg",
-          "/thalambur/bag-2.jpg",
-          "/thalambur/bag-3.jpg",
-          "/thalambur/bag-4.jpg",
-          "/thalambur/bag-5.jpg",
-          "/thalambur/bag-6.jpg",
-          "/thalambur/bag-7.jpg",
-          
-        ]
-      },
-      // Row 2: Three equal small cards
-      {
-        title: "Healthy and Junk food",
-        id: 3,
-        size: 'small',
-        images: [
-          "/thalambur/melange-1.jpg",
-          "/thalambur/melange-2.jpg",
-          "/thalambur/melange-3.jpg",
-          "/thalambur/melange-4.jpg",
-          "/thalambur/melange-5.jpg",
-          "/thalambur/melange-6.jpg",
-          "/thalambur/melange-7.jpg",
-          "/thalambur/melange-8.jpg",
-          "/thalambur/melange-9.jpg",
-          "/thalambur/melange-10.jpg",
-        ]
-      },
-      {
-        title: "Red day",
-        categoryTitle: "Annual Fest",
-        id: 4,
-        size: 'small',
-        images: [
-          "/thalambur/football-1.jpg",
-          "/thalambur/football-2.jpg",
-          "/thalambur/football-3.jpg",
-          "/thalambur/football-4.jpg",
-          "/thalambur/football-5.jpg",
-          "/thalambur/football-6.jpg",
-          "/thalambur/football-7.jpg",
-          "/thalambur/football-8.jpg",
-        ]
-      },
-      {
-        title: "Vels organic sandhai",
-        id: 5,
-        size: 'medium',
-        images: [
-          "/thalambur/grade-1.jpg",
-          "/thalambur/grade-2.jpg",
-          "/thalambur/grade-3.jpg",
-          "/thalambur/grade-4.jpg",
-          "/thalambur/grade-5.jpg",
-      
-        ]
-      },
-      // Row 3: Medium + Large (spans 2 cols)
-      {
-        categoryTitle: "Yellow day",
-        title: "Diwali Celebration",
-        id: 6,
-        size: 'medium',
-        images: [
-          "/thalambur/diwali-1.jpg",
-          "/thalambur/diwali-2.jpg",
-          "/thalambur/diwali-3.jpg",
-          "/thalambur/diwali-4.jpg",
-          "/thalambur/diwali-5.jpg",
-        ]
-      },
-      {
-        title: "Yoga day",
-        id: 7,
-        size: 'large',
-        images: [
-          "/thalambur/english-1.jpg",
-          "/thalambur/english-2.jpg",
-          "/thalambur/english-3.jpg"
-        ]
-      },
-      // Row 4: Three equal small cards
-      {
-        categoryTitle: "Toppers",
-        title: "Toppers",
-        id: 8,
-        size: 'small',
-        images: [
-          "/thalambur/topper-1.jpg",
-          "/thalambur/topper-2.jpg",
-          "/thalambur/topper-3.jpg"
-        ]
-      },
-      {
-        title: "STARS OF VVT -THALAMBUR",
-        id: 9,
-        size: 'small',
-        images: [
-          "/thalambur/star-1.jpeg",
-          "/thalambur/star-2.jpg",
-          "/thalambur/star-3.jpeg",
-          "/thalambur/star-4.jpeg",
-        ]
-      },
-      {
-        title: "JEE Mains Session 2",
-        id: 10,
-        size: 'small',
-        images: [
-          "/thalambur/jee.jpg",
-          
-        ]
-      },
-      // Row 1: Large (spans 2 cols) + Medium (1 col)
-      {
-        title: "Personal Safety Education session for students of Grades I to XII",
-        id: 1,
-        size: 'large',
-        images: [
-          "/thalambur/safe-1.jpg",
-          "/thalambur/safe-2.jpg",
-          "/thalambur/safe-3.jpg",
-          "/thalambur/safe-4.jpg",
-          "/thalambur/safe-5.jpg",
-         
+          "/cantonment/doc1.png",
+          "/cantonment/doc2.png",
+          "/cantonment/doc3.png",
+          "/cantonment/doc4.png",
+          "/cantonment/doc5.png",
+          "/cantonment/doc6.png",
+          "/cantonment/doc7.png",
+          "/cantonment/doc8.png",
         ],
-       
       },
       {
-        title: "Rakshabhandhan",
-        id: 2,
-        size: 'medium',
-        images: [
-          "/thalambur/raksha-1.jpg",
-          "/thalambur/raksha-2.jpg",
-          "/thalambur/raksha-3.jpg",
-          "/thalambur/raksha-4.jpg",
-          "/thalambur/raksha-5.jpg",
-        ]
-      },
-      // Row 2: Three equal small cards
-      {
-        title: "Friendship Day",
+        title: "Healthy and Junk Food",
         id: 3,
-        size: 'small',
+        size: "small",
         images: [
-          "/thalambur/friend-1.jpeg",
-          "/thalambur/friend-2.jpeg",
-          "/thalambur/friend-3.jpeg",
-          "/thalambur/friend-4.jpeg",
-
-        ]
+          "/cantonment/health1.png",
+          "/cantonment/health2.png",
+          "/cantonment/health3.png",
+          "/cantonment/health4.png",
+          "/cantonment/health5.png",
+          "/cantonment/health6.png",
+          "/cantonment/health7.png",
+          "/cantonment/health8.png",
+          "/cantonment/health9.png",
+          "/cantonment/health10.png",
+          "/cantonment/health11.png",
+          "/cantonment/health12.png",
+        ],
       },
       {
-        title: "Blue Day",
-        categoryTitle: "Annual Fest",
+        title: "Red Day",
         id: 4,
-        size: 'small',
+        size: "small",
         images: [
-          "/thalambur/blue-1.jpg",
-          "/thalambur/blue-2.jpg",
-          "/thalambur/blue-3.jpg",
-          "/thalambur/blue-4.jpg",
-          "/thalambur/blue-5.jpg",
-        
-        ]
+          "/cantonment/red1.png",
+          "/cantonment/red2.png",
+          "/cantonment/red3.png",
+          "/cantonment/red4.png",
+          "/cantonment/red5.png",
+          "/cantonment/red6.png",
+          "/cantonment/red7.png",
+
+        ],
       },
       {
-        title: "Book Exhibition Reading India Project 2025 ",
+        title: "Vels Organic Sandhai",
         id: 5,
-        size: 'medium',
+        size: "medium",
         images: [
-          "/thalambur/book-1.jpg",
-          "/thalambur/book-2.jpg",
-          "/thalambur/book-3.jpg",
-          "/thalambur/book-4.jpg",
-          "/thalambur/book-5.jpg",
-      
-        ]
+          "/cantonment/sandhai1.jpg",
+          "/cantonment/sandhai2.jpg",
+          "/cantonment/sandhai3.jpg",
+          "/cantonment/sandhai4.jpg",
+          "/cantonment/sandhai5.jpg",
+        ],
       },
-      // Row 3: Medium + Large (spans 2 cols)
       {
-        categoryTitle: "FIELD TRIP",
-        title: "Krishna Jeyanthi",
+        title: "Yellow Day",
         id: 6,
-        size: 'medium',
+        size: "medium",
         images: [
-          "/thalambur/krishna-1.jpeg",
-          "/thalambur/krishna-2.jpeg",
-          "/thalambur/krishna-3.jpeg",
-          "/thalambur/krishna-4.jpeg",
-        
-        ]
+          "/cantonment/yellow1.jpg",
+          "/cantonment/yellow2.jpg",
+          "/cantonment/yellow3.jpg",
+          "/cantonment/yellow4.jpg",
+          "/cantonment/yellow5.jpg",
+          "/cantonment/yellow6.jpg",
+          "/cantonment/yellow7.jpg",
+          
+
+        ],
       },
       {
-        title: "Merit Awards PT I",
+        title: "Yoga Day",
         id: 7,
-        size: 'large',
+        size: "large",
         images: [
-          "/thalambur/merit-1.jpg",
-          "/thalambur/merit-2.jpg",
-          "/thalambur/merit-3.jpg"
-        ]
+          "/cantonment/yoga1.png",
+          "/cantonment/yoga2.png",
+          "/cantonment/yoga3.png",
+          "/cantonment/yoga4.png",
+          "/cantonment/yoga5.png",
+          "/cantonment/yoga6.png",
+          "/cantonment/yoga7.png",
+          "/cantonment/yoga8.png",
+          "/cantonment/yoga9.png",
+          "/cantonment/yoga10.png",
+          "/cantonment/yoga11.png",
+          "/cantonment/yoga12.png",
+          "/cantonment/yoga13.png",
+          "/cantonment/yoga14.png",
+          "/cantonment/yoga15.png",
+          "/cantonment/yoga16.png",
+          "/cantonment/yoga17.png",
+          "/cantonment/yoga18.png",
+        ],
       },
-      // Row 4: Three equal small cards
-      {
-        categoryTitle: "",
-        title: "STARS OF VVT (JUNE)",
-        id: 8,
-        size: 'small',
-        images: [
-          "/thalambur/vvt-1.jpg",
-          "/thalambur/vvt-2.jpg",
-          "/thalambur/vvt-3.jpg",
-          "/thalambur/vvt-4.jpg",
-        ]
-      },
-      {
-        title: "India K-12 Awards(IKA) - 2025",
-        id: 9,
-        size: 'small',
-        images: [
-          "/thalambur/india.jpg",
-         
-        ]
-      },
-      {
-        title: "Ganesh Chaturthi",
-        id: 10,
-        size: 'small',
-        images: [
-          "/thalambur/ganesh-1.jpg",
-          "/thalambur/ganesh-2.jpg",
-          "/thalambur/ganesh-3.jpg",
-          
-        ]
-      },
-      {
-        title: "TECHTOPIA",
-        id: 10,
-        size: 'small',
-        images: [
-          "/thalambur/tech-1.jpg",
-          "/thalambur/tech-2.jpg",
-          "/thalambur/tech-3.jpg",
-          "/thalambur/tech-4.jpg",
-          "/thalambur/tech-5.jpg",
-          "/thalambur/tech-6.jpg",
-          "/thalambur/tech-7.jpg",
-          
-        ]
-      },
-
+  
+   
     ],
-    '2024-2025': [
-      {
-        title: "Parent Orientation ",
-        id: 1,
-        size: 'large',
-        images: [
-          "/thalambur/parent-1.jpg",
-          "/thalambur/parent-2.jpg",
-       
-        ]
-      },
-      {
-        title: "TAMIL NEW YEAR CELEBRATION",
-        id: 2,
-        size: 'medium',
-        images: [
-          "/thalambur/tamil-1.png",
-          "/thalambur/tamil-2.png",
-          "/thalambur/tamil-3.png",
-          "/thalambur/tamil-4.png",
-          "/thalambur/tamil-5.png",
-          "/thalambur/tamil-6.png",
-          "/thalambur/tamil-7.png",
-          "/thalambur/tamil-8.png",
-        ]
-      },
-      {
-        title: "World Scholar's Cup",
-        id: 3,
-        size: 'small',
-        images: [
-          "/thalambur/world-1.png",
-          "/thalambur/world-2.png",
-          "/thalambur/world-3.png",
-          "/thalambur/world-4.png",
-
-        ]
-      },
-      {
-        title: "EVS CULMINATION II GRADE I ",
-        id: 4,
-        size: 'small',
-        images: [
-          "/thalambur/evs-1.jpg",
-          "/thalambur/evs-2.jpg",
-          "/thalambur/evs-3.jpg",
-          "/thalambur/evs-4.jpg",
-          "/thalambur/evs-5.jpg",
-          "/thalambur/evs-6.jpg",
-
-        ]
-      },
-      {
-        title: "EVS CULMINATION II GRADE II",
-        id: 5,
-        size: 'small',
-        images: [
-          "/thalambur/g-1.jpg",
-          "/thalambur/g-2.jpg",
-          "/thalambur/g-3.jpg",
-          "/thalambur/g-4.jpg",
-        ]
-      }
-    ],
- 
-  }
+  },
 };
 
 export default function EventsSection() {
-  const [selectedYear, setSelectedYear] = useState("2025-2026");
+  const [selectedYear, setSelectedYear] = useState(EVENTS_DATA.years[0]);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [carouselStates, setCarouselStates] = useState({});
   const [activeEventImages, setActiveEventImages] = useState([]);
@@ -375,20 +154,25 @@ export default function EventsSection() {
     const interval = setInterval(() => {
       setCarouselStates((prev) => {
         const newStates = { ...prev };
+
         Object.keys(newStates).forEach((key) => {
           const id = parseInt(key);
-          let event = null;
+          let foundEvent = null;
+
           Object.values(EVENTS_DATA.eventsByYear).forEach((yearEvents) => {
-            const found = yearEvents.find((e) => e.id === id);
-            if (found) event = found;
+            const match = yearEvents.find((e) => e.id === id);
+            if (match) foundEvent = match;
           });
-          if (event && event.images && event.images.length > 1) {
-            newStates[key] = (newStates[key] + 1) % event.images.length;
+
+          if (foundEvent?.images?.length > 1) {
+            newStates[key] = (newStates[key] + 1) % foundEvent.images.length;
           }
         });
+
         return newStates;
       });
     }, 4500);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -398,6 +182,7 @@ export default function EventsSection() {
         setIsDropdownOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -410,30 +195,43 @@ export default function EventsSection() {
 
   const handleCarouselClick = (eventId, direction, e) => {
     e.stopPropagation();
-    const event = EVENTS_DATA.eventsByYear[selectedYear].find(e => e.id === eventId);
+
+    const event = EVENTS_DATA.eventsByYear[selectedYear]?.find(
+      (item) => item.id === eventId
+    );
+
     if (!event || !event.images || event.images.length <= 1) return;
-    setCarouselStates(prev => ({
+
+    setCarouselStates((prev) => ({
       ...prev,
-      [eventId]: direction === "next" 
-        ? (prev[eventId] + 1) % event.images.length 
-        : (prev[eventId] - 1 + event.images.length) % event.images.length
+      [eventId]:
+        direction === "next"
+          ? (prev[eventId] + 1) % event.images.length
+          : (prev[eventId] - 1 + event.images.length) % event.images.length,
     }));
   };
 
+  const events = EVENTS_DATA.eventsByYear[selectedYear] || [];
+
   return (
     <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-4 md:p-8 max-w-[1400px] mx-auto min-h-screen">
-      
-      {/* Header Section */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800">Event Gallery</h2>
-        
+        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800">
+          Event Gallery
+        </h2>
+
         <div className="relative w-full sm:w-48" ref={dropdownRef}>
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center justify-between w-full px-5 py-3 bg-white border border-slate-200 rounded-xl font-bold shadow-sm hover:border-primary transition-colors"
+            className="flex items-center justify-between w-full px-5 py-3 bg-white border border-slate-200 rounded-xl font-bold shadow-sm hover:border-blue-500 transition-colors"
           >
             {selectedYear}
-            <ChevronDown size={18} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown
+              size={18}
+              className={`transition-transform ${
+                isDropdownOpen ? "rotate-180" : ""
+              }`}
+            />
           </button>
 
           <AnimatePresence>
@@ -452,7 +250,9 @@ export default function EventsSection() {
                       setIsDropdownOpen(false);
                     }}
                     className={`w-full px-5 py-3 text-left font-bold transition-colors ${
-                      selectedYear === year ? "bg-primary text-white" : "hover:bg-blue-50 text-slate-600"
+                      selectedYear === year
+                        ? "bg-blue-600 text-white"
+                        : "hover:bg-blue-50 text-slate-600"
                     }`}
                   >
                     {year}
@@ -464,9 +264,8 @@ export default function EventsSection() {
         </div>
       </div>
 
-      {/* Responsive Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {EVENTS_DATA.eventsByYear[selectedYear].map((event) => {
+        {events.map((event) => {
           const images = event.images || [];
           const hasMultiple = images.length > 1;
           const currentIndex = carouselStates[event.id] || 0;
@@ -477,8 +276,12 @@ export default function EventsSection() {
               layout
               key={event.id}
               onClick={() => openLightbox(event)}
-              className={`relative overflow-hidden rounded-2xl bg-white group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 
-                ${event.size === "large" ? "sm:col-span-2 aspect-[16/10] md:aspect-[16/7]" : "col-span-1 aspect-[4/3]"}
+              className={`relative overflow-hidden rounded-2xl bg-white group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300
+                ${
+                  event.size === "large"
+                    ? "sm:col-span-2 aspect-[16/10] md:aspect-[16/7]"
+                    : "col-span-1 aspect-[4/3]"
+                }
               `}
             >
               <div className="relative h-full w-full">
@@ -487,11 +290,10 @@ export default function EventsSection() {
                   initial={{ opacity: 0.8 }}
                   animate={{ opacity: 1 }}
                   src={currentImage}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   alt={event.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
-                {/* Navigation Arrows (Visible on Hover/Touch) */}
                 {hasMultiple && (
                   <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button
@@ -509,14 +311,13 @@ export default function EventsSection() {
                   </div>
                 )}
 
-                {/* Overlay Text */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-4 md:p-6">
-                   {event.categoryTitle && (
-                     <span className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">
-                       {event.categoryTitle}
-                     </span>
-                   )}
-                   <h3 className="text-white font-bold text-sm md:text-base leading-tight line-clamp-2">
+                  {event.categoryTitle && (
+                    <span className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">
+                      {event.categoryTitle}
+                    </span>
+                  )}
+                  <h3 className="text-white font-bold text-sm md:text-base leading-tight line-clamp-2">
                     {event.title}
                   </h3>
                 </div>
@@ -526,7 +327,6 @@ export default function EventsSection() {
         })}
       </div>
 
-      {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
@@ -536,17 +336,26 @@ export default function EventsSection() {
             exit={{ opacity: 0 }}
             onClick={() => setSelectedIndex(null)}
           >
-            <button className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors">
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors"
+            >
               <X size={32} />
             </button>
 
-            <div 
+            <div
               className="relative w-full max-w-6xl h-full flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Desktop Nav Arrows */}
-              <button 
-                onClick={(e) => { e.stopPropagation(); setSelectedIndex(prev => (prev - 1 + activeEventImages.length) % activeEventImages.length)}}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIndex(
+                    (prev) =>
+                      (prev - 1 + activeEventImages.length) %
+                      activeEventImages.length
+                  );
+                }}
                 className="hidden md:flex absolute left-[-60px] text-white/50 hover:text-white"
               >
                 <ChevronLeft size={48} />
@@ -557,19 +366,23 @@ export default function EventsSection() {
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 src={activeEventImages[selectedIndex]}
-                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
                 alt="Selected Event"
+                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
               />
 
-              <button 
-                onClick={(e) => { e.stopPropagation(); setSelectedIndex(prev => (prev + 1) % activeEventImages.length)}}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIndex(
+                    (prev) => (prev + 1) % activeEventImages.length
+                  );
+                }}
                 className="hidden md:flex absolute right-[-60px] text-white/50 hover:text-white"
               >
                 <ChevronRight size={48} />
               </button>
             </div>
 
-            {/* Thumbnail Strip */}
             <div
               className="flex gap-2 mt-8 overflow-x-auto pb-4 max-w-full no-scrollbar"
               onClick={(e) => e.stopPropagation()}
@@ -579,10 +392,16 @@ export default function EventsSection() {
                   key={idx}
                   onClick={() => setSelectedIndex(idx)}
                   className={`flex-shrink-0 w-16 h-12 md:w-24 md:h-16 rounded-md overflow-hidden border-2 transition-all ${
-                    selectedIndex === idx ? "border-primary scale-105" : "border-transparent opacity-40 hover:opacity-100"
+                    selectedIndex === idx
+                      ? "border-blue-500 scale-105"
+                      : "border-transparent opacity-40 hover:opacity-100"
                   }`}
                 >
-                  <img src={img} className="w-full h-full object-cover" alt="" />
+                  <img
+                    src={img}
+                    alt={`Thumbnail ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                 </button>
               ))}
             </div>

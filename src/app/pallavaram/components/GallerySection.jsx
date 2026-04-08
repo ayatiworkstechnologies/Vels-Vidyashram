@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const galleryItems = [
-  { id: 1, title: "Vels Football Club Inauguration", description: "", img: "/thalambur/vels-football-club-inauguration.png" },
-  { id: 2, title: "Awards", description: "", img: "/thalambur/awards.png" },
-  { id: 3, title: "Laboratory", description: "", img: "/thalambur/laboratory.png" },
-  { id: 4, title: "Activities", description: "", img: "/thalambur/event.png" },
-  { id: 5, title: "Sports", description: "", img: "/thalambur/sports.png" },
-  { id: 6, title: "Computer Lab", description: "", img: "/thalambur/computer-lab.png" },
+  { id: 1, title: "Awards", description: "", img: "/pallavaram/gal-awards.png" },
+  { id: 2, title: "Awards", description: "", img: "/pallavaram/gal-awards.png" },
+  { id: 3, title: "Laboratory", description: "", img: "/pallavaram/gal-lab.png" },
+  { id: 4, title: "Activities", description: "", img: "/pallavaram/gal-activity.png" },
+  { id: 5, title: "Sports", description: "", img: "/pallavaram/gal-sport.png" },
+  { id: 6, title: "Computer Lab", description: "", img: "/pallavaram/gal-computer.png" },
 ];
 
 export default function GalleryGrid() {

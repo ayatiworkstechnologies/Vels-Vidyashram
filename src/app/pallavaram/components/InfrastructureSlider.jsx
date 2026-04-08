@@ -7,7 +7,7 @@ const slides = [
     title: "Infrastructure",
     description:
       "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities. Built to support comfort, focus, and growth at every stage.",
-    image: "/thalambur/card.png",
+    image: "/pallavaram/infrastructure.png",
     icon: "/thalambur/fav-6.png",
   },
   {
@@ -15,7 +15,7 @@ const slides = [
     title: "Academics",
     description:
       "Strong academic foundation with innovative teaching methods and individual attention for every student.",
-    image: "/thalambur/curriculum.png",
+    image: "/pallavaram/academic.png",
     icon: "/thalambur/fav-2.png",
   },
   {
@@ -23,7 +23,7 @@ const slides = [
     title: "Activities",
     description:
       "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/thalambur/step.png",
+    image: "/pallavaram/activities.png",
     icon: "/thalambur/fav-3.png",
   },
   {
@@ -31,7 +31,7 @@ const slides = [
     title: "Technology",
     description:
       "Modern technology integrated into classrooms with smart boards, computer labs, and digital learning resources for enhanced education.",
-    image: "/thalambur/laboratories.png",
+    image: "/pallavaram/technology.png",
     icon: "/thalambur/fav-4.png",
   },
   {
@@ -39,7 +39,7 @@ const slides = [
     title: "Community",
     description:
       "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/thalambur/transport.png",
+    image: "/pallavaram/community.png",
     icon: "/thalambur/fav-5.png",
   },
   {
@@ -47,7 +47,7 @@ const slides = [
     title: "Excellence",
     description:
       "Commitment to excellence in all aspects of education, preparing students for success in their future endeavors and careers.",
-    image: "/thalambur/athletics.png",
+    image: "/pallavaram/excellence.png",
     icon: "/thalambur/fav-1.png",
   },
 ];

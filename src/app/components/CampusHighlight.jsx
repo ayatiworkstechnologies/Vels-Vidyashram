@@ -1,173 +1,156 @@
 "use client";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
+const campuses = [
+  {
+    id: 1,
+    name: 'Pallavaram Campus',
+    tagline: 'A Center for Progressive Learning',
+    description: 'A well-structured campus built for excellence and holistic development. Led by experienced educators and supported by state-of-the-art facilities.',
+    image: '/palla.png',
+    exploreLink: '/pallavaram',
+    admissionLink: 'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+  },
+  {
+    id: 2,
+    name: 'Cantonment Campus',
+    tagline: 'A Joyful Start to Learning',
+    description: 'A vibrant campus environment designed to foster creativity and early childhood development. Focused on providing a strong foundation.',
+    image: '/contonment.png',
+    exploreLink: '/cantonment',
+    admissionLink: 'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+  },
+  {
+    id: 3,
+    name: 'Thalambur Campus',
+    tagline: 'Progressive Learning for a New Generation',
+    description: 'A dynamic campus focusing on future-ready skills, academic rigor, and character building. Equipped with modern infrastructure.',
+    image: '/thalam.png',
+    exploreLink: '/thalambur',
+    admissionLink: 'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+  },
+  {
+    id: 4,
+    name: 'Darga Road Campus',
+    tagline: 'Excellence Rooted in Care and Values',
+    description: 'A campus dedicated to academic achievement and value-based education. Providing a supportive community for students to excel.',
+    image: '/darga.png',
+    exploreLink: '/dargaroad',
+    admissionLink: 'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
+  },
+];
 
-export default function CampusHighlight() {
-  const campuses = [
-    {
-      name: "Pallavaram Campus",
-      tagline: "A Center for Progressive Learning",
-      description:
-        "A well-structured campus built for excellence and holistic development. Led by experienced educators and supported by state-of-the-art facilities. Ensuring a safe, nurturing, and inspiring environment for learners.",
-      image: "/main/pallavaram-large.jpg",
-      exploreUrl: "/pallavaram",
-      admissionUrl: "#",
-    },
-
-    {
-      name: "Cantonment Campus",
-      tagline: "Education Beyond The Classroom",
-      description:
-        "Blending academics, activities, and values for balanced development. Designed to help students explore, learn, and excel confidently.",
-         image: "/main/thalambur-large.jpg",
-     
-      exploreUrl: "/cantonment",
-      admissionUrl: "#",
-    },
-        {
-      name: "Thalambur Campus",
-      tagline: "Safe. Supportive. Student-Centric.",
-      description:
-        "A secure campus where every child feels valued and encouraged. Holistic learning backed by modern facilities and dedicated faculty.",
-      image: "/main/cantonment-large.jpg",
-      exploreUrl: "/thalambur",
-      admissionUrl: "#",
-    },
-    {
-      name: "Darga Road Campus",
-      tagline: "Excellence In Every Step",
-      description:
-        "Guided by experienced educators who focus on individual progress. A structured system that ensures consistent academic improvement.",
-      image: "/main/dargaroad-large.jpg",
-      exploreUrl: "/dargaroad",
-      admissionUrl: "#",
-    },
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
-
-  const campus = campuses[activeIndex];
-
-  const changeSlide = (nextIndex) => {
-    if (nextIndex === activeIndex) return;
-
-    setIsFading(true);
-    setTimeout(() => {
-      setActiveIndex(nextIndex);
-      setIsFading(false);
-    }, 300);
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const next = (activeIndex + 1) % campuses.length;
-      changeSlide(next);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, [activeIndex, campuses.length]);
-
+const CampusCard = ({ campus, index }) => {
   return (
-    <>
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative rounded-none overflow-visible">
-            {/* Desktop right gradient background */}
-            <div className="hidden md:block absolute inset-y-0 right-0 w-[68%] bg-[#F5F5F5]" />
+    <div 
+      className="sticky top-0 h-screen w-full flex items-center justify-center px-4 md:px-6"
+      style={{ zIndex: index + 10 }}
+    >
+      <motion.div 
+        initial={{ y: 80, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="relative w-full max-w-5xl bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col md:flex-row items-stretch min-h-[450px] overflow-hidden md:overflow-visible"
+      >
+        {/* LEFT SIDE: Image (Responsive behavior) */}
+        <div className="w-full md:w-[45%] relative z-20 flex items-center p-0 md:p-0">
+          <div className="relative w-full aspect-video md:aspect-[4/3] md:rounded-3xl overflow-hidden md:shadow-2xl md:border-[6px] md:border-white md:-translate-x-12 transition-transform duration-500 hover:scale-[1.02]">
+            <Image
+              src={campus.image}
+              alt={campus.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
 
-            {/* Mobile full bg */}
-            <div className="md:hidden absolute inset-0 bg-[#F5F5F5] -z-10" />
+        {/* RIGHT SIDE: Content */}
+        <div className="w-full md:w-[55%] flex flex-col">
+          <div className="bg-[#F4F4F4] py-4 md:py-5 px-6 md:px-8">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#1a1a1a]">
+              {campus.name}
+            </h2>
+          </div>
 
-            <div
-              className={`relative flex flex-col md:flex-row gap-10 md:gap-12 
-              px-6 md:px-10 py-8 md:py-12 transition-opacity duration-300 ${
-                isFading ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              {/* TEXT FIRST ON MOBILE | TEXT SECOND ON DESKTOP */}
-              <div className="md:w-[58%] flex flex-col justify-center order-1 md:order-2">
-                <h2 className="font-primary font-primary-semibold text-2xl md:text-3xl text-black tracking-tight">
-                  {campus.name}
-                </h2>
+          <div className="p-6 md:p-10 flex-grow flex flex-col justify-center">
+            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-4 leading-tight">
+              {campus.tagline}
+            </h3>
+            
+            <p className="text-gray-600 text-sm md:text-[15px] leading-relaxed mb-6 max-w-[480px]">
+              {campus.description}
+            </p>
 
-                <div className="w-30 h-[1px] bg-secondary my-3" />
-
-                <h3 className="font-primary font-primary-bold text-xl md:text-2xl text-black mb-4">
-                  {campus.tagline}
-                </h3>
-
-                <p className="font-secondary font-secondary-regular text-sm md:text-[15px] text-black/80 leading-relaxed max-w-xl">
-                  {campus.description}
-                </p>
-
-                <div className="mt-8 flex gap-4 flex-wrap">
-                  <Link
-                    href={campus.exploreUrl}
-                    className="px-6 py-2.5 text-sm font-primary font-primary-semibold text-white bg-tertiary border border-tertiary hover:bg-[#2b2070] transition"
-                  >
-                    Explore More
-                  </Link>
-
-                  <Link
-                    href={campus.admissionUrl}
-                    className="px-6 py-2.5 text-sm font-primary-semibold text-tertiary bg-white border border-tertiary hover:bg-[#f2ebff] transition"
-                  >
-                    Admission
-                  </Link>
-                </div>
-              </div>
-
-              {/* IMAGE SECOND ON MOBILE | IMAGE FIRST ON DESKTOP */}
-              <div className="md:w-[42%] flex justify-center md:justify-start order-2 md:order-1">
-                <div className="relative w-full max-w-[420px] bg-white shadow-[0_20px_40px_rgba(0,0,0,0.18)]">
-                  <Image
-                    src={campus.image}
-                    alt={campus.name}
-                    width={485}
-                    height={485}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* PAGINATION */}
-              <div className="absolute left-12 bottom-2 flex items-center gap-3 text-xs font-secondary-regular text-tertiary mt-4 z-10">
-                {campuses.map((_, index) => {
-                  const isActive = index === activeIndex;
-
-                  return (
-                    <button
-                      key={index}
-                      type="button"
-                      onClick={() => changeSlide(index)}
-                      className="group cursor-pointer flex items-center justify-center"
-                    >
-                      {isActive ? (
-                        <span className="font-primary-bold text-tertiary tracking-wider cursor-pointer group-hover:opacity-80">
-                          {String(activeIndex + 1).padStart(2, "0")}
-                        </span>
-                      ) : (
-                        <span className="block w-4 h-[1px] bg-tertiary cursor-pointer group-hover:w-6 transition-all duration-200"></span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
+            <div className="flex flex-wrap gap-3 md:gap-4 mt-auto">
+              <Link target="_blank" href={campus.exploreLink} className="flex-1 md:flex-none">
+                <button className="w-full bg-[#2b3990] text-white px-6 md:px-8 py-3 rounded-lg font-bold hover:bg-[#1e2766] transition-all shadow-md active:scale-95 text-xs md:text-base cursor-pointer">
+                  Explore More
+                </button>
+              </Link>
+              
+              <Link href={campus.admissionLink} target="_blank" className="flex-1 md:flex-none">
+                <button className="w-full border-2 border-[#2b3990] text-gray-900 px-6 md:px-8 py-3 rounded-lg font-bold hover:bg-gray-50 transition-all shadow-sm active:scale-95 text-xs md:text-base cursor-pointer">
+                  Admission
+                </button>
+              </Link>
             </div>
           </div>
         </div>
-      </section>
+      </motion.div>
+    </div>
+  );
+};
 
-      {/* FOOTER */}
-      <footer className="w-full bg-tertiary py-3">
-        <div className="text-center text-white text-md md:text-md sm:text-base font-primary font-primary-medium tracking-wide">
-          Copyright © 2025 VelsVidyashram – All rights reserved | Designed &
-          Developed by Ayatiworks
+export default function CampusSection() {
+  return (
+    <section className="relative w-full">
+      {/* 1. STICKY BACKGROUND */}
+      <div className="absolute inset-0 z-0">
+        <div className="sticky top-0 h-screen w-full overflow-hidden">
+          <Image 
+            src="/slider.png" 
+            alt="background texture"
+            fill
+            priority
+            className="object-cover opacity-40 md:opacity-50"
+          />
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
         </div>
-      </footer>
-    </>
+      </div>
+
+      {/* 2. OVERLAID CONTENT */}
+      <div className="relative z-10">
+        {/* Header content */}
+        <div className="pt-10 pb-6 px-6 max-w-7xl mx-auto text-center md:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-3xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6 tracking-tight">
+              Explore Our <span className="text-[#2b3990]">Campuses</span>
+            </h1>
+            <p className="text-gray-600 max-w-3xl text-sm md:text-lg leading-relaxed font-medium mx-auto md:mx-0">
+              Pallavaram, Cantonment, Thalambur & Darga Road campuses offer a unified learning experience 
+              built on academic excellence and modern infrastructure.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Stacking Cards Section */}
+        <div className="relative">
+          {campuses.map((campus, index) => (
+            <CampusCard key={campus.id} campus={campus} index={index} />
+          ))}
+        </div>
+
+      
+      </div>
+    </section>
   );
 }

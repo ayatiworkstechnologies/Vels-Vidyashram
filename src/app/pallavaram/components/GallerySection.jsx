@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const galleryItems = [
   { id: 1, title: "Awards", description: "", img: "/pallavaram/gal-awards.png" },
-  { id: 2, title: "Awards", description: "", img: "/pallavaram/gal-awards.png" },
+  { id: 2, title: "Events", description: "", img: "/pallavaram/events.png" },
   { id: 3, title: "Laboratory", description: "", img: "/pallavaram/gal-lab.png" },
   { id: 4, title: "Activities", description: "", img: "/pallavaram/gal-activity.png" },
   { id: 5, title: "Sports", description: "", img: "/pallavaram/gal-sport.png" },

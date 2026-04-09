@@ -40,6 +40,7 @@ export const metadata = {
 export default function Pallavaram() {
   return (
     <main>
+
         <BannerSection />
         <OurMottoSection />
         <InfrastructureSlider />

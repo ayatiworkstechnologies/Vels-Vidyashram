@@ -15,7 +15,7 @@ const slides = [
     title: "Academics",
     description:
       "Strong academic foundation with innovative teaching methods and individual attention for every student.",
-    image: "/pallavaram/academic.png",
+    image: "/pallavaram/academic-1.png",
     icon: "/thalambur/fav-2.png",
   },
   {
@@ -23,7 +23,7 @@ const slides = [
     title: "Activities",
     description:
       "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/pallavaram/activities.png",
+    image: "/pallavaram/activities-1.png",
     icon: "/thalambur/fav-3.png",
   },
   {

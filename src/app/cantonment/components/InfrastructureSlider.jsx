@@ -7,49 +7,42 @@ const slides = [
     title: "Infrastructure",
     description:
       "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities. Built to support comfort, focus, and growth at every stage.",
-    image: "/thalambur/card.png",
+    image: "/cantonment/Infrastructure.png",
     icon: "/thalambur/fav-6.png",
   },
   {
     id: 2,
-    title: "Academics",
+    title: "Curriculum",
     description:
-      "Strong academic foundation with innovative teaching methods and individual attention for every student.",
-    image: "/thalambur/curriculum.png",
+      "A comprehensive curriculum that balances academics, creativity, and life skills. Aligned with global standards and designed to foster critical thinking, innovation, and holistic development.",
+    image: "/cantonment/Curriculum.png",
     icon: "/thalambur/fav-2.png",
   },
   {
     id: 3,
-    title: "Activities",
+    title: "Art & Craft",
     description:
-      "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/thalambur/step.png",
+      "A vibrant art and craft program that encourages creativity, self-expression, and hands-on learning. Providing students with opportunities to explore various mediums and develop their artistic talents.",
+    image: "/cantonment/art.png",
     icon: "/thalambur/fav-3.png",
   },
   {
     id: 4,
-    title: "Technology",
+    title: "Athletics",
     description:
-      "Modern technology integrated into classrooms with smart boards, computer labs, and digital learning resources for enhanced education.",
-    image: "/thalambur/laboratories.png",
+      "A state-of-the-art sports facility that promotes physical fitness, teamwork, and competitive spirit among students.",
+    image: "/cantonment/Athletics.png",
     icon: "/thalambur/fav-4.png",
   },
   {
     id: 5,
-    title: "Community",
+    title: "Transport",
     description:
-      "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/thalambur/transport.png",
+      "A reliable and safe transportation system with a fleet of well-maintained buses, GPS tracking, and trained drivers. Ensuring secure and efficient travel for students to and from school.",
+    image: "/cantonment/Transport.png",
     icon: "/thalambur/fav-5.png",
   },
-  {
-    id: 6,
-    title: "Excellence",
-    description:
-      "Commitment to excellence in all aspects of education, preparing students for success in their future endeavors and careers.",
-    image: "/thalambur/athletics.png",
-    icon: "/thalambur/fav-1.png",
-  },
+
 ];
 
 export default function InfrastructureSlider() {
@@ -167,20 +160,7 @@ export default function InfrastructureSlider() {
                           {slide.description}
                         </p>
 
-                        <button className="inline-flex items-center gap-3 font-semibold text-base group w-fit">
-                          <span className="text-gray-900 font-secondary">Learn More</span>
-                          <span className="w-11 h-11 rounded-full bg-tertiary text-white flex items-center justify-center transition-all group-hover:bg-blue-700 shadow-md">
-                            <svg
-                              className="w-5 h-5"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2.5}
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                            </svg>
-                          </span>
-                        </button>
+                        
                       </div>
                     </div>
                   </div>

@@ -7,38 +7,24 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-1.jpg",
+    image: "/cantonment/banner/banner1.jpg",
   },
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-2.jpg",
+    image: "/cantonment/banner/banner2.jpg",
   },
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-3.jpg",
+    image: "/cantonment/banner/banner3.jpg",
   },
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-4.jpg",
+    image: "/cantonment/banner/banner4.jpg",
   },
-  {
-    title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-5.jpg",
-  },
-  {
-    title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-6.jpg",
-  },
-  {
-    title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
-    image: "/thalambur/banner-7.jpg",
-  },
+  
 ];
 
 export default function BannerSection() {

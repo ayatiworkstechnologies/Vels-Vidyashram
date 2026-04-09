@@ -2,6 +2,7 @@ import "../globals.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Modal from "./layout/modals";
 
 export const metadata = {
   title: "Vels Vidyashram",
@@ -13,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="antialiased">
         <Header />
-
+        <Modal />
         <main className="relative z-0">
           {children}
         </main>

@@ -142,6 +142,7 @@ export default function Header() {
                   <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
                     {campuses.map((campus) => (
                       <Link
+                        target="_Blank"
                         key={campus.label}
                         href={campus.href}
                         className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"
@@ -218,10 +219,10 @@ export default function Header() {
      <div className="bg-white flex justify-center py-2 px-2">
       <div className="max-w-[400px] w-full">
         <Image
-      src="/pallavaram/logo.png"
+      src="/pallavaram/pallavaram.jpg"
       alt="Vels Vidyashram"
       width={2880}
-      height={670}
+      height={672}
       priority
       className="h-full "
     />

@@ -3,6 +3,7 @@ import CampusHighlight from './components/CampusHighlight';
 import ExploreCampus from './components/ExploreCampus';
 import HeroSection from './components/HeroSection';
 import WhyVels from './components/WhyVels';
+import Footer from './components/Footer';
 
 /* ======================
    SEO CONSTANTS
@@ -52,6 +53,7 @@ export default function Home() {
       <About />
       <ExploreCampus />
       <CampusHighlight />
+      <Footer />
     </main>
   );
 }

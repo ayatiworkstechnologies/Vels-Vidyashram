@@ -19,7 +19,7 @@ export default function CourseSection() {
               <div>
                 <Link
                   href="/cantonment/spell-bee"
-                  className="inline-block text-[30px] sm:text-[34px] font-semibold leading-none text-[#2e2d3a] hover:text-[#1d4ed8] transition"
+                  className="inline-block text-[30px] sm:text-[34px] font-semibold leading-none text-[#2e2d3a] hover:text-primary transition"
                 >
                   Spell Bee
                 </Link>
@@ -29,7 +29,7 @@ export default function CourseSection() {
             {/* Bottom Image Card */}
             <div className="overflow-hidden rounded-[28px] min-h-[320px] sm:min-h-[360px]">
               <img
-                src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop"
+                src="/cantonment/spell.png"
                 alt="Laboratory testing"
                 className="h-full w-full object-cover"
               />
@@ -39,15 +39,10 @@ export default function CourseSection() {
           {/* Center Main Image */}
           <div className="overflow-hidden rounded-[32px] min-h-[520px] sm:min-h-[620px] relative">
             <img
-              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop"
+              src="/cantonment/section.png"
               alt="Protective lab specialist"
               className="h-full w-full object-cover"
             />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1636]/80 via-[#0f1636]/20 to-transparent" />
-
-         
-
             
           </div>
 
@@ -56,7 +51,7 @@ export default function CourseSection() {
             {/* Top Image Card */}
             <div className="overflow-hidden rounded-[28px] min-h-[320px] sm:min-h-[360px]">
               <img
-                src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=1200&auto=format&fit=crop"
+                src="/cantonment/science.png"
                 alt="Test tubes in lab"
                 className="h-full w-full object-cover"
               />
@@ -67,7 +62,7 @@ export default function CourseSection() {
               <div>
                 <Link
                   href="/cantonment/science-olympiad-foundation-sof"
-                  className="inline-block text-[30px] sm:text-[34px] font-semibold leading-none text-[#2e2d3a] hover:text-[#1d4ed8] transition"
+                  className="inline-block text-[30px] sm:text-[34px] font-semibold leading-none text-[#2e2d3a] hover:text-primary"
                 >
                   Science Olympiad Foundation (SOF)
                 </Link>

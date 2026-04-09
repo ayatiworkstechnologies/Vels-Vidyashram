@@ -137,6 +137,7 @@ export default function Header() {
                   <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
                     {campuses.map((campus) => (
                       <Link
+                        target="_Blank"
                         key={campus.label}
                         href={campus.href}
                         className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"

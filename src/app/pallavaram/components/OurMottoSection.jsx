@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function OurMottoSection() {
@@ -12,28 +11,28 @@ export default function OurMottoSection() {
     {
       title: "Our Group",
       text: "A trusted group of institutions dedicated to academic excellence and values. Shaping young minds through quality education and innovation.",
-      image: "/pallavaram/group-1.png",
+      image: "/pallavaram/our-group.png",
       showButton: true,
       link: "/pallavaram/our-group",
     },
     {
       title: "Academics",
       text: "Strong academic foundation supported by modern teaching methods and dedicated faculty.",
-      image: "/pallavaram/academic-1.png",
+      image: "/pallavaram/academics.png",
       showButton: true,
       link: "/pallavaram/curriculum",
     },
     {
       title: "Admissions / Enquiry",
       text: "Simple, transparent admission process with guidance for parents and students.",
-      image: "/pallavaram/enquiry-1.jpg",
+      image: "/pallavaram/Enquiry.jpg",
       showButton: true,
       link: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
     },
     {
       title: "Activities / Events",
       text: "Cultural, sports, and extracurricular activities that nurture creativity and confidence.",
-      image: "/pallavaram/activity-1.png",
+      image: "/pallavaram/activity.png",
       showButton: true,
       link: "/pallavaram/photo-gallery",
     },
@@ -119,8 +118,12 @@ function Card({ title, text, image, showButton, link, isExpanded, onClick }) {
     >
       {/* MOBILE DESIGN */}
       <div className="flex flex-col md:hidden bg-white">
-        <div className="relative h-48 w-full">
-          <Image src={image} alt={title} fill className="object-cover" />
+        <div className="relative h-48 w-full overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-2 font-primary">
@@ -187,18 +190,26 @@ function Card({ title, text, image, showButton, link, isExpanded, onClick }) {
               )}
             </div>
 
+            {/* ✅ FIXED: replaced backgroundImage style with <img> tag */}
             <div
-              className={`w-1/2 bg-cover bg-center transition-all duration-700 ${
+              className={`w-1/2 relative overflow-hidden transition-all duration-700 ${
                 isExpanded ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
-              style={{ backgroundImage: `url(${image})` }}
-            />
+            >
+              <img
+                src={image}
+                alt={title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
           </div>
         ) : (
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-all duration-500"
-            style={{ backgroundImage: `url(${image})` }}
-          >
+          <div className="absolute inset-0 transition-all duration-500">
+            <img
+              src={image}
+              alt={title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-black/30" />
             <div className="absolute bottom-6 left-6 right-6">
               <h3 className="text-white text-xl font-semibold leading-snug">

@@ -22,6 +22,9 @@ export default function FounderMessageSection() {
             />
           </div>
 
+          {/* 🔥 Black Overlay */}
+         <div className="absolute inset-0 bg-black/50"></div>
+
 
           {/* Content */}
           <div className="relative z-10 grid min-h-[340px] items-end lg:min-h-[500px] lg:grid-cols-[1.1fr_0.9fr]">

@@ -6,25 +6,25 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Pallavaram",
     image: "/pallavaram/banner/banner-1.png",
     mobileImage: "/pallavaram/banner/mob-1.png",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Pallavaram",
     image: "/pallavaram/banner/banner-2.png",
     mobileImage: "/pallavaram/banner/mob-2.png",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Pallavaram",
     image: "/pallavaram/banner/banner-3.png",
     mobileImage: "/pallavaram/banner/mob-3.png",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Pallavaram",
     image: "/pallavaram/banner/banner-4.png",
     mobileImage: "/pallavaram/banner/mob-4.png",
   },
@@ -156,9 +156,9 @@ export default function BannerSection() {
                 }`}
               >
                 <div className="px-10 mt-32"> 
-                  <h4 className="mb-2 text-3xl font-primary">{s.title}</h4>
+                  <h4 className="mb-2 text-2xl font-primary text-white">{s.title}</h4>
 
-                  <h1 className="whitespace-pre-line text-5xl font-semibold leading-tight font-primary">
+                  <h1 className="whitespace-pre-line text-white text-3xl font-semibold leading-tight font-primary">
                     {s.subtitle}
                   </h1>
 

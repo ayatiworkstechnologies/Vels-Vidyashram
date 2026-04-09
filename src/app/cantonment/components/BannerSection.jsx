@@ -6,22 +6,22 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Cantonment",
     image: "/cantonment/banner/banner1.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Cantonment",
     image: "/cantonment/banner/banner2.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Cantonment",
     image: "/cantonment/banner/banner3.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Cantonment",
     image: "/cantonment/banner/banner4.jpg",
   },
   

@@ -5,37 +5,37 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-1.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-2.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-3.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-4.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-5.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-6.jpg",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School",
+    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner-7.jpg",
   },
 ];

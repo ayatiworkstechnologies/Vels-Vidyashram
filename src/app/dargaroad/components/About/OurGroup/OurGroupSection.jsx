@@ -272,7 +272,7 @@ export default function OurGroupSection() {
 
                 {/* Card Body */}
                 <div className="bg-yellow-50 rounded-xl p-8 pt-32 shadow-sm text-center flex flex-col items-center mt-5 hover:shadow-md transition-shadow">
-                  <h3 className="text-md font-semibold font-primary text-gray-800 mb-4 leading-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-md font-semibold font-primary text-gray-800 mb-4 leading-tight group-hover:text-primary transition-colors uppercase">
                     {item.title}
                   </h3>
                  

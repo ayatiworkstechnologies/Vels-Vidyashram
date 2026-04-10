@@ -32,7 +32,7 @@ const navItems = [
     href: "#",
     submenu: [
       { label: "Admission Enquiry", href: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" },
-      {label: "Online Fee Payment", href: "https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"},
+      { label: "Online Fee Payment", href: "https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp" },
       { label: "Transport", href: "/dargaroad/transport-facilities" },
     ],
   },
@@ -40,7 +40,6 @@ const navItems = [
     label: "Gallery",
     href: "#",
     submenu: [
-    
       { label: "Photo Gallery", href: "/dargaroad/photo-gallery" },
       { label: "Video Gallery", href: "/dargaroad/video-gallery" },
     ],
@@ -80,121 +79,92 @@ export default function Header() {
   return (
     <header className="w-full relative z-[100] bg-white">
       {/* ================= TOP BAR ================= */}
-      <div className="bg-[#2B158F] text-white text-[10px] sm:text-xs md:text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="bg-[#2B158F] text-white">
+        <div className="max-w-7xl mx-auto px-4 py-2 md:py-3 flex items-center justify-between">
           
-          {/* LEFT - Desktop Contact */}
-          <div className="hidden md:flex gap-6 items-center">
-  <span className="flex items-center gap-2 whitespace-nowrap">
-    <img src="/thalambur/phone.png" className="w-3" alt="phone" />
-    
-    <a
-      href="tel:9962506639"
-      className="transition-colors duration-300 hover:text-white"
-    >
-      99625 06639
-    </a>
+          {/* LEFT - Desktop Contact (Hidden on small mobile) */}
+          <div className="hidden md:flex gap-6 items-center text-sm">
+            <span className="flex items-center gap-2 whitespace-nowrap">
+              <img src="/thalambur/phone.png" className="w-3" alt="phone" />
+              <a href="tel:9962506639" className="hover:text-gray-200 transition">99625 06639</a>
+              <span>,</span>
+              <a href="tel:9962506349" className="hover:text-gray-200 transition">99625 06349</a>
+            </span>
 
-    <span>,</span>
-
-    <a
-      href="tel:9962506349"
-      className="transition-colors duration-300 hover:text-white"
-    >
-      99625 06349
-    </a>
-  </span>
-
-  <a
-    href="mailto:apply@velsvidyashram.ac.in"
-    className="hidden lg:flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-white"
-  >
-    <img src="/thalambur/mail.png" className="w-3" alt="mail" />
-    apply@velsvidyashram.ac.in
-  </a>
+            <a href="mailto:apply@velsvidyashram.ac.in" className="hidden lg:flex items-center gap-2 hover:text-gray-200 transition">
+              <img src="/thalambur/mail.png" className="w-3" alt="mail" />
+              apply@velsvidyashram.ac.in
+            </a>
           </div>
 
-          {/* RIGHT - Responsive Header Links */}
-          <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
-            
+          {/* RIGHT - Actions */}
+          <div className="flex items-center justify-between w-full md:w-auto gap-3">
+            <Link
+              href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap rounded-full bg-white px-3 py-1 text-[10px] sm:text-xs font-bold text-[#2B158F] transition hover:bg-gray-100 sm:px-4"
+            >
+              Online Fees Payment
+            </Link>
 
-            <div className="flex items-center gap-2 sm:gap-4">
-              <Link
-                href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="whitespace-nowrap rounded-full bg-white px-2 py-1 font-medium text-[#2B158F] transition hover:bg-gray-100 sm:px-4"
-              >
-                Online Fees Payment
-              </Link>
-
-              {/* DESKTOP DROPDOWN: Other Campus */}
-              <div className="relative group hidden lg:block">
-                <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
-                  Other Campus
-                </button>
-                <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] pointer-events-none group-hover:pointer-events-auto">
-                  <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
-                    {campuses.map((campus) => (
-                      <Link
-                        target="_Blank"
-                        key={campus.label}
-                        href={campus.href}
-                        className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"
-                      >
-                        {campus.label}
-                      </Link>
-                    ))}
-                  </div>
+            {/* DESKTOP DROPDOWN */}
+            <div className="relative group hidden lg:block">
+              <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium text-xs hover:bg-gray-100 transition">
+                Other Campus
+              </button>
+              <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
+                <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
+                  {campuses.map((campus) => (
+                    <Link
+                      target="_blank"
+                      key={campus.label}
+                      href={campus.href}
+                      className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"
+                    >
+                      {campus.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
-
-              <button
-                className="lg:hidden text-2xl sm:text-3xl focus:outline-none"
-                onClick={() => setMobileOpen(!mobileOpen)}
-              >
-                {mobileOpen ? "✕" : "☰"}
-              </button>
             </div>
+
+            {/* MOBILE HAMBURGER */}
+            <button
+              className="lg:hidden p-1 text-2xl focus:outline-none flex items-center justify-center"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open Menu"
+            >
+              ☰
+            </button>
           </div>
         </div>
       </div>
 
-      {/* ================= DESKTOP NAV ================= */}
+      {/* ================= DESKTOP NAV (Unchanged) ================= */}
       <nav className="hidden lg:block bg-white border-b">
         <div className="max-w-7xl mx-auto px-4">
           <ul className="flex justify-center gap-4 xl:gap-10 text-[13px] xl:text-sm font-medium">
             {navItems.map((item) => {
-              // HIGHLIGHT LOGIC: Check parent and children
-              const isParentActive = pathname === item.href;
-              const isSubActive = item.submenu?.some((sub) => pathname === sub.href);
-              const isActive = isParentActive || isSubActive;
-
+              const isActive = pathname === item.href || item.submenu?.some((sub) => pathname === sub.href);
               return (
                 <li key={item.label} className="relative group">
                   <Link
                     href={item.href}
                     className={`py-5 inline-block transition-colors border-b-2 ${
-                      isActive 
-                        ? "text-[#FF8700] border-[#FF8700]" 
-                        : "text-[#2B158F] border-transparent hover:text-[#FF8700]"
+                      isActive ? "text-[#FF8700] border-[#FF8700]" : "text-[#2B158F] border-transparent hover:text-[#FF8700]"
                     }`}
                   >
                     {item.label}
                   </Link>
-
                   {item.submenu && (
-                    <div className="absolute left-0 top-full pt-1 min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] pointer-events-none group-hover:pointer-events-auto">
+                    <div className="absolute left-0 top-full pt-1 min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
                       <ul className="bg-white shadow-2xl border-t-2 border-[#FF8700] py-2">
                         {item.submenu.map((sub) => (
                           <li key={sub.label}>
                             <Link
                               href={sub.href}
-                              className={`block px-5 py-3 transition ${
-                                pathname === sub.href 
-                                  ? "bg-gray-50 text-[#FF8700] font-bold" 
-                                  : "text-[#2B158F] hover:bg-[#2B158F] hover:text-white"
-                              }`}
+                              className={`block px-5 py-3 transition ${pathname === sub.href ? "bg-gray-50 text-[#FF8700] font-bold" : "text-[#2B158F] hover:bg-[#2B158F] hover:text-white"}`}
                             >
                               {sub.label}
                             </Link>
@@ -211,69 +181,68 @@ export default function Header() {
       </nav>
 
       {/* ================= LOGO ================= */}
-     <div className="bg-white flex justify-center py-2 px-2">
-  <div className="max-w-[300px] w-full">
-    <Image
-  src="/dargaroad/dargaroad-logo.svg"
-  alt="Vels Vidyashram"
-  width={2880}
-  height={670}
-  priority
-  className="h-full "
-/>
-  </div>
-</div>
+      <div className="bg-white flex justify-center py-4 px-4 border-b lg:border-none">
+        <div className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px]"> 
+          <Image
+            src="/dargaroad/vels-logo.png"
+            alt="Vels Vidyashram"
+            width={1600}
+            height={345}
+            priority
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
 
       {/* ================= MOBILE DRAWER ================= */}
+      {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden z-[110] ${
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity lg:hidden z-[110] ${
           mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setMobileOpen(false)}
       />
       
+      {/* Drawer Content */}
       <div
-        className={`fixed top-0 left-0 w-[80%] sm:w-[350px] h-full bg-white shadow-2xl z-[120] transition-transform duration-300 lg:hidden flex flex-col ${
+        className={`fixed top-0 left-0 w-[85%] sm:w-[380px] h-full bg-white shadow-2xl z-[120] transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="p-5 flex justify-between items-center border-b shrink-0">
-          <span className="font-bold text-[#2B158F]">Menu</span>
-          <button onClick={() => setMobileOpen(false)} className="text-2xl">✕</button>
+        <div className="p-5 flex justify-between items-center bg-[#2B158F] text-white shrink-0">
+          <span className="font-bold tracking-wide uppercase text-sm">Navigation</span>
+          <button onClick={() => setMobileOpen(false)} className="text-2xl p-1 leading-none">&times;</button>
         </div>
 
         <div className="overflow-y-auto flex-1">
           {/* MOBILE OTHER CAMPUS DROPDOWN */}
-          <div className="border-b bg-gray-50/50">
+          <div className="border-b">
             <button
               onClick={() => setCampusOpen(!campusOpen)}
-              className="w-full px-5 py-4 flex justify-between items-center font-bold text-[#2B158F] hover:bg-gray-100 transition"
+              className="w-full px-5 py-4 flex justify-between items-center font-bold text-[#2B158F] bg-gray-50 hover:bg-gray-100 transition"
             >
-              Other Campus
-              <span className={`transition-transform duration-200 text-xs ${campusOpen ? "rotate-180" : ""}`}>
+              Other Campuses
+              <span className={`transition-transform duration-300 ${campusOpen ? "rotate-180" : ""}`}>
                 ▼
               </span>
             </button>
             {campusOpen && (
-              <div className="bg-white border-t border-gray-100">
+              <div className="bg-white">
                 {campuses.map((c) => (
                   <Link 
                     key={c.label} 
                     href={c.href} 
-                    className="block px-10 py-3 text-sm text-[#2B158F] border-b border-gray-50 last:border-0" 
-                    onClick={() => {
-                      setMobileOpen(false);
-                      setCampusOpen(false);
-                    }}
+                    className="block px-8 py-3 text-sm text-[#2B158F] border-b border-gray-50 last:border-0 hover:bg-blue-50" 
+                    onClick={() => setMobileOpen(false)}
                   >
-                    {c.label}
+                    • {c.label}
                   </Link>
                 ))}
               </div>
             )}
           </div>
 
-          <ul className="p-2">
+          <ul className="py-2">
             {navItems.map((item) => (
               <MobileNavItem
                 key={item.label}
@@ -283,6 +252,21 @@ export default function Header() {
               />
             ))}
           </ul>
+
+          {/* Mobile Contact Info Footer */}
+          <div className="mt-4 p-5 bg-gray-50 border-t">
+            <p className="text-[#2B158F] font-bold text-xs mb-3">CONTACT US</p>
+            <div className="space-y-3 text-sm text-gray-600">
+               <a href="tel:9962506639" className="flex items-center gap-3">
+                 <img src="/thalambur/phone.png" className="w-4 opacity-70" alt="" />
+                 99625 06639
+               </a>
+               <a href="mailto:apply@velsvidyashram.ac.in" className="flex items-center gap-3">
+                 <img src="/thalambur/mail.png" className="w-4 opacity-70" alt="" />
+                 apply@velsvidyashram.ac.in
+               </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -291,21 +275,16 @@ export default function Header() {
 
 /* ================= MOBILE NAV ITEM SUB-COMPONENT ================= */
 function MobileNavItem({ item, pathname, closeMenu }) {
-  // HIGHLIGHT LOGIC: Check parent and children
-  const isParentActive = pathname === item.href;
-  const isSubActive = item.submenu?.some((sub) => pathname === sub.href);
-  const isActive = isParentActive || isSubActive;
-
-  // Auto-expand the accordion if an item inside is active
+  const isActive = pathname === item.href || item.submenu?.some((sub) => pathname === sub.href);
   const [open, setOpen] = useState(isActive);
 
   return (
-    <li className="border-b border-gray-100 last:border-0">
+    <li className="border-b border-gray-50 last:border-0">
       <div className="flex items-center justify-between">
         <Link
           href={item.href}
-          onClick={closeMenu}
-          className={`flex-1 px-4 py-4 font-medium transition ${
+          onClick={item.href !== "#" ? closeMenu : () => setOpen(!open)}
+          className={`flex-1 px-5 py-4 font-semibold text-[15px] transition-colors ${
             isActive ? "text-[#FF8700]" : "text-[#2B158F]"
           }`}
         >
@@ -315,9 +294,9 @@ function MobileNavItem({ item, pathname, closeMenu }) {
         {item.submenu && (
           <button
             onClick={() => setOpen(!open)}
-            className={`px-5 py-4 transition-colors ${open ? "text-[#FF8700]" : "text-[#2B158F]"}`}
+            className={`px-6 py-4 transition-colors border-l border-gray-100 ${open ? "text-[#FF8700] bg-gray-50" : "text-[#2B158F]"}`}
           >
-            <span className={`inline-block transition-transform duration-200 font-bold ${open ? "rotate-45" : ""}`}>
+            <span className={`inline-block transition-transform duration-300 text-xl font-light ${open ? "rotate-45" : ""}`}>
               +
             </span>
           </button>
@@ -325,16 +304,16 @@ function MobileNavItem({ item, pathname, closeMenu }) {
       </div>
 
       {item.submenu && open && (
-        <ul className="bg-gray-50 py-2 border-t">
+        <ul className="bg-gray-50/50 py-1 border-t border-gray-100 animate-in slide-in-from-top-2 duration-200">
           {item.submenu.map((sub) => (
             <li key={sub.label}>
               <Link
                 href={sub.href}
                 onClick={closeMenu}
-                className={`block px-8 py-3 text-sm transition-all ${
+                className={`block px-10 py-3 text-[14px] transition-all relative ${
                   pathname === sub.href 
-                    ? "text-[#FF8700] font-bold border-l-4 border-[#FF8700] bg-white" 
-                    : "text-gray-600 hover:text-[#2B158F]"
+                    ? "text-[#FF8700] font-bold bg-white border-l-4 border-[#FF8700]" 
+                    : "text-gray-600 hover:text-[#2B158F] hover:pl-11"
                 }`}
               >
                 {sub.label}

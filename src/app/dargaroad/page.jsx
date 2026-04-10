@@ -8,7 +8,6 @@ import GalleryGrid from './components/GallerySection';
 import EventsSchedule from './components/EventSection';
 import AboutSchool from './components/AboutSchool';
 import VideoSection from './components/VideoSection';
-import Modal from './layout/modals';
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -38,7 +37,7 @@ export const metadata = {
 export default function Dargaroad() {
   return (
     <main>
-        <Modal />
+       
         <HeroSection />
         <LetterSection />
         <OurMottoSection />

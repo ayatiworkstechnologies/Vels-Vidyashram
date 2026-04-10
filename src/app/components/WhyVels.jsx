@@ -57,7 +57,7 @@ export default function WhyVels() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <h2 className="font-primary text-[32px] font-semibold leading-none text-black md:text-[46px]">
+          <h2 className="font-primary text-[32px] font-semibold leading-none text-primary md:text-[36px]">
             Why Vels Vidyashram
           </h2>
           <p className="mt-5 font-secondary text-[13px] font-medium text-black md:text-[15px]">

@@ -5,7 +5,7 @@ const Footer = () => {
     { name: "Pallavaram Campus", url: "/pallavaram" },
     { name: "Cantonment Campus", url: "/cantonment" },
     { name: "Thalambur Campus", url: "/thalambur" },
-    { name: "Darga Campus", url: "/dargaroad" }
+    { name: "Dargaroad Campus", url: "/dargaroad" }
   ];
 
   return (

@@ -7,15 +7,15 @@ const slides = [
     title: "Infrastructure",
     description:
       "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities. Built to support comfort, focus, and growth at every stage.",
-    image: "/thalambur/card.png",
+    image: "/thalambur/infra-1.png",
     icon: "/thalambur/fav-6.png",
   },
   {
     id: 2,
-    title: "Academics",
+    title: "Curriculum",
     description:
-      "Strong academic foundation with innovative teaching methods and individual attention for every student.",
-    image: "/thalambur/curriculum.png",
+      "Comprehensive curriculum that balances academics, creativity, and critical thinking. Aligned with global standards and designed to prepare students for future challenges and opportunities.",
+    image: "/thalambur/curriculum-1.png",
     icon: "/thalambur/fav-2.png",
   },
   {
@@ -23,31 +23,31 @@ const slides = [
     title: "Activities",
     description:
       "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/thalambur/step.png",
+    image: "/thalambur/activity-2.png",
     icon: "/thalambur/fav-3.png",
   },
   {
     id: 4,
-    title: "Technology",
+    title: "Athletics",
     description:
-      "Modern technology integrated into classrooms with smart boards, computer labs, and digital learning resources for enhanced education.",
-    image: "/thalambur/laboratories.png",
+      "State-of-the-art sports facilities and a strong athletics program that promotes physical fitness, teamwork, and sportsmanship.",
+    image: "/thalambur/athletic-1.png",
     icon: "/thalambur/fav-4.png",
   },
   {
     id: 5,
-    title: "Community",
+    title: "Step",
     description:
       "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/thalambur/transport.png",
+    image: "/thalambur/step-1.png",
     icon: "/thalambur/fav-5.png",
   },
   {
     id: 6,
-    title: "Excellence",
+    title: "Laboratories",
     description:
-      "Commitment to excellence in all aspects of education, preparing students for success in their future endeavors and careers.",
-    image: "/thalambur/athletics.png",
+      "Well-equipped science and computer labs that provide hands-on learning experiences and foster curiosity and innovation.",
+    image: "/thalambur/lab-1.png",
     icon: "/thalambur/fav-1.png",
   },
 ];
@@ -106,10 +106,10 @@ export default function InfrastructureSlider() {
             Pre KG through 12
           </span>
           <h2 className="text-3xl md:text-4xl font-secondary font-bold mb-3 text-gray-900 leading-tight">
-            Why Vels Vidyashram is best Solution for Education ?
+            Why Vels Vidyashram is the Best Choice for Education?
           </h2>
           <p className="text-gray-500 font-secondary text-sm leading-relaxed">
-            Our mission is to impart knowledge with values and ethics. To prepare the younger generation for a better future by improving their capabilities to face the challenges of the outside world.
+            Our mission is to impart knowledge with values and ethics and to prepare the younger generation for a better future by enhancing their capabilities to face the challenges of the outside world.
           </p>
         </div>
         <div className="sticky top-0 h-screen flex items-center justify-center px-4 md:px-6 lg:px-12 overflow-hidden">
@@ -166,8 +166,6 @@ export default function InfrastructureSlider() {
                         <p className="text-gray-700 font-secondary text-sm leading-relaxed mb-8 max-w-md">
                           {slide.description}
                         </p>
-
-                     
                       </div>
                     </div>
                   </div>

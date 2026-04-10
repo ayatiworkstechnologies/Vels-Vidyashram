@@ -43,6 +43,7 @@ export default function ContactFooter() {
               <li><Link href="/thalambur/procedure" className="">Admissions</Link></li>
               <li><Link href="/thalambur/contact-us" className="">Contact us</Link></li>
               <li><Link href="/thalambur/recruitment" className="">Job Openings @ Vels</Link></li>
+               <li><Link href="/thalambur/mandatory-disclosure" className="">Mandatory Disclosure</Link></li>
             </ul>
           </div>
 

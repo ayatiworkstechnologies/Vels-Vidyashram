@@ -56,7 +56,7 @@ export default function AboutSchool() {
           }`}>
             
             {/* LEFT CONTENT */}
-            <div className="flex-1 order-2 lg:order-1 text-center lg:text-left">
+            <div className="flex-1 order-2 lg:order-1 text-center lg:text-left text-justify">
               <h2 className={`text-xl md:text-3xl font-primary text-primary leading-snug mb-4 md:mb-6 transition-all duration-1000 delay-500 ${
                 aboutVisible 
                   ? 'opacity-100 translate-x-0' 
@@ -66,15 +66,15 @@ export default function AboutSchool() {
                 Vidyashram Thalambur
               </h2>
 
-              <p className={`text-sm text-gray-600 font-secondary leading-relaxed mb-4 transition-all duration-1000 delay-700 ${
+              <p className={`text-sm text-gray-600 text-justify font-secondary leading-relaxed mb-4 transition-all duration-1000 delay-700 ${
                 aboutVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               }`}>
-                Vels Vidyashram Thalambur and Vels Vidyashram Cantonment were established in 2014 to provide quality education where the learning takes place through observation, reflection and exploration with emphasis on character development. Within a short span of time our school stands as best school in OMR and best Kindergarten school in Navallur.
+                Vels Vidyashram Thalambur were established in 2014 to provide quality education where the learning takes place through observation, reflection and exploration with emphasis on character development. Within a short span of time our school stands as best school in OMR and best Kindergarten school in Navallur.
               </p>
 
-              <p className={`text-sm text-gray-600 font-secondary leading-relaxed mb-6 transition-all duration-1000 delay-900 ${
+              <p className={`text-sm text-gray-600 text-justify font-secondary leading-relaxed mb-6 transition-all duration-1000 delay-900 ${
                 aboutVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
@@ -87,8 +87,7 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               }`}>
-                Vels Education Trust was established in 1992 with the aim of
-                transforming an individual with character and ability.
+                Vels Education Trust was established in 1992 with the aim of nurturing individuals with strong character and ability.
               </p>
             </div>
 

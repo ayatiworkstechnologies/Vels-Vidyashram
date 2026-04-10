@@ -110,14 +110,20 @@ const SchemeContent = () => (
       />
       <Card 
         title="Primary" 
-        subtitle="Classes 1 to 5" 
-        items={["English, Second language (Tamil/Hindi), Third language, Maths, Science, SST, Computer Science"]} 
+        subtitle="Classes 1 to 3" 
+        items={["English, Language (Tamil/Hindi), Maths, Science, Evs, Computer Science"]} 
         delay={0.1}
+      />
+        <Card 
+        title="Middle" 
+        subtitle="Classes 4 to 5" 
+        items={["English, Language (Tamil/Hindi), Maths, Science, Social Science, Computer Science"]} 
+        delay={0.2}
       />
       <Card 
         title="Middle" 
         subtitle="Classes 6 to 9" 
-        items={["English, Second language (Tamil/Hindi), Third language, Maths, Science, SST, Computer Science"]} 
+        items={["English, Second language (Tamil/Hindi), Maths, Science, Social Science, Artifical Intelligence."]} 
         delay={0.2}
       />
     </motion.div>
@@ -135,7 +141,7 @@ const SchemeContent = () => (
           { label: "Choice 2:", text: "English, Mathematics, Physics, Chemistry, Information Practices." },
           { label: "Choice 3:", text: "English, Business Studies, Accountancy, Economics, Mathematics" },
           { label: "Choice 4:", text: "English, Business Studies , Accountancy, Economics, Information Practices." },
-          { label: "Choice 5:", text: "English, History, Geography, Sociology, Economics, Psychology." },
+          { label: "Choice 5:", text: "English, History, Political Science, Economics, Sociology." },
         ].map((item, i) => (
           <motion.p
             key={i}
@@ -186,7 +192,7 @@ const MethodologyContent = () => (
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="text-slate-600 leading-relaxed text-lg mb-8 font-secondary"
+      className="text-slate-600 leading-relaxed text-lg mb-8 font-secondary text-justify"
     >
      XSEED is a proven and research based academic program for schools that builds thinking skills & problem solving confidence in children. <br/>
      XSEED children ask more questions, can write in their own words, like doing word problems in mathematics, can complete their homework on their own, are not afraid to speak-up in English, persist longer in solving problems, and score well on tests. <br/>

@@ -3,6 +3,7 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Modal from "./layout/modals";
+import FloatingActions from "./layout/FloatingIcons";
 
 export const metadata = {
   title: "Vels Vidyashram",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <Header />
         <Modal />
+        <FloatingActions />
         <main className="relative z-0">
           {children}
         </main>

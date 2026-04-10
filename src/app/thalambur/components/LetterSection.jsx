@@ -3,7 +3,7 @@
 export default function LetterSection() {
   const items = [
     "Welcome to Vels Vidyashram",
-    "Learning with Purpose",
+    "Purposeful Learning",
     "Values and Excellence",
     "Shaping Future Leaders",
     "Inspiring Young Minds",

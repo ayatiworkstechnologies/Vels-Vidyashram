@@ -43,6 +43,7 @@ export default function ContactFooter() {
               <li><a href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp" className="">Admissions</a></li>
               <li><Link href="/pallavaram/contact-us" className="">Contact us</Link></li>
               <li><Link href="/pallavaram/recruitment" className="">Job Openings @ Vels</Link></li>
+              <li><Link href="/pallavaram/mandatory-disclosure" className="">Mandatory Disclosure</Link></li>
             </ul>
           </div>
 

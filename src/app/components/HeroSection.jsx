@@ -7,8 +7,8 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
-    image: "/banner/banner-1.jpg",
-    mobileImage: "/banner/banner-1.jpg",
+    image: "/thalambur/thalambur-banner-1.png",
+    mobileImage: "/mb-1.png",
   },
   {
     title: "Welcome to",

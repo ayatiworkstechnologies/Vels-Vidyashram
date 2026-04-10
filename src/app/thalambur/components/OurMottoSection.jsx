@@ -88,7 +88,7 @@ export default function OurMottoSection() {
       </div>
 
       <div
-        className={`flex flex-col md:flex-row gap-6 md:gap-4 h-auto md:h-[360px] transition-all duration-1000 delay-400 ${
+        className={`flex flex-col md:flex-row gap-6 md:gap-4 h-auto md:h-[400px] transition-all duration-1000 delay-400 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -114,13 +114,19 @@ function Card({ title, text, image, showButton, link, isExpanded, onClick }) {
         transition-all duration-700 ease-in-out
         shadow-lg border border-gray-100 md:border-none
         h-auto md:h-full
-        ${isExpanded ? "md:flex-[2.5]" : "md:flex-1"}
+        ${isExpanded ? "md:flex-[3]" : "md:flex-1"}
       `}
     >
       {/* MOBILE DESIGN */}
       <div className="flex flex-col md:hidden bg-white">
-        <div className="relative h-48 w-full">
-          <Image src={image} alt={title} fill className="object-cover" />
+        {/* Changed h-48 to aspect ratio for better scaling */}
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
+          <Image 
+            src={image} 
+            alt={title} 
+            fill 
+            className="object-cover object-top" // Focuses on the top of the image to prevent cutting faces
+          />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-2 font-primary">
@@ -188,7 +194,7 @@ function Card({ title, text, image, showButton, link, isExpanded, onClick }) {
             </div>
 
             <div
-              className={`w-1/2 bg-cover bg-center transition-all duration-700 ${
+              className={`w-1/2 bg-cover bg-top transition-all duration-700 ${
                 isExpanded ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
               style={{ backgroundImage: `url(${image})` }}

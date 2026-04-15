@@ -11,12 +11,6 @@ const slides = [
     mobileImage: "/pallavaram/banner/mob-banner-1.png",
   },
   {
-    title:"Welcome to",
-    subtitle:"Wisdom, Integrity, Excellence\nVels Vidyashram - Pallavaram",
-    image: "/pallavaram/banner/Pallavaram-banner-2.jpg",
-    mobileImage: "/pallavaram/banner/mob-banner-2.jpg",
-  },
-  {
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
     image: "/pallavaram/banner/Pallavaram-banner-3.jpg",

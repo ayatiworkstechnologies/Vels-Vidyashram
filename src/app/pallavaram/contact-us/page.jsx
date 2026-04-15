@@ -4,8 +4,8 @@ import Hero from "../components/Contact/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Contact Us - Vels Vidyashram";
+const siteDescription = "Get in touch with Vels Vidyashram. Find our contact information, location, and hours of operation. We'd love to hear from you!";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

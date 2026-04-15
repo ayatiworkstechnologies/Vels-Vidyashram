@@ -3,8 +3,8 @@
 import Hero from '@/app/thalambur/components/Academics/Curriculum/Hero';
 import CurriculumSection from '../components/Academics/Curriculum/CurriculumPage';
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "Curriculum - Vels Vidyashram";
+const siteDescription = "Explore the comprehensive curriculum at Vels Vidyashram, designed to provide students with a well-rounded education that fosters academic excellence and personal growth.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

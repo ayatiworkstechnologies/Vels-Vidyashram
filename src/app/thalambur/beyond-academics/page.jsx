@@ -2,8 +2,8 @@ import BeyondSection from "../components/BeyondAcademics/BeyondSection";
 import Hero from "../components/BeyondAcademics/Hero";
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Beyond Academics - Vels Vidyashram";
+const siteDescription = "Explore the extracurricular activities and programs at Vels Vidyashram, designed to nurture holistic development and leadership skills.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

@@ -3,8 +3,8 @@ import Hero from "../components/R&D/AboutKkic/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "About KKIC - Vels Vidyashram";
+const siteDescription = "Learn about the history, mission, and values of KKIC, a premier educational institution under the Vels Vidyashram banner. Discover how KKIC is committed to providing quality education and fostering holistic development for students.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

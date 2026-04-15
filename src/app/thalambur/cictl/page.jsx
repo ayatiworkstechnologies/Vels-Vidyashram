@@ -3,8 +3,8 @@ import Hero from "../components/R&D/CICTL/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "CICTL - Vels Vidyashram";
+const siteDescription = "Learn about the Computer Integrated Control and Testing Laboratory (CICTL) at Vels Vidyashram, a state-of-the-art facility equipped with the latest technology for hands-on learning and research in computer science and engineering.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

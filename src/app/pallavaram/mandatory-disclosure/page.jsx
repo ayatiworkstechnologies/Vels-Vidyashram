@@ -7,8 +7,8 @@ import MandatorySection from "../components/Academics/Mandatory-Disclosure/Manda
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Mandatory Disclosure - Vels Vidyashram";
+const siteDescription = "Review the mandatory disclosure information for Vels Vidyashram. Find details about our policies, procedures, and commitments to transparency and accountability. Stay informed about our school's operations and governance.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

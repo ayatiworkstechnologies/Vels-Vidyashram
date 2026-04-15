@@ -4,8 +4,8 @@ import VelsGlobal from "../components/About/OurGroup/VelsGlobal";
 
 
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "Vels Global School - Vels Vidyashram";
+const siteDescription = "Discover Vels Global School, a premier educational institution in Chennai offering quality CBSE education and holistic development opportunities.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

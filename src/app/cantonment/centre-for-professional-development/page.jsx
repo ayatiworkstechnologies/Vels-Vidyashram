@@ -5,8 +5,8 @@ import Hero from "../components/R&D/Centre/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Centre for Professional Development - Vels Vidyashram";
+const siteDescription = "Discover the Centre for Professional Development at Vels Vidyashram, a leading CBSE school in Chennai committed to providing quality education and holistic development for our students. Learn how we equip our students with the skills and knowledge needed for their future careers.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

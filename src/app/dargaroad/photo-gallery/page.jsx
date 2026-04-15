@@ -4,8 +4,8 @@ import PhotoSection from "../components/Gallery/PhotoGallery/PhotoSection";
 
 
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "Photo Gallery - Vels Vidyashram";
+const siteDescription = "Explore our photo gallery at Vels Vidyashram, showcasing memorable moments from our campus life, events, and student achievements.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

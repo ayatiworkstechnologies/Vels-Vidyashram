@@ -3,8 +3,8 @@ import HeroSection from "../components/Academics/Circular/HeroSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Circular - Vels Vidyashram";
+const siteDescription = "Stay updated with the latest circulars and announcements from Vels Vidyashram. Find important information about academic events, holidays, and other school-related updates.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

@@ -8,7 +8,7 @@ import Modal from "./layout/modals";
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteDescription = "Experience quality education at Vels Vidyashram, a top CBSE school in Pallavaram, Chennai. Discover our academic excellence, modern infrastructure, and dedicated faculty committed to nurturing your child's potential.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

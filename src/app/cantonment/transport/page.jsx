@@ -5,8 +5,8 @@ import TransportSection from "../components/Admissions/Transport/TransportSectio
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Transport - Vels Vidyashram";
+const siteDescription = "Learn about the transport facilities at Vels Vidyashram, a leading CBSE school in Chennai. Discover our safe and reliable transportation options for students. Follow our comprehensive guide to ensure a smooth application process and secure a place for your child in our esteemed institution.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

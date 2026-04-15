@@ -6,8 +6,8 @@ import OurMottoSection from "./components/OurMottoSection";
 import TestimonialSection from "./components/TestomonialSection";
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Vels Vidyashram Cantonment - A Premier CBSE School in Chennai";
+const siteDescription = "Vels Vidyashram Cantonment is a premier CBSE school in Chennai, offering quality education and holistic development for students. Discover our academic programs, infrastructure, and extracurricular activities. Join us in nurturing the potential of every child and providing a vibrant learning environment. Explore our campus, meet our dedicated faculty, and learn about our commitment to excellence in education at Vels Vidyashram Cantonment.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

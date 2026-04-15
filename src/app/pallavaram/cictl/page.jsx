@@ -4,8 +4,8 @@ import Hero from "../components/R&D/CICTL/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "CICTL - Vels Vidyashram";
+const siteDescription = "Learn about the Centre for Innovation and Technology Leadership at Vels Vidyashram. Discover our programs, initiatives, and commitment to fostering innovation and technological excellence among students. Explore how CICTL prepares students for successful careers in technology and leadership.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

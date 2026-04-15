@@ -4,8 +4,8 @@ import SOFSection from "../components/course/Science/SOFSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Science Olympiad Foundation (SOF) - Vels Vidyashram";
+const siteDescription = "Discover the Science Olympiad Foundation (SOF) programs at Vels Vidyashram, a leading CBSE school in Chennai. Engage your child in competitive science challenges and enhance their academic prowess with our structured curriculum and expert guidance. Explore how SOF fosters critical thinking, problem-solving skills, and a passion for science among our students. Join us in nurturing the next generation of scientific minds at Vels Vidyashram.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

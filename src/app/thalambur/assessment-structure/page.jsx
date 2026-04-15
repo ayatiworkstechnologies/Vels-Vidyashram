@@ -7,8 +7,8 @@ import Hero from "../components/Academics/Assessment/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Assessment Structure - Vels Vidyashram";
+const siteDescription = "Understand the assessment structure at Vels Vidyashram, designed to evaluate student progress and ensure a comprehensive learning experience.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

@@ -4,8 +4,8 @@ import VSkillSection from "../components/R&D/Vskill/VskillSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "V-Skill - Vels Vidyashram";
+const siteDescription = "Explore the V-Skill programs at Vels Vidyashram, designed to enhance students' practical skills and prepare them for the modern workforce. Discover our industry-aligned courses, hands-on training, and the opportunities available to our students. Join us in developing the next generation of skilled professionals.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

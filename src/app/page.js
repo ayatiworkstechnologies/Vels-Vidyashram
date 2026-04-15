@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 ====================== */
 const siteTitle = "Vels Vidyashram | Top CBSE School in Chennai";
 const siteDescription =
-  "Vels Vidyashram is a leading CBSE school in Chennai offering holistic education, modern infrastructure, and strong academic excellence.";
+  "Discover Vels Vidyashram, a premier CBSE school in Chennai, offering holistic education, state-of-the-art facilities, and a nurturing environment for students to excel academically and personally.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

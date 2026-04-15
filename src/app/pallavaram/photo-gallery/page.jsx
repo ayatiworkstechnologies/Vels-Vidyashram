@@ -7,8 +7,8 @@ import PhotoSection from "../components/Gallery/Photo-Gallery/PhotoSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Photo Gallery - Vels Vidyashram";
+const siteDescription = "Browse through our photo gallery to see the vibrant life at Vels Vidyashram. Explore images from our academic events, activities, and campus life. Get a glimpse of the memorable moments that make our school a special place for students and staff alike.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

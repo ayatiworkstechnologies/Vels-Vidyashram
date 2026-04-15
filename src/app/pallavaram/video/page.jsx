@@ -8,8 +8,8 @@ import VideoSection from "../components/Gallery/Video-Gallery/VideoSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Video Gallery - Vels Vidyashram";
+const siteDescription = "Watch our latest videos to get a glimpse of the dynamic life at Vels Vidyashram. Explore clips from our academic events, activities, and campus life. Stay connected with our school community through our engaging video content. Discover the memorable moments that make Vels Vidyashram a special place for students and staff alike.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

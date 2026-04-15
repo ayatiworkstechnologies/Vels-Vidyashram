@@ -3,8 +3,8 @@ import Hero from "../components/BeyondAcademics/Hero";
 
 
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "Beyond Academics - Vels Vidyashram";
+const siteDescription = "Explore the extracurricular activities and programs at Vels Vidyashram, designed to nurture students' talents and interests beyond the traditional classroom setting.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

@@ -6,8 +6,8 @@ import SchemeStudies from "../components/Academics/SchemeStudy/SchemeStudies";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Scheme of Studies - Vels Vidyashram";
+const siteDescription = "Explore the comprehensive scheme of studies at Vels Vidyashram, designed to provide a well-rounded education and prepare students for future academic success.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

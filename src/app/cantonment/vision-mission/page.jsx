@@ -5,8 +5,8 @@ import VisionMission from "../components/About/Vision-Mission/VisionMission";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Vision and Mission - Vels Vidyashram";
+const siteDescription = "Discover the vision and mission of Vels Vidyashram, a leading CBSE school in Chennai. Our commitment to excellence, holistic development, and academic rigor drives our educational philosophy and shapes the future of our students. Learn about our core values, goals, and the transformative impact we aim to create in the lives of our students and the community. Join us in our journey to nurture young minds and empower them to become responsible global citizens through innovative learning approaches and a supportive environment at Vels Vidyashram.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

@@ -6,8 +6,8 @@ import HeroSection from "../components/Academics/Curriculum/HeroSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Best Primary/Senior Secondary/ 11th 12th CBSE School in OMR Chennai";
+const siteDescription = "Explore the comprehensive curriculum at Vels Vidyashram, a leading CBSE school in OMR Chennai. Discover our academic programs, teaching methodologies, and commitment to holistic education for primary and secondary students. Enroll your child in one of the best schools in Chennai for 11th and 12th grade and experience excellence in education.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

@@ -6,8 +6,8 @@ import SchoolInfoPage from "../components/About/School-Infromation/SchoolSection
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "School Information - Vels Vidyashram";
+const siteDescription = "Get detailed information about Vels Vidyashram, including our academic programs, facilities, and extracurricular activities. Learn more about our school's approach to education and the values that define our community. Discover how we nurture the growth and development of our students to prepare them for a successful future. Explore our commitment to excellence in education and the unique opportunities we offer to our students.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

@@ -3,8 +3,8 @@ import SchoolInfoPage from "../components/About/SchoolInformation/SchoolInfo";
 
 
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "School Information - Vels Vidyashram";
+const siteDescription = "Learn more about Vels Vidyashram, a leading CBSE school in Chennai committed to providing quality education and holistic development for our students.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

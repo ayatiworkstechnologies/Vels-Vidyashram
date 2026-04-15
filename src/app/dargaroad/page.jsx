@@ -10,8 +10,8 @@ import AboutSchool from './components/AboutSchool';
 import VideoSection from './components/VideoSection';
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Best CBSE School in Chennai, Dargaroad - Vels Vidyashram";
+const siteDescription = "Experience quality education at Vels Vidyashram, a top CBSE school in Dargaroad, Chennai. Discover our academic excellence, modern infrastructure, and dedicated faculty committed to nurturing your child's potential.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

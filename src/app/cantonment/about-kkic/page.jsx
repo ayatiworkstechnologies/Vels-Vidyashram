@@ -4,8 +4,8 @@ import Hero from "../components/R&D/AboutKkic/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "About KKIC - Vels Vidyashram";
+const siteDescription = "Learn more about KKIC (Knowledge, Kreativity, and Innovation Center) at Vels Vidyashram, a leading CBSE school in Chennai committed to providing quality education and holistic development for our students. Discover how KKIC fosters creativity, critical thinking, and innovation through its state-of-the-art facilities and programs designed to enhance students' learning experiences.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

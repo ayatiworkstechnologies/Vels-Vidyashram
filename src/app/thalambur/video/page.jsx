@@ -2,8 +2,8 @@ import Hero from "../components/Gallery/Video-Gallery/Hero";
 import VideoSection from "../components/Gallery/Video-Gallery/VideoSection";
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "General Messages - Vels Vidyashram";
+const siteDescription = "Stay updated with the latest news and announcements from Vels Vidyashram. Explore our general messages to learn about upcoming events, achievements, and important updates.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

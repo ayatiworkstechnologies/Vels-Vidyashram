@@ -1,8 +1,8 @@
 import HeroSection from "../components/About/Our-group/HeroSection";
 import OurGroupSection from "../components/About/Our-group/OurGroupSection";
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Our Group - Vels Vidyashram Schools";
+const siteDescription = "Learn about Vels Vidyashram's group of schools, committed to providing exceptional education and fostering the growth of every student.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

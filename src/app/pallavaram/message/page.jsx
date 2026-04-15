@@ -3,8 +3,8 @@ import MessageSection from "../components/Academics/Messages/MessageSection";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "General Messages - Vels Vidyashram";
+const siteDescription = "Stay updated with the latest news and announcements from Vels Vidyashram. Read general messages from our administration and faculty about important updates, events, and initiatives. Stay informed about what's happening at our school and how we are working to provide the best educational experience for our students.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

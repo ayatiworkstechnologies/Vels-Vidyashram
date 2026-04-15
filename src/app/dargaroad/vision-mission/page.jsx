@@ -4,8 +4,8 @@ import VisionMission from "../components/About/VisionMission/VisionMission";
 
 
 
-const siteTitle = "About Us  | Vels Vidyashram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "Vision and Mission - Vels Vidyashram";
+const siteDescription = "Discover the vision and mission of Vels Vidyashram, a leading CBSE school in Chennai. Learn about our core values, educational philosophy, and commitment to excellence in shaping the future of our students. Explore how we foster a nurturing environment that promotes holistic development, creativity, and academic success. Join us in our mission to empower young minds and prepare them for a bright future.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

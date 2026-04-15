@@ -3,8 +3,8 @@ import Hero from "../components/Academics/Messages/Hero";
 import MessageSection from "../components/Academics/Messages/MessageSection";
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "General Messages - Vels Vidyashram";
+const siteDescription = "Stay informed about general messages and updates from Vels Vidyashram, your trusted CBSE school in Chennai.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

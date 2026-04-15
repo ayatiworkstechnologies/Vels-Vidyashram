@@ -4,8 +4,8 @@ import Hero from "../components/R&D/AboutKkic/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "About KKIC - Vels Vidyashram";
+const siteDescription = "Learn about the K.K. Institute of Commerce and Management at Vels Vidyashram. Discover our programs, faculty, and commitment to excellence in business education. Explore how KKIC prepares students for successful careers in commerce and management.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

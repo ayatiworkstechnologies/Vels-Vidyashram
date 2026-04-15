@@ -10,8 +10,8 @@ import MapSection from "./components/MapSection";
 import InspireSection from "./components/InspireSection";
 import AboutSchool from "./components/AboutSchool";
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Best CBSE School in OMR | Vels Vidyashram Thalambur, OMR, Chennai";
+const siteDescription = "Vels Vidyashram, The best CBSE School in OMR Thalambur tops the list of best schools in and around Thalambur for its best quality education to its students.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

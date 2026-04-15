@@ -7,8 +7,8 @@ import SchoolSection from "../components/About/School-Information/SchoolSection"
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "School Information - Vels Vidyashram";
+const siteDescription = "Get detailed information about Vels Vidyashram, including our academic programs, facilities, and commitment to excellence.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

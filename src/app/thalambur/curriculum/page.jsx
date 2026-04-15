@@ -7,8 +7,8 @@ import Hero from "../components/Academics/Curriculum/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Best Primary/Senior Secondary/ 11th 12th CBSE School in OMR Chennai";
+const siteDescription = "Want to enrol your child in pre school, primary & secondary school in Chennai. Vels Vidyashram Thalambur, one of the best schools in Chennai for 11th and 12th grade.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

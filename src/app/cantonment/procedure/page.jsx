@@ -5,8 +5,8 @@ import ProcedureSection from "../components/Admissions/Procedure/ProcedureSectio
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Admission Procedure - Vels Vidyashram";
+const siteDescription = "Learn about the admission procedure at Vels Vidyashram, a leading CBSE school in Chennai. Discover the steps involved in applying for admission and the criteria we use to evaluate prospective students. Follow our comprehensive guide to ensure a smooth application process and secure a place for your child in our esteemed institution.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

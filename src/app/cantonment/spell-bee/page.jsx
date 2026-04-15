@@ -3,8 +3,8 @@ import SpellBee from "../components/course/Spell/SpellBee";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Spell Bee - Vels Vidyashram";
+const siteDescription = "Participate in the exciting Spell Bee competition at Vels Vidyashram, a leading CBSE school in Chennai. Challenge your spelling skills and showcase your linguistic abilities in a fun and engaging environment. Join our vibrant community of young learners and educators in this delightful educational experience. Discover how Spell Bee fosters language proficiency, confidence, and a love for words among our students. Get ready to spell your way to success at Vels Vidyashram!";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

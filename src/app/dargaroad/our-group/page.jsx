@@ -3,8 +3,8 @@ import OurGroupSection from "../components/About/OurGroup/OurGroupSection";
 
 
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "Our Group - Vels Vidyashram Schools";
+const siteDescription = "Discover the Vels Vidyashram Schools group, a network of premier educational institutions committed to providing quality CBSE education and holistic development opportunities.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

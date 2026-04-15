@@ -5,8 +5,8 @@ import Hero from "../components/R&D/Genesis/Hero";
 
 
 
-const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
-const siteDescription = "";
+const siteTitle = "Genesis - Vels Vidyashram";
+const siteDescription = "Discover the origins and journey of Vels Vidyashram, a leading CBSE school in Chennai committed to providing quality education and holistic development for our students. Learn about our founder, vision, and milestones that have shaped our institution into the esteemed educational establishment it is today.";
 const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 

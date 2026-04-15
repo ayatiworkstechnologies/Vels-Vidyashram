@@ -3,8 +3,8 @@ import MessageSection from "../components/Academics/Messages/MessageSection";
 
 
 
-const siteTitle = "Vels Vidyashram - Pallavaram";
-const siteDescription = "Discover Vels Film City in Chennai, a premier media and entertainment hub offering state-of-the-art facilities for film production, events, and more.";
+const siteTitle = "General Messages - Vels Vidyashram";
+const siteDescription = "Stay updated with the latest news and announcements from Vels Vidyashram, a leading CBSE school in Chennai committed to providing quality education and holistic development for our students.";
 const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 

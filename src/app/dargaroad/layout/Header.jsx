@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 /* ================= DATA CONFIGURATION ================= */
 const navItems = [
-  { label: "Home", href: "/thalambur" },
+  { label: "Home", href: "/dargaroad" },
   {
     label: "About Us",
     href: "#",

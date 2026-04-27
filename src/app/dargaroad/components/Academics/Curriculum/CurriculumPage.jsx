@@ -26,18 +26,13 @@ const ACADEMIC_LEVELS = [
     ],
   },
 
-  // 2️⃣ Primary
-  {
-    id: "primary",
-    title: "Grade I to V – XSEED Methodology",
-    description:
-      "XSEED is an academic solution designed to raise learning levels and build confidence in children through a 5-Step Experiential Learning Method. Concepts are taught through hands-on activities, questioning, application and feedback.",
-  },
+
 
   // 3️⃣ STRUCTURE OF XSEED
   {
     id: "xseed-structure",
-    title: "Structure of XSEED Methodology",
+    title: "Grade I to V – XSEED Methodology & Structure of XSEED Methodology",
+    description:"XSEED is an academic solution designed to raise learning levels and build confidence in children through a 5-Step Experiential Learning Method. Concepts are taught through hands-on activities, questioning, application and feedback.",
     structure: [
       {
         programme: "Junior Programme",

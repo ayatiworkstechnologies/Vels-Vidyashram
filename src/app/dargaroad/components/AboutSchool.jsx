@@ -126,7 +126,7 @@ export default function AboutSchool() {
             }`}>
               <div className="rounded-2xl overflow-hidden shadow-md aspect-square lg:aspect-auto hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/dargaroad/best.png"
+                  src="/dargaroad/best.jpg"
                   alt="Students studying"
                   width={300}
                   height={300}
@@ -134,7 +134,6 @@ export default function AboutSchool() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>

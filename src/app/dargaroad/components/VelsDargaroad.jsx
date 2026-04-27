@@ -91,7 +91,7 @@ export default function VelsDargaroad() {
             }`}
           >
             <Image
-              src="/dargaroad/evolve.png"
+              src="/dargaroad/evolve.jpg"
               alt="Students"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"
@@ -141,7 +141,7 @@ export default function VelsDargaroad() {
             }`}
           >
             <Image
-              src="/dargaroad/why.png"
+              src="/dargaroad/why-choose.jpg"
               alt="Classroom"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"

@@ -17,19 +17,19 @@ export default function OurMottoSection() {
     {
       title: "ABOUT US Vels Educational Trust",
       text: "The School was established in 2018 by Vel’s Educational Trust (Regd.)",
-      image: "/dargaroad/motto-2.png",
+      image: "/dargaroad/our-about.jpg",
       showButton: true,
     },
     {
       title: "ACADEMICS From Pre KG to IX & XI Standard",
       text: "Experienced & trained teachers help in maintaining academic excellence and high standards of the school.",
-      image: "/dargaroad/motto-3.jpg",
+      image: "/dargaroad/our-academic.jpg",
       showButton: true,
     },
     {
       title: "FACILITIES Modern trend in education",
       text: "The school has all the necessary facilities in keeping with the modern trend in education.",
-      image: "/dargaroad/motto-4.png",
+      image: "/dargaroad/our-facility.jpg",
       showButton: true,
     },
   ];

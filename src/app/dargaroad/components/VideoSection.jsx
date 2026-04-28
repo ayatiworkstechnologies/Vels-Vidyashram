@@ -23,7 +23,7 @@ export default function VideoSection() {
             >
               {/* Thumbnail */}
               <img
-                src="/dargaroad/youtube.png"
+                src="/dargaroad/thumbnail.jpg"
                 alt="Video Thumbnail"
                 className="w-full h-[420px] object-cover"
               />

@@ -120,7 +120,7 @@ export default function Chairman() {
       {/* Image Container: Spans 3 out of 10 columns (30%) */}
       <div className="lg:col-span-3 relative h-[400px] lg:h-[500px] overflow-hidden rounded-2xl">
         <Image
-          src="/dargaroad/chair.jpg"
+          src="/dargaroad/about-chairman.jpg"
           alt="Education at Vels Vidyashram"
           fill
           className="object-cover" // Added object-cover to ensure the image fills the 30% width nicely

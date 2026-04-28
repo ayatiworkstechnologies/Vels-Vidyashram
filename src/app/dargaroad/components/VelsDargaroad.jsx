@@ -91,7 +91,7 @@ export default function VelsDargaroad() {
             }`}
           >
             <Image
-              src="/dargaroad/evolve.jpg"
+              src="/dargaroad/better.jpg"
               alt="Students"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"

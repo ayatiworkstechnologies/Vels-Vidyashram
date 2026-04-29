@@ -26,7 +26,7 @@ export default function OurMottoSection() {
     {
       title: "Admissions / Enquiry",
       text: "Simple, transparent admission process with guidance for parents and students.",
-      image: "/thalambur/enquiry-1.jpg",
+      image: "/thalambur/spot.png",
       showButton: true,
       link: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
     },

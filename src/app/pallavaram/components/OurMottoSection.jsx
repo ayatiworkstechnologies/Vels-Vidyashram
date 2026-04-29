@@ -25,7 +25,7 @@ export default function OurMottoSection() {
     {
       title: "Admissions / Enquiry",
       text: "Simple, transparent admission process with guidance for parents and students.",
-      image: "/pallavaram/Enquiry.jpg",
+      image: "/pallavaram/banner-3.png",
       showButton: true,
       link: "https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp",
     },

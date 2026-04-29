@@ -41,7 +41,7 @@ export default function AboutSchool() {
               : 'opacity-0 scale-110'
           }`}
           style={{
-            backgroundImage: "url('/dargaroad/vels.jpg')",
+            backgroundImage: "url('/dargaroad/bg-new.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-white/40 lg:bg-transparent" />

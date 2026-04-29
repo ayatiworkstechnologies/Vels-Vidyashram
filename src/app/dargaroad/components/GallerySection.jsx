@@ -8,7 +8,7 @@ const galleryItems = [
   { id: 2, title: "Awards", description: "", img: "/dargaroad/aw.png" },
   { id: 3, title: "Laboratory", description: "", img: "/dargaroad/la.png" },
   { id: 4, title: "Activities", description: "", img: "/dargaroad/ac.png" },
-  { id: 5, title: "Sports", description: "", img: "/dargaroad/sp.png" },
+  { id: 5, title: "Sports", description: "", img: "/dargaroad/ba-Sports.jpg" },
   { id: 6, title: "AARAMBH 2025", description: "", img: "/dargaroad/aa.png" },
 ];
 

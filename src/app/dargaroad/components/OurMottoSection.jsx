@@ -11,7 +11,7 @@ export default function OurMottoSection() {
     {
       title: "Vels Vidyashram CBSE School in Chennai",
       text: "Vels Vidyashram took its humble birth in 2018. The founder of the school Dr.Ishari K.Ganesh a great visionary wanted to build up a school with excellence as its watchword in all aspects.",
-      image: "/dargaroad/motto-1.png",
+      image: "/dargaroad/common-page.jpg",
       showButton: true,
     },
     {

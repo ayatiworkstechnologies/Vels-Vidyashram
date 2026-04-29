@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer'
 const campuses = [
   { id: 1, name: 'Thalambur Campus', image: '/thalambur.png', href: '/thalambur' },
   { id: 2, name: 'Pallavaram Campus', image: '/pallavaram.png', href: '/pallavaram' },
-  { id: 3, name: 'Dargaroad Campus', image: '/dargaroad.png', href: '/dargaroad' },
+  { id: 3, name: 'Dargaroad Campus', image: '/dargaroad/common-page.jpg', href: '/dargaroad' },
   { id: 4, name: 'Cantonment Campus', image: '/cantonment.png', href: '/cantonment' },
 ]
 

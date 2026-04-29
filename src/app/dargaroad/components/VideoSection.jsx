@@ -26,10 +26,7 @@ export default function VideoSection() {
                 src="/dargaroad/thumbnail.jpg"
                 alt="Video Thumbnail"
                 className="w-full h-[420px] object-cover"
-              />
-
-              {/* Dark overlay */}
-              
+              />              
 
               {/* Play Button */}
               <div className="absolute inset-0 flex items-center justify-center">

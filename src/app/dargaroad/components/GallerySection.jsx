@@ -14,9 +14,9 @@ const galleryItems = [
 
 export default function GalleryGrid() {
   return (
-    <section className="py-12 md:py-20 bg-white px-4 md:px-6">
+    <section className="py-8 md:py-14 bg-white px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <span className="bg-orange-100 text-orange-600 px-3 py-1 font-primary rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
             Gallery
           </span>
@@ -26,8 +26,7 @@ export default function GalleryGrid() {
           </p>
         </div>
 
-        {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {galleryItems.map((item) => (
             <RevealCard key={item.id} item={item} />
           ))}
@@ -42,13 +41,14 @@ function RevealCard({ item }) {
     <motion.div
       initial="rest"
       whileHover="hover"
-      whileTap="hover" // Enables the reveal on mobile tap
+      whileTap="hover"
       animate="rest"
-      className="relative h-[350px] sm:h-[400px] md:h-[480px] w-full bg-white overflow-hidden cursor-pointer font-primary border border-gray-100 rounded-xl shadow-sm"
+      className="relative w-full bg-white overflow-hidden cursor-pointer font-primary border border-gray-100 rounded-xl shadow-sm"
+      style={{ height: "400px" }}
     >
       {/* 1. THE CONTENT BOX */}
       <motion.div
-        className="absolute top-0 left-0 w-full bg-tertiary text-white p-6 md:p-8 flex flex-col justify-center z-20"
+        className="absolute top-0 left-0 w-full bg-tertiary text-white p-5 md:p-6 flex flex-col justify-center z-20"
         style={{ height: "50%" }}
         variants={{
           rest: { y: "-100%" },
@@ -56,14 +56,14 @@ function RevealCard({ item }) {
         }}
         transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
       >
-        <motion.h3 
-          className="text-white text-xl font-primary md:text-2xl font-bold"
+        <motion.h3
+          className="text-white text-lg font-primary md:text-xl font-bold"
           variants={{ rest: { opacity: 0, y: -10 }, hover: { opacity: 1, y: 0 } }}
         >
           {item.title}
         </motion.h3>
-        <motion.p 
-          className="text-gray-300 text-xs md:text-sm mt-2"
+        <motion.p
+          className="text-gray-300 text-xs md:text-sm mt-1"
           variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
         >
           {item.description}
@@ -74,16 +74,16 @@ function RevealCard({ item }) {
       <motion.div
         className="absolute inset-0 z-10 overflow-hidden"
         variants={{
-          rest: { 
-            width: "100%", 
-            height: "100%", 
-            top: "0%", 
+          rest: {
+            width: "100%",
+            height: "100%",
+            top: "0%",
             left: "0%",
           },
-          hover: { 
-            width: "45%", 
-            height: "40%", 
-            top: "55%", 
+          hover: {
+            width: "45%",
+            height: "40%",
+            top: "55%",
             left: "5%",
           }
         }}
@@ -97,7 +97,7 @@ function RevealCard({ item }) {
       </motion.div>
 
       {/* 3. THE "MORE" BUTTON */}
-      <Link href="/dargaroad/photo-gallery" className="absolute bottom-6 right-6 z-30 md:bottom-12 md:right-10">
+      <Link href="/dargaroad/photo-gallery" className="absolute bottom-5 right-5 z-30 md:bottom-8 md:right-8">
         <motion.div
           className="flex items-center gap-2 group"
           variants={{

@@ -46,13 +46,7 @@ export default function Dargaroad() {
         <VelsDargaroad />
         <GalleryGrid />
         <EventsSchedule />
-        {/* <Cbse />
-        <About />
-        <Video />
-        <BestCbseSection />
-        <Events />
-        <UpcomingEvents />
-        <FooterSection /> */}
+       
     </main>
   );
 }

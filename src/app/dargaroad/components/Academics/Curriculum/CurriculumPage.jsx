@@ -62,37 +62,37 @@ const ACADEMIC_LEVELS = [
         sno: 1,
         group: "First Group",
         subjects:
-          "English Core (Compulsory)\nMathematics / Physics / Chemistry / Biology",
+          "English Core (Compulsory),\nMathematics / Physics / Chemistry / Biology",
       },
       {
         sno: 2,
         group: "Second Group",
         subjects:
-          "English Core (Compulsory)\nMathematics / Physics / Chemistry / Informatics Practices",
+          "English Core (Compulsory),\nMathematics / Physics / Chemistry / Informatics Practices",
       },
       {
         sno: 3,
         group: "Third Group",
         subjects:
-          "English Core (Compulsory)\nBusiness Studies / Accountancy / Economics / Mathematics",
+          "English Core (Compulsory),\nBusiness Studies / Accountancy / Economics / Mathematics",
       },
       {
         sno: 4,
         group: "Fourth Group",
         subjects:
-          "English Core (Compulsory)\nBusiness Studies / Accountancy / Economics / Informatics Practices",
+          "English Core (Compulsory),\nBusiness Studies / Accountancy / Economics / Informatics Practices",
       },
       {
         sno: 5,
         group: "Fifth Group",
         subjects:
-          "English Core (Compulsory)\nPsychology / Sociology / History / Political Science / Informatics Practices / Business Studies / Economics (Any Four)",
+          "English Core (Compulsory),\nPsychology / Sociology / History / Political Science / Informatics Practices / Business Studies / Economics (Any Four),",
       },
       {
         sno: 6,
         group: "Sixth Group",
         subjects:
-          "English Core (Compulsory)\nPhysics / Chemistry / Biology / Informatics Practices",
+          "English Core (Compulsory),\nPhysics / Chemistry / Biology / Informatics Practices",
       },
     ],
     note:

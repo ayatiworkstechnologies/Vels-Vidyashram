@@ -4,61 +4,41 @@ import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer
 
 const allScheduleData = [
   {
-    date: " 05",
-    monthYear: "March",
+    date: " 06",
+    monthYear: "April",
+    title: "School reopens for Std KG - IX",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "09",
+    monthYear: "April",
+    title: "General Assembly",
+    tag: "Events",
+    isHighlighted: true
+  },
+  {
+    date: "16",
+    monthYear: "April",
     title: "Club Activities",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "12",
-    monthYear: "March",
+    date: "23",
+    monthYear: "April",
     title: "General Assembly",
     tag: "Events",
     isHighlighted: true
   },
   {
     date: "24",
-    monthYear: "March",
-    title: "Club Activities",
+    monthYear: "April",
+    title: "School closes for Std KG - VIII",
     tag: "Events",
     isHighlighted: false
   },
-  {
-    date: "05",
-    monthYear: "March",
-    title: "Terminal 2 starts for STD VI - VIII",
-    tag: "Exams",
-    isHighlighted: true
-  },
-  {
-    date: "06",
-    monthYear: "March",
-    title: "Terminal 2 starts for STD IV & V",
-    tag: "Exams",
-    isHighlighted: false
-  },
-   {
-    date: "09",
-    monthYear: "March",
-    title: "Terminal 2 starts for STD III",
-    tag: "Exams",
-    isHighlighted: false
-  },
-    {
-    date: "11",
-    monthYear: "March",
-    title: "Terminal 2 starts for STD I & II",
-    tag: "Exams",
-    isHighlighted: false
-  },
-    {
-    date: "18",
-    monthYear: "March",
-    title: "Terminal 2 ends for STD I & II",
-    tag: "Exams",
-    isHighlighted: false
-  }
+
 ];
 
 export default function EventsSchedule() {
@@ -104,7 +84,7 @@ export default function EventsSchedule() {
           animate={isLeftSideInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          March Events <br /> and Examinations
+           Events <br /> and Examinations
           Schedule
         </motion.h1>
         
@@ -177,7 +157,7 @@ export default function EventsSchedule() {
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Upcoming {activeTab} - March
+          Upcoming {activeTab} - April
         </motion.h2>
 
         <div className="relative max-w-2xl">

@@ -8,253 +8,217 @@ const VIDEO_DATA = {
     "2025 - 2026": [
       {
         id: 1,
-        title: "Independence day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-1.jpg",
-        videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
+        title: "Onam Celebrations",
+        thumbnail: "/pallavaram/thumbnail/thum-1.jpg",
+        videoUrl: "https://www.youtube.com/embed/B3NGTQ7zcyk?si=9R_TbAaV4a-ilYnb"
       },
       {
         id: 2,
-        title: "KG- Yellow day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-2.jpg",
-        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
+        title: "International Yoga Day 2025",
+        thumbnail: "/pallavaram/thumbnail/thum-2.jpg",
+        videoUrl: "https://www.youtube.com/embed/uhgHrQHOgdw?si=3xkcf-CNcfCurJ9I"
       },
       {
         id: 3,
-        title: "KG- Red day celebration",
-        thumbnail: "/thalambur/thumbnail/thum-3.jpg",
-        videoUrl: "https://www.youtube.com/embed/AVH_Dkse7LY?si=adTVbrSBeQ3LjvEC"
+        title: "Vels Kite day",
+        thumbnail: "/pallavaram/thumbnail/thum-3.jpg",
+        videoUrl: "https://www.youtube.com/embed/Zzpso9Av7rs?si=3pJu7YErMCU5AX6j"
       },
       {
         id: 4,
-        title: "Empowering educators through STEM",
-        thumbnail: "/thalambur/thumbnail/thum-4.jpg",
-        videoUrl: "https://www.youtube.com/embed/wia-jhd6dTA?si=OkT91GpEw7DpBjLa"
+        title: "VELS Father’s Day Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-4.jpg",
+        videoUrl: "https://www.youtube.com/embed/VlXLN0TalIM?si=lx8TnMu0ZGp6smoG"
       },
       {
         id: 5,
-        title: "No Bag day ",
-        thumbnail: "/thalambur/thumbnail/thum-5.jpg",
-        videoUrl: "https://www.youtube.com/embed/zSJivDnKOBM?si=8xqNiMbnCKyrCA0L"
+        title: "Investiture Ceremony",
+        thumbnail: "/pallavaram/thumbnail/thum-5.jpg",
+        videoUrl: "https://www.youtube.com/embed/-o34BlupXgY?si=EdxCphnYpCealqEm"
       },
       {
         id: 6,
-        title: "Investiture ceremony",
-        thumbnail: "/thalambur/thumbnail/thum-6.jpg",
-        videoUrl: "https://www.youtube.com/embed/rkxadX1MFa8?si=SPeHF_OSe_5lFGYQ"
+        title: "Speech by Chairman sir",
+        thumbnail: "/pallavaram/thumbnail/thum-6.jpg",
+        videoUrl: "https://www.youtube.com/embed/7tAP43D_meY?si=da30iAW3UEtwT0zm"
       },
       {
         id: 7,
-        title: "Campus visit to Vels Medical College & Hospital",
-        thumbnail: "/thalambur/thumbnail/thum-7.jpg",
-        videoUrl: "https://www.youtube.com/embed/_IxOrTmWF4Y?si=YXND2SdpVG4h-W-S"
+        title: "KINDERGARTEN GRADUATION DAY CELEBRATION 2023-24",
+        thumbnail: "/pallavaram/thumbnail/thum-7.jpg",
+        videoUrl: "https://www.youtube.com/embed/4q_DuWXhi7U?si=5FeX6pqoc9YRP4MC"
       },
       {
         id: 8,
-        title: "Father's Day celebration",
-        thumbnail: "/thalambur/thumbnail/thum-8.jpg",
-        videoUrl: "https://www.youtube.com/embed/jFrVGTsUFsQ?si=aqCrdY-wEo5ra5jp"
+        title: "Quarterly e-Magazine Edition-2",
+        thumbnail: "/pallavaram/thumbnail/thum-8.jpg",
+        videoUrl: "https://www.youtube.com/embed/WklqnLDp93k?si=MgWW-9Din5WrrXXv"
       },
       {
         id: 9,
-        title: "Vels Football club Inauguration",
-        thumbnail: "/thalambur/thumbnail/thum-9.jpg",
-        videoUrl: "https://www.youtube.com/embed/fPgGO-yCNWE?si=EiLl1TqIDA9Oie6q"
+        title: "Children's Day",
+        thumbnail: "/pallavaram/thumbnail/thum-9.jpg",
+        videoUrl: "https://www.youtube.com/embed/6_84LHVUo64?si=z6shModB9RIDcBL6"
       },
       {
         id: 10,
-        title: "No-Bag Day 2025",
-        thumbnail: "/thalambur/thumbnail/thum-10.jpg",
-        videoUrl: "https://www.youtube.com/embed/aMH9OWNBmww?si=iLziC4utO1v3rAcY"
+        title: "Diwali Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-10.jpg",
+        videoUrl: "https://www.youtube.com/embed/yZdE__E3UZQ?si=XYJypNXsu8K3lEZ4"
       },
    
       {
         id: 11,
-        title: "EVS Culmination day Grade I & II",
-        thumbnail: "/thalambur/thumbnail/thum-11.jpg",
-        videoUrl: "https://www.youtube.com/embed/sbImD_yjKJc?si=ILy7kA9A1nU7GNMQ"
+        title: "Diwali Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-11.jpg",
+        videoUrl: "https://www.youtube.com/embed/8lpiYDhnsW4?si=t3cW9vOLqG1jVKlJ"
       },
       {
         id: 12,
-        title: "KG- Culmination day 2025 ",
-        thumbnail: "/thalambur/thumbnail/thum-12.jpg",
-        videoUrl: "https://www.youtube.com/embed/R5KPASt5FLQ?si=DkIQs70ZQXk47ThQ"
+        title: "Dandiya Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-12.jpg",
+        videoUrl: "https://www.youtube.com/embed/6stsf8ZK_VI?si=Amb29rtX0xfPYYMc"
      
       },
       {
          id: 13,
-        title: "Grade IX-XII field trip ",
-        thumbnail: "/thalambur/thumbnail/thum-13.jpg",
-        videoUrl: "https://www.youtube.com/embed/-TvogdGuf40?si=3XFfla0QsHCdxr05"
+        title: "Vinayagar Chaturthi",
+        thumbnail: "/pallavaram/thumbnail/thum-13.jpg",
+        videoUrl: "https://www.youtube.com/embed/PsDxy5bR1Q0?si=KBoNg5rZbUGB5hwx"
  
       },
       {
         id: 14,
-        title: "Grade VI-VIII field trip ",
-        thumbnail: "/thalambur/thumbnail/thum-14.jpg",
-        videoUrl: "https://www.youtube.com/embed/4zc-NoB6e-0?si=NoY7htZ4IAQVt6Oi"
+        title: "VELS Exotic-Inter School Teachers Sports",
+        thumbnail: "/pallavaram/thumbnail/thum-14.jpg",
+        videoUrl: "https://www.youtube.com/embed/JQxtvlWbboA?si=Qf0_JcB0FRJzCVn9"
       },
       {
         id: 15,
-        title: "Grade III-V field trip",
-        thumbnail: "/thalambur/thumbnail/thum-15.jpg",
-        videoUrl: "https://www.youtube.com/embed/eNWYoOH6jG8?si=36Dt8pajlOa9b_Co"
+        title: "Donation of Books",
+        thumbnail: "/pallavaram/thumbnail/thum-15.jpg",
+        videoUrl: "https://www.youtube.com/embed/TQUAJ_dJd4Q?si=dECFuPJvoKObygqC"
       },
      
       {
         id: 16,
-        title: "Diwali celebration",
-        thumbnail: "/thalambur/thumbnail/thum-16.jpg",
-        videoUrl: "https://www.youtube.com/embed/wmZ2yCDQuhs?si=nu9Z2v3C0hHPKwCA"
+        title: "Basketball and Soccer tournament",
+        thumbnail: "/pallavaram/thumbnail/thum-16.jpg",
+        videoUrl: "https://www.youtube.com/embed/17MdMXcnTgk?si=sshdsbWMUOcnUaa_"
       },
       {
         id: 17,
-        title: "Happy Vidyarambham",
-        thumbnail: "/thalambur/thumbnail/thum-17.jpg",
-        videoUrl: "https://www.youtube.com/embed/Lw_NpnD95EE?si=YTEq_T7PeDuzyZYx"
+        title: "Investiture Ceremony",
+        thumbnail: "/pallavaram/thumbnail/thum-17.jpg",
+        videoUrl: "https://www.youtube.com/embed/VnZPIneYa8U?si=P0WpSw1B4WSRcmWf"
       },
       {
         id: 18,
-        title: "Pongal celebration 2026",
-        thumbnail: "/thalambur/thumbnail/thum-18.jpg",
-        videoUrl: "https://www.youtube.com/embed/m45zSDBJ6Ng?si=xJGsIKGxztIRWInj"
+        title: "Episteme",
+        thumbnail: "/pallavaram/thumbnail/thum-18.jpg",
+        videoUrl: "https://www.youtube.com/embed/dROqxDmesfc?si=VmkfzKLlhco0pZb8"
  
       },
       {
         id: 19,
-        title: "Interschool sports meet 2025-26",
-        thumbnail: "/thalambur/thumbnail/thum-19.jpg",
-        videoUrl: "https://www.youtube.com/embed/oXcKnuoKoYA?si=NEWQkq_w0h4Q-JXj"
+        title: "Student Election",
+        thumbnail: "/pallavaram/thumbnail/thum-19.jpg",
+        videoUrl: "https://www.youtube.com/embed/ewNlwiyItgo?si=00XObj-ZYcRqtDQX"
       },
       {
         id: 20,
-        title: "Sandhai celebration",
-        thumbnail: "/thalambur/thumbnail/thum-20.jpg",
-        videoUrl: "https://www.youtube.com/embed/2GvMTDKJVEA?si=TeweIstQyM4pFE4C"
+        title: "Pongal Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-20.jpg",
+        videoUrl: "https://www.youtube.com/embed/u7zWl7qzwCM?si=kvOEQ0LvfQmOeZgE"
       },
       {
         id: 21,
-        title: "Grandparents Day ",
-        thumbnail: "/thalambur/thumbnail/thum-21.jpg",
-        videoUrl: "https://www.youtube.com/embed/h7hY0DPRs4Y?si=84eh1lbIBjWyRVDv"
+        title: "Three little pigs",
+        thumbnail: "/pallavaram/thumbnail/thum-21.jpg",
+        videoUrl: "https://www.youtube.com/embed/ObXVSo6_hnM?si=c0-vIjVQSJwPq30S"
  
       },
       {
         id: 22,
-        title: "KG- Purple day celebration ",
-        thumbnail: "/thalambur/thumbnail/thum-22.jpg",
-        videoUrl: "https://www.youtube.com/embed/rLNjxQA00xM?si=UAEIjSI9_XiBcF8k"
+        title: "Annual Day Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-22.jpg",
+        videoUrl: "https://www.youtube.com/embed/lBK-OrHQTyU?si=tvDRsTEoFbBf86JI"
      
       },
       {
         id: 23,
-        title: "Melange 2025- Interschool competition ",
-        thumbnail: "/thalambur/thumbnail/thum-23.jpg",
-        videoUrl: "https://www.youtube.com/embed/PYcqsCFPjgM?si=r8kTmGCRN4kdrTMy"
+        title: "Election video",
+        thumbnail: "/pallavaram/thumbnail/thum-23.jpg",
+        videoUrl: "https://www.youtube.com/embed/ObXVSo6_hnM?si=XlGQjSzQYZ-KLZ5A"
       },
       {
         id: 24,
-        title: "International Yoga day",
-        thumbnail: "/thalambur/thumbnail/thum-24.jpg",
-        videoUrl: "https://www.youtube.com/embed/CDfbwO-t768?si=F9aklcYL_c4IWZJB"
+        title: "Chess Olympiad",
+        thumbnail: "/pallavaram/thumbnail/thum-24.jpg",
+        videoUrl: "https://www.youtube.com/embed/lBK-OrHQTyU?si=xI-QQWRzvOJCqerk"
       },
       {
         id: 25,
-        title: "Voices of tomorrow: Student council nominees 2025",
-        thumbnail: "/thalambur/thumbnail/thum-25.jpg",
-        videoUrl: "https://www.youtube.com/embed/3A9ITGjlJFw?si=0-mcYAZCCSH-PoG1"
+        title: "Colour Week Celebration",
+        thumbnail: "/pallavaram/thumbnail/thum-25.jpg",
+        videoUrl: "https://www.youtube.com/embed/335FeWo5O8U?si=MEn0NXn4e4u3COcZ"
       },
       {
         id: 26,
-        title: "Step Orientation",
-        thumbnail: "/thalambur/thumbnail/thum-26.jpg",
-        videoUrl: "https://www.youtube.com/embed/TaDylNNBBfc?si=9LLjsl_v7FBFT2nE"
+        title: "Nature Conservation Day",
+        thumbnail: "/pallavaram/thumbnail/thum-26.jpg",
+        videoUrl: "https://www.youtube.com/embed/-oTwoZiE2JU?si=eDpkdK1_emoTNBoS"
      
       },
       {
         id: 27,
-        title: "Personal safety education session",
-        thumbnail: "/thalambur/thumbnail/thum-27.jpg",
-        videoUrl: "https://www.youtube.com/embed/d07ky5ErJSs?si=bobuw53eX9YGnj7e"
+        title: "National Colouring Book Day",
+        thumbnail: "/pallavaram/thumbnail/thum-27.jpg",
+        videoUrl: "https://www.youtube.com/embed/s7w62Qwk-bo?si=udjMxsJnGy18jyQ7"
       },
       {
         id: 28,
-        title: "World scholar's cup - Chennai round 2025",
-        thumbnail: "/thalambur/thumbnail/thum-28.jpg",
-        videoUrl: "https://www.youtube.com/embed/WPh7s296eYw?si=zSB-YMELED5Sv1mZ"
+        title: "Respect for Parents Day",
+        thumbnail: "/pallavaram/thumbnail/thum-28.jpg",
+        videoUrl: "https://www.youtube.com/embed/LtqrgEpS67Y?si=z5bsmos5RVn1TRpX"
       },
       {
         id: 29,
-        title: "Parent orientation program 2025-26",
-        thumbnail: "/thalambur/thumbnail/thum-29.jpg",
-        videoUrl: "https://www.youtube.com/embed/6HvW_x8hTNo?si=raRcolcwTssop9hI"
+        title: "Birthday Wishes to Chairman (Oct 7th)",
+        thumbnail: "/pallavaram/thumbnail/thum-29.jpg",
+        videoUrl: "https://www.youtube.com/embed/crEHN-92tYA?si=vdVjTAKTMJSFIzn5"
       },
       {
         id: 30,
-        title: "Salangai poojai",
-        thumbnail: "/thalambur/thumbnail/thum-30.jpg",
-        videoUrl: "https://www.youtube.com/embed/kBTEl5PdV-4?si=bJzD4NfGAgXUQlhE"
+        title: "Birthday Song for Chairman",
+        thumbnail: "/pallavaram/thumbnail/thum-30.jpg",
+        videoUrl: "https://www.youtube.com/embed/pBL20qRbKnw?si=_KDeHncPwEOXSGa5"
       },
       {
         id: 31,
-        title: "KG Graduation day 2025 & Annual proficiency award cerem",
-        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
-        videoUrl: "https://www.youtube.com/embed/KtybeWopBQU?si=SMr5cieWxl4nQd4e"
+        title: "Value Week Celebration by Grades 1 to 3",
+        thumbnail: "/pallavaram/thumbnail/thum-31.jpg",
+        videoUrl: "https://www.youtube.com/embed/T_RUWgSsxSE?si=XdDMF2umx97Xi2uA"
       },
        {
         id: 32,
-        title: "KG Graduation day 2025 & Annual proficiency award cerem",
-        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
-        videoUrl: "https://www.youtube.com/embed/KtybeWopBQU?si=SMr5cieWxl4nQd4e"
+        title: "Value Week Celebration by Grades 4 to 8",
+        thumbnail: "/pallavaram/thumbnail/thum-32.jpg",
+        videoUrl: "https://www.youtube.com/embed/SVvLw9F7hzM?si=o60bI4MjIjEjHgRC"
       },
+  
        {
         id: 33,
-        title: "KG Graduation day 2025 & Annual proficiency award cerem",
-        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
-        videoUrl: "https://www.youtube.com/embed/KtybeWopBQU?si=SMr5cieWxl4nQd4e"
-      },
-       {
-        id: 34,
-        title: "KG Graduation day 2025 & Annual proficiency award cerem",
-        thumbnail: "/thalambur/thumbnail/thum-31.jpg",
-        videoUrl: "https://www.youtube.com/embed/KtybeWopBQU?si=SMr5cieWxl4nQd4e"
+        title: "International Yoga Day, on 21 Jun 2018",
+        thumbnail: "/pallavaram/thumbnail/thum-33.jpg",
+        videoUrl: "https://www.youtube.com/embed/eMIrOTvMC6I?si=layr39ZiSN34fNmP"
       },
 
  
        
     ],
  
-    "2024 - 2025": [
-      {
-        id: 11,
-        title: "Campus Tour",
-        thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 12,
-        title: "Annual Sports Day",
-        thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 13,
-        title: "Christmas Celebration",
-        thumbnail: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 14,
-        title: "School Assembly",
-        thumbnail: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        id: 15,
-        title: "Music Competition",
-        thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      }
-    ]
+ 
   },
  
  testimonialSections: [

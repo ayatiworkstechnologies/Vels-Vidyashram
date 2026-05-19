@@ -121,152 +121,46 @@ const VIDEO_DATA = {
  
  testimonialSections: [
     {
-      category: "Parents Testimonials during Grade 1 and 2 Culmination Day",
+      category: "Parents Testimonials - Fathers Day Celebration",
       icon: <GraduationCap className="w-5 h-5" />,
       items: [
         {
           id: 1,
-          thumbnail: "/thalambur/thumbnail/pa-1.jpg",
-          videoUrl: "https://www.youtube.com/embed/HQ6m896ITKU?si=rWbhrjbZQMvTNYsq"
+          thumbnail: "/dargaroad/thumbnail/parent-1.jpg",
+          videoUrl: "https://www.youtube.com/embed/XQtaPJniX4k?si=rrQiMLopeEgPF0mE"
         },
           {
           id: 2,
-          thumbnail: "/thalambur/thumbnail/pa-2.jpg",
-          videoUrl: "https://www.youtube.com/embed/x1fqOjjOd4A?si=twzzPHcnFeeJQmXs"
+          thumbnail: "/dargaroad/thumbnail/parent-2.jpg",
+          videoUrl: "https://www.youtube.com/embed/dkV2EX0Pf64?si=SQMbiL4NiWRNLTA_"
         },
           {
           id: 3,  
-          thumbnail: "/thalambur/thumbnail/pa-3.jpg",
-          videoUrl: "https://www.youtube.com/embed/0zeoiCyu9zQ?si=ySITJhctN3fvkQTA"
+          thumbnail: "/dargaroad/thumbnail/parent-3.jpg",
+          videoUrl: "https://www.youtube.com/embed/rWeIvOah2-U?si=B6qLKBlTdRY0Zcdt"
         },
 
         {
           id: 4,
-          thumbnail: "/thalambur/thumbnail/pa-4.jpg",
+          thumbnail: "/dargaroad/thumbnail/parent-4.jpg",
           videoUrl: "https://www.youtube.com/embed/9o8dw-ps4wI?si=yUiDNTcdvACylbPd"
         },
+        {
+          id: 5,
+          thumbnail: "/dargaroad/thumbnail/parent-5.jpg",
+          videoUrl: "https://www.youtube.com/embed/EsrzzjNCqLQ?si=74Zhnp9o6XN25XiL"
+        },
+        {
+          id: 6,
+          thumbnail: "/dargaroad/thumbnail/parent-6.jpg",
+          videoUrl: "https://www.youtube.com/embed/xts7oOWlqGc?si=k1nE0aqm7VE6cBie",
+        }
          
       ]
     },
-    {
-      category: "Parents Testimonials during KG Culmination Day",
-      icon: <GraduationCap className="w-5 h-5" />,
-      items: [
-        {
-          id: 1,
-          title: "Annual Day Parent Review",
-          thumbnail: "/thalambur/thumbnail/pa-5.jpg",
-          videoUrl: "https://www.youtube.com/embed/k3moS-HLG0s?si=a255blOXerkMtdWz"
-        },
-        {
-          id: 2,
-        
-          thumbnail: "/thalambur/thumbnail/pa-6.jpg",
-          videoUrl: "https://www.youtube.com/embed/F160MLpfsx0?si=95RNj3d95v89zkzu"
-        },
-        {
-          id: 3,
-          thumbnail: "/thalambur/thumbnail/pa-7.jpg",
-          videoUrl: "https://www.youtube.com/embed/EL4G5HYmVQQ?si=WwNb81K3hjjrxzHD"
-        },
-      ]
-    },
-     {
-      category: "Grand Parents Testimonials",
-      icon: <GraduationCap className="w-5 h-5" />,
-      items: [
-        {
-          id: 1,
-          
-          thumbnail: "/thalambur/thumbnail/pa-8.jpg",
-          videoUrl: "https://www.youtube.com/embed/ESa8Ql5Uil8?si=DVnuWpGWpMRPDiaq"
-        },
-        {
-          id: 2,
-        
-          thumbnail: "/thalambur/thumbnail/pa-9.jpg",
-          videoUrl: "https://www.youtube.com/embed/89wS-6RkrLI?si=c_xj4DneQEzdrN1G"
-        },
-        {
-          id: 3,
-          thumbnail: "/thalambur/thumbnail/pa-10.jpg",
-          videoUrl: "https://www.youtube.com/embed/1B2ItFirTkg?si=jUPGHlbaYXNJCIrZ"
-        },
-        {
-          id: 4,
-          thumbnail: "/thalambur/thumbnail/pa-11.jpg",
-          videoUrl: "https://www.youtube.com/embed/x3VQ6kCON14?si=aNFsYdsmOz4osWRV"
-        },
-        {
-          id: 5,
-          thumbnail: "/thalambur/thumbnail/pa-12.jpg",
-          videoUrl: "https://www.youtube.com/embed/GPQC1HdeIzg?si=HyX7OcHgwrTXCHTY"
-        },
-      ]
-    },
-        {
-      category: "Parent Testimonials",
-      icon: <GraduationCap className="w-5 h-5" />,
-      items: [
-        {
-          id: 1,
-          
-          thumbnail: "/thalambur/thumbnail/pa-13.jpg",
-          videoUrl: "https://www.youtube.com/embed/Le89xfMjlak?si=9Nf5O4yYfFIJ_y8K"
-        },
-        {
-          id: 2,
-        
-          thumbnail: "/thalambur/thumbnail/pa-14.jpg",
-          videoUrl: "https://www.youtube.com/embed/dd8RTTRaB7E?si=m3ztpt5iUgtn-1GL"
-        },
-        {
-          id: 3,
-          thumbnail: "/thalambur/thumbnail/pa-15.jpg",
-          videoUrl: "https://www.youtube.com/embed/ey0k8IX6EWg?si=KbSJH8k5VuhuA7aL"
-        },
-        {
-          id: 4,
-          thumbnail: "/thalambur/thumbnail/pa-16.jpg",
-          videoUrl: "https://www.youtube.com/embed/tlY4h-64d5M?si=NNUnJVRoiw41IGpQ"
-        },
-        {
-          id: 5,
-          thumbnail: "/thalambur/thumbnail/pa-17.jpg",
-          videoUrl: "https://www.youtube.com/embed/hN2ZN-9NTqA?si=AHNlnKckeD5cMDyG"
-        },
-         {
-          id: 6,
-          thumbnail: "/thalambur/thumbnail/pa-18.jpg",
-          videoUrl: "https://www.youtube.com/embed/IYc9yhmtu5M?si=mTQDbqCyroKdopbT"
-        },
-         {
-          id: 7,
-          thumbnail: "/thalambur/thumbnail/pa-19.jpg",
-          videoUrl: "https://www.youtube.com/embed/pCgxX3pwGUA?si=s9rcjOQeqPV1aTTa"
-        },
-         {
-          id: 8,
-          thumbnail: "/thalambur/thumbnail/pa-20.jpg",
-          videoUrl: "https://www.youtube.com/embed/-_8wKbk2bo4?si=8UarC7Zbv_vbKj9S"
-        },
-         {
-          id: 9,
-          thumbnail: "/thalambur/thumbnail/pa-21.jpg",
-          videoUrl: "https://www.youtube.com/embed/4Aacp5u7EqM?si=kN05Sup7bGqqQVXS"
-        },
-         {
-          id: 10,
-          thumbnail: "/thalambur/thumbnail/pa-22.jpg",
-          videoUrl: "https://www.youtube.com/embed/HQxZa3tjJBI?si=_W4gJwacoZ3sAPZ8"
-        },
-         {
-          id: 11,
-          thumbnail: "/thalambur/thumbnail/pa-23.jpg",
-          videoUrl: "https://www.youtube.com/embed/frYed5_rnzA?si=-QJo8qfwjId0Ew-0"
-        },
-      ]
-    },
+   
+   
+  
   ]
 };
 

@@ -43,7 +43,6 @@ export default function Pallavaram() {
     <main>
       {/* <Modal /> */}
       <BannerSlider />
-      <LetterSection />
       <OurMottoSection />
       <InfrastructureSlider />
       <GalleryGrid />

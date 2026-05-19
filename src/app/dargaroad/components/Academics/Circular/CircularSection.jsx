@@ -15,7 +15,7 @@ const CircularSection = () => {
         {/* Header */}
         <header className="mb-12 border-b border-slate-200 pb-6">
           <h1 className="text-6xl font-black text-slate-900 tracking-tighter font-primary">
-            2025
+            2025 - 2026
           </h1>
         
         </header>

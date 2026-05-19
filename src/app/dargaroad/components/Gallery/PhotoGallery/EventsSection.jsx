@@ -7,6 +7,37 @@ const EVENTS_DATA = {
   years: ['2025-2026', '2024-2025'],
   eventsByYear: {
     '2025-2026': [
+      {
+        title: "KG Graduation Ceremony",
+        id: 1,
+        size: 'large',
+        images: [
+          "/dargaroad/events/cere-1.jpg",
+          "/dargaroad/events/cere-2.jpeg",
+          "/dargaroad/events/cere-3.jpeg",
+          "/dargaroad/events/cere-4.jpg",
+          "/dargaroad/events/cere-5.jpg",
+          "/dargaroad/events/cere-6.jpg",
+          "/dargaroad/events/cere-7.jpg",
+          "/dargaroad/events/cere-8.jpg",
+          "/dargaroad/events/cere-9.jpg",
+
+         
+        ],
+       
+      },
+      {
+        title: "KG Graduation Ceremony",
+        id: 1,
+        size: 'medium',
+        images: [
+          "/dargaroad/events/kg.jpeg",
+     
+
+         
+        ],
+       
+      },
       // Row 1: Large (spans 2 cols) + Medium (1 col)
       {
         title: "Japanese Tea Ceremony @ Vels",
@@ -121,9 +152,7 @@ const EVENTS_DATA = {
           "/dargaroad/events/viji-1.png",
           "/dargaroad/events/viji-2.png",
           "/dargaroad/events/viji-3.png",
-          "/dargaroad/events/viji-4.png",
-        
-          
+          "/dargaroad/events/viji-4.png",  
         ]
       },
       // Row 1: Large (spans 2 cols) + Medium (1 col)
@@ -133,10 +162,7 @@ const EVENTS_DATA = {
         size: 'large',
         images: [
           "/dargaroad/events/nava.png",
-        
-         
         ],
-       
       },
       {
         title: "EVS Culmination",
@@ -145,8 +171,6 @@ const EVENTS_DATA = {
         images: [
           "/dargaroad/events/evs-1.png",
           "/dargaroad/events/evs-2.png",
-          "/dargaroad/events/evs-3.png",
-          "/dargaroad/events/evs-4.png",
         ]
       },
       // Row 2: Three equal small cards

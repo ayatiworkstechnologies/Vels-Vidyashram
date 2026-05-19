@@ -4,46 +4,158 @@ import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer
 
 const allScheduleData = [
   {
-    date: "10",
-    monthYear: "january, 2026",
-    title: "PTM FOR IX-XII",
+    date: "07",
+    monthYear: "February, 2026",
+    title: "PTM FOR I- VIII",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "12",
-    monthYear: "january, 2026",
-    title: "PONGAL CELEBRATION",
+    date: "07",
+    monthYear: "February, 2026",
+    title: "XII FAREWELL",
     tag: "Events",
     isHighlighted: true
   },
   {
-    date: "19",
-    monthYear: "january, 2026",
-    title: "SCHOOL REOPENS AFTER PONGAL",
+    date: "07",
+    monthYear: "February, 2026",
+    title: "KG CULMINATION 2- STD KG",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "24",
-    monthYear: "january, 2026",
-    title: "UNIT TEST - III BEGINS",
-    tag: "Exams",
+    date: "21",
+    monthYear: "February, 2026",
+    title: "STEP ACTIVITY CULMINATION DAY",
+    tag: "Events",
     isHighlighted: true
   },
   {
-    date: "26",
-    monthYear: "january, 2026",
-    title: "REPUBLIC DAY CELEBRATION",
+    date: "21",
+    monthYear: "February, 2026",
+    title: "PROFESSIONAL DEVELOPMENT VI- VIII & COCURRICULAR",
     tag: "Events",
-    isHighlighted: true
+    isHighlighted: false
   },
   {
     date: "28",
-    monthYear: "january, 2026",
-    title: "PRACTICAL EXAMS FOR XII",
+    monthYear: "February, 2026",
+    title: "FINAL OPEN DAY FOR IX & XI",
+    tag: "Events",
+    isHighlighted: true
+  },
+    {
+    date: "28",
+    monthYear: "February, 2026",
+    title: "EVS CULMINATION 2- STD I-II",
+    tag: "Events",
+    isHighlighted: false
+  },
+    {
+    date: "28",
+    monthYear: "February, 2026",
+    title: "NATIONAL SCIENCE DAYINNOVATIA/CARNIVAL",
+    tag: "Events",
+    isHighlighted: true
+  },
+      {
+    date: "04",
+    monthYear: "March, 2026",
+    title: "SCHOOL REOPENS FOR X & XII 2026-27",
+    tag: "Events",
+    isHighlighted: false
+  },
+        {
+    date: "07",
+    monthYear: "March, 2026",
+    title: "DEPARTMENT PRESENTATION -INTEGRATED/FOUNDATION COURSE",
+    tag: "Events",
+    isHighlighted: true
+  },
+          {
+    date: "14",
+    monthYear: "March, 2026",
+    title: "PROFESSIONAL DEVELOPMENT",
+    tag: "Events",
+    isHighlighted: false
+  },
+          {
+    date: "14",
+    monthYear: "March, 2026",
+    title: "KG GRADUATION DAY",
+    tag: "Events",
+    isHighlighted: true
+  },
+          {
+    date: "24",
+    monthYear: "March, 2026",
+    title: "DEPARTMENT PRESENTATION - PHYSICAL EDUCATION",
+    tag: "Events",
+    isHighlighted: false
+  },
+            {
+    date: "25",
+    monthYear: "March, 2026",
+    title: "FINAL OPEN DAY FOR KG- V",
+    tag: "Events",
+    isHighlighted: true
+  },
+  {
+    date: "27",
+    monthYear: "March, 2026",
+    title: "LAST WORKING DAY FOR KGVIII",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "27",
+    monthYear: "March, 2026",
+    title: "FINAL OPEN DAY FOR VI- VIII",
+    tag: "Events",
+    isHighlighted: true
+  },
+  {
+    date: "04",
+    monthYear: "February, 2026",
+    title: "PREBOARD X & XII ENDS",
     tag: "Exams",
     isHighlighted: false
+  },
+  {
+    date: "05",
+    monthYear: "March, 2026",
+    title: "TERM ASSESSMENT- KG STARTS",
+    tag: "Exams",
+    isHighlighted: true
+  },
+  {
+    date: "06",
+    monthYear: "March, 2026",
+    title: "TERMINAL 2 EXAM STD VI- VIII STARTS",
+    tag: "Exams",
+    isHighlighted: false
+  },
+  {
+    date: "13",
+    monthYear: "March, 2026",
+    title: "TERM ASSESSMENT- KG ENDS",
+    tag: "Exams",
+    isHighlighted: true
+  },
+  {
+    date: "13",
+    monthYear: "March, 2026",
+    title: "TERMINAL 2 EXAM STD I- VIII STARTS",
+    tag: "Exams",
+    isHighlighted: false
+  },
+  {
+    date: "18",
+    monthYear: "March, 2026",
+    title: "TERMINAL 2 EXAM STD I- VIII ENDS",
+    tag: "Exams",
+    isHighlighted: true
   }
 ];
 
@@ -90,7 +202,7 @@ export default function EventsSchedule() {
           animate={isLeftSideInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          January Events <br /> and Examinations
+           Events <br /> and Examinations
           Schedule
         </motion.h1>
         
@@ -163,7 +275,7 @@ export default function EventsSchedule() {
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Upcoming {activeTab} - January
+          Upcoming {activeTab} - February
         </motion.h2>
 
         <div className="relative max-w-2xl">

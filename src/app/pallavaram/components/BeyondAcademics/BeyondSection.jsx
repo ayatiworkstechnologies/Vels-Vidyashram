@@ -58,6 +58,12 @@ const activities = [
     images: ["/pallavaram/classical.jpg", "/pallavaram/zumba.jpg","/pallavaram/karate.jpg", "/pallavaram/Silambam.jpg", "/pallavaram/Skating.jpg"],
     color: "bg-slate-50"
   },
+     {
+    title: "Robotics",
+    description: "The school gives the learners to enhance their AI and tech expertise through practical implementation, advanced system building, and real-world innovation challenges.",
+    images: ["/pallavaram/events/robot-1.jpg", "/pallavaram/events/robot-2.jpg", "/pallavaram/events/robot.jpg", "/pallavaram/events/robot-4.jpg"],
+    color: "bg-slate-50"
+  },
 ];
 
 export default function BeyondAcademics() {

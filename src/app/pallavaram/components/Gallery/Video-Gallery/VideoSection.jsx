@@ -217,8 +217,6 @@ const VIDEO_DATA = {
  
        
     ],
- 
- 
   },
  
  testimonialSections: [

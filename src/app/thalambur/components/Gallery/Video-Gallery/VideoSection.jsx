@@ -6,9 +6,81 @@ import { Play, Quote, X, ChevronDown, Calendar, GraduationCap } from "lucide-rea
 const VIDEO_DATA = {
   videosByYear: {
     "2025 - 2026": [
+           {
+        id: 32,
+        title: "Vels Football club Inauguration",
+        thumbnail: "/thalambur/thumbnail/thum-32.jpg",
+        videoUrl: "https://www.youtube.com/embed/fPgGO-yCNWE?si=arUjBcyXwAYk-L4l"
+      },
+                 {
+        id: 33,
+        title: "No-Bag Day 2025",
+        thumbnail: "/thalambur/thumbnail/thum-33.jpg",
+        videoUrl: "https://www.youtube.com/embed/aMH9OWNBmww?si=NV_vsHSo7u4kJ3qV"
+      },
+                    {
+        id: 34,
+        title: "EVS Culmination day Grade I & II",
+        thumbnail: "/thalambur/thumbnail/thum-34.jpg",
+        videoUrl: "https://www.youtube.com/embed/sbImD_yjKJc?si=bsp0SM9GgHg75nrB"
+      },
+                      {
+        id: 35,
+        title: "KG- Culmination day 2025",
+        thumbnail: "/thalambur/thumbnail/thum-35.jpg",
+        videoUrl: "https://www.youtube.com/embed/R5KPASt5FLQ?si=SV3qgoVfWpSOP8fL"
+      },
+                        {
+        id: 36,
+        title: "Grade IX-XII field trip",
+        thumbnail: "/thalambur/thumbnail/thum-36.jpg",
+        videoUrl: "https://www.youtube.com/embed/-TvogdGuf40?si=y_OgFZaPw6IECltf"
+      },
+                         {
+        id: 37,
+        title: "Grade VI-VIII field trip",
+        thumbnail: "/thalambur/thumbnail/thum-37.jpg",
+        videoUrl: "https://www.youtube.com/embed/4zc-NoB6e-0?si=FsH4XBnWF4rUipmU"
+      },
+                          {
+        id: 38,
+        title: "Grade III-V field trip",
+        thumbnail: "/thalambur/thumbnail/thum-38.jpg",
+        videoUrl: "https://www.youtube.com/embed/eNWYoOH6jG8?si=3hDNvwA6qyG3kPZS"
+      },
+                           {
+        id: 39,
+        title: "Diwali celebration",
+        thumbnail: "/thalambur/thumbnail/thum-39.jpg",
+        videoUrl: "https://www.youtube.com/embed/wmZ2yCDQuhs?si=wgnxZliIXMu07eLY"
+      },
+                            {
+        id: 40,
+        title: "Happy Vidyarambham",
+        thumbnail: "/thalambur/thumbnail/thum-40.jpg",
+        videoUrl: "https://www.youtube.com/embed/Lw_NpnD95EE?si=gdyUF6iXHwlEMP65"
+      },
+                               {
+        id: 41,
+        title: "Innovatia 2026",
+        thumbnail: "/thalambur/thumbnail/thum-41.jpg",
+        videoUrl: "https://www.youtube.com/embed/PcfIEJ_JoAo?si=NefpMegsrnay2_R1"
+      },
+                               {
+        id: 42,
+        title: "Pre-KG Culmination Day",
+        thumbnail: "/thalambur/thumbnail/thum-42.jpg",
+        videoUrl: "https://www.youtube.com/embed/4aP6FFX0oYM?si=fhOteFxbfrNOF7WK"
+      },
+                               {
+        id: 43,
+        title: "LKG Culmination Day",
+        thumbnail: "/thalambur/thumbnail/thum-43.jpg",
+        videoUrl: "https://www.youtube.com/embed/Cwfwm2u9dTI?si=6vqeoPy11hLatdL4"
+      },
       {
         id: 1,
-        title: "Independence day celebration ",
+        title: "Independence day celebration",
         thumbnail: "/thalambur/thumbnail/thum-1.jpg",
         videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
       },

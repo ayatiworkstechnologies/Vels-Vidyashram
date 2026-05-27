@@ -119,7 +119,7 @@ export default function Header() {
 
               {/* Other Campus - Desktop */}
               <div className="relative group hidden lg:block">
-                <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
+                <button className="bg-white text-[#2B158F] px-3 sm:px-4 py-1 rounded-full font-medium text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition">
                   Other Campus
                 </button>
                 <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">

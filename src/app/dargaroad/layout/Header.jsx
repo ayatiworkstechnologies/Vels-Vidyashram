@@ -110,7 +110,7 @@ export default function Header() {
 
             {/* DESKTOP DROPDOWN */}
             <div className="relative group hidden lg:block">
-              <button className="bg-white text-[#2B158F] px-4 py-1 rounded-full font-medium text-xs hover:bg-gray-100 transition">
+              <button className="whitespace-nowrap rounded-full bg-white px-3 py-1 text-[10px] sm:text-xs font-bold text-[#2B158F] transition hover:bg-gray-100 sm:px-4">
                 Other Campus
               </button>
               <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">

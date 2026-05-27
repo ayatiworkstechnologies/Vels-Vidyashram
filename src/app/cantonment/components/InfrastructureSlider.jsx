@@ -170,7 +170,7 @@ export default function InfrastructureSlider() {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+                  
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">
                         <img src={slide.icon} alt={slide.title} className="w-12 h-12 mb-6" />

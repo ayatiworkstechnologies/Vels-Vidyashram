@@ -14,7 +14,6 @@ export default function VelsStaticOverlaySection() {
   useEffect(() => {
     const observerOptions = { threshold: 0.2 };
 
-    // triggerOnce logic: we only update the state if it's currently false
     const handleIntersect = (setter) => ([entry]) => {
       if (entry.isIntersecting) {
         setter(true);
@@ -48,8 +47,7 @@ export default function VelsStaticOverlaySection() {
           }`}>
             Vels Vidyashram Thalambur
           </h2>
-          <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-secondary text-justify
-          ">
+          <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-secondary text-justify">
             {[
               "Established in 2014, Vels Vidyashram Thalambur aims to provide the High-Quality Education to its students. Within a short span of time, the school has been recognized as one of the best CBSE schools in OMR offering a 360-degree learning environment.",
               "We follow an integrated CBSE syllabus and innovative teaching methodologies that are student-friendly and engaging. This further facilitates the students' ability to develop practical skills through knowledge and understanding. We also instill positive values in our children while nurturing their creativity and analytical abilities.",
@@ -70,22 +68,22 @@ export default function VelsStaticOverlaySection() {
           </div>
         </div>
 
-        {/* RIGHT IMAGE (Desktop Overlay + Mobile Stack) */}
-        <div className={`relative w-full h-[350px] sm:h-[450px] lg:h-full transition-all duration-1000 delay-300 mt-8 lg:mt-0 ${
+        {/* RIGHT IMAGE (Curved Corners Grid) */}
+        <div className={`relative w-full h-[350px] sm:h-[450px] lg:h-[550px] transition-all duration-1000 delay-300 mt-8 lg:mt-0 ${
           topVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-95'
         }`}>
-          <div className="lg:absolute top-0 right-0 w-full lg:w-[400px] h-full lg:h-[550px] rounded-2xl overflow-hidden shadow-2xl z-30 lg:translate-y-10">
+          <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/thalambur/card-thala.png"
+              src="/thalambur/vels-thalambur.png"
               alt="Students"
               fill
-              className="object-cover hover:scale-110 transition-transform duration-700"
+              className="object-cover rounded-2xl hover:scale-110 transition-transform duration-700"
             />
           </div>
         </div>
       </div>
 
-      {/* ================= CENTER BANNER (The Base) ================= */}
+      {/* ================= CENTER BANNER ================= */}
       <div ref={bannerRef} className={`relative w-full h-[350px] md:h-[550px] z-0 transition-all duration-1000 ${
         bannerVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
       }`}>
@@ -105,18 +103,18 @@ export default function VelsStaticOverlaySection() {
       </div>
 
       {/* ================= BOTTOM SECTION ================= */}
-      <div ref={bottomRef} className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start relative z-10 pt-16 flex flex-col-reverse lg:grid">
+      <div ref={bottomRef} className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start relative z-10 pt-16">
         
-        {/* LEFT IMAGE (Desktop Overlay + Mobile Stack) */}
-        <div className={`relative w-full h-[350px] sm:h-[450px] lg:h-full transition-all duration-1000 delay-200 mt-10 lg:mt-0 ${
+        {/* LEFT IMAGE (Curved Corners Grid) */}
+        <div className={`relative w-full h-[350px] sm:h-[450px] lg:h-[580px] transition-all duration-1000 delay-200 mt-10 lg:mt-0 ${
           bottomVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-20 scale-95'
         }`}>
-          <div className="lg:absolute bottom-0 left-0 w-full lg:w-[400px] h-full lg:h-[580px] rounded-2xl overflow-hidden shadow-2xl z-30 lg:-translate-y-10">
+          <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/thalambur/play.png"
+              src="/thalambur/why-vels.png"
               alt="Classroom"
               fill
-              className="object-cover hover:scale-110 transition-transform duration-700"
+              className="object-cover rounded-2xl hover:scale-110 transition-transform duration-700"
             />
           </div>
         </div>

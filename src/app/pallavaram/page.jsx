@@ -1,6 +1,6 @@
 import OurMottoSection from "../pallavaram/components/OurMottoSection";
 import BannerSlider from "./components/BannerSection";
-import EventsSchedule from "./components/EventSection";
+import EventsSchedule from "./components/Home/EventSection";
 import GalleryGrid from "./components/GallerySection";
 import InfrastructureSlider from "./components/InfrastructureSlider";
 import LetterSection from "./components/LetterSection";
@@ -46,7 +46,7 @@ export default function Pallavaram() {
       <OurMottoSection />
       <InfrastructureSlider />
       <GalleryGrid />
-      <EventsSchedule />
+   
      
     </main>
   );

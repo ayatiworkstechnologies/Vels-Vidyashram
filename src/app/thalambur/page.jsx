@@ -5,7 +5,7 @@ import InfrastructureSlider from "./components/InfrastructureSlider";
 
 import VelsThalamburSection from "./components/VelsThalamburSection";
 import GalleryGrid from "./components/GallerySection";
-import EventsSchedule from "./components/EventSection";
+import EventsSchedule from "./components/Home/EventSection";
 import MapSection from "./components/MapSection";
 import InspireSection from "./components/InspireSection";
 import AboutSchool from "./components/AboutSchool";
@@ -52,7 +52,7 @@ export default function Thalambur() {
       <OurMottoSection />
       <InfrastructureSlider />
       <GalleryGrid />
-      <EventsSchedule />
+     
       <MapSection />
     </main>
   );

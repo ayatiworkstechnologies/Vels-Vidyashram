@@ -11,42 +11,42 @@ const slides = [
     id: 1,
     title: "Infrastructure",
     description: "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities. Built to support comfort, focus, and growth at every stage.",
-    image: "/pallavaram/infrastructure.png",
+    image: "/pallavaram/Infrastructure-3.png",
     icon: "/thalambur/fav-6.png",
   },
   {
     id: 2,
     title: "Academics",
     description: "Strong academic foundation with innovative teaching methods and individual attention for every student.",
-    image: "/pallavaram/academic-1.png",
+    image: "/pallavaram/Academics-3.png",
     icon: "/thalambur/fav-2.png",
   },
   {
     id: 3,
     title: "Activities",
     description: "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/pallavaram/activities-1.png",
+    image: "/pallavaram/Activities-3.png",
     icon: "/thalambur/fav-3.png",
   },
   {
     id: 4,
     title: "Technology",
     description: "Modern technology integrated into classrooms with smart boards, computer labs, and digital learning resources for enhanced education.",
-    image: "/pallavaram/technology.png",
+    image: "/pallavaram/Technology-3.png",
     icon: "/thalambur/fav-4.png",
   },
   {
     id: 5,
     title: "Community",
     description: "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/pallavaram/community.png",
+    image: "/pallavaram/Community-3.png",
     icon: "/thalambur/fav-5.png",
   },
   {
     id: 6,
     title: "Excellence",
     description: "Commitment to excellence in all aspects of education, preparing students for success in their future endeavors and careers.",
-    image: "/pallavaram/excellence.png",
+    image: "/pallavaram/Excellence-3.png",
     icon: "/thalambur/fav-1.png",
   },
 ];
@@ -177,7 +177,7 @@ export default function InfrastructureSlider() {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+                  
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">
                         <img src={slide.icon} alt={slide.title} className="w-12 h-12 mb-6" />

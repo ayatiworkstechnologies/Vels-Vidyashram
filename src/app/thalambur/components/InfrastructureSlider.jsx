@@ -11,42 +11,42 @@ const slides = [
     id: 1,
     title: "Infrastructure",
     description: "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities.",
-    image: "/thalambur/infra-1.png",
+    image: "/thalambur/Infrastructure-1.png",
     icon: "/thalambur/fav-6.png",
   },
   {
     id: 2,
     title: "Curriculum",
     description: "Comprehensive curriculum that balances academics, creativity, and critical thinking aligned with global standards.",
-    image: "/thalambur/curriculum-1.png",
+    image: "/thalambur/Curriculum-1.png",
     icon: "/thalambur/fav-2.png",
   },
   {
     id: 3,
     title: "Activities",
     description: "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/thalambur/activity-2.png",
+    image: "/thalambur/act-1.png",
     icon: "/thalambur/fav-3.png",
   },
   {
     id: 4,
     title: "Athletics",
     description: "State-of-the-art sports facilities and a strong athletics program that promotes physical fitness and sportsmanship.",
-    image: "/thalambur/athletic-1.png",
+    image: "/thalambur/Athletics-1.png",
     icon: "/thalambur/fav-4.png",
   },
   {
     id: 5,
     title: "Step",
     description: "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/thalambur/step-1.png",
+    image: "/thalambur/STEP-1.png",
     icon: "/thalambur/fav-5.png",
   },
   {
     id: 6,
     title: "Laboratories",
     description: "Well-equipped science and computer labs that provide hands-on learning experiences and foster innovation.",
-    image: "/thalambur/lab-1.png",
+    image: "/thalambur/Laboratories-1.png",
     icon: "/thalambur/fav-1.png",
   },
 ];
@@ -182,7 +182,7 @@ export default function InfrastructureSlider() {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+                    
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">
                         <img src={slide.icon} alt={slide.title} className="w-12 h-12 mb-6" />

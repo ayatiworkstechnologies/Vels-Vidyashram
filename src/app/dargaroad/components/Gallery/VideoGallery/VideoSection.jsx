@@ -13,7 +13,7 @@ const VIDEO_DATA = {
         videoUrl: "https://www.youtube.com/embed/gUOEBDkTBeU?si=3L8ESXgighm7Qhtt"
       },
       
- {
+     {
         id: 19,
         title: "KG Graduation Ceremony",
         thumbnail: "/dargaroad/thumbnail/thum-19.jpg",

@@ -81,10 +81,10 @@ export default function VelsDargaroad() {
           </ul>
         </div>
 
-        {/* RIGHT OVERLAPPING IMAGE */}
+        {/* RIGHT IMAGE */}
         <div className="relative h-full hidden lg:block">
           <div
-            className={`absolute top-0 right-0 w-[400px] h-[550px] rounded-2xl overflow-hidden shadow-2xl z-30 translate-y-10 transition-all duration-1000 delay-300 ${
+            className={`w-[400px] h-[550px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-1000 delay-300 ${
               topVisible
                 ? "opacity-100 translate-x-0 scale-100"
                 : "opacity-0 translate-x-20 scale-95"
@@ -134,7 +134,7 @@ export default function VelsDargaroad() {
         {/* LEFT IMAGE */}
         <div className="relative h-full hidden lg:block">
           <div
-            className={`absolute bottom-0 left-0 w-[400px] h-[580px] rounded-2xl overflow-hidden shadow-2xl z-30 -translate-y-10 transition-all duration-1000 delay-200 ${
+            className={`w-[400px] h-[580px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-1000 delay-200 ${
               bottomVisible
                 ? "opacity-100 translate-x-0 scale-100"
                 : "opacity-0 -translate-x-20 scale-95"
@@ -152,7 +152,7 @@ export default function VelsDargaroad() {
         {/* RIGHT CONTENT */}
         <div className="lg:pl-10">
           <h3
-            className={`text-3xl font-primary font-semibold mb-6 text-gray-900 leading-tight transition-all duration-1000 ${
+            className={`text-3xl font-primary font-semibold mb-6 text-gray-990 leading-tight transition-all duration-1000 ${
               bottomVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-10"

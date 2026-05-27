@@ -4,6 +4,7 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import FloatingActions from "./layout/FloatingIcons";
 import Modal from './layout/modals';
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const geistSans = Geist({
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
          <Modal />
         <FloatingActions />
         {children}
+        <ScrollToTop />
       </body>
        <Footer />
     </html>

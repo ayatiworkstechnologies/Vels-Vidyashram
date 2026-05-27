@@ -45,7 +45,7 @@ export default function InspireSection() {
         >
           <div className="relative w-[260px] h-[220px] xl:w-[350px] xl:h-[300px] rounded-[32px] overflow-hidden shadow-2xl rotate-[-3deg] hover:rotate-[-1deg] hover:scale-105 transition-transform duration-500">
             <Image
-              src="/thalambur/in-1.png"
+              src="/thalambur/inspire-1.png"
               alt="Students learning"
               fill
               className="object-cover"
@@ -100,14 +100,14 @@ export default function InspireSection() {
               ? 'opacity-100 translate-y-0 scale-100' 
               : 'opacity-0 translate-y-10 scale-90'
           }`}>
-            <Image src="/thalambur/in-1.png" alt="Students" fill className="object-cover" />
+            <Image src="/thalambur/inspire-1.png" alt="Students" fill className="object-cover" />
           </div>
           <div className={`relative w-32 h-32 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-xl mt-6 transition-all duration-1000 delay-500 ${
             isVisible 
               ? 'opacity-100 translate-y-0 scale-100' 
               : 'opacity-0 translate-y-10 scale-90'
           }`}>
-            <Image src="/thalambur/in-2.png" alt="Classroom" fill className="object-cover" />
+            <Image src="/thalambur/inspire-2.png" alt="Classroom" fill className="object-cover" />
           </div>
         </div>
 
@@ -121,7 +121,7 @@ export default function InspireSection() {
         >
           <div className="relative w-[260px] h-[220px] xl:w-[350px] xl:h-[300px] rounded-[32px] overflow-hidden shadow-2xl rotate-[3deg] hover:rotate-[1deg] hover:scale-105 transition-transform duration-500">
             <Image
-              src="/thalambur/in-2.png"
+              src="/thalambur/inspire-2.png"
               alt="Students classroom"
               fill
               className="object-cover"

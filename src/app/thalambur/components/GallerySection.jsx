@@ -1,125 +1,174 @@
 "use client";
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const galleryItems = [
-  { id: 1, title: "Vels Football Club Inauguration", description: "", img: "/thalambur/vels-football-club-inauguration.png" },
-  { id: 2, title: "Awards", description: "", img: "/thalambur/awards.png" },
-  { id: 3, title: "Laboratory", description: "", img: "/thalambur/laboratory.png" },
-  { id: 4, title: "Activities", description: "", img: "/thalambur/event.png" },
-  { id: 5, title: "Sports", description: "", img: "/thalambur/sports.png" },
+  {
+    id: 1,
+    title: "Vels Football Club Inauguration",
+    description: "",
+    img: "/thalambur/vels-football-club-inauguration.png",
+  },
+  { id: 2, title: "Awards", description: "", img: "/thalambur/awards-3.png" },
+  { id: 3, title: "Laboratory", description: "", img: "/thalambur/lab-3.png" },
+  { id: 4, title: "Activities", description: "", img: "/thalambur/activities-3.png" },
+  { id: 5, title: "Sports", description: "", img: "/thalambur/sports-3.png" },
   { id: 6, title: "Computer Lab", description: "", img: "/thalambur/computer-lab.png" },
 ];
 
 export default function GalleryGrid() {
   return (
-    <section className="py-12 md:py-20 bg-white px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 md:mb-16">
-          <span className="bg-orange-100 text-orange-600 px-3 py-1 font-primary rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
-            Gallery
-          </span>
-          <h2 className="text-3xl md:text-4xl font-secondary font-bold mt-4">Life at School</h2>
-          <p className="text-gray-500 mt-2 font-secondary text-sm md:text-base">
-            Snapshots of learning, events, and joyful moments.
-          </p>
-        </div>
+    <>
+      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 text-center md:mb-16">
+            <span className="rounded-full bg-orange-100 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-orange-600 md:text-xs">
+              Gallery
+            </span>
 
-        {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {galleryItems.map((item) => (
-            <RevealCard key={item.id} item={item} />
-          ))}
+            <h2 className="mt-4 font-sans text-3xl font-bold text-gray-900 md:text-4xl">
+              Life at School
+            </h2>
+
+            <p className="mt-2 font-sans text-sm text-gray-500 md:text-base">
+              Snapshots of learning, events, and joyful moments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10">
+            {galleryItems.map((item) => (
+              <RevealCard key={item.id} item={item} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="border-t border-gray-100 bg-gray-50 px-4 py-12 md:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl text-center">
+          <h2 className="mb-4 font-sans text-3xl font-bold text-gray-900 md:text-4xl">
+            Discover More
+          </h2>
+
+          <p className="mx-auto mb-8 max-w-md font-sans text-sm text-gray-600 md:text-base">
+            Explore our upcoming events to see more of our vibrant school life.
+          </p>
+
+          <Link
+            href="/thalambur/eventsection"
+            className="inline-flex min-w-[200px] cursor-pointer items-center justify-center rounded-full bg-[#2d3a9d] px-8 py-4 font-sans text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-blue-800 hover:shadow-lg md:text-base"
+          >
+            Upcoming Events
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
 
 function RevealCard({ item }) {
   return (
-    <motion.div
-      initial="rest"
-      whileHover="hover"
-      whileTap="hover" // Enables the reveal on mobile tap
-      animate="rest"
-      className="relative h-[350px] sm:h-[400px] md:h-[480px] w-full bg-white overflow-hidden cursor-pointer font-primary border border-gray-100 rounded-xl shadow-sm"
-    >
-      {/* 1. THE CONTENT BOX */}
-      <motion.div
-        className="absolute top-0 left-0 w-full bg-tertiary text-white p-6 md:p-8 flex flex-col justify-center z-20"
-        style={{ height: "50%" }}
-        variants={{
-          rest: { y: "-100%" },
-          hover: { y: "0%" }
-        }}
-        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+    <Link href="/thalambur/photo-gallery" className="block">
+      <motion.article
+        initial="rest"
+        animate="rest"
+        whileHover="hover"
+        whileTap="hover"
+        className="group relative h-[340px] w-full cursor-pointer overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm sm:h-[380px] md:h-[440px] lg:h-[480px]"
       >
-        <motion.h3 
-          className="text-white text-xl font-primary md:text-2xl font-bold"
-          variants={{ rest: { opacity: 0, y: -10 }, hover: { opacity: 1, y: 0 } }}
-        >
-          {item.title}
-        </motion.h3>
-        <motion.p 
-          className="text-gray-300 text-xs md:text-sm mt-2"
-          variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
-        >
-          {item.description}
-        </motion.p>
-      </motion.div>
-
-      {/* 2. THE IMAGE */}
-      <motion.div
-        className="absolute inset-0 z-10 overflow-hidden"
-        variants={{
-          rest: { 
-            width: "100%", 
-            height: "100%", 
-            top: "0%", 
-            left: "0%",
-          },
-          hover: { 
-            width: "45%", 
-            height: "40%", 
-            top: "55%", 
-            left: "5%",
-          }
-        }}
-        transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-      >
-        <img
-          src={item.img}
-          alt={item.title}
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
-
-      {/* 3. THE "MORE" BUTTON */}
-      <Link
-        href="/thalambur/photo-gallery"
-        className="absolute bottom-6 right-6 z-30 md:bottom-12 md:right-10"
-      >
+        {/* Overlay Content */}
         <motion.div
-          className="flex items-center gap-2 group"
+          className="absolute left-0 top-0 z-20 flex h-[48%] w-full flex-col justify-center bg-[#2d3a9d] p-5 text-white sm:p-6 md:p-8"
           variants={{
-            rest: { opacity: 0, x: 10 },
+            rest: { y: "-100%" },
+            hover: { y: "0%" },
+          }}
+          transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
+        >
+          <motion.h3
+            className="font-sans text-xl font-bold text-white md:text-2xl"
+            variants={{
+              rest: { opacity: 0, y: -10 },
+              hover: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {item.title}
+          </motion.h3>
+
+          {item.description && (
+            <motion.p
+              className="mt-2 text-xs text-gray-200 md:text-sm"
+              variants={{
+                rest: { opacity: 0 },
+                hover: { opacity: 1 },
+              }}
+              transition={{ duration: 0.3, delay: 0.08 }}
+            >
+              {item.description}
+            </motion.p>
+          )}
+        </motion.div>
+
+        {/* Image */}
+        <motion.div
+          className="absolute inset-0 z-10 overflow-hidden rounded-xl"
+          variants={{
+            rest: {
+              width: "100%",
+              height: "100%",
+              top: "0%",
+              left: "0%",
+              borderRadius: "12px",
+            },
+            hover: {
+              width: "46%",
+              height: "38%",
+              top: "56%",
+              left: "5%",
+              borderRadius: "14px",
+            },
+          }}
+          transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+        >
+          <img
+            src={item.img}
+            alt={item.title}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+        </motion.div>
+
+        {/* Mobile Visible Title + More */}
+        <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/75 via-black/25 to-transparent p-5 md:hidden">
+          <h3 className="font-sans text-lg font-bold leading-snug text-white">
+            {item.title}
+          </h3>
+
+          <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-sans text-[10px] font-black uppercase tracking-[0.22em] text-gray-900 shadow-sm">
+            More <span className="text-base leading-none">↗</span>
+          </div>
+        </div>
+
+        {/* Desktop / Tablet More Button */}
+        <motion.div
+          className="absolute bottom-6 right-6 z-30 hidden items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-sm md:bottom-10 md:right-8 md:flex md:bg-transparent md:p-0 md:shadow-none"
+          variants={{
+            rest: { opacity: 0, x: 12 },
             hover: { opacity: 1, x: 0 },
           }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.35, delay: 0.18 }}
         >
-          <span className="text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] text-gray-900 font-secondary">
-            MORE
+          <span className="font-sans text-[10px] font-black uppercase tracking-[0.3em] text-gray-900">
+            More
           </span>
-          <span className="text-lg md:text-xl text-gray-900 transition-transform duration-300">
-            ↗
-          </span>
-        </motion.div>
-      </Link>
 
-      {/* 4. BACKGROUND FILLER */}
-      <div className="absolute inset-0 bg-white -z-10" />
-    </motion.div>
+          <span className="text-xl text-gray-900">↗</span>
+        </motion.div>
+
+        <div className="absolute inset-0 -z-10 bg-gray-50/50" />
+      </motion.article>
+    </Link>
   );
 }

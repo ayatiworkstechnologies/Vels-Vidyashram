@@ -1,253 +1,304 @@
 "use client";
 
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
-    tag: "Parent Voice",
-    text: `Project day at Vels was a wonderful event for the kids. It was fun filled learning experience and really a great initiative by Vels Team. My child is attending for the third consecutive year to showcase her talents. The carnival is great experience for children, every time the event is more and more innovative. Keep it up Vels.`,
+    tag: "Parent",
+    quote:
+      "Project day at Vels was a wonderful event for the kids. It was fun filled learning experience and really a great initiative by Vels Team. My child is attending for the third consecutive year to showcase her talents. The carnival is great experience for children, every time the event is more and more innovative. Keep it up Vels.",
     name: "V Senthil Kumaran",
     role: "Father of Jeshna IA.",
-    cardBg: "bg-[#f8dede]",
-    badgeBg: "bg-[#f39c83]",
-    rotate: "-rotate-[8deg]",
-    position: "left-[-12px] top-[82px]",
+    cardBg: "#f8dede",
+    badgeBg: "#f39c83",
+    badgeText: "#fff"
   },
   {
-    tag: "School Event",
-    text: `EVS culmination day. It has been a really extravagant display of children organising activities. It is happy to see our child deliberating her inner energy and making it abundant. As this is happening on a regular basis, a Big Wow and sincere gratitude to the organisation & teachers for organising it. Thanks a trillion.`,
+    tag: "Parent",
+    quote:
+      "EVS culmination day. It has been a really extravagant display of children organising activities. It is happy to see our child deliberating her inner energy and making it abundant. As this is happening on a regular basis, a Big Wow and sincere gratitude to the organisation & teachers for organising it. Thanks a trillion.",
     name: "Madhusudhan",
     role: "Father of Varshini 1B",
-    cardBg: "bg-[#f7efb9]",
-    badgeBg: "bg-[#f08aa8]",
-    rotate: "rotate-[7deg]",
-    position: "left-[-4px] top-[165px]",
+    cardBg: "#f7efb9",
+    badgeBg: "#f08aa8",
+    badgeText: "#fff"
   },
   {
-    tag: "Observation Week",
-    text: `Parent observation week! It is a very nice initiative to bring parents to school to watch us how the class is being conducted for the kids. It was a great experience for us as a parent to know the concept of teaching in school. The practical problem, understanding methods were really unique and excellent. It helps the child to understand the concept. We are glad to be a part of Vels.`,
+    tag: "Parent",
+    quote:
+      "Parent observation week! It is a very nice initiative to bring parents to school to watch us how the class is being conducted for the kids. It was a great experience for us as a parent to know the concept of teaching in school. The practical problem, understanding methods were really unique and excellent. It helps the child to understand the concept. We are glad to be a part of Vels.",
     name: "Madhusudhan",
     role: "Father of Varsha 11B",
-    cardBg: "bg-[#ead0f3]",
-    badgeBg: "bg-[#bb6cd7]",
-    rotate: "-rotate-[6deg]",
-    position: "right-[-12px] top-[100px]",
+    cardBg: "#ead0f3",
+    badgeBg: "#bb6cd7",
+    badgeText: "#fff"
   },
 ];
 
-export default function TestimonialSection() {
+export default function TestimonialsBento() {
+  const [active, setActive] = useState(1);
+  const [animating, setAnimating] = useState(false);
+  const total = testimonials.length;
+  const intervalRef = useRef(null);
+
+  const startAutoPlay = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActive((a) => (a + 1) % total);
+    }, 4000); // Slightly longer interval to allow reading full text
+  };
+
+  const goTo = (idx) => {
+    if (animating || idx === active) return;
+    setAnimating(true);
+    clearInterval(intervalRef.current);
+    setTimeout(() => {
+      setActive(idx);
+      setAnimating(false);
+      startAutoPlay();
+    }, 400);
+  };
+
+  const prev = () => goTo((active - 1 + total) % total);
+  const next = () => goTo((active + 1) % total);
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const getPosition = (idx) => {
+    if (idx === active) return "center";
+    if (idx === (active - 1 + total) % total) return "left";
+    return "right";
+  };
+
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
-      {/* soft abstract background */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute -top-16 left-0 h-56 w-56 rounded-full bg-white/40 blur-3xl" />
-        <div className="absolute top-20 right-10 h-72 w-72 rounded-full bg-white/30 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-white/20 blur-3xl" />
+    <section
+      className="relative overflow-hidden py-24 px-4"
+      style={{
+        background:
+          "linear-gradient(145deg, #0a1128 0%, #0e1a3a 50%, #080f25 100%)",
+      }}
+    >
+      {/* ── HEADING ── */}
+      <div className="relative z-10 mb-12 text-center">
+        <p className="mb-3 text-xs font-bold tracking-[0.25em] uppercase text-[#ff7a00]">
+          Testimonials
+        </p>
+        <h2
+          className="text-4xl font-black text-white sm:text-5xl"
+          style={{
+            fontFamily: "'Syne', sans-serif",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Explore the students experience
+        </h2>
+        
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        {/* heading */}
-        <div className="mb-12 text-center sm:mb-14">
-          <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.22em] text-[#ff7a00]">
-            Testimonials
-          </p>
-          <h2 className="text-3xl font-extrabold leading-tight text-[#2b1546] sm:text-4xl md:text-5xl">
-            Explore the students experience
-          </h2>
-        </div>
+      {/* ── CARD STACK ── */}
+      <div
+        className="relative z-10 flex items-center justify-center max-w-full overflow-visible"
+        style={{ height: 480 }}
+      >
+        {testimonials.map((t, i) => {
+          const pos = getPosition(i);
+          const isCenter = pos === "center";
+          const isLeft = pos === "left";
 
-        {/* desktop / tablet */}
-        <div className="hidden gap-8 md:grid md:grid-cols-2 xl:grid-cols-3">
-          {/* Column 1 */}
-          <div className="relative mx-auto flex w-full max-w-[320px] justify-center">
-            <div className="relative h-[560px] w-[230px] rounded-[28px] border-[4px] border-[#7a3ca3] bg-[#ead6ee] shadow-[0_12px_30px_rgba(92,37,133,0.12)]">
-              <div className="absolute inset-[10px] rounded-[22px] border-2 border-dashed border-[#dcbfe3]" />
+          const translateX = isCenter ? "0px" : isLeft ? "-300px" : "300px";
+          const scale = isCenter ? 1 : 0.82;
+          const zIndex = isCenter ? 30 : 10;
+          const opacity = isCenter ? 1 : 0.35;
+          const brightness = isCenter ? 1 : 0.6;
 
-              <div
-                className={`absolute z-20 w-[235px] rounded-[22px] border-[3px] border-[#f3dfe3] p-4 shadow-xl ${testimonials[0].cardBg} ${testimonials[0].rotate} ${testimonials[0].position}`}
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span
-                    className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold text-white ${testimonials[0].badgeBg}`}
-                  >
-                    {testimonials[0].tag}
-                  </span>
-                  <span className="h-6 w-6 rounded-full bg-white/70" />
-                </div>
-
-                <div className="rounded-[14px] bg-white/90 px-3 py-2 text-[12px] leading-relaxed text-[#3d3550] shadow-sm">
-                  {testimonials[0].text}
-                </div>
-
-                <div className="mt-4">
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-[#8c6d92]">
-                    Parent
-                  </p>
-                  <h3 className="mt-1 text-lg font-extrabold leading-tight text-[#2b1546]">
-                    {testimonials[0].name}
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-[#5d4966]">
-                    {testimonials[0].role}
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 z-10 mx-auto w-[210px] rounded-[22px] border-[4px] border-[#7a3ca3] bg-[#ff5b3e] px-4 py-7 text-center shadow-lg">
-                <div className="text-2xl font-extrabold text-white">
-                  Happy Parents
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2 */}
-          <div className="relative mx-auto flex w-full max-w-[320px] justify-center">
-            <div className="relative h-[560px] w-[230px] rounded-[28px] border-[4px] border-[#7a3ca3] bg-[#ead6ee] shadow-[0_12px_30px_rgba(92,37,133,0.12)]">
-              <div className="absolute inset-[10px] rounded-[22px] border-2 border-dashed border-[#dcbfe3]" />
-
-              <div className="absolute left-0 right-0 top-0 z-10 mx-auto w-[210px] rounded-[22px] border-[4px] border-[#7a3ca3] bg-[#f7e464] px-5 py-8 text-center shadow-lg">
-                <div className="text-[20px] font-extrabold leading-tight text-[#5d3b00]">
-                  Every moment
-                  <br />
-                  matters here
-                </div>
-              </div>
-
-              <div
-                className={`absolute z-20 w-[238px] rounded-[22px] border-[3px] border-[#efe6b5] p-4 shadow-xl ${testimonials[1].cardBg} ${testimonials[1].rotate} ${testimonials[1].position}`}
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span
-                    className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold text-white ${testimonials[1].badgeBg}`}
-                  >
-                    {testimonials[1].tag}
-                  </span>
-                  <span className="h-6 w-6 rounded-full bg-white/70" />
-                </div>
-
-                <div className="rounded-[14px] bg-white/90 px-3 py-2 text-[12px] leading-relaxed text-[#3d3550] shadow-sm">
-                  {testimonials[1].text}
-                </div>
-
-                <div className="mt-4">
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-[#8c6d92]">
-                    Parent
-                  </p>
-                  <h3 className="mt-1 text-lg font-extrabold leading-tight text-[#2b1546]">
-                    {testimonials[1].name}
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-[#5d4966]">
-                    {testimonials[1].role}
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 z-10 mx-auto w-[210px] rounded-[22px] border-[4px] border-[#7a3ca3] bg-[#efdff0] px-4 py-7 text-center shadow-lg">
-                <div className="text-lg font-bold text-[#c19acb]">
-                  Trusted Feedback
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 3 */}
-          <div className="relative mx-auto flex w-full max-w-[320px] justify-center md:col-span-2 xl:col-span-1">
-            <div className="relative h-[560px] w-[230px] rounded-[28px] border-[4px] border-[#7a3ca3] bg-[#ead6ee] shadow-[0_12px_30px_rgba(92,37,133,0.12)]">
-              <div className="absolute inset-[10px] rounded-[22px] border-2 border-dashed border-[#dcbfe3]" />
-
-              <div
-                className={`absolute z-20 w-[235px] rounded-[22px] border-[3px] border-[#eadcf6] p-4 shadow-xl ${testimonials[2].cardBg} ${testimonials[2].rotate} ${testimonials[2].position}`}
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span
-                    className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold text-white ${testimonials[2].badgeBg}`}
-                  >
-                    {testimonials[2].tag}
-                  </span>
-                  <span className="h-6 w-6 rounded-full bg-white/70" />
-                </div>
-
-                <div className="rounded-[14px] bg-white/90 px-3 py-2 text-[12px] leading-relaxed text-[#3d3550] shadow-sm">
-                  {testimonials[2].text}
-                </div>
-
-                <div className="mt-4">
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-[#8c6d92]">
-                    Parent
-                  </p>
-                  <h3 className="mt-1 text-lg font-extrabold leading-tight text-[#2b1546]">
-                    {testimonials[2].name}
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-[#5d4966]">
-                    {testimonials[2].role}
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 z-10 mx-auto w-[210px] rounded-[22px] border-[4px] border-[#7a3ca3] bg-[#ef78e8] px-4 py-7 text-center shadow-lg">
-                <div className="text-[20px] font-extrabold leading-tight text-[#5b1659]">
-                  Wherever
-                  <br />
-                  you are
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* mobile */}
-        <div className="grid gap-6 md:hidden">
-          {testimonials.map((item, index) => (
+          return (
             <div
-              key={index}
-              className="rounded-[28px] border-[4px] border-[#7a3ca3] bg-[#ead6ee] p-3 shadow-[0_12px_30px_rgba(92,37,133,0.12)]"
+              key={i}
+              onClick={() => !isCenter && goTo(i)}
+              className="w-[320px] sm:w-[380px]"
+              style={{
+                position: "absolute",
+                transform: `translateX(${translateX}) scale(${scale})`,
+                zIndex,
+                opacity,
+                filter: `brightness(${brightness})`,
+                transition: "all 0.55s cubic-bezier(0.4,0,0.2,1)",
+                cursor: isCenter ? "default" : "pointer",
+                borderRadius: 24,
+                overflow: "hidden",
+                background: t.cardBg,
+                padding: "28px 24px",
+                boxShadow: isCenter
+                  ? "0 30px 60px rgba(0,0,0,0.4)"
+                  : "0 10px 20px rgba(0,0,0,0.2)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                minHeight: "380px"
+              }}
             >
-              <div className="rounded-[20px] border-2 border-dashed border-[#dcbfe3] p-3">
-                <div
-                  className={`rounded-[22px] p-4 shadow-lg ${
-                    index === 0
-                      ? "bg-[#f8dede]"
-                      : index === 1
-                      ? "bg-[#f7efb9]"
-                      : "bg-[#ead0f3]"
-                  }`}
+              {/* Card Top: Tag Badge */}
+              <div style={{ marginBottom: 20 }}>
+                <span
+                  style={{
+                    background: t.badgeBg,
+                    color: t.badgeText,
+                    borderRadius: 999,
+                    padding: "6px 14px",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    display: "inline-block",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
+                  }}
                 >
-                  <div className="mb-3 flex items-center justify-between">
-                    <span
-                      className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold text-white ${
-                        index === 0
-                          ? "bg-[#f39c83]"
-                          : index === 1
-                          ? "bg-[#f08aa8]"
-                          : "bg-[#bb6cd7]"
-                      }`}
-                    >
-                      {item.tag}
-                    </span>
-                    <span className="h-6 w-6 rounded-full bg-white/70" />
-                  </div>
+                  {t.tag}
+                </span>
+              </div>
 
-                  <div className="rounded-[14px] bg-white/90 px-3 py-3 text-[13px] leading-relaxed text-[#3d3550] shadow-sm">
-                    {item.text}
-                  </div>
+              {/* Card Content: Main Text Body */}
+              <div style={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+                <p
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 1.7,
+                    color: "#2d3748",
+                    fontWeight: 500,
+                    margin: 0,
+                  }}
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </div>
 
-                  <div className="mt-4">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-[#8c6d92]">
-                      Parent
-                    </p>
-                    <h3 className="mt-1 text-lg font-extrabold leading-tight text-[#2b1546]">
-                      {item.name}
-                    </h3>
-                    <p className="mt-1 text-sm font-semibold text-[#5d4966]">
-                      {item.role}
-                    </p>
-                  </div>
-                </div>
+              {/* Card Bottom: Identity Metadata */}
+              <div
+                style={{
+                  marginTop: 24,
+                  borderTop: "1px solid rgba(0,0,0,0.06)",
+                  paddingTop: 16,
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 900,
+                    color: "#0a1128",
+                    fontFamily: "'Syne', sans-serif",
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1.2,
+                    marginBottom: 2,
+                  }}
+                >
+                  {t.name.toUpperCase()}
+                </p>
+                <p
+                  style={{
+                    fontSize: 12,
+                    color: "#4a5568",
+                    fontWeight: 600,
+                    margin: 0,
+                  }}
+                >
+                  {t.role}
+                </p>
               </div>
             </div>
+          );
+        })}
+      </div>
+
+      {/* ── NAVIGATION CONTROLS ── */}
+      <div className="relative z-10 mt-6 flex items-center justify-center gap-6">
+        <button
+          onClick={prev}
+          aria-label="Previous"
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: "50%",
+            border: "1px solid rgba(255,255,255,0.15)",
+            background: "transparent",
+            color: "rgba(255,255,255,0.6)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
+            e.currentTarget.style.color = "#fff";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+          }}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              style={{
+                width: i === active ? 28 : 8,
+                height: 8,
+                borderRadius: 999,
+                background:
+                  i === active ? "#ff7a00" : "rgba(255,255,255,0.2)",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.35s ease",
+                padding: 0,
+              }}
+            />
           ))}
         </div>
+
+        <button
+          onClick={next}
+          aria-label="Next"
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: "50%",
+            border: "1px solid rgba(255,255,255,0.15)",
+            background: "transparent",
+            color: "rgba(255,255,255,0.6)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
+            e.currentTarget.style.color = "#fff";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+          }}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
       </div>
+
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
+      `}</style>
     </section>
   );
 }

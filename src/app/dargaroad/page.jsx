@@ -5,7 +5,7 @@ import LetterSection from './components/LetterSection';
 import OurMottoSection from './components/OurMottoSection';
 import VelsDargaroad from './components/VelsDargaroad';
 import GalleryGrid from './components/GallerySection';
-import EventsSchedule from './components/EventSection';
+import EventsSchedule from './components/Home/EventSection';
 import AboutSchool from './components/AboutSchool';
 import VideoSection from './components/VideoSection';
 
@@ -45,7 +45,7 @@ export default function Dargaroad() {
         <AboutSchool />
         <VelsDargaroad />
         <GalleryGrid />
-        <EventsSchedule />
+
        
     </main>
   );

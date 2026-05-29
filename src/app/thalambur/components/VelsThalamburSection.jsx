@@ -72,12 +72,12 @@ export default function VelsStaticOverlaySection() {
         <div className={`relative w-full h-[350px] sm:h-[450px] lg:h-[550px] transition-all duration-1000 delay-300 mt-8 lg:mt-0 ${
           topVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-95'
         }`}>
-          <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/thalambur/vels-thalambur.png"
               alt="Students"
               fill
-              className="object-cover rounded-2xl hover:scale-110 transition-transform duration-700"
+              className="object-cover hover:scale-110 transition-transform duration-700"
             />
           </div>
         </div>

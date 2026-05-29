@@ -86,9 +86,7 @@ export default function InspireSection() {
             confidence, curiosity, and growth.
           </p>
 
-          <button className="px-10 py-3 bg-tertiary hover:opacity-90 transition-all text-white rounded-md font-regular font-primary shadow-lg active:scale-95">
-            Let&apos;s Go
-          </button>
+          
         </div>
 
         {/* MOBILE/TABLET IMAGES - Staggered fade up */}

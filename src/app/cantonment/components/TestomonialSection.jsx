@@ -45,7 +45,7 @@ export default function TestimonialsBento() {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setActive((a) => (a + 1) % total);
-    }, 4000); // Slightly longer interval to allow reading full text
+    }, 4000);
   };
 
   const goTo = (idx) => {
@@ -77,25 +77,29 @@ export default function TestimonialsBento() {
     <section
       className="relative overflow-hidden py-24 px-4"
       style={{
-        background:
-          "linear-gradient(145deg, #0a1128 0%, #0e1a3a 50%, #080f25 100%)",
+        // ── BACKGROUND IMAGE ──
+        backgroundImage: "url('/cantonment/test.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
+      
+
       {/* ── HEADING ── */}
       <div className="relative z-10 mb-12 text-center">
         <p className="mb-3 text-xs font-bold tracking-[0.25em] uppercase text-[#ff7a00]">
           Testimonials
         </p>
         <h2
-          className="text-4xl font-black text-white sm:text-5xl"
+          className="text-4xl font-black text-black sm:text-5xl font-secondary"
           style={{
-            fontFamily: "'Syne', sans-serif",
+            
             letterSpacing: "-0.02em",
           }}
         >
           Explore the students experience
         </h2>
-        
       </div>
 
       {/* ── CARD STACK ── */}
@@ -187,8 +191,7 @@ export default function TestimonialsBento() {
                   style={{
                     fontSize: 18,
                     fontWeight: 900,
-                    color: "#0a1128",
-                    fontFamily: "'Syne', sans-serif",
+                    color: "#0a1128",  
                     letterSpacing: "-0.01em",
                     lineHeight: 1.2,
                     marginBottom: 2,
@@ -254,8 +257,7 @@ export default function TestimonialsBento() {
                 width: i === active ? 28 : 8,
                 height: 8,
                 borderRadius: 999,
-                background:
-                  i === active ? "#ff7a00" : "rgba(255,255,255,0.2)",
+                background: i === active ? "#ff7a00" : "rgba(255,255,255,0.2)",
                 border: "none",
                 cursor: "pointer",
                 transition: "all 0.35s ease",
@@ -296,9 +298,7 @@ export default function TestimonialsBento() {
         </button>
       </div>
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-      `}</style>
+     
     </section>
   );
 }

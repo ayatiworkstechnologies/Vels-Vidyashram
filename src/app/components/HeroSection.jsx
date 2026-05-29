@@ -7,7 +7,7 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
-    image: "/thalambur/thalambur-banner-1.png",
+    image: "/thalambur/banner/thalambur-banner-1.png",
     mobileImage: "/mb-1.png",
   },
   {
@@ -85,7 +85,7 @@ export default function BannerSection() {
             </picture>
             
             {/* GRADIENT OVERLAYS */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent lg:from-black/70 lg:via-black/20" />
+          
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:hidden" />
           </div>
         ))}

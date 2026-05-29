@@ -64,6 +64,12 @@ const galleryData = {
       description: "Yoga is the exercise of the physical, mental and spiritual well-being of the individual that was coined in ancient India. Yoga will improve stamina, fine and gross motor skills and dexterities, self-awareness and control, and coordination in team games. Yoga refines balance and coordination, develops focus and concentration, boosts self-esteem and confidence and strengthens the mind-body connection. Various asanas and postures are being taught by certified Yoga teachers.",
       images: ["/thalambur/yoga-1.jpg", "/thalambur/yoga-2.jpg", "/thalambur/yoga-3.jpg", "/thalambur/yoga-4.jpg", "/thalambur/yoga-5.jpg"],
     },
+    {
+      title: "Robotics",
+      description: "The school gives the learners to enhance their AI and tech expertise through practical implementation, advanced system building, and real-world innovation challenges.",
+      images: ["/thalambur/robo-4.jpg", "/thalambur/robo-2.jpg", "/thalambur/robo-3.jpg", "/thalambur/robo-1.jpg", "/thalambur/robo-5.jpg"],
+      reverse: true,
+    },
   ],
   "Special Features": [
     {

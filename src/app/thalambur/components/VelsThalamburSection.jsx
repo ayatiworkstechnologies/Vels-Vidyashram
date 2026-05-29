@@ -74,7 +74,7 @@ export default function VelsStaticOverlaySection() {
         }`}>
           <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/thalambur/vels-thalambur.png"
+              src="/thalambur/cup-girl.png"
               alt="Students"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"

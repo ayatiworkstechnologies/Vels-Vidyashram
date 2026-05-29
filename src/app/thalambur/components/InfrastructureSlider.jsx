@@ -18,7 +18,7 @@ const slides = [
     id: 2,
     title: "Curriculum",
     description: "Comprehensive curriculum that balances academics, creativity, and critical thinking aligned with global standards.",
-    image: "/thalambur/Curriculum-1.png",
+    image: "/thalambur/curriculum-new.png",
     icon: "/thalambur/fav-2.png",
   },
   {
@@ -39,7 +39,7 @@ const slides = [
     id: 5,
     title: "Step",
     description: "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/thalambur/STEP-1.png",
+    image: "/thalambur/step-new.png",
     icon: "/thalambur/fav-5.png",
   },
   {

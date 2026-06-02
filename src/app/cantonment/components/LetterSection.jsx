@@ -3,12 +3,11 @@
 
 export default function LetterSection() {
   const items = [
-    "Character. Knowledge. Growth.",
-    "Empowering Tomorrow's Achievers",
-    "Welcome to Vels Vidyashram Pallavaram",
-    "Learning with Purpose and Passion",
-    "Nurturing Potential Every Day"
-   
+    "Learning Beyond Boundaries",
+    "Building Character and Confidence",
+    "Welcome to Vels Vidyashram Cantonment",
+    "Excellence Through Purposeful Education",
+    "Inspiring Lifelong Learners"
   ];
 
   const loopItems = [...items, ...items];

@@ -1,9 +1,13 @@
+import AboutSchool from "./components/AboutSchool";
 import BannerSection from "./components/BannerSection";
 import CourseSection from "./components/CourseSection";
 import GalleryGrid from "./components/GallerySection";
 import InfrastructureSlider from "./components/InfrastructureSlider";
+import InspireSection from "./components/InspireSection";
+import LetterSection from "./components/LetterSection";
 import OurMottoSection from "./components/OurMottoSection";
 import TestimonialSection from "./components/TestomonialSection";
+import VelsStaticOverlaySection from "./components/VelsCantonmentSection";
 
 
 const siteTitle = "Vels Vidyashram Cantonment - A Premier CBSE School in Chennai";
@@ -42,6 +46,10 @@ export default function Pallavaram() {
     <main>
 
         <BannerSection />
+        <LetterSection />
+        <AboutSchool />
+        <InspireSection />
+        <VelsStaticOverlaySection />
         <OurMottoSection />
         <InfrastructureSlider />
         <TestimonialSection />

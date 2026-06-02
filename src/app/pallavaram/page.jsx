@@ -1,11 +1,12 @@
 import OurMottoSection from "../pallavaram/components/OurMottoSection";
 import BannerSlider from "./components/BannerSection";
-import EventsSchedule from "./components/Home/EventSection";
 import GalleryGrid from "./components/GallerySection";
 import InfrastructureSlider from "./components/InfrastructureSlider";
 import LetterSection from "./components/LetterSection";
-import Modal from "./layout/modals";
 import BridgeCourseBanner from "./components/BridgeCourse";
+import AboutSchool from "./components/AboutSchool";
+import InspireSection from "./components/InspireSection";
+import VelsStaticOverlaySection from "./components/VelsPallavaramSection";
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -44,6 +45,10 @@ export default function Pallavaram() {
     <main>
       {/* <Modal /> */}
       <BannerSlider />
+      <LetterSection />
+      <AboutSchool />
+      <InspireSection />
+      <VelsStaticOverlaySection />
       <OurMottoSection />
       <InfrastructureSlider />
       <BridgeCourseBanner />

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { MapPin, ShieldCheck, Users } from 'lucide-react';
 
 const routes = [
-  "Tirporur", "Egatoor", "Sholinganalur", "Pudhupakkam", "Injambakkam",
-  "Perumbakkam", "Kelambakkam", "Medavakkam", "Mambakkam", "Shithalapakkam",
-  "Thalambur", "Navalur", "Ponmar", "Padur", "Siruseri", "Natham link road", "Seemenchery"
+  "Thiruporur", "Egatoor", "Sholinganallur", "Pudhupakkam", "Injambakkam",
+  "Perumbakkam", "Kelambakkam", "Medavakkam", "Mambakkam", "Sithalapakkam",
+  "Thalambur", "Navalur", "Ponmar", "Padur", "Siruseri", "Natham link road", "Semmenchery"
 ];
 
 const TransportSection = () => {
@@ -20,7 +20,9 @@ const TransportSection = () => {
           className="text-center mb-16 space-y-4"
         >
           <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto font-secondary">
-            Well organized transport system to ply students to and fro. A safe journey is ensured by well supervised system. Child’s comfort is prioritised and the child is taken care by van assistants.
+            A well-organized transport system is provided to transport students to and from school. <br/>
+            A safe journey is ensured through a well-supervised system.<br/>
+            The child’s comfort is prioritised, and students are taken care of by van assistants.
           </p>
           <div className="flex justify-center gap-8 pt-4 font-secondary">
             <div className="flex items-center gap-2 text-sm font-semibold text-gray-800">

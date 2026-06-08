@@ -14,7 +14,7 @@ const galleryData = {
       title: "Art & Craft",
       description: (
         <>
-          <p>The techniques of sketching, still-life watercolour, painting and oil painting are taught. Creativity is emphasized in these activities.</p>
+          <p>The techniques of sketching, still-life drawing and watercolour painting, oil painting are taught. Creativity is emphasized in these activities.</p>
           <p className="font-bold mt-2">Objective</p>
           <ul className="list-decimal ml-4">
             <li>To nurture the artistic talents of students.</li>
@@ -54,14 +54,14 @@ const galleryData = {
     },
      {
       title: "Sports & Games",
-      description: "A sound mind in a sound body.’ This is ensured by making games compulsory for all students. Professionally qualified Physical Education Teachers take care of the sports activities of the school. The school is divided into four houses and inter-house activities are conducted regularly. Students who are declared physically unfit by a physician are given exemption from taking part in sports activities. The Annual Sports Meet is a regular feature and an important co-curricular activity of the school.",
+      description: "“A sound mind in a sound body” is a guiding principle of holistic education. To promote physical fitness, discipline, and teamwork, games and sports activities are compulsory for all students. Professionally qualified physical education teachers guide the sports activities. The school students and staff are divided into four houses - Jade, Garnet, Sapphire and Topaz. Inter-house activities are conducted regularly. Students declared medically unable to participate by a registered physician shall be exempted from sports activities upon submission of a valid medical certificate.The Annual Sports Meet is an important co-curricular activity of the school.",
       images: ["/thalambur/sport-1.jpg", "/thalambur/sport-2.jpg", "/thalambur/sport-3.jpg", "/thalambur/sport-4.jpg", "/thalambur/sport-5.jpg"],
       reverse: true,
 
     },
      {
       title: "Yoga",
-      description: "Yoga is the exercise of the physical, mental and spiritual well-being of the individual that was coined in ancient India. Yoga will improve stamina, fine and gross motor skills and dexterities, self-awareness and control, and coordination in team games. Yoga refines balance and coordination, develops focus and concentration, boosts self-esteem and confidence and strengthens the mind-body connection. Various asanas and postures are being taught by certified Yoga teachers.",
+      description: "Yoga promotes physical, mental, and spiritual well-being and has its origins in ancient India. It enhances stamina, fine and gross motor skills, and dexterity among students. Regular practice of yoga develops self-awareness, self-control, balance, and coordination. It also improves focus, concentration, self-esteem, and confidence while strengthening the mind–body connection. Various asanas and postures are taught under the guidance of trained and certified yoga instructors.",
       images: ["/thalambur/yoga-1.jpg", "/thalambur/yoga-2.jpg", "/thalambur/yoga-3.jpg", "/thalambur/yoga-4.jpg", "/thalambur/yoga-5.jpg"],
     },
     {
@@ -74,12 +74,12 @@ const galleryData = {
   "Special Features": [
     {
       title: "Maths Lab",
-      description: "Learning by doing” forms the basis for all activities in the lab. The Maths Lab enhances concept stabilization using laboratory activities.",
+      description: "Learning by doing” forms the basis for all activities in the lab. The Maths Lab enhances conceptual understanding through laboratory activities.",
       images: ["/thalambur/maths-1.jpg", "/thalambur/maths-2.jpg", "/thalambur/maths-4.jpg", "/thalambur/maths-4.jpg", "/thalambur/maths-5.jpg"],
     },
     {
       title: "Smart Class",
-      description: "The technology enabled programme ensures effective and enriching learning experiences. The regularly updated inputs and a wide range of video clippings are accessed from the knowledge centre. Difficult and abstract concepts too become clear to the students when viewed on the digital boards provided in the classrooms. The facility is also useful for other purposes like Guest lectures, Electronic voting and General Assembly programmes. In essence, each class room is an audio visual room.",
+      description: "The technology-enabled programme ensures effective and enriching learning experiences. The regularly updated inputs and a wide range of video clippings are accessed from the knowledge centre. Difficult and abstract concepts too become clear to the students when viewed on the digital boards provided in the classrooms. The facility is also useful for other purposes like Guest lectures, electronic voting and General Assembly programmes. In essence, each class room is an audio-visual room.",
       images: ["/thalambur/smart-1.jpg", "/thalambur/smart-2.jpg", "/thalambur/smart-3.jpg", "/thalambur/smart-4.jpg", "/thalambur/smart-5.jpg"],
       reverse: true,
     },
@@ -176,7 +176,7 @@ const galleryData = {
     },
       {
       title: "ECO Club",
-      description: "aim to educate students about environmental issues, encourage sustainable practices, and promote positive changes within their school and community.",
+      description: "Aim to educate students about environmental issues, encourage sustainable practices, and promote positive changes within their school and community.",
       images: ["/thalambur/e-1.jpg", "/thalambur/e-2.jpg", "/thalambur/e-3.jpg", "/thalambur/e-4.jpg", "/thalambur/e-5.jpg"],
     
     },
@@ -197,7 +197,7 @@ const galleryData = {
   "STEP Activity": [
     {
       title: "Classical Dance",
-      description: "Classical dance is a blend of expressions, melody and rhythm. Classical dance is a perfect example of mind-body-soul connection. The advantages of dance are flexibility, strength, endurance and stamina. Well-trained professionals teach classical dance in the school.",
+      description: "Classical dance is a blend of expressions, melody and rhythm. Classical dance is a perfect example of mind-body-soul connection. The advantages of dance are flexibility, strength, endurance and stamina. Well-trained professionals teach classical dance at the school.",
       images: ["/thalambur/dance-1.jpg", "/thalambur/dance-2.jpg", "/thalambur/dance-3.jpg", "/thalambur/dance-4.jpg", "/thalambur/dance-5.jpg"],
       
     },
@@ -209,7 +209,7 @@ const galleryData = {
     },
      {
       title: "Boxing",
-      description: "Boxing sharpens students’ problem-solving skills and teaches them about health and fitness. Fighting skills like hooks, uppercuts, and jabs can help students to defend themselves. Boxing requires intense concentration which can improve your kids’ attention in the classroom and improve academic success.",
+      description: "Boxing sharpens students’ problem-solving skills and promotes health and fitness. Skills such as hooks, uppercuts, and jabs help students learn self-defence techniques. Boxing requires intense concentration and improves focus and attention. It also helps enhance students’ confidence and academic performance.",
       images: ["/thalambur/box-1.jpg", "/thalambur/box-2.jpg", "/thalambur/box-3.jpg", "/thalambur/box-4.jpg", "/thalambur/box-5.jpg"],
     
     },

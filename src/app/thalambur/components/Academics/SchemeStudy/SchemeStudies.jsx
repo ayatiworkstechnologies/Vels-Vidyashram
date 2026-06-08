@@ -110,20 +110,20 @@ const SchemeContent = () => (
       />
       <Card 
         title="Primary" 
-        subtitle="Classes 1 to 3" 
-        items={["English, Language (Tamil/Hindi), Maths, Science, Evs, Computer Science"]} 
+        subtitle="Classes I to III" 
+        items={["English(R1), Language ( R2, R3) Tamil /Hindi, Mathematics, Environmental Science, Computer Science."]} 
         delay={0.1}
       />
         <Card 
         title="Middle" 
-        subtitle="Classes 4 to 5" 
-        items={["English, Language (Tamil/Hindi), Maths, Science, Social Science, Computer Science"]} 
+        subtitle="Classes IV to V" 
+        items={["English (R1), Language ( R2, R3) Tamil /Hindi, Mathematics, Science, Social Science, Computer Science"]} 
         delay={0.2}
       />
       <Card 
-        title="Middle" 
-        subtitle="Classes 6 to 9" 
-        items={["English, Second language (Tamil/Hindi), Maths, Science, Social Science, Artifical Intelligence."]} 
+        title="Middle & Secondary School" 
+        subtitle="Classes VI to X" 
+        items={["English (R1), Language ( R2, R3) Tamil /Hindi, Mathematics, Science, Social Science, Computer Science, Skill & Vocational"]} 
         delay={0.2}
       />
     </motion.div>
@@ -134,14 +134,16 @@ const SchemeContent = () => (
       whileHover={{ scale: 1.02 }}
       className="mt-8 p-6 bg-primary text-white rounded-2xl"
     >
-      <h3 className="text-xl font-bold mb-4 text-white font-primary">Class 11 Specializations</h3>
+      <h3 className="text-xl font-bold mb-4 text-white font-primary">Classes XI & XII</h3>
       <div className="grid sm:grid-cols-2 gap-4 text-sm opacity-90 font-secondary">
         {[
-          { label: "Choice 1:", text: "English, Mathematics, Physics, Chemistry, Biology." },
-          { label: "Choice 2:", text: "English, Mathematics, Physics, Chemistry, Information Practices." },
-          { label: "Choice 3:", text: "English, Business Studies, Accountancy, Economics, Mathematics" },
-          { label: "Choice 4:", text: "English, Business Studies , Accountancy, Economics, Information Practices." },
-          { label: "Choice 5:", text: "English, History, Political Science, Economics, Sociology." },
+          { label: "Science: Choice 1 :", text: "English, Mathematics, Physics, Chemistry, Biology." },
+          { label: "Science: Choice 2:", text: "English, Psychology, Physics, Chemistry, Biology" },
+          { label: "Science: Choice 3:", text: "English, Mathematics, Physics, Chemistry, Informatics Practices." },
+          { label: "Commerce: Choice 4:", text: "English, Business Studies, Accountancy, Economics, Mathematics" },
+          { label: "Commerce: Choice 5:", text: "English, Business Studies , Accountancy, Economics, Informatics Practices." },
+          { label: "Humanities: Choice 6:", text: "English, History, Political Science, Economics, Sociology." },
+          { label: "Humanities: Choice 7:", text: "English, Psychology, Political Science, Economics , Sociology." },
         ].map((item, i) => (
           <motion.p
             key={i}
@@ -178,7 +180,7 @@ const MethodologyContent = () => (
       transition={{ duration: 0.5 }}
       className="text-slate-600 leading-relaxed text-lg mb-8 font-secondary"
     >
-      The school offers proven and research based program of XSEED to make the child unafraid and to compete for the 21st century.
+      The school offers a proven and research-based XSEED program that helps children become confident and prepared to compete in the 21st century.
     </motion.p>
     <motion.h2 
       initial={{ opacity: 0, x: -20 }}
@@ -194,9 +196,9 @@ const MethodologyContent = () => (
       transition={{ duration: 0.5, delay: 0.3 }}
       className="text-slate-600 leading-relaxed text-lg mb-8 font-secondary text-justify"
     >
-     XSEED is a proven and research based academic program for schools that builds thinking skills & problem solving confidence in children. <br/>
-     XSEED children ask more questions, can write in their own words, like doing word problems in mathematics, can complete their homework on their own, are not afraid to speak-up in English, persist longer in solving problems, and score well on tests. <br/>
-     Class VI to XI – The guidelines of national curriculum and framework and CBSE are followed through our innovative teaching methodologies without losing track of CCE pattern.
+     XSEED is a proven and research-based academic program for schools that develops thinking skills and problem-solving confidence in children. <br/>
+     XSEED students ask more questions, write in their own words, enjoy solving word problems in Mathematics, complete their homework independently, speak confidently in English, persist longer in solving problems, and perform well in examinations. <br/>
+     For Classes VI to XI, the guidelines of the National Curriculum Framework (NCF) and CBSE are followed through innovative teaching methodologies without losing track of the CCE pattern.
     </motion.p>
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }}
@@ -310,11 +312,10 @@ const SportsContent = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="font-secondary"
       >
-        The school encourages students to participate in sports activities both in and outside the school. Inter school and inter house tournaments are held every year. <br/>
-        The school also has a soccer team at different levels and gives importance to different sporting activities. As a part of the Student enrichment program, we have Skating, Silambam and Foot ball for students. <br/>
-        School also encourages indoor games like Chess, Carom, table tennis etc. <br/>
-        The school playground is no less important than school lessons. It is on the playground that we learn to face defeat. The school has a very big playground facilitating all the games. <br/>
-        Annual Sports day is an essential part of school education.
+        The school encourages students to participate in sports activities both within and outside the campus. Inter-school and inter-house tournaments are conducted every year. <br/>
+        The school has soccer teams at various levels. Importance is given to sports such as Skating, Silambam, Boxing, Karate, Archery, Gymnastics, Chess, Basketball, Football, Classical & Western Dance, Vocal ,Instrumental etc under the Student Enrichment Programme ( STEP Activities). <br/>
+        The school has a spacious playground for various sports and games. <br/>
+        These Sports activities help students develop teamwork, discipline, leadership, and confidence. Annual Sports Meet is an important and integral part of the school education.
       </motion.p>
     </motion.div>
   );

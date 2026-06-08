@@ -62,8 +62,8 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-10'
               }`}>
-                Shaping Holistic Education at Vels <br className="hidden md:block" />
-                Vidyashram Thalambur
+                Shaping Holistic Education at  <br className="hidden md:block" />
+                Vels Vidyashram Thalambur
               </h2>
 
               <p className={`text-sm text-gray-600 text-justify font-secondary leading-relaxed mb-4 transition-all duration-1000 delay-700 ${
@@ -71,7 +71,7 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               }`}>
-                Vels Vidyashram Thalambur were established in 2014 to provide quality education where the learning takes place through observation, reflection and exploration with emphasis on character development. Within a short span of time our school stands as best school in OMR and best Kindergarten school in Navallur.
+                Vels Vidyashram Thalambur was established in 2014 with the vision of providing quality education, where learning takes place through observation, reflection, and exploration, with a strong emphasis on character development. Within a short span of time, our school has emerged as one of the best schools in OMR and one of the leading Kindergarten schools in Navallur.
               </p>
 
               <p className={`text-sm text-gray-600 text-justify font-secondary leading-relaxed mb-6 transition-all duration-1000 delay-900 ${
@@ -79,7 +79,7 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               }`}>
-                The schools provide a wide variety of co-curricular (Extracurricular) activities and enrichment programs which gives abundant opportunities for children to develop their potential and excel in the areas of their talent. This holistic approach has paved way for these schools to become two of the best CBSE schools in OMR.
+                The school provides a wide range of co-curricular and enrichment programs, offering abundant opportunities for children to develop their potential and excel in their areas of talent. This holistic approach has paved the way for the institution to become one of the leading CBSE schools in OMR.
               </p>
 
               <p className={`text-sm text-gray-600 font-bold font-secondary leading-relaxed border-t pt-4 transition-all duration-1000 delay-1000 ${
@@ -87,7 +87,7 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               }`}>
-                Vels Education Trust was established in 1992 with the aim of nurturing individuals with strong character and ability.
+                Vels Education Trust was established in 1992 with the aim of nurturing individuals with strong character and abilities.
               </p>
             </div>
 

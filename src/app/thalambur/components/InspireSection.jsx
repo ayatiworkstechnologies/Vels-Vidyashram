@@ -83,7 +83,7 @@ export default function InspireSection() {
           <p className="text-gray-600 text-sm md:text-base leading-relaxed font-primary font-medium mb-8">
             A place where young minds are nurtured through quality education
             and strong values. We create a supportive environment that inspires
-            confidence, curiosity, and growth.
+            Curiosity, Confidence and Holistic Growth.
           </p>
 
           

@@ -4,10 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ACADEMIC_LEVELS = [
-  // 1️⃣ KG
   {
     id: "pre-kg",
-    title: "KG Curriculum – Kinder Kids Kaleidoscope",
+    title: "KG – Kinder Kids Kaleidoscope",
     description:
       "Our Kindergarten curriculum focuses on joyful learning through activity-based methods that nurture curiosity, creativity, and confidence in young learners.",
     highlights: [
@@ -25,14 +24,12 @@ const ACADEMIC_LEVELS = [
       },
     ],
   },
-
-
-
-  // 3️⃣ STRUCTURE OF XSEED
   {
     id: "xseed-structure",
-    title: "Grade I to V – XSEED Methodology & Structure of XSEED Methodology",
-    description:"XSEED is an academic solution designed to raise learning levels and build confidence in children through a 5-Step Experiential Learning Method. Concepts are taught through hands-on activities, questioning, application and feedback.",
+    title: "GRADE I to V – XSEED METHODOLOGY",
+    description:
+      "XSEED is an academic solution designed to raise learning levels and build confidence in children through a 5-Step Experiential Learning Method. Concepts are taught through hands-on activities, questioning, application and feedback.",
+    structureType: "xseed",
     structure: [
       {
         programme: "Junior Programme",
@@ -48,55 +45,94 @@ const ACADEMIC_LEVELS = [
     notes: [
       "Grade I to III: Second Language – Tamil or Hindi",
       "Grade IV & V: Second Language – Tamil or Hindi or Sanskrit",
-      "For VI to XII: NCERT Curriculum",
-      "For I to VII: Compulsory Tamil for Non-Tamil students.",
+      "Grade I to V: Third Language – Basic Tamil for Non Tamil Students and Basic Hindi for Tamil Students",
     ],
   },
-
-  // 4️⃣ GROUPS OFFERED
+  {
+    id: "ncert-vi-x",
+    title: "GRADE VI to X – NCERT SYLLABUS",
+    structureType: "ncert",
+    structure: [
+      {
+        sno: 1,
+        grade: "VI - VIII",
+        mainSubjects:
+          "English, II lang, Maths, Science, Social Studies, III lang",
+        additionalSubjects: "Information Technology, Robotics",
+      },
+      {
+        sno: 2,
+        grade: "IX & X",
+        mainSubjects:
+          "English, II lang, Maths, Science, Social Studies, III lang",
+        additionalSubjects: "Artificial Intelligence",
+      },
+    ],
+    notes: [
+      "Second Language: Options: Hindi / Tamil / Sanskrit",
+      "Third Language: Hindi for Second Language Tamil Students",
+      "Third Language: Tamil for Second Language Non Tamil (Hindi/Sanskrit) Students",
+    ],
+  },
   {
     id: "higher-secondary",
-    title: "Groups Offered – Class XI & XII",
+    title: "GRADE XI & XII – GROUPS OFFERED",
     groups: [
       {
         sno: 1,
         group: "First Group",
         subjects:
-          "English Core (Compulsory),\nMathematics / Physics / Chemistry / Biology",
+          "English Core (Compulsory), Mathematics, Physics, Chemistry, Biology",
       },
       {
         sno: 2,
         group: "Second Group",
         subjects:
-          "English Core (Compulsory),\nMathematics / Physics / Chemistry / Informatics Practices",
+          "English Core (Compulsory), Mathematics, Physics, Chemistry, Informatics Practices",
       },
       {
         sno: 3,
         group: "Third Group",
         subjects:
-          "English Core (Compulsory),\nBusiness Studies / Accountancy / Economics / Mathematics",
+          "English Core (Compulsory), Business Studies, Accountancy, Economics, Mathematics",
       },
       {
         sno: 4,
         group: "Fourth Group",
         subjects:
-          "English Core (Compulsory),\nBusiness Studies / Accountancy / Economics / Informatics Practices",
+          "English Core (Compulsory), Business Studies, Accountancy, Economics, Informatics Practices",
       },
       {
         sno: 5,
         group: "Fifth Group",
         subjects:
-          "English Core (Compulsory),\nPsychology / Sociology / History / Political Science / Informatics Practices / Business Studies / Economics (Any Four),",
+          "English Core (Compulsory), Psychology, Sociology, History, Political Science, Informatics Practices, Business Studies, Economics (Any Four)",
       },
       {
         sno: 6,
         group: "Sixth Group",
         subjects:
-          "English Core (Compulsory),\nPhysics / Chemistry / Biology / Informatics Practices",
+          "English Core (Compulsory), Physics, Chemistry, Biology, Informatics Practices",
       },
     ],
     note:
       "Physical Education is a compulsory additional subject for all the above groups.",
+  },
+  {
+    id: "vels-plus",
+    title: "GRADE VI to XI – VELS PLUS",
+    description:
+      "VELS PLUS is an integrated coaching programme aligned with the NCERT syllabus for classes VI to XI. The programme combines regular academics with focused coaching, expert faculty support, and structured assessments to build a strong foundation for academic excellence.",
+    highlights: [
+      { label: "Pan India Assessments" },
+      { label: "A/C Classrooms" },
+      { label: "Minimum Class Strength" },
+      { label: "Trained Subject Experts" },
+      { label: "Study Material & Worksheets" },
+      { label: "Digital Classrooms" },
+      { label: "Intensive Olympiad Coaching" },
+      { label: "Exclusive Lab Facility" },
+    ],
   },
 ];
 
@@ -116,7 +152,6 @@ export default function CurriculumSection() {
   return (
     <div className="bg-[#fafafa] min-h-screen py-20 px-6 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <header className="mb-16 max-w-3xl">
           <h1 className="text-4xl font-bold text-[#1c1533] mb-6">
             Curriculum
@@ -129,12 +164,12 @@ export default function CurriculumSection() {
         <div ref={contentTopRef} />
 
         <div className="flex flex-col lg:flex-row gap-16 items-start">
-          {/* Sidebar */}
           <aside className="w-full lg:w-[320px] lg:sticky lg:top-24">
             <nav className="flex flex-col space-y-1">
               {ACADEMIC_LEVELS.map((level) => (
                 <button
                   key={level.id}
+                  type="button"
                   onClick={() => setActiveTab(level)}
                   className="group relative py-6 px-4 text-left"
                 >
@@ -144,6 +179,7 @@ export default function CurriculumSection() {
                       className="absolute left-0 top-0 bottom-0 w-1 bg-orange-500"
                     />
                   )}
+
                   <div
                     className={`absolute inset-0 ${
                       activeTab.id === level.id
@@ -151,6 +187,7 @@ export default function CurriculumSection() {
                         : "group-hover:bg-gray-100/50"
                     }`}
                   />
+
                   <span
                     className={`relative z-10 text-sm font-bold uppercase tracking-wider ${
                       activeTab.id === level.id
@@ -165,7 +202,6 @@ export default function CurriculumSection() {
             </nav>
           </aside>
 
-          {/* Content */}
           <main className="flex-1 bg-white rounded-2xl shadow-sm border border-gray-100">
             <AnimatePresence mode="wait">
               <motion.div
@@ -180,68 +216,151 @@ export default function CurriculumSection() {
                   {activeTab.title}
                 </h2>
 
-                {/* Description */}
                 {activeTab.description && (
                   <p className="text-gray-600 leading-relaxed mb-10">
                     {activeTab.description}
                   </p>
                 )}
 
-                {/* Highlights */}
                 {activeTab.highlights && (
-                  <div className="grid md:grid-cols-2 gap-8 mb-10">
+                  <div className="grid md:grid-cols-2 gap-5 mb-10">
                     {activeTab.highlights.map((item, idx) => (
-                      <div key={idx}>
-                        <h4 className="font-bold mb-2">• {item.label}</h4>
-                        <p className="text-gray-500 text-sm">{item.text}</p>
+                      <div
+                        key={idx}
+                        className="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4"
+                      >
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white text-xs">
+                          ✓
+                        </span>
+                        <div>
+                          <h4 className="font-bold text-gray-800">
+                            {item.label}
+                          </h4>
+                          {item.text && (
+                            <p className="text-gray-500 text-sm mt-1">
+                              {item.text}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
                 )}
 
-                {/* 3️⃣ XSEED STRUCTURE TABLE */}
                 {activeTab.structure && (
                   <div className="mt-8">
                     <h3 className="text-center text-xl font-bold mb-6 uppercase">
-                      Structure of XSEED Methodology
+                      {activeTab.structureType === "ncert"
+                        ? "Subjects Offered"
+                        : "Structure of XSEED Methodology"}
                     </h3>
 
                     <div className="overflow-x-auto">
-                      <table className="w-full border border-gray-300">
-                        <thead className="bg-gray-100">
-                          <tr>
-                            <th className="p-4 border">Programme</th>
-                            <th className="p-4 border">Grades</th>
-                            <th className="p-4 border">
-                              Knowledge Streams
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {activeTab.structure.map((row, i) => (
-                            <tr key={i}>
-                              <td className="p-4 border">
-                                {row.programme}
-                              </td>
-                              <td className="p-4 border">{row.grades}</td>
-                              <td className="p-4 border">
-                                {row.streams}
-                              </td>
+                      {activeTab.structureType === "ncert" ? (
+                        <table className="w-full min-w-[720px] border border-gray-500 text-left text-gray-900">
+                          <thead>
+                            <tr>
+                              <th className="p-3 border border-gray-500 font-bold w-20">
+                                s.no
+                              </th>
+                              <th className="p-3 border border-gray-500 font-bold w-36">
+                                Grade
+                              </th>
+                              <th className="p-3 border border-gray-500 font-bold">
+                                Main Subjects Offered
+                              </th>
+                              <th className="p-3 border border-gray-500 font-bold">
+                                Additional Subjects Offered
+                              </th>
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                          </thead>
+
+                          <tbody>
+                            {activeTab.structure.map((row) => (
+                              <tr key={row.sno}>
+                                <td className="p-3 border border-gray-500 align-top font-bold">
+                                  {row.sno}
+                                </td>
+                                <td className="p-3 border border-gray-500 align-top font-bold">
+                                  {row.grade}
+                                </td>
+                                <td className="p-3 border border-gray-500 align-top font-bold leading-relaxed">
+                                  {row.mainSubjects}
+                                </td>
+                                <td className="p-3 border border-gray-500 align-top font-bold leading-relaxed">
+                                  {row.additionalSubjects}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      ) : (
+                        <table className="w-full min-w-[640px] border border-gray-300 text-left">
+                          <thead className="bg-gray-100">
+                            <tr>
+                              <th className="p-4 border border-gray-300">
+                                Programme
+                              </th>
+                              <th className="p-4 border border-gray-300">
+                                Grades
+                              </th>
+                              <th className="p-4 border border-gray-300">
+                                Knowledge Streams
+                              </th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            {activeTab.structure.map((row, i) => (
+                              <tr key={i}>
+                                <td className="p-4 border border-gray-300">
+                                  {row.programme}
+                                </td>
+                                <td className="p-4 border border-gray-300">
+                                  {row.grades}
+                                </td>
+                                <td className="p-4 border border-gray-300">
+                                  {row.streams}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      )}
                     </div>
 
-                    <div className="mt-6 space-y-2 text-gray-600">
-                      {activeTab.notes.map((note, i) => (
-                        <p key={i}>{note}</p>
-                      ))}
-                    </div>
+                    {activeTab.notes && activeTab.structureType === "ncert" && (
+                      <div className="mt-8 space-y-4 text-gray-800">
+                        <p className="font-bold">
+                          Second Language :
+                          <span className="ml-2 font-semibold">
+                            Options : Hindi / Tamil / Sanskrit
+                          </span>
+                        </p>
+
+                        <div>
+                          <p className="font-bold mb-2">Third Language :</p>
+                          <p className="ml-6">
+                            ➤ Hindi for Second Language Tamil Students
+                          </p>
+                          <p className="ml-6">
+                            ➤ Tamil for Second Language Non Tamil
+                            (Hindi/Sanskrit) Students
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {activeTab.notes && activeTab.structureType === "xseed" && (
+                      <div className="mt-6 space-y-2 text-gray-600">
+                        {activeTab.notes.map((note, i) => (
+                          <p key={i}>{note}</p>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 
-                {/* 4️⃣ GROUPS TABLE */}
                 {activeTab.groups && (
                   <div className="mt-8">
                     <h3 className="text-center text-xl font-bold mb-6 uppercase">
@@ -252,7 +371,7 @@ export default function CurriculumSection() {
                     </h3>
 
                     <div className="overflow-x-auto">
-                      <table className="w-full border border-gray-300">
+                      <table className="w-full min-w-[720px] border border-gray-300">
                         <thead className="bg-gray-100">
                           <tr>
                             <th className="p-4 border w-20">S.NO</th>
@@ -260,16 +379,15 @@ export default function CurriculumSection() {
                             <th className="p-4 border">Subjects</th>
                           </tr>
                         </thead>
+
                         <tbody>
-                          {activeTab.groups.map((row, i) => (
-                            <tr key={i}>
+                          {activeTab.groups.map((row) => (
+                            <tr key={row.sno}>
                               <td className="p-4 border">{row.sno}</td>
                               <td className="p-4 border font-medium">
                                 {row.group}
                               </td>
-                              <td className="p-4 border whitespace-pre-line">
-                                {row.subjects}
-                              </td>
+                              <td className="p-4 border">{row.subjects}</td>
                             </tr>
                           ))}
                         </tbody>

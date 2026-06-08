@@ -33,13 +33,13 @@ export default function VisionMission() {
       id: "vision",
       iconPath: "/thalambur/vision.webp",
       title: "Vision",
-      text: "It is our Vision to create a dynamic gateway for the future generation and for them to imagine, innovate and realise their own revolutions along the way.",
+      text: "The best CBSE School in Pallavaram Chennai that ensures a holistic development of all the students and empowers them to embrace learning to achieve their personal best and build their emotional, social and physical well-being.",
     },
     {
       id: "mission",
       iconPath: "/thalambur/mission.webp",
       title: "Mission",
-      text: "We wish to walk at the same pace as the ever-changing world. Orchids prepare students to adapt and excel through an inspiring and challenging environment. We believe in our student's holistic development in the most exciting way.",
+      text: "The school with its well-qualified, trained, experienced team of passionate teachers, engaging teaching-learning approaches, clubbed with excellent infrastructure, tech-integration and enthusiastic parent involvement makes young learners achieve a holistic development and excellence in their chosen fields. By imparting quality education, the school helps the students blossom into happy, mature, responsible, active global citizens with human values and ensure that the students are ready to face the challenges of the future world. ",
     },
   ];
 

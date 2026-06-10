@@ -8,7 +8,7 @@ const galleryData = {
     {
       title: "Computer Education",
       description: "It aims at making students use the computer both as a productive tool and as a means of creativity and self-expression. The curriculum encompasses technological skills based on themes that are current and meaningful. The program helps the students to build a solid foundation of fundamental learning skills and prepares them for the fast-changing technology of today and the future.",
-      images: ["/thalambur/computer-1.jpg", "/thalambur/computer-2.jpg", "/thalambur/computer-3.jpg", "/thalambur/computer-4.jpg", "/thalambur/computer-5.jpg"],
+      images: ["/thalambur/com-1.png", "/thalambur/com-2.png", "/thalambur/com-3.png", "/thalambur/com-4.png", "/thalambur/com-5.png"],
     },
     {
       title: "Art & Craft",
@@ -22,7 +22,7 @@ const galleryData = {
           </ul>
         </>
       ),
-      images: ["/thalambur/art-1.jpg", "/thalambur/art-2.jpg", "/thalambur/art-3.jpg", "/thalambur/art-4.jpg", "/thalambur/art-5.jpg"],
+      images: ["/thalambur/art-1.png", "/thalambur/art-2.png", "/thalambur/art-3.png", "/thalambur/art-4.png", "/thalambur/art-5.png"],
       reverse: true,
     },
      {
@@ -37,45 +37,46 @@ const galleryData = {
           </ul>
         </>
       ),
-      images: ["/thalambur/life-1.jpg", "/thalambur/life-2.jpg", "/thalambur/life-3.jpg", "/thalambur/life-4.jpg", "/thalambur/life-5.jpg"],
+      images: ["/thalambur/life-1.png", "/thalambur/life-2.png", "/thalambur/life-3.png", "/thalambur/life-4.png", "/thalambur/life-5.png"],
       
     },
      {
       title: "Project",
       description: "Project work is an integral part of the school curriculum which is held class wise to bring out the aesthetic and latent potential of every student. Projects build team spirit, leadership qualities, conflict resolving skills and creativity among the students.",
-      images: ["/thalambur/project-1.jpg", "/thalambur/project-2.jpg", "/thalambur/project-3.jpg", "/thalambur/project-4.jpg", "/thalambur/project-5.jpg"],
+      images: ["/thalambur/project-1.png", "/thalambur/project-2.png", "/thalambur/project-3.png", "/thalambur/project-4.png", "/thalambur/project-5.png"],
       reverse: true,
 
     },
      {
       title: "Western Music",
       description: "Notation, sight reading, chords and lead playing in Western Classical light music as well as familiar tunes are focused on.",
-      images: ["/thalambur/western-1.jpg", "/thalambur/western-2.jpg", "/thalambur/western-3.jpg", "/thalambur/western-4.jpg", "/thalambur/western-5.jpg"],
+      images: ["/thalambur/western-1.png", "/thalambur/western-2.png", "/thalambur/western-3.png", "/thalambur/western-4.png", "/thalambur/western-5.png"],
     },
      {
       title: "Sports & Games",
       description: "“A sound mind in a sound body” is a guiding principle of holistic education. To promote physical fitness, discipline, and teamwork, games and sports activities are compulsory for all students. Professionally qualified physical education teachers guide the sports activities. The school students and staff are divided into four houses - Jade, Garnet, Sapphire and Topaz. Inter-house activities are conducted regularly. Students declared medically unable to participate by a registered physician shall be exempted from sports activities upon submission of a valid medical certificate.The Annual Sports Meet is an important co-curricular activity of the school.",
-      images: ["/thalambur/sport-1.jpg", "/thalambur/sport-2.jpg", "/thalambur/sport-3.jpg", "/thalambur/sport-4.jpg", "/thalambur/sport-5.jpg"],
+      images: ["/thalambur/sports-1.png", "/thalambur/sports-21.png", "/thalambur/sports-31.png", "/thalambur/sports-4.png", "/thalambur/sports-5.png"],
       reverse: true,
 
     },
      {
       title: "Yoga",
       description: "Yoga promotes physical, mental, and spiritual well-being and has its origins in ancient India. It enhances stamina, fine and gross motor skills, and dexterity among students. Regular practice of yoga develops self-awareness, self-control, balance, and coordination. It also improves focus, concentration, self-esteem, and confidence while strengthening the mind–body connection. Various asanas and postures are taught under the guidance of trained and certified yoga instructors.",
-      images: ["/thalambur/yoga-1.jpg", "/thalambur/yoga-2.jpg", "/thalambur/yoga-3.jpg", "/thalambur/yoga-4.jpg", "/thalambur/yoga-5.jpg"],
+      images: ["/thalambur/yoga-1.png", "/thalambur/yoga-2.png", "/thalambur/yoga-3.png", "/thalambur/yoga-4.png", "/thalambur/yoga-5.png"],
     },
     {
       title: "Robotics",
       description: "The school gives the learners to enhance their AI and tech expertise through practical implementation, advanced system building, and real-world innovation challenges.",
-      images: ["/thalambur/robo-4.jpg", "/thalambur/robo-2.jpg", "/thalambur/robo-3.jpg", "/thalambur/robo-1.jpg", "/thalambur/robo-5.jpg"],
+      images: ["/thalambur/robo-4.png", "/thalambur/robo-2.png", "/thalambur/robo-3.png", "/thalambur/robo-1.png", "/thalambur/robo-5.png"],
       reverse: true,
     },
   ],
+
   "Special Features": [
     {
       title: "Maths Lab",
       description: "Learning by doing” forms the basis for all activities in the lab. The Maths Lab enhances conceptual understanding through laboratory activities.",
-      images: ["/thalambur/maths-1.jpg", "/thalambur/maths-2.jpg", "/thalambur/maths-4.jpg", "/thalambur/maths-4.jpg", "/thalambur/maths-5.jpg"],
+      images: ["/thalambur/math-1.png", "/thalambur/math-2.png", "/thalambur/math-3.png", "/thalambur/math-4.png", "/thalambur/math-5.png"],
     },
     {
       title: "Smart Class",
@@ -86,7 +87,7 @@ const galleryData = {
      {
       title: "Clean Class Award",
       description: "A clean class promotes positivity in the learning atmosphere. To instill this sense of cleanliness, the Clean Class Award has been instituted for Classes I to VII. The classes are judged on various parameters of cleanliness and the award is given once a term.",
-      images: ["/thalambur/award-1.jpg", "/thalambur/award-2.jpg", "/thalambur/award-3.jpg", "/thalambur/award-4.jpg", "/thalambur/award-5.jpg"],
+      images: ["/thalambur/clean-1.png", "/thalambur/clean-2.png", "/thalambur/clean-3.png", "/thalambur/clean-4.png", "/thalambur/award-5.jpg"],
     },
     {
       title: "Innovation Lab",
@@ -108,8 +109,7 @@ const galleryData = {
 
   ],
 
-  
-    "Club Activities": [
+  "Club Activities": [
     {
       title: "Literary Club",
       description: "The objectives are to enhance the following skills: Oratory, Writing, Debating, Reading.",
@@ -124,7 +124,7 @@ const galleryData = {
      {
       title: "Tamil Club",
       description: "Aims to promote and foster the Tamil language and culture.",
-      images: ["/thalambur/t-1.jpg", "/thalambur/t-2.jpg", "/thalambur/t-3.jpg", "/thalambur/t-4.jpg", "/thalambur/t-5.jpg"],
+      images: ["/thalambur/tamil-11.png", "/thalambur/tamil-21.png", "/thalambur/tamil-31.png", "/thalambur/tamil-41.png", "/thalambur/t-5.jpg"],
     },
      {
       title: "Hindi Club",
@@ -159,7 +159,7 @@ const galleryData = {
           </ul>
         </>
       ),
-      images: ["/thalambur/s-1.jpg", "/thalambur/s-2.jpg", "/thalambur/s-3.jpg", "/thalambur/s-4.jpg", "/thalambur/s-5.jpg"],
+      images: ["/thalambur/social-1.png", "/thalambur/social-2.png", "/thalambur/social-3.png", "/thalambur/social-4.png", "/thalambur/social-5.png"],
       reverse: true,
     },
       {
@@ -177,20 +177,20 @@ const galleryData = {
       {
       title: "ECO Club",
       description: "Aim to educate students about environmental issues, encourage sustainable practices, and promote positive changes within their school and community.",
-      images: ["/thalambur/e-1.jpg", "/thalambur/e-2.jpg", "/thalambur/e-3.jpg", "/thalambur/e-4.jpg", "/thalambur/e-5.jpg"],
+      images: ["/thalambur/eco-1.png", "/thalambur/eco-2.png", "/thalambur/eco-3.png", "/thalambur/eco-4.png", "/thalambur/eco-5.png"],
     
     },
      {
       title: "Numerix Club",
       description: "The core activities would revolve around engaging the students with numbers, mathematics, and potentially related topics like statistics or data analysis and Mathematical Games and Puzzles.",
-       images: ["/thalambur/maths-1.jpg", "/thalambur/maths-2.jpg", "/thalambur/maths-4.jpg", "/thalambur/maths-4.jpg", "/thalambur/maths-5.jpg"],
+       images: ["/thalambur/num-1.png", "/thalambur/num-2.png", "/thalambur/num-3.png", "/thalambur/num-4.png", "/thalambur/maths-5.jpg"],
       reverse : true,
     },
     {
       title: "Cyber Security Club",
       description: "Aim to educate the students about emerging technologies in Cyber Security trends and regularly updating security measures for students to effectively ease cyber risks and safeguard digital assets.",
            images: ["/thalambur/computer-1.jpg", "/thalambur/computer-2.jpg", "/thalambur/computer-3.jpg", "/thalambur/computer-4.jpg", "/thalambur/computer-5.jpg"],
-      reverse : true,
+     
     },
   ],
 
@@ -198,39 +198,39 @@ const galleryData = {
     {
       title: "Classical Dance",
       description: "Classical dance is a blend of expressions, melody and rhythm. Classical dance is a perfect example of mind-body-soul connection. The advantages of dance are flexibility, strength, endurance and stamina. Well-trained professionals teach classical dance at the school.",
-      images: ["/thalambur/dance-1.jpg", "/thalambur/dance-2.jpg", "/thalambur/dance-3.jpg", "/thalambur/dance-4.jpg", "/thalambur/dance-5.jpg"],
+      images: ["/thalambur/dance-1.png", "/thalambur/dance-2.png", "/thalambur/dance-3.png", "/thalambur/dance-4.png", "/thalambur/dance-5.png"],
       
     },
       {
       title: "Football",
       description: "Participating in Football, like any other sport, provides many health benefits for children. It’s a physically demanding game that provides an opportunity for players to improve their speed, agility, focus, strength, hand-eye co-ordination, team spirit and overall cardiovascular endurance.",
-      images: ["/thalambur/foot-1.jpg", "/thalambur/foot-2.jpg", "/thalambur/foot-3.jpg", "/thalambur/foot-4.jpg", "/thalambur/foot-5.jpg"],
+      images: ["/thalambur/foot-1.png", "/thalambur/foot-2.png", "/thalambur/foot-3.png", "/thalambur/foot-4.png", "/thalambur/foot-5.png"],
       reverse: true,
     },
      {
       title: "Boxing",
       description: "Boxing sharpens students’ problem-solving skills and promotes health and fitness. Skills such as hooks, uppercuts, and jabs help students learn self-defence techniques. Boxing requires intense concentration and improves focus and attention. It also helps enhance students’ confidence and academic performance.",
-      images: ["/thalambur/box-1.jpg", "/thalambur/box-2.jpg", "/thalambur/box-3.jpg", "/thalambur/box-4.jpg", "/thalambur/box-5.jpg"],
+      images: ["/thalambur/box-1.png", "/thalambur/box-2.png", "/thalambur/box-3.png", "/thalambur/box-4.jpg", "/thalambur/box-5.jpg"],
     
     },
       {
       title: "Silambam",
       description: "The practice of Silambam will contribute to the following elements of general motor ability: Hand-eye co-ordiantion, agility, body balance, speed, muscular endurance, muscular strength.",
-      images: ["/thalambur/sila-1.jpg", "/thalambur/sila-2.jpg", "/thalambur/sila-3.jpg", "/thalambur/sila-4.jpg", "/thalambur/sila-5.jpg"],
+      images: ["/thalambur/sila-1.png", "/thalambur/sila-2.png", "/thalambur/sila-3.png", "/thalambur/sila-4.png", "/thalambur/sila-5.png"],
       reverse : true,
     
     },
       {
       title: "Skating",
       description: "Roller skating helps to improve balance and coordination. Roller skating provides a great way to have fun while at the same time be physically active for hours.",
-      images: ["/thalambur/ska-1.jpg", "/thalambur/ska-2.jpg", "/thalambur/ska-3.jpg", "/thalambur/ska-4.jpg", "/thalambur/ska-5.jpg"],
+      images: ["/thalambur/ska-1.png", "/thalambur/ska-2.png", "/thalambur/ska-3.png", "/thalambur/ska-4.png", "/thalambur/ska-5.png"],
     
     },
      {
       title: "Instrumental Music (Keyboard, Guitar, Violin)",
       description: "The aims of teaching music are to promote enjoyment in music, promote self-expression, promote participation and performance in singing and instrumental activities, develop confidence and skills in composing, communicating and recording.",
-      images: ["/thalambur/in-1.jpg", "/thalambur/in-2.jpg", "/thalambur/western-4.jpg", "/thalambur/western-5.jpg", "/thalambur/western-1.jpg"],
-    
+      images: ["/thalambur/ins-1.png", "/thalambur/ins-2.png", "/thalambur/ins-3.png", "/thalambur/ins-4.png", "/thalambur/ins-5.png"],
+    reverse : true,
     },
   ]
 };

@@ -5,53 +5,33 @@ import Link from "next/link";
 const slides = [
   {
     id: 1,
-    image: "/dargaroad/banner/b-1.jpg",
-    mobileImage: "/dargaroad/banner/1.png",
+    image: "/dargaroad/banner/w-1.png",
+    mobileImage: "/dargaroad/banner/m-1.png",
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Dargaroad",
   },
   {
     id: 2,
-    image: "/dargaroad/banner/b-2.jpg",
-    mobileImage: "/dargaroad/banner/2.png",
+    image: "/dargaroad/banner/w-2.png",
+    mobileImage: "/dargaroad/banner/m-2.png",
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
   },
   {
     id: 3,
-    image: "/dargaroad/banner/b-3.jpg",
-    mobileImage: "/dargaroad/banner/3.png",
+    image: "/dargaroad/banner/w-3.png",
+    mobileImage: "/dargaroad/banner/m-3.png",
     title: "Global Standards",
     subtitle: "World Class Infrastructure\n& Modern Learning",
   },
   {
     id: 4,
-    image: "/dargaroad/banner/b-4.jpg",
-    mobileImage: "/dargaroad/banner/4.png",
+    image: "/dargaroad/banner/w-4.png",
+    mobileImage: "/dargaroad/banner/m-4.png",
     title: "Beyond Academics",
     subtitle: "Developing Talents\nIn Sports and Arts",
   },
-  {
-    id: 5,
-    image: "/dargaroad/banner/b-5.jpg",
-    mobileImage: "/dargaroad/banner/5.png",
-    title: "Legacy of Quality",
-    subtitle: "30+ Years of Excellence\nin Education",
-  },
-  {
-    id: 6,
-    image: "/dargaroad/banner/b-6.jpg",
-    mobileImage: "/dargaroad/banner/6.png",
-    title: "Digital Learning",
-    subtitle: "Smart Classrooms\nfor Future Leaders",
-  },
-  {
-    id: 7,
-    image: "/dargaroad/banner/b-7.jpg",
-    mobileImage: "/dargaroad/banner/7.png",
-    title: "Join Us",
-    subtitle: "Building Foundations\nfor a Brighter Tomorrow",
-  },
+  
 ];
 
 export default function HeroSection() {

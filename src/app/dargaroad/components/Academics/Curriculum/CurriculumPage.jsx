@@ -76,7 +76,7 @@ const ACADEMIC_LEVELS = [
   },
   {
     id: "higher-secondary",
-    title: "GRADE XI & XII – GROUPS OFFERED",
+    title: "GRADE XI & XII – NCERT SYLLABUS",
     groups: [
       {
         sno: 1,
@@ -364,7 +364,7 @@ export default function CurriculumSection() {
                 {activeTab.groups && (
                   <div className="mt-8">
                     <h3 className="text-center text-xl font-bold mb-6 uppercase">
-                      Groups Offered
+                      NCERT SYLLABUS
                       <span className="block text-sm text-gray-500 mt-2">
                         (For Class XI & XII)
                       </span>

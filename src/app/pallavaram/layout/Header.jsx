@@ -218,7 +218,7 @@ export default function Header() {
         }`}
       >
         <div className="p-5 flex justify-between items-center bg-[#2B158F] text-white shrink-0">
-          <span className="font-bold uppercase tracking-wider text-sm">Main Menu</span>
+          <span className="font-bold uppercase tracking-wider text-sm">Menu</span>
           <button onClick={() => setMobileOpen(false)} className="text-2xl leading-none">&times;</button>
         </div>
 

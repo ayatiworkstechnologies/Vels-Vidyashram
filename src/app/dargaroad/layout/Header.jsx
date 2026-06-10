@@ -95,6 +95,10 @@ export default function Header() {
               <img src="/thalambur/mail.png" className="w-3" alt="mail" />
               apply@velsvidyashram.ac.in
             </a>
+
+            <div className="items-center gap-4 hover:text-gray-200 transition">
+              <h5 className=" text-white">Affiliation No : 1931205</h5>
+            </div>
           </div>
 
           {/* RIGHT - Actions */}
@@ -184,7 +188,7 @@ export default function Header() {
       <div className="bg-white flex justify-center py-4 px-4 border-b lg:border-none">
         <div className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px]"> 
           <Image
-            src="/dargaroad/vels-logo.png"
+            src="/dargaroad/new-logo.png"
             alt="Vels Vidyashram"
             width={1600}
             height={345}
@@ -210,7 +214,7 @@ export default function Header() {
         }`}
       >
         <div className="p-5 flex justify-between items-center bg-[#2B158F] text-white shrink-0">
-          <span className="font-bold tracking-wide uppercase text-sm">Navigation</span>
+          <span className="font-bold tracking-wide uppercase text-sm">Menu</span>
           <button onClick={() => setMobileOpen(false)} className="text-2xl p-1 leading-none">&times;</button>
         </div>
 
@@ -265,6 +269,7 @@ export default function Header() {
                  <img src="/thalambur/mail.png" className="w-4 opacity-70" alt="" />
                  apply@velsvidyashram.ac.in
                </a>
+               
             </div>
           </div>
         </div>

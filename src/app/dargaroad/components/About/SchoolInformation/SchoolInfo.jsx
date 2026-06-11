@@ -14,7 +14,7 @@ const ITEMS = [
   { id: 9, title: "Calendar", pdf: "/dargaroad/pdf/academic-calendar.pdf" },
   { id: 10, title: "SMC", pdf: "/dargaroad/pdf/Smc-new.pdf" },
   { id: 11, title: "Recognition", pdf: "/dargaroad/pdf/Recognition.pdf" },
-  { id: 12, title: "PTA", pdf: "/dargaroad/pdf/PTA.pdf" },
+  { id: 12, title: "PTA", pdf: "/dargaroad/pdf/PTA - 2026-27.pdf" },
   { id: 13, title: "Result", pdf: "/dargaroad/pdf/result-new.pdf" },
   { id: 14, title: "Self Darga Road", pdf: "/dargaroad/pdf/Self-DargaRoad.pdf" },
   { id: 15, title: "Self Affidavit", pdf: "/dargaroad/pdf/self-affidavit.pdf" },

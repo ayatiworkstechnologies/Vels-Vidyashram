@@ -213,10 +213,10 @@ export default function CurriculumSection() {
                 className="p-8 md:p-12"
               >
                 {activeTab.id !== "higher-secondary" && (
-  <h2 className="text-orange-500 font-bold text-sm uppercase mb-6 tracking-widest">
-    {activeTab.title}
-  </h2>
-)}
+                  <h2 className="text-orange-500 font-bold text-sm uppercase mb-6 tracking-widest">
+                    {activeTab.title}
+                  </h2>
+                )}
 
                 {activeTab.description && (
                   <p className="text-gray-600 leading-relaxed mb-10">

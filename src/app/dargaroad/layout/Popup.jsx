@@ -31,7 +31,7 @@ export default function HomePage() {
           {/* Top Image */}
           <div className="h-[300px] w-full bg-gray-200">
             <img 
-              src="/dargaroad/admission-dargaroad.jpeg" 
+              src="/dargaroad/darga-popup.jpeg" 
               alt="School Admission Banner"
               className="h-full w-full object-cover"
             />

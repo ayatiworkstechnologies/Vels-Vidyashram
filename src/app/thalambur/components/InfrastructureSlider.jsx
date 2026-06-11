@@ -90,10 +90,10 @@ export default function InfrastructureSlider() {
           Pre KG through 12
         </span>
         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 leading-tight">
-          Why Vels Vidyashram is the Best Choice?
+          Why Vels Vidyashram is best Solution for Education ?
         </h2>
         <p className="text-gray-500 text-sm leading-relaxed">
-          Our mission is to impart knowledge with values and ethics and to prepare the younger generation.
+          Our mission is to impart knowledge with values and ethics. To prepare the younger generation for a better future by improving their capabilities to face the challenges of the outside world.
         </p>
       </div>
 

@@ -106,41 +106,44 @@ export default function Header() {
           </div>
 
           {/* RIGHT - Responsive Header Links */}
-          <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
-            <div className="flex items-center gap-2 sm:gap-4 ml-auto">
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
-                className="bg-white text-[#2B158F] px-3 sm:px-4 py-1 rounded-full font-medium text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition"
-              >
-                Online Fees Payment
-              </Link>
+             <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
+              className="bg-white text-[#2B158F] px-3 sm:px-4 py-1.5 rounded-full font-bold text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition"
+            >
+              Online Fees Payment
+            </Link>
 
-              {/* Other Campus - Desktop */}
-              <div className="relative group hidden lg:block">
-                <button className="bg-white text-[#2B158F] px-3 sm:px-4 py-1 rounded-full font-medium text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition">
-                  Other Campus
-                </button>
-                <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
-                  <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
-                    {campuses.map((campus) => (
-                      <Link key={campus.label} href={campus.href} className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors">
-                        {campus.label}
-                      </Link>
-                    ))}
-                  </div>
+            {/* DESKTOP CAMPUS DROPDOWN (Unchanged) */}
+            <div className="relative group hidden lg:block">
+              <button className="bg-white text-[#2B158F] px-3 sm:px-4 py-1.5 rounded-full font-bold text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition">
+                Other Campus
+              </button>
+              <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
+                <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
+                  {campuses.map((campus) => (
+                    <Link
+                      key={campus.label}
+                      href={campus.href}
+                      className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"
+                    >
+                      {campus.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
-
-              {/* Mobile Menu Toggle */}
-              <button
-                className="lg:hidden text-2xl sm:text-3xl focus:outline-none leading-none"
-                onClick={() => setMobileOpen(!mobileOpen)}
-              >
-                {mobileOpen ? "✕" : "☰"}
-              </button>
             </div>
+
+            {/* MOBILE TOGGLE */}
+            <button
+              className="lg:hidden p-2 text-2xl focus:outline-none"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Toggle Menu"
+            >
+              ☰
+            </button>
           </div>
         </div>
       </div>

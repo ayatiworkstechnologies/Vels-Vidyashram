@@ -102,26 +102,25 @@ export default function Header() {
           </div>
 
           {/* RIGHT - Actions */}
-          <div className="flex items-center justify-between w-full md:w-auto gap-3">
+             <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-4">
             <Link
-              href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap rounded-full bg-white px-3 py-1 text-[10px] sm:text-xs font-bold text-[#2B158F] transition hover:bg-gray-100 sm:px-4"
+              href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
+              className="bg-white text-[#2B158F] px-3 sm:px-4 py-1.5 rounded-full font-bold text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition"
             >
               Online Fees Payment
             </Link>
 
-            {/* DESKTOP DROPDOWN */}
+            {/* DESKTOP CAMPUS DROPDOWN (Unchanged) */}
             <div className="relative group hidden lg:block">
-              <button className="whitespace-nowrap rounded-full bg-white px-3 py-1 text-[10px] sm:text-xs font-bold text-[#2B158F] transition hover:bg-gray-100 sm:px-4">
+              <button className="bg-white text-[#2B158F] px-3 sm:px-4 py-1.5 rounded-full font-bold text-[10px] sm:text-xs whitespace-nowrap hover:bg-gray-100 transition">
                 Other Campus
               </button>
               <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
                 <div className="bg-white shadow-xl border-t-2 border-[#FF8700]">
                   {campuses.map((campus) => (
                     <Link
-                      target="_blank"
                       key={campus.label}
                       href={campus.href}
                       className="block px-4 py-3 text-[#2B158F] hover:bg-[#2B158F] hover:text-white border-b border-gray-100 last:border-0 transition-colors"
@@ -133,11 +132,11 @@ export default function Header() {
               </div>
             </div>
 
-            {/* MOBILE HAMBURGER */}
+            {/* MOBILE TOGGLE */}
             <button
-              className="lg:hidden p-1 text-2xl focus:outline-none flex items-center justify-center"
+              className="lg:hidden p-2 text-2xl focus:outline-none"
               onClick={() => setMobileOpen(true)}
-              aria-label="Open Menu"
+              aria-label="Toggle Menu"
             >
               ☰
             </button>
@@ -284,12 +283,12 @@ function MobileNavItem({ item, pathname, closeMenu }) {
   const [open, setOpen] = useState(isActive);
 
   return (
-    <li className="border-b border-gray-50 last:border-0">
+      <li className="border-b border-gray-50 last:border-0">
       <div className="flex items-center justify-between">
         <Link
           href={item.href}
-          onClick={item.href !== "#" ? closeMenu : () => setOpen(!open)}
-          className={`flex-1 px-5 py-4 font-semibold text-[15px] transition-colors ${
+          onClick={item.href === "#" ? (e) => { e.preventDefault(); setOpen(!open); } : closeMenu}
+          className={`flex-1 px-6 py-4 font-semibold transition-colors ${
             isActive ? "text-[#FF8700]" : "text-[#2B158F]"
           }`}
         >
@@ -299,7 +298,7 @@ function MobileNavItem({ item, pathname, closeMenu }) {
         {item.submenu && (
           <button
             onClick={() => setOpen(!open)}
-            className={`px-6 py-4 transition-colors border-l border-gray-100 ${open ? "text-[#FF8700] bg-gray-50" : "text-[#2B158F]"}`}
+            className={`px-6 py-4 border-l border-gray-100 transition-colors ${open ? "text-[#FF8700] bg-gray-50" : "text-[#2B158F]"}`}
           >
             <span className={`inline-block transition-transform duration-300 text-xl font-light ${open ? "rotate-45" : ""}`}>
               +
@@ -309,16 +308,16 @@ function MobileNavItem({ item, pathname, closeMenu }) {
       </div>
 
       {item.submenu && open && (
-        <ul className="bg-gray-50/50 py-1 border-t border-gray-100 animate-in slide-in-from-top-2 duration-200">
+        <ul className="bg-gray-50/50 py-1 border-t border-gray-100">
           {item.submenu.map((sub) => (
             <li key={sub.label}>
               <Link
                 href={sub.href}
                 onClick={closeMenu}
-                className={`block px-10 py-3 text-[14px] transition-all relative ${
+                className={`block px-10 py-3 text-sm transition-all relative ${
                   pathname === sub.href 
-                    ? "text-[#FF8700] font-bold bg-white border-l-4 border-[#FF8700]" 
-                    : "text-gray-600 hover:text-[#2B158F] hover:pl-11"
+                    ? "text-[#FF8700] font-bold border-l-4 border-[#FF8700] bg-white" 
+                    : "text-gray-600 hover:text-[#2B158F]"
                 }`}
               >
                 {sub.label}

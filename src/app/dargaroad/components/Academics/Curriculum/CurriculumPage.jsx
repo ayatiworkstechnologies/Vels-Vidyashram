@@ -212,9 +212,11 @@ export default function CurriculumSection() {
                 transition={{ duration: 0.4 }}
                 className="p-8 md:p-12"
               >
-                <h2 className="text-orange-500 font-bold text-sm uppercase mb-6 tracking-widest">
-                  {activeTab.title}
-                </h2>
+                {activeTab.id !== "higher-secondary" && (
+  <h2 className="text-orange-500 font-bold text-sm uppercase mb-6 tracking-widest">
+    {activeTab.title}
+  </h2>
+)}
 
                 {activeTab.description && (
                   <p className="text-gray-600 leading-relaxed mb-10">
@@ -229,9 +231,7 @@ export default function CurriculumSection() {
                         key={idx}
                         className="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4"
                       >
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white text-xs">
-                          ✓
-                        </span>
+                        
                         <div>
                           <h4 className="font-bold text-gray-800">
                             {item.label}
@@ -364,7 +364,7 @@ export default function CurriculumSection() {
                 {activeTab.groups && (
                   <div className="mt-8">
                     <h3 className="text-center text-xl font-bold mb-6 uppercase">
-                      NCERT SYLLABUS
+                       Groups Offered
                       <span className="block text-sm text-gray-500 mt-2">
                         (For Class XI & XII)
                       </span>

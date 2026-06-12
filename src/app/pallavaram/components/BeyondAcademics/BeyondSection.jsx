@@ -42,7 +42,7 @@ const activities = [
   },
      {
     title: "Visual Arts",
-    description: "The Visual Arts curriculum is aimed at promoting intellectual, aesthetic and emotional growth that meet the eye and evoke an emotion through an expression of skill and imagination. Though beauty is in the eye of the beholder- students realize the joy of expression through various mediums with multiple creative techniques. The learners learn to appreciate art from different cultures as well as the native arts of the country. This will be graded across the year based on student participation and teacher’s observations.",
+    description: "The Visual Arts curriculum is aimed at promoting intellectual, aesthetic and emotional growth that meet the eye and evoke an emotion through an expression of skill and imagination. The learners learn to appreciate art from different cultures as well as the native arts of the country.",
     images: ["/pallavaram/va1.jpg"],
     color: "bg-slate-50"
   },
@@ -54,13 +54,13 @@ const activities = [
   },
     {
     title: "Vels Talent Zone",
-    description: "Vels talent zone an exclusive skill classes without any additional fees during school hours. It includes Classical Dance, Zumba, Karate, Silambam, Skating.",
+    description: "Vels talent zone an exclusive skill classes without any additional fees during school hours. It includes Classical Dance, Chess, Karate, Silambam, Skating.",
     images: ["/pallavaram/classical.jpg", "/pallavaram/zumba.jpg","/pallavaram/karate.jpg", "/pallavaram/Silambam.jpg", "/pallavaram/Skating.jpg"],
     color: "bg-slate-50"
   },
      {
     title: "Robotics",
-    description: "The school gives the learners to enhance their AI and tech expertise through practical implementation, advanced system building, and real-world innovation challenges.",
+    description: "The school gives opportunity to the learners to enhance their AI and tech expertise through practical implementation, advanced system building, and real-world innovation challenges.",
     images: ["/pallavaram/events/robot-1.jpg", "/pallavaram/events/robot-2.jpg", "/pallavaram/events/robot.jpg", "/pallavaram/events/robot-4.jpg"],
     color: "bg-slate-50"
   },

@@ -82,7 +82,7 @@ export default function OurMottoSection() {
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
           }`}
         >
-          The Motto of the School is <br />
+          The "Motto" of the School is <br />
           Wisdom is Strength.
         </h2>
       </div>

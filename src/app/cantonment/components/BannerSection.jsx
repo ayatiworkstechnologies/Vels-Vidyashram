@@ -5,7 +5,7 @@ import Link from "next/link";
 const slides = [
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School - Cantonment",
+    subtitle: "Vels Vidyashram\nKinder Garden School - Cantonment",
     image: "/cantonment/banner/banner1.jpg",
     mobileImage: "/cantonment/banner/1.png",
   },

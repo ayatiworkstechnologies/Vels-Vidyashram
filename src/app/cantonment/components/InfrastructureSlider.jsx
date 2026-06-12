@@ -79,9 +79,7 @@ export default function InfrastructureSlider() {
     <div className="w-full">
       {/* --- SHARED HEADER SECTION --- */}
       <div className="text-center max-w-xl mx-auto px-6 pt-16 pb-10">
-        <span className="inline-block text-xs font-primary font-medium px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 mb-3 uppercase tracking-wider">
-          Pre KG through 12
-        </span>
+       
         <h2 className="text-3xl md:text-4xl font-secondary font-bold mb-3 text-gray-900 leading-tight">
           The Motto of the School is Wisdom is Strength.
         </h2>

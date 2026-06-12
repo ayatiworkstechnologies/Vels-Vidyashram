@@ -16,7 +16,7 @@ const ITEMS = [
   { id: 12, title: "Calendar", pdf: "/pallavaram/pdf/calendar.pdf" },
   { id: 13, title: "SMC", pdf: "/pallavaram/pdf/smc.pdf" },
   { id: 14, title: "PTA", pdf: "/pallavaram/pdf/pta.pdf" },
-  { id: 15, title: "Results", pdf: "/pallavaram/pdf/result.pdf" },
+  { id: 15, title: "Results", pdf: "/pallavaram/pdf/RESULTS.pdf" },
   { id: 16, title: "Self Affidavit", pdf: "/pallavaram/pdf/self-affidavit.pdf" },
   { id: 17, title: "Tc Sample", pdf: "/pallavaram/pdf/TC-Sample.pdf" },
 ];

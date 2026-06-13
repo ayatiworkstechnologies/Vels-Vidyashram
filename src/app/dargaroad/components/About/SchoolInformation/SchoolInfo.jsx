@@ -9,7 +9,7 @@ const ITEMS = [
   { id: 4, title: "Trust", pdf: "/dargaroad/pdf/TRUST.pdf" },
   { id: 5, title: "Building", pdf: "/dargaroad/pdf/Building.pdf" },
   { id: 6, title: "Fire", pdf: "/dargaroad/pdf/fire-certificate.pdf" },
-  { id: 7, title: "Sanitary", pdf: "/dargaroad/pdf/sanitary-certificate.pdf" },
+  { id: 7, title: "Sanitary", pdf: "/dargaroad/pdf/sanitary-certificate-new.pdf" },
   { id: 8, title: "FEE structure", pdf: "/dargaroad/pdf/fee-structure.pdf" },
   { id: 9, title: "Calendar", pdf: "/dargaroad/pdf/academic-calendar.pdf" },
   { id: 10, title: "SMC", pdf: "/dargaroad/pdf/Smc-new.pdf" },

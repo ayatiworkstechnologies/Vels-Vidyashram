@@ -29,7 +29,7 @@ export default function CourseSection() {
             {/* Bottom Image Card */}
             <div className="overflow-hidden rounded-[28px] min-h-[320px] sm:min-h-[360px]">
               <img
-                src="/cantonment/spell.png"
+                src="/cantonment/pp.png"
                 alt="Laboratory testing"
                 className="h-full w-full object-cover"
               />

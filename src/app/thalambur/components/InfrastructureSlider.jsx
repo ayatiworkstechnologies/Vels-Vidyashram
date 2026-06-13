@@ -1,8 +1,10 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
-// Swiper components and styles
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -10,52 +12,97 @@ const slides = [
   {
     id: 1,
     title: "Infrastructure",
-    description: "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities.",
+    description:
+      "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities.",
     image: "/thalambur/Infrastructure-1.png",
     icon: "/thalambur/fav-6.png",
+    buttonText: "Learn More",
+    buttonLink: "/thalambur/photo-gallery",
   },
   {
     id: 2,
     title: "Curriculum",
-    description: "Comprehensive curriculum that balances academics, creativity, and critical thinking aligned with global standards.",
+    description:
+      "Comprehensive curriculum that balances academics, creativity, and critical thinking aligned with global standards.",
     image: "/thalambur/curriculum-new.png",
     icon: "/thalambur/fav-2.png",
+    buttonText: "Learn More",
+    buttonLink: "/thalambur/curriculum",
   },
   {
     id: 3,
-    title: "Activities",
-    description: "Holistic development through sports, arts, and extracurricular programs that nurture creativity and teamwork.",
-    image: "/thalambur/act-1.png",
+    title: "Transport",
+    description:
+      "A reliable and safe transportation system with a fleet of well-maintained buses, GPS tracking, and trained drivers.",
+    image: "/thalambur/transport.png",
     icon: "/thalambur/fav-3.png",
+    buttonText: "Learn More",
+    buttonLink: "/thalambur/transport",
   },
   {
     id: 4,
     title: "Athletics",
-    description: "State-of-the-art sports facilities and a strong athletics program that promotes physical fitness and sportsmanship.",
+    description:
+      "State-of-the-art sports facilities and a strong athletics program that promotes physical fitness and sportsmanship.",
     image: "/thalambur/Athletics-1.png",
     icon: "/thalambur/fav-4.png",
+    buttonText: "Learn More",
+    buttonLink: "/thalambur/physical-education",
   },
   {
     id: 5,
     title: "Step",
-    description: "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
+    description:
+      "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
     image: "/thalambur/step-new.png",
     icon: "/thalambur/fav-5.png",
+    buttonText: "Learn More",
+    buttonLink: "/thalambur/beyond-academics",
   },
   {
     id: 6,
     title: "Laboratories",
-    description: "Well-equipped science and computer labs that provide hands-on learning experiences and foster innovation.",
+    description:
+      "Well-equipped science and computer labs that provide hands-on learning experiences and foster innovation.",
     image: "/thalambur/Laboratories-1.png",
     icon: "/thalambur/fav-1.png",
+    buttonText: "Learn More",
+    buttonLink: "/thalambur/lab",
   },
 ];
+
+function LearnMoreButton({ href, text }) {
+  return (
+    <Link
+      href={href}
+      className="group inline-flex items-center gap-4 text-[#07122F] text-lg md:text-xl font-bold w-fit"
+    >
+      <span>{text}</span>
+
+      <span className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#3A2A96] text-white transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#2f217f]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 12h14M13 6l6 6-6 6"
+          />
+        </svg>
+      </span>
+    </Link>
+  );
+}
 
 export default function InfrastructureSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
 
-  // Desktop Scroll Logic (only runs on screens > 1024px)
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current || window.innerWidth < 1024) return;
@@ -65,9 +112,13 @@ export default function InfrastructureSlider() {
       const sectionHeight = section.offsetHeight;
       const viewportHeight = window.innerHeight;
 
-      const scrollProgress = Math.max(0, Math.min(1, 
-        (viewportHeight - rect.top) / (sectionHeight + viewportHeight)
-      ));
+      const scrollProgress = Math.max(
+        0,
+        Math.min(
+          1,
+          (viewportHeight - rect.top) / (sectionHeight + viewportHeight)
+        )
+      );
 
       const newIndex = Math.min(
         Math.floor(scrollProgress * slides.length),
@@ -77,27 +128,30 @@ export default function InfrastructureSlider() {
       setActiveIndex(newIndex);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="w-full">
-      {/* --- SHARED HEADER --- */}
       <div className="text-center max-w-xl mx-auto px-6 pt-16 pb-10">
         <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 mb-3 uppercase tracking-wider">
           Pre KG through 12
         </span>
+
         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 leading-tight">
-          Why Vels Vidyashram is best Solution for Education ?
+          Why Vels Vidyashram is best Solution for Education?
         </h2>
+
         <p className="text-gray-500 text-sm leading-relaxed">
-          Our mission is to impart knowledge with values and ethics. To prepare the younger generation for a better future by improving their capabilities to face the challenges of the outside world.
+          Our mission is to impart knowledge with values and ethics. To prepare
+          the younger generation for a better future by improving their
+          capabilities to face the challenges of the outside world.
         </p>
       </div>
 
-      {/* --- MOBILE SLIDER (Visible only on Mobile/Tablet) --- */}
       <div className="block lg:hidden px-4 pb-20">
         <Swiper
           modules={[Pagination, Autoplay]}
@@ -105,56 +159,68 @@ export default function InfrastructureSlider() {
           slidesPerView={1.1}
           centeredSlides={true}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           className="infrastructure-swiper"
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-full flex flex-col">
                 <div className="h-56 w-full relative">
-                  <img 
-                    src={slide.image} 
-                    alt={slide.title} 
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
                     className="w-full h-full object-cover"
                   />
+
                   <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-xl shadow-md">
-                    <img src={slide.icon} alt="" className="w-8 h-8" />
+                    <img src={slide.icon} alt={slide.title} className="w-8 h-8" />
                   </div>
                 </div>
+
                 <div className="p-6 flex-grow">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{slide.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {slide.title}
+                  </h3>
+
                   <p className="text-gray-600 text-sm leading-relaxed mb-6">
                     {slide.description}
                   </p>
+
+                  <LearnMoreButton
+                    href={slide.buttonLink}
+                    text={slide.buttonText}
+                  />
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        
-        {/* Custom Bullet Styling */}
+
         <style jsx global>{`
-          .infrastructure-swiper .swiper-pagination-bullet-active {
-            background: #EA580C !important;
-            width: 24px;
-            border-radius: 4px;
-          }
           .infrastructure-swiper {
             padding-bottom: 50px !important;
+          }
+
+          .infrastructure-swiper .swiper-pagination-bullet-active {
+            background: #ea580c !important;
+            width: 24px;
+            border-radius: 4px;
           }
         `}</style>
       </div>
 
-      {/* --- DESKTOP STACKING CARDS (Visible only on Desktop) --- */}
       <section
         ref={sectionRef}
         className="hidden lg:block relative"
         style={{
           height: `${slides.length * 100}vh`,
-          backgroundImage: 'url(/thalambur/bg-infra.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
+          backgroundImage: "url(/thalambur/bg-infra.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="sticky top-0 h-screen flex items-center justify-center px-12 overflow-hidden">
@@ -162,9 +228,18 @@ export default function InfrastructureSlider() {
             {slides.map((slide, index) => {
               const isActive = index === activeIndex;
               const isPast = index < activeIndex;
-              const scale = isActive ? 1 : 0.95 - (Math.abs(index - activeIndex) * 0.03);
-              const translateY = isPast ? -30 * (activeIndex - index) : 15 * (index - activeIndex);
-              const opacity = isActive ? 1 : Math.max(0.4, 1 - Math.abs(index - activeIndex) * 0.15);
+
+              const scale = isActive
+                ? 1
+                : 0.95 - Math.abs(index - activeIndex) * 0.03;
+
+              const translateY = isPast
+                ? -30 * (activeIndex - index)
+                : 15 * (index - activeIndex);
+
+              const opacity = isActive
+                ? 1
+                : Math.max(0.4, 1 - Math.abs(index - activeIndex) * 0.15);
 
               return (
                 <div
@@ -172,9 +247,9 @@ export default function InfrastructureSlider() {
                   className="absolute inset-0 transition-all duration-700 ease-out"
                   style={{
                     transform: `translateY(${translateY}px) scale(${scale})`,
-                    opacity: opacity,
+                    opacity,
                     zIndex: slides.length - Math.abs(index - activeIndex),
-                    pointerEvents: isActive ? 'auto' : 'none',
+                    pointerEvents: isActive ? "auto" : "none",
                   }}
                 >
                   <div className="relative bg-white rounded-[40px] overflow-hidden shadow-2xl h-full border border-gray-100">
@@ -182,16 +257,29 @@ export default function InfrastructureSlider() {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
-                    
+
+                    <div className="absolute inset-0 bg-white/35" />
+
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">
-                        <img src={slide.icon} alt={slide.title} className="w-12 h-12 mb-6" />
+                        <img
+                          src={slide.icon}
+                          alt={slide.title}
+                          className="w-12 h-12 mb-6"
+                        />
+
                         <h3 className="text-5xl font-bold mb-5 text-gray-900 leading-tight">
                           {slide.title}
                         </h3>
+
                         <p className="text-gray-700 text-sm leading-relaxed mb-8 max-w-md">
                           {slide.description}
                         </p>
+
+                        <LearnMoreButton
+                          href={slide.buttonLink}
+                          text={slide.buttonText}
+                        />
                       </div>
                     </div>
                   </div>

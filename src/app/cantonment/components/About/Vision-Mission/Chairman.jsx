@@ -123,7 +123,7 @@ export default function Chairman() {
           src="/cantonment/chairman-1.png"
           alt="Education at Vels Vidyashram"
           fill
-          className="object-cover" // Added object-cover to ensure the image fills the 30% width nicely
+          className="object-contain" // Added object-cover to ensure the image fills the 30% width nicely
           priority
         />
       </div>

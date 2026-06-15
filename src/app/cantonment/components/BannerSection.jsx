@@ -7,7 +7,7 @@ const slides = [
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nKinder Garden School - Cantonment",
     image: "/cantonment/banner/banner1.jpg",
-    mobileImage: "/cantonment/banner/1.png",
+    mobileImage: "/cantonment/banner/1.png", 
   },
   {
     title: "Nurturing Excellence",
@@ -26,6 +26,12 @@ const slides = [
     subtitle: "Developing Talents\nIn Sports and Arts",
     image: "/cantonment/banner/banner4.jpg",
     mobileImage: "/cantonment/banner/4.png",
+  },
+  {
+    title: "Future-ready learning",
+    subtitle: "Preparing Children for\nTomorrow's Opportunities Today",
+    image: "/cantonment/banner/banner5.jpg",
+    mobileImage: "/cantonment/banner/5.png",
   },
 ];
 

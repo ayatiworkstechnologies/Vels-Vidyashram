@@ -30,7 +30,7 @@ const activities = [
   {
     title: "Art and Craft",
     description: "Art gives a fun filled experience to learn and improve skills. Subjects are blended with craft activities to give hands on experience. A special and  well-designed book for Art and Craft enthrall kids, fosters their creative thinking and makes children inventive.",
-    images: ["/cantonment/art1.jpg", "/cantonment/art2.jpg", "/cantonment/art3.jpg"],
+    images: ["/cantonment/art1.jpg", "/cantonment/art2.jpg", "/cantonment/art3.jpg", "/cantonment/art4.jpg"],
     color: "bg-slate-50"
   },
   
@@ -43,7 +43,7 @@ const activities = [
      {
     title: "Music & Dance",
     description: "Music and Dance training are given by Expert Professionals in the respective field. A systematic curriculum is framed and followed to make it more to engaging and enthusiastic.",
-    images: ["/cantonment/music1.jpg", "/cantonment/music2.jpg", "/cantonment/music3.jpg", "/cantonment/music4.jpg"],
+    images: ["/cantonment/music1.jpg", "/cantonment/music2.jpg", "/cantonment/music3.png", "/cantonment/music4.jpg"],
     color: "bg-slate-50"
   },
     {

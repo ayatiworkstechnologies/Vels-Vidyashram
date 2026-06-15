@@ -106,14 +106,14 @@ export default function AboutSchool() {
             }`}>
               <div className="rounded-2xl overflow-hidden shadow-md aspect-square lg:aspect-auto hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/cantonment/can.png"
+                  src="/cantonment/can-1.png"
                   alt="Students studying"
                   width={300}
                   height={300}
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </section>

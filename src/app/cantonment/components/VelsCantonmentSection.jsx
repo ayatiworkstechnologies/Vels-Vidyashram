@@ -69,10 +69,10 @@ export default function VelsStaticOverlaySection() {
         </div>
 
         {/* RIGHT IMAGE (Curved Corners Grid) */}
-        <div className={`relative w-full h-[350px] sm:h-[450px] lg:h-[550px] transition-all duration-1000 delay-300 mt-8 lg:mt-0 ${
+        <div className={`relative w-full h-[350px]  sm:h-[450px] lg:h-[550px] transition-all duration-1000 delay-300 mt-8 lg:mt-0 ${
           topVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-95'
         }`}>
-          <div className="relative w-full h-full overflow-hidden">
+          <div className="relative w-full rounded-3xl h-full overflow-hidden">
             <Image
               src="/cantonment/sec-11.png"
               alt="Students"
@@ -88,7 +88,7 @@ export default function VelsStaticOverlaySection() {
         bannerVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
       }`}>
         <Image
-          src="/thalambur/bg-vels.png"
+          src="/cantonment/bg-vels.png"
           alt="Vels Campus"
           fill
           className="object-cover"
@@ -97,7 +97,7 @@ export default function VelsStaticOverlaySection() {
           <h2 className={`text-2xl md:text-5xl text-white font-primary font-bold drop-shadow-2xl transition-all duration-1000 delay-300 ${
             bannerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            Welcome to Vels Vidyashram
+            Welcome to Vels Vidyashram Cantonment
           </h2>
         </div>
       </div>

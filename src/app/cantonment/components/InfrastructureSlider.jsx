@@ -15,7 +15,7 @@ const slides = [
     description:
       "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities. Built to support comfort, focus, and growth at every stage.",
     image: "/cantonment/Infrastructure.png",
-    icon: "/thalambur/fav-6.png",
+    icon: "/cantonment/fav-6.png",
     link: "/cantonment/photo-gallery",
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     description:
       "A comprehensive curriculum that balances academics, creativity, and life skills. Aligned with global standards and designed to foster critical thinking, innovation, and holistic development.",
     image: "/cantonment/Curriculum.png",
-    icon: "/thalambur/fav-2.png",
+    icon: "/cantonment/fav-2.png",
     link: "/cantonment/our-curriculum",
   },
   {
@@ -33,7 +33,7 @@ const slides = [
     description:
       "A vibrant art and craft program that encourages creativity, self-expression, and hands-on learning. Providing students with opportunities to explore various mediums and develop their artistic talents.",
     image: "/cantonment/art.png",
-    icon: "/thalambur/fav-3.png",
+    icon: "/cantonment/fav-3.png",
     link: "/cantonment/beyond-academics",
   },
   {
@@ -42,7 +42,7 @@ const slides = [
     description:
       "A state-of-the-art sports facility that promotes physical fitness, teamwork, and competitive spirit among students.",
     image: "/cantonment/Athletics.png",
-    icon: "/thalambur/fav-4.png",
+    icon: "/cantonment/fav-4.png",
     link: "/cantonment/beyond-academics",
   },
   {
@@ -51,7 +51,7 @@ const slides = [
     description:
       "A reliable and safe transportation system with a fleet of well-maintained buses, GPS tracking, and trained drivers. Ensuring secure and efficient travel for students to and from school.",
     image: "/cantonment/Transport.png",
-    icon: "/thalambur/fav-5.png",
+    icon: "/cantonment/fav-5.png",
     link: "/cantonment/transport",
   },
 ];
@@ -236,7 +236,7 @@ export default function InfrastructureSlider() {
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
 
-                    <div className="absolute inset-0 bg-white/55" />
+                    {/* <div className="absolute inset-0 bg-white/55" /> */}
 
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">

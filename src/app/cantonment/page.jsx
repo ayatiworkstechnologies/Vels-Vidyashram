@@ -47,7 +47,7 @@ export default function Pallavaram() {
 
         <BannerSection />
         <LetterSection />
-        <AboutSchool />
+        <AboutSchool /> 
         <InspireSection />
         <VelsStaticOverlaySection />
         <OurMottoSection />

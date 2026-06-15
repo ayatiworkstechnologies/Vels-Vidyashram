@@ -95,7 +95,7 @@ export default function Chairman() {
     <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-start">
       
       {/* Text Container: Spans 7 out of 10 columns (70%) */}
-      <div className="lg:col-span-7 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed min-h-[400px]">
+      <div className="lg:col-span-6 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed min-h-[400px]">
         {paragraphs.map((_, index) => (
           <p key={index} className="relative font-secondary">
             {typedText[index]}
@@ -118,7 +118,7 @@ export default function Chairman() {
       </div>
 
       {/* Image Container: Spans 3 out of 10 columns (30%) */}
-      <div className="lg:col-span-3 relative h-[400px] lg:h-[500px] overflow-hidden rounded-2xl">
+      <div className="lg:col-span-4 relative h-[400px] lg:h-[500px] overflow-hidden rounded-2xl">
         <Image
           src="/dargaroad/founder.webp"
           alt="Education at Vels Vidyashram"

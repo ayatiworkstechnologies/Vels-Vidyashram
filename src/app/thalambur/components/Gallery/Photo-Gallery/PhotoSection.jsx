@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import EventsSection from "./EventsSection";
@@ -32,30 +33,91 @@ const INFRA_DATA = {
   ]
 };
 
-export default function InfrastructurePage() {
-  const [activeTab, setActiveTab] = useState("infrastructure");
-  const [selectedIndex, setSelectedIndex] = useState(null);
-
+// ── Portal Lightbox ───────────────────────────────────────────────────────────
+function Lightbox({ selectedIndex, onClose, onPrev, onNext }) {
+  // Stable keyboard handler
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (selectedIndex === null) return;
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrev();
-      if (e.key === "Escape") setSelectedIndex(null);
+    const onKey = (e) => {
+      if (e.key === "ArrowRight") onNext();
+      if (e.key === "ArrowLeft")  onPrev();
+      if (e.key === "Escape")     onClose();
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, onPrev, onNext]);
+
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 flex items-center justify-center bg-black/95 p-4"
+      style={{ zIndex: 99999 }}
+      onClick={onClose} // click backdrop to close
+    >
+      {/* Close */}
+      <button
+        onClick={onClose}
+        className="absolute top-6 right-6 text-white hover:text-orange-400 transition-colors"
+        aria-label="Close"
+      >
+        <X size={28} />
+      </button>
+
+      {/* Prev */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        className="absolute left-6 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 p-2 rounded-full transition"
+        aria-label="Previous"
+      >
+        <ChevronLeft size={44} />
+      </button>
+
+      {/* Next */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        className="absolute right-6 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 p-2 rounded-full transition"
+        aria-label="Next"
+      >
+        <ChevronRight size={44} />
+      </button>
+
+      {/* Image */}
+      <img
+        src={INFRA_DATA.images[selectedIndex].src}
+        className="max-h-[85vh] rounded-xl object-contain"
+        onClick={(e) => e.stopPropagation()}
+        alt={`Infrastructure ${selectedIndex + 1}`}
+      />
+
+      {/* Counter */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+        {selectedIndex + 1} / {INFRA_DATA.images.length}
+      </div>
+    </motion.div>,
+    document.body // ← escapes all stacking contexts
+  );
+}
+
+// ── Main Page ─────────────────────────────────────────────────────────────────
+export default function InfrastructurePage() {
+  const [activeTab, setActiveTab]       = useState("infrastructure");
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [mounted, setMounted]           = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  // Lock scroll when lightbox open
+  useEffect(() => {
+    document.body.style.overflow = selectedIndex !== null ? "hidden" : "unset";
+    return () => { document.body.style.overflow = "unset"; };
   }, [selectedIndex]);
 
-  const handleNext = () => {
-    setSelectedIndex((prev) => (prev + 1) % INFRA_DATA.images.length);
-  };
-
-  const handlePrev = () => {
-    setSelectedIndex((prev) =>
-      (prev - 1 + INFRA_DATA.images.length) % INFRA_DATA.images.length
-    );
-  };
+  const handleNext  = useCallback(() => setSelectedIndex((p) => (p + 1) % INFRA_DATA.images.length), []);
+  const handlePrev  = useCallback(() => setSelectedIndex((p) => (p - 1 + INFRA_DATA.images.length) % INFRA_DATA.images.length), []);
+  const handleClose = useCallback(() => setSelectedIndex(null), []);
 
   return (
     <div className="bg-white p-6 max-w-6xl mx-auto font-sans">
@@ -83,42 +145,24 @@ export default function InfrastructurePage() {
         </div>
       </div>
 
-      {/* TAB CONTENT */}
+      {/* Tab Content */}
       <AnimatePresence mode="wait">
 
-        {/* INFRA */}
+        {/* INFRASTRUCTURE */}
         {activeTab === "infrastructure" && (
           <motion.div key="infra" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            
+
             <div className="mb-8 p-7 bg-slate-50 rounded-3xl border border-slate-100">
-
-  {/* Heading */}
-  <h2 className="text-xl font-semibold mb-5 tracking-tight font-primary">
-    Facilities
-  </h2>
-
-  {/* Facilities List */}
-  <div className="grid md:grid-cols-3 gap-y-4 gap-x-6 font-secondary">
-
-    {INFRA_DATA.facilities.map((text, i) => (
-      <div
-        key={i}
-        className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed"
-      >
-        {/* Correct bullet dot */}
-        <span className="mt-[7px] w-2 h-2 bg-primary rounded-full shrink-0" />
-
-        {/* Text line */}
-        <p className="m-0">
-          {text}
-        </p>
-      </div>
-    ))}
-
-  </div>
-
-</div>
-
+              <h2 className="text-xl font-semibold mb-5 tracking-tight font-primary">Facilities</h2>
+              <div className="grid md:grid-cols-3 gap-y-4 gap-x-6 font-secondary">
+                {INFRA_DATA.facilities.map((text, i) => (
+                  <div key={i} className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
+                    <span className="mt-[7px] w-2 h-2 bg-primary rounded-full shrink-0" />
+                    <p className="m-0">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[140px] gap-3">
               {INFRA_DATA.images.map((img, i) => (
@@ -130,7 +174,11 @@ export default function InfrastructurePage() {
                   transition={{ delay: i * 0.03 }}
                   className={`relative overflow-hidden rounded-2xl bg-gray-100 group cursor-pointer ${img.span}`}
                 >
-                  <img src={img.src} className="h-full w-full object-cover group-hover:scale-105 transition" />
+                  <img
+                    src={img.src}
+                    alt={`Infrastructure ${i + 1}`}
+                    className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                  />
                 </motion.div>
               ))}
             </div>
@@ -146,36 +194,24 @@ export default function InfrastructurePage() {
 
         {/* AWARDS */}
         {activeTab === "awards" && (
-          <motion.div key="awards" className="text-center py-20 text-gray-500">
+          <motion.div key="awards" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center py-20 text-gray-500">
             <AwardSection />
           </motion.div>
         )}
 
       </AnimatePresence>
 
-      {/* INFRA LIGHTBOX */}
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4">
-            <button onClick={() => setSelectedIndex(null)} className="absolute top-6 right-6 text-white">
-              <X size={24} />
-            </button>
-
-            <button onClick={handlePrev} className="absolute left-6 text-white">
-              <ChevronLeft size={44} />
-            </button>
-
-            <button onClick={handleNext} className="absolute right-6 text-white">
-              <ChevronRight size={44} />
-            </button>
-
-            <img
-              src={INFRA_DATA.images[selectedIndex].src}
-              className="max-h-[85vh] rounded-xl"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Lightbox — Portal renders on document.body, above everything */}
+      {mounted && selectedIndex !== null && (
+        <AnimatePresence>
+          <Lightbox
+            selectedIndex={selectedIndex}
+            onClose={handleClose}
+            onPrev={handlePrev}
+            onNext={handleNext}
+          />
+        </AnimatePresence>
+      )}
 
     </div>
   );

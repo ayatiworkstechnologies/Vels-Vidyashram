@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+
 export default function RecruitmentForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -17,21 +19,28 @@ export default function RecruitmentForm() {
     },
   });
 
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+    });
+  };
+
   const onSubmit = async (formData) => {
     setIsSubmitting(true);
 
     try {
       const file = formData.resume?.[0];
-      let base64File = "";
 
-      if (file) {
-        base64File = await new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = reject;
-        });
+      if (file && file.size > MAX_FILE_SIZE) {
+        alert("Resume file is too large. Please upload below 2MB.");
+        setIsSubmitting(false);
+        return;
       }
+
+      const base64File = file ? await fileToBase64(file) : "";
 
       const payload = {
         data: {
@@ -50,7 +59,7 @@ export default function RecruitmentForm() {
           expectedctc: formData.expectedCTC,
           experience: formData.experience,
           curriculum: formData.curriculum?.join(", ") || "",
-          campus: "Vels Vidyashram - Cantonment",
+          campus: "Vels Vidyashram - Dharga Road",
           levels: formData.levels?.join(", ") || "",
           notice: formData.notice,
           details: formData.details,
@@ -58,20 +67,22 @@ export default function RecruitmentForm() {
         },
       };
 
-      const response = await fetch(
-        "https://api.ayatiworks.com/api/v1/public/vels-dargaroad/recruitment/records",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-API-Key":
-              "f118c8833be5d3de313be7a6516abf706eae47426e4f5857e43d61db7989bc0e",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const response = await fetch("/api/dargaroad-recruitment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-      const result = await response.json();
+      const text = await response.text();
+      let result = {};
+
+      try {
+        result = text ? JSON.parse(text) : {};
+      } catch {
+        result = { detail: text };
+      }
 
       if (!response.ok) {
         alert(result?.detail || result?.message || "Submission failed ❌");
@@ -106,10 +117,7 @@ export default function RecruitmentForm() {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 gap-x-12 gap-y-5 md:grid-cols-2">
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">
-                Name of the Candidate *
-              </label>
+            <Field label="Name of the Candidate *" error={errors.firstName}>
               <input
                 {...register("firstName", { required: true })}
                 placeholder="Enter First Name"
@@ -117,10 +125,9 @@ export default function RecruitmentForm() {
                   errors.firstName ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">Last Name *</label>
+            <Field label="Last Name *" error={errors.lastName}>
               <input
                 {...register("lastName", { required: true })}
                 placeholder="Enter Last Name"
@@ -128,10 +135,9 @@ export default function RecruitmentForm() {
                   errors.lastName ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">Email Address *</label>
+            <Field label="Email Address *" error={errors.email}>
               <input
                 type="email"
                 {...register("email", {
@@ -143,10 +149,9 @@ export default function RecruitmentForm() {
                   errors.email ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">Mobile Number *</label>
+            <Field label="Mobile Number *" error={errors.mobile}>
               <input
                 {...register("mobile", { required: true })}
                 placeholder="+91"
@@ -154,11 +159,10 @@ export default function RecruitmentForm() {
                   errors.mobile ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
             <div className="grid grid-cols-1 gap-5 md:col-span-2 md:grid-cols-3">
-              <div className="space-y-2">
-                <label className="text-[14px] font-bold">Date of Birth *</label>
+              <Field label="Date of Birth *" error={errors.dob}>
                 <input
                   type="date"
                   {...register("dob", { required: true })}
@@ -166,10 +170,9 @@ export default function RecruitmentForm() {
                     errors.dob ? "border-red-500" : "border-[#e0e0e0]"
                   }`}
                 />
-              </div>
+              </Field>
 
-              <div className="space-y-2">
-                <label className="text-[14px] font-bold">Age *</label>
+              <Field label="Age *" error={errors.age}>
                 <input
                   type="number"
                   {...register("age", { required: true })}
@@ -178,19 +181,16 @@ export default function RecruitmentForm() {
                     errors.age ? "border-red-500" : "border-[#e0e0e0]"
                   }`}
                 />
-              </div>
+              </Field>
 
-              <div className="space-y-2">
-                <label className="text-[14px] font-bold">
-                  Position Applied for *
-                </label>
+              <Field label="Position Applied for *" error={errors.position}>
                 <input
                   {...register("position", { required: true })}
                   className={`w-full border p-2.5 text-[13px] outline-none ${
                     errors.position ? "border-red-500" : "border-[#e0e0e0]"
                   }`}
                 />
-              </div>
+              </Field>
             </div>
 
             <div className="space-y-2">
@@ -227,47 +227,41 @@ export default function RecruitmentForm() {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">
-                Educational Qualification *
-              </label>
+            <Field label="Educational Qualification *" error={errors.qualification}>
               <textarea
                 {...register("qualification", { required: true })}
                 className={`min-h-[100px] w-full border p-2.5 text-[13px] outline-none ${
                   errors.qualification ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">Present Address *</label>
+            <Field label="Present Address *" error={errors.address}>
               <textarea
                 {...register("address", { required: true })}
                 className={`min-h-[100px] w-full border p-2.5 text-[13px] outline-none ${
                   errors.address ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">Current CTC *</label>
+            <Field label="Current CTC *" error={errors.currentCTC}>
               <input
                 {...register("currentCTC", { required: true })}
                 className={`w-full border p-2.5 text-[13px] outline-none ${
                   errors.currentCTC ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
-            <div className="space-y-2">
-              <label className="text-[14px] font-bold">Expected CTC *</label>
+            <Field label="Expected CTC *" error={errors.expectedCTC}>
               <input
                 {...register("expectedCTC", { required: true })}
                 className={`w-full border p-2.5 text-[13px] outline-none ${
                   errors.expectedCTC ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
-            </div>
+            </Field>
 
             <div className="space-y-2">
               <label className="text-[14px] font-bold">
@@ -289,9 +283,7 @@ export default function RecruitmentForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-[14px] font-bold">
-                Curriculum Taught *
-              </label>
+              <label className="text-[14px] font-bold">Curriculum Taught *</label>
               <div className="flex flex-wrap gap-4 text-[13px]">
                 {["State", "CBSE", "CISCE", "Cambridge", "IB", "Others"].map(
                   (item) => (
@@ -299,7 +291,7 @@ export default function RecruitmentForm() {
                       <input
                         type="checkbox"
                         value={item}
-                        {...register("curriculum", { required: true })}
+                        {...register("curriculum")}
                         className="accent-[#3f2b96]"
                       />
                       {item}
@@ -310,9 +302,7 @@ export default function RecruitmentForm() {
             </div>
 
             <div className="space-y-3">
-              <label className="text-[14px] font-bold">
-                Preferred Campus *
-              </label>
+              <label className="text-[14px] font-bold">Preferred Campus *</label>
               <div className="space-y-2 text-[12px] font-medium text-gray-700">
                 {[
                   "Any Campus",
@@ -339,23 +329,19 @@ export default function RecruitmentForm() {
             <div className="space-y-3">
               <label className="text-[14px] font-bold">Levels Taught *</label>
               <div className="space-y-2 text-[12px] font-medium text-gray-700">
-                {[
-                  "Pre-primary",
-                  "Primary",
-                  "Secondary",
-                  "Sr. Secondary",
-                  "Other",
-                ].map((item) => (
-                  <label key={item} className="flex items-center gap-3">
-                    <input
-                      type="checkbox"
-                      value={item}
-                      {...register("levels", { required: true })}
-                      className="h-3.5 w-3.5 accent-[#3f2b96]"
-                    />
-                    {item}
-                  </label>
-                ))}
+                {["Pre-primary", "Primary", "Secondary", "Sr. Secondary", "Other"].map(
+                  (item) => (
+                    <label key={item} className="flex items-center gap-3">
+                      <input
+                        type="checkbox"
+                        value={item}
+                        {...register("levels")}
+                        className="h-3.5 w-3.5 accent-[#3f2b96]"
+                      />
+                      {item}
+                    </label>
+                  )
+                )}
               </div>
             </div>
 
@@ -399,11 +385,25 @@ export default function RecruitmentForm() {
               <input
                 type="file"
                 accept=".pdf,.doc,.docx"
-                {...register("resume", { required: true })}
+                {...register("resume", {
+                  required: true,
+                  validate: (files) =>
+                    !files?.[0] ||
+                    files[0].size <= MAX_FILE_SIZE ||
+                    "Resume must be below 2MB",
+                })}
                 className={`w-full border p-1.5 text-[12px] ${
                   errors.resume ? "border-red-500" : "border-[#e0e0e0]"
                 }`}
               />
+              {errors.resume && (
+                <p className="text-xs text-red-500">
+                  {errors.resume.message || "Resume is required"}
+                </p>
+              )}
+              <p className="text-xs text-gray-500">
+                Max file size: 2MB. Accepted: PDF, DOC, DOCX.
+              </p>
             </div>
 
             <div className="pt-4 md:col-span-2">
@@ -419,5 +419,15 @@ export default function RecruitmentForm() {
         </form>
       </div>
     </section>
+  );
+}
+
+function Field({ label, error, children }) {
+  return (
+    <div className="space-y-2">
+      <label className="text-[14px] font-bold">{label}</label>
+      {children}
+      {error && <p className="text-xs text-red-500">This field is required</p>}
+    </div>
   );
 }

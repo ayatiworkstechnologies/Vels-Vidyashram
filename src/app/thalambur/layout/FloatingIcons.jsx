@@ -27,7 +27,7 @@ const FloatingActions = () => {
     },
     {
       icon: <Youtube size={20} />,
-      href: "https://www.youtube.com/watch?v=n0iVwXf71jI",
+      href: "https://www.youtube.com/@eventsvelsvidyashram4325",
       color: "text-[#FF0000]",
       label: "YouTube"
     },

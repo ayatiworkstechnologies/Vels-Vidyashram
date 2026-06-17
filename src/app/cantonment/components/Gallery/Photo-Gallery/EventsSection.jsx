@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
@@ -68,7 +69,6 @@ const EVENTS_DATA = {
           "/cantonment/red5.png",
           "/cantonment/red6.png",
           "/cantonment/red7.png",
-
         ],
       },
       {
@@ -95,8 +95,6 @@ const EVENTS_DATA = {
           "/cantonment/yellow5.jpg",
           "/cantonment/yellow6.jpg",
           "/cantonment/yellow7.jpg",
-          
-
         ],
       },
       {
@@ -124,8 +122,6 @@ const EVENTS_DATA = {
           "/cantonment/yoga18.png",
         ],
       },
-  
-   
     ],
   },
 };
@@ -136,10 +132,16 @@ export default function EventsSection() {
   const [carouselStates, setCarouselStates] = useState({});
   const [activeEventImages, setActiveEventImages] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
     const states = {};
+
     Object.values(EVENTS_DATA.eventsByYear).forEach((yearEvents) => {
       yearEvents.forEach((event) => {
         if (event.images && event.images.length > 1) {
@@ -147,6 +149,7 @@ export default function EventsSection() {
         }
       });
     });
+
     setCarouselStates(states);
   }, []);
 
@@ -177,6 +180,14 @@ export default function EventsSection() {
   }, []);
 
   useEffect(() => {
+    document.body.style.overflow = selectedIndex !== null ? "hidden" : "unset";
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedIndex]);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
@@ -187,10 +198,32 @@ export default function EventsSection() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const events = EVENTS_DATA.eventsByYear[selectedYear] || [];
+
   const openLightbox = (event) => {
     if (!event.images || event.images.length === 0) return;
+
     setActiveEventImages(event.images);
     setSelectedIndex(0);
+  };
+
+  const closeLightbox = () => {
+    setSelectedIndex(null);
+    setActiveEventImages([]);
+  };
+
+  const handlePrevLightbox = (e) => {
+    e.stopPropagation();
+
+    setSelectedIndex(
+      (prev) => (prev - 1 + activeEventImages.length) % activeEventImages.length
+    );
+  };
+
+  const handleNextLightbox = (e) => {
+    e.stopPropagation();
+
+    setSelectedIndex((prev) => (prev + 1) % activeEventImages.length);
   };
 
   const handleCarouselClick = (eventId, direction, e) => {
@@ -202,212 +235,223 @@ export default function EventsSection() {
 
     if (!event || !event.images || event.images.length <= 1) return;
 
-    setCarouselStates((prev) => ({
-      ...prev,
-      [eventId]:
-        direction === "next"
-          ? (prev[eventId] + 1) % event.images.length
-          : (prev[eventId] - 1 + event.images.length) % event.images.length,
-    }));
+    setCarouselStates((prev) => {
+      const currentIndex = prev[eventId] || 0;
+
+      return {
+        ...prev,
+        [eventId]:
+          direction === "next"
+            ? (currentIndex + 1) % event.images.length
+            : (currentIndex - 1 + event.images.length) % event.images.length,
+      };
+    });
   };
 
-  const events = EVENTS_DATA.eventsByYear[selectedYear] || [];
+  const lightbox =
+    mounted && selectedIndex !== null
+      ? createPortal(
+          <AnimatePresence>
+            <motion.div
+              className="fixed inset-0 bg-black/95 flex flex-col items-center justify-center p-4 md:p-10"
+              style={{ zIndex: 2147483647 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeLightbox}
+            >
+              <button
+                onClick={closeLightbox}
+                className="fixed top-4 right-4 md:top-8 md:right-8 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
+                style={{ zIndex: 2147483647 }}
+                aria-label="Close"
+              >
+                <X size={30} />
+              </button>
+
+              {activeEventImages.length > 1 && (
+                <>
+                  <button
+                    onClick={handlePrevLightbox}
+                    className="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full"
+                    style={{ zIndex: 2147483647 }}
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={40} />
+                  </button>
+
+                  <button
+                    onClick={handleNextLightbox}
+                    className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full"
+                    style={{ zIndex: 2147483647 }}
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={40} />
+                  </button>
+                </>
+              )}
+
+              <div
+                className="relative w-full max-w-6xl h-[72vh] flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <motion.img
+                  key={selectedIndex}
+                  initial={{ scale: 0.94, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.94, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  src={activeEventImages[selectedIndex]}
+                  alt="Selected Event"
+                  className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                />
+              </div>
+
+              {activeEventImages.length > 1 && (
+                <div
+                  className="flex gap-2 mt-6 overflow-x-auto pb-4 max-w-full no-scrollbar"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {activeEventImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedIndex(idx)}
+                      className={`flex-shrink-0 w-16 h-12 md:w-24 md:h-16 rounded-md overflow-hidden border-2 transition-all ${
+                        selectedIndex === idx
+                          ? "border-blue-500 scale-105 opacity-100"
+                          : "border-transparent opacity-40 hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt={`Thumbnail ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>,
+          document.body
+        )
+      : null;
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-4 md:p-8 max-w-[1400px] mx-auto min-h-screen">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800">
-          Event Gallery
-        </h2>
+    <>
+      <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-4 md:p-8 max-w-[1400px] mx-auto min-h-screen">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800">
+            Event Gallery
+          </h2>
 
-        <div className="relative w-full sm:w-48" ref={dropdownRef}>
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center justify-between w-full px-5 py-3 bg-white border border-slate-200 rounded-xl font-bold shadow-sm hover:border-blue-500 transition-colors"
-          >
-            {selectedYear}
-            <ChevronDown
-              size={18}
-              className={`transition-transform ${
-                isDropdownOpen ? "rotate-180" : ""
-              }`}
-            />
-          </button>
+          <div className="relative w-full sm:w-48" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex items-center justify-between w-full px-5 py-3 bg-white border border-slate-200 rounded-xl font-bold shadow-sm hover:border-blue-500 transition-colors"
+            >
+              {selectedYear}
+              <ChevronDown
+                size={18}
+                className={`transition-transform ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
 
-          <AnimatePresence>
-            {isDropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                className="absolute top-full mt-2 w-full bg-white border border-slate-100 rounded-xl shadow-xl z-20 overflow-hidden"
-              >
-                {EVENTS_DATA.years.map((year) => (
-                  <button
-                    key={year}
-                    onClick={() => {
-                      setSelectedYear(year);
-                      setIsDropdownOpen(false);
-                    }}
-                    className={`w-full px-5 py-3 text-left font-bold transition-colors ${
-                      selectedYear === year
-                        ? "bg-blue-600 text-white"
-                        : "hover:bg-blue-50 text-slate-600"
-                    }`}
-                  >
-                    {year}
-                  </button>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  className="absolute top-full mt-2 w-full bg-white border border-slate-100 rounded-xl shadow-xl z-20 overflow-hidden"
+                >
+                  {EVENTS_DATA.years.map((year) => (
+                    <button
+                      key={year}
+                      onClick={() => {
+                        setSelectedYear(year);
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full px-5 py-3 text-left font-bold transition-colors ${
+                        selectedYear === year
+                          ? "bg-blue-600 text-white"
+                          : "hover:bg-blue-50 text-slate-600"
+                      }`}
+                    >
+                      {year}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {events.map((event) => {
-          const images = event.images || [];
-          const hasMultiple = images.length > 1;
-          const currentIndex = carouselStates[event.id] || 0;
-          const currentImage = images[currentIndex] || images[0];
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {events.map((event) => {
+            const images = event.images || [];
+            const hasMultiple = images.length > 1;
+            const currentIndex = carouselStates[event.id] || 0;
+            const currentImage = images[currentIndex] || images[0];
 
-          return (
-            <motion.div
-              layout
-              key={event.id}
-              onClick={() => openLightbox(event)}
-              className={`relative overflow-hidden rounded-2xl bg-white group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300
-                ${
+            return (
+              <motion.div
+                layout
+                key={event.id}
+                onClick={() => openLightbox(event)}
+                className={`relative overflow-hidden rounded-2xl bg-white group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 ${
                   event.size === "large"
                     ? "sm:col-span-2 aspect-[16/10] md:aspect-[16/7]"
                     : "col-span-1 aspect-[4/3]"
-                }
-              `}
-            >
-              <div className="relative h-full w-full">
-                <motion.img
-                  key={`${event.id}-${currentIndex}`}
-                  initial={{ opacity: 0.8 }}
-                  animate={{ opacity: 1 }}
-                  src={currentImage}
-                  alt={event.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                }`}
+              >
+                <div className="relative h-full w-full">
+                  <motion.img
+                    key={`${event.id}-${currentIndex}`}
+                    initial={{ opacity: 0.8 }}
+                    animate={{ opacity: 1 }}
+                    src={currentImage}
+                    alt={event.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
-                {hasMultiple && (
-                  <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button
-                      onClick={(e) => handleCarouselClick(event.id, "prev", e)}
-                      className="bg-black/40 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/60 transition-colors"
-                    >
-                      <ChevronLeft size={20} />
-                    </button>
-                    <button
-                      onClick={(e) => handleCarouselClick(event.id, "next", e)}
-                      className="bg-black/40 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/60 transition-colors"
-                    >
-                      <ChevronRight size={20} />
-                    </button>
-                  </div>
-                )}
+                  {hasMultiple && (
+                    <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button
+                        onClick={(e) =>
+                          handleCarouselClick(event.id, "prev", e)
+                        }
+                        className="bg-black/40 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/60 transition-colors"
+                      >
+                        <ChevronLeft size={20} />
+                      </button>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-4 md:p-6">
-                  {event.categoryTitle && (
-                    <span className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">
-                      {event.categoryTitle}
-                    </span>
+                      <button
+                        onClick={(e) =>
+                          handleCarouselClick(event.id, "next", e)
+                        }
+                        className="bg-black/40 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/60 transition-colors"
+                      >
+                        <ChevronRight size={20} />
+                      </button>
+                    </div>
                   )}
-                  <h3 className="text-white font-bold text-sm md:text-base leading-tight line-clamp-2">
-                    {event.title}
-                  </h3>
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-4 md:p-6">
+                    <h3 className="text-white font-bold text-sm md:text-base leading-tight line-clamp-2">
+                      {event.title}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
 
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div
-            className="fixed inset-0 bg-black/95 z-50 flex flex-col items-center justify-center p-4 md:p-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedIndex(null)}
-          >
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors"
-            >
-              <X size={32} />
-            </button>
-
-            <div
-              className="relative w-full max-w-6xl h-full flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedIndex(
-                    (prev) =>
-                      (prev - 1 + activeEventImages.length) %
-                      activeEventImages.length
-                  );
-                }}
-                className="hidden md:flex absolute left-[-60px] text-white/50 hover:text-white"
-              >
-                <ChevronLeft size={48} />
-              </button>
-
-              <motion.img
-                key={selectedIndex}
-                initial={{ x: 20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                src={activeEventImages[selectedIndex]}
-                alt="Selected Event"
-                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
-              />
-
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedIndex(
-                    (prev) => (prev + 1) % activeEventImages.length
-                  );
-                }}
-                className="hidden md:flex absolute right-[-60px] text-white/50 hover:text-white"
-              >
-                <ChevronRight size={48} />
-              </button>
-            </div>
-
-            <div
-              className="flex gap-2 mt-8 overflow-x-auto pb-4 max-w-full no-scrollbar"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {activeEventImages.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedIndex(idx)}
-                  className={`flex-shrink-0 w-16 h-12 md:w-24 md:h-16 rounded-md overflow-hidden border-2 transition-all ${
-                    selectedIndex === idx
-                      ? "border-blue-500 scale-105"
-                      : "border-transparent opacity-40 hover:opacity-100"
-                  }`}
-                >
-                  <img
-                    src={img}
-                    alt={`Thumbnail ${idx + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+      {lightbox}
+    </>
   );
 }

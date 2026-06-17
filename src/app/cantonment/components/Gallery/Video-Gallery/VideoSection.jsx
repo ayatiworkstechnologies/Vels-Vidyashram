@@ -1,5 +1,7 @@
 "use client";
+
 import React, { useState, useMemo, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, GraduationCap } from "lucide-react";
 
@@ -10,41 +12,45 @@ const VIDEO_DATA = {
         id: 1,
         title: "Vels Sandhai Dance",
         thumbnail: "/cantonment/thumbnail/thum1.jpg",
-        videoUrl: "https://www.youtube.com/embed/TIqYrZPnrjU?si=937v0rtqsdRmLBce",
+        videoUrl:
+          "https://www.youtube.com/embed/TIqYrZPnrjU?si=937v0rtqsdRmLBce",
       },
       {
         id: 2,
         title: "EVS Culmination Day",
         thumbnail: "/cantonment/thumbnail/thum2.jpg",
-        videoUrl: "https://www.youtube.com/embed/uNIr2AAwSyg?si=PzJkH1Pg-OVHCeHm",
+        videoUrl:
+          "https://www.youtube.com/embed/uNIr2AAwSyg?si=PzJkH1Pg-OVHCeHm",
       },
       {
         id: 3,
         title: "Vels Cantonment - Energizing Morning Assembly for our tiny tots",
         thumbnail: "/cantonment/thumbnail/thum3.jpg",
-        videoUrl: "https://www.youtube.com/embed/TQa9AcobXAk?si=nck1pQcki1qwjmc7",
+        videoUrl:
+          "https://www.youtube.com/embed/TQa9AcobXAk?si=nck1pQcki1qwjmc7",
       },
       {
         id: 4,
         title: "Vels 8 Circuit",
         thumbnail: "/cantonment/thumbnail/thum4.jpg",
-        videoUrl: "https://www.youtube.com/embed/JX2j2ODXo24?si=CWuut7a8YiQgz3ry",
+        videoUrl:
+          "https://www.youtube.com/embed/JX2j2ODXo24?si=CWuut7a8YiQgz3ry",
       },
       {
         id: 5,
         title: "Yoga Day Celebration",
         thumbnail: "/cantonment/thumbnail/thum5.jpg",
-        videoUrl: "https://www.youtube.com/embed/O57KPZdkVP8?si=JBf794mJJ1eyn2D1",
+        videoUrl:
+          "https://www.youtube.com/embed/O57KPZdkVP8?si=JBf794mJJ1eyn2D1",
       },
-        {
+      {
         id: 6,
         title: "Yoga Day Celebration",
         thumbnail: "/cantonment/thumbnail/thum6.jpg",
-        videoUrl: "https://www.youtube.com/embed/klvJCxjejqc?si=ww6a5LyS5E6H4ZeR",
+        videoUrl:
+          "https://www.youtube.com/embed/klvJCxjejqc?si=ww6a5LyS5E6H4ZeR",
       },
     ],
-
-  
   },
 
   testimonialSections: [
@@ -74,11 +80,17 @@ const VIDEO_DATA = {
 export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("videos");
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = selectedVideo ? "hidden" : "auto";
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = selectedVideo ? "hidden" : "unset";
+
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "unset";
     };
   }, [selectedVideo]);
 
@@ -87,11 +99,64 @@ export default function VideoSection() {
   }, []);
 
   const openVideo = (video) => setSelectedVideo(video);
+
   const closeVideo = () => setSelectedVideo(null);
 
   const getAutoplayUrl = (url) => {
     return url.includes("?") ? `${url}&autoplay=1` : `${url}?autoplay=1`;
   };
+
+  const videoPopup =
+    mounted && selectedVideo
+      ? createPortal(
+          <AnimatePresence>
+            <motion.div
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+              style={{ zIndex: 2147483647 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeVideo}
+            >
+              <motion.div
+                initial={{ scale: 0.92, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.92, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-[94vw] md:w-[75vw] lg:w-[58vw] xl:w-[48vw] max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+                style={{ zIndex: 2147483647 }}
+              >
+                <div className="w-full h-[260px] md:h-[360px] lg:h-[440px] bg-black">
+                  <iframe
+                    src={getAutoplayUrl(selectedVideo.videoUrl)}
+                    className="w-full h-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    title={selectedVideo.title || "Video"}
+                  />
+                </div>
+
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-1">
+                    {selectedVideo.title || "Video"}
+                  </h3>
+                </div>
+
+                <button
+                  onClick={closeVideo}
+                  className="absolute top-3 right-3 bg-black text-white rounded-full p-2"
+                  style={{ zIndex: 2147483647 }}
+                  aria-label="Close video"
+                >
+                  <X size={18} />
+                </button>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>,
+          document.body
+        )
+      : null;
 
   return (
     <>
@@ -113,6 +178,7 @@ export default function VideoSection() {
               <span className="relative z-10 flex items-center gap-2">
                 <Play size={18} /> Videos
               </span>
+
               {activeTab === "videos" && (
                 <motion.div
                   layoutId="activeTab"
@@ -128,6 +194,7 @@ export default function VideoSection() {
               }`}
             >
               <span className="relative z-10">Testimonials</span>
+
               {activeTab === "testimonials" && (
                 <motion.div
                   layoutId="activeTab"
@@ -152,6 +219,7 @@ export default function VideoSection() {
                     alt={video.title}
                     className="w-full h-[220px] md:h-[250px] object-cover group-hover:scale-105 transition duration-500"
                   />
+
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition duration-300" />
                 </div>
 
@@ -169,6 +237,7 @@ export default function VideoSection() {
               <div key={index}>
                 <div className="border-l-4 border-primary pl-4 mb-6 flex items-center gap-3">
                   <span className="text-primary">{section.icon}</span>
+
                   <h2 className="text-xl md:text-2xl font-bold text-slate-800">
                     {section.category}
                   </h2>
@@ -187,6 +256,7 @@ export default function VideoSection() {
                           alt={item.title || section.category}
                           className="w-full h-[220px] md:h-[250px] object-cover group-hover:scale-105 transition duration-500"
                         />
+
                         <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition duration-300" />
                       </div>
 
@@ -202,54 +272,7 @@ export default function VideoSection() {
         )}
       </div>
 
-      <AnimatePresence>
-        {selectedVideo && (
-          <motion.div
-            className="fixed inset-0 z-[9999]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div
-              onClick={closeVideo}
-              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-            />
-
-            <div className="absolute inset-0 flex items-center justify-center p-4">
-              <motion.div
-                initial={{ scale: 0.92, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.92, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="relative w-[92vw] md:w-[70vw] lg:w-[55vw] xl:w-[45vw] max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden"
-              >
-                <div className="w-full h-[260px] md:h-[320px] lg:h-[380px] bg-black">
-                  <iframe
-                    src={getAutoplayUrl(selectedVideo.videoUrl)}
-                    className="w-full h-full"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    title={selectedVideo.title || "Video"}
-                  />
-                </div>
-
-                <div className="p-5">
-                  <h3 className="text-lg font-bold mb-1">
-                    {selectedVideo.title || "Video"}
-                  </h3>
-                </div>
-
-                <button
-                  onClick={closeVideo}
-                  className="absolute top-3 right-3 bg-black text-white rounded-full p-2"
-                >
-                  <X size={18} />
-                </button>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {videoPopup}
     </>
   );
 }

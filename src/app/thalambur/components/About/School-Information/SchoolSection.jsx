@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const ITEMS = [
   { id: 1, title: "Land & Trust Certificate", pdf: "/thalambur/pdf/Trustandlandcertificate.pdf" },
@@ -19,9 +20,124 @@ const ITEMS = [
   { id: 14, title: "Board Results", pdf: "/thalambur/pdf/Board-results.pdf" },
 ];
 
+// Separate Portal-based modal component
+function PdfModal({ openPdf, onClose, isMobile }) {
+  // Only render in browser (avoid SSR mismatch)
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
+    <div
+      className="fixed inset-0 flex items-end sm:items-center justify-center p-0 sm:p-4"
+      style={{ zIndex: 99999 }}
+    >
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+      />
+
+      {/* Modal — bottom sheet on mobile, centered dialog on sm+ */}
+      <div
+        className="relative bg-white w-full rounded-t-2xl h-[92dvh] sm:rounded-2xl sm:shadow-2xl sm:max-w-5xl sm:h-[85vh] overflow-hidden flex flex-col"
+        style={{ zIndex: 100000 }}
+      >
+        {/* Drag handle (mobile only) */}
+        <div className="flex justify-center pt-2 pb-1 sm:hidden">
+          <div className="w-10 h-1 rounded-full bg-gray-300" />
+        </div>
+
+        {/* Modal Header */}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b bg-white flex-shrink-0">
+          <h3 className="text-base sm:text-xl font-bold text-gray-800 font-primary truncate pr-3">
+            {openPdf.title}
+          </h3>
+
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <a
+              href={openPdf.pdf}
+              download
+              className="flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-orange-500 text-white text-xs sm:text-sm font-semibold hover:bg-orange-600 active:bg-orange-700 transition-colors font-secondary whitespace-nowrap"
+            >
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span className="hidden sm:inline">Download PDF</span>
+              <span className="inline sm:hidden">Save</span>
+            </a>
+
+            <button
+              onClick={onClose}
+              className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-500"
+              aria-label="Close"
+            >
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* PDF Preview */}
+        <div className="flex-1 bg-gray-200 overflow-hidden">
+          {isMobile ? (
+            <div className="flex flex-col items-center justify-center h-full gap-5 px-6 text-center">
+              <div className="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center">
+                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold font-primary text-base mb-1">{openPdf.title}</p>
+                <p className="text-gray-500 font-secondary text-sm">PDF preview isn't available on mobile browsers.</p>
+              </div>
+              <div className="flex flex-col gap-3 w-full max-w-xs">
+                <a
+                  href={openPdf.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#1c1533] text-white text-sm font-semibold font-secondary hover:bg-[#2a1f4a] transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Open in Browser
+                </a>
+                <a
+                  href={openPdf.pdf}
+                  download
+                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-500 text-white text-sm font-semibold font-secondary hover:bg-orange-600 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download PDF
+                </a>
+              </div>
+            </div>
+          ) : (
+            <iframe
+              src={`${openPdf.pdf}#toolbar=0`}
+              className="w-full h-full"
+              frameBorder="0"
+              title={openPdf.title}
+            />
+          )}
+        </div>
+      </div>
+    </div>,
+    document.body  // ← renders directly on <body>, completely outside the header stacking context
+  );
+}
+
 export default function SchoolInfoPage() {
   const [openPdf, setOpenPdf] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Wait for client mount before rendering portal
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 640);
@@ -36,35 +152,17 @@ export default function SchoolInfoPage() {
     }
     if (openPdf) {
       document.body.style.overflow = "hidden";
-      document.body.classList.add("pdf-modal-open");
       document.addEventListener("keydown", onKey);
     } else {
       document.body.style.overflow = "auto";
-      document.body.classList.remove("pdf-modal-open");
     }
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.classList.remove("pdf-modal-open");
     };
   }, [openPdf]);
 
   return (
     <div className="bg-gray-50 py-10 px-4 sm:px-6 lg:px-20 min-h-screen">
-
-      {/* Hides all floating/fixed widgets when modal is open, keeps modal visible */}
-      <style>{`
-        body.pdf-modal-open .fixed:not([data-pdf-modal]),
-        body.pdf-modal-open [style*="position: fixed"]:not([data-pdf-modal]),
-        body.pdf-modal-open [style*="position:fixed"]:not([data-pdf-modal]) {
-          visibility: hidden !important;
-          pointer-events: none !important;
-        }
-        body.pdf-modal-open [data-pdf-modal],
-        body.pdf-modal-open [data-pdf-modal] * {
-          visibility: visible !important;
-          pointer-events: auto !important;
-        }
-      `}</style>
 
       {/* Heading Section */}
       <div className="max-w-6xl mx-auto text-center mb-10 sm:mb-12">
@@ -109,115 +207,13 @@ export default function SchoolInfoPage() {
         ))}
       </div>
 
-      {/* PDF Modal */}
-      {openPdf && (
-        <div
-          data-pdf-modal
-          className="fixed inset-0 flex items-end sm:items-center justify-center p-0 sm:p-4"
-          style={{ zIndex: 99999 }}
-        >
-          {/* Backdrop */}
-          <div
-            data-pdf-modal
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setOpenPdf(null)}
-          />
-
-          {/* Modal — bottom sheet on mobile, centered dialog on sm+ */}
-          <div
-            data-pdf-modal
-            className="relative bg-white w-full rounded-t-2xl h-[92dvh] sm:rounded-2xl sm:shadow-2xl sm:max-w-5xl sm:h-[85vh] overflow-hidden flex flex-col"
-            style={{ zIndex: 100000 }}
-          >
-            {/* Drag handle (mobile only) */}
-            <div data-pdf-modal className="flex justify-center pt-2 pb-1 sm:hidden">
-              <div data-pdf-modal className="w-10 h-1 rounded-full bg-gray-300" />
-            </div>
-
-            {/* Modal Header */}
-            <div data-pdf-modal className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b bg-white flex-shrink-0">
-              <h3 data-pdf-modal className="text-base sm:text-xl font-bold text-gray-800 font-primary truncate pr-3">
-                {openPdf.title}
-              </h3>
-
-              <div data-pdf-modal className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <a
-                  data-pdf-modal
-                  href={openPdf.pdf}
-                  download
-                  className="flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-orange-500 text-white text-xs sm:text-sm font-semibold hover:bg-orange-600 active:bg-orange-700 transition-colors font-secondary whitespace-nowrap"
-                >
-                  <svg data-pdf-modal className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  <span data-pdf-modal className="hidden sm:inline">Download PDF</span>
-                  <span data-pdf-modal className="inline sm:hidden">Save</span>
-                </a>
-
-                <button
-                  data-pdf-modal
-                  onClick={() => setOpenPdf(null)}
-                  className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-500"
-                  aria-label="Close"
-                >
-                  <svg data-pdf-modal className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            {/* PDF Preview */}
-            <div data-pdf-modal className="flex-1 bg-gray-200 overflow-hidden">
-              {isMobile ? (
-                <div data-pdf-modal className="flex flex-col items-center justify-center h-full gap-5 px-6 text-center">
-                  <div data-pdf-modal className="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center">
-                    <svg data-pdf-modal className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div data-pdf-modal>
-                    <p data-pdf-modal className="text-gray-700 font-semibold font-primary text-base mb-1">{openPdf.title}</p>
-                    <p data-pdf-modal className="text-gray-500 font-secondary text-sm">PDF preview isn't available on mobile browsers.</p>
-                  </div>
-                  <div data-pdf-modal className="flex flex-col gap-3 w-full max-w-xs">
-                    <a
-                      data-pdf-modal
-                      href={openPdf.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#1c1533] text-white text-sm font-semibold font-secondary hover:bg-[#2a1f4a] transition-colors"
-                    >
-                      <svg data-pdf-modal className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      Open in Browser
-                    </a>
-                    <a
-                      data-pdf-modal
-                      href={openPdf.pdf}
-                      download
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-500 text-white text-sm font-semibold font-secondary hover:bg-orange-600 transition-colors"
-                    >
-                      <svg data-pdf-modal className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Download PDF
-                    </a>
-                  </div>
-                </div>
-              ) : (
-                <iframe
-                  data-pdf-modal
-                  src={`${openPdf.pdf}#toolbar=0`}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  title={openPdf.title}
-                />
-              )}
-            </div>
-          </div>
-        </div>
+      {/* PDF Modal — rendered via Portal directly on document.body */}
+      {mounted && openPdf && (
+        <PdfModal
+          openPdf={openPdf}
+          onClose={() => setOpenPdf(null)}
+          isMobile={isMobile}
+        />
       )}
     </div>
   );

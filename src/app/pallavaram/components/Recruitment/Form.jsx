@@ -53,17 +53,13 @@ const onSubmit = async (formData) => {
       },
     };
 
-    const response = await fetch(
-      "https://api.ayatiworks.com/api/v1/public/vals-pallavaram/recruitment/records", // 🔥 changed endpoint
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-Key": "8bfaa5e4d93dda27a6846b9f9e841c1f0fa9edd2d6ae6f208bb780adf333d07c",
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const response = await fetch("/api/pallavaram-recruitment", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(payload),
+});
 
     const result = await response.json();
 

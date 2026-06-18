@@ -5,28 +5,29 @@ export async function POST(request) {
     const body = await request.json();
 
     const response = await fetch(
-      "https://api.ayatiworks.com/api/v1/public/vels-thalambur/recruitment/records",
+      "https://api.ayatiworks.com/api/v1/public/vels-pallavaram/recruitment/records",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-API-Key":
-            "1ba6543dbea79b6f2683526ba7d0bfc7440b91f70e2dcd11baa2ac6f71a0104e",
+            "5f2b5ad16d7865ac66dbf53fea74632097a6f5469b0b58f7f02e6bbc10ffcc9f",
         },
         body: JSON.stringify(body),
       }
     );
 
-    const data = await response.json();
+    const result = await response.json();
 
-    if (!response.ok) {
-      return NextResponse.json(data, { status: response.status });
-    }
-
-    return NextResponse.json(data, { status: 200 });
+    return NextResponse.json(result, {
+      status: response.status,
+    });
   } catch (error) {
     return NextResponse.json(
-      { message: error.message || "Something went wrong" },
+      {
+        success: false,
+        message: error.message || "Server error",
+      },
       { status: 500 }
     );
   }

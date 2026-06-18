@@ -17,6 +17,9 @@
   body {
     margin: 0;
     padding: 0;
+    width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   }
 
   /* BODY — SECONDARY FONT (Inter) */
@@ -27,6 +30,7 @@
     background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    
   }
 
   /* TITLES & SUB-TITLES — PRIMARY FONT (Sora) */

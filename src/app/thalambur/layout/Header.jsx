@@ -24,6 +24,14 @@ const navItems = [
       { label: "Assessment Structure", href: "/thalambur/assessment-structure" },
       { label: "Circular", href: "/thalambur/circular" },
       { label: "Messages", href: "/thalambur/general-messages" },
+      { label: "Calendar", href: "/thalambur/pdf/calendar.pdf" },
+      {label:"List of Books", href:"/thalambur/pdf/list-of-books.pdf"},
+      {label: "Home Work Policy", href: "/thalambur/pdf/homework-policy.pdf"},
+      {label: "Annual Report", href: "/thalambur/pdf/annual-report.pdf"},
+      {label: "Teacher Details", href: "/thalambur/pdf/teacher-details.pdf"},
+      {label: "Strength Details", href: "/thalambur/pdf/student-strength.pdf"},
+      {label: "Results", href: "/thalambur/pdf/thalambur-results.pdf"},
+
     ],
   },
   { label: "Beyond Academics", href: "/thalambur/beyond-academics" },
@@ -177,7 +185,7 @@ export default function Header() {
                   width={430}
                   height={100}
                   priority
-                  className="w-[260px] sm:w-[320px] h-auto object-contain"
+                  className="w-[260px] sm:w-[360px] h-auto object-contain"
                 />
               </Link>
 

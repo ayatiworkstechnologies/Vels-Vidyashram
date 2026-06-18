@@ -1,20 +1,24 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import toast from "react-hot-toast";
 
 export default function RecruitmentForm() {
   // Initialize useForm with default values if necessary
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      notice: 'Immediate Joining', // Matches your defaultChecked logic
-    },
-  });
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors },
+} = useForm({
+  defaultValues: {
+    notice: "Immediate Joining",
+  },
+});
 
 const onSubmit = async (formData) => {
+  const toastId = toast.loading("Submitting application...");
+
   try {
     const file = formData.resume?.[0];
     let base64File = "";
@@ -30,49 +34,70 @@ const onSubmit = async (formData) => {
 
     const payload = {
       data: {
-        fristname: formData.firstName,
-        lastname: formData.lastName,
-        email: formData.email,
-        mobile: formData.mobile,
-        dob: formData.dob,
-        age: Number(formData.age),
-        position: formData.position,
-        gender: formData.gender,
-        status: formData.status,
-        qualification: formData.qualification,
-        address: formData.address,
-        currentctc: formData.currentCTC,
-        expectedctc: formData.expectedCTC,
-        experience: formData.experience,
-        curriculum: formData.curriculum?.join(", "),
-        campus: "Vels Vidyashram - Cantonment", // ✅ force cantonment
-        levels: formData.levels?.join(", "),
-        notice: formData.notice,
-        details: formData.details,
+        fristname: formData.firstName || "",
+        lastname: formData.lastName || "",
+        email: formData.email || "",
+        mobile: formData.mobile || "",
+        dob: formData.dob || "",
+        age: Number(formData.age) || 0,
+        position: formData.position || "",
+        gender: formData.gender || "",
+        status: formData.status || "",
+        qualification: formData.qualification || "",
+        address: formData.address || "",
+        currentctc: formData.currentCTC || "",
+        expectedctc: formData.expectedCTC || "",
+        experience: formData.experience || "",
+        curriculum: Array.isArray(formData.curriculum)
+          ? formData.curriculum.join(", ")
+          : formData.curriculum || "",
+        campus: "Vels Vidyashram - Pallavaram",
+        levels: Array.isArray(formData.levels)
+          ? formData.levels.join(", ")
+          : formData.levels || "",
+        notice: formData.notice || "",
+        details: formData.details || "",
         resume: base64File,
       },
     };
 
-    const response = await fetch("/pallavaram/api/pallavaram-recruitment", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(payload),
-});
+    const response = await fetch("/api/pallavaram-recruitment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-    const result = await response.json();
+    const text = await response.text();
 
-    if (response.ok) {
-      alert("Form submitted successfully ✅");
-      console.log("Success:", result);
-    } else {
-      alert("Submission failed ❌");
-      console.log("Error:", result);
+    let result = {};
+    try {
+      result = text ? JSON.parse(text) : {};
+    } catch {
+      result = { message: text };
     }
+
+    console.log("API Response:", result);
+
+    if (response.ok && result?.id) {
+      toast.success("Application submitted successfully!", {
+        id: toastId,
+      });
+
+      reset();
+      return;
+    }
+
+    toast.error(result?.message || result?.detail || "Submission failed", {
+      id: toastId,
+    });
   } catch (error) {
     console.error("API Error:", error);
-    alert("Something went wrong!");
+
+    toast.error(error?.message || "Something went wrong!", {
+      id: toastId,
+    });
   }
 };
 

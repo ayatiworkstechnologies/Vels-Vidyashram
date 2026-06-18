@@ -5,13 +5,13 @@ export async function POST(request) {
     const body = await request.json();
 
     const response = await fetch(
-      "https://api.ayatiworks.com/api/v1/public/vels-pallavaram/recruitment/records",
+      "https://api.ayatiworks.com/api/v1/public/vals-pallavaram/recruitment/records",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-API-Key":
-            "5f2b5ad16d7865ac66dbf53fea74632097a6f5469b0b58f7f02e6bbc10ffcc9f",
+            "541bfb43f0a4f07d7b49c7e8e5ba7fc40e7f1e29f5572f540b6be804a6cfec3e",
         },
         body: JSON.stringify(body),
       }

@@ -1,20 +1,21 @@
 "use client";
+import toast from "react-hot-toast";
 
 import { useForm } from "react-hook-form";
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
 export default function RecruitmentForm() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm({
-    defaultValues: {
-      notice: "Immediate Joining",
-    },
-  });
+    const {
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors },
+} = useForm({
+  defaultValues: {
+    notice: "Immediate Joining",
+  },
+});
 
   const fileToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -26,42 +27,51 @@ export default function RecruitmentForm() {
   };
 
 const onSubmit = async (formData) => {
+  const toastId = toast.loading("Submitting application...");
+
   try {
     const file = formData.resume?.[0];
+    let base64File = "";
 
-    if (file && file.size > MAX_FILE_SIZE) {
-      alert("Resume file is too large. Please upload below 2MB.");
-      return;
+    if (file) {
+      base64File = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      });
     }
-
-    const base64File = file ? await fileToBase64(file) : "";
 
     const payload = {
       data: {
-        fristname: formData.firstName,
-        lastname: formData.lastName,
-        email: formData.email,
-        mobile: formData.mobile,
-        dob: formData.dob,
-        age: Number(formData.age),
-        position: formData.position,
-        gender: formData.gender,
-        status: formData.status,
-        qualification: formData.qualification,
-        address: formData.address,
-        currentctc: formData.currentCTC,
-        expectedctc: formData.expectedCTC,
-        experience: formData.experience,
-        curriculum: formData.curriculum?.join(", ") || "",
-        campus: "Vels Vidyashram - Cantonment",
-        levels: formData.levels?.join(", ") || "",
-        notice: formData.notice,
-        details: formData.details,
+        fristname: formData.firstName || "",
+        lastname: formData.lastName || "",
+        email: formData.email || "",
+        mobile: formData.mobile || "",
+        dob: formData.dob || "",
+        age: Number(formData.age) || 0,
+        position: formData.position || "",
+        gender: formData.gender || "",
+        status: formData.status || "",
+        qualification: formData.qualification || "",
+        address: formData.address || "",
+        currentctc: formData.currentCTC || "",
+        expectedctc: formData.expectedCTC || "",
+        experience: formData.experience || "",
+        curriculum: Array.isArray(formData.curriculum)
+          ? formData.curriculum.join(", ")
+          : formData.curriculum || "",
+        campus: "Vels Vidyashram - Pallavaram",
+        levels: Array.isArray(formData.levels)
+          ? formData.levels.join(", ")
+          : formData.levels || "",
+        notice: formData.notice || "",
+        details: formData.details || "",
         resume: base64File,
       },
     };
 
-    const response = await fetch("/cantonment/api/cantonment-recruitment", {
+    const response = await fetch("/api/pallavaram-recruitment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,25 +80,34 @@ const onSubmit = async (formData) => {
     });
 
     const text = await response.text();
-    let result = {};
 
+    let result = {};
     try {
       result = text ? JSON.parse(text) : {};
     } catch {
-      result = { detail: text };
+      result = { message: text };
     }
 
-    if (!response.ok) {
-      alert(result?.detail || "Submission failed ❌");
-      console.error(result);
+    console.log("API Response:", result);
+
+    if (response.ok && result?.id) {
+      toast.success("Application submitted successfully!", {
+        id: toastId,
+      });
+
+      reset();
       return;
     }
 
-    alert("Form submitted successfully ✅");
-    reset();
+    toast.error(result?.message || result?.detail || "Submission failed", {
+      id: toastId,
+    });
   } catch (error) {
-    console.error(error);
-    alert("Something went wrong ❌");
+    console.error("API Error:", error);
+
+    toast.error(error?.message || "Something went wrong!", {
+      id: toastId,
+    });
   }
 };
 

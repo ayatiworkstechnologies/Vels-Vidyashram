@@ -1,22 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
+
 import { useForm } from "react-hook-form";
 
 export default function RecruitmentForm() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { isSubmitting },
-  } = useForm();
+   const {
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors },
+} = useForm({
+  defaultValues: {
+    notice: "Immediate Joining",
+  },
+});
 
   const [message, setMessage] = useState("");
 
   const onSubmit = async (formData) => {
-  setMessage("");
+  const toastId = toast.loading("Submitting application...");
 
   try {
+    const file = formData.resume?.[0];
+    let base64File = "";
+
+    if (file) {
+      base64File = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      });
+    }
+
     const payload = {
       data: {
         fristname: formData.firstName || "",
@@ -36,19 +54,17 @@ export default function RecruitmentForm() {
         curriculum: Array.isArray(formData.curriculum)
           ? formData.curriculum.join(", ")
           : formData.curriculum || "",
-        campus: Array.isArray(formData.campus)
-          ? formData.campus.join(", ")
-          : formData.campus || "",
+        campus: "Vels Vidyashram - Pallavaram",
         levels: Array.isArray(formData.levels)
           ? formData.levels.join(", ")
           : formData.levels || "",
         notice: formData.notice || "",
         details: formData.details || "",
-        resume: "",
+        resume: base64File,
       },
     };
 
-    const response = await fetch("/thalambur/api/thalambur-recruitment", {
+    const response = await fetch("/api/pallavaram-recruitment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,16 +72,35 @@ export default function RecruitmentForm() {
       body: JSON.stringify(payload),
     });
 
-    const result = await response.json();
+    const text = await response.text();
 
-    if (!response.ok) {
-      throw new Error(result?.message || result?.detail || "Submit failed");
+    let result = {};
+    try {
+      result = text ? JSON.parse(text) : {};
+    } catch {
+      result = { message: text };
     }
 
-    setMessage("Application submitted successfully!");
-    reset();
+    console.log("API Response:", result);
+
+    if (response.ok && result?.id) {
+      toast.success("Application submitted successfully!", {
+        id: toastId,
+      });
+
+      reset();
+      return;
+    }
+
+    toast.error(result?.message || result?.detail || "Submission failed", {
+      id: toastId,
+    });
   } catch (error) {
-    setMessage(error.message || "Something went wrong");
+    console.error("API Error:", error);
+
+    toast.error(error?.message || "Something went wrong!", {
+      id: toastId,
+    });
   }
 };
 

@@ -23,6 +23,12 @@ const navItems = [
       { label: "Curriculum", href: "/pallavaram/curriculum" },
       { label: "Circular", href: "/pallavaram/circulars" },
       { label: "Messages", href: "/pallavaram/message" },
+      {label:"Results", href:"/pallavaram/pdf/Result.pdf"},
+      {label:"List of Books", href:"/pallavaram/pdf/List-of-Books.pdf"},
+      {label: "Home Work Policy", href: "/pallavaram/pdf/Homework-policy.pdf"},
+      {label: "Annual Report", href: "/pallavaram/pdf/Annual-report.pdf"},
+      {label: "Teacher Details", href: "/pallavaram/pdf/Teacher-Details.pdf"},
+      {label: "Strength Details", href: "/pallavaram/pdf/strength-details.pdf"},
     ],
   },
   { label: "Beyond Academics", href: "/pallavaram/beyond-academics" },
@@ -176,7 +182,7 @@ export default function Header() {
                   width={430}
                   height={100}
                   priority
-                  className="w-[260px] sm:w-[320px] h-auto object-contain"
+                  className="w-[260px] sm:w-[360px] h-auto object-contain"
                 />
               </Link>
 

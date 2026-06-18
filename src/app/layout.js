@@ -1,5 +1,6 @@
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 /* ======================
    GOOGLE FONTS (NEXT/FONT)
@@ -31,6 +32,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${sora.variable} ${inter.variable} antialiased`}>
         <main className="relative z-0">
+           <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+          }}
+        />
           {children}
         </main>
       </body>

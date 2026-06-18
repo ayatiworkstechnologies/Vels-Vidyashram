@@ -10,7 +10,7 @@ export async function POST(req) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": process.env.VELS_DARGAROAD_f118c8833be5d3de313be7a6516abf706eae47426e4f5857e43d61db7989bc0e,
+          "X-API-Key": "f19a58358d195d400b4fe0e8416812985c525694f084afdb2475e60b5fd77f89",
         },
         body: JSON.stringify(body),
       }

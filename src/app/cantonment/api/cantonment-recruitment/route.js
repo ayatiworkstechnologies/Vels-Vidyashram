@@ -10,7 +10,7 @@ export async function POST(req) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": process.env.VELS_CANTONMENT_1620067fe55d5ae50f2817fb76e58fa37b744820f96fef78feca5f731a909ddc,
+          "X-API-Key": "1620067fe55d5ae50f2817fb76e58fa37b744820f96fef78feca5f731a909ddc",
         },
         body: JSON.stringify(body),
       }

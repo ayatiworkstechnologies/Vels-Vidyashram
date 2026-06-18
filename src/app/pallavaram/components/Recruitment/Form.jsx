@@ -53,7 +53,7 @@ const onSubmit = async (formData) => {
       },
     };
 
-    const response = await fetch("/api/pallavaram-recruitment", {
+    const response = await fetch("/pallavaram/api/pallavaram-recruitment", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

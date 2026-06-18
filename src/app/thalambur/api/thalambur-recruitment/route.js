@@ -19,14 +19,14 @@ export async function POST(request) {
 
     const data = await response.json();
 
-    if (!response.ok) {
-      return NextResponse.json(data, { status: response.status });
-    }
-
-    return NextResponse.json(data, { status: 200 });
+    return NextResponse.json(data, {
+      status: response.status,
+    });
   } catch (error) {
     return NextResponse.json(
-      { message: error.message || "Something went wrong" },
+      {
+        message: error.message || "Something went wrong",
+      },
       { status: 500 }
     );
   }

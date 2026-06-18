@@ -67,7 +67,7 @@ export default function RecruitmentForm() {
         },
       };
 
-      const response = await fetch("/api/dargaroad-recruitment", {
+      const response = await fetch("/dargaroad/api/dargaroad-recruitment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

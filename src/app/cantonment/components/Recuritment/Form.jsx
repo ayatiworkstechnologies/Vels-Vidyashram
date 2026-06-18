@@ -61,7 +61,7 @@ const onSubmit = async (formData) => {
       },
     };
 
-    const response = await fetch("/api/cantonment-recruitment", {
+    const response = await fetch("/cantonment/api/cantonment-recruitment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -14,60 +14,60 @@ export default function RecruitmentForm() {
   const [message, setMessage] = useState("");
 
   const onSubmit = async (formData) => {
-    setMessage("");
+  setMessage("");
 
-    try {
-      const payload = {
-        data: {
-          fristname: formData.firstName || "",
-          lastname: formData.lastName || "",
-          email: formData.email || "",
-          mobile: formData.mobile || "",
-          dob: formData.dob || "",
-          age: Number(formData.age) || 0,
-          position: formData.position || "",
-          gender: formData.gender || "",
-          status: formData.status || "",
-          qualification: formData.qualification || "",
-          address: formData.address || "",
-          currentctc: formData.currentCTC || "",
-          expectedctc: formData.expectedCTC || "",
-          experience: formData.experience || "",
-          curriculum: Array.isArray(formData.curriculum)
-            ? formData.curriculum.join(", ")
-            : formData.curriculum || "",
-          campus: Array.isArray(formData.campus)
-            ? formData.campus.join(", ")
-            : formData.campus || "",
-          levels: Array.isArray(formData.levels)
-            ? formData.levels.join(", ")
-            : formData.levels || "",
-          notice: formData.notice || "",
-          details: formData.details || "",
-          resume: "",
-        },
-      };
+  try {
+    const payload = {
+      data: {
+        fristname: formData.firstName || "",
+        lastname: formData.lastName || "",
+        email: formData.email || "",
+        mobile: formData.mobile || "",
+        dob: formData.dob || "",
+        age: Number(formData.age) || 0,
+        position: formData.position || "",
+        gender: formData.gender || "",
+        status: formData.status || "",
+        qualification: formData.qualification || "",
+        address: formData.address || "",
+        currentctc: formData.currentCTC || "",
+        expectedctc: formData.expectedCTC || "",
+        experience: formData.experience || "",
+        curriculum: Array.isArray(formData.curriculum)
+          ? formData.curriculum.join(", ")
+          : formData.curriculum || "",
+        campus: Array.isArray(formData.campus)
+          ? formData.campus.join(", ")
+          : formData.campus || "",
+        levels: Array.isArray(formData.levels)
+          ? formData.levels.join(", ")
+          : formData.levels || "",
+        notice: formData.notice || "",
+        details: formData.details || "",
+        resume: "",
+      },
+    };
 
-      const response = await fetch("/api/thalambur-recruitment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+    const response = await fetch("/thalambur/api/thalambur-recruitment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-      const result = await response.json();
+    const result = await response.json();
 
-      if (!response.ok) {
-        throw new Error(result?.message || result?.detail || "Submit failed");
-      }
-
-      setMessage("Application submitted successfully!");
-      reset();
-    } catch (error) {
-      setMessage(error.message || "Something went wrong");
+    if (!response.ok) {
+      throw new Error(result?.message || result?.detail || "Submit failed");
     }
-  };
+
+    setMessage("Application submitted successfully!");
+    reset();
+  } catch (error) {
+    setMessage(error.message || "Something went wrong");
+  }
+};
 
   return (
     <section className="bg-white py-12 font-sans text-[#333]">

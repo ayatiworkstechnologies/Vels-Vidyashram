@@ -28,7 +28,7 @@ const navItems = [
       { label: "Strength Details", href: "/dargaroad/pdf/strength.pdf" },
       {
         label: "Teacher Details",
-        href: "#",
+        href: "/dargaroad/pdf/teacher-details.pdf",
         submenu: [
           { label: "PGT", href: "/dargaroad/pdf/pgt.pdf" },
           { label: "TGT", href: "/dargaroad/pdf/tgt.pdf" },

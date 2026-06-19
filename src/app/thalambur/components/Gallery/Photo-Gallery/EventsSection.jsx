@@ -5,8 +5,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 const EVENTS_DATA = {
-  years: ['2025-2026', '2024-2025'],
+  years: ['2026-2027','2025-2026', '2024-2025'],
   eventsByYear: {
+    '2026-2027': [
+      { title: "Grade X Results 2026", id: 1, size: 'large', images: ["/thalambur/image-6.png", "/thalambur/image-7.png","/thalambur/image-8.png"] },
+      { title: "Tamil New Year Celebration", id: 2, size: 'medium', images: ["/thalambur/image-1.png","/thalambur/image-2.png","/thalambur/image-3.png","/thalambur/image-5.png"] },
+      { title: "Grade XII Results 2026", id: 3, size: 'small', images: ["/thalambur/image-13.png","/thalambur/image-14.png","/thalambur/image-15.png"] },
+      { title: "Lead Symposium 2026 Day 1", id: 4, size: 'small', images: ["/thalambur/image-16.png","/thalambur/image-17.png","/thalambur/image-18.png","/thalambur/image-19.png","/thalambur/image-20.png","/thalambur/image-21.png","/thalambur/image-22.png"] },
+      { title: "Lead Symposium 2026 Day 2", id: 5, size: 'medium', images: ["/thalambur/image-23.png","/thalambur/image-24.png","/thalambur/image-25.png","/thalambur/image-26.png","/thalambur/image-27.png","/thalambur/image-28.png","/thalambur/image-29.png"] },
+      { title: "Parent Orientation - Grade X & XII ", id: 6, size: 'medium', images: ["/thalambur/image-9.png","/thalambur/image-10.png","/thalambur/image-11.png","/thalambur/image-12.png"] },
+      { title: "Step Orientation", id: 7, size: 'large', images: ["/thalambur/image-30.png","/thalambur/image-31.png","/thalambur/image-32.png","/thalambur/image-33.png","/thalambur/image-34.png"] },
+      { title: "First Day at Thalambur", id: 8, size: 'small', images: ["/thalambur/image-5-1.png","/thalambur/image-5-2.png","/thalambur/image-5-3.png","/thalambur/image-5-4.png"] },
+      { title: "New Parent Orientation Grade KG To V", id: 9, size: 'large', images: ["/thalambur/image-35.png"] },
+      { title: "New Parent Orientation Grade VI To IX", id: 10, size: 'medium', images: ["/thalambur/parent-1.png", "/thalambur/parent-2.png", "/thalambur/parent-3.png", "/thalambur/parent-4.png", "/thalambur/parent-5.png", "/thalambur/parent-6.png", "/thalambur/parent-7.png", "/thalambur/parent-8.png", "/thalambur/parent-9.png", "/thalambur/parent-10.png"] },
+      { title: "International Yoga Day", id: 11, size: 'medium', images: ["/thalambur/img-1.png", "/thalambur/img-2.png", "/thalambur/img-3.png", "/thalambur/img-4.png", "/thalambur/img-5.png", "/thalambur/img-6.png", "/thalambur/img-7.png"] },
+    ],    
     '2025-2026': [
       { title: "WINNERS OF THE NATIONAL LEVEL ART COMPETITION", id: 1, size: 'large', images: ["/thalambur/winner.jpg"] },
       { title: "No bag day II", id: 2, size: 'medium', images: ["/thalambur/bag-1.jpg","/thalambur/bag-2.jpg","/thalambur/bag-3.jpg","/thalambur/bag-4.jpg","/thalambur/bag-5.jpg","/thalambur/bag-6.jpg","/thalambur/bag-7.jpg"] },

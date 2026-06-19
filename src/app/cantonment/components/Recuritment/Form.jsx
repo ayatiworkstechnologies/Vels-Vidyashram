@@ -5,112 +5,100 @@ import { useForm } from "react-hook-form";
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
+import { useState } from "react";
 export default function RecruitmentForm() {
-    const {
-  register,
-  handleSubmit,
-  reset,
-  formState: { errors },
-} = useForm({
-  defaultValues: {
-    notice: "Immediate Joining",
-  },
-});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const fileToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = reject;
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      notice: "Immediate Joining",
+    },
+  });
 
-const onSubmit = async (formData) => {
-  const toastId = toast.loading("Submitting application...");
+  const onSubmit = async (formData) => {
+    const toastId = toast.loading("Submitting application...");
+    setIsSubmitting(true);
 
-  try {
-    const file = formData.resume?.[0];
-    let base64File = "";
-
-    if (file) {
-      base64File = await new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = (error) => reject(error);
-      });
-    }
-
-    const payload = {
-      data: {
-        fristname: formData.firstName || "",
-        lastname: formData.lastName || "",
-        email: formData.email || "",
-        mobile: formData.mobile || "",
-        dob: formData.dob || "",
-        age: Number(formData.age) || 0,
-        position: formData.position || "",
-        gender: formData.gender || "",
-        status: formData.status || "",
-        qualification: formData.qualification || "",
-        address: formData.address || "",
-        currentctc: formData.currentCTC || "",
-        expectedctc: formData.expectedCTC || "",
-        experience: formData.experience || "",
-        curriculum: Array.isArray(formData.curriculum)
-          ? formData.curriculum.join(", ")
-          : formData.curriculum || "",
-        campus: "Vels Vidyashram - Pallavaram",
-        levels: Array.isArray(formData.levels)
-          ? formData.levels.join(", ")
-          : formData.levels || "",
-        notice: formData.notice || "",
-        details: formData.details || "",
-        resume: base64File,
-      },
-    };
-
-    const response = await fetch("/api/pallavaram-recruitment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const text = await response.text();
-
-    let result = {};
     try {
-      result = text ? JSON.parse(text) : {};
-    } catch {
-      result = { message: text };
-    }
+      const file = formData.resume?.[0];
+      let base64File = "";
 
-    console.log("API Response:", result);
+      if (file) {
+        base64File = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+        });
+      }
 
-    if (response.ok && result?.id) {
-      toast.success("Application submitted successfully!", {
+      const payload = {
+        data: {
+          fristname: formData.firstName || "",
+          lastname: formData.lastName || "",
+          email: formData.email || "",
+          mobile: formData.mobile || "",
+          dob: formData.dob || "",
+          age: Number(formData.age) || 0,
+          position: formData.position || "",
+          gender: formData.gender || "",
+          status: formData.status || "",
+          qualification: formData.qualification || "",
+          address: formData.address || "",
+          currentctc: formData.currentCTC || "",
+          expectedctc: formData.expectedCTC || "",
+          experience: formData.experience || "",
+          curriculum: Array.isArray(formData.curriculum)
+            ? formData.curriculum.join(", ")
+            : formData.curriculum || "",
+          campus: "Vels Vidyashram - Pallavaram",
+          levels: Array.isArray(formData.levels)
+            ? formData.levels.join(", ")
+            : formData.levels || "",
+          notice: formData.notice || "",
+          details: formData.details || "",
+          resume: base64File,
+        },
+      };
+
+      const response = await fetch("/api/pallavaram-recruitment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result?.id) {
+        toast.success("Application submitted successfully!", {
+          id: toastId,
+        });
+
+        reset();
+      } else {
+        toast.error(
+          result?.message || result?.detail || "Submission failed",
+          { id: toastId }
+        );
+      }
+    } catch (error) {
+      console.error("API Error:", error);
+
+      toast.error(error?.message || "Something went wrong!", {
         id: toastId,
       });
-
-      reset();
-      return;
+    } finally {
+      setIsSubmitting(false);
     }
-
-    toast.error(result?.message || result?.detail || "Submission failed", {
-      id: toastId,
-    });
-  } catch (error) {
-    console.error("API Error:", error);
-
-    toast.error(error?.message || "Something went wrong!", {
-      id: toastId,
-    });
-  }
-};
-
+  };
+  
   return (
     <section className="bg-white py-12 font-sans text-[#333]">
       <div className="mx-auto max-w-5xl px-6">

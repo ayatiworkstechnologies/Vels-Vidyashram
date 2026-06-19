@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 export default function RecruitmentForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
    const {
   register,
   handleSubmit,
@@ -21,6 +22,7 @@ export default function RecruitmentForm() {
 
   const onSubmit = async (formData) => {
   const toastId = toast.loading("Submitting application...");
+  setIsSubmitting(true);
 
   try {
     const file = formData.resume?.[0];
@@ -101,6 +103,8 @@ export default function RecruitmentForm() {
     toast.error(error?.message || "Something went wrong!", {
       id: toastId,
     });
+  } finally {
+    setIsSubmitting(false);
   }
 };
 

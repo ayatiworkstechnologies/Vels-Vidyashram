@@ -109,29 +109,29 @@ export default function InfrastructureSlider() {
 
       const section = sectionRef.current;
       const rect = section.getBoundingClientRect();
-      const sectionHeight = section.offsetHeight;
-      const viewportHeight = window.innerHeight;
+      const totalScrollable = section.offsetHeight - window.innerHeight;
 
-      const scrollProgress = Math.max(
-        0,
-        Math.min(
-          1,
-          (viewportHeight - rect.top) / (sectionHeight + viewportHeight)
-        )
+      const progress = Math.min(
+        Math.max(-rect.top / totalScrollable, 0),
+        1
       );
 
       const newIndex = Math.min(
-        Math.floor(scrollProgress * slides.length),
+        Math.floor(progress * slides.length),
         slides.length - 1
       );
 
       setActiveIndex(newIndex);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
@@ -152,6 +152,7 @@ export default function InfrastructureSlider() {
         </p>
       </div>
 
+      {/* MOBILE / TABLET SLIDER */}
       <div className="block lg:hidden px-4 pb-20">
         <Swiper
           modules={[Pagination, Autoplay]}
@@ -176,7 +177,11 @@ export default function InfrastructureSlider() {
                   />
 
                   <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-xl shadow-md">
-                    <img src={slide.icon} alt={slide.title} className="w-8 h-8" />
+                    <img
+                      src={slide.icon}
+                      alt={slide.title}
+                      className="w-8 h-8"
+                    />
                   </div>
                 </div>
 
@@ -212,11 +217,12 @@ export default function InfrastructureSlider() {
         `}</style>
       </div>
 
+      {/* DESKTOP STICKY STACK SCROLL */}
       <section
         ref={sectionRef}
         className="hidden lg:block relative"
         style={{
-      
+          height: `${slides.length * 100}vh`,
           backgroundImage: "url(/thalambur/bg-infra.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -228,18 +234,15 @@ export default function InfrastructureSlider() {
             {slides.map((slide, index) => {
               const isActive = index === activeIndex;
               const isPast = index < activeIndex;
+              const distance = Math.abs(index - activeIndex);
 
-              const scale = isActive
-                ? 1
-                : 0.95 - Math.abs(index - activeIndex) * 0.03;
+              const scale = isActive ? 1 : 0.94 - distance * 0.025;
 
               const translateY = isPast
-                ? -30 * (activeIndex - index)
-                : 15 * (index - activeIndex);
+                ? -55 * (activeIndex - index)
+                : 45 * (index - activeIndex);
 
-              const opacity = isActive
-                ? 1
-                : Math.max(0.4, 1 - Math.abs(index - activeIndex) * 0.15);
+              const opacity = isActive ? 1 : Math.max(0.18, 1 - distance * 0.25);
 
               return (
                 <div
@@ -248,7 +251,7 @@ export default function InfrastructureSlider() {
                   style={{
                     transform: `translateY(${translateY}px) scale(${scale})`,
                     opacity,
-                    zIndex: slides.length - Math.abs(index - activeIndex),
+                    zIndex: slides.length - distance,
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                 >
@@ -258,7 +261,7 @@ export default function InfrastructureSlider() {
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
 
-                    <div className="absolute inset-0 bg-white/35" />
+                    <div className="absolute inset-0 bg-white/40" />
 
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">

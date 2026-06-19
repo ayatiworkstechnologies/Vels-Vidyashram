@@ -105,7 +105,7 @@ export default function InspireSection() {
               ? 'opacity-100 translate-y-0 scale-100' 
               : 'opacity-0 translate-y-10 scale-90'
           }`}>
-            <Image src="/thalambur/inspire-2.png" alt="Classroom" fill className="object-cover" />
+            <Image src="/thalambur/sport.png" alt="Classroom" fill className="object-cover" />
           </div>
         </div>
 
@@ -119,7 +119,7 @@ export default function InspireSection() {
         >
           <div className="relative w-[260px] h-[220px] xl:w-[350px] xl:h-[300px] rounded-[32px] overflow-hidden shadow-2xl rotate-[3deg] hover:rotate-[1deg] hover:scale-105 transition-transform duration-500">
             <Image
-              src="/thalambur/inspire-2.png"
+              src="/thalambur/sport.png"
               alt="Students classroom"
               fill
               className="object-cover"

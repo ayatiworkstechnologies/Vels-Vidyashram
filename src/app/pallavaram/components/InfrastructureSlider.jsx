@@ -199,7 +199,7 @@ export default function InfrastructureSlider() {
         ref={sectionRef}
         className="hidden lg:block relative"
         style={{
-          
+          height: `${slides.length * 100}vh`,
           backgroundImage: "url(/thalambur/bg-infra.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",

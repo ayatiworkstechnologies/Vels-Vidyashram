@@ -14,7 +14,7 @@ const ITEMS = [
   { id: 8, title: "Fire Safety", pdf: "/thalambur/pdf/fire-safety-certificate.pdf" },
   { id: 9, title: "Sanitary Certificate", pdf: "/thalambur/pdf/sanitary-certificate.pdf" },
   { id: 10, title: "Calendar for Students", pdf: "/thalambur/pdf/academic-calendar-2025-2026.pdf" },
-  { id: 11, title: "Fee Structure", pdf: "/thalambur/pdf/09-Fee-Structure.pdf" },
+  { id: 11, title: "Fee Structure", pdf: "/thalambur/pdf/Fee.pdf" },
   { id: 12, title: "SMC", pdf: "/thalambur/pdf/10-SMC.pdf" },
   { id: 13, title: "PTA Association", pdf: "/thalambur/pdf/11-PTA.pdf" },
   { id: 14, title: "Board Results", pdf: "/thalambur/pdf/Board-results.pdf" },

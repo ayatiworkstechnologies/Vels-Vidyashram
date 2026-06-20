@@ -98,7 +98,7 @@ export default function Header() {
       <div className="w-full sticky top-0 z-40">
         <header className="w-full bg-white shadow-md overflow-visible">
           <div className="bg-[#2B158F] text-white">
-            <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-10 h-[54px] flex items-center justify-between">
+            <div className="w-full max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-10 h-auto min-h-[54px] py-2 flex flex-wrap items-center justify-between gap-2">
               <div className="hidden md:flex items-center gap-7 text-[12px] font-semibold">
                 <span className="flex items-center gap-2 whitespace-nowrap">
                   <img src="/thalambur/phone.png" className="w-4 h-4" alt="phone" />
@@ -120,12 +120,12 @@ export default function Header() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3 ml-auto">
+              <div className="flex items-center justify-end gap-2 ml-auto w-full md:w-auto min-w-0">
                 <Link
                   href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-[#2B158F] px-4 sm:px-5 py-2 rounded-full font-bold text-xs whitespace-nowrap hover:bg-[#FF8700] hover:text-white transition"
+                  className="bg-white text-[#2B158F] px-3 sm:px-5 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center break-words max-w-full hover:bg-[#FF8700] hover:text-white transition"
                 >
                   Online Fees Payment
                 </Link>
@@ -152,7 +152,7 @@ export default function Header() {
 
                 <button
                   onClick={() => setMobileOpen(true)}
-                  className="lg:hidden text-white text-3xl leading-none"
+                  className="lg:hidden text-white text-2xl sm:text-3xl p-1 leading-none shrink-0"
                   aria-label="Open menu"
                 >
                   ☰
@@ -162,15 +162,15 @@ export default function Header() {
           </div>
 
           <div className="bg-white">
-            <div className="relative w-full max-w-[1500px] mx-auto px-4 lg:px-10 h-[92px] flex items-center justify-center lg:justify-between gap-6">
-              <Link href="/dargaroad" className="flex items-center shrink-0">
+            <div className="relative w-full max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-10 h-auto min-h-[92px] py-3 flex items-center justify-between gap-4">
+              <Link href="/dargaroad" className="flex items-center shrink min-w-0">
                 <Image
                   src="/dargaroad/logo-dargaroad.png"
                   alt="Vels Vidyashram Darga Road"
                   width={430}
                   height={100}
                   priority
-                  className="w-[260px] sm:w-[380px] h-auto object-contain"
+                  className="w-[180px] sm:w-[380px] max-w-full h-auto object-contain"
                 />
               </Link>
 
@@ -200,22 +200,22 @@ export default function Header() {
         }`}
         style={{ zIndex: 9999 }}
       >
-        <div className="p-5 flex justify-between items-center bg-[#2B158F] text-white">
-          <span className="font-bold">Menu</span>
+        <div className="p-4 sm:p-5 flex justify-between items-center bg-[#2B158F] text-white shrink-0">
+          <span className="font-bold text-sm sm:text-base">Menu</span>
           <button
             onClick={() => setMobileOpen(false)}
-            className="text-2xl leading-none"
+            className="text-xl sm:text-2xl leading-none"
             aria-label="Close menu"
           >
             ✕
           </button>
         </div>
 
-        <div className="overflow-y-auto overflow-x-hidden flex-1">
+        <div className="overflow-y-auto flex-1 min-w-0">
           <div className="border-b bg-gray-50">
             <button
               onClick={() => setCampusOpen(!campusOpen)}
-              className="w-full px-5 py-4 flex justify-between items-center font-bold text-[#2B158F]"
+              className="w-full px-4 sm:px-5 py-3 sm:py-4 flex justify-between items-center font-bold text-sm sm:text-base text-[#2B158F]"
             >
               Other Campus
               <span className={`transition-transform ${campusOpen ? "rotate-180" : ""}`}>
@@ -230,7 +230,7 @@ export default function Header() {
                     key={campus.label}
                     href={campus.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-10 py-3 text-sm text-[#2B158F]"
+                    className="block px-8 sm:px-10 py-3 text-xs sm:text-sm text-[#2B158F]"
                   >
                     {campus.label}
                   </Link>
@@ -239,7 +239,7 @@ export default function Header() {
             )}
           </div>
 
-          <ul className="p-2 divide-y divide-gray-100">
+          <ul className="p-1 sm:p-2 divide-y divide-gray-100">
             {navItems.map((item) => (
               <MobileNavItem
                 key={item.label}
@@ -278,7 +278,7 @@ function DesktopNavItem({ item, pathname }) {
       </Link>
 
       {item.submenu && (
-        <div className="absolute left-0 top-full pt-4 min-w-[250px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
+        <div className="absolute left-0 top-full pt-4 min-w-[240px] max-w-[calc(100vw-40px)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
           <ul className="bg-white shadow-2xl border-t-2 border-[#FF8700] py-2">
             {item.submenu.map((sub) => (
               <li key={sub.label} className="relative group/sub">
@@ -286,29 +286,29 @@ function DesktopNavItem({ item, pathname }) {
                   href={sub.href}
                   target={sub.href.startsWith("http") ? "_blank" : undefined}
                   rel={sub.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className={`flex items-center justify-between gap-4 px-5 py-3 text-sm transition whitespace-nowrap ${
+                  className={`flex items-center justify-between gap-4 px-5 py-3 text-sm transition text-normal break-words ${
                     pathname === sub.href
                       ? "text-[#FF8700] font-bold bg-gray-50"
                       : "text-[#2B158F] hover:bg-[#2B158F] hover:text-white"
                   }`}
                 >
-                  {sub.label}
-                  {sub.submenu && <span>›</span>}
+                  <span className="whitespace-normal">{sub.label}</span>
+                  {sub.submenu && <span className="shrink-0 ml-2">›</span>}
                 </Link>
 
                 {sub.submenu && (
-                  <ul className="absolute left-full top-0 min-w-[190px] bg-white shadow-2xl border-t-2 border-[#FF8700] py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-[9999]">
+                  <ul className="absolute left-full top-0 ml-0.5 min-w-[190px] max-w-[calc(100vw-300px)] bg-white shadow-2xl border-t-2 border-[#FF8700] py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-[9999]">
                     {sub.submenu.map((child) => (
                       <li key={child.label}>
                         <Link
                           href={child.href}
-                          className={`block px-5 py-3 text-sm transition whitespace-nowrap ${
+                          className={`block px-5 py-3 text-sm transition text-normal break-words ${
                             pathname === child.href
                               ? "text-[#FF8700] font-bold bg-gray-50"
                               : "text-[#2B158F] hover:bg-[#2B158F] hover:text-white"
                           }`}
                         >
-                          {child.label}
+                          <span className="whitespace-normal">{child.label}</span>
                         </Link>
                       </li>
                     ))}
@@ -335,8 +335,8 @@ function MobileNavItem({ item, pathname, closeMenu }) {
   const [open, setOpen] = useState(isActive);
 
   return (
-    <li className="overflow-x-hidden">
-      <div className="flex items-center justify-between">
+    <li>
+      <div className="flex items-center justify-between min-w-0">
         <Link
           href={item.href}
           onClick={
@@ -347,7 +347,7 @@ function MobileNavItem({ item, pathname, closeMenu }) {
                 }
               : closeMenu
           }
-          className={`flex-1 min-w-0 px-4 py-4 font-medium transition ${
+          className={`flex-1 min-w-0 px-3 sm:px-4 py-3 sm:py-4 text-sm sm:text-base font-medium transition break-words ${
             isActive ? "text-[#FF8700]" : "text-[#2B158F]"
           }`}
         >
@@ -358,7 +358,7 @@ function MobileNavItem({ item, pathname, closeMenu }) {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className={`px-5 py-4 transition-colors ${
+            className={`px-4 sm:px-5 py-3 sm:py-4 transition-colors shrink-0 ${
               open ? "text-[#FF8700]" : "text-[#2B158F]"
             }`}
           >
@@ -374,7 +374,7 @@ function MobileNavItem({ item, pathname, closeMenu }) {
       </div>
 
       {item.submenu && open && (
-        <ul className="bg-gray-50 py-2 border-t border-b border-gray-100 overflow-x-hidden">
+        <ul className="bg-gray-50 py-1.5 border-t border-b border-gray-100">
           {item.submenu.map((sub) => (
             <MobileSubItem
               key={sub.label}
@@ -397,8 +397,8 @@ function MobileSubItem({ item, pathname, closeMenu }) {
   const [open, setOpen] = useState(isActive);
 
   return (
-    <li className="overflow-x-hidden">
-      <div className="flex items-center justify-between">
+    <li>
+      <div className="flex items-center justify-between min-w-0">
         <Link
           href={item.href}
           onClick={
@@ -409,7 +409,7 @@ function MobileSubItem({ item, pathname, closeMenu }) {
                 }
               : closeMenu
           }
-          className={`flex-1 min-w-0 px-8 py-3 text-sm transition-all ${
+          className={`flex-1 min-w-0 px-6 sm:px-8 py-2.5 text-xs sm:text-sm transition-all break-words ${
             isActive
               ? "text-[#FF8700] font-bold border-l-4 border-[#FF8700] bg-white"
               : "text-gray-600"
@@ -422,7 +422,7 @@ function MobileSubItem({ item, pathname, closeMenu }) {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className={`px-5 py-3 text-sm ${
+            className={`px-4 sm:px-5 py-2.5 text-xs sm:text-sm shrink-0 ${
               open ? "text-[#FF8700]" : "text-[#2B158F]"
             }`}
           >
@@ -438,13 +438,13 @@ function MobileSubItem({ item, pathname, closeMenu }) {
       </div>
 
       {item.submenu && open && (
-        <ul className="bg-white border-l-4 border-[#2B158F]/20 ml-6 my-1 overflow-x-hidden">
+        <ul className="bg-white border-l-4 border-[#2B158F]/20 ml-4 sm:ml-6 my-1">
           {item.submenu.map((child) => (
             <li key={child.label}>
               <Link
                 href={child.href}
                 onClick={closeMenu}
-                className={`block px-8 py-3 text-sm transition ${
+                className={`block px-6 sm:px-8 py-2.5 text-xs sm:text-sm transition break-words ${
                   pathname === child.href
                     ? "text-[#FF8700] font-bold bg-orange-50"
                     : "text-[#2B158F]"

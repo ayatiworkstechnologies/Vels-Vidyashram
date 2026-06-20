@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const ITEMS = [
-  { id: 1, title: "Mandatory Disclosure", pdf: "/dargaroad/pdf/Mandatory-disclosure.pdf" },
+  { id: 1, title: "Mandatory Disclosure", pdf: "/dargaroad/pdf/mandatory.pdf" },
   { id: 2, title: "Affiliations", pdf: "/dargaroad/pdf/AFFILIATION.pdf" },
   { id: 3, title: "NOC", pdf: "/dargaroad/pdf/NOC.pdf" },
   { id: 4, title: "Trust", pdf: "/dargaroad/pdf/TRUST.pdf" },

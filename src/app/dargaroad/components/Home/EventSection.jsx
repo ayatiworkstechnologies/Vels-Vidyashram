@@ -3,42 +3,65 @@ import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 
 const allScheduleData = [
+  // --- JUNE EVENTS ---
   {
-    date: " 06",
-    monthYear: "April",
-    title: "School reopens for Std KG - IX",
-    tag: "Events",
-    isHighlighted: false
-  },
-  {
-    date: "09",
-    monthYear: "April",
-    title: "General Assembly",
+    date: "11",
+    monthYear: "June",
+    title: "General Assembly (Thursday)",
     tag: "Events",
     isHighlighted: true
   },
   {
-    date: "16",
-    monthYear: "April",
-    title: "Club Activities",
+    date: "12",
+    monthYear: "June",
+    title: "Readers Day (Friday)",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "23",
-    monthYear: "April",
-    title: "General Assembly",
+    date: "18",
+    monthYear: "June",
+    title: "Club Activities (Thursday)",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "20",
+    monthYear: "June",
+    title: "International Yoga Day (Saturday)",
     tag: "Events",
     isHighlighted: true
   },
   {
-    date: "24",
-    monthYear: "April",
-    title: "School closes for Std KG - VIII",
+    date: "25",
+    monthYear: "June",
+    title: "General Assembly (Thursday)",
     tag: "Events",
     isHighlighted: false
   },
 
+  // --- JUNE EXAMS ---
+  {
+    date: "06",
+    monthYear: "June",
+    title: "Midterm Exam Starts for IX, X & XII (Saturday)",
+    tag: "Exams",
+    isHighlighted: true
+  },
+  {
+    date: "15",
+    monthYear: "June",
+    title: "Midterm Exam Ends for IX, X & XII (Monday)",
+    tag: "Exams",
+    isHighlighted: false
+  },
+  {
+    date: "29",
+    monthYear: "June",
+    title: "PT 1 Starts for STD IV - VIII (Monday)",
+    tag: "Exams",
+    isHighlighted: true
+  }
 ];
 
 export default function EventsSchedule() {
@@ -157,7 +180,7 @@ export default function EventsSchedule() {
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Upcoming {activeTab} - April
+          Upcoming {activeTab} - June
         </motion.h2>
 
         <div className="relative max-w-2xl">

@@ -24,7 +24,7 @@ const slides = [
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School - Cantonment",
+    subtitle: "Vels Vidyashram\nKinder Garten School - Cantonment",
     image: "/banner/banner3.jpg",
     mobileImage: "/banner/banner3.jpg",
   },

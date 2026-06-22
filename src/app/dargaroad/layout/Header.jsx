@@ -165,7 +165,7 @@ export default function Header() {
             <div className="relative w-full max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-10 h-auto min-h-[92px] py-3 flex items-center justify-between gap-4">
               <Link href="/dargaroad" className="flex items-center shrink min-w-0">
                 <Image
-                  src="/dargaroad/logo-dargaroad.png"
+                  src="/dargaroad/2.png"
                   alt="Vels Vidyashram Darga Road"
                   width={430}
                   height={100}

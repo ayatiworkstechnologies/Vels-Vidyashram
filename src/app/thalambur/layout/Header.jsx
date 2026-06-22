@@ -180,7 +180,7 @@ export default function Header() {
             <div className="relative w-full max-w-[1500px] mx-auto px-4 lg:px-10 h-[92px] flex items-center justify-center lg:justify-between gap-6">
               <Link href="/thalambur" className="flex items-center shrink-0">
                 <Image
-                  src="/thalambur/logo-thalambur.png"
+                  src="/thalambur/4.png"
                   alt="Vels Vidyashram"
                   width={430}
                   height={100}

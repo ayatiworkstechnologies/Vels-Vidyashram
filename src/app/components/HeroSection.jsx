@@ -53,7 +53,7 @@ export default function BannerSection() {
       <div className="absolute top-4 left-1/2 z-50 transform -translate-x-1/2 lg:top-6">
         {/* Added a subtle background and padding so the logo is readable over any image */}
         <div className="bg-transparent backdrop-blur-sm p-5 rounded-full shadow-2xl border border-white/20 w-fit ">
-          <div className="w-[200px] sm:w-[280px] md:w-[320px] lg:w-[350px]"> 
+          <div className="w-[200px] sm:w-[280px] md:w-[320px]"> 
             <Image
               src="/logo.jpg"
               alt="Vels Vidyashram"

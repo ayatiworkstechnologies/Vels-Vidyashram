@@ -176,12 +176,12 @@ export default function Header() {
             <div className="relative w-full max-w-[1500px] mx-auto px-4 lg:px-10 h-[92px] flex items-center justify-center lg:justify-between gap-6">
               <Link href="/cantonment" className="flex items-center shrink-0">
                 <Image
-                  src="/cantonment/logo.png"
+                  src="/cantonment/3.png"
                   alt="Vels Vidyashram Cantonment"
                   width={430}
                   height={100}
                   priority
-                  className="w-[260px] h-auto object-contain"
+                  className="w-[180px] sm:w-[365px] max-w-full h-auto object-contain"
                 />
               </Link>
 

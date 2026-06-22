@@ -13,7 +13,7 @@ const slides = [
     title: "Infrastructure",
     description:
       "A well-planned campus designed for safe and effective learning. Modern classrooms, open spaces, and student-friendly facilities. Built to support comfort, focus, and growth at every stage.",
-    image: "/pallavaram/Infrastructure-3.png",
+    image: "/pallavaram/new.png",
     icon: "/thalambur/fav-6.png",
     link: "/pallavaram/photo-gallery",
   },
@@ -235,9 +235,6 @@ export default function InfrastructureSlider() {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
-
-                    <div className="absolute inset-0 bg-white/60" />
-
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">
                         <img

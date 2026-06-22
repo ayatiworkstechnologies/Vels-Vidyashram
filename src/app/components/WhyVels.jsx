@@ -10,11 +10,11 @@ export default function WhyVels() {
       subtitle: "A balanced blend of academics, arts, sports, and life skills.",
       image: "/holy-1.png",
     },
-    {
-      title: "Experienced Faculty Team",
-      subtitle: "Dedicated educators nurturing excellence with personalised attention every day.",
-      image: "/holy-2.png",
-    },
+    // {
+    //   title: "Experienced Faculty Team",
+    //   subtitle: "Dedicated educators nurturing excellence with personalised attention every day.",
+    //   image: "/holy-2.png",
+    // },
     {
       title: "Future-Ready Curriculum",
       subtitle: "STEM, digital learning, and practical activities preparing students for tomorrow.",
@@ -44,7 +44,7 @@ export default function WhyVels() {
   };
 
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section className="bg-white py-12 md:py-16 ">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6 lg:px-8">
         
         {/* Heading */}
@@ -92,7 +92,7 @@ export default function WhyVels() {
 
                 {/* Seamless Gradient Overlay */}
                 <div
-                  className="absolute inset-x-0 bottom-0 h-24"
+                  className="absolute inset-x-0 bottom-0 h-24 "
                   style={{
                     background:
                       "linear-gradient(180deg, transparent 0%, #1d258e 60%, #272d94 100%)",

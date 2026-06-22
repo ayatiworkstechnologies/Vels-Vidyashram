@@ -88,7 +88,7 @@ export default function VelsStaticOverlaySection() {
         bannerVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
       }`}>
         <Image
-          src="/pallavaram/palla-bg.jpg"
+          src="/pallavaram/banner/new-banner.png"
           alt="Vels Campus"
           fill
           className="object-cover"

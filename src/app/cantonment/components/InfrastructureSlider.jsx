@@ -236,7 +236,7 @@ export default function InfrastructureSlider() {
                       style={{ backgroundImage: `url(${slide.image})` }}
                     />
 
-                    {/* <div className="absolute inset-0 bg-white/55" /> */}
+                   
 
                     <div className="relative z-10 flex items-center h-full">
                       <div className="p-14 flex flex-col justify-center w-1/2">

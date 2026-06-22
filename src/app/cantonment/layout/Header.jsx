@@ -181,7 +181,7 @@ export default function Header() {
                   width={430}
                   height={100}
                   priority
-                  className="w-[180px] sm:w-[365px] max-w-full h-auto object-contain"
+                  className="w-[280px] sm:w-[365px] max-w-full h-auto object-contain"
                 />
               </Link>
 

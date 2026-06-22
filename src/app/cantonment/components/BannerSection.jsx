@@ -6,7 +6,7 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nKinder Garten School - Cantonment",
-    image: "/cantonment/banner/banner1.jpg",
+    image: "/cantonment/banner/banner-1.png",
     mobileImage: "/cantonment/banner/1.png", 
   },
   {

@@ -10,7 +10,7 @@ const campuses = [
     name: 'Pallavaram Campus',
     tagline: 'A Center for Progressive Learning',
     description: 'A well-structured campus built for excellence and holistic development. Led by experienced educators and supported by state-of-the-art facilities.',
-    image: '/pallavaram-page.png',
+    image: '/pallavaram-1.png',
     exploreLink: '/pallavaram',
     admissionLink: 'https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp',
   },

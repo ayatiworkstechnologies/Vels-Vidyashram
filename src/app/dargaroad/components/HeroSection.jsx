@@ -31,6 +31,13 @@ const slides = [
     title: "Beyond Academics",
     subtitle: "Developing Talents\nIn Sports and Arts",
   },
+  {
+    id: 5,
+    image: "/dargaroad/banner/w-b-2.png",
+    mobileImage: "/dargaroad/banner/m-b-2.png",
+    title: "Future-ready learning",
+    subtitle: "Preparing Children for\nTomorrow's Opportunities Today",
+  }
   
 ];
 

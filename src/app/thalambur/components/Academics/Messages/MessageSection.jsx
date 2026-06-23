@@ -4,6 +4,10 @@ import React, { useState } from 'react';
 const MessageSection = () => {
   // 1. Organized data by year
   const allReports = {
+    '2026': [
+      { month: 'January', link: '/thalambur/message/jan-26.pdf' },
+      { month: 'February', link: '/thalambur/message/feb-2026.pdf' },
+    ],
     '2025': [
       { month: 'January', link: '/thalambur/message/jan-2025.pdf' },
       { month: 'February', link: '/thalambur/message/feb-2025.pdf' },
@@ -25,8 +29,11 @@ const MessageSection = () => {
     ],
   };
 
-  // 2. State to handle year selection
-  const [selectedYear, setSelectedYear] = useState('2025');
+  // 2. Defaulting state to the most recent year layout
+  const [selectedYear, setSelectedYear] = useState('2026');
+
+  // Safeguard: fall back to an empty array if the key somehow disappears
+  const currentReports = allReports[selectedYear] || [];
 
   return (
     <div className="min-h-screen bg-slate-50 p-8">
@@ -52,9 +59,12 @@ const MessageSection = () => {
                 onChange={(e) => setSelectedYear(e.target.value)}
                 className="block w-full appearance-none bg-white border border-slate-200 text-slate-700 py-3 px-4 pr-10 rounded-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#232A95] focus:border-transparent cursor-pointer transition-all hover:border-[#232A95] font-secondary"
               >
+                {/* FIX: Included Year 2026 option explicitly */}
+                <option value="2026">Year 2026</option>
                 <option value="2025">Year 2025</option>
                 <option value="2024">Year 2024</option>
               </select>
+              
               {/* Custom Arrow Icon */}
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -66,38 +76,38 @@ const MessageSection = () => {
         </header>
 
         {/* Dynamic Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {allReports[selectedYear].map((report, index) => (
-            <a
-              key={`${selectedYear}-${index}`}
-              href={report.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex items-center justify-between p-6 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:border-[#232A95] hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
-            >
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-slate-800 group-hover:text-[#232A95] transition-colors font-secondary">
-                  {report.month}
-                </span>
-              </div>
+        {currentReports.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {currentReports.map((report, index) => (
+              <a
+                key={`${selectedYear}-${index}`}
+                href={report.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-between p-6 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:border-[#232A95] hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
+              >
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold text-slate-800 group-hover:text-[#232A95] transition-colors font-secondary">
+                    {report.month}
+                  </span>
+                </div>
 
-              {/* PDF Icon */}
-              <div className="bg-slate-100 p-3 rounded-xl group-hover:bg-blue-50 transition-colors">
-                <svg 
-                  className="w-6 h-6 text-slate-400 group-hover:text-[#232A95] transition-colors" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        {/* Empty State (Optional) */}
-        {allReports[selectedYear].length === 0 && (
+                {/* PDF Icon */}
+                <div className="bg-slate-100 p-3 rounded-xl group-hover:bg-blue-50 transition-colors">
+                  <svg 
+                    className="w-6 h-6 text-slate-400 group-hover:text-[#232A95] transition-colors" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          /* Empty State Fallback Box */
           <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-slate-200">
             <p className="text-slate-400 font-secondary">No reports found for this year.</p>
           </div>

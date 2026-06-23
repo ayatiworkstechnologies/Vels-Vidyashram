@@ -18,18 +18,16 @@ const INFRA_DATA = {
     "A Play Pen for use by children from Pre KG to Std. III."
   ],
   images: [
-    { id: 1, span: "md:col-span-6 md:row-span-1", src: "/thalambur/infra1.jpg" },
-    { id: 2, span: "md:col-span-3", src: "/thalambur/infra2.jpg" },
-    { id: 3, span: "md:col-span-3", src: "/thalambur/infra3.jpg" },
-    { id: 4, span: "md:col-span-3", src: "/thalambur/infra4.jpg" },
-    { id: 5, span: "md:col-span-3", src: "/thalambur/infra5.jpg" },
-    { id: 6, span: "md:col-span-3", src: "/thalambur/infra6.jpg" },
-    { id: 7, span: "md:col-span-3", src: "/thalambur/infra7.jpg" },
-    { id: 8, span: "md:col-span-3", src: "/thalambur/infra8.jpg" },
-    { id: 9, span: "md:col-span-3", src: "/thalambur/infra13.jpg" },
-    { id: 10, span: "md:col-span-6", src: "/thalambur/infra10.jpg" },
-    { id: 11, span: "md:col-span-6", src: "/thalambur/infra11.jpg" },
-    { id: 12, span: "md:col-span-6", src: "/thalambur/infra12.jpg" }
+    { id: 1, span: "md:col-span-6 md:row-span-1", src: "/thalambur/inf-1.png" },
+    { id: 2, span: "md:col-span-3", src: "/thalambur/inf-2.png" },
+    { id: 3, span: "md:col-span-3", src: "/thalambur/inf-3.png" },
+    { id: 4, span: "md:col-span-3", src: "/thalambur/inf-4.png" },
+    { id: 5, span: "md:col-span-3", src: "/thalambur/inf-5.png" },
+    { id: 6, span: "md:col-span-3", src: "/thalambur/inf-6.png" },
+    { id: 7, span: "md:col-span-3", src: "/thalambur/inf-7.png" },
+    { id: 8, span: "md:col-span-3", src: "/thalambur/inf-8.png" },
+    { id: 9, span: "md:col-span-3", src: "/thalambur/inf-9.png" },
+   
   ]
 };
 

@@ -19,6 +19,9 @@ const EVENTS_DATA = {
       { title: "New Parent Orientation Grade KG To V", id: 9, size: 'large', images: ["/thalambur/image-35.png"] },
       { title: "New Parent Orientation Grade VI To IX", id: 10, size: 'medium', images: ["/thalambur/parent-1.png", "/thalambur/parent-2.png", "/thalambur/parent-3.png", "/thalambur/parent-4.png", "/thalambur/parent-5.png", "/thalambur/parent-6.png", "/thalambur/parent-7.png", "/thalambur/parent-8.png", "/thalambur/parent-9.png", "/thalambur/parent-10.png"] },
       { title: "International Yoga Day", id: 11, size: 'medium', images: ["/thalambur/img-1.png", "/thalambur/img-2.png", "/thalambur/img-3.png", "/thalambur/img-4.png", "/thalambur/img-5.png", "/thalambur/img-6.png", "/thalambur/img-7.png"] },
+      { title: "Fathers Day", id: 12, size: 'small', images: ["/thalambur/father-1.png","/thalambur/father-2.png","/thalambur/father-3.png", "/thalambur/father-4.png", "/thalambur/father-5.png"] },
+      { title: "Yoga Day", id: 13, size: 'small', images: ["/thalambur/yo-1.png","/thalambur/yo-2.png","/thalambur/yo-3.png","/thalambur/yo-4.png","/thalambur/yo-5.png"] },
+    
     ],    
     '2025-2026': [
       { title: "WINNERS OF THE NATIONAL LEVEL ART COMPETITION", id: 1, size: 'large', images: ["/thalambur/winner.jpg"] },

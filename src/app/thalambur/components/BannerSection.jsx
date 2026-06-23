@@ -27,30 +27,30 @@ const slides = [
     image: "/thalambur/banner/banner-3.png",
     mobileImage: "/thalambur/banner/mob-3.png",
   },
-  {
-    title: "Beyond Academics",
-    subtitle: "Developing Talents\nIn Sports and Arts",
-    image: "/thalambur/banner/banner-4.png",
-    mobileImage: "/thalambur/banner/mob-4.png",
-  },
-  {
-    title: "Vels Group",
-    subtitle: "Legacy of 30+ Years\nin Quality Education",
-    image: "/thalambur/banner/banner-5.png",
-    mobileImage: "/thalambur/banner/mob-5.png",
-  },
-  {
-    title: "Digital Learning",
-    subtitle: "Smart Classrooms\nfor the Future Leaders",
-    image: "/thalambur/banner/banner-6.png",
-    mobileImage: "/thalambur/banner/mob-6.png",
-  },
-  {
-    title: "Our Pride",
-    subtitle: "Vels Vidyashram\nThalambur - A Beacon of Excellence",
-    image: "/thalambur/banner/banner-7.png",
-    mobileImage: "/thalambur/banner/mob-7.png",
-  },
+  // {
+  //   title: "Beyond Academics",
+  //   subtitle: "Developing Talents\nIn Sports and Arts",
+  //   image: "/thalambur/banner/banner-4.png",
+  //   mobileImage: "/thalambur/banner/mob-4.png",
+  // },
+  // {
+  //   title: "Vels Group",
+  //   subtitle: "Legacy of 30+ Years\nin Quality Education",
+  //   image: "/thalambur/banner/banner-5.png",
+  //   mobileImage: "/thalambur/banner/mob-5.png",
+  // },
+  // {
+  //   title: "Digital Learning",
+  //   subtitle: "Smart Classrooms\nfor the Future Leaders",
+  //   image: "/thalambur/banner/banner-6.png",
+  //   mobileImage: "/thalambur/banner/mob-6.png",
+  // },
+  // {
+  //   title: "Our Pride",
+  //   subtitle: "Vels Vidyashram\nThalambur - A Beacon of Excellence",
+  //   image: "/thalambur/banner/banner-7.png",
+  //   mobileImage: "/thalambur/banner/mob-7.png",
+  // },
 ];
 
 export default function RedesignedBanner() {

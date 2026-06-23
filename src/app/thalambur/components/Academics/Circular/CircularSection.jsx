@@ -7,6 +7,7 @@ const CircularSection = () => {
 
   const circularData = {
     "2026": [
+      { month: "February", link: "/thalambur/circular/feb-2026.pdf" },
       { month: "April", link: "/thalambur/circular/april-2026.pdf" },
     ],
     "2025": [

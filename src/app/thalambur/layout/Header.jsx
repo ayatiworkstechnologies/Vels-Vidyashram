@@ -25,13 +25,12 @@ const navItems = [
       { label: "Circular", href: "/thalambur/circular" },
       { label: "Messages", href: "/thalambur/general-messages" },
       { label: "Calendar", href: "/thalambur/pdf/calendar.pdf" },
-      {label:"List of Books", href:"/thalambur/pdf/list-of-books.pdf"},
-      {label: "Home Work Policy", href: "/thalambur/pdf/homework-policy.pdf"},
-      {label: "Annual Report", href: "/thalambur/pdf/annual-report.pdf"},
-      {label: "Teacher Details", href: "/thalambur/pdf/teacher-details.pdf"},
-      {label: "Strength Details", href: "/thalambur/pdf/student-strength.pdf"},
-      {label: "Results", href: "/thalambur/pdf/thalambur-results.pdf"},
-
+      { label: "List of Books", href: "/thalambur/pdf/list-of-books.pdf" },
+      { label: "Home Work Policy", href: "/thalambur/pdf/homework-policy.pdf" },
+      { label: "Annual Report", href: "/thalambur/pdf/annual-report.pdf" },
+      { label: "Teacher Details", href: "/thalambur/pdf/teacher-details.pdf" },
+      { label: "Strength Details", href: "/thalambur/pdf/student-strength.pdf" },
+      { label: "Results", href: "/thalambur/pdf/thalambur-results.pdf" },
     ],
   },
   { label: "Beyond Academics", href: "/thalambur/beyond-academics" },
@@ -102,17 +101,9 @@ export default function Header() {
 
   return (
     <>
-      {/*
-        KEY FIX:
-        - Moved sticky + z-index OUT of <header> into a plain wrapper div.
-        - <header> itself has NO z-index, so it does NOT create a stacking context.
-        - Popups/modals on inner pages can now use z-[9999] and will always render on top.
-        - Desktop dropdowns use isolation-isolate so they stack correctly inside the nav.
-        - Mobile overlay/drawer use z-[9999]/z-[10000] so they cover everything.
-      */}
       <div className="w-full sticky top-0" style={{ zIndex: 40 }}>
         <header className="w-full bg-white shadow-md">
-
+          
           {/* TOP BAR */}
           <div className="bg-[#2B158F] text-white">
             <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-10 h-[54px] flex items-center justify-between">
@@ -143,7 +134,7 @@ export default function Header() {
                   Online Fees Payment
                 </Link>
 
-                {/* OTHER CAMPUS DROPDOWN — uses its own stacking context via isolation */}
+                {/* OTHER CAMPUS DROPDOWN */}
                 <div className="relative hidden lg:block group" style={{ isolation: "isolate", zIndex: 50 }}>
                   <button className="border border-white/40 text-white px-5 py-2 rounded-full font-bold text-xs whitespace-nowrap hover:bg-white hover:text-[#2B158F] transition">
                     Other Campus
@@ -196,6 +187,9 @@ export default function Header() {
                       pathname === item.href ||
                       item.submenu?.some((sub) => pathname === sub.href);
 
+                    // Flag to spot large submenus (like Academics)
+                    const isLargeSubmenu = item.submenu && item.submenu.length > 6;
+
                     return (
                       <li
                         key={item.label}
@@ -215,10 +209,18 @@ export default function Header() {
 
                         {item.submenu && (
                           <div
-                            className="absolute left-0 top-full pt-4 min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+                            className={`absolute top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ${
+                              isLargeSubmenu ? "right-0 xl:right-auto left-auto xl:left-0" : "left-0"
+                            }`}
                             style={{ zIndex: 9999 }}
                           >
-                            <ul className="bg-white shadow-2xl border-t-2 border-[#FF8700] py-2">
+                            <ul 
+                              className={`bg-white shadow-2xl border-t-2 border-[#FF8700] py-2 max-h-[75vh] overflow-y-auto ${
+                                isLargeSubmenu 
+                                  ? "grid grid-cols-2 w-[480px] gap-x-2" 
+                                  : "block min-w-[240px]"
+                              }`}
+                            >
                               {item.submenu.map((sub) => (
                                 <li key={sub.label}>
                                   <Link
@@ -249,7 +251,7 @@ export default function Header() {
         </header>
       </div>
 
-      {/* MOBILE OVERLAY — outside header, high z so it covers everything */}
+      {/* MOBILE OVERLAY */}
       <div
         className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden ${
           mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -258,7 +260,7 @@ export default function Header() {
         onClick={() => setMobileOpen(false)}
       />
 
-      {/* MOBILE DRAWER — outside header, highest z */}
+      {/* MOBILE DRAWER */}
       <div
         className={`fixed top-0 left-0 w-[82%] sm:w-[360px] h-full bg-white shadow-2xl transition-transform duration-300 lg:hidden flex flex-col ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"

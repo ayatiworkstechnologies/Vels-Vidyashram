@@ -134,7 +134,7 @@ export default function CampusSection() {
           </div>
         ) : (
           // DESKTOP LAYOUT: High-end drop animation
-          <div className="relative h-[600px] flex items-center justify-center">
+          <div className="relative h-[440px] flex items-center justify-center">
             {campuses.map((campus, idx) => (
               <DesktopCard key={campus.id} campus={campus} index={idx} phase={phase} />
             ))}

@@ -34,7 +34,7 @@ const slides = [
     title: "Transport",
     description:
       "A reliable and safe transportation system with a fleet of well-maintained buses, GPS tracking, and trained drivers.",
-    image: "/thalambur/transport.png",
+    image: "/thalambur/new-trans.png",
     icon: "/thalambur/fav-3.png",
     buttonText: "Learn More",
     buttonLink: "/thalambur/transport",
@@ -51,10 +51,10 @@ const slides = [
   },
   {
     id: 5,
-    title: "Step",
+    title: "Step Activity",
     description:
       "A supportive and inclusive community that values diversity, encourages collaboration, and builds lasting friendships.",
-    image: "/thalambur/step-new.png",
+    image: "/thalambur/new-step.png",
     icon: "/thalambur/fav-5.png",
     buttonText: "Learn More",
     buttonLink: "/thalambur/beyond-academics",

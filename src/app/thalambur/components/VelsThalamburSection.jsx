@@ -74,7 +74,7 @@ export default function VelsStaticOverlaySection() {
         }`}>
           <div className="relative w-full h-full overflow-hidden">
             <Image
-              src="/thalambur/vels.png"
+              src="/thalambur/thalm.png"
               alt="Students"
               fill
               className="object-cover hover:scale-110 transition-transform duration-700"
@@ -139,8 +139,8 @@ export default function VelsStaticOverlaySection() {
                 content: "The curriculum at Vels Vidyashram delivers exceptional learning opportunities through innovative teaching methods. Our school follows international standards that make it one of the top CBSE schools in OMR."
               },
               {
-                title: "World-Class Campus",
-                content: "We are a leading CBSE school on OMR Road, Chennai, committed to facilitating the holistic development of students."
+                title: "Vibrant Campus Environment",
+                content: "Vels Vidyashram offers a welcoming campus that encourages learning, creativity, and collaboration. Students benefit from an environment that supports their academic and personal growth."
               },
               {
                 title: "Sports and physical well-being",

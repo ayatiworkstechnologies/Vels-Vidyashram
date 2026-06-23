@@ -43,18 +43,18 @@ const galleryData = {
     {
       title: "Project",
       description: "Project work is an integral part of the school curriculum which is held class wise to bring out the aesthetic and latent potential of every student. Projects build team spirit, leadership qualities, conflict resolving skills and creativity among the students.",
-      images: ["/thalambur/project-1.png", "/thalambur/project-2.png", "/thalambur/project-3.png", "/thalambur/project-4.png", "/thalambur/project-5.png"],
+      images: ["/thalambur/project-1.png", "/thalambur/pro-1.png", "/thalambur/pro-2.png", "/thalambur/project-4.png", "/thalambur/pro-3.png"],
       reverse: true,
     },
     {
-      title: "Western Music",
-      description: "Notation, sight reading, chords and lead playing in Western Classical light music as well as familiar tunes are focused on.",
+      title: "Western Music & Dance",
+      description: "Students learn notation, sight reading, chords, and lead playing in Western Classical and light music while developing rhythm and performance skills. Western Dance training enhances coordination, flexibility, stage confidence, and creative expression through contemporary and modern dance forms.",
       images: ["/thalambur/western-1.png", "/thalambur/western-2.png", "/thalambur/western-3.png", "/thalambur/western-4.png", "/thalambur/western-5.png"],
     },
     {
       title: "Sports & Games",
       description: "A sound mind in a sound body is a guiding principle of holistic education. To promote physical fitness, discipline, and teamwork, games and sports activities are compulsory for all students. Professionally qualified physical education teachers guide the sports activities. The school students and staff are divided into four houses - Jade, Garnet, Sapphire and Topaz. Inter-house activities are conducted regularly. Students declared medically unable to participate by a registered physician shall be exempted from sports activities upon submission of a valid medical certificate.The Annual Sports Meet is an important co-curricular activity of the school.",
-      images: ["/thalambur/sports-1.png", "/thalambur/sports-21.png", "/thalambur/sports-31.png", "/thalambur/sports-4.png", "/thalambur/sports-5.png"],
+      images: ["/thalambur/sp-1.png", "/thalambur/sp-2.png", "/thalambur/sp-3.png", "/thalambur/sp-4.png", "/thalambur/sp-5.png"],
       reverse: true,
     },
     {
@@ -65,7 +65,7 @@ const galleryData = {
     {
       title: "Robotics",
       description: "The school gives the learners to enhance their AI and tech expertise through practical implementation, advanced system building, and real-world innovation challenges.",
-      images: ["/thalambur/robo-4.png", "/thalambur/robo-2.png", "/thalambur/robo-3.png", "/thalambur/robo-1.png", "/thalambur/robo-5.png"],
+      images: ["/thalambur/robo-4.png", "/thalambur/ro-2.png", "/thalambur/robo-3.png", "/thalambur/ro-1.png", "/thalambur/robo-5.png"],
       reverse: true,
     },
   ],

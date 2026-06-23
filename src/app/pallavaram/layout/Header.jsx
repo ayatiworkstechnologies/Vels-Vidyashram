@@ -177,7 +177,7 @@ export default function Header() {
             <div className="relative w-full max-w-[1500px] mx-auto px-4 lg:px-10 h-[92px] flex items-center justify-center lg:justify-between gap-6">
               <Link href="/pallavaram" className="flex items-center shrink-0">
                 <Image
-                  src="/pallavaram/logo-pallavaram.png"
+                  src="/pallavaram/1.png"
                   alt="Vels Vidyashram Pallavaram"
                   width={430}
                   height={100}

@@ -16,9 +16,10 @@ const ACADEMIC_LEVELS = [
       { label: "Phonics", text: "Develops phonetic awareness and helps children learn to read using sounds. A tool to decode new works." },
       { label: "Hindi & Tamil", text: "Develops basic learning, speaking, reading and writing skills. Enhances vocabulary and social conversations." },
       { label: "Art & Craft", text: "Improve motor skills, creativity and aesthetic sense. Learns to express emotions and feelings." },
-      { label: "Teacher's resource", text: "An Indigenous teacher's resource that directs teachers towards the set objective along with suggested action plan and teaching aids." }
+      { label: "Teacher's resource", text: "An Indigenous teacher's resource that directs teachers towards the set objective along with suggested action plan and teaching aids." },
+       { label: "Numerical Skills", text: "Numerical skills help students develop a strong understanding of numbers, patterns, measurements, and problem-solving strategies. Through hands-on activities and real-life applications, students build confidence in logical thinking and mathematical reasoning." }
     ],
-    images: ["/thalambur/img-1.jpg"] 
+    images: ["/thalambur/kg.png"] 
   },
 {
   id: "primary",
@@ -35,7 +36,7 @@ const ACADEMIC_LEVELS = [
     {
       label: "Core Subjects",
       text:
-        "English, Science, and Mathematics are introduced as core subjects with activity-based learning to stimulate reading and writing skills."
+        "English, Mathematics, Science, and Social Science are introduced as core subjects through activity-based and experiential learning approaches that strengthen reading, writing, analytical, and problem-solving skills while fostering curiosity and a deeper understanding of the world around them."
     },
     {
       label: "Computer Education",
@@ -71,7 +72,7 @@ const ACADEMIC_LEVELS = [
     subtitle: "Foundation Course ( Grade VI to IX)",
     description: "FOUNDATION COURSE FROM 6 TO 9 – The Foundation course with extended teaching & additional text material focused in Math & Science prepares & takes the young learners to the core of the basic concepts first and then moves ahead with strengthening advanced concepts. The foundation course aims to strengthen the basics so that they could connect & apply them in the competitive examinations.",
     
-    images: ["/thalambur/middle.jpg"]
+    images: ["/thalambur/design.png"]
   },
   {
     id: "high",

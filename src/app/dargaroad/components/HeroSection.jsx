@@ -12,18 +12,12 @@ const slides = [
   },
   {
     id: 2,
-    image: "/dargaroad/banner/w-2.png",
-    mobileImage: "/dargaroad/banner/m-2.png",
+    image: "/dargaroad/banner/darga-w-1.png",
+    mobileImage: "/dargaroad/banner/darga-m-1.png",
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
   },
-  {
-    id: 3,
-    image: "/dargaroad/banner/w-3.png",
-    mobileImage: "/dargaroad/banner/m-3.png",
-    title: "Global Standards",
-    subtitle: "World Class Infrastructure\n& Modern Learning",
-  },
+
   {
     id: 4,
     image: "/dargaroad/banner/w-4.png",

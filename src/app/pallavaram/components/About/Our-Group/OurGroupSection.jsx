@@ -72,7 +72,7 @@ const SCHOOL_DATA = {
       id: 8,
       title: "Vels vidyashram (cbse school)",
       desc: "The schools are ranked #1 for academic reputation. Individual attention to students, extra curricular activities and innovative teaching methods",
-      image: "/thalambur/campus-img.jpg",
+      image: "/our-grup.png",
       buttonText: "Pallavaram campus",
       href: "https://velsvidyashram.ac.in/pallavaram/",
       borderColor: "border-primary",

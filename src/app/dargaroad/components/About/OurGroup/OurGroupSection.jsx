@@ -137,7 +137,7 @@ const SCHOOL_DATA = {
     {
       id: 5,
       title: "Vels Vidyashram (CBSE School),Pallavaram, Chennai",
-      image: "/dargaroad/school-5.jpg",
+      image: "/our-grup.png",
       href: "http://www.velsvidyashram.com/home.htm",
       borderColor: "border-primary",
     },

@@ -11,7 +11,7 @@ export default function OurMottoSection() {
     {
       title: "Our Group",
       text: "A trusted group of institutions dedicated to academic excellence and values. Shaping young minds through quality education and innovation.",
-      image: "/pallavaram/our-group-1.png",
+      image: "/pallavaram/g.png",
       showButton: true,
       link: "/pallavaram/our-group",
     },

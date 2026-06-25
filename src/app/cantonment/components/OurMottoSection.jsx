@@ -12,7 +12,7 @@ export default function OurMottoSection() {
     {
       title: "Our Group",
       text: "A trusted group of institutions dedicated to academic excellence and values. Shaping young minds through quality education and innovation.",
-      image: "/cantonment/group.png",
+      image: "/thalambur/our.png",
       showButton: true,
       link: "/cantonment/our-group",
     },

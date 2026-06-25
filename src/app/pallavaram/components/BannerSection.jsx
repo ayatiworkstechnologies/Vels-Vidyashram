@@ -21,12 +21,7 @@ const slides = [
     image: "/pallavaram/banner/banner-2.png",
     mobileImage: "/pallavaram/banner/mob-2.png",
   },
-  {
-    title: "Global Standards",
-    subtitle: "World Class Infrastructure\n& Modern Learning",
-    image: "/pallavaram/banner/banner-3.png",
-    mobileImage: "/pallavaram/banner/mob-3.png",
-  },
+
   {
     title: "Beyond Academics",
     subtitle: "Developing Talents\nIn Sports and Arts",

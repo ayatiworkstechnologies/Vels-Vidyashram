@@ -4,13 +4,204 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const SCHOOL_DATA = { colleges: [ { id: 1, title: "Vels University, Pallavaram, Chennai", image: "/our-group/vels.png", href: "https://vistas.ac.in/", borderColor: "border-primary", }, { id: 2, title: "Mahavir Institute of Medical Sciences, Vikarabad, Hyderabad – Telangana", image: "/our-group/maha.png", href: "#", }, { id: 3, title: "Meghna Institute of Dental Sciences - Mallaram, Nizamabad campus Telangana", image: "/our-group/megha.png", href: "http://www.meghnadentalcollege.com/", borderColor: "border-primary", }, { id: 4, title: "Sri Venkateswara Dental College & Hospital,Thalambur, Chennai", image: "/our-group/sri.png", href: "https://www.svdentalcollege.com/", borderColor: "border-primary", }, { id: 7, title: "VELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM", image: "/our-group/vels-medical.png", href: "https://velsmedicalcollege.com/", borderColor: "border-primary", }, { id: 5, title: "Venkateswara Nursing College, Thalambur,Chennai Thalambur", image: "/our-group/venkat.png", href: "http://www.venkateswaranursing.ac.in/", borderColor: "border-primary", }, { id: 6, title: "Shri ISARI Velan Mission Hospital, Thalambur, Chennai", image: "/our-group/velan.png", href: "https://www.velanhospital.com/", borderColor: "border-primary", }, { id: 11, title: "VELS NURSING COLLEGE-PERIYAPALAYAMVELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM", image: "/our-group/nursing.png", href: "https://velnursingcollege.com/", borderColor: "border-primary", }, { id: 9, title: "VELS MARITIME STUDIES-THALAMBURM", image: "/our-group/maritime.png", href: "https://www.vaelsinternationalschool.com/", borderColor: "border-primary", }, { id: 12, title: "VELS SCHOOL OF AVIATION-PALLAVARAM", image: "/our-group/aviation.png", href: "https://vistas.ac.in/", borderColor: "border-primary", }, { id: 13, title: "CTC-LONDON", image: "/our-group/ctc.png", href: "https://ctc.ac.uk/", borderColor: "border-primary", }, { id: 14, title: "VISTAS-PALLAVARAM", image: "/our-group/vistas.png", href: "https://vistas.ac.in/", borderColor: "border-primary", }, ], schools: [ { id: 1, title: "Vels Vidyashram (CBSE School), Darga Road Campus,Pallavaram, Chennai", image: "/our-group/dar.png", href: "https://velsvidyashram.ac.in/dargaroad/", borderColor: "border-primary", }, { id: 2, title: "Vels Vidyashram (CBSE School), Thalambur, Chennai", image: "/our-group/tha.png", href: "https://velsvidyashram.ac.in/thalambur", borderColor: "border-primary", }, { id: 5, title: "Vels Vidyashram (CBSE School),Pallavaram, Chennai", image: "/our-group/pal.png", href: "https://velsvidyashram.ac.in/pallavaram", borderColor: "border-primary", }, { id: 6, title: "Vels Vidyashram Kindergarten, Cantonment – Pallavaram, Chennai", image: "/our-group/can.png", href: "https://velsvidyashram.ac.in/cantonment", borderColor: "border-primary", }, { id: 3, title: "Vaels International School, Injambakkam, Chennai", image: "/our-group/vaels.png", href: "https://www.vaelsinternationalschool.com/", borderColor: "border-primary", }, { id: 4, title: "Vels International Pre School – Kindle Kids, Neelankarai, Chennai", image: "/our-group/kindle.png", href: "http://www.velsinternationalpreschool.com/", borderColor: "border-primary", }, { id: 7, title: "Vels Kinder Kids, Mylapore, Chennai", image: "/our-group/kinder.png", href: "https://www.velskinderkids.com/index.asp", borderColor: "border-primary", }, { id: 8, title: "BRIGHT LEARNERS DUBAI", image: "/our-group/bright.png", href: "https://www.brightlearners.ae/", borderColor: "border-primary", }, { id: 9, title: "KINDLE KIDS INTERNATIONAL SCHOOL, HINDOO ROAD, SINGAPORE", image: "/our-group/kindle-singapore.png", href: "https://kindlekids.sg/", borderColor: "border-primary", }, { id: 10, title: "KINDLE KIDS INTERNATIONAL SCHOOL, THOMSON ROAD, SINGAPORE", image: "/our-group/kindle-international.png", href: "https://kindlekids.sg/", borderColor: "border-primary", },    {
+const SCHOOL_DATA = {
+  colleges: [
+    {
+      id: 1,
+      title: "Vels University, Pallavaram, Chennai",
+      image: "/our-group/vels.png",
+      href: "https://vistas.ac.in/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 2,
+      title:
+        "Mahavir Institute of Medical Sciences, Vikarabad, Hyderabad – Telangana",
+      image: "/our-group/maha.png",
+      href: "#",
+    },
+    {
+      id: 3,
+      title:
+        "Meghna Institute of Dental Sciences - Mallaram, Nizamabad campus Telangana",
+      image: "/our-group/megha.png",
+      href: "http://www.meghnadentalcollege.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 4,
+      title:
+        "Sri Venkateswara Dental College & Hospital,Thalambur, Chennai",
+      image: "/our-group/sri.png",
+      href: "https://www.svdentalcollege.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 7,
+      title: "VELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM",
+      image: "/our-group/vels-medical.png",
+      href: "https://velsmedicalcollege.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 5,
+      title:
+        "Venkateswara Nursing College, Thalambur,Chennai Thalambur",
+      image: "/our-group/venkat.png",
+      href: "http://www.venkateswaranursing.ac.in/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 6,
+      title:
+        "Shri ISARI Velan Mission Hospital, Thalambur, Chennai",
+      image: "/our-group/velan.png",
+      href: "https://www.velanhospital.com/",
+      borderColor: "border-primary",
+    },
+    {
       id: 11,
-      title: "Vels International Residential Football School, Navalur, Thazhambur, Chennai",
+      title:
+        "VELS NURSING COLLEGE-PERIYAPALAYAMVELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM",
+      image: "/our-group/nursing.png",
+      href: "https://velnursingcollege.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 9,
+      title: "VELS MARITIME STUDIES-THALAMBURM",
+      image: "/our-group/maritime.png",
+      href: "https://www.vaelsinternationalschool.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 12,
+      title: "VELS SCHOOL OF AVIATION-PALLAVARAM",
+      image: "/our-group/aviation.png",
+      href: "https://vistas.ac.in/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 13,
+      title: "CTC-LONDON",
+      image: "/our-group/ctc.png",
+      href: "https://ctc.ac.uk/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 14,
+      title: "VISTAS-PALLAVARAM",
+      image: "/our-group/vistas.png",
+      href: "https://vistas.ac.in/",
+      borderColor: "border-primary",
+    },
+  ],
+
+  schools: [
+    {
+      id: 1,
+      title:
+        "Vels Vidyashram (CBSE School), Darga Road Campus,Pallavaram, Chennai",
+      image: "/our-group/dar.png",
+      href: "https://velsvidyashram.ac.in/dargaroad/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 2,
+      title:
+        "Vels Vidyashram (CBSE School), Thalambur, Chennai",
+      image: "/our-group/tha.png",
+      href: "https://velsvidyashram.ac.in/thalambur",
+      borderColor: "border-primary",
+    },
+    {
+      id: 5,
+      title:
+        "Vels Vidyashram (CBSE School),Pallavaram, Chennai",
+      image: "/our-group/pal.png",
+      href: "https://velsvidyashram.ac.in/pallavaram",
+      borderColor: "border-primary",
+    },
+    {
+      id: 6,
+      title:
+        "Vels Vidyashram Kindergarten, Cantonment – Pallavaram, Chennai",
+      image: "/our-group/can.png",
+      href: "https://velsvidyashram.ac.in/cantonment",
+      borderColor: "border-primary",
+    },
+    {
+      id: 3,
+      title:
+        "Vaels International School, Injambakkam, Chennai",
+      image: "/our-group/vaels.png",
+      href: "https://www.vaelsinternationalschool.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 4,
+      title:
+        "Vels International Pre School – Kindle Kids, Neelankarai, Chennai",
+      image: "/our-group/kindle.png",
+      href: "http://www.velsinternationalpreschool.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 7,
+      title: "Vels Kinder Kids, Mylapore, Chennai",
+      image: "/our-group/kinder.png",
+      href: "https://www.velskinderkids.com/index.asp",
+      borderColor: "border-primary",
+    },
+    {
+      id: 8,
+      title: "BRIGHT LEARNERS DUBAI",
+      image: "/our-group/bright.png",
+      href: "https://www.brightlearners.ae/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 9,
+      title:
+        "KINDLE KIDS INTERNATIONAL SCHOOL, HINDOO ROAD, SINGAPORE",
+      image: "/our-group/kindle-singapore.png",
+      href: "https://kindlekids.sg/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 10,
+      title:
+        "KINDLE KIDS INTERNATIONAL SCHOOL, THOMSON ROAD, SINGAPORE",
+      image: "/our-group/kindle-international.png",
+      href: "https://kindlekids.sg/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 11,
+      title:
+        "Vels International Residential Football School, Navalur, Thazhambur, Chennai",
       image: "/our-group/vels-fc.png",
       href: "https://velsfc.com/",
       borderColor: "border-primary",
-    }, { id: 12, title: "Vels INTERNATIONAL SCHOOL – INJAMBAKKAM & NEELANKARAI", image: "/our-group/img.png", href: "https://www.vaelsinternationalschool.com/", borderColor: "border-primary", }, { id: 17, title: "VELS GLOBAL SCHOOL", image: "/our-group/vels-global.png", href: "/dargaroad/vels-global-school", buttonText: "Visit Vels Global School", borderColor: "border-primary", }, ], };
+    },
+    {
+      id: 12,
+      title:
+        "Vels INTERNATIONAL SCHOOL – INJAMBAKKAM & NEELANKARAI",
+      image: "/our-group/img.png",
+      href: "https://www.vaelsinternationalschool.com/",
+      borderColor: "border-primary",
+    },
+    {
+      id: 17,
+      title: "VELS GLOBAL SCHOOL",
+      image: "/our-group/vels-global.png",
+      href: "/dargaroad/vels-global-school",
+      buttonText: "Visit Vels Global School",
+      borderColor: "border-primary",
+    },
+  ],
+};
 
 function getCardContent(title) {
   const titleParts = title.split(",");
@@ -70,7 +261,7 @@ export default function OurGroupSection() {
                       alt={item.title}
                       fill
                       sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                      className=" transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                     />
                   </div>
 

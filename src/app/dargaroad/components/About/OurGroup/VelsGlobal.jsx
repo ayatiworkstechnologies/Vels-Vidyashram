@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -112,42 +113,51 @@ const SCHOOLS = [
 
 export default function VelsGlobal() {
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#f3f2ef] py-10 sm:py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {SCHOOLS.map((item) => {
+            const isExternalLink = item.href.startsWith("http");
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-8">
-          {SCHOOLS.map((item) => (
-            <div key={item.id} className="relative pt-24 group">
-              <Link href={item.href} className="block cursor-pointer">
-
-                {/* Image */}
-                <div
-                  className={`absolute top-0 left-1/2 -translate-x-1/2 w-[55%] h-48 z-10 rounded-xl overflow-hidden border-2 ${item.borderColor} shadow-lg transition-transform group-hover:scale-105`}
+            return (
+              <article
+                key={item.id}
+                className="group overflow-hidden rounded-[12px] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <Link
+                  href={item.href}
+                  target={isExternalLink ? "_blank" : undefined}
+                  rel={isExternalLink ? "noopener noreferrer" : undefined}
+                  aria-label={item.title}
+                  className="flex h-full flex-col"
                 >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                  {/* Image */}
+                  <div className="relative aspect-[1.72/1] w-full overflow-hidden bg-[#e8eef5]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                    />
+                  </div>
 
-                {/* Card */}
-                <div className="bg-yellow-50 rounded-xl p-8 pt-32 shadow-sm text-center flex flex-col items-center mt-5 hover:shadow-md transition-shadow">
-                  <h3 className="text-md font-semibold font-primary text-gray-800 mb-4 leading-tight group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
+                  {/* Card Content */}
+                  <div className="flex min-h-[135px] flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+                    <h3 className="line-clamp-2 font-primary text-[15px] font-semibold leading-[1.45] text-[#171717] transition-colors duration-300 group-hover:text-primary">
+                      {item.title}
+                    </h3>
 
-                  <span className="px-6 py-2 bg-primary text-white font-medium rounded-md hover:bg-tertiary font-secondary transition-colors inline-block">
-                    {item.buttonText || "Learn More"}
-                  </span>
-                </div>
-              </Link>
-            </div>
-          ))}
+                    <span className="mt-auto w-fit border-b border-[#171717] pb-[2px] pt-5 font-secondary text-[10px] font-semibold uppercase leading-none text-[#171717] transition-colors duration-300 group-hover:border-primary group-hover:text-primary">
+                      {item.buttonText || "Learn More"}
+                    </span>
+                  </div>
+                </Link>
+              </article>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

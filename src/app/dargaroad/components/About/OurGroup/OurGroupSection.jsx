@@ -1,262 +1,107 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Added Link component
+import Link from "next/link";
 
-const SCHOOL_DATA = {
-  colleges: [
-    {
-      id: 1,
-      title: "Vels University, Pallavaram, Chennai",
-      image: "/dargaroad/college-1.jpg",
-      href: "https://vistas.ac.in/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 2,
-      title: "Mahavir Institute of Medical Sciences, Vikarabad, Hyderabad – Telangana",
-      image: "/dargaroad/mi.jpg",   
-      href: "https://vistas.ac.in/",
-     
-    },
-    {
-      id: 3,
-      title: "Mahavir Institute of Medical Sciences, Meghna Institute of Dental Sciences, Mallaram, Nizamabad, Telangana",
-      image: "/dargaroad/college-3.jpg",
-      href: "http://www.meghnadentalcollege.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 4,
-      title: "Sri Venkateswara Dental College & Hospital,Thalambur, Chennai",
-      image: "/dargaroad/college-4.jpg",
-      href: "https://www.svdentalcollege.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 5,
-      title: "Venkateswara Nursing College, Thalambur,Chennai Thalambur",
-      image: "/dargaroad/college-5.jpg",
-      href: "http://www.venkateswaranursing.ac.in/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 6,
-      title: "Shri ISARI Velan Mission Hospital, Thalambur, Chennai",
-      image: "/dargaroad/college-6.jpg",
-      href: "https://www.velanhospital.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 7,
-      title: "VELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM",
-      image: "/dargaroad/college-7.jpg",
-      href: "https://velsmedicalcollege.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 8,
-      title: "MEGHNA INSTITUTE OF DENTAL SCIENCES (MIDS) NIZAMABADV",
-      image: "/dargaroad/college-8.jpg",
-      href: "https://www.meghnadentalcollege.ac.in/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 9,
-      title: "VELS MARITIME STUDIES-THALAMBURM",
-      image: "/dargaroad/college-9.jpg",
-      href: "https://www.vaelsinternationalschool.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 10,
-      title: "VENKATESWARA DENTAL COLLEGE-THALAMBUR",
-      image: "/dargaroad/college-10.jpg",
-      href: "https://www.svdentalcollege.com/",
-      borderColor: "border-primary",
-    },
-    {
+const SCHOOL_DATA = { colleges: [ { id: 1, title: "Vels University, Pallavaram, Chennai", image: "/our-group/vels.png", href: "https://vistas.ac.in/", borderColor: "border-primary", }, { id: 2, title: "Mahavir Institute of Medical Sciences, Vikarabad, Hyderabad – Telangana", image: "/our-group/maha.png", href: "#", }, { id: 3, title: "Meghna Institute of Dental Sciences - Mallaram, Nizamabad campus Telangana", image: "/our-group/megha.png", href: "http://www.meghnadentalcollege.com/", borderColor: "border-primary", }, { id: 4, title: "Sri Venkateswara Dental College & Hospital,Thalambur, Chennai", image: "/our-group/sri.png", href: "https://www.svdentalcollege.com/", borderColor: "border-primary", }, { id: 7, title: "VELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM", image: "/our-group/vels-medical.png", href: "https://velsmedicalcollege.com/", borderColor: "border-primary", }, { id: 5, title: "Venkateswara Nursing College, Thalambur,Chennai Thalambur", image: "/our-group/venkat.png", href: "http://www.venkateswaranursing.ac.in/", borderColor: "border-primary", }, { id: 6, title: "Shri ISARI Velan Mission Hospital, Thalambur, Chennai", image: "/our-group/velan.png", href: "https://www.velanhospital.com/", borderColor: "border-primary", }, { id: 11, title: "VELS NURSING COLLEGE-PERIYAPALAYAMVELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM", image: "/our-group/nursing.png", href: "https://velnursingcollege.com/", borderColor: "border-primary", }, { id: 9, title: "VELS MARITIME STUDIES-THALAMBURM", image: "/our-group/maritime.png", href: "https://www.vaelsinternationalschool.com/", borderColor: "border-primary", }, { id: 12, title: "VELS SCHOOL OF AVIATION-PALLAVARAM", image: "/our-group/aviation.png", href: "https://vistas.ac.in/", borderColor: "border-primary", }, { id: 13, title: "CTC-LONDON", image: "/our-group/ctc.png", href: "https://ctc.ac.uk/", borderColor: "border-primary", }, { id: 14, title: "VISTAS-PALLAVARAM", image: "/our-group/vistas.png", href: "https://vistas.ac.in/", borderColor: "border-primary", }, ], schools: [ { id: 1, title: "Vels Vidyashram (CBSE School), Darga Road Campus,Pallavaram, Chennai", image: "/our-group/dar.png", href: "https://velsvidyashram.ac.in/dargaroad/", borderColor: "border-primary", }, { id: 2, title: "Vels Vidyashram (CBSE School), Thalambur, Chennai", image: "/our-group/tha.png", href: "https://velsvidyashram.ac.in/thalambur", borderColor: "border-primary", }, { id: 5, title: "Vels Vidyashram (CBSE School),Pallavaram, Chennai", image: "/our-group/pal.png", href: "https://velsvidyashram.ac.in/pallavaram", borderColor: "border-primary", }, { id: 6, title: "Vels Vidyashram Kindergarten, Cantonment – Pallavaram, Chennai", image: "/our-group/can.png", href: "https://velsvidyashram.ac.in/cantonment", borderColor: "border-primary", }, { id: 3, title: "Vaels International School, Injambakkam, Chennai", image: "/our-group/vaels.png", href: "https://www.vaelsinternationalschool.com/", borderColor: "border-primary", }, { id: 4, title: "Vels International Pre School – Kindle Kids, Neelankarai, Chennai", image: "/our-group/kindle.png", href: "http://www.velsinternationalpreschool.com/", borderColor: "border-primary", }, { id: 7, title: "Vels Kinder Kids, Mylapore, Chennai", image: "/our-group/kinder.png", href: "https://www.velskinderkids.com/index.asp", borderColor: "border-primary", }, { id: 8, title: "BRIGHT LEARNERS DUBAI", image: "/our-group/bright.png", href: "https://www.brightlearners.ae/", borderColor: "border-primary", }, { id: 9, title: "KINDLE KIDS INTERNATIONAL SCHOOL, HINDOO ROAD, SINGAPORE", image: "/our-group/kindle-singapore.png", href: "https://kindlekids.sg/", borderColor: "border-primary", }, { id: 10, title: "KINDLE KIDS INTERNATIONAL SCHOOL, THOMSON ROAD, SINGAPORE", image: "/our-group/kindle-international.png", href: "https://kindlekids.sg/", borderColor: "border-primary", },    {
       id: 11,
-      title: "VELS NURSING COLLEGE-PERIYAPALAYAMVELS MEDICAL COLLEGE & HOSPITAL – PERIYAPALAYAM",
-      image: "/dargaroad/college-11.jpg",
-      href: "https://velnursingcollege.com/",
-      borderColor: "border-primary",
-    },
-     {
-      id: 12,
-      title: "VELS SCHOOL OF AVIATION-PALLAVARAM",
-      image: "/dargaroad/college-12.jpg",
-      href: "https://vistas.ac.in/",
-      borderColor: "border-primary",
-    },
-      {
-      id: 13,
-      title: "CTC-LONDON",
-      image: "/dargaroad/college-13.jpg",
-      href: "https://ctc.ac.uk/end-of-term-assemblies/",
-      borderColor: "border-primary",
-    },
-      {
-      id: 14,
-      title: "VISTAS-PALLAVARAM",
-      image: "/dargaroad/college-14.jpg",
-      href: "https://vistas.ac.in/",
-      borderColor: "border-primary",
-    },
-  ],
-
-  schools: [
-    {
-      id: 1,
-      title: "Vels Vidyashram (CBSE School), Darga Road Campus,Pallavaram, Chennai",
-      image: "/dargaroad/school-1.jpg",
-      href: "http://www.velsvidyashram.com/home.htm",
-      borderColor: "border-primary",
-    },
-    {
-      id: 2,
-      title: "Vels Vidyashram (CBSE School), Thalambur, Chennai",
-      image: "/dargaroad/school-2.jpg",
-      href: "https://velsvidyashram.ac.in/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 3,
-      title: "Vaels International School, Injambakkam, Chennai",
-      image: "/dargaroad/school-3.jpg",
-      href: "https://www.vaelsinternationalschool.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 4,
-      title: "Vels International Pre School – Kindle Kids, Neelankarai, Chennai",
-      image: "/dargaroad/school-4.jpg",
-      href: "http://www.velsinternationalpreschool.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 5,
-      title: "Vels Vidyashram (CBSE School),Pallavaram, Chennai",
-      image: "/our-grup.png",
-      href: "http://www.velsvidyashram.com/home.htm",
-      borderColor: "border-primary",
-    },
-    {
-      id: 6,
-      title: "Vels Vidyashram Kindergarten, Cantonment – Pallavaram, Chennai",
-      image: "/dargaroad/school-6.jpg",
-      href: "http://www.velsvidyashram.com/Kindergarten/index.htm",
-      borderColor: "border-primary",
-    },
-    {
-      id: 7,
-      title: "Vels Kinder Kids, Mylapore, Chennai",
-      image: "/dargaroad/school-7.jpg",
-      href: "https://www.velskinderkids.com/index.asp",
-      borderColor: "border-primary",
-    },
-    {
-      id: 8,
-      title: "BRIGHT LEARNERS DUBAI",
-      image: "/dargaroad/school-8.jpg",
-      href: "https://www.brightlearners.ae/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 9,
-      title: "KINDLE KIDS INTERNATIONAL SCHOOL, HINDOO ROAD, SINGAPORE",
-      image: "/dargaroad/school-9.jpg",
-      href: "https://kindlekids.sg/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 10,
-      title: "KINDLE KIDS INTERNATIONAL SCHOOL, THOMSON ROAD, SINGAPORE",
-      image: "/dargaroad/school-10.jpg",
-      href: "https://kindlekids.sg/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 11,
-      title: "BRIGHT LEARNERS DUBAI",
-      image: "/dargaroad/school-11.jpg",
+      title: "Vels International Residential Football School, Navalur, Thazhambur, Chennai",
+      image: "/our-group/vels-fc.png",
       href: "https://velsfc.com/",
       borderColor: "border-primary",
-    },
-    {
-      id: 12,
-      title: "Vels INTERNATIONAL SCHOOL – INJAMBAKKAM &  NEELANKARAI",
-      image: "/dargaroad/school-12.jpg",
-      href: "https://www.vaelsinternationalschool.com/",
-      borderColor: "border-primary",
-    },
-    {
-      id: 17,
-      title: "VELS GLOBAL SCHOOL",
-      image: "/dargaroad/school-17.jpg",
-      href: "/dargaroad/vels-global-school",
-      buttonText: "Visit Vels Global School",
-      borderColor: "border-primary",
-    },
-  ],
-};
+    }, { id: 12, title: "Vels INTERNATIONAL SCHOOL – INJAMBAKKAM & NEELANKARAI", image: "/our-group/img.png", href: "https://www.vaelsinternationalschool.com/", borderColor: "border-primary", }, { id: 17, title: "VELS GLOBAL SCHOOL", image: "/our-group/vels-global.png", href: "/dargaroad/vels-global-school", buttonText: "Visit Vels Global School", borderColor: "border-primary", }, ], };
 
+function getCardContent(title) {
+  const titleParts = title.split(",");
+
+  return {
+    name: titleParts[0]?.trim() || title,
+    location: titleParts.slice(1).join(",").trim(),
+  };
+}
 
 export default function OurGroupSection() {
   const [activeTab, setActiveTab] = useState("colleges");
 
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#f3f2ef] py-10 sm:py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         {/* Tab Navigation */}
-        <div className="flex justify-center gap-4 mb-16">
-          {["colleges", "schools"].map((loc) => (
+        <div className="mb-8 flex flex-wrap justify-center gap-3 sm:mb-10">
+          {["colleges", "schools"].map((tab) => (
             <button
-              key={loc}
-              onClick={() => setActiveTab(loc)}
-              className={`px-8 py-2 rounded-full border transition-all capitalize font-medium ${
-                activeTab === loc
-                  ? "bg-primary text-white border-primary"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"
+              key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
+              className={`rounded-full border px-6 py-2 text-sm font-medium capitalize transition-all duration-300 sm:px-8 ${
+                activeTab === tab
+                  ? "border-primary bg-primary text-white shadow-sm"
+                  : "border-gray-200 bg-white text-gray-600 hover:border-primary hover:text-primary"
               }`}
             >
-              {loc}
+              {tab}
             </button>
           ))}
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-8">
-          {SCHOOL_DATA[activeTab].map((item) => (
-            <div key={item.id} className="relative pt-24 group">
-              {/* Entire Card wrapped in Link for accessibility/SEO, 
-                  but we use a div for layout and Link for the action */}
-              <Link href={item.href} className="block cursor-pointer">
-                {/* Overlapping Image Container */}
-                <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[55%] h-48 z-10 rounded-xl overflow-hidden border-2 ${item.borderColor} shadow-lg transition-transform group-hover:scale-105`}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className=""
-                  />
-                </div>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          {SCHOOL_DATA[activeTab].map((item) => {
+            const { name, location } = getCardContent(item.title);
+            const isExternalLink = item.href.startsWith("http");
 
-                {/* Card Body */}
-                <div className="bg-yellow-50 rounded-xl p-8 pt-32 shadow-sm text-center flex flex-col items-center mt-5 hover:shadow-md transition-shadow">
-                  <h3 className="text-md font-semibold font-primary text-gray-800 mb-4 leading-tight group-hover:text-primary transition-colors uppercase">
-                    {item.title}
-                  </h3>
-                 
-                  
-                  {/* Button Link */}
-                  <span className="px-6 py-2 bg-primary text-white font-medium rounded-md hover:bg-tertiary font-secondary transition-colors inline-block">
-                    {item.buttonText || "Learn More"}
-                  </span>
-                </div>
-              </Link>
-            </div>
-          ))}
+            return (
+              <article
+                key={item.id}
+                className="group overflow-hidden rounded-[10px] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <Link
+                  href={item.href}
+                  target={isExternalLink ? "_blank" : undefined}
+                  rel={isExternalLink ? "noopener noreferrer" : undefined}
+                  aria-label={item.title}
+                  className="flex h-full flex-col"
+                >
+                  {/* Image */}
+                  <div className="relative aspect-[1.72/1] w-full overflow-hidden bg-[#dcecff]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    />
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="flex min-h-[150px] flex-1 flex-col px-4 pb-5 pt-3">
+                    {/* Category Badge */}
+                    <span className="mb-2 w-fit rounded-full border border-[#d7d7d7] bg-[#f5f5f5] px-2 py-[3px] text-[9px] font-medium leading-none text-[#555555]">
+                      {activeTab === "colleges" ? "University" : "School"}
+                    </span>
+
+                    {/* Title */}
+                    <h3 className="line-clamp-2 font-primary text-[14px] font-semibold leading-[1.4] text-[#161616] transition-colors duration-300 group-hover:text-primary">
+                      {name}
+                    </h3>
+
+                    {/* Location */}
+                    {location && (
+                      <p className="mt-1 line-clamp-2 text-[10px] leading-[1.5] text-[#8a8a8a]">
+                        {location}
+                      </p>
+                    )}
+
+                    {/* Link Text */}
+                    <span className="mt-auto w-fit border-b border-[#161616] pb-[2px] pt-4 font-secondary text-[10px] font-semibold uppercase leading-none text-[#161616] transition-colors duration-300 group-hover:border-primary group-hover:text-primary">
+                      {item.buttonText || "Know More"}
+                    </span>
+                  </div>
+                </Link>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

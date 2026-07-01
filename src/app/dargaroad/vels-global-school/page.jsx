@@ -2,8 +2,6 @@ import Hero from "../components/About/OurGroup/Hero";
 import OurGroupSection from "../components/About/OurGroup/OurGroupSection";
 import VelsGlobal from "../components/About/OurGroup/VelsGlobal";
 
-
-
 const siteTitle = "Vels Global School - Vels Vidyashram";
 const siteDescription = "Discover Vels Global School, a premier educational institution in Chennai offering quality CBSE education and holistic development opportunities.";
 const siteUrl = 'https://yourwebsite.com';

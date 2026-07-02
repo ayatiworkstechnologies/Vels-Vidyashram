@@ -45,21 +45,15 @@ export default function BannerSection() {
     <section className="relative w-full h-[600px] md:h-[750px] overflow-hidden bg-slate-900">
       
       {/* ================= LOGO OVERLAY ================= */}
-      <div className="absolute top-4 left-1/2 z-50 transform -translate-x-1/2 lg:top-6">
-        {/* Added a subtle background and padding so the logo is readable over any image */}
-        <div className="bg-transparent backdrop-blur-sm p-5 rounded-full shadow-2xl border border-white/20 w-fit ">
-          <div className="w-[200px] sm:w-[280px] md:w-[320px]"> 
-            <Image
-              src="/logo.jpg"
-              alt="Vels Vidyashram"
-              width={1600}
-              height={345}
-              priority
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        </div>
-      </div>
+      <div className="absolute left-1/2 top-4 z-50 -translate-x-1/2 lg:top-6">
+  <img
+    src="/common-logo.png"
+    alt="Vels Vidyashram"
+    width="1600"
+    height="345"
+    className="h-auto w-[260px] object-contain sm:w-[320px] md:w-[380px] lg:w-[400px]"
+  />
+</div>
 
       {/* 1. DYNAMIC BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">

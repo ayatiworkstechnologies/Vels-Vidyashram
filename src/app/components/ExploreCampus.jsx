@@ -115,7 +115,7 @@ export default function CampusSection() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-3xl md:text-5xl lg:text-7xl font-black text-[#1a1a1a] uppercase tracking-tighter"
+          className="text-3xl md:text-5xl lg:text-6xl font-black text-secondary uppercase "
         >
           Wisdom Is Strength
         </motion.h2>

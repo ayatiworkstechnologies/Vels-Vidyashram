@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,38 +11,125 @@ const CATEGORIES = ["infrastructure", "events", "awards"];
 
 const INFRA_DATA = {
   facilities: [
-    "The school has all the necessary facilities in keeping with the modern trend in education. Experienced and trained teachers help in maintaining academic excellence and high standards of the school.",
-    "Well equipped laboratories for Physics, Chemistry, Biology, Maths, Computer Science and English.",
-    "A library with appropriate ambience for reading & a resourceful librarian to ignite reading",
-    "Two well maintained playgrounds for cricket and football.",
-    "A conference hall with LCD facilities.",
-    "A Play Pen for use by children from Pre KG to Std. III."
+    {
+      title: "Future-Ready Smart Classrooms",
+      description:
+        "Every classroom is equipped with AI-enabled interactive panels that transform traditional teaching into immersive learning. Teachers use digital content, simulations, real-time collaboration and multimedia lessons to make concepts easier to understand and more engaging.",
+    },
+    {
+      title: "AI Interactive Learning",
+      description:
+        "Our AI-powered interactive panels support personalized learning, visual demonstrations, instant assessments and collaborative activities, helping students develop digital literacy and critical thinking skills.",
+    },
+    {
+      title: "STEM & Science Laboratories",
+      description:
+        "Well-equipped Physics, Chemistry, Biology, Mathematics and Computer laboratories encourage hands-on experimentation and inquiry-based learning.",
+    },
+    {
+      title: "Library",
+      description:
+        "A modern library with an extensive collection of books, journals and digital resources nurtures reading habits and independent research.",
+    },
+    {
+      title: "Football Turf",
+      description:
+        "A professionally maintained football turf provides students with excellent training facilities, promoting teamwork, fitness and competitive spirit.",
+    },
+    {
+      title: "Swimming Pool",
+      description:
+        "Our swimming facility enables students to learn water safety, improve endurance and participate in competitive swimming under trained coaches.",
+    },
+    {
+      title: "Skating Arena",
+      description:
+        "A dedicated skating rink helps students develop balance, agility, confidence and discipline through structured coaching.",
+    },
+    {
+      title: "Indoor & Outdoor Sports",
+      description:
+        "Basketball, volleyball, badminton, athletics, yoga and other sports ensure holistic physical development.",
+    },
+    {
+      title: "Performing Arts",
+      description:
+        "Dedicated music, dance and art studios encourage creativity and self-expression.",
+    },
+    {
+      title: "Safety & Security",
+      description:
+        "The campus is monitored through CCTV surveillance, trained security personnel, visitor management systems and safe transport with GPS-enabled buses.",
+    },
+    {
+      title: "Healthy Campus",
+      description:
+        "Spacious play areas, hygienic facilities, clean drinking water and eco-friendly surroundings create a healthy environment for learning.",
+    },
   ],
+
   images: [
-    { id: 1, span: "md:col-span-6 md:row-span-1", src: "/thalambur/inf-1.png" },
-    { id: 2, span: "md:col-span-3", src: "/thalambur/inf-2.png" },
-    { id: 3, span: "md:col-span-3", src: "/thalambur/inf-3.png" },
-    { id: 4, span: "md:col-span-3", src: "/thalambur/inf-4.png" },
-    { id: 5, span: "md:col-span-3", src: "/thalambur/inf-5.png" },
-    { id: 6, span: "md:col-span-3", src: "/thalambur/inf-6.png" },
-    { id: 7, span: "md:col-span-3", src: "/thalambur/inf-7.png" },
-    { id: 8, span: "md:col-span-3", src: "/thalambur/inf-8.png" },
-    { id: 9, span: "md:col-span-3", src: "/thalambur/inf-9.png" },
-   
-  ]
+    {
+      id: 1,
+      span: "md:col-span-6 md:row-span-1",
+      src: "/thalambur/inf-1.png",
+    },
+    {
+      id: 2,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-2.png",
+    },
+    {
+      id: 3,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-3.png",
+    },
+    {
+      id: 4,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-4.png",
+    },
+    {
+      id: 5,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-5.png",
+    },
+    {
+      id: 6,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-6.png",
+    },
+    {
+      id: 7,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-7.png",
+    },
+    {
+      id: 8,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-8.png",
+    },
+    {
+      id: 9,
+      span: "md:col-span-3",
+      src: "/thalambur/inf-9.png",
+    },
+  ],
 };
 
-// ── Portal Lightbox ───────────────────────────────────────────────────────────
 function Lightbox({ selectedIndex, onClose, onPrev, onNext }) {
-  // Stable keyboard handler
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "ArrowRight") onNext();
-      if (e.key === "ArrowLeft")  onPrev();
-      if (e.key === "Escape")     onClose();
+    const onKey = (event) => {
+      if (event.key === "ArrowRight") onNext();
+      if (event.key === "ArrowLeft") onPrev();
+      if (event.key === "Escape") onClose();
     };
+
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+
+    return () => {
+      window.removeEventListener("keydown", onKey);
+    };
   }, [onClose, onPrev, onNext]);
 
   if (typeof document === "undefined") return null;
@@ -53,89 +141,112 @@ function Lightbox({ selectedIndex, onClose, onPrev, onNext }) {
       exit={{ opacity: 0 }}
       className="fixed inset-0 flex items-center justify-center bg-black/95 p-4"
       style={{ zIndex: 99999 }}
-      onClick={onClose} // click backdrop to close
+      onClick={onClose}
     >
-      {/* Close */}
       <button
+        type="button"
         onClick={onClose}
-        className="absolute top-6 right-6 text-white hover:text-orange-400 transition-colors"
+        className="absolute right-6 top-6 text-white transition-colors hover:text-orange-400"
         aria-label="Close"
       >
         <X size={28} />
       </button>
 
-      {/* Prev */}
       <button
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        className="absolute left-6 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 p-2 rounded-full transition"
+        type="button"
+        onClick={(event) => {
+          event.stopPropagation();
+          onPrev();
+        }}
+        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/30 sm:left-6"
         aria-label="Previous"
       >
-        <ChevronLeft size={44} />
+        <ChevronLeft size={36} />
       </button>
 
-      {/* Next */}
       <button
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        className="absolute right-6 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 p-2 rounded-full transition"
+        type="button"
+        onClick={(event) => {
+          event.stopPropagation();
+          onNext();
+        }}
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/30 sm:right-6"
         aria-label="Next"
       >
-        <ChevronRight size={44} />
+        <ChevronRight size={36} />
       </button>
 
-      {/* Image */}
       <img
         src={INFRA_DATA.images[selectedIndex].src}
-        className="max-h-[85vh] rounded-xl object-contain"
-        onClick={(e) => e.stopPropagation()}
+        className="max-h-[85vh] max-w-full rounded-xl object-contain"
+        onClick={(event) => event.stopPropagation()}
         alt={`Infrastructure ${selectedIndex + 1}`}
       />
 
-      {/* Counter */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/60">
         {selectedIndex + 1} / {INFRA_DATA.images.length}
       </div>
     </motion.div>,
-    document.body // ← escapes all stacking contexts
+    document.body
   );
 }
 
-// ── Main Page ─────────────────────────────────────────────────────────────────
 export default function InfrastructurePage() {
-  const [activeTab, setActiveTab]       = useState("infrastructure");
+  const [activeTab, setActiveTab] = useState("infrastructure");
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [mounted, setMounted]           = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
-
-  // Lock scroll when lightbox open
   useEffect(() => {
-    document.body.style.overflow = selectedIndex !== null ? "hidden" : "unset";
-    return () => { document.body.style.overflow = "unset"; };
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow =
+      selectedIndex !== null ? "hidden" : "unset";
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [selectedIndex]);
 
-  const handleNext  = useCallback(() => setSelectedIndex((p) => (p + 1) % INFRA_DATA.images.length), []);
-  const handlePrev  = useCallback(() => setSelectedIndex((p) => (p - 1 + INFRA_DATA.images.length) % INFRA_DATA.images.length), []);
-  const handleClose = useCallback(() => setSelectedIndex(null), []);
+  const handleNext = useCallback(() => {
+    setSelectedIndex(
+      (previousIndex) =>
+        (previousIndex + 1) % INFRA_DATA.images.length
+    );
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setSelectedIndex(
+      (previousIndex) =>
+        (previousIndex - 1 + INFRA_DATA.images.length) %
+        INFRA_DATA.images.length
+    );
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setSelectedIndex(null);
+  }, []);
 
   return (
-    <div className="bg-white p-6 max-w-6xl mx-auto font-sans">
-
-      {/* Tabs */}
-      <div className="flex justify-center mb-10">
-        <div className="inline-flex bg-gray-100 p-1 rounded-xl border border-gray-200 font-primary">
+    <div className="mx-auto max-w-6xl bg-white p-6 font-sans">
+      <div className="mb-10 flex justify-center">
+        <div className="inline-flex rounded-xl border border-gray-200 bg-gray-100 p-1 font-primary">
           {CATEGORIES.map((tab) => (
             <button
               key={tab}
+              type="button"
               onClick={() => setActiveTab(tab)}
-              className={`relative px-6 py-2 text-xs font-bold uppercase font-primary transition-all rounded-lg ${
+              className={`relative rounded-lg px-6 py-2 text-xs font-bold uppercase transition-all ${
                 activeTab === tab ? "text-white" : "text-gray-500"
               }`}
             >
               <span className="relative z-10">{tab}</span>
+
               {activeTab === tab && (
                 <motion.div
                   layoutId="pill"
-                  className="absolute inset-0 bg-primary rounded-lg font-primary shadow-sm"
+                  className="absolute inset-0 rounded-lg bg-primary shadow-sm"
                 />
               )}
             </button>
@@ -143,39 +254,60 @@ export default function InfrastructurePage() {
         </div>
       </div>
 
-      {/* Tab Content */}
       <AnimatePresence mode="wait">
-
-        {/* INFRASTRUCTURE */}
         {activeTab === "infrastructure" && (
-          <motion.div key="infra" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <motion.div
+            key="infra"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="mb-8 rounded-3xl border border-slate-100 bg-slate-50 p-7">
+            
 
-            <div className="mb-8 p-7 bg-slate-50 rounded-3xl border border-slate-100">
-              <h2 className="text-xl font-semibold mb-5 tracking-tight font-primary">Facilities</h2>
-              <div className="grid md:grid-cols-3 gap-y-4 gap-x-6 font-secondary">
-                {INFRA_DATA.facilities.map((text, i) => (
-                  <div key={i} className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                    <span className="mt-[7px] w-2 h-2 bg-primary rounded-full shrink-0" />
-                    <p className="m-0">{text}</p>
-                  </div>
+              <div className="grid gap-x-6 gap-y-6 font-secondary md:grid-cols-2 lg:grid-cols-3">
+                {INFRA_DATA.facilities.map((facility, index) => (
+                  <motion.div
+                    key={facility.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.03,
+                    }}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="mt-[8px] h-2 w-2 shrink-0 rounded-full bg-primary" />
+
+                    <div>
+                      <h3 className="mb-2 text-base font-semibold text-gray-900 font-primary">
+                        {facility.title}
+                      </h3>
+
+                      <p className="m-0 text-sm leading-relaxed text-gray-700">
+                        {facility.description}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[140px] gap-3">
-              {INFRA_DATA.images.map((img, i) => (
+            <div className="grid auto-rows-[140px] grid-cols-2 gap-3 md:grid-cols-12">
+              {INFRA_DATA.images.map((image, index) => (
                 <motion.div
-                  key={img.id}
-                  onClick={() => setSelectedIndex(i)}
+                  key={image.id}
+                  onClick={() => setSelectedIndex(index)}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.03 }}
-                  className={`relative overflow-hidden rounded-2xl bg-gray-100 group cursor-pointer ${img.span}`}
+                  transition={{ delay: index * 0.03 }}
+                  className={`group relative cursor-pointer overflow-hidden rounded-2xl bg-gray-100 ${image.span}`}
                 >
                   <img
-                    src={img.src}
-                    alt={`Infrastructure ${i + 1}`}
-                    className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                    src={image.src}
+                    alt={`Infrastructure ${index + 1}`}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </motion.div>
               ))}
@@ -183,23 +315,30 @@ export default function InfrastructurePage() {
           </motion.div>
         )}
 
-        {/* EVENTS */}
         {activeTab === "events" && (
-          <motion.div key="events" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <motion.div
+            key="events"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
             <EventsSection />
           </motion.div>
         )}
 
-        {/* AWARDS */}
         {activeTab === "awards" && (
-          <motion.div key="awards" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center py-20 text-gray-500">
+          <motion.div
+            key="awards"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="py-20 text-center text-gray-500"
+          >
             <AwardSection />
           </motion.div>
         )}
-
       </AnimatePresence>
 
-      {/* Lightbox — Portal renders on document.body, above everything */}
       {mounted && selectedIndex !== null && (
         <AnimatePresence>
           <Lightbox
@@ -210,7 +349,6 @@ export default function InfrastructurePage() {
           />
         </AnimatePresence>
       )}
-
     </div>
   );
 }

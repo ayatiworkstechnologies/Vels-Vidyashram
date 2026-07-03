@@ -7,6 +7,8 @@ const MessageSection = () => {
     '2026': [
       { month: 'January', link: '/thalambur/message/jan-26.pdf' },
       { month: 'February', link: '/thalambur/message/feb-2026.pdf' },
+       { month: 'April', link: '/thalambur/message/april-26.pdf' },
+       { month: 'June', link: '/thalambur/message/june-26.pdf' },
     ],
     '2025': [
       { month: 'January', link: '/thalambur/message/jan-2025.pdf' },

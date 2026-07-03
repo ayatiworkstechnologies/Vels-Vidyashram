@@ -6,6 +6,18 @@ import { Play, Quote, X, ChevronDown, Calendar, GraduationCap } from "lucide-rea
 const VIDEO_DATA = {
   videosByYear: {
     "2025 - 2026": [
+       {
+        id: 21,
+        title: "April GLIMPSES",
+        thumbnail: "/dargaroad/thumbnail/thum-21.jpg",
+        videoUrl: "https://www.youtube.com/embed/BY8o1-qeFag?si=MYnR9u43saf-s3Cb"
+      },
+           {
+        id: 22,
+        title: "June GLIMPSES",
+        thumbnail: "/dargaroad/thumbnail/thum-22.jpg",
+        videoUrl: "https://www.youtube.com/embed/qNtzwRiNLYM?si=0aLlyuKR5Knwow5X"
+      },
      {
         id: 20,
         title: "Academic Excellence Awards – Grade X 2026",

@@ -5,13 +5,53 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const AWARDS_DATA = {
   awards: [
+     {
+      title: "Grade X - I Mid Term Proficiency Holders",
+      id: 18,
+      images: [
+        "/dargaroad/awards/term-1.jpeg","/dargaroad/awards/term-2.jpeg", "/dargaroad/awards/term-3.jpeg","/dargaroad/awards/term-4.jpeg", "/dargaroad/awards/term-5.jpeg"
+      ],
+    },
+       {
+      title: "P. Navaneetha Krishnan of Grade X C (Under-15 category)",
+      id: 18,
+      images: [
+        "/dargaroad/awards/teacher.jpeg",
+      ],
+    },
+         {
+      title: "Grade XII - I Mid Term Proficiency Holders",
+      id: 17,
+      images: [
+        "/dargaroad/awards/std-mid.jpeg",
+      ],
+    },
+          {
+      title: "Grade XII - II Mid Term Proficiency Holders",
+      id: 16,
+      images: [
+        "/dargaroad/awards/std-xii.jpeg",
+      ],
+    },
+      {
+      title: "Grade X - II Mid Term Proficiency Holders",
+      id: 15,
+      images: [
+        "/dargaroad/awards/std-x.jpeg",
+      ],
+    },
+    {
+      title: "Grade IX - I Mid Term Proficiency Holders",
+      id: 14,
+      images: [
+        "/dargaroad/awards/std.jpeg",
+      ],
+    },
     {
       title: "SOF -National Science Olympiad (NSO) – Medal Holders",
-     
       id: 1,
       images: [
         "/dargaroad/awards/nso.png",
-     
       ],
     },
     {

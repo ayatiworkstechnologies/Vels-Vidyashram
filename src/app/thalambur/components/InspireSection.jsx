@@ -81,9 +81,8 @@ export default function InspireSection() {
           </h2>
 
           <p className="text-gray-600 text-sm md:text-base leading-relaxed font-primary font-medium mb-8">
-            A place where young minds are nurtured through quality education
-            and strong values. We create a supportive environment that inspires
-            Curiosity, Confidence and Holistic Growth.
+            Vels Vidyashram Thalambur is a premier CBSE school committed to nurturing confident, compassionate and future-ready learners. Our campus blends academic excellence with innovation, values, sports, arts and leadership opportunities, creating an environment where every child can discover their potential. From Pre-KG to Grade XII, students receive a well-rounded education supported by experienced faculty, modern infrastructure and a culture of continuous learning. Whether your child is taking their first step into school or preparing for higher education, we provide the guidance, care and inspiration needed to succeed.<br/>
+            Book a campus visit today and experience a school where learning is meaningful, engaging and future-focused.
           </p>
 
           

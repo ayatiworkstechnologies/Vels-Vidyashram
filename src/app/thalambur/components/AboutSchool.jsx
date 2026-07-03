@@ -71,7 +71,7 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               }`}>
-                Vels Vidyashram Thalambur was established in 2014 with the vision of providing quality education, where learning takes place through observation, reflection, and exploration, with a strong emphasis on character development. Within a short span of time, our school has emerged as one of the best schools in OMR and one of the leading Kindergarten schools in Navallur.
+               Education at Vels Vidyashram extends beyond academics. Students actively participate in sports, music, dance, visual arts, theatre, yoga, STEM activities, robotics, leadership programmes, cultural celebrations and community service. These experiences build creativity, teamwork, communication skills and emotional intelligence while encouraging students to become responsible global citizens.
               </p>
 
               <p className={`text-sm text-gray-600 text-justify font-secondary leading-relaxed mb-6 transition-all duration-1000 delay-900 ${

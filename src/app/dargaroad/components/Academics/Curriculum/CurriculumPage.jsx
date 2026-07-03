@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const ACADEMIC_LEVELS = [
   {
     id: "pre-kg",
-    title: "Pre-KG to UKG",
+    title: "KG Curriculum – Kinder Kids kaleidoscope",
     subtitle: "KG Curriculum – Kinder Kids Kaleidoscope",
     description:
       "Enhances vocabulary, improves listening comprehension and social conversations. Encourages imagination and participation.",
@@ -50,7 +50,7 @@ const ACADEMIC_LEVELS = [
 
   {
   id: "primary",
-  title: "Primary – Grade I to V",
+  title: "Grade I to V – XSEED Methodology",
   subtitle: "Grade I to Grade V",
   description:
     "As students move to the primary level from the pre-primary level, we introduce them to the core subjects English, Science, and Mathematics. A wide range of classroom activities is used to stimulate reading and writing in students.\n\nFrom Grade 1, we introduce the study of computers to our children as we all know that computer literacy is essential in today’s modern world to succeed. Students are also introduced to the Mathematics lab from grade 1, which helps them learn the concepts via doing. Physical training classes are also given to develop fitness and liveliness.",
@@ -95,7 +95,7 @@ const ACADEMIC_LEVELS = [
 
  {
     id: "middle",
-    title: "Middle & Secondary Level - Grade VI to X",
+    title: "STRUCTURE OF XSEED METHODOLOGY",
     subtitle: "Foundation Course ( Grade VI to IX)",
     description: "FOUNDATION COURSE FROM 6 TO 9 – The Foundation course with extended teaching & additional text material focused in Math & Science prepares & takes the young learners to the core of the basic concepts first and then moves ahead with strengthening advanced concepts. The foundation course aims to strengthen the basics so that they could connect & apply them in the competitive examinations.",
     
@@ -106,7 +106,7 @@ const ACADEMIC_LEVELS = [
     id: "high",
     title: "High School – Grade XI to XII",
     subtitle: "XI & XII : Science, Commerce & Humanities Stream (SSCE)",
-    description: "NIOS – Vels Vidyashram Dargaroad is accredited to NIOS – National Institute of Open Schooling that cater to the needs of a heterogeneous group of learners up to pre-degree level. It was started as a project with in-built flexibilities by the Central Board of Secondary Education (CBSE) in 1979. In 1986, the National Policy on Education suggested strengthening of Open School System for extending open learning facilities in a phased manner at secondary level all over the country as an independent system with its own curriculum and examination leading to certification.",
+ 
     images: ["/group.png"],
     
     
@@ -122,7 +122,7 @@ const ACADEMIC_LEVELS = [
     id: "nios-x-xii",
     title: "NIOS X & XII",
     description:
-      "NIOS is a national board like CBSE and CISCE. It is an open-learning institution for school-level courses and functions as an examining and certifying authority. The NIOS curriculum is available for Classes X and XII.",
+      "NIOS – Vels Vidyashram Dargaroad is accredited to NIOS – National Institute of Open Schooling that cater to the needs of a heterogeneous group of learners up to pre-degree level. It was started as a project with in-built flexibilities by the Central Board of Secondary Education (CBSE) in 1979. In 1986, the National Policy on Education suggested strengthening of Open School System for extending open learning facilities in a phased manner at secondary level all over the country as an independent system with its own curriculum and examination leading to certification. NIOS is a national board like CBSE and CISCE. It is an open-learning institution for school-level courses and functions as an examining and certifying authority. The NIOS curriculum is available for Classes X and XII.",
     highlights: [
       {
         label:

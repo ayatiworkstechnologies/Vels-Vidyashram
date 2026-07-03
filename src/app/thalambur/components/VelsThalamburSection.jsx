@@ -129,7 +129,7 @@ export default function VelsStaticOverlaySection() {
           <p className={`text-sm text-gray-600 mb-8 font-secondary transition-all duration-1000 delay-200 ${
             bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}>
-            We aim to deliver an exceptional educational experience designed to benefit your child in every aspect.
+           Choosing the right school is one of the most important decisions for every parent. At Vels Vidyashram Thalambur, we believe education goes beyond textbooks. Our learner-centric approach combines conceptual understanding, experiential learning, critical thinking and character development. Students are encouraged to question, explore, collaborate and innovate while developing confidence and resilience. Our educators act as mentors who inspire lifelong learning and ensure that every child receives the attention they deserve. The result is an educational journey that prepares students not only for examinations but also for life.
           </p>
 
           <div className="space-y-8 md:space-y-10">

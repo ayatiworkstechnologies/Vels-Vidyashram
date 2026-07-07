@@ -95,7 +95,7 @@ const ACADEMIC_LEVELS = [
 
  {
     id: "middle",
-    title: "STRUCTURE OF XSEED METHODOLOGY",
+    title: "GRADE VI to X – NCERT SYLLABUS",
     subtitle: "Foundation Course ( Grade VI to IX)",
     description: "FOUNDATION COURSE FROM 6 TO 9 – The Foundation course with extended teaching & additional text material focused in Math & Science prepares & takes the young learners to the core of the basic concepts first and then moves ahead with strengthening advanced concepts. The foundation course aims to strengthen the basics so that they could connect & apply them in the competitive examinations.",
     
@@ -104,7 +104,7 @@ const ACADEMIC_LEVELS = [
 
  {
     id: "high",
-    title: "High School – Grade XI to XII",
+    title: "GRADE XI & XII -  NCERT SYLLABUS",
     subtitle: "XI & XII : Science, Commerce & Humanities Stream (SSCE)",
  
     images: ["/group.png"],

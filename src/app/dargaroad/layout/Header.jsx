@@ -24,7 +24,7 @@ const navItems = [
       { label: "Messages", href: "/dargaroad/general-messages" },
       { label: "List of Books", href: "/dargaroad/pdf/listofbooks.pdf" },
       { label: "Home Work Policy", href: "/dargaroad/pdf/home-work-policy.pdf" },
-      { label: "Annual Report", href: "/dargaroad/pdf/annual-report.pdf" },
+      { label: "Annual Report", href: "/dargaroad/pdf/annual-26.pdf" },
       { label: "Strength Details", href: "/dargaroad/pdf/strength.pdf" },
       {
         label: "Teacher Details",

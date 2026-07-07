@@ -153,6 +153,17 @@ const VIDEO_DATA = {
   },
  
  testimonialSections: [
+  {
+      category: "Parents Testimonials - Fathers Day Celebration",
+      icon: <GraduationCap className="w-5 h-5" />,
+      items: [
+        {
+          id: 1,
+          thumbnail: "/dargaroad/thumbnail/father.png",
+          videoUrl: "/dargaroad/video/video.mp4"
+        }
+      ]
+    },
     {
       category: "Parents Testimonials - Fathers Day Celebration",
       icon: <GraduationCap className="w-5 h-5" />,

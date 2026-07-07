@@ -106,10 +106,7 @@ const ACADEMIC_LEVELS = [
     id: "high",
     title: "GRADE XI & XII -  NCERT SYLLABUS",
     subtitle: "XI & XII : Science, Commerce & Humanities Stream (SSCE)",
- 
     images: ["/group.png"],
-    
-    
   },
 
   {

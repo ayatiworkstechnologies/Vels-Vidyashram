@@ -4,8 +4,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 const EVENTS_DATA = {
-  years: ['2025-2026', '2024-2025'],
+  years: ['2026-2027', '2025-2026', '2024-2025'],
   eventsByYear: {
+    '2026-2027': [
+      {
+        title: "Father's Day Celebration",  
+      id: 1,
+      size: 'medium',
+      images: [
+        "/dargaroad/events/father-1.jpeg",
+        "/dargaroad/events/father-2.jpeg",
+        "/dargaroad/events/father-3.jpeg", 
+        "/dargaroad/events/father-4.jpeg",
+        "/dargaroad/events/father-5.jpeg",   
+      ],
+       },
+       {
+        title: "Investiture Ceremony",
+        id: 2,
+        size: 'small',
+        images: [
+          "/dargaroad/events/inves-1.jpeg",
+          "/dargaroad/events/inves-2.jpeg",
+          "/dargaroad/events/inves-3.jpeg",
+          "/dargaroad/events/inves-4.jpeg",
+          "/dargaroad/events/inves-5.jpeg",
+          "/dargaroad/events/inves-6.jpeg",
+          "/dargaroad/events/inves-7.jpeg",
+          "/dargaroad/events/inves-8.jpeg",
+          "/dargaroad/events/inves-9.jpeg",
+        ]
+       }
+    ],
+   
+  
     '2025-2026': [
       {
         title: "KG Graduation Ceremony",
@@ -500,7 +532,7 @@ const EVENTS_DATA = {
 };
 
 export default function EventsSection() {
-  const [selectedYear, setSelectedYear] = useState("2025-2026");
+  const [selectedYear, setSelectedYear] = useState("2026-2027");
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [carouselStates, setCarouselStates] = useState({});
   const [activeEventImages, setActiveEventImages] = useState([]);

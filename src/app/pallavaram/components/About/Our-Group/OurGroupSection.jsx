@@ -188,7 +188,7 @@ const SCHOOL_DATA = {
       id: 12,
       title:
         "Vels INTERNATIONAL SCHOOL – INJAMBAKKAM & NEELANKARAI",
-      image: "/our-group/img.png",
+      image: "/our-group/vaels.jpg",
       href: "https://www.vaelsinternationalschool.com/",
       borderColor: "border-primary",
     },

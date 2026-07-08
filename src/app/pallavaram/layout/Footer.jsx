@@ -79,11 +79,11 @@ export default function ContactFooter() {
                 </Link>
               </li>
 
-              {/* <li>
-                <Link href="/pallavaram/mandatory-disclosure">
+              <li>
+                <Link href="/pallavaram/pdf/mandatory-public-disclosure.pdf">
                   Mandatory Disclosure
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
 

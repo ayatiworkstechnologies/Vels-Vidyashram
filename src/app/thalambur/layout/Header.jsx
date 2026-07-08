@@ -110,9 +110,9 @@ export default function Header() {
               <div className="hidden md:flex items-center gap-7 text-[12px] font-semibold">
                 <span className="flex items-center gap-2 whitespace-nowrap">
                   <img src="/thalambur/phone.png" className="w-4 h-4" alt="phone" />
-                  <a href="tel:7401657975">7401 65 7975</a>
+                  <a href="tel:7401657975">7401 65 1975</a>
                   <span>/</span>
-                  <a href="tel:7401651975">7401 65 1975</a>
+                  <a href="tel:7401651975">7401 65 7975 </a>
                 </span>
 
                 <a

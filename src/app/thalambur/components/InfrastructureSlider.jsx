@@ -137,18 +137,14 @@ export default function InfrastructureSlider() {
   return (
     <div className="w-full">
       <div className="text-center max-w-xl mx-auto px-6 pt-16 pb-10">
-        <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 mb-3 uppercase tracking-wider">
-          Pre KG through 12
-        </span>
+        
 
         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 leading-tight">
-          Why Vels Vidyashram is best Solution for Education?
+          Empowering Every Child to Learn, Lead, and Succeed
         </h2>
 
         <p className="text-gray-500 text-sm leading-relaxed">
-          Our mission is to impart knowledge with values and ethics. To prepare
-          the younger generation for a better future by improving their
-          capabilities to face the challenges of the outside world.
+          At Vels Vidyashram, education is a journey of discovery, innovation, and excellence. From Pre-KG to Grade 12, we nurture confident learners through academic rigor, holistic development, modern learning environments, and strong moral values, preparing students to thrive in a rapidly changing world.
         </p>
       </div>
 

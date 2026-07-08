@@ -69,21 +69,14 @@ export default function OurMottoSection() {
   return (
     <section ref={sectionRef} className="max-w-7xl mx-auto px-6 py-12 md:py-20">
       <div className="mb-8 md:mb-12">
-        <span
-          className={`inline-block text-xs font-semibold text-secondary bg-orange-50 px-3 py-1 rounded-full mb-4 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
-          }`}
-        >
-          Our motto
-        </span>
+      
 
         <h2
-          className={`text-3xl md:text-5xl font-regular font-primary text-gray-900 leading-tight max-w-2xl transition-all duration-1000 delay-200 ${
+          className={`text-xl md:text-4xl font-regular font-primary text-gray-900 leading-tight max-w-2xl transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
           }`}
         >
-          The Motto of the School is <br />
-          Wisdom is Strength.
+          Wisdom is Strength – Our Guiding Philosophy
         </h2>
       </div>
 

@@ -62,8 +62,7 @@ export default function AboutSchool() {
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-10'
               }`}>
-                Shaping Holistic Education at  <br className="hidden md:block" />
-                Vels Vidyashram Thalambur
+                Academic Excellence with Values and Innovation
               </h2>
 
               <p className={`text-sm text-gray-600 text-justify font-secondary leading-relaxed mb-4 transition-all duration-1000 delay-700 ${

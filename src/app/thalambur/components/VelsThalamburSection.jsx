@@ -129,38 +129,50 @@ export default function VelsStaticOverlaySection() {
           <p className={`text-sm text-gray-600 mb-8 font-secondary transition-all duration-1000 delay-200 ${
             bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}>
-           Choosing the right school is one of the most important decisions for every parent. At Vels Vidyashram Thalambur, we believe education goes beyond textbooks. Our learner-centric approach combines conceptual understanding, experiential learning, critical thinking and character development. Students are encouraged to question, explore, collaborate and innovate while developing confidence and resilience. Our educators act as mentors who inspire lifelong learning and ensure that every child receives the attention they deserve. The result is an educational journey that prepares students not only for examinations but also for life.
+           At Vels Vidyashram, Thalambur, we provide a balanced learning experience that combines academic excellence, values, innovation, and holistic development. Every child is encouraged to discover their strengths, develop confidence, and become a responsible global citizen.
           </p>
 
-          <div className="space-y-8 md:space-y-10">
-            {[
-              {
-                title: "An Engaging Curriculum",
-                content: "The curriculum at Vels Vidyashram delivers exceptional learning opportunities through innovative teaching methods. Our school follows international standards that make it one of the top CBSE schools in OMR."
-              },
-              {
-                title: "Vibrant Campus Environment",
-                content: "Vels Vidyashram offers a welcoming campus that encourages learning, creativity, and collaboration. Students benefit from an environment that supports their academic and personal growth."
-              },
-              {
-                title: "Sports and physical well-being",
-                content: "With extensive extracurricular activities and a variety of sports facilities, our students experience a vibrant sporting life."
-              }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className={`transition-all duration-1000 ${
-                  bottomVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-                }`}
-                style={{ transitionDelay: bottomVisible ? `${index * 150 + 400}ms` : '0ms' }}
-              >
-                <h4 className="font-primary text-lg md:text-xl font-bold mb-2 text-gray-800">{item.title}</h4>
-                <p className="font-secondary text-sm text-gray-700 leading-relaxed">
-                  {item.content}
-                </p>
-              </div>
-            ))}
-          </div>
+          <div className="space-y-5 md:space-y-6">
+            <h2 className="font-primary text-3xl md:text-xl font-bold text-gray-900 mb-8">
+  Why Parents Choose Us
+</h2>
+  {[
+    "CBSE curriculum with experiential and activity-based learning",
+    "Highly qualified, experienced, and caring faculty",
+    "Smart classrooms and technology-enabled teaching",
+    "Safe, secure, and student-friendly campus",
+    "State-of-the-art sports and fitness facilities",
+    "Strong focus on communication and life skills",
+    "Leadership, creativity, and critical thinking development",
+    "Well-equipped Science, Mathematics, Computer, and Language laboratories",
+    "Arts, music, dance, theatre, and diverse co-curricular activities",
+    "Individual attention and continuous student mentoring",
+    "Career guidance and competitive exam preparation",
+    "Value-based education with global perspectives"
+  ].map((item, index) => (
+    <div
+      key={index}
+      className={`flex items-start gap-3 transition-all duration-1000 ${
+        bottomVisible
+          ? "opacity-100 translate-x-0"
+          : "opacity-0 translate-x-10"
+      }`}
+      style={{
+        transitionDelay: bottomVisible
+          ? `${index * 100 + 400}ms`
+          : "0ms"
+      }}
+    >
+      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2B158F] text-sm font-bold text-white">
+        ✓
+      </span>
+
+      <p className="font-secondary text-sm leading-relaxed text-gray-700 md:text-base">
+        {item}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
       </div>
     </section>

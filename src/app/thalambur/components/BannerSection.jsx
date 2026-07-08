@@ -144,7 +144,7 @@ export default function RedesignedBanner() {
       </div>
 
       {/* 3. NAVIGATION & PAGINATION */}
-      <div className="absolute bottom-6 md:bottom-12 left-6 md:left-12 z-20 flex items-center gap-8">
+      {/* <div className="absolute bottom-6 md:bottom-12 left-6 md:left-12 z-20 flex items-center gap-8">
         <div className="flex gap-3">
           {slides.map((_, idx) => (
             <button
@@ -164,9 +164,9 @@ export default function RedesignedBanner() {
           <span className="mx-2">/</span>
           <span>{String(slides.length).padStart(2, '0')}</span>
         </div>
-      </div>
+      </div> */}
 
-      {/* Bottom Decorative Element */}
+   
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
     </section>
   );

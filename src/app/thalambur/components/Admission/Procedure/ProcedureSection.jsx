@@ -15,7 +15,7 @@ import {
 
 const AdmissionRedesign = () => {
  const ageCriteria = [
-    { level: "Play Group", age: "2 to 3 years" },
+   
     { level: "Pre-KG", age: "3 to 4 years" },
     { level: "LKG", age: "4 to 5 years" },
     { level: "UKG", age: "5 to 6 years" },
@@ -119,7 +119,7 @@ const AdmissionRedesign = () => {
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="/thalambur/pdf/application-form.pdf"
+              href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
               className="flex flex-col items-center justify-center p-8 bg-primary rounded-3xl text-white shadow-xl shadow-primary-200 text-center group transition-all"
             >
               <FileDown size={48} className="mb-4 group-hover:bounce transition-transform" />
@@ -136,7 +136,7 @@ const AdmissionRedesign = () => {
                 <h4 className="font-bold text-white font-secondary">Registration Fee</h4>
               </div>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-black text-white font-secondary">INR 500</span>
+                <span className="text-4xl font-black text-white font-secondary">INR 600</span>
                 <span className="text-white text-xs uppercase font-bold tracking-tighter font-secondary">Non-Refundable</span>
               </div>
               <p className="text-xs text-white font-secondary leading-relaxed">
@@ -164,7 +164,7 @@ const AdmissionRedesign = () => {
                     href="tel:+919884484490"
                     className="text-sm font-bold transition-colors duration-300 hover:text-primary"
                   >
-                    98844 84490
+                    7401 65 1975 
                   </a>
                   <span className="text-slate-400">/</span>
                   <a

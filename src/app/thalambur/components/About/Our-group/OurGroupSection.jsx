@@ -71,7 +71,7 @@ const SCHOOL_DATA = {
       id: 9,
       title: "VELS MARITIME STUDIES-THALAMBURM",
       image: "/our-group/maritime.png",
-      href: "https://www.vaelsinternationalschool.com/",
+      href: "https://vistas.ac.in/school-of-maritime-studies/",
       borderColor: "border-primary",
     },
     {

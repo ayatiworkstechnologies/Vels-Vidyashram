@@ -121,198 +121,198 @@ export default function VelsStaticOverlaySection() {
   </div>
 </div>
         {/* RIGHT CONTENT */}
-<div className="lg:pl-10">
-  <h3 className={`text-2xl md:text-3xl font-primary font-semibold mb-4 text-gray-900 leading-tight transition-all duration-1000 ${
-    bottomVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-  }`}>
-    Why Vels Vidyashram is the Best Choice for Education?
-  </h3>
+        <div className="lg:pl-10">
+          <h3 className={`text-2xl md:text-3xl font-primary font-semibold mb-4 text-gray-900 leading-tight transition-all duration-1000 ${
+            bottomVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+          }`}>
+            Why Vels Vidyashram is the Best Choice for Education?
+          </h3>
 
-  <p className={`text-sm text-gray-600 mb-8 font-secondary leading-relaxed max-w-lg transition-all duration-1000 delay-200 ${
-    bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-  }`}>
-    A balanced learning experience — academic excellence, values, innovation, and holistic development — helping every child grow into a confident, responsible global citizen.
-  </p>
-
-  <h2 className={`font-primary text-lg md:text-xl font-bold text-gray-900 mb-5 transition-all duration-1000 delay-100 ${
-    bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-  }`}>
-    Why Parents Choose Us
-  </h2>
-
-  {/* Compact 2x2 category grid instead of 12 stacked lines */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {[
-      {
-        title: "Academics",
-        icon: "📘",
-        points: ["CBSE curriculum, experiential learning", "Smart, tech-enabled classrooms", "Science, Math & language labs"],
-      },
-      {
-        title: "Faculty & Care",
-        icon: "🧑‍🏫",
-        points: ["Qualified, caring faculty", "Individual attention & mentoring", "Safe, secure campus"],
-      },
-      {
-        title: "Skills & Growth",
-        icon: "🎯",
-        points: ["Communication & life skills", "Leadership & critical thinking", "Career & exam guidance"],
-      },
-      {
-        title: "Life Beyond Class",
-        icon: "🎨",
-        points: ["Sports & fitness facilities", "Arts, music, dance, theatre", "Value-based global outlook"],
-      },
-    ].map((group, index) => (
-      <div
-        key={group.title}
-        className={`rounded-xl border border-gray-100 bg-white shadow-sm p-4 transition-all duration-1000 ${
-          bottomVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
-        style={{
-          transitionDelay: bottomVisible ? `${index * 120 + 300}ms` : "0ms",
-        }}
-      >
-        <div className="flex items-center gap-2 mb-2">
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2B158F]/10 text-sm">
-            {group.icon}
-          </span>
-          <p className="font-primary text-sm font-bold text-gray-900">
-            {group.title}
+          <p className={`text-sm text-gray-600 mb-8 font-secondary leading-relaxed max-w-lg transition-all duration-1000 delay-200 ${
+            bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}>
+            A balanced learning experience — academic excellence, values, innovation, and holistic development — helping every child grow into a confident, responsible global citizen.
           </p>
+
+          <h2 className={`font-primary text-lg md:text-xl font-bold text-gray-900 mb-5 transition-all duration-1000 delay-100 ${
+            bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}>
+            Why Parents Choose Us
+          </h2>
+
+          {/* Compact 2x2 category grid instead of 12 stacked lines */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              {
+                title: "Academics",
+                icon: "📘",
+                points: ["CBSE curriculum, experiential learning", "Smart, tech-enabled classrooms", "Science, Math & language labs"],
+              },
+              {
+                title: "Faculty & Care",
+                icon: "🧑‍🏫",
+                points: ["Qualified, caring faculty", "Individual attention & mentoring", "Safe, secure campus"],
+              },
+              {
+                title: "Skills & Growth",
+                icon: "🎯",
+                points: ["Communication & life skills", "Leadership & critical thinking", "Career & exam guidance"],
+              },
+              {
+                title: "Life Beyond Class",
+                icon: "🎨",
+                points: ["Sports & fitness facilities", "Arts, music, dance, theatre", "Value-based global outlook"],
+              },
+            ].map((group, index) => (
+              <div
+                key={group.title}
+                className={`rounded-xl border border-gray-100 bg-white shadow-sm p-4 transition-all duration-1000 ${
+                  bottomVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+                style={{
+                  transitionDelay: bottomVisible ? `${index * 120 + 300}ms` : "0ms",
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2B158F]/10 text-sm">
+                    {group.icon}
+                  </span>
+                  <p className="font-primary text-sm font-bold text-gray-900">
+                    {group.title}
+                  </p>
+                </div>
+                <ul className="space-y-1.5">
+                  {group.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2B158F]" />
+                      <p className="font-secondary text-xs md:text-sm leading-snug text-gray-700">
+                        {point}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-        <ul className="space-y-1.5">
-          {group.points.map((point) => (
-            <li key={point} className="flex items-start gap-2">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2B158F]" />
-              <p className="font-secondary text-xs md:text-sm leading-snug text-gray-700">
-                {point}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </div>
-</div>
       </div>
     </section>
-{/* PARENT WRAPPER — image column now second */}
-<div className="bg-[#F7F8FB] rounded-3xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,380px)] gap-x-10 lg:gap-x-14 gap-y-8 items-start">
+      {/* PARENT WRAPPER — image column now second */}
+      <div className="bg-[#F7F8FB] rounded-3xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,380px)] gap-x-10 lg:gap-x-14 gap-y-8 items-start">
 
-  {/* LEFT CONTENT (was right) */}
-  <div>
-    <h3 className={`text-2xl md:text-3xl font-primary font-semibold mb-3 text-gray-900 leading-tight transition-all duration-1000 ${
-      bottomVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-    }`}>
-      Why Vels Vidyashram is the Best Choice for Education?
-    </h3>
+        {/* LEFT CONTENT (was right) */}
+        <div>
+          <h3 className={`text-2xl md:text-3xl font-primary font-semibold mb-3 text-gray-900 leading-tight transition-all duration-1000 ${
+            bottomVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+          }`}>
+            Why Vels Vidyashram is the Best Choice for Education?
+          </h3>
 
-    <p className={`text-sm text-gray-500 mb-8 font-secondary leading-relaxed max-w-lg transition-all duration-1000 delay-200 ${
-      bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-    }`}>
-      A balanced learning experience — academic excellence, values, innovation, and holistic development — helping every child grow into a confident, responsible global citizen.
-    </p>
+          <p className={`text-sm text-gray-500 mb-8 font-secondary leading-relaxed max-w-lg transition-all duration-1000 delay-200 ${
+            bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}>
+            A balanced learning experience — academic excellence, values, innovation, and holistic development — helping every child grow into a confident, responsible global citizen.
+          </p>
 
-    {/* Compact cards — 2-col bullets to reduce overall height */}
-    <div className="space-y-4">
-      {[
-        {
-          title: "Engaging Curriculum",
-          icon: "📘",
-          points: [
-            "Experiential and inquiry-based learning",
-            "CBSE-aligned academic excellence",
-            "Critical thinking and problem-solving",
-            "Technology-integrated classrooms",
-          ],
-        },
-        {
-          title: "Vibrant Campus Environment",
-          icon: "🌳",
-          points: [
-            "Green, spacious, and modern campus",
-            "Safe and secure learning environment",
-            "Interactive classrooms and collaborative spaces",
-            "Well-maintained sports infrastructure",
-          ],
-        },
-        {
-          title: "Holistic Development",
-          icon: "🎨",
-          points: [
-            "Sports and physical fitness",
-            "Arts, music, dance, and cultural activities",
-            "Leadership and personality development",
-            "Community service and social responsibility",
-          ],
-        },
-        {
-          title: "Student Support",
-          icon: "🤝",
-          points: [
-            "Individual attention for every learner",
-            "Academic mentoring and counselling",
-            "Regular parent-teacher communication",
-            "Inclusive and nurturing learning environment",
-          ],
-        },
-      ].map((card, index) => (
-        <div
-          key={card.title}
-          className={`rounded-2xl bg-white shadow-sm p-4 md:p-5 transition-all duration-1000 ${
-            bottomVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: bottomVisible ? `${index * 150 + 300}ms` : "0ms" }}
-        >
-          <div className="flex items-center gap-2.5 mb-2.5">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2B158F]/10 text-sm">
-              {card.icon}
-            </span>
-            <p className="font-primary text-sm md:text-base font-semibold text-gray-900">
-              {card.title}
-            </p>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 pl-1">
-            {card.points.map((point) => (
-              <li key={point} className="flex items-start gap-2">
-                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400" />
-                <p className="font-secondary text-xs leading-relaxed text-gray-500">
-                  {point}
-                </p>
-              </li>
+          {/* Compact cards — 2-col bullets to reduce overall height */}
+          <div className="space-y-4">
+            {[
+              {
+                title: "Engaging Curriculum",
+                icon: "📘",
+                points: [
+                  "Experiential and inquiry-based learning",
+                  "CBSE-aligned academic excellence",
+                  "Critical thinking and problem-solving",
+                  "Technology-integrated classrooms",
+                ],
+              },
+              {
+                title: "Vibrant Campus Environment",
+                icon: "🌳",
+                points: [
+                  "Green, spacious, and modern campus",
+                  "Safe and secure learning environment",
+                  "Interactive classrooms and collaborative spaces",
+                  "Well-maintained sports infrastructure",
+                ],
+              },
+              {
+                title: "Holistic Development",
+                icon: "🎨",
+                points: [
+                  "Sports and physical fitness",
+                  "Arts, music, dance, and cultural activities",
+                  "Leadership and personality development",
+                  "Community service and social responsibility",
+                ],
+              },
+              {
+                title: "Student Support",
+                icon: "🤝",
+                points: [
+                  "Individual attention for every learner",
+                  "Academic mentoring and counselling",
+                  "Regular parent-teacher communication",
+                  "Inclusive and nurturing learning environment",
+                ],
+              },
+            ].map((card, index) => (
+              <div
+                key={card.title}
+                className={`rounded-2xl bg-white shadow-sm p-4 md:p-5 transition-all duration-1000 ${
+                  bottomVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: bottomVisible ? `${index * 150 + 300}ms` : "0ms" }}
+              >
+                <div className="flex items-center gap-2.5 mb-2.5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2B158F]/10 text-sm">
+                    {card.icon}
+                  </span>
+                  <p className="font-primary text-sm md:text-base font-semibold text-gray-900">
+                    {card.title}
+                  </p>
+                </div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 pl-1">
+                  {card.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400" />
+                      <p className="font-secondary text-xs md:text-sm leading-snug text-gray-700">
+                        {point}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
 
-  {/* RIGHT: IMAGE (was left) — sticky so it stays in view alongside the longer text column */}
-  <div
-    className={`relative aspect-[2/3] w-full max-w-[380px] mx-auto lg:mx-0 lg:sticky lg:top-24 transition-all duration-1000 delay-200 ${
-      bottomVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-95'
-    }`}
-  >
-    <div className="w-full h-full overflow-hidden rounded-2xl relative">
-      <Image
-        src="/thalambur/why-choose-2.png"
-        alt="Classroom"
-        fill
-        className="object-cover rounded-2xl hover:scale-110 transition-transform duration-700"
-      />
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-b-2xl" />
-      <div className="absolute bottom-4 left-4 right-4">
-        <p className="text-white font-primary text-base font-bold leading-none">
-          Vels Vidyashram
-        </p>
-        <p className="text-white/80 font-secondary text-xs mt-1">
-          Thalambur Campus
-        </p>
+        {/* RIGHT: IMAGE (was left) — sticky so it stays in view alongside the longer text column */}
+        <div
+          className={`relative aspect-[2/3] w-full max-w-[380px] mx-auto lg:mx-0 lg:sticky lg:top-24 transition-all duration-1000 delay-200 ${
+            bottomVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-95'
+          }`}
+        >
+          <div className="w-full h-full overflow-hidden rounded-2xl relative">
+            <Image
+              src="/thalambur/why-choose-2.png"
+              alt="Classroom"
+              fill
+              className="object-cover rounded-2xl hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-b-2xl" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <p className="text-white font-primary text-base font-bold leading-none">
+                Vels Vidyashram
+              </p>
+              <p className="text-white/80 font-secondary text-xs mt-1">
+                Thalambur Campus
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
   </>
  
   );

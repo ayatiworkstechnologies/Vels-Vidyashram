@@ -202,17 +202,7 @@ export default function VelsStaticOverlaySection() {
 
         {/* LEFT CONTENT (was right) */}
         <div>
-          <h3 className={`text-2xl md:text-3xl font-primary font-semibold mb-3 text-gray-900 leading-tight transition-all duration-1000 ${
-            bottomVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-          }`}>
-            Why Vels Vidyashram is the Best Choice for Education?
-          </h3>
-
-          <p className={`text-sm text-gray-500 mb-8 font-secondary leading-relaxed max-w-lg transition-all duration-1000 delay-200 ${
-            bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}>
-            A balanced learning experience — academic excellence, values, innovation, and holistic development — helping every child grow into a confident, responsible global citizen.
-          </p>
+          
 
           {/* Compact cards — 2-col bullets to reduce overall height */}
           <div className="space-y-4">

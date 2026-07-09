@@ -79,7 +79,7 @@ const galleryData = {
     {
       title: "Smart Class",
       description: "The technology-enabled programme ensures effective and enriching learning experiences. The regularly updated inputs and a wide range of video clippings are accessed from the knowledge centre. Difficult and abstract concepts too become clear to the students when viewed on the digital boards provided in the classrooms. The facility is also useful for other purposes like Guest lectures, electronic voting and General Assembly programmes. In essence, each class room is an audio-visual room.",
-      images: ["/thalambur/smart-1.jpg", "/thalambur/smart-2.jpg", "/thalambur/smart-3.jpg", "/thalambur/smart-4.jpg", "/thalambur/smart-5.jpg"],
+      images: ["/thalambur/sm-1.png", "/thalambur/sm-2.png", "/thalambur/sm-3.png", "/thalambur/sm-4.png", "/thalambur/sm-5.png"],
       reverse: true,
     },
     {
@@ -90,7 +90,7 @@ const galleryData = {
     {
       title: "Innovation Lab",
       description: "Innovation labs dedicated to robotics aim to foster creativity, hands-on learning, and innovation in robotics and related fields like AI and machine learning. These labs provide students with tools, resources, and structured programs to explore and experiment with robotics, potentially leading to real-world applications and problem-solving skills.",
-      images: ["/thalambur/ino-1.jpg", "/thalambur/ino-2.jpg", "/thalambur/ino-3.jpg", "/thalambur/ino-4.jpg", "/thalambur/ino-5.jpg"],
+      images: ["/thalambur/invo-1.png", "/thalambur/invo-2.png", "/thalambur/invo-3.png", "/thalambur/invo-4.png", "/thalambur/invo-5.png"],
       reverse: true,
     },
     {

@@ -98,7 +98,7 @@ export default function AboutSchool() {
             }`}>
               <div className="rounded-2xl overflow-hidden shadow-md aspect-square lg:aspect-auto hover:scale-105 transition-transform duration-500">
                 <Image
-                  src="/thalambur/teaching.jpeg"
+                  src="/thalambur/excellence.png"
                   alt="Students studying"
                   width={300}
                   height={300}

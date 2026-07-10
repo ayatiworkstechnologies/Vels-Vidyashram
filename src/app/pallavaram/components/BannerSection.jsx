@@ -18,8 +18,8 @@ const slides = [
   {
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
-    image: "/pallavaram/banner/banner-2.png",
-    mobileImage: "/pallavaram/banner/mob-2.png",
+    image: "/pallavaram/banner/pallavaram-banner.png",
+    mobileImage: "/pallavaram/banner/mob-pala.png",
   },
 
   {

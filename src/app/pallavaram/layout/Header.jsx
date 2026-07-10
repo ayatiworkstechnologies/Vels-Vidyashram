@@ -13,7 +13,7 @@ const navItems = [
     submenu: [
       { label: "Vision And Mission", href: "/pallavaram/vision-mission" },
       { label: "Our Group", href: "/pallavaram/our-group" },
-      { label: "School Information", href: "/pallavaram/school-information" },
+      // { label: "School Information", href: "/pallavaram/school-information" },
     ],
   },
   {

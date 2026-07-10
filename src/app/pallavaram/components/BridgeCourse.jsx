@@ -36,7 +36,7 @@ export default function BridgeCourseBanner() {
             }}
           >
             <Image
-              src="/pallavaram/girl.png"
+              src="/pallavaram/course.png"
               alt="Student representative"
               fill
               priority
@@ -85,17 +85,17 @@ export default function BridgeCourseBanner() {
               </p>
 
               {/* Register Now — white pill button */}
-              <button
+              {/* <button
                 className="mt-1 flex items-center gap-2 rounded-full bg-white font-semibold transition-transform duration-150 hover:scale-[1.03] active:scale-[0.97] w-max"
                 style={{
-                  color: "#232A95",
+                  color: "#232A95
                   fontSize: "clamp(11px, 1.3vw, 13px)",
                   padding: "8px 22px",
                 }}
               >
                 Register Now
                 <span aria-hidden="true" style={{ fontSize: "1em" }}>→</span>
-              </button>
+              </button> */}
             </motion.div>
 
             {/* ── MIDDLE BLOCK: Hurry! Admissions Open ── */}

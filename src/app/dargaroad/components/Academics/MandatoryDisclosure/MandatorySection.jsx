@@ -1,179 +1,521 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const ITEMS = [
-  // { id: 1, title: "Results", pdf: "/dargaroad/pdf/dargaroad-results.pdf" },
-  { id: 2, title: "List of Books", pdf: "/dargaroad/pdf/listofbooks.pdf" },
-  { id: 3, title: "Home Work Policy", pdf: "/dargaroad/pdf/home-work-policy.pdf" },
-  { id: 4, title: "Annual Report", pdf: "/dargaroad/pdf/annual-report.pdf" },
-  { id: 5, title: "Teacher Details", pdf: "/dargaroad/pdf/teacher.pdf" },
-  { id: 6, title: "Strength Details", pdf: "/dargaroad/pdf/strength.pdf" },
+  {
+    id: 1,
+    title: "Mandatory Disclosure",
+    pdf: "/dargaroad/pdf/mandatory.pdf",
+  },
+  {
+    id: 2,
+    title: "Affiliations",
+    pdf: "/dargaroad/pdf/AFFILIATION.pdf",
+  },
+  {
+    id: 3,
+    title: "NOC",
+    pdf: "/dargaroad/pdf/NOC.pdf",
+  },
+  {
+    id: 4,
+    title: "Trust",
+    pdf: "/dargaroad/pdf/TRUST.pdf",
+  },
+  {
+    id: 5,
+    title: "Building",
+    pdf: "/dargaroad/pdf/Building.pdf",
+  },
+  {
+    id: 6,
+    title: "Fire",
+    pdf: "/dargaroad/pdf/fire-certificate.pdf",
+  },
+  {
+    id: 7,
+    title: "Sanitary",
+    pdf: "/dargaroad/pdf/sanitary-certificate-new.pdf",
+  },
+  {
+    id: 8,
+    title: "FEE structure",
+    pdf: "/dargaroad/pdf/fee-structure.pdf",
+  },
+  {
+    id: 9,
+    title: "Calendar",
+    pdf: "/dargaroad/pdf/academic-calendar.pdf",
+  },
+  {
+    id: 10,
+    title: "SMC",
+    pdf: "/dargaroad/pdf/Smc-new.pdf",
+  },
+  {
+    id: 11,
+    title: "Recognition",
+    pdf: "/dargaroad/pdf/Recognition.pdf",
+  },
+  {
+    id: 12,
+    title: "PTA",
+    pdf: "/dargaroad/pdf/PTA - 2026-27.pdf",
+  },
+  {
+    id: 13,
+    title: "Result",
+    pdf: "/dargaroad/pdf/result-new.pdf",
+  },
+  {
+    id: 14,
+    title: "Self Darga Road",
+    pdf: "/dargaroad/pdf/Self-DargaRoad.pdf",
+  },
+  {
+    id: 15,
+    title: "Self Affidavit",
+    pdf: "/dargaroad/pdf/self-affidavit.pdf",
+  },
+  {
+    id: 16,
+    title: "Tc Sample",
+    pdf: "/dargaroad/pdf/Transfer-Certificate-2023-2024.pdf",
+  },
+  {
+    id: 17,
+    title: "Land Certificate",
+    pdf: "/dargaroad/pdf/land-certificate.pdf",
+  },
 ];
 
-export default function MandatorySection() {
+export default function SchoolInfoPage() {
   const [openPdf, setOpenPdf] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    setMounted(true);
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
     checkMobile();
+
     window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   useEffect(() => {
-    function onKey(e) {
-      if (e.key === "Escape") setOpenPdf(null);
-    }
+    const onKey = (event) => {
+      if (event.key === "Escape") {
+        setOpenPdf(null);
+      }
+    };
+
     if (openPdf) {
       document.body.style.overflow = "hidden";
       document.addEventListener("keydown", onKey);
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     }
-    return () => document.removeEventListener("keydown", onKey);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+    };
   }, [openPdf]);
 
-  return (
-    <div className="bg-gray-50 py-10 px-4 sm:px-6 lg:px-20 min-h-screen">
-      {/* Heading Section */}
-      <div className="max-w-6xl mx-auto text-center mb-10 sm:mb-12">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1c1533] leading-tight">
-          Mandatory Disclosure
-        </h1>
-        <div className="flex justify-center mt-3 sm:mt-4">
-          <div className="w-16 h-1 bg-orange-500 rounded-full" />
-        </div>
-      </div>
+  const openDocument = (item) => {
+    setOpenPdf({
+      title: item.title,
+      pdf: item.pdf,
+    });
+  };
 
-      {/* Cards Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
-        {ITEMS.map((it) => (
-          <button
-            key={it.id}
-            onClick={() => setOpenPdf({ pdf: it.pdf, title: it.title })}
-            className="group relative flex flex-col justify-between items-start p-4 sm:p-5 md:p-6 bg-white border border-gray-100 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-200 hover:-translate-y-1 active:scale-95 text-left w-full"
-          >
-            <div className="mb-3 sm:mb-4">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 group-hover:text-[#1c1533] transition-colors leading-tight">
-                {it.title}
-              </h3>
-            </div>
+  const closeDocument = () => {
+    setOpenPdf(null);
+  };
 
-            <div className="flex items-center text-xs sm:text-sm font-medium text-orange-500 group-hover:text-orange-600 cursor-pointer">
-              <span className="hidden sm:inline">View Document</span>
-              <span className="inline sm:hidden">View</span>
-              <svg
-                className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </div>
-          </button>
-        ))}
-      </div>
-
-      {/* PDF Modal */}
-      {openPdf && (
-        <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-0 sm:p-4">
-          {/* Backdrop */}
+  const pdfModal =
+    mounted && openPdf
+      ? createPortal(
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setOpenPdf(null)}
-          />
+            className="fixed inset-0 flex items-end justify-center p-0 sm:items-center sm:p-5"
+            style={{ zIndex: 2147483647 }}
+          >
+            {/* Backdrop */}
+            <button
+              type="button"
+              aria-label="Close PDF preview"
+              onClick={closeDocument}
+              className="absolute inset-0 cursor-default bg-[#160a4d]/80 backdrop-blur-sm"
+            />
 
-          {/* Modal — bottom sheet on mobile, centered dialog on sm+ */}
-          <div className="relative bg-white z-10 w-full rounded-t-2xl h-[92dvh] sm:rounded-2xl sm:shadow-2xl sm:max-w-5xl sm:h-[85vh] overflow-hidden flex flex-col">
+            {/* Modal */}
+            <div
+              className="
+                relative z-10 flex h-[92dvh] w-full flex-col
+                overflow-hidden rounded-t-2xl bg-white
+                sm:h-[86vh] sm:max-w-6xl sm:rounded-2xl
+                sm:shadow-2xl
+              "
+            >
+              {/* Mobile drag handle */}
+              <div className="flex justify-center pb-1 pt-2 sm:hidden">
+                <div className="h-1 w-10 rounded-full bg-gray-300" />
+              </div>
 
-            {/* Drag handle (mobile only) */}
-            <div className="flex justify-center pt-2 pb-1 sm:hidden">
-              <div className="w-10 h-1 rounded-full bg-gray-300" />
-            </div>
+              {/* Modal header */}
+              <div className="flex flex-shrink-0 items-center justify-between border-b border-[#E5E1F2] bg-white px-4 py-3 sm:px-6 sm:py-4">
+                <h3 className="truncate pr-3 font-primary text-base font-bold text-[#2B158F] sm:text-xl">
+                  {openPdf.title}
+                </h3>
 
-            {/* Modal Header */}
-            <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b bg-white flex-shrink-0">
-              <h3 className="text-base sm:text-xl font-bold text-gray-800 truncate pr-3">
-                {openPdf.title}
-              </h3>
+                <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
+                  <a
+                    href={openPdf.pdf}
+                    download
+                    className="
+                      inline-flex items-center justify-center gap-1.5
+                      rounded-lg bg-[#FF8700] px-3 py-2
+                      font-secondary text-xs font-semibold text-white
+                      transition-colors duration-300
+                      hover:bg-[#E87500]
+                      sm:px-4 sm:text-sm
+                    "
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4-4 4m0 0-4-4m4 4V4"
+                      />
+                    </svg>
 
-              <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <a
-                  href={openPdf.pdf}
-                  download
-                  className="flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-orange-500 text-white text-xs sm:text-sm font-semibold hover:bg-orange-600 active:bg-orange-700 transition-colors whitespace-nowrap"
-                >
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  <span className="hidden sm:inline">Download PDF</span>
-                  <span className="inline sm:hidden">Save</span>
-                </a>
+                    <span className="hidden sm:inline">Download</span>
+                    <span className="sm:hidden">Save</span>
+                  </a>
 
-                <button
-                  onClick={() => setOpenPdf(null)}
-                  className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-500"
-                  aria-label="Close"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                  <button
+                    type="button"
+                    onClick={closeDocument}
+                    aria-label="Close"
+                    className="
+                      flex h-9 w-9 items-center justify-center
+                      rounded-full text-gray-500
+                      transition-colors duration-300
+                      hover:bg-[#F2EFFF] hover:text-[#2B158F]
+                    "
+                  >
+                    <svg
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18 18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* PDF preview */}
+              <div className="flex-1 overflow-hidden bg-[#F4F2FA]">
+                {isMobile ? (
+                  <div className="flex h-full flex-col items-center justify-center gap-5 px-6 text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EEE9FF]">
+                      <svg
+                        className="h-8 w-8 text-[#2B158F]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <p className="mb-1 font-primary text-base font-semibold text-[#2B158F]">
+                        {openPdf.title}
+                      </p>
+
+                      <p className="font-secondary text-sm text-gray-500">
+                        PDF preview isn&apos;t available on mobile browsers.
+                      </p>
+                    </div>
+
+                    <div className="flex w-full max-w-xs flex-col gap-3">
+                      <a
+                        href={openPdf.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          flex items-center justify-center gap-2
+                          rounded-xl bg-[#2B158F] px-5 py-3
+                          font-secondary text-sm font-semibold text-white
+                          transition-colors duration-300
+                          hover:bg-[#24126A]
+                        "
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+
+                        Open in Browser
+                      </a>
+
+                      <a
+                        href={openPdf.pdf}
+                        download
+                        className="
+                          flex items-center justify-center gap-2
+                          rounded-xl bg-[#FF8700] px-5 py-3
+                          font-secondary text-sm font-semibold text-white
+                          transition-colors duration-300
+                          hover:bg-[#E87500]
+                        "
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4-4 4m0 0-4-4m4 4V4"
+                          />
+                        </svg>
+
+                        Download PDF
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src={`${openPdf.pdf}#toolbar=0`}
+                    className="h-full w-full border-0"
+                    title={openPdf.title}
+                  />
+                )}
               </div>
             </div>
+          </div>,
+          document.body
+        )
+      : null;
 
-            {/* PDF Preview */}
-            <div className="flex-1 bg-gray-200 overflow-hidden">
-              {isMobile ? (
-                <div className="flex flex-col items-center justify-center h-full gap-5 px-6 text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center">
-                    <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-gray-700 font-semibold text-base mb-1">{openPdf.title}</p>
-                    <p className="text-gray-500 text-sm">PDF preview isn't available on mobile browsers.</p>
-                  </div>
-                  <div className="flex flex-col gap-3 w-full max-w-xs">
-                    <a
-                      href={openPdf.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#1c1533] text-white text-sm font-semibold hover:bg-[#2a1f4a] transition-colors"
+  return (
+    <>
+      <main className="min-h-screen bg-white pb-14 sm:pb-16 lg:pb-20">
+        {/* Top heading design */}
+        <section
+          className="relative overflow-hidden"
+
+        >
+       
+        </section>
+
+        {/* Information section */}
+        <section className="px-4 pb-5 pt-10 sm:px-6 sm:pt-12 lg:px-8">
+          <div className="mx-auto max-w-[860px]">
+            <div className="mb-6 text-center">
+              <h2
+                className="
+                  font-primary text-xl font-bold uppercase
+                  leading-tight text-[#2B158F]
+                  sm:text-2xl md:text-[27px]
+                "
+              >
+                Documents and Information
+              </h2>
+            </div>
+
+            {/* Desktop table */}
+            <div className="hidden overflow-hidden border border-[#DDD8ED] md:block">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-[#2B158F] text-white">
+                    <th
+                      scope="col"
+                      className="
+                        w-[100px] border-r border-white/40
+                        px-4 py-3 text-left
+                        font-secondary text-base font-medium
+                      "
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      Open in Browser
-                    </a>
-                    <a
-                      href={openPdf.pdf}
-                      download
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors"
+                      Sl.No.
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        border-r border-white/40 px-4 py-3
+                        text-left font-secondary text-base font-medium
+                      "
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Download PDF
-                    </a>
+                      Information
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        w-[175px] px-4 py-3 text-center
+                        font-secondary text-base font-medium
+                      "
+                    >
+                      View Documents
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {ITEMS.map((item, index) => (
+                    <tr
+                      key={item.id}
+                      className="
+                        border-b border-[#E5E1F2] bg-white
+                        transition-colors duration-200
+                        last:border-b-0 hover:bg-[#F8F6FF]
+                      "
+                    >
+                      <td
+                        className="
+                          border-r border-[#E5E1F2] px-4 py-2.5
+                          text-center font-secondary text-[16px]
+                          text-gray-900
+                        "
+                      >
+                        {index + 1}
+                      </td>
+
+                      <td
+                        className="
+                          border-r border-[#E5E1F2] px-4 py-2.5
+                          font-secondary text-[16px] text-gray-900
+                        "
+                      >
+                        {item.title}
+                      </td>
+
+                      <td className="px-4 py-2.5 text-center">
+                        <button
+                          type="button"
+                          onClick={() => openDocument(item)}
+                          className="
+                            font-secondary text-[16px] font-medium
+                            text-[#2B158F] underline
+                            decoration-[#2B158F] underline-offset-2
+                            transition-colors duration-200
+                            hover:text-[#FF8700]
+                            hover:decoration-[#FF8700]
+                          "
+                        >
+                          View
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile table */}
+            <div className="overflow-hidden border border-[#DDD8ED] md:hidden">
+              <div className="grid grid-cols-[55px_1fr_70px] bg-[#2B158F] text-white">
+                <div className="flex items-center justify-center border-r border-white/40 px-1 py-3 font-secondary text-xs font-medium">
+                  Sl.No.
+                </div>
+
+                <div className="flex items-center border-r border-white/40 px-3 py-3 font-secondary text-xs font-medium">
+                  Information
+                </div>
+
+                <div className="flex items-center justify-center px-2 py-3 text-center font-secondary text-xs font-medium">
+                  View
+                </div>
+              </div>
+
+              {ITEMS.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="
+                    grid grid-cols-[55px_1fr_70px]
+                    border-b border-[#E5E1F2] bg-white
+                    last:border-b-0
+                  "
+                >
+                  <div className="flex items-center justify-center border-r border-[#E5E1F2] px-1 py-3 font-secondary text-sm text-gray-900">
+                    {index + 1}
+                  </div>
+
+                  <div className="flex items-center border-r border-[#E5E1F2] px-3 py-3 font-secondary text-sm leading-5 text-gray-900">
+                    {item.title}
+                  </div>
+
+                  <div className="flex items-center justify-center px-2 py-3">
+                    <button
+                      type="button"
+                      onClick={() => openDocument(item)}
+                      className="
+                        font-secondary text-sm font-medium
+                        text-[#2B158F] underline
+                        decoration-[#2B158F] underline-offset-2
+                        transition-colors duration-200
+                        hover:text-[#FF8700]
+                      "
+                    >
+                      View
+                    </button>
                   </div>
                 </div>
-              ) : (
-                <iframe
-                  src={`${openPdf.pdf}#toolbar=0`}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  title={openPdf.title}
-                />
-              )}
+              ))}
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        </section>
+      </main>
+
+      {pdfModal}
+    </>
   );
 }

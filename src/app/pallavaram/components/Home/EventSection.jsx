@@ -1,441 +1,282 @@
 "use client";
 
-import React, { useRef, useState, useMemo } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import {
+  AnimatePresence,
   motion,
+  useInView,
   useScroll,
   useSpring,
-  AnimatePresence,
-  useInView,
 } from "framer-motion";
 
 const allScheduleData = [
   {
-    date: "19",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "SCHOOL REOPENS AFTER PONGAL",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "19",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "REVISION IX & XI",
-    tag: "Events",
-    isHighlighted: true,
-  },
-  {
-    date: "19",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "PREBOARD X & XII STARTS",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "20",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "PT4 STARTS ( I - VIII )",
-    tag: "Events",
-    isHighlighted: true,
-  },
-  {
-    date: "20",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "COLOUR WEEK ( KG)",
-    tag: "Events",
-    isHighlighted: true,
-  },
-  {
-    date: "20",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "ANNUAL EXAM (IX & XI)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-
-  {
-    date: "21",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "HAT DAY ( KG - II)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "21",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "CSSC EXAM ( X & XII ) EXCHANGE OF MARKS",
-    tag: "Events",
-    isHighlighted: true,
-  },
-  {
-    date: "22",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "CSSC PERFORMANCE ANALYSIS ( X & XII )",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "23",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "MYA",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "24",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "DEPT PRESENTATION ( BS/ ACC/ ECO )",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "24",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "PD SESSION ( I TO III)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "24",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "CSSC PTM ( X & XII)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "26",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "REPUBLIC DAY",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "27",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "BIRDS DAY ( III - VIII)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "27",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "CSSC PTM REVIEW",
-    tag: "Events",
-    isHighlighted: false,
-  },
-     {
-    date: "29",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "CO CURRICULAR CULMINATION - II",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "29",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "PT4 ENDS (I - VIII)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-
-   {
-    date: "30",
-    monthTab: "Jan Events",
-    monthYear: "January, 2026",
-    title: "MYA",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  
-   {
     date: "01",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "THAI POOSAM",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PT1 EXAM STARTS FOR III - VIII",
     tag: "Events",
     isHighlighted: false,
   },
-     {
+  {
     date: "02",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "REVISION IX & XI",
-    tag: "Events",
-    isHighlighted: false,
-  },
-     {
-    date: "02",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PREBOARD X & XII ENDS",
-    tag: "Events",
-    isHighlighted: false,
-  },
-    {
-    date: "03",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "SPECTRA",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "I/II/III MID TERM STARTS FOR IX - XII",
     tag: "Events",
     isHighlighted: false,
   },
   {
     date: "03",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "ANNUAL PRACTICALS START ( IX & XI) / SLT MEETING",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PT1 EXAM STARTS FOR I - II",
     tag: "Events",
     isHighlighted: false,
   },
   {
     date: "04",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "ANNUAL PRACTICALS START ( IX & XI) / SLT FINAL OPEN DATE(PTM) AND BOOK DISTRIBUTION",
-    tag: "Events",
-    isHighlighted: false,
-  },
- {
-    date: "05",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "SCHOOL REOPENS FOR X AND XII (26-27) & EXCHANGE OF MARKS PREBOARD & REVISION 1",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "06",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PERFORMANCE ANALYSIS - PRE BOARD",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "06",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "ROSE DAY KG - II",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "06",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "MYA",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "06",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "XI ANNUAL PRACTICALS END ( IX & XI)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "06",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "XI ANNUAL PRACTICALS END ( IX & XI)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
-    date: "07",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "DEPT MEETING",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "INVESTITURE CEREMONY KG - VIII",
     tag: "Events",
     isHighlighted: false,
   },
   {
     date: "07",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PD SESSION",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "07",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PTM - I - VIII / PROJECT DAY",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PT1 EXAM ENDS FOR I - II",
     tag: "Events",
     isHighlighted: false,
   },
   {
     date: "09",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "ANNUAL EXAM IX - XI",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "I/II/III MID TERM ENDS FOR IX - XII",
     tag: "Events",
     isHighlighted: false,
   },
   {
-    date: "09",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "CHOCOLATE DAY ( KG-II)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "09",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PTM REVIEW",
-    tag: "Events",
-    isHighlighted: false,
-  },
-    {
-    date: "10",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PULSES DAY ( III - VIII)",
-    tag: "Events",
-    isHighlighted: false,
-  },
-   {
     date: "11",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "QP SUBMISSION FOR TT2 ( I - VIII)",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "INVESTITURE CEREMONY",
     tag: "Events",
     isHighlighted: false,
   },
-   {
-    date: "12",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PARENT OBSERVATION ( I - VIII) & GA",
-    tag: "Events",
-    isHighlighted: false,
-  },
-     {
+  {
     date: "13",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PARENT OBSERVATION ( I - VIII) & MYA",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "FIELD TRIP III - V",
     tag: "Events",
     isHighlighted: false,
   },
-     {
+  {
+    date: "14",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PAPER BAG DAY KG - VIII",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "15",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "MARK SUBMISSION FOR PT1 EXAM I - VIII",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
     date: "16",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "COMMUNITY HELPER WEEK (KG - II )/EMOTION WEEK ( III - VIII )",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PERFORMANCE ANALYSIS I - VIII",
     tag: "Events",
     isHighlighted: false,
   },
-     {
-    date: "19",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "TT2 PORTION COMPLETION (I TO VIII)",
+  {
+    date: "17",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "WORLD'S EMOJI DAY KG TO VIII",
     tag: "Events",
     isHighlighted: false,
   },
-     {
+  {
+    date: "18",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PTM FOR GRADE I - XII",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "18",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "ANNUAL DAY",
+    tag: "Events",
+    isHighlighted: true,
+  },
+  {
     date: "20",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "MAGICAL SEASON WEEK KG - VIII",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "20",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PTM REVIEW I - XII",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "22",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "CHANDRAYAAN LAUNCH",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "24",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
     title: "MYA",
     tag: "Events",
     isHighlighted: false,
   },
-     {
-    date: "20",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "QP SUBMISSION ANNUAL EXAM IX & XI",
+  {
+    date: "24",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "VELS VERSATILE INTER SCHOOL SPORTS MEET",
     tag: "Events",
-    isHighlighted: false,
+    isHighlighted: true,
   },
-     {
-    date: "21",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PD VI - VIII AND CO-CURRICULAR DEPT MEETING",
-    tag: "Events",
-    isHighlighted: false,
-  },
-     {
+  {
     date: "25",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "LP REFLECTION",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PARENTS SPORTS MEET",
+    tag: "Events",
+    isHighlighted: true,
+  },
+  {
+    date: "25",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PD SESSION IX - XII & I - III",
     tag: "Events",
     isHighlighted: false,
   },
-     {
+  {
     date: "27",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "NATIONAL SCIENCE DAY ( III - VIII)",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "I/II/III MID TERM EXAM STARTS IX - XII",
     tag: "Events",
     isHighlighted: false,
   },
-       {
-    date: "27",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "PERFORMANCE ANALYSIS (IX & XI)",
+  {
+    date: "28",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "NATURE CONSERVATION DAY III - V",
     tag: "Events",
     isHighlighted: false,
   },
-       {
-    date: "27",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "DEPT PRESENTATION (MUSIC, ART, GK)",
+  {
+    date: "28",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "PT2 PORTION COMPLETION I - VIII",
     tag: "Events",
     isHighlighted: false,
   },
-       {
-    date: "27",
-    monthTab: "Feb Events",
-    monthYear: "February, 2026",
-    title: "MONTHLY TEST ENDS ( I - VIII) AND MYA",
+  {
+    date: "29",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "MONTHLY LP REFLECTION",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "30",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "KARGIL DIWAS VI - VIII",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "31",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "DEPT PRESENTATION - MATH",
+    tag: "Events",
+    isHighlighted: false,
+  },
+  {
+    date: "31",
+    monthTab: "Jul Events",
+    monthYear: "July, 2026",
+    title: "MYA",
     tag: "Events",
     isHighlighted: false,
   },
 ];
 
 export default function EventsSchedule() {
-  const [activeTab, setActiveTab] = useState("Jan Events");
   const containerRef = useRef(null);
   const leftSideRef = useRef(null);
+
+  const monthTabs = useMemo(() => {
+    return Array.from(
+      new Map(
+        allScheduleData.map((item) => [
+          item.monthTab,
+          {
+            tab: item.monthTab,
+            monthYear: item.monthYear,
+          },
+        ])
+      ).values()
+    );
+  }, []);
+
+  const [activeTab, setActiveTab] = useState(
+    monthTabs[0]?.tab || ""
+  );
+
+  const filteredData = useMemo(() => {
+    return allScheduleData.filter(
+      (item) => item.monthTab === activeTab
+    );
+  }, [activeTab]);
+
+  const activeMonthYear =
+    filteredData[0]?.monthYear ||
+    monthTabs.find((item) => item.tab === activeTab)?.monthYear ||
+    "";
+
+  const activeMonthName = activeMonthYear
+    ? activeMonthYear.split(",")[0]
+    : "School";
 
   const isLeftSideInView = useInView(leftSideRef, {
     once: true,
     amount: 0.3,
   });
-
-  const filteredData = useMemo(() => {
-    return allScheduleData.filter((item) => item.monthTab === activeTab);
-  }, [activeTab]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -449,137 +290,190 @@ export default function EventsSchedule() {
   });
 
   return (
-    <section className="flex flex-col lg:flex-row min-h-screen bg-white">
+    <section className="flex min-h-screen flex-col bg-white lg:flex-row">
       {/* LEFT SIDE */}
       <div
         ref={leftSideRef}
-        className="lg:w-[35%] bg-[#2d3a9d] text-white p-10 lg:p-16 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center"
+        className="flex flex-col justify-center bg-[#2d3a9d] p-8 text-white sm:p-10 lg:sticky lg:top-0 lg:h-screen lg:w-[35%] lg:p-16"
       >
         <motion.div
           className="mb-6"
           initial={{ opacity: 0, y: -20 }}
-          animate={isLeftSideInView ? { opacity: 1, y: 0 } : {}}
+          animate={
+            isLeftSideInView
+              ? { opacity: 1, y: 0 }
+              : {}
+          }
           transition={{ duration: 0.6 }}
         >
-          <span className="bg-white/15 text-white text-[10px] font-bold py-1.5 px-3 rounded uppercase tracking-wider">
+          <span className="rounded bg-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white">
             Events
           </span>
         </motion.div>
 
         <motion.h1
-          className="text-3xl lg:text-4xl text-white font-bold leading-tight mb-8"
+          className="mb-8 text-3xl font-bold leading-tight text-white lg:text-4xl"
           initial={{ opacity: 0, x: -30 }}
-          animate={isLeftSideInView ? { opacity: 1, x: 0 } : {}}
+          animate={
+            isLeftSideInView
+              ? { opacity: 1, x: 0 }
+              : {}
+          }
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          January Events <br /> and February Events
+          {activeMonthName} Events
+          <br />
+          School Schedule
         </motion.h1>
 
         <motion.p
-          className="text-blue-100/80 text-sm leading-relaxed mb-10 max-w-md"
+          className="mb-10 max-w-md text-sm leading-relaxed text-blue-100/80"
           initial={{ opacity: 0, y: 20 }}
-          animate={isLeftSideInView ? { opacity: 1, y: 0 } : {}}
+          animate={
+            isLeftSideInView
+              ? { opacity: 1, y: 0 }
+              : {}
+          }
           transition={{ duration: 0.7, delay: 0.4 }}
         >
-          Stay updated with key school activities this month.
+          Stay updated with important school activities,
+          examinations, celebrations and academic events.
         </motion.p>
 
         <motion.div
-          className="flex gap-2 flex-wrap"
+          className="flex flex-wrap gap-2"
           initial={{ opacity: 0, y: 20 }}
-          animate={isLeftSideInView ? { opacity: 1, y: 0 } : {}}
+          animate={
+            isLeftSideInView
+              ? { opacity: 1, y: 0 }
+              : {}
+          }
           transition={{ duration: 0.7, delay: 0.6 }}
         >
-          {["Events", "Exams", "Updates"].map((tag, index) => (
-            <motion.span
-              key={tag}
-              className="border border-white/30 text-[11px] px-3 py-1 rounded uppercase"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isLeftSideInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-            >
-              {tag}
-            </motion.span>
-          ))}
+          {["Events", "Exams", "Updates"].map(
+            (tag, index) => (
+              <motion.span
+                key={tag}
+                className="rounded border border-white/30 px-3 py-1 text-[11px] uppercase"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={
+                  isLeftSideInView
+                    ? { opacity: 1, scale: 1 }
+                    : {}
+                }
+                transition={{
+                  duration: 0.5,
+                  delay: 0.8 + index * 0.1,
+                }}
+              >
+                {tag}
+              </motion.span>
+            )
+          )}
         </motion.div>
       </div>
 
       {/* RIGHT SIDE */}
       <div
         ref={containerRef}
-        className="lg:w-[65%] p-8 lg:p-20 relative bg-gray-50/30"
+        className="relative bg-gray-50/30 p-5 sm:p-8 lg:w-[65%] lg:p-16 xl:p-20"
       >
-        <motion.div
-          className="flex items-center gap-4 mb-12 border-b border-gray-200 pb-4"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-        >
-          {["Jan Events", "Feb Events"].map((tab, index) => (
-            <motion.button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`relative px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
-                activeTab === tab
-                  ? "text-[#2d3a9d]"
-                  : "text-gray-400 hover:text-gray-600"
-              }`}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {tab}
-              {activeTab === tab && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-[-17px] left-0 right-0 h-[3px] bg-[#2d3a9d]"
-                />
-              )}
-            </motion.button>
-          ))}
-        </motion.div>
+        {/* DYNAMIC MONTH TABS */}
+        {monthTabs.length > 0 && (
+          <motion.div
+            className="mb-12 flex items-center gap-2 overflow-x-auto border-b border-gray-200 pb-4 sm:gap-4"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            {monthTabs.map((month, index) => (
+              <motion.button
+                key={month.tab}
+                type="button"
+                aria-pressed={activeTab === month.tab}
+                onClick={() => setActiveTab(month.tab)}
+                className={`relative shrink-0 px-5 py-3 text-xs font-bold uppercase tracking-widest transition-colors duration-300 sm:px-8 sm:text-sm ${
+                  activeTab === month.tab
+                    ? "text-[#2d3a9d]"
+                    : "text-gray-400 hover:text-gray-600"
+                }`}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+              >
+                {month.tab}
+
+                {activeTab === month.tab && (
+                  <motion.div
+                    layoutId="activeEventTab"
+                    className="absolute bottom-[-17px] left-0 right-0 h-[3px] bg-[#2d3a9d]"
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 30,
+                    }}
+                  />
+                )}
+              </motion.button>
+            ))}
+          </motion.div>
+        )}
 
         <motion.h2
-          className="text-[#2d3a9d] text-2xl lg:text-3xl font-bold mb-16"
+          className="mb-12 text-2xl font-bold text-[#2d3a9d] lg:mb-16 lg:text-3xl"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          {activeTab === "Jan Events"
-            ? "Upcoming January Events"
-            : "Upcoming February Events"}
+          Upcoming {activeMonthName} Events
         </motion.h2>
 
-        <div className="relative max-w-2xl">
-          <div className="absolute left-[20px] lg:left-[45px] top-4 bottom-4 w-[2px] bg-gray-200">
-            <motion.div
-              style={{ scaleY, originY: 0 }}
-              className="w-full h-full bg-[#2d3a9d]"
-            />
-          </div>
-
-          <div className="space-y-12">
-            <AnimatePresence mode="wait">
+        <div className="relative max-w-3xl">
+          {/* TIMELINE BACKGROUND */}
+          {filteredData.length > 0 && (
+            <div className="absolute bottom-4 left-4 top-4 w-[2px] bg-gray-200 sm:left-8">
               <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                {filteredData.map((event, index) => (
+                style={{
+                  scaleY,
+                  originY: 0,
+                }}
+                className="h-full w-full bg-[#2d3a9d]"
+              />
+            </div>
+          )}
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              className="space-y-8 lg:space-y-10"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+            >
+              {filteredData.length > 0 ? (
+                filteredData.map((event, index) => (
                   <TimelineItem
-                    key={`${activeTab}-${index}`}
+                    key={`${event.monthTab}-${event.date}-${event.title}`}
                     event={event}
                     index={index}
                   />
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                ))
+              ) : (
+                <div className="rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-sm">
+                  <p className="text-sm font-medium text-gray-500">
+                    No events are available for this month.
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
@@ -588,86 +482,157 @@ export default function EventsSchedule() {
 
 function TimelineItem({ event, index }) {
   const itemRef = useRef(null);
-  const isInView = useInView(itemRef, { once: true, amount: 0.5 });
 
-  const textColor = event.isHighlighted ? "!text-white" : "!text-gray-900";
-  const subTextColor = event.isHighlighted
-    ? "!text-white/70"
-    : "!text-gray-500";
-  const cardBg = event.isHighlighted ? "bg-[#2d3a9d]" : "bg-white";
-  const borderColor = event.isHighlighted
-    ? "border-transparent"
-    : "border-gray-100";
-  const dividerColor = event.isHighlighted
+  const isInView = useInView(itemRef, {
+    once: true,
+    amount: 0.25,
+  });
+
+  const animationDelay = Math.min(index * 0.04, 0.3);
+
+  const cardStyles = event.isHighlighted
+    ? "border-transparent bg-[#2d3a9d]"
+    : "border-gray-100 bg-white";
+
+  const titleStyles = event.isHighlighted
+    ? "text-white"
+    : "text-gray-900";
+
+  const dateSubTextStyles = event.isHighlighted
+    ? "text-white/70"
+    : "text-gray-500";
+
+  const dividerStyles = event.isHighlighted
     ? "border-white/20"
     : "border-gray-100";
+
   const badgeStyles = event.isHighlighted
-    ? "bg-white !text-[#2d3a9d]"
-    : "bg-[#2d3a9d] !text-white";
+    ? "bg-white text-[#2d3a9d]"
+    : "bg-[#2d3a9d] text-white";
 
   return (
-    <motion.div
+    <motion.article
       ref={itemRef}
-      className="flex items-start gap-8 lg:gap-14 relative group mb-10 last:mb-0"
-      initial={{ opacity: 0, x: -50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="relative pl-12 sm:pl-20"
+      initial={{ opacity: 0, x: -35 }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              x: 0,
+            }
+          : {}
+      }
+      transition={{
+        duration: 0.55,
+        delay: animationDelay,
+      }}
     >
+      {/* TIMELINE DOT */}
       <motion.div
-        className="absolute left-[14.5px] lg:left-[39.5px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white border-[3px] border-[#2d3a9d] z-10"
+        className="absolute left-[9px] top-1/2 z-10 h-3.5 w-3.5 -translate-y-1/2 rounded-full border-[3px] border-[#2d3a9d] bg-white sm:left-[25px]"
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : {}}
-        transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+        transition={{
+          duration: 0.4,
+          delay: animationDelay + 0.1,
+        }}
       />
 
+      {/* EVENT CARD */}
       <motion.div
-        className={`flex w-full overflow-hidden rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] border transition-all duration-300 hover:shadow-xl ${cardBg} ${borderColor}`}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.5, delay: index * 0.1 + 0.1 }}
+        className={`flex w-full flex-col overflow-hidden rounded-2xl border shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-xl sm:flex-row ${cardStyles}`}
+        initial={{ opacity: 0, scale: 0.97 }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                scale: 1,
+              }
+            : {}
+        }
+        transition={{
+          duration: 0.5,
+          delay: animationDelay + 0.05,
+        }}
       >
+        {/* DATE */}
         <div
-          className={`py-8 px-6 lg:px-10 flex flex-col justify-center items-center min-w-[120px] lg:min-w-[160px] border-r ${dividerColor}`}
+          className={`flex min-h-[120px] items-center justify-center gap-3 border-b px-6 py-5 sm:min-h-[165px] sm:min-w-[155px] sm:flex-col sm:border-b-0 sm:border-r sm:px-8 sm:py-8 ${dividerStyles}`}
         >
           <motion.span
-            className={`text-5xl font-bold font-serif ${textColor}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+            className={`font-serif text-4xl font-bold sm:text-5xl ${titleStyles}`}
+            initial={{ opacity: 0, y: 15 }}
+            animate={
+              isInView
+                ? {
+                    opacity: 1,
+                    y: 0,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.45,
+              delay: animationDelay + 0.15,
+            }}
           >
             {event.date}
           </motion.span>
 
           <motion.span
-            className={`text-[10px] uppercase tracking-[0.15em] mt-1 font-bold text-center ${subTextColor}`}
+            className={`text-center text-[10px] font-bold uppercase tracking-[0.15em] ${dateSubTextStyles}`}
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+            transition={{
+              duration: 0.45,
+              delay: animationDelay + 0.2,
+            }}
           >
             {event.monthYear}
           </motion.span>
         </div>
 
-        <div className="p-8 flex flex-col justify-center flex-1">
+        {/* EVENT DETAILS */}
+        <div className="flex flex-1 flex-col justify-center p-6 sm:p-8">
           <motion.h3
-            className={`text-xl lg:text-2xl font-bold mb-4 tracking-tight leading-snug ${textColor}`}
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+            className={`mb-4 text-lg font-bold leading-snug tracking-tight sm:text-xl lg:text-2xl ${titleStyles}`}
+            initial={{ opacity: 0, x: -15 }}
+            animate={
+              isInView
+                ? {
+                    opacity: 1,
+                    x: 0,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.45,
+              delay: animationDelay + 0.15,
+            }}
           >
             {event.title}
           </motion.h3>
 
           <motion.span
-            className={`text-[10px] font-black py-1.5 px-5 rounded w-fit uppercase tracking-widest shadow-sm ${badgeStyles}`}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
+            className={`w-fit rounded px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm ${badgeStyles}`}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={
+              isInView
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.4,
+              delay: animationDelay + 0.25,
+            }}
           >
             {event.tag}
           </motion.span>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.article>
   );
 }

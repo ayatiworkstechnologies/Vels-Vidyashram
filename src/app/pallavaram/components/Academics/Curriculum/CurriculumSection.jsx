@@ -4,71 +4,21 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ACADEMIC_LEVELS = [
-  {
+ {
     id: "pre-kg",
     title: "Pre-KG to UKG",
     subtitle: "KG Curriculum – Kinder Kids Kaleidoscope",
-    description: [
-      "An indigenous, thematic and well-structured high quality school readiness programme for experiential learning.",
-      "A well planned and resourceful curriculum to improve the scholastic ability of children which emphasizes children’s learning interest and builds positive values and attitudes.",
-      "It enhances self confidence, self-care abilities and gives children opportunity to explore and actively engage to get an enriching experience."
-    ],
+    description: "Enhances vocabulary, improves listening comprehension and social conversations. Encourage imagination and participation.",
     highlights: [
-      {
-        label: "Rhymes & Stories",
-        text: [
-          "Enhances vocabulary, improves listening comprehension and social conversations.",
-          "Encourages imagination and participation."
-        ]
-      },
-      {
-        label: "Literacy Skills",
-        text: [
-          "Promotes thinking skills, asking questions and seeking answers, finding information and forming opinions.",
-          "Builds vocabulary and reading and writing skills."
-        ]
-      },
-      {
-        label: "Environmental Skills",
-        text: [
-          "Develops an understanding of the surroundings.",
-          "Helps children understand the relationship between self, surroundings and nature."
-        ]
-      },
-      {
-        label: "Hindi",
-        text: [
-          "Develops basic learning, speaking, reading, and writing skills.",
-          "Enhances vocabulary and social conversations."
-        ]
-      },
-      {
-        label: "Tamil",
-        text: [
-          "Develops basic learning, speaking, reading and writing skills.",
-          "Enhances vocabulary and social conversations."
-        ]
-      },
-      {
-        label: "Art & Craft",
-        text: [
-          "Improves motor skills, creativity and aesthetic sense.",
-          "Helps children express emotions and feelings."
-        ]
-      },
-      {
-        label: "Phonics",
-        text: [
-          "Develops phonetic awareness and helps children learn to read using sounds.",
-          "Acts as a tool to decode new words."
-        ]
-      },
-      {
-        label: "Teachers Resource",
-        text:
-          "An indigenous teachers resource that directs teachers towards the set objective along with suggested action plan and teaching aids."
-      }
-    ]
+      { label: "Rhymes & Stories", text: "Enhances vocabulary, improves listening comprehension and social conversations. Encourage imagination and participation." },
+      { label: "Literacy skills", text: "Promotes thinking skills, asking questions and seeking answers, finding information and forming opinions. Builds vocabulary and reading and writing skills." },
+      { label: "Environmental skills", text: "Develops an understanding of the surroundings. To understand the relationship between self, surroundings and nature." },
+      { label: "Phonics", text: "Develops phonetic awareness and helps children learn to read using sounds. A tool to decode new works." },
+      { label: "Hindi & Tamil", text: "Develops basic learning, speaking, reading and writing skills. Enhances vocabulary and social conversations." },
+      { label: "Art & Craft", text: "Improve motor skills, creativity and aesthetic sense. Learns to express emotions and feelings." },
+      { label: "Teacher's resource", text: "An Indigenous teacher's resource that directs teachers towards the set objective along with suggested action plan and teaching aids." },
+       { label: "Numerical Skills", text: "Numerical skills help students develop a strong understanding of numbers, patterns, measurements, and problem-solving strategies. Through hands-on activities and real-life applications, students build confidence in logical thinking and mathematical reasoning." }
+    ],
   },
 
   {

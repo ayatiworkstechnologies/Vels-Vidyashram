@@ -12,7 +12,7 @@ const navItems = [
     submenu: [
       { label: "Vision And Mission", href: "/thalambur/vision-mission" },
       { label: "Our Group", href: "/thalambur/our-group" },
-      { label: "School Information", href: "/thalambur/school-information" },
+      // { label: "School Information", href: "/thalambur/school-information" },
     ],
   },
   {

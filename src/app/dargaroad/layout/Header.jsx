@@ -12,7 +12,7 @@ const navItems = [
     submenu: [
       { label: "Vision And Mission", href: "/dargaroad/vision-mission" },
       { label: "Our Group", href: "/dargaroad/our-group" },
-      { label: "School Information", href: "/dargaroad/school-information" },
+      // { label: "School Information", href: "/dargaroad/school-information" },
     ],
   },
   {

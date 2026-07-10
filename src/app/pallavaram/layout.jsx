@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <Header />
         <FloatingActions />
-         <Modal />
+         {/* <Modal /> */}
         <main className="relative z-0">
           {children}
         </main>

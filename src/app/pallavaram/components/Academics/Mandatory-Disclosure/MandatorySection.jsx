@@ -1,15 +1,89 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const ITEMS = [
-  { id: 1, title: "Results", pdf: "/pallavaram/pdf/Result.pdf" },
-  { id: 2, title: "Lists of Books", pdf: "/pallavaram/pdf/List-of-Books.pdf" },
-  { id: 3, title: "Home Work Policy", pdf: "/pallavaram/pdf/Homework-policy.pdf" },
-  { id: 4, title: "Annual Report", pdf: "/pallavaram/pdf/Annual-report.pdf" },
-  { id: 5, title: "Teacher Details", pdf: "/pallavaram/pdf/Teacher-Details.pdf" },
-  { id: 6, title: "Strength Details", pdf: "/pallavaram/pdf/strength-details.pdf" },
+  {
+    id: 1,
+    title: "Mandatory Disclosure",
+    pdf: "/pallavaram/pdf/mandatory-public-disclosure.pdf",
+  },
+  {
+    id: 2,
+    title: "Affiliation",
+    pdf: "/pallavaram/pdf/affiliation.pdf",
+  },
+  {
+    id: 3,
+    title: "NOC",
+    pdf: "/pallavaram/pdf/noc.pdf",
+  },
+  {
+    id: 4,
+    title: "Trust",
+    pdf: "/pallavaram/pdf/trust.pdf",
+  },
+  {
+    id: 6,
+    title: "Recognition",
+    pdf: "/pallavaram/pdf/recognition.pdf",
+  },
+  {
+    id: 7,
+    title: "Building",
+    pdf: "/pallavaram/pdf/building.pdf",
+  },
+  {
+    id: 8,
+    title: "Fire",
+    pdf: "/pallavaram/pdf/fire.pdf",
+  },
+  {
+    id: 9,
+    title: "Sanitary",
+    pdf: "/pallavaram/pdf/SANITARY.pdf",
+  },
+  {
+    id: 10,
+    title: "Self Certification",
+    pdf: "/pallavaram/pdf/self-certificate.pdf",
+  },
+  {
+    id: 11,
+    title: "Fee Structure",
+    pdf: "/pallavaram/pdf/fee-structure.pdf",
+  },
+  {
+    id: 12,
+    title: "Calendar",
+    pdf: "/pallavaram/pdf/calendar.pdf",
+  },
+  {
+    id: 13,
+    title: "SMC",
+    pdf: "/pallavaram/pdf/smc.pdf",
+  },
+  {
+    id: 14,
+    title: "PTA",
+    pdf: "/pallavaram/pdf/pta.pdf",
+  },
+  {
+    id: 15,
+    title: "Results",
+    pdf: "/pallavaram/pdf/RESULTS.pdf",
+  },
+  {
+    id: 16,
+    title: "Self Affidavit",
+    pdf: "/pallavaram/pdf/self-affidavit.pdf",
+  },
+  {
+    id: 17,
+    title: "TC Sample",
+    pdf: "/pallavaram/pdf/TC-Sample.pdf",
+  },
 ];
 
 export default function MandatorySection() {
@@ -20,241 +94,466 @@ export default function MandatorySection() {
   useEffect(() => {
     setMounted(true);
 
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     checkMobile();
 
     window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") setOpenPdf(null);
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setOpenPdf(null);
+      }
     };
 
     if (openPdf) {
       document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-      document.addEventListener("keydown", onKey);
+      document.addEventListener("keydown", handleEscape);
     } else {
       document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
     }
 
     return () => {
       document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [openPdf]);
 
-  const PdfModal = openPdf ? (
-    <div className="fixed inset-0 z-[999999] flex items-end justify-center sm:items-center">
-      {/* Backdrop */}
-      <button
-        type="button"
-        aria-label="Close PDF modal"
-        onClick={() => setOpenPdf(null)}
-        className="absolute inset-0 z-0 bg-black/70 backdrop-blur-sm"
-      />
+  const handleOpenPdf = (item) => {
+    setOpenPdf({
+      title: item.title,
+      pdf: item.pdf,
+    });
+  };
 
-      {/* Modal Box */}
-      <div className="relative z-10 flex h-[92dvh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl sm:h-[85vh] sm:max-w-5xl sm:rounded-2xl">
-        {/* Mobile drag handle */}
-        <div className="flex justify-center pt-2 pb-1 sm:hidden">
-          <div className="h-1 w-10 rounded-full bg-gray-300" />
-        </div>
+  const handleClosePdf = () => {
+    setOpenPdf(null);
+  };
 
-        {/* Modal Header */}
-        <div className="flex flex-shrink-0 items-center justify-between border-b bg-white px-4 py-3 sm:px-6 sm:py-4">
-          <h3 className="truncate pr-3 text-base font-bold text-gray-800 sm:text-xl">
-            {openPdf.title}
-          </h3>
-
-          <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
-            <a
-              href={openPdf.pdf}
-              download
-              className="flex items-center whitespace-nowrap rounded-lg bg-orange-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-orange-600 active:bg-orange-700 sm:px-4 sm:py-2 sm:text-sm"
-            >
-              <svg
-                className="mr-1 h-3.5 w-3.5 sm:mr-1.5 sm:h-4 sm:w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              <span className="hidden sm:inline">Download PDF</span>
-              <span className="inline sm:hidden">Save</span>
-            </a>
-
+  const pdfModal =
+    mounted && openPdf
+      ? createPortal(
+          <div
+            className="fixed inset-0 flex items-end justify-center p-0 sm:items-center sm:p-5"
+            style={{ zIndex: 2147483647 }}
+          >
+            {/* Backdrop */}
             <button
               type="button"
-              onClick={() => setOpenPdf(null)}
-              className="rounded-full p-1.5 text-gray-500 transition-colors hover:bg-gray-100 active:bg-gray-200 sm:p-2"
-              aria-label="Close"
+              aria-label="Close PDF preview"
+              onClick={handleClosePdf}
+              className="absolute inset-0 cursor-default bg-[#160a4d]/80 backdrop-blur-sm"
+            />
+
+            {/* Modal */}
+            <div
+              className="
+                relative flex h-[93dvh] w-full flex-col overflow-hidden
+                rounded-t-2xl bg-white shadow-2xl
+                sm:h-[88vh] sm:max-w-6xl sm:rounded-2xl
+              "
+              style={{ zIndex: 2147483647 }}
             >
-              <svg
-                className="h-5 w-5 sm:h-6 sm:w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+              {/* Mobile drag handle */}
+              <div className="flex justify-center pb-1 pt-2 sm:hidden">
+                <span className="h-1 w-10 rounded-full bg-gray-300" />
+              </div>
 
-        {/* PDF Preview */}
-        <div className="flex-1 overflow-hidden bg-gray-200">
-          {isMobile ? (
-            <div className="flex h-full flex-col items-center justify-center gap-5 px-6 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-50">
-                <svg
-                  className="h-8 w-8 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              {/* Modal header */}
+              <div className="flex flex-shrink-0 items-center justify-between border-b border-[#E5E1F2] bg-white px-4 py-3 sm:px-6 sm:py-4">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="hidden h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#F2EFFF] sm:flex">
+                    <svg
+                      className="h-5 w-5 text-[#2B158F]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.8"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2Z"
+                      />
+                    </svg>
+                  </div>
+
+                  <h3 className="truncate pr-2 font-primary text-base font-bold text-[#2B158F] sm:text-xl">
+                    {openPdf.title}
+                  </h3>
+                </div>
+
+                <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
+                  <a
+                    href={openPdf.pdf}
+                    download
+                    className="
+                      inline-flex items-center justify-center gap-1.5
+                      rounded-full bg-[#FF8700] px-3 py-2
+                      font-secondary text-xs font-semibold text-white
+                      shadow-sm transition-all duration-300
+                      hover:-translate-y-0.5 hover:bg-[#E87500]
+                      hover:shadow-md
+                      sm:px-5 sm:text-sm
+                    "
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4-4 4m0 0-4-4m4 4V4"
+                      />
+                    </svg>
+
+                    <span className="hidden sm:inline">Download PDF</span>
+                    <span className="sm:hidden">Download</span>
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={handleClosePdf}
+                    aria-label="Close"
+                    className="
+                      flex h-9 w-9 items-center justify-center rounded-full
+                      text-gray-500 transition-all duration-300
+                      hover:bg-[#F2EFFF] hover:text-[#2B158F]
+                    "
+                  >
+                    <svg
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18 18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* PDF content */}
+              <div className="flex-1 overflow-hidden bg-[#F7F5FF]">
+                {isMobile ? (
+                  <div className="flex h-full flex-col items-center justify-center px-6 text-center">
+                    <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#EEE9FF]">
+                      <svg
+                        className="h-10 w-10 text-[#2B158F]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <h4 className="mb-2 font-primary text-lg font-bold text-[#2B158F]">
+                      {openPdf.title}
+                    </h4>
+
+                    <p className="mb-7 max-w-sm font-secondary text-sm leading-6 text-gray-500">
+                      Open this document in your browser or download the PDF to
+                      your device.
+                    </p>
+
+                    <div className="flex w-full max-w-xs flex-col gap-3">
+                      <a
+                        href={openPdf.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          flex items-center justify-center gap-2 rounded-full
+                          bg-[#2B158F] px-5 py-3
+                          font-secondary text-sm font-semibold text-white
+                          shadow-sm transition-all duration-300
+                          hover:-translate-y-0.5 hover:bg-[#24126A]
+                          hover:shadow-md
+                        "
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M15 10l4.553-4.553a1.5 1.5 0 00-2.121-2.121L12.88 7.879M14 4h-4a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4"
+                          />
+                        </svg>
+
+                        Open PDF
+                      </a>
+
+                      <a
+                        href={openPdf.pdf}
+                        download
+                        className="
+                          flex items-center justify-center gap-2 rounded-full
+                          bg-[#FF8700] px-5 py-3
+                          font-secondary text-sm font-semibold text-white
+                          shadow-sm transition-all duration-300
+                          hover:-translate-y-0.5 hover:bg-[#E87500]
+                          hover:shadow-md
+                        "
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4-4 4m0 0-4-4m4 4V4"
+                          />
+                        </svg>
+
+                        Download PDF
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src={`${openPdf.pdf}#toolbar=0&navpanes=0`}
+                    title={openPdf.title}
+                    className="h-full w-full border-0"
                   />
-                </svg>
-              </div>
-
-              <div>
-                <p className="mb-1 text-base font-semibold text-gray-700">
-                  {openPdf.title}
-                </p>
-                <p className="text-sm text-gray-500">
-                  PDF preview may not work properly on some mobile browsers.
-                </p>
-              </div>
-
-              <div className="flex w-full max-w-xs flex-col gap-3">
-                <a
-                  href={openPdf.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-[#1c1533] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#2a1f4a]"
-                >
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                  Open in Browser
-                </a>
-
-                <a
-                  href={openPdf.pdf}
-                  download
-                  className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
-                >
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                    />
-                  </svg>
-                  Download PDF
-                </a>
+                )}
               </div>
             </div>
-          ) : (
-            <iframe
-              src={`${openPdf.pdf}#toolbar=0`}
-              className="h-full w-full"
-              frameBorder="0"
-              title={openPdf.title}
-            />
-          )}
-        </div>
-      </div>
-    </div>
-  ) : null;
+          </div>,
+          document.body
+        )
+      : null;
 
   return (
     <>
-      <section className="min-h-screen bg-gray-50 px-4 py-10 sm:px-6 lg:px-20">
-        {/* Heading Section */}
-        <div className="mx-auto mb-10 max-w-6xl text-center sm:mb-12">
-          <h1 className="text-2xl font-bold leading-tight text-[#1c1533] sm:text-3xl md:text-4xl">
-            Mandatory Disclosure
-          </h1>
-          <div className="mt-3 flex justify-center sm:mt-4">
-            <div className="h-1 w-16 rounded-full bg-orange-500" />
-          </div>
-        </div>
+      <main className="min-h-screen bg-white pb-14 sm:pb-16 lg:pb-20">
+        {/* Mandatory Disclosure Banner */}
+        <section
+          className="relative overflow-hidden "
+          
+        >
+          
+        </section>
 
-        {/* Cards Grid */}
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-5">
-          {ITEMS.map((it) => (
-            <button
-              key={it.id}
-              type="button"
-              onClick={() => setOpenPdf({ pdf: it.pdf, title: it.title })}
-              className="group relative flex w-full flex-col items-start justify-between rounded-xl border border-gray-100 bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-md active:scale-95 sm:p-5 md:p-6"
-            >
-              <div className="mb-3 sm:mb-4">
-                <h3 className="text-sm font-semibold leading-tight text-gray-800 transition-colors group-hover:text-[#1c1533] sm:text-base md:text-lg">
-                  {it.title}
-                </h3>
+        {/* Documents section */}
+        <section className="px-4 pb-5 pt-10 sm:px-6 sm:pt-12 lg:px-8">
+          <div className="mx-auto max-w-[860px]">
+            <div className="mb-6 text-center sm:mb-7">
+              <h2
+                className="
+                  font-primary text-xl font-bold uppercase
+                  leading-tight text-[#2B158F]
+                  sm:text-2xl md:text-[27px]
+                "
+              >
+                Documents and Information
+              </h2>
+
+              <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#FF8700]" />
+            </div>
+
+            {/* Desktop table */}
+            <div className="hidden overflow-hidden rounded-sm border border-[#DDD8ED] shadow-[0_10px_35px_rgba(43,21,143,0.08)] md:block">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-[#2B158F] text-white">
+                    <th
+                      scope="col"
+                      className="
+                        w-[100px] border-r border-white/30
+                        px-4 py-3.5 text-left
+                        font-secondary text-base font-semibold
+                      "
+                    >
+                      Sl.No.
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        border-r border-white/30
+                        px-4 py-3.5 text-left
+                        font-secondary text-base font-semibold
+                      "
+                    >
+                      Information
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        w-[175px] px-4 py-3.5 text-center
+                        font-secondary text-base font-semibold
+                      "
+                    >
+                      View Documents
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {ITEMS.map((item, index) => (
+                    <tr
+                      key={item.id}
+                      className="
+                        group border-b border-[#E5E1F2] bg-white
+                        transition-colors duration-200
+                        last:border-b-0 hover:bg-[#F7F5FF]
+                      "
+                    >
+                      <td
+                        className="
+                          border-r border-[#E5E1F2] px-4 py-3
+                          text-center font-secondary text-[16px]
+                          font-medium text-[#2B158F]
+                        "
+                      >
+                        {index + 1}
+                      </td>
+
+                      <td
+                        className="
+                          border-r border-[#E5E1F2] px-4 py-3
+                          font-secondary text-[16px] text-[#4D4A58]
+                        "
+                      >
+                        {item.title}
+                      </td>
+
+                      <td className="px-4 py-3 text-center">
+                        <button
+                          type="button"
+                          onClick={() => handleOpenPdf(item)}
+                          className="
+                            inline-flex items-center justify-center gap-1.5
+                            font-secondary text-[16px] font-semibold
+                            text-[#2B158F] underline
+                            decoration-[#2B158F]
+                            underline-offset-4
+                            transition-all duration-200
+                            hover:text-[#FF8700]
+                            hover:decoration-[#FF8700]
+                          "
+                        >
+                          View
+
+                          <svg
+                            className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M14 5l7 7m0 0-7 7m7-7H3"
+                            />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile table */}
+            <div className="overflow-hidden rounded-sm border border-[#DDD8ED] shadow-[0_8px_25px_rgba(43,21,143,0.08)] md:hidden">
+              {/* Mobile table header */}
+              <div className="grid grid-cols-[55px_1fr_72px] bg-[#2B158F] text-white">
+                <div className="flex items-center justify-center border-r border-white/30 px-1 py-3.5 font-secondary text-xs font-semibold">
+                  Sl.No.
+                </div>
+
+                <div className="flex items-center border-r border-white/30 px-3 py-3.5 font-secondary text-xs font-semibold">
+                  Information
+                </div>
+
+                <div className="flex items-center justify-center px-2 py-3.5 text-center font-secondary text-xs font-semibold">
+                  View
+                </div>
               </div>
 
-              <div className="flex items-center text-xs font-medium text-orange-500 group-hover:text-orange-600 sm:text-sm">
-                <span className="hidden sm:inline">View Document</span>
-                <span className="inline sm:hidden">View</span>
-                <svg
-                  className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1 sm:ml-2 sm:h-4 sm:w-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {/* Mobile table rows */}
+              {ITEMS.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="
+                    grid grid-cols-[55px_1fr_72px]
+                    border-b border-[#E5E1F2] bg-white
+                    transition-colors duration-200
+                    last:border-b-0 hover:bg-[#F7F5FF]
+                  "
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </div>
-            </button>
-          ))}
-        </div>
-      </section>
+                  <div className="flex items-center justify-center border-r border-[#E5E1F2] px-1 py-3 font-secondary text-sm font-medium text-[#2B158F]">
+                    {index + 1}
+                  </div>
 
-      {mounted && createPortal(PdfModal, document.body)}
+                  <div className="flex items-center border-r border-[#E5E1F2] px-3 py-3 font-secondary text-sm leading-5 text-[#4D4A58]">
+                    {item.title}
+                  </div>
+
+                  <div className="flex items-center justify-center px-2 py-3">
+                    <button
+                      type="button"
+                      onClick={() => handleOpenPdf(item)}
+                      className="
+                        font-secondary text-sm font-semibold
+                        text-[#2B158F] underline
+                        decoration-[#2B158F]
+                        underline-offset-4
+                        transition-colors duration-200
+                        hover:text-[#FF8700]
+                        hover:decoration-[#FF8700]
+                      "
+                    >
+                      View
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {pdfModal}
     </>
   );
 }

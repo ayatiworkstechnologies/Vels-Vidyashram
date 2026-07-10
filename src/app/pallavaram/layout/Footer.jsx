@@ -80,7 +80,7 @@ export default function ContactFooter() {
               </li>
 
               <li>
-                <Link href="/pallavaram/pdf/mandatory-public-disclosure.pdf">
+                <Link href="/pallavaram/mandatory-disclosure">
                   Mandatory Disclosure
                 </Link>
               </li>

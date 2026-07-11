@@ -45,7 +45,7 @@ export default function VelsStaticOverlaySection() {
           <h2 className={`text-3xl font-semibold mb-6 font-primary text-gray-900 transition-all duration-1000 ${
             topVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
-            Vels Vidyashram Pallavaram
+            Vels Vidyashram Senior Secondary School, Pallavaram
           </h2>
           <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-secondary text-justify">
             {[

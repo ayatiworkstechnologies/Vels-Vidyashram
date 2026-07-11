@@ -151,7 +151,7 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
 
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function EventsGallery() {
-  const [selectedYear, setSelectedYear]         = useState("2025-2026");
+  const [selectedYear, setSelectedYear]         = useState("2026-2027");
   const [selectedIndex, setSelectedIndex]       = useState(null);
   const [activeEventImages, setActiveEventImages] = useState([]);
   const [carouselStates, setCarouselStates]     = useState({});

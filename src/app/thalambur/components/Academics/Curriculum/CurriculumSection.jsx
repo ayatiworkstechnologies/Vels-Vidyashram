@@ -82,6 +82,38 @@ const ACADEMIC_LEVELS = [
     images: ["/thalambur/high.jpg"],
     
     
+  },
+  {
+    id: "nios-x-xii",
+    title: "NIOS X & XII",
+    description:
+      "Vels Vidyashram, Thalambur is an accredited study centre of the National Institute of Open Schooling (NIOS), offering Secondary (Class X) and Senior Secondary (Class XIB) programmes. NIOS is a national board of education, equivalent to CBSE and CISCE, with a learner-centric approach that provides flexibility in learning. subject choice and examinations.",
+    highlights: [
+      {
+        label:
+          "Nationally Recognized Board(Equivalent to CBSE & CISCE).",
+      },
+      {
+        label:
+          "Flexible Learning—Study at your own pace with multiple opportunities to appear for exams.",
+      },
+      {
+        label:
+          "Freedom to Choose—select subjects based on your interests and career.",
+      },
+      {
+        label:
+          "Wide Recognition—Accepted by universities  institutions across India and aboard.",
+      },
+      {
+        label:
+          "Career & Exam Ready—Supports preparation for competitive exams like JEE, NEET. CUET and more.",
+      },
+      {
+        label:
+          "Personalized Support—Guidance and support from our experienced faculty.",
+      },
+    ],
   }
 ];
 

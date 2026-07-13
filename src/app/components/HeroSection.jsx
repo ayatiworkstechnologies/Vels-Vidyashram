@@ -1,25 +1,28 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+
+import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image"; // Added missing import
+import Image from "next/image";
 
 const slides = [
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
+    subtitle:
+      "Vels Vidyashram\nSenior Secondary School - Thalambur",
     image: "/thalambur/banner/thalambur-banner-1.png",
     mobileImage: "/mb-1.png",
   },
-
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nSenior Secondary School - Dargaroad",
+    subtitle:
+      "Vels Vidyashram\nSenior Secondary School - Dargaroad",
     image: "/banner/banner-3.png",
     mobileImage: "/banner/mob-3.png",
   },
   {
     title: "Welcome to",
-    subtitle: "Vels Vidyashram\nKinder Garten School - Cantonment",
+    subtitle:
+      "Vels Vidyashram\nKinder Garten School - Cantonment",
     image: "/banner/banner3.jpg",
     mobileImage: "/banner/banner3.jpg",
   },
@@ -29,126 +32,121 @@ export default function BannerSection() {
   const [active, setActive] = useState(0);
 
   const nextSlide = useCallback(() => {
-    setActive((prev) => (prev + 1) % slides.length);
+    setActive((previous) => (previous + 1) % slides.length);
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
-    return () => clearInterval(timer);
+    const timer = window.setInterval(nextSlide, 6000);
+
+    return () => {
+      window.clearInterval(timer);
+    };
   }, [nextSlide]);
 
-  const handleDotClick = (index) => {
-    setActive(index);
-  };
-
   return (
-    <section className="relative w-full h-[600px] md:h-[750px] overflow-hidden bg-slate-900">
-      
-      {/* ================= LOGO OVERLAY ================= */}
-      <div className="absolute left-1/2 top-4 z-50 -translate-x-1/2 lg:top-6">
-  <img
-    src="/common-logo.png"
-    alt="Vels Vidyashram"
-    width="1600"
-    height="345"
-    className="h-auto w-[260px] object-contain sm:w-[320px] md:w-[380px] lg:w-[400px]"
-  />
-</div>
-
-      {/* 1. DYNAMIC BACKGROUND LAYER */}
-      <div className="absolute inset-0 z-0">
-        {slides.map((s, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-all duration-[1500ms] ease-in-out transform ${
-              i === active ? "opacity-100 scale-100" : "opacity-0 scale-110"
-            }`}
-          >
-            <picture>
-              <source media="(max-width: 768px)" srcSet={s.mobileImage} />
-              <img
-                src={s.image}
-                alt="School Banner"
-                className="w-full h-full object-cover object-center lg:object-right-top"
-              />
-            </picture>
-            
-            {/* GRADIENT OVERLAYS */}
-          
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:hidden" />
-          </div>
-        ))}
+    <section className="w-full bg-white px-2 pb-4 pt-3 sm:px-4 sm:pb-6 md:px-6 md:pt-4 lg:px-8">
+      {/* Logo */}
+      <div className="mb-3 flex items-center justify-center sm:mb-4">
+        <Image
+          src="/common-logo.png"
+          alt="Vels Vidyashram"
+          width={1600}
+          height={345}
+          priority
+          className="h-auto w-[190px] object-contain sm:w-[230px] md:w-[270px] lg:w-[300px]"
+        />
       </div>
 
-      {/* 2. FLOATING CONTENT LAYER */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-12 flex items-center">
-        <div className="w-full max-w-3xl">
-          {slides.map((s, i) => (
+      {/* Banner Card */}
+      <div className="relative mx-auto h-[430px] w-full max-w-[1536px] overflow-hidden rounded-[12px] bg-slate-900 shadow-[0_5px_15px_rgba(0,0,0,0.22)] sm:h-[500px] md:h-[560px] lg:h-[640px]">
+        {/* Background Slides */}
+        <div className="absolute inset-0">
+          {slides.map((slide, index) => (
             <div
-              key={i}
-              className={`transition-all duration-1000 absolute top-1/2 -translate-y-1/2 ${
-                i === active 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 -translate-x-20 pointer-events-none"
+              key={`${slide.subtitle}-${index}`}
+              className={`absolute inset-0 transition-all duration-[1400ms] ease-in-out ${
+                index === active
+                  ? "scale-100 opacity-100"
+                  : "scale-[1.04] opacity-0"
+              }`}
+              aria-hidden={index !== active}
+            >
+              <picture>
+                <source
+                  media="(max-width: 767px)"
+                  srcSet={slide.mobileImage}
+                />
+
+                <img
+                  src={slide.image}
+                  alt={slide.subtitle.replace("\n", " ")}
+                  className="h-full w-full object-cover object-center md:object-center"
+                />
+              </picture>
+            </div>
+          ))}
+        </div>
+
+        {/* Image Overlay */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-transparent" />
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1440px] items-end px-7 pb-16 sm:px-10 sm:pb-20 md:px-14 md:pb-24 lg:px-20 lg:pb-28">
+          {slides.map((slide, index) => (
+            <div
+              key={`content-${index}`}
+              className={`absolute bottom-16 left-7 right-7 max-w-[700px] transition-all duration-1000 ease-out sm:bottom-20 sm:left-10 sm:right-auto md:bottom-24 md:left-14 lg:bottom-28 lg:left-20 ${
+                index === active
+                  ? "translate-y-0 opacity-100"
+                  : "pointer-events-none translate-y-7 opacity-0"
               }`}
             >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#F7931E] text-white text-[10px] md:text-xs font-bold px-4 py-2 rounded-full mb-6 tracking-[0.2em] uppercase shadow-lg">
-                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                {s.title}
-              </div>
+              <p className="mb-1 text-[13px] font-medium leading-none text-white/90 drop-shadow-md sm:text-sm md:text-base">
+                {slide.title}
+              </p>
 
-              {/* Main Heading */}
-              <h1 className="text-2xl md:text-3xl font-bold text-white leading-[1.1] font-primary drop-shadow-2xl">
-                {s.subtitle.split('\n').map((line, index) => (
-                  <span key={index} className="block mb-1 italic last:not-italic last:text-[#F7931E]">
-                    {line}
-                  </span>
-                ))}
+              <h1 className="whitespace-pre-line text-[23px] font-bold leading-[1.12] tracking-[-0.02em] text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.65)] sm:text-[30px] md:text-[38px] lg:text-[30px]">
+                {slide.subtitle}
               </h1>
 
-              {/* Action Buttons */}
-              <div className="mt-10">
+              <div className="mt-5 sm:mt-6">
                 <Link
                   href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
                   target="_blank"
-                  className="inline-block bg-[#2B158F] hover:bg-[#F7931E] text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_10px_20px_rgba(43,21,143,0.4)] active:scale-95"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[38px] items-center justify-center rounded-full bg-[#2B158F] px-5 py-2.5 text-[11px] font-semibold text-white shadow-[0_5px_14px_rgba(43,21,143,0.35)] transition-colors duration-300 hover:bg-[#F7931E] sm:min-h-[42px] sm:px-6 sm:text-xs"
                 >
-                  Admission Open 2026-27
+                  Apply Now
                 </Link>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* 3. NAVIGATION & PAGINATION */}
-      <div className="absolute bottom-12 left-6 md:left-12 z-20 flex items-center gap-8">
-        {/* Modern Line Pagination */}
-        <div className="flex gap-3">
-          {slides.map((_, idx) => (
+        {/* Slider Indicators */}
+        <div className="absolute bottom-4 left-7 z-20 flex items-center gap-2 sm:bottom-5 sm:left-10 md:left-14 lg:left-20">
+          {slides.map((_, index) => (
             <button
-              key={idx}
-              onClick={() => handleDotClick(idx)}
-              className="group py-4 flex items-center cursor-pointer"
+              key={index}
+              type="button"
+              aria-label={`Show slide ${index + 1}`}
+              aria-current={index === active ? "true" : undefined}
+              onClick={() => setActive(index)}
+              className="flex h-5 items-center justify-center"
             >
-              <div className={`h-[3px] transition-all duration-500 rounded-full ${
-                idx === active ? "w-16 bg-[#F7931E]" : "w-6 bg-white/30 group-hover:bg-white/60"
-              }`} />
+              <span
+                className={`block h-[2px] rounded-full transition-all duration-500 ${
+                  index === active
+                    ? "w-16 bg-[#F7931E]"
+                    : "w-7 bg-white/50 hover:bg-white/80"
+                }`}
+              />
             </button>
           ))}
         </div>
-
-        {/* Counter */}
-        <div className="hidden sm:block text-white/40 font-mono text-lg tracking-tighter">
-          <span className="text-white font-bold">{String(active + 1).padStart(2, '0')}</span>
-          <span className="mx-2">/</span>
-          <span>{String(slides.length).padStart(2, '0')}</span>
-        </div>
       </div>
-
-      {/* Bottom Decorative Mask */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
     </section>
   );
 }

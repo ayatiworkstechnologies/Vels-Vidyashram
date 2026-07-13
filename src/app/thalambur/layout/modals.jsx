@@ -10,7 +10,6 @@ export default function Modal() {
   useEffect(() => {
     setMounted(true);
 
-    // Show popup after 2 seconds
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, 2000);
@@ -18,34 +17,35 @@ export default function Modal() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Prevent scroll when modal open
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
     }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
   }, [isOpen]);
 
   if (!mounted || !isOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-      
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden p-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-black/60"
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Content */}
-      <div className="relative w-auto max-w-[90vw] z-10">
-        
+      {/* Modal */}
+      <div className="relative z-10 w-auto max-w-[90vw]">
         {/* Close Button */}
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute -top-3 -right-3 z-50 flex h-9 w-9 items-center justify-center rounded-full bg-black text-white hover:bg-gray-800 transition shadow-lg"
-          aria-label="Close Announcement"
+          aria-label="Close"
+          className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black text-white shadow-lg transition hover:bg-gray-800"
         >
           ✕
         </button>
@@ -54,7 +54,7 @@ export default function Modal() {
         <img
           src="/thalambur/thalambur-popup.jpeg"
           alt="School Admissions Announcement"
-          className="w-full h-auto max-h-[85vh] object-contain border-4 border-[#ffb74d] rounded-xl shadow-2xl"
+          className="block max-h-[85vh] w-full rounded-xl border-4 border-[#ffb74d] object-contain shadow-2xl"
         />
       </div>
     </div>,

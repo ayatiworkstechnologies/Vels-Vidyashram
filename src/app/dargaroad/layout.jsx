@@ -31,7 +31,9 @@ export default function RootLayout({ children }) {
         <Header />
          <Modal />
         <FloatingActions />
-        {children}
+        <main style={{ overflowX: "clip" }}>
+          {children}
+        </main>
         <ScrollToTop />
       </body>
        <Footer />

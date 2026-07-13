@@ -42,7 +42,7 @@ const FloatingActions = () => {
   return (
     <>
       {/* ── DESKTOP: Fixed right-side floating panel (hidden on mobile) ── */}
-      <div className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-[9999] flex-col gap-3">
+      <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-[9999] flex-col gap-3">
 
         {/* Admissions Button */}
         <a
@@ -55,7 +55,7 @@ const FloatingActions = () => {
           <span className="absolute right-16 scale-0 group-hover:scale-100 transition-all duration-200 origin-right bg-white text-secondary text-xs font-bold py-2 px-4 rounded-lg whitespace-nowrap shadow-xl">
             Apply for Admission
           </span>
-          <span className="absolute inset-0 rounded-full border-2 border-orange-500 animate-ping opacity-20"></span>
+          <span className="absolute inset-0 rounded-full border-2 border-orange-500  opacity-20"></span>
         </a>
 
         {/* Social Icons */}

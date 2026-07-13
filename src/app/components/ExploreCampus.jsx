@@ -115,12 +115,12 @@ export default function CampusSection() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-3xl md:text-5xl lg:text-6xl font-black text-secondary uppercase "
+          className="text-3xl md:text-5xl lg:text-3xl font-black text-secondary uppercase "
         >
-          Wisdom Is Strength
+          Four Campuses. One Vision. Excellence Everywhere.
         </motion.h2>
-        <p className="mt-4 text-[10px] lg:text-[14px] font-black tracking-[0.4em] uppercase text-[#152f5c] border-y border-[#152f5c]/20 py-2 inline-block">
-          Explore Our World-Class Campuses
+        <p className="mt-10 max-w-7xl text-center text-[#6B6B6B] text-[20px] leading-[1.45] font-normal tracking-normal">
+          Vels Vidyashram proudly serves students through four vibrant campuses, each committed to delivering the same high standards of education, innovation, and holistic development.Every campus is equipped with modern infrastructure, advanced learning technologies, experienced faculty, and a safe, student-centric environment.
         </p>
       </div>
 

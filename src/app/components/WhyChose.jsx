@@ -103,7 +103,7 @@ export default function VelsWhyChooseSlider({ categories = DEFAULT_CATEGORIES })
           alt=""
           aria-hidden="true"
           className="absolute pointer-events-none select-none"
-          style={{ top: "4%", right: "6%", width: "100px" }}
+          style={{ top: "4%", right: "6%", width: "250px", height: "220px"  }}
         />
 
         <div className="relative max-w-6xl mx-auto w-full">
@@ -126,14 +126,17 @@ export default function VelsWhyChooseSlider({ categories = DEFAULT_CATEGORIES })
                   className="shrink-0 px-4 sm:px-8"
                   style={{ width: `${100 / cardsPerView}%` }}
                 >
-                  <div className="flex items-center gap-4 sm:gap-6">
+                  <div className="relative inline-block">
                     <span
-                      className="font-extrabold text-gray-200 leading-none select-none shrink-0"
+                      className="block font-extrabold text-gray-200 leading-none select-none"
                       style={{ fontSize: "clamp(90px, 11vw, 160px)" }}
                     >
                       {cat.number}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#2a2a72] leading-snug">
+                    <h3
+                      className="absolute top-3/4 whitespace-nowrap text-xl sm:text-2xl font-bold text-[#2a2a72]"
+                      style={{ left: "80%", transform: "translateY(-30%)" }}
+                    >                      
                       {cat.title}
                     </h3>
                   </div>

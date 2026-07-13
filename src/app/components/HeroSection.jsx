@@ -48,13 +48,12 @@ export default function BannerSection() {
       {/* Logo */}
       <div className="mb-3 flex items-center justify-center sm:mb-4">
         <Image
-          src="/common-logo.png"
+          src="/logo1.png"
           alt="Vels Vidyashram"
           width={1600}
           height={345}
           priority
-          className="h-auto w-[190px] object-contain sm:w-[230px] md:w-[270px] lg:w-[300px]"
-        />
+          className="h-auto w-[2700px] object-contain lg:w-[23px] lg:w-[750px] lg:w-[300px]"        />
       </div>
 
       {/* Banner Card */}

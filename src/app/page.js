@@ -1,5 +1,5 @@
 import About from './components/About';
-import CampusHighlight from './components/CampusHighlight';
+//import CampusHighlight from './components/CampusHighlight';
 import ExploreCampus from './components/ExploreCampus';
 import HeroSection from './components/HeroSection';
 //import WhyVels from './components/WhyVels';
@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import LetterSection from './components/LetterSection';
 import EmpoweringYoungMinds from './components/EmpoweringYoungMinds';
 import WhyChose from './components/WhyChose';
+import ExperienceTheFuture from './components/ExperienceTheFuture'
+import LearningForTommorrow from './components/LearningForTommorrow'
 
 /* ======================
    SEO CONSTANTS
@@ -56,8 +58,9 @@ export default function Home() {
       <EmpoweringYoungMinds />
       <WhyChose />
       <About />
+      <ExperienceTheFuture />
       <ExploreCampus />
-      <CampusHighlight />
+      <LearningForTommorrow />
       <Footer />
     </main>
   );

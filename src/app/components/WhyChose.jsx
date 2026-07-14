@@ -89,7 +89,7 @@ export default function VelsWhyChooseSlider({ categories = DEFAULT_CATEGORIES })
   return (
     <div ref={wrapperRef} style={{ height: wrapperHeight, position: "relative" }}>
       <section
-        className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-16 px-6 sm:px-10"
+        className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-5 px-6 sm:px-10"
         style={{
           backgroundImage: `url('/bg-2.png')`,
           backgroundSize: "cover",
@@ -97,13 +97,26 @@ export default function VelsWhyChooseSlider({ categories = DEFAULT_CATEGORIES })
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Decorative star cluster, top-right corner */}
+        {/* Decorative star cluster, top-right corner 
         <img
           src={'./star-group.png'}
           alt=""
           aria-hidden="true"
           className="absolute pointer-events-none select-none"
           style={{ top: "4%", right: "6%", width: "250px", height: "220px"  }}
+        /> */}
+        
+        <img
+          src="/star-group.png"
+          alt=""
+          aria-hidden="true"
+          className="hidden md:block absolute pointer-events-none select-none"
+          style={{
+          top: "4%",
+          right: "6%",
+          width: "250px",
+          height: "220px",
+          }}
         />
 
         <div className="relative max-w-6xl mx-auto w-full">

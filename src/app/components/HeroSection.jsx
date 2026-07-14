@@ -9,22 +9,29 @@ const slides = [
     title: "Welcome to",
     subtitle:
       "Vels Vidyashram\nSenior Secondary School - Thalambur",
-    image: "/thalambur/banner/thalambur-banner-1.png",
-    mobileImage: "/mb-1.png",
+    image: "/banner/banner-thalambur.png",
+    mobileImage: "/banner/m-thalambur.png",
   },
   {
     title: "Welcome to",
     subtitle:
       "Vels Vidyashram\nSenior Secondary School - Dargaroad",
-    image: "/banner/banner-3.png",
-    mobileImage: "/banner/mob-3.png",
+    image: "/banner/banner-darga.jpg",
+    mobileImage: "/banner/m-darga.jpg",
   },
   {
     title: "Welcome to",
     subtitle:
       "Vels Vidyashram\nKinder Garten School - Cantonment",
-    image: "/banner/banner3.jpg",
-    mobileImage: "/banner/banner3.jpg",
+    image: "/banner/banner-conton.png",
+    mobileImage: "/banner/m-conton.png",
+  },
+  {
+    title: "Welcome to",
+    subtitle:
+      "Vels Vidyashram\nSenior Secondary School - Pallavaram",
+    image: "/banner/banner-pallavaram.png",
+    mobileImage: "/banner/m-pallavaram.png",
   },
 ];
 

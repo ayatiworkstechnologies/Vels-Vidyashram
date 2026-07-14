@@ -1,21 +1,9 @@
 import React from "react";
 
-/**
- * LearningBanner
- * ──────────────
- * Matches the "Learning for Tomorrow" UI from the screenshot:
- *  • Deep-blue rounded card (border-radius 40px) with max-w-[1380px]
- *  • Left half  → dark blue gradient overlay + text + Register button
- *  • Right half → student photo(s) cut-in at the right edge, slight circular crop on far-right image
- *  • Mobile: stacks vertically, image hidden or shown below text
- *
- * Replace the src values with your actual asset paths.
- */
 
 const LearningBanner = () => {
   return (
     <section className="w-full px-4 py-6 sm:px-6 lg:px-8">
-      {/* ── Outer card ───────────────────────────────────────────── */}
       <div
         className="
           relative mx-auto w-full max-w-[1200px]
@@ -96,11 +84,7 @@ const LearningBanner = () => {
           </a>
         </div>
 
-        {/* ── Student images ───────────────────────────────────────
-              Two images placed in the right column.
-              • First student  : left-of-pair, visible from mid-md up
-              • Second student : right-edge, slightly "popping out" with
-                                 a full-height circle crop to match screenshot  */}
+        
         <div
           className="
             relative z-10

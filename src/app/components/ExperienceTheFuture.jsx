@@ -14,10 +14,10 @@ const ExperienceSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 -z-10 bg-white/5"></div>
 
-      {/* Watermark */}
+      {/* Watermark 
       <div className="pointer-events-none absolute top-14 left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[60px] font-bold tracking-wide text-black/5 md:text-[90px] lg:top-10 lg:text-[120px]">
         Admission Open
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-5xl px-6 text-center lg:px-0">

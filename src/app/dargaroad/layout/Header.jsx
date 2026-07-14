@@ -162,19 +162,22 @@ export default function Header() {
           </div>
 
           <div className="bg-white">
-            <div className="relative w-full max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-10 h-auto min-h-[92px] py-3 flex items-center justify-between gap-4">
-              <Link href="/dargaroad" className="flex items-center shrink min-w-0">
-                <Image
-                  src="/dargaroad/2.png"
-                  alt="Vels Vidyashram Darga Road"
-                  width={430}
-                  height={100}
-                  priority
-                  className="w-[260px] sm:w-[360px] h-auto object-contain"
-                />
-              </Link>
+            <div className="relative w-full max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-10 min-h-[92px] py-3 flex items-center justify-center lg:justify-between">
+              <Link
+    href="/dargaroad"
+    className="flex items-center justify-center lg:justify-start mx-auto lg:mx-0"
+  >
+    <Image
+      src="/dargaroad/2.png"
+      alt="Vels Vidyashram Darga Road"
+      width={430}
+      height={100}
+      priority
+      className="w-[240px] sm:w-[300px] lg:w-[430px] h-auto object-contain"
+    />
+  </Link>
 
-              <nav className="hidden lg:block flex-1 min-w-0">
+              <nav className="hidden lg:block flex-1">
                 <ul className="w-full flex items-center justify-end gap-1 xl:gap-2 text-[12px] xl:text-[13px] font-medium">
                   {navItems.map((item) => (
                     <DesktopNavItem key={item.label} item={item} pathname={pathname} />

@@ -113,17 +113,17 @@ export default function VelsDargaroad() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-          <h2
-            className={`text-3xl md:text-5xl text-white font-primary font-bold drop-shadow-2xl transition-all duration-1000 delay-300 ${
-              bannerVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            Welcome to Vels Vidyashram
-          </h2>
-        </div>
+        <div className="absolute inset-0 bg-black/10 flex items-center justify-center px-4">
+  <h2
+    className={`text-center text-2xl sm:text-3xl md:text-5xl text-white font-primary font-bold drop-shadow-2xl transition-all duration-1000 delay-300 ${
+      bannerVisible
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 translate-y-10"
+    }`}
+  >
+    Welcome to Vels Vidyashram
+  </h2>
+</div>
       </div>
 
       {/* ================= BOTTOM SECTION ================= */}

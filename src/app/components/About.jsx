@@ -4,6 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 
 const IMAGE_SRC = "/bg-3.png";
 
+// Native pixel dimensions of the background photo — used to keep the
+// box's aspect ratio identical to the image so it's never over-cropped.
+const IMAGE_WIDTH = 1280;
+const IMAGE_HEIGHT = 510;
+
 const BIO_CONTENT = [
   {
     type: "text",
@@ -103,80 +108,73 @@ export default function ChancellorProfile() {
 
   return (
     // Tall wrapper gives us room to scroll through while the box stays pinned.
-    <section ref={sectionRef} className="relative w-full" style={{ height: "420vh" }}>
-      <div className="sticky top-0 h-screen flex items-center justify-center px-3 sm:px-6 md:px-8">
-        <div className="relative w-full max-w-6xl h-[82vh] md:h-[640px] rounded-[26px] md:rounded-[32px] overflow-hidden shadow-2xl bg-slate-900">
-          {/* Background photo */}
+    <section ref={sectionRef} className="relative w-full bg-white" style={{ height: "420vh" }}>
+      <div className="sticky top-0 h-screen flex items-center justify-center px-2 sm:px-6 md:px-8 bg-white">
+        
+        <div className="relative w-full max-w-6xl flex items-stretch gap-2 sm:gap-3 md:gap-4">
+        {/* Rounded, clipped box — holds the photo and all overlaid content */}
+        <div className="relative flex-1 min-w-0 h-[68vh] sm:h-auto sm:aspect-[1280/510] sm:max-h-[85vh] rounded-[20px]">
+          {/* Background photo — fills the box edge-to-edge with no empty space */}
           <img
             src={"bg-3.png"}
             alt="Vels University campus with Dr. Ishari K. Ganesh"
             className="absolute inset-0 h-full w-full object-cover"
           />
 
-          {/* Dark gradient overlay, deepens slightly as you scroll */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(115deg, rgba(6,12,26,0.95) 0%, rgba(6,12,26,0.6) 40%, rgba(6,12,26,0.18) 68%, rgba(6,12,26,0.05) 100%)",
-              opacity: overlayOpacity,
-            }}
-          />
+          
 
           {/* HERO VIEW */}
           <div
-            className="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 md:px-14 pointer-events-none"
+            className="absolute inset-0 flex flex-col justify-center overflow-y-auto px-4 sm:px-10 md:px-14 py-6 pointer-events-none"
             style={{
               opacity: heroOpacity,
               transform: `translateY(${heroTranslateY}px)`,
             }}
           >
-            <h1 className="text-white font-extrabold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-2xl">
+            <h1 className="text-white font-extrabold leading-tight text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-2xl">
               Dr. Ishari K. Ganesh,
               <br className="hidden sm:block" /> M.Com., MBA., M.L., M.Phil., Ph.D.
             </h1>
 
-            <div className="mt-6 space-y-4 max-w-xl">
+            <div className="mt-5 space-y-3 max-w-xl">
               <div>
-                <p className="text-orange-400 font-bold uppercase tracking-wide text-sm sm:text-base">
+                <p className="text-orange-400 font-bold uppercase tracking-wide text-xs sm:text-sm">
                   Founder and Chancellor
                 </p>
-                <p className="text-white/90 text-xs sm:text-sm mt-1">
+                <p className="text-white/90 text-xs sm:text-sm mt-0.5">
                   VELS University, Chennai (Vels Institute of Science Technology and
                   Advanced Studies - VISTAS)
                 </p>
               </div>
               <div>
-                <p className="text-orange-400 font-bold uppercase tracking-wide text-sm sm:text-base">
+                <p className="text-orange-400 font-bold uppercase tracking-wide text-xs sm:text-sm">
                   Chairman
                 </p>
-                <p className="text-white/90 text-xs sm:text-sm mt-1">
+                <p className="text-white/90 text-xs sm:text-sm mt-0.5">
                   VELS Group of Institutions (India, Singapore, UK and UAE) and Vels
                   Film International Ltd
                 </p>
               </div>
               <div>
-                <p className="text-orange-400 font-bold uppercase tracking-wide text-sm sm:text-base">
+                <p className="text-orange-400 font-bold uppercase tracking-wide text-xs sm:text-sm">
                   President
                 </p>
-                <p className="text-white/90 text-xs sm:text-sm mt-1">
+                <p className="text-white/90 text-xs sm:text-sm mt-0.5">
                   Tamil Nadu Olympic Association &amp; Taekwondo Federation of India
                 </p>
               </div>
               <div>
-                <p className="text-orange-400 font-bold uppercase tracking-wide text-sm sm:text-base">
+                <p className="text-orange-400 font-bold uppercase tracking-wide text-xs sm:text-sm">
                   Member
                 </p>
-                <p className="text-white/90 text-xs sm:text-sm mt-1">
+                <p className="text-white/90 text-xs sm:text-sm mt-0.5">
                   Hindi Advisory Committee, Ministry of Women and Child Development,
                   Government of India
                 </p>
               </div>
             </div>
 
-            <span className="pointer-events-none mt-8 self-start rounded-full bg-white/15 backdrop-blur px-5 py-2 text-white text-sm font-medium border border-white/30">
-              Scroll
-            </span>
+            
           </div>
 
           {/* BIO VIEW (revealed on scroll, scrolls internally) */}
@@ -233,13 +231,14 @@ export default function ChancellorProfile() {
             </div>
           </div>
 
-          {/* Progress rail: grey track, orange fill grows with scroll */}
-          <div className="absolute right-3 md:right-5 top-6 bottom-6 w-[3px] md:w-1 bg-white/25 rounded-full overflow-hidden">
-            <div
-              className="absolute top-0 left-0 w-full bg-orange-400 rounded-full"
-              style={{ height: `${progress * 100}%` }}
-            />
-          </div>
+        </div>
+        {/* Progress rail — now lives outside the rounded/clipped box, not on top of the photo */}
+        <div className="relative w-[3px] md:w-1 shrink-0 bg-slate-200 rounded-full overflow-hidden">
+          <div
+            className="absolute top-0 left-0 w-full bg-orange-400 rounded-full"
+            style={{ height: `${progress * 100}%` }}
+          />
+        </div>
         </div>
       </div>
     </section>

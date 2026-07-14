@@ -135,7 +135,7 @@ export default function VelsWhyChooseSlider({ categories = DEFAULT_CATEGORIES })
                     </span>
                     <h3
                       className="absolute top-3/4 whitespace-nowrap text-xl sm:text-2xl font-bold text-[#2a2a72]"
-                      style={{ left: "80%", transform: "translateY(-30%)" }}
+                      style={{ left: "65%", transform: "translateY(-30%)" }}
                     >                      
                       {cat.title}
                     </h3>

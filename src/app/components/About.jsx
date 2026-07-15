@@ -1,24 +1,15 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 const DESKTOP_IMAGE_SRC = "/bg-3.png";
-const MOBILE_BIO_IMAGE_SRC = "/bg-9.png";
+const MOBILE_IMAGE_SRC = "/bg-9.png";
 const MOBILE_PORTRAIT_SRC = "/chairman.png";
-
-// Native pixel dimensions of the desktop (landscape) photo.
-const DESKTOP_IMAGE_WIDTH = 1280;
-const DESKTOP_IMAGE_HEIGHT = 510;
-const DESKTOP_ASPECT_RATIO = `${DESKTOP_IMAGE_WIDTH} / ${DESKTOP_IMAGE_HEIGHT}`;
-
-// Native pixel dimensions of the mobile bio background photo (bg-9.png).
-const MOBILE_IMAGE_WIDTH = 420;
-const MOBILE_IMAGE_HEIGHT = 600;
-const MOBILE_ASPECT_RATIO = `${MOBILE_IMAGE_WIDTH} / ${MOBILE_IMAGE_HEIGHT}`;
-
-// Native pixel dimensions of the cutout portrait used in the mobile intro card.
-const PORTRAIT_IMAGE_WIDTH = 420;
-const PORTRAIT_IMAGE_HEIGHT = 375;
 
 const TITLE_BLOCKS = [
   {
@@ -28,15 +19,18 @@ const TITLE_BLOCKS = [
   },
   {
     label: "Chairman",
-    desc: "VELS Group of Institutions (India, Singapore, UK and UAE) and Vels Film International Ltd",
+    desc:
+      "VELS Group of Institutions (India, Singapore, UK and UAE) and Vels Film International Ltd",
   },
   {
     label: "President",
-    desc: "Tamil Nadu Olympic Association & Taekwondo Federation of India",
+    desc:
+      "Tamil Nadu Olympic Association & Taekwondo Federation of India",
   },
   {
     label: "Member",
-    desc: "Hindi Advisory Committee, Ministry of Women and Child Development, Government of India",
+    desc:
+      "Hindi Advisory Committee, Ministry of Women and Child Development, Government of India",
   },
 ];
 
@@ -59,59 +53,84 @@ const BIO_CONTENT = [
   {
     type: "text",
     value:
-      "By 2008, Dr. Ishari K. Ganesh had successfully consolidated his efforts into the University of Vels, which now includes a diverse range of institutions, such as colleges of medicine, engineering, arts, science, and physiotherapy. The Vels Education Group has expanded its reach to manage dental and medical colleges and schools, with a presence extending to Singapore and England. Dr. Ishari K. Ganesh was also a pioneer in introducing marine science courses within India's private sector.",
+      "By 2008, Dr. Ishari K. Ganesh had successfully consolidated his efforts into the University of Vels, which now includes a diverse range of institutions, such as colleges of medicine, engineering, arts, science, and physiotherapy. The Vels Education Group has expanded its reach to manage dental and medical colleges and schools, with a presence extending to Singapore and England.",
   },
   {
     type: "text",
     value:
-      "His unwavering commitment to accessible education is evident in the numerous scholarships he has established, supporting sports, ex-servicemen, and children of the film industry. These initiatives have empowered students from modest backgrounds, providing them with essential resources to pursue their educational aspirations.",
+      "His unwavering commitment to accessible education is evident in the numerous scholarships he has established, supporting sports, ex-servicemen, and children of the film industry.",
   },
-  { type: "heading", value: "Chairman's Message" },
-  { type: "quote", value: "\u201cSky is the limit. Together let us achieve more.\u201d" },
+  {
+    type: "heading",
+    value: "Chairman's Message",
+  },
+  {
+    type: "quote",
+    value: "“Sky is the limit. Together let us achieve more.”",
+  },
   {
     type: "text",
     value:
-      "Guided by my father who inspired me to \u201cDream big, act fast, and think ahead,\u201d we are committed to dreaming bigger, acting faster, and\u2014most importantly\u2014thinking better. This mindset equips us to lead in education, healthcare, and entertainment, setting new benchmarks for excellence.",
+      "Guided by my father who inspired me to “Dream big, act fast, and think ahead,” we are committed to dreaming bigger, acting faster, and—most importantly—thinking better.",
   },
   {
     type: "text",
     value:
-      "At Vels Group of Institutions, we embody the spirit of this dynamic India across our diverse sectors: education, healthcare, and entertainment. Our mission transcends the creation of outstanding institutions; it is about fostering a brighter future for our country and the world. We are committed to empowering individuals to realize their dreams, take charge of their destinies, and unlock their unique potentials.",
+      "At Vels Group of Institutions, we embody the spirit of this dynamic India across education, healthcare, and entertainment. Our mission is to empower individuals to realize their dreams and unlock their unique potential.",
   },
 ];
 
-// Where the crossfade between hero and bio finishes on DESKTOP
-// (as a fraction of total scroll progress through the desktop section).
-const CROSSFADE_END = 0.16;
-
-// On the MOBILE bio card, this fraction of scroll progress is spent on the
-// right-to-left slide-in of the text. The remainder scrolls the text
-// vertically inside the card so the long copy is fully reachable.
-const MOBILE_SLIDE_FRACTION = 0.25;
-const MOBILE_SLIDE_START_PERCENT = 100;
-
-function clamp01(n) {
-  return Math.min(Math.max(n, 0), 1);
+function clamp(value, min = 0, max = 1) {
+  return Math.min(Math.max(value, min), max);
 }
 
-function renderBioBlocks(blocks, { headingClass, quoteClass, textClass }) {
-  return blocks.map((block, i) => {
+function renderBioBlocks(blocks) {
+  return blocks.map((block, index) => {
+    const key = `${block.type}-${index}`;
+
     if (block.type === "heading") {
       return (
-        <h3 key={i} className={headingClass}>
+        <h3
+          key={key}
+          className="
+            mb-3 mt-8
+            break-words
+            text-lg font-bold leading-tight text-white
+            sm:text-xl
+          "
+        >
           {block.value}
         </h3>
       );
     }
+
     if (block.type === "quote") {
       return (
-        <p key={i} className={quoteClass}>
+        <p
+          key={key}
+          className="
+            my-4
+            break-words
+            text-base font-semibold italic leading-relaxed
+            text-orange-300
+            sm:text-lg
+          "
+        >
           {block.value}
         </p>
       );
     }
+
     return (
-      <p key={i} className={textClass}>
+      <p
+        key={key}
+        className="
+          mb-4
+          break-words
+          text-sm leading-6 text-white/90
+          sm:text-base sm:leading-7
+        "
+      >
         {block.value}
       </p>
     );
@@ -119,306 +138,449 @@ function renderBioBlocks(blocks, { headingClass, quoteClass, textClass }) {
 }
 
 export default function ChancellorProfile() {
-  // ---- Desktop (bg-3.png) refs/state — unchanged behavior ----
   const sectionRef = useRef(null);
-  const bioWindowRef = useRef(null);
-  const bioTextRef = useRef(null);
+  const textWindowRef = useRef(null);
+  const textContentRef = useRef(null);
+  const animationFrameRef = useRef(null);
+
   const [progress, setProgress] = useState(0);
-  const [bioMaxScroll, setBioMaxScroll] = useState(0);
+  const [maxTextScroll, setMaxTextScroll] = useState(0);
 
-  // ---- Mobile bio card (bg-9.png) refs/state — new, independent section ----
-  const mobileSectionRef = useRef(null);
-  const mobileBioWindowRef = useRef(null);
-  const mobileBioTextRef = useRef(null);
-  const [mobileProgress, setMobileProgress] = useState(0);
-  const [mobileBioMaxScroll, setMobileBioMaxScroll] = useState(0);
+  const measureContent = () => {
+    const textWindow = textWindowRef.current;
+    const textContent = textContentRef.current;
 
-  // Measure how far the desktop bio text needs to travel to fully reveal itself.
-  useEffect(() => {
-    function measure() {
-      if (bioTextRef.current && bioWindowRef.current) {
-        const max =
-          bioTextRef.current.scrollHeight - bioWindowRef.current.clientHeight;
-        setBioMaxScroll(Math.max(max, 0));
-      }
+    if (!textWindow || !textContent) {
+      return;
     }
-    measure();
-    const raf = requestAnimationFrame(measure);
-    const timeout = setTimeout(measure, 300);
-    const ro = new ResizeObserver(measure);
-    if (bioWindowRef.current) ro.observe(bioWindowRef.current);
-    if (bioTextRef.current) ro.observe(bioTextRef.current);
-    window.addEventListener("resize", measure);
+
+    const visibleHeight = textWindow.clientHeight;
+    const fullContentHeight = textContent.scrollHeight;
+
+    const calculatedScrollDistance = Math.max(
+      fullContentHeight - visibleHeight,
+      0,
+    );
+
+    setMaxTextScroll(calculatedScrollDistance);
+  };
+
+  useLayoutEffect(() => {
+    measureContent();
+  }, []);
+
+  useEffect(() => {
+    const frameOne = requestAnimationFrame(() => {
+      measureContent();
+
+      requestAnimationFrame(() => {
+        measureContent();
+      });
+    });
+
+    const delayedMeasurement = setTimeout(() => {
+      measureContent();
+    }, 500);
+
+    const resizeObserver = new ResizeObserver(() => {
+      measureContent();
+    });
+
+    if (textWindowRef.current) {
+      resizeObserver.observe(textWindowRef.current);
+    }
+
+    if (textContentRef.current) {
+      resizeObserver.observe(textContentRef.current);
+    }
+
+    window.addEventListener("resize", measureContent);
+
     return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(timeout);
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
+      cancelAnimationFrame(frameOne);
+      clearTimeout(delayedMeasurement);
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", measureContent);
     };
   }, []);
 
-  // Same measurement, for the mobile bio card.
   useEffect(() => {
-    function measure() {
-      if (mobileBioTextRef.current && mobileBioWindowRef.current) {
-        const max =
-          mobileBioTextRef.current.scrollHeight -
-          mobileBioWindowRef.current.clientHeight;
-        setMobileBioMaxScroll(Math.max(max, 0));
+    const updateScroll = () => {
+      const section = sectionRef.current;
+
+      if (!section) {
+        return;
       }
-    }
-    measure();
-    const raf = requestAnimationFrame(measure);
-    const timeout = setTimeout(measure, 300);
-    const ro = new ResizeObserver(measure);
-    if (mobileBioWindowRef.current) ro.observe(mobileBioWindowRef.current);
-    if (mobileBioTextRef.current) ro.observe(mobileBioTextRef.current);
-    window.addEventListener("resize", measure);
+
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+
+      animationFrameRef.current = requestAnimationFrame(() => {
+        const sectionRect = section.getBoundingClientRect();
+
+        const totalScrollableDistance = Math.max(
+          section.offsetHeight - window.innerHeight,
+          1,
+        );
+
+        const travelledDistance = Math.max(-sectionRect.top, 0);
+
+        const nextProgress = clamp(
+          travelledDistance / totalScrollableDistance,
+        );
+
+        setProgress(nextProgress);
+      });
+    };
+
+    updateScroll();
+
+    window.addEventListener("scroll", updateScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateScroll);
+
     return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(timeout);
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+
+      window.removeEventListener("scroll", updateScroll);
+      window.removeEventListener("resize", updateScroll);
     };
   }, []);
 
-  // Track scroll progress through both sections (whichever is present/visible
-  // contributes real height; the hidden one just reports 0 harmlessly).
-  useEffect(() => {
-    function onScroll() {
-      const desktopEl = sectionRef.current;
-      if (desktopEl) {
-        const rect = desktopEl.getBoundingClientRect();
-        const total = desktopEl.offsetHeight - window.innerHeight;
-        const scrolled = -rect.top;
-        setProgress(total > 0 ? clamp01(scrolled / total) : 0);
-      }
+  /*
+   * The text starts moving after a small entry pause
+   * and reaches the exact bottom before the section ends.
+   */
+  const textProgress = clamp((progress - 0.04) / 0.91);
 
-      const mobileEl = mobileSectionRef.current;
-      if (mobileEl) {
-        const rect = mobileEl.getBoundingClientRect();
-        const total = mobileEl.offsetHeight - window.innerHeight;
-        const scrolled = -rect.top;
-        setMobileProgress(total > 0 ? clamp01(scrolled / total) : 0);
-      }
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const textTranslateY = -(textProgress * maxTextScroll);
 
-  // ---- Desktop crossfade math (unchanged) ----
-  const heroProgress = clamp01(progress / CROSSFADE_END);
-  const heroOpacity = 1 - heroProgress;
-  const heroTranslateY = -heroProgress * 24;
-  const bioOpacity = clamp01((progress - 0.05) / (CROSSFADE_END - 0.02));
-  const bioSectionProgress = clamp01(
-    (progress - CROSSFADE_END) / (1 - CROSSFADE_END)
+  // Give the pinned card enough travel for its actual text instead of
+  // multiplying very tall desktop viewports by a fixed 460vh.
+  const sectionScrollDistance = Math.max(
+    Math.ceil(maxTextScroll * 2.25),
+    1600,
   );
-  const bioTranslateY = -bioSectionProgress * bioMaxScroll;
-
-  // ---- Mobile bio card math: slide in from the right, then scroll ----
-  const mobileSlideProgress = clamp01(mobileProgress / MOBILE_SLIDE_FRACTION);
-  const mobileScrollProgress = clamp01(
-    (mobileProgress - MOBILE_SLIDE_FRACTION) / (1 - MOBILE_SLIDE_FRACTION)
-  );
-  const mobileTranslateXPercent =
-    (1 - mobileSlideProgress) * MOBILE_SLIDE_START_PERCENT;
-  const mobileTranslateY = -mobileScrollProgress * mobileBioMaxScroll;
 
   return (
     <>
-      {/* =========================================================
-          MOBILE ONLY — intro card, then a separate bio image card.
-          ========================================================= */}
-      <div className="sm:hidden w-full bg-white">
-        {/* Bio card: bg-9.png as background, ALL content (name, titles,
-            and every bio paragraph) filled inside the image, slider rail
-            outside the image. Pinned while the text slides in from the
-            right and then scrolls internally. */}
-        <section
-          ref={mobileSectionRef}
-          className="relative w-full bg-white"
-          style={{ height: "420vh" }}
-        >
-          <div className="sticky top-0 py-4 flex items-center justify-center px-2">
-            <div className="relative w-full flex items-stretch gap-2">
-              <div
-                className="relative flex-1 min-w-0 max-h-[85vh] rounded-[20px] overflow-hidden"
-                style={{ aspectRatio: MOBILE_ASPECT_RATIO }}
-              >
-                <img
-                  src={MOBILE_BIO_IMAGE_SRC}
-                  alt="Vels University campus"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-
-                {/* Full-height scrim so the paragraphs stay readable
-                    against the building/lawn photo behind them. */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/65 pointer-events-none" />
-
-                <div
-                  ref={mobileBioWindowRef}
-                  className="absolute inset-0 overflow-hidden"
-                >
-                  <div
-                    ref={mobileBioTextRef}
-                    className="px-6 py-8"
-                    style={{
-                      transform: `translateX(${mobileTranslateXPercent}%) translateY(${mobileTranslateY}px)`,
-                    }}
-                  >
-                    <h1 className="text-white font-extrabold leading-tight text-xl mb-4">
-                      Dr. Ishari K. Ganesh,
-                      <br /> M.Com., MBA., M.L., M.Phil., Ph.D.
-                    </h1>
-
-                    <div className="space-y-3 mb-6">
-                      {TITLE_BLOCKS.map((block) => (
-                        <div key={block.label}>
-                          <p className="text-orange-400 font-bold uppercase tracking-wide text-[11px]">
-                            {block.label}
-                          </p>
-                          <p className="text-white/90 text-xs mt-0.5">
-                            {block.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <p className="text-orange-400 font-bold uppercase tracking-wide text-xs">
-                      Dr. Ishari K. Ganesh
-                    </p>
-                    <p className="text-white/80 text-xs mt-1 mb-1">
-                      Founder &amp; Chancellor, Vels University | Chairman,
-                      Vels Group of Institutions
-                    </p>
-
-                    {renderBioBlocks(BIO_CONTENT, {
-                      headingClass:
-                        "text-white font-bold text-lg mt-8 mb-2",
-                      quoteClass:
-                        "text-orange-300 italic font-semibold text-base my-4",
-                      textClass:
-                        "text-white/85 text-sm leading-relaxed mb-4",
-                    })}
-                  </div>
-                </div>
-              </div>
-
-              {/* Progress rail — outside the image */}
-              <div className="relative w-[3px] shrink-0 bg-slate-200 rounded-full overflow-hidden">
-                <div
-                  className="absolute top-0 left-0 w-full bg-orange-400 rounded-full"
-                  style={{ height: `${mobileProgress * 100}%` }}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Portrait: chairman.png now comes AFTER the bio card, as its
-            own standalone block. */}
-        <div className="w-full flex items-center justify-center px-4 py-8">
-          <img
-            src={MOBILE_PORTRAIT_SRC}
-            alt="Dr. Ishari K. Ganesh"
-            className="w-[100%] h-auto object-contain"
-            style={{
-              aspectRatio: `${PORTRAIT_IMAGE_WIDTH} / ${PORTRAIT_IMAGE_HEIGHT}`,
-            }}
-          />
-        </div>
-      </div>
-
-      {/* =========================================================
-          DESKTOP ONLY — original bg-3.png crossfade hero/bio box.
-          ========================================================= */}
       <section
         ref={sectionRef}
-        className="hidden sm:block relative w-full bg-white"
-        style={{ height: "420vh" }}
+        className="relative w-full bg-white"
+        style={{
+          height: `calc(100svh + ${sectionScrollDistance}px)`,
+        }}
       >
-        <div className="sticky top-0 py-4 sm:py-6 flex items-center justify-center px-2 sm:px-6 md:px-8 bg-white">
-          <div className="relative w-full max-w-6xl flex items-stretch gap-2 sm:gap-3 md:gap-4">
-            <div
-              className="relative flex-1 min-w-0 max-h-[85vh] rounded-[20px] overflow-hidden"
-              style={{ aspectRatio: DESKTOP_ASPECT_RATIO }}
+        <div
+          className="
+            sticky top-0
+            flex h-screen w-full
+            items-center justify-center
+            overflow-hidden
+            px-3 py-5
+            sm:px-6 sm:py-6
+            lg:px-10
+          "
+        >
+          <div
+            className="
+              flex h-[82svh] w-full
+              max-w-[1920px]
+              items-stretch
+              gap-3
+              sm:h-[min(80svh,760px)]
+              md:gap-4
+            "
+          >
+            {/* Main card */}
+            <article
+              className="
+                relative min-w-0 flex-1
+                overflow-hidden
+                rounded-[24px]
+                bg-slate-700
+                shadow-[0_25px_80px_rgba(15,23,42,0.16)]
+                md:rounded-[30px]
+              "
             >
-              <img
-                src={DESKTOP_IMAGE_SRC}
-                alt="Vels University campus with Dr. Ishari K. Ganesh"
-                className="absolute inset-0 h-full w-full object-cover"
+              {/* Background image */}
+              <picture className="absolute inset-0 block h-full w-full">
+                <source
+                  media="(max-width: 639px)"
+                  srcSet={MOBILE_IMAGE_SRC}
+                />
+
+                <img
+                  src={DESKTOP_IMAGE_SRC}
+                  alt="Dr. Ishari K. Ganesh"
+                  onLoad={measureContent}
+                  className="
+                    h-full w-full
+                    object-cover object-center
+                    sm:scale-[1.15]
+                  "
+                />
+              </picture>
+
+              {/*
+                Transparent readability layer.
+                This is not a solid black background.
+              */}
+              <div
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute inset-y-0 left-0
+                  w-full
+                  bg-gradient-to-r
+                  from-slate-950/85
+                  via-slate-900/55
+                  to-slate-900/20
+                  sm:w-[75%]
+                  sm:from-slate-950/80
+                  sm:via-slate-900/45
+                  sm:to-transparent
+                  md:w-[72%]
+                  lg:w-[68%]
+                "
               />
 
-              <div className="absolute inset-x-0 top-0 h-1/3 pointer-events-none" />
-
-              {/* HERO VIEW */}
+              {/* Subtle top and bottom fades */}
               <div
-                className="absolute inset-0 flex flex-col justify-center overflow-y-auto px-10 md:px-14 pt-6 pb-6 pointer-events-none"
-                style={{
-                  opacity: heroOpacity,
-                  transform: `translateY(${heroTranslateY}px)`,
-                }}
-              >
-                <h1 className="text-white font-extrabold leading-tight text-2xl md:text-3xl lg:text-4xl max-w-2xl">
-                  Dr. Ishari K. Ganesh,
-                  <br /> M.Com., MBA., M.L., M.Phil., Ph.D.
-                </h1>
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute inset-x-0 top-0 z-10
+                  h-16
+                  bg-gradient-to-b
+                  from-slate-950/25
+                  to-transparent
+                "
+              />
 
-                <div className="mt-5 space-y-3 max-w-xl">
-                  {TITLE_BLOCKS.map((block) => (
-                    <div key={block.label}>
-                      <p className="text-orange-400 font-bold uppercase tracking-wide text-sm">
-                        {block.label}
-                      </p>
-                      <p className="text-white/90 text-sm mt-0.5">
-                        {block.desc}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* BIO VIEW (revealed on scroll, scrolls internally) */}
               <div
-                ref={bioWindowRef}
-                className="absolute inset-0 overflow-hidden"
-                style={{ opacity: bioOpacity }}
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute inset-x-0 bottom-0 z-10
+                  h-16
+                  bg-gradient-to-t
+                  from-slate-950/25
+                  to-transparent
+                "
+              />
+
+              {/* Clipping window */}
+              <div
+                ref={textWindowRef}
+                className="
+                  absolute inset-0 z-20
+                  overflow-hidden
+                  rounded-[inherit]
+                "
               >
+                {/* Moving text content */}
                 <div
-                  ref={bioTextRef}
-                  className="px-10 md:px-16 py-10 md:py-14 max-w-3xl"
-                  style={{ transform: `translateY(${bioTranslateY}px)` }}
+                  ref={textContentRef}
+                  className="
+                    box-border
+                    w-full max-w-full
+                    overflow-hidden
+                    px-5 pb-10 pt-8
+                    sm:w-[68%]
+                    sm:max-w-[68%]
+                    sm:px-10 sm:pb-12 sm:pt-10
+                    md:w-[65%]
+                    md:max-w-[65%]
+                    md:px-12 md:py-12
+                    lg:w-[63%]
+                    lg:max-w-[63%]
+                    lg:px-16
+                    xl:px-20
+                  "
+                  style={{
+                    transform: `translate3d(0, ${textTranslateY}px, 0)`,
+                    willChange: "transform",
+                  }}
                 >
-                  <p className="text-orange-400 font-bold uppercase tracking-wide text-sm">
-                    Dr. Ishari K. Ganesh
-                  </p>
-                  <p className="text-white/80 text-sm mt-1 mb-1">
-                    Founder &amp; Chancellor, Vels University | Chairman,
-                    Vels Group of Institutions
-                  </p>
+                  {/* Profile heading */}
+                  <header className="pb-8">
+                    <h1
+                      className="
+                        max-w-2xl
+                        break-words
+                        text-2xl font-extrabold leading-tight
+                        text-white
+                        sm:text-3xl
+                        md:text-4xl
+                        lg:text-[44px]
+                      "
+                    >
+                      Dr. Ishari K. Ganesh,
+                      <br />
+                      <span className="inline-block">
+                        M.Com., MBA., M.L., M.Phil., Ph.D.
+                      </span>
+                    </h1>
+                  </header>
 
-                  {renderBioBlocks(BIO_CONTENT, {
-                    headingClass: "text-white font-bold text-xl mt-8 mb-2",
-                    quoteClass:
-                      "text-orange-300 italic font-semibold text-lg my-4",
-                    textClass: "text-white/85 text-base leading-relaxed mb-4",
-                  })}
+                  {/* Designations */}
+                  <div
+                    className="
+                      space-y-5
+                      border-t border-white/30
+                      pb-9 pt-7
+                    "
+                  >
+                    {TITLE_BLOCKS.map((block) => (
+                      <div
+                        key={block.label}
+                        className="min-w-0 max-w-2xl"
+                      >
+                        <p
+                          className="
+                            break-words
+                            text-xs font-bold uppercase
+                            tracking-wide text-orange-400
+                            sm:text-sm
+                          "
+                        >
+                          {block.label}
+                        </p>
+
+                        <p
+                          className="
+                            mt-1
+                            break-words
+                            text-xs leading-relaxed text-white
+                            sm:text-sm
+                          "
+                        >
+                          {block.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Biography */}
+                  <div className="border-t border-white/30 pt-8">
+                    <p
+                      className="
+                        break-words
+                        text-xs font-bold uppercase
+                        tracking-wide text-orange-400
+                        sm:text-sm
+                      "
+                    >
+                      Dr. Ishari K. Ganesh
+                    </p>
+
+                    <p
+                      className="
+                        mb-7 mt-1
+                        break-words
+                        text-xs leading-relaxed text-white/90
+                        sm:text-sm
+                      "
+                    >
+                      Founder &amp; Chancellor, Vels University |
+                      Chairman, Vels Group of Institutions
+                    </p>
+
+                    {renderBioBlocks(BIO_CONTENT)}
+                  </div>
+
+                  {/*
+                    Bottom spacing ensures the final paragraph
+                    remains completely visible inside the card.
+                  */}
+                  <div
+                    aria-hidden="true"
+                    className="h-10 sm:h-14"
+                  />
                 </div>
               </div>
-            </div>
 
-            {/* Progress rail — outside the image */}
-            <div className="relative w-1 shrink-0 bg-slate-200 rounded-full overflow-hidden">
+              {/* Mobile scroll hint */}
               <div
-                className="absolute top-0 left-0 w-full bg-orange-400 rounded-full"
-                style={{ height: `${progress * 100}%` }}
+                className="
+                  pointer-events-none
+                  absolute bottom-4 right-4 z-30
+                  flex items-center gap-2
+                  rounded-full
+                  border border-white/20
+                  bg-white/10
+                  px-3 py-1.5
+                  text-[10px] font-semibold uppercase
+                  tracking-[0.12em] text-white/90
+                  backdrop-blur-md
+                  sm:hidden
+                "
+              >
+                <span>Scroll</span>
+
+                <span
+                  className="
+                    block h-1.5 w-1.5
+                    rounded-full bg-orange-400
+                  "
+                />
+              </div>
+            </article>
+
+            {/* Scroll progress indicator */}
+            <div
+              className="
+                relative
+                w-[4px] shrink-0
+                overflow-hidden
+                rounded-full
+                bg-slate-200
+                md:w-[5px]
+              "
+            >
+              <div
+                className="
+                  absolute left-0 top-0
+                  w-full
+                  rounded-full
+                  bg-orange-400
+                "
+                style={{
+                  height: `${progress * 100}%`,
+                  willChange: "height",
+                }}
               />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Mobile chairman portrait */}
+      <div
+        className="
+          flex w-full
+          items-center justify-center
+          bg-white
+          px-4 py-8
+          sm:hidden
+        "
+      >
+        <img
+          src={MOBILE_PORTRAIT_SRC}
+          alt="Dr. Ishari K. Ganesh"
+          className="
+            h-auto w-full
+            max-w-[420px]
+            object-contain
+          "
+        />
+      </div>
     </>
   );
 }

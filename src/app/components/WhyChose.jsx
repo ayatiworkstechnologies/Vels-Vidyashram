@@ -1,8 +1,12 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-//import bgTexture from "./bg-2.png";
-//import starGroup from "./star-group.png";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 const DEFAULT_CATEGORIES = [
   {
@@ -49,127 +53,340 @@ const DEFAULT_CATEGORIES = [
   },
 ];
 
-export default function VelsWhyChooseSlider({ categories = DEFAULT_CATEGORIES }) {
-  const [progress, setProgress] = useState(0); // 0 to 1, driven by scroll
-  const [cardsPerView, setCardsPerView] = useState(2);
+export default function VelsWhyChooseSlider({
+  categories = DEFAULT_CATEGORIES,
+}) {
   const wrapperRef = useRef(null);
+  const sectionRef = useRef(null);
+  const animationFrameRef = useRef(null);
 
-  useEffect(() => {
-    function updateCardsPerView() {
-      setCardsPerView(window.innerWidth < 768 ? 1 : 2);
+  const [progress, setProgress] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(2);
+  const [sectionHeight, setSectionHeight] = useState(0);
+  const [scrollDistance, setScrollDistance] = useState(0);
+
+  const maximumIndex = Math.max(
+    0,
+    categories.length - cardsPerView
+  );
+
+  /**
+   * Update card count and vertical scroll distance.
+   *
+   * The scroll distance is deliberately limited so that large
+   * monitors do not produce a huge blank area.
+   */
+  const updateResponsiveValues = useCallback(() => {
+    const width = window.innerWidth;
+
+    let nextCardsPerView = 2;
+    let distancePerStep = 75;
+    let maximumScrollDistance = 420;
+
+    if (width < 640) {
+      nextCardsPerView = 1;
+      distancePerStep = 90;
+      maximumScrollDistance = 540;
+    } else if (width < 768) {
+      nextCardsPerView = 1;
+      distancePerStep = 85;
+      maximumScrollDistance = 500;
+    } else if (width < 1024) {
+      nextCardsPerView = 2;
+      distancePerStep = 80;
+      maximumScrollDistance = 440;
+    } else if (width < 1440) {
+      nextCardsPerView = 2;
+      distancePerStep = 75;
+      maximumScrollDistance = 400;
+    } else {
+      nextCardsPerView = 2;
+      distancePerStep = 65;
+      maximumScrollDistance = 340;
     }
-    updateCardsPerView();
-    window.addEventListener("resize", updateCardsPerView);
-    return () => window.removeEventListener("resize", updateCardsPerView);
+
+    const nextMaximumIndex = Math.max(
+      0,
+      categories.length - nextCardsPerView
+    );
+
+    const calculatedDistance =
+      nextMaximumIndex * distancePerStep;
+
+    setCardsPerView(nextCardsPerView);
+
+    setScrollDistance(
+      Math.min(calculatedDistance, maximumScrollDistance)
+    );
+  }, [categories.length]);
+
+  /**
+   * Measure the natural content height.
+   */
+  const measureSection = useCallback(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    setSectionHeight(section.offsetHeight);
   }, []);
 
-  useEffect(() => {
-    function onScroll() {
-      const wrapper = wrapperRef.current;
-      if (!wrapper) return;
+  useLayoutEffect(() => {
+    updateResponsiveValues();
+    measureSection();
 
-      const rect = wrapper.getBoundingClientRect();
-      const scrollableHeight = wrapper.offsetHeight - window.innerHeight;
-      if (scrollableHeight <= 0) return;
+    const section = sectionRef.current;
 
-      const raw = -rect.top / scrollableHeight;
-      const clamped = Math.min(Math.max(raw, 0), 1);
-      setProgress(clamped);
+    if (!section) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      measureSection();
+    });
+
+    resizeObserver.observe(section);
+
+    const handleResize = () => {
+      updateResponsiveValues();
+      measureSection();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [measureSection, updateResponsiveValues]);
+
+  /**
+   * Calculate animation progress from wrapper scroll position.
+   */
+  const updateScrollProgress = useCallback(() => {
+    const wrapper = wrapperRef.current;
+
+    if (!wrapper || scrollDistance <= 0) {
+      setProgress(0);
+      return;
     }
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const wrapperRect = wrapper.getBoundingClientRect();
 
-  const maxIndex = Math.max(0, categories.length - cardsPerView);
-  const translatePct = progress * maxIndex * (100 / cardsPerView);
-  const wrapperHeight = `${100 + maxIndex * 45}vh`;
+    const rawProgress = -wrapperRect.top / scrollDistance;
+
+    const clampedProgress = Math.min(
+      Math.max(rawProgress, 0),
+      1
+    );
+
+    setProgress(clampedProgress);
+  }, [scrollDistance]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+
+      animationFrameRef.current = requestAnimationFrame(
+        updateScrollProgress
+      );
+    };
+
+    updateScrollProgress();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [updateScrollProgress]);
+
+  /**
+   * Move one complete card for every completed index.
+   */
+  const translatePercentage =
+    progress * maximumIndex * (100 / cardsPerView);
+
+  /**
+   * Natural section height + only the required short scroll area.
+   */
+  const wrapperHeight =
+    sectionHeight > 0
+      ? sectionHeight + scrollDistance
+      : "auto";
 
   return (
-    <div ref={wrapperRef} style={{ height: wrapperHeight, position: "relative" }}>
+    <div
+      ref={wrapperRef}
+      className="relative w-full"
+      style={{
+        height:
+          typeof wrapperHeight === "number"
+            ? `${wrapperHeight}px`
+            : wrapperHeight,
+      }}
+    >
       <section
-        className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-5 px-6 sm:px-10"
+        ref={sectionRef}
+        className="
+          sticky top-0 w-full overflow-hidden
+          px-4 py-10
+          sm:px-6 sm:py-12
+          md:px-10 md:py-14
+          lg:px-12 lg:py-16
+          xl:px-16 xl:py-16
+          2xl:py-18
+        "
         style={{
-          backgroundImage: `url('/bg-2.png')`,
+          backgroundImage: "url('/bg-2.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Decorative star cluster, top-right corner 
-        <img
-          src={'./star-group.png'}
-          alt=""
-          aria-hidden="true"
-          className="absolute pointer-events-none select-none"
-          style={{ top: "4%", right: "6%", width: "250px", height: "220px"  }}
-        /> */}
-        
+        {/* Decorative stars */}
         <img
           src="/star-group.png"
           alt=""
           aria-hidden="true"
-          className="hidden md:block absolute pointer-events-none select-none"
-          style={{
-          top: "4%",
-          right: "6%",
-          width: "250px",
-          height: "220px",
-          }}
+          className="
+            pointer-events-none absolute right-[4%] top-[4%]
+            hidden h-auto w-[140px] select-none
+            md:block
+            lg:w-[180px]
+            xl:w-[210px]
+            2xl:w-[230px]
+          "
         />
 
-        <div className="relative max-w-6xl mx-auto w-full">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#f2994a] mb-14">
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          {/* Heading */}
+          <h2
+            className="
+              mb-8 text-2xl font-bold leading-tight text-[#F2994A]
+              sm:mb-9 sm:text-3xl
+              md:mb-10 md:text-4xl
+              lg:mb-12
+            "
+          >
             Why Choose Vels Vidyashram?
           </h2>
 
-          {/* Scroll-driven sliding window */}
-          <div className="overflow-hidden">
+          {/* Slider viewport */}
+          <div className="w-full overflow-hidden">
             <div
-              className="flex"
+              className="flex will-change-transform"
               style={{
-                transform: `translateX(-${translatePct}%)`,
-                transition: "transform 80ms linear",
+                transform: `translate3d(-${translatePercentage}%, 0, 0)`,
               }}
             >
-              {categories.map((cat, i) => (
-                <div
-                  key={i}
-                  className="shrink-0 px-4 sm:px-8"
-                  style={{ width: `${100 / cardsPerView}%` }}
+              {categories.map((category, index) => (
+                <article
+                  key={`${category.number}-${index}`}
+                  className="
+                    box-border shrink-0 px-1
+                    sm:px-3
+                    md:px-4
+                    lg:px-6
+                    xl:px-8
+                  "
+                  style={{
+                    width: `${100 / cardsPerView}%`,
+                  }}
                 >
-                  <div className="relative inline-block">
-                    <span
-                      className="block font-extrabold text-gray-200 leading-none select-none"
-                      style={{ fontSize: "clamp(90px, 11vw, 160px)" }}
+                  <div className="w-full">
+                    {/* Number and title */}
+                    <div className="relative pb-3 sm:pb-4">
+                      <span
+                        className="
+                          block select-none font-extrabold
+                          leading-none text-gray-200
+                        "
+                        style={{
+                          fontSize: "clamp(76px, 8vw, 140px)",
+                        }}
+                      >
+                        {category.number}
+                      </span>
+
+                      <h3
+                        className="
+                          absolute bottom-0 left-[18%]
+                          max-w-[80%]
+                          text-lg font-bold leading-tight
+                          text-[#2A2A72]
+
+                          sm:left-[22%]
+                          sm:max-w-[77%]
+                          sm:text-xl
+
+                          md:left-[24%]
+                          md:max-w-[74%]
+                          md:text-2xl
+
+                          lg:left-[27%]
+                          lg:max-w-[70%]
+
+                          xl:left-[25%]
+                          xl:text-[26px]
+                        "
+                      >
+                        {category.title}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <p
+                      className="
+                        mt-5 max-w-lg text-sm leading-6
+                        text-gray-500
+
+                        sm:mt-6
+                        sm:text-[15px]
+                        sm:leading-7
+
+                        md:mt-7
+
+                        lg:text-base
+                        lg:leading-8
+                      "
                     >
-                      {cat.number}
-                    </span>
-                    <h3
-                      className="absolute top-3/4 whitespace-nowrap text-xl sm:text-2xl font-bold text-[#2a2a72]"
-                      style={{ left: "65%", transform: "translateY(-30%)" }}
-                    >                      
-                      {cat.title}
-                    </h3>
+                      {category.description}
+                    </p>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mt-4 max-w-md">
-                    {cat.description}
-                  </p>
-                </div>
+                </article>
               ))}
             </div>
           </div>
 
-          {/* Thin grey/orange progress line, replacing arrow controls */}
-          <div className="mt-10 max-w-xs h-px bg-gray-200 relative overflow-hidden">
+          {/* Progress bar */}
+          <div className="mt-8 w-full sm:mt-9 md:mt-10">
             <div
-              className="absolute inset-y-0 left-0 bg-[#f2994a]"
-              style={{
-                width: `${Math.max(8, progress * 100)}%`,
-                transition: "width 80ms linear",
-              }}
-            />
+              className="
+                relative h-1 w-full overflow-hidden
+                rounded-full bg-[#E7ECF3]
+              "
+            >
+              <div
+                className="
+                  absolute inset-y-0 left-0
+                  rounded-full bg-[#F28C00]
+                  will-change-[width]
+                "
+                style={{
+                  width: `${progress * 100}%`,
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -2,8 +2,7 @@ import React from "react";
 
 const ExperienceSection = () => {
   return (
-    <section className="relative flex min-h-[450px] w-full items-center justify-center overflow-hidden py-16 md:min-h-[500px] lg:min-h-[560px] lg:py-20">
-
+    <section className="relative w-full overflow-hidden py-16 lg:py-20">
       {/* Background Image */}
       <img
         src="/bg-4.png"
@@ -12,16 +11,10 @@ const ExperienceSection = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 -z-10 bg-white/5"></div>
-
-      {/* Watermark 
-      <div className="pointer-events-none absolute top-14 left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[60px] font-bold tracking-wide text-black/5 md:text-[90px] lg:top-10 lg:text-[120px]">
-        Admission Open
-      </div> */}
+      <div className="absolute inset-0 -z-10 bg-white/5" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl px-6 text-center lg:px-0">
-
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center lg:px-0">
         <h2 className="mb-8 text-[28px] font-bold text-[#2E3192] md:text-[34px] lg:text-[42px]">
           Experience the Future of Learning
         </h2>
@@ -33,11 +26,11 @@ const ExperienceSection = () => {
         </p>
 
         <p className="mx-auto mt-7 max-w-3xl text-sm tracking-wide text-gray-600 md:text-base">
-          "Visit Any of Our Four Campuses and Begin Your Child's Journey Towards
-          Excellence Today"
+          "Visit Any of Our Four Campuses and Begin Your Child&apos;s Journey
+          Towards Excellence Today"
         </p>
 
-        <div className="mt-12 mb-16">
+        <div className="mt-12">
           <a
             href="https://erp.vistas.ac.in/velsonline/applicationschools/loginManager/applicantRegistrationVVS.jsp"
             target="_blank"
@@ -47,7 +40,6 @@ const ExperienceSection = () => {
             Register
           </a>
         </div>
-
       </div>
     </section>
   );

@@ -1,146 +1,388 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const campuses = [
-  { id: 1, name: 'Thalambur Campus', image: '/thalambur.png', href: '/thalambur' },
-  { id: 2, name: 'Pallavaram Campus', image: '/new-mob.png', href: '/pallavaram' },
-  { id: 3, name: 'Darga road Campus', image: '/dargaroad/common-page.jpg', href: '/dargaroad' },
-  { id: 4, name: 'Cantonment Campus', image: '/cantonment.png', href: '/cantonment' },
-]
+  {
+    id: 1,
+    name: "Thalambur Campus",
+    image: "/thalambur.png",
+    href: "/thalambur",
+  },
+  {
+    id: 2,
+    name: "Pallavaram Campus",
+    image: "/new-mob.png",
+    href: "/pallavaram",
+  },
+  {
+    id: 3,
+    name: "Darga Road Campus",
+    image: "/dargaroad/common-page.jpg",
+    href: "/dargaroad",
+  },
+  {
+    id: 4,
+    name: "Cantonment Campus",
+    image: "/cantonment.png",
+    href: "/cantonment",
+  },
+];
 
-const CARD_WIDTH = 280;
-const HORIZONTAL_GAP = 310;
+/* =========================
+   MOBILE AND TABLET CARD
+========================= */
 
-// --- MOBILE COMPONENT (Simplified vertical list) ---
-const MobileCard = ({ campus, index, inView }) => (
-  <motion.div
-    initial={{ opacity: 0, x: -20 }}
-    animate={inView ? { opacity: 1, x: 0 } : {}}
-    transition={{ delay: index * 0.1, duration: 0.5 }}
-    className="w-full"
-  >
-    <Link href={campus.href} target="_blank" className="flex items-center gap-4 bg-white p-3 rounded-2xl shadow-md border border-gray-100">
-      <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl">
-        <Image src={campus.image} alt={campus.name} fill className="object-cover" />
-      </div>
-      <div className="flex-grow">
-        <h3 className="text-sm font-bold text-[#152f5c] uppercase leading-tight">{campus.name}</h3>
-        <span className="text-[10px] font-black text-[#F7931E] uppercase tracking-wider">Explore Campus →</span>
-      </div>
-    </Link>
-  </motion.div>
-)
+const MobileCard = ({ campus, index, inView }) => {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 25,
+      }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {
+              opacity: 0,
+              y: 25,
+            }
+      }
+      transition={{
+        delay: index * 0.1,
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      className="w-full"
+    >
+      <Link
+        href={campus.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          group mx-auto flex w-full max-w-[560px]
+          items-center gap-4 rounded-2xl
+          border border-gray-100 bg-white p-3
+          shadow-[0_10px_35px_rgba(15,23,42,0.08)]
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-[0_16px_40px_rgba(15,23,42,0.14)]
+        "
+      >
+        <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-24">
+          <Image
+            src={campus.image}
+            alt={campus.name}
+            fill
+            sizes="96px"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
 
-// --- DESKTOP CARD (Your specialized animation) ---
+        <div className="min-w-0 flex-1 text-left">
+          <h3 className="text-sm font-bold uppercase leading-tight text-[#152f5c] sm:text-base">
+            {campus.name}
+          </h3>
+
+          <span className="mt-2 inline-block text-[10px] font-black uppercase tracking-wider text-[#F7931E] sm:text-xs">
+            Explore Campus →
+          </span>
+        </div>
+      </Link>
+    </motion.div>
+  );
+};
+
+/* =========================
+   DESKTOP CARD
+========================= */
+
 const DesktopCard = ({ campus, index, phase }) => {
+  /*
+   * Final card centres:
+   * 12.5%, 37.5%, 62.5%, 87.5%
+   *
+   * This keeps all four cards equally distributed
+   * and centred within the available container.
+   */
+  const finalLeftPosition = `${12.5 + index * 25}%`;
+
   const variants = {
-    initial: { y: -600, opacity: 0, x: "-50%" },
-    dropped: { 
-      y: 0, 
-      opacity: 1, 
+    initial: {
+      left: "50%",
       x: "-50%",
-      transition: { type: 'spring', damping: 20, stiffness: 80 } 
+      y: -550,
+      opacity: 0,
+      scale: 0.9,
     },
-    split: { 
-      x: `calc(-50% + ${(index - 1.5) * HORIZONTAL_GAP}px)`, 
+
+    dropped: {
+      left: "50%",
+      x: "-50%",
       y: 0,
       opacity: 1,
-      transition: { 
-        delay: index * 0.05, 
-        type: 'spring', 
-        damping: 22, 
-        stiffness: 90 
-      } 
-    }
-  }
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 80,
+      },
+    },
+
+    split: {
+      left: finalLeftPosition,
+      x: "-50%",
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: index * 0.06,
+        type: "spring",
+        damping: 24,
+        stiffness: 90,
+      },
+    },
+  };
 
   return (
     <motion.div
       variants={variants}
       initial="initial"
       animate={phase}
-      className="absolute left-1/2 top-0 group"
-      style={{ zIndex: 10 - index, width: `${CARD_WIDTH}px` }}
+      className="
+        group absolute top-0
+        w-[clamp(205px,20vw,280px)]
+      "
+      style={{
+        zIndex: campuses.length - index,
+      }}
     >
-      <Link href={campus.href} target="_blank">
-        <div className="relative overflow-hidden rounded-[2.5rem] border-[10px] border-white shadow-2xl transition-all duration-500 group-hover:-translate-y-6">
+      <Link
+        href={campus.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <div
+          className="
+            relative overflow-hidden
+            rounded-[2rem] border-[8px] border-white
+            shadow-[0_25px_65px_rgba(15,23,42,0.22)]
+            transition-all duration-500
+            group-hover:-translate-y-5
+            group-hover:shadow-[0_35px_75px_rgba(15,23,42,0.3)]
+            xl:rounded-[2.5rem]
+            xl:border-[10px]
+          "
+        >
           <div className="relative aspect-[3/4.5]">
-            <Image src={campus.image} alt={campus.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1931] via-transparent to-transparent p-8 flex flex-col justify-end text-center">
-              <h3 className="text-white font-black text-xl mb-4 uppercase leading-tight">{campus.name}</h3>
-              <span className="mx-auto px-6 py-2 bg-white text-[#0a1931] text-xs font-black uppercase rounded-full group-hover:bg-[#F7931E] group-hover:text-white transition-colors">Explore</span>
+            <Image
+              src={campus.image}
+              alt={campus.name}
+              fill
+              sizes="(min-width: 1536px) 280px, (min-width: 1024px) 20vw, 100vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            <div
+              className="
+                absolute inset-0 flex flex-col
+                justify-end bg-gradient-to-t
+                from-[#0a1931]/95 via-[#0a1931]/20
+                to-transparent px-4 pb-6 text-center
+                xl:px-6 xl:pb-8
+              "
+            >
+              <h3 className="mb-4 text-base font-black uppercase leading-tight text-white xl:text-xl">
+                {campus.name}
+              </h3>
+
+              <span
+                className="
+                  mx-auto rounded-full bg-white
+                  px-5 py-2 text-[10px] font-black
+                  uppercase tracking-wide text-[#0a1931]
+                  transition-colors duration-300
+                  group-hover:bg-[#F7931E]
+                  group-hover:text-white
+                  xl:px-6 xl:text-xs
+                "
+              >
+                Explore
+              </span>
             </div>
           </div>
         </div>
       </Link>
     </motion.div>
-  )
-}
+  );
+};
+
+/* =========================
+   MAIN SECTION
+========================= */
 
 export default function CampusSection() {
-  const [phase, setPhase] = useState('initial')
-  const [isMobile, setIsMobile] = useState(false)
-  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false })
+  const [phase, setPhase] = useState("initial");
+
+  const { ref, inView } = useInView({
+    threshold: 0.15,
+    triggerOnce: false,
+  });
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
+    let splitTimer;
 
-  useEffect(() => {
-    if (inView && !isMobile) {
-      setPhase('dropped')
-      const timer = setTimeout(() => setPhase('split'), 1000)
-      return () => clearTimeout(timer)
-    } else if (!inView) {
-      setPhase('initial')
+    if (inView) {
+      setPhase("dropped");
+
+      splitTimer = setTimeout(() => {
+        setPhase("split");
+      }, 850);
+    } else {
+      setPhase("initial");
     }
-  }, [inView, isMobile])
+
+    return () => {
+      if (splitTimer) {
+        clearTimeout(splitTimer);
+      }
+    };
+  }, [inView]);
 
   return (
-    <section ref={ref} className="relative w-full min-h-screen overflow-hidden py-8 bg-[#fdfaf5]">
-      {/* Background Decor */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-         <Image src="/section-3.png" alt="" fill className="object-cover" />
+    <section
+      ref={ref}
+      className="
+        relative w-full overflow-hidden
+        bg-[#fdfaf5] py-14
+        md:py-16  lg:py-20
+      "
+    >
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute inset-0 opacity-30">
+        <Image
+          src="/section-3.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
       </div>
 
-      <div className="relative z-20 text-center mb-12 lg:mb-24 px-6">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-3xl md:text-5xl lg:text-3xl font-black text-secondary uppercase "
+      {/* Heading content */}
+      <div
+        className="
+          relative z-20 mx-auto mb-10
+          w-full max-w-7xl px-5 text-center
+          sm:px-6 md:mb-14
+          lg:mb-20 lg:px-8
+        "
+      >
+        <motion.h2
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={
+            inView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 20,
+                }
+          }
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          className="
+            mx-auto max-w-5xl
+            text-2xl font-black uppercase
+            leading-tight text-secondary
+            sm:text-3xl md:text-4xl
+            lg:text-[34px]
+          "
         >
           Four Campuses. One Vision. Excellence Everywhere.
         </motion.h2>
-        <p className="mt-10 max-w-7xl text-center text-[#6B6B6B] text-[20px] leading-[1.45] font-normal tracking-normal">
-          Vels Vidyashram proudly serves students through four vibrant campuses, each committed to delivering the same high standards of education, innovation, and holistic development.Every campus is equipped with modern infrastructure, advanced learning technologies, experienced faculty, and a safe, student-centric environment.
-        </p>
+
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={
+            inView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 20,
+                }
+          }
+          transition={{
+            delay: 0.15,
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          className="
+            mx-auto mt-6 max-w-6xl
+            text-center text-sm font-normal
+            leading-7 text-[#6B6B6B]
+            sm:text-base md:mt-8
+            md:text-lg md:leading-8
+            lg:mt-10 lg:text-[20px]
+            lg:leading-[1.55]
+          "
+        >
+          Vels Vidyashram proudly serves students through four vibrant
+          campuses, each committed to delivering the same high standards of
+          education, innovation, and holistic development. Every campus is
+          equipped with modern infrastructure, advanced learning technologies,
+          experienced faculty, and a safe, student-centric environment.
+        </motion.p>
       </div>
 
-      <div className="relative w-full max-w-7xl mx-auto px-6">
-        {isMobile ? (
-          // MOBILE LAYOUT: Clean vertical list
-          <div className="flex flex-col gap-4">
-            {campuses.map((campus, idx) => (
-              <MobileCard key={campus.id} campus={campus} index={idx} inView={inView} />
-            ))}
-          </div>
-        ) : (
-          // DESKTOP LAYOUT: High-end drop animation
-          <div className="relative h-[440px] flex items-center justify-center">
-            {campuses.map((campus, idx) => (
-              <DesktopCard key={campus.id} campus={campus} index={idx} phase={phase} />
-            ))}
-          </div>
-        )}
+      {/* Mobile and tablet layout */}
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:hidden">
+        <div className="mx-auto flex w-full max-w-[560px] flex-col items-center gap-4">
+          {campuses.map((campus, index) => (
+            <MobileCard
+              key={campus.id}
+              campus={campus}
+              index={index}
+              inView={inView}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop layout */}
+      <div className="relative z-20 mx-auto hidden w-full max-w-7xl px-6 lg:block xl:px-8">
+        <div className="relative mx-auto h-[430px] w-full">
+          {campuses.map((campus, index) => (
+            <DesktopCard
+              key={campus.id}
+              campus={campus}
+              index={index}
+              phase={phase}
+            />
+          ))}
+        </div>
       </div>
     </section>
-  )
+  );
 }

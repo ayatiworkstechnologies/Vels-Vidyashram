@@ -9,7 +9,7 @@ const galleryData = {
     {
       title: "Computer Education",
       description: "It aims at making students use the computer both as a productive tool and as a means of creativity and self-expression. The curriculum encompasses technological skills based on themes that are current and meaningful. The program helps the students to build a solid foundation of fundamental learning skills and prepares them for the fast-changing technology of today and the future.",
-      images: ["/thalambur/com-1.png", "/thalambur/com-2.png", "/thalambur/com-3.png", "/thalambur/com-4.png", "/thalambur/com-5.png"],
+      images: ["/thalambur/com-1.png", "/thalambur/com-2.png", "/thalambur/com-6.png", "/thalambur/com-4.png", "/thalambur/com-5.png"],
     },
     {
       title: "Art & Craft",
@@ -23,7 +23,7 @@ const galleryData = {
           </ul>
         </>
       ),
-      images: ["/thalambur/art-1.png", "/thalambur/art-2.png", "/thalambur/art-3.png", "/thalambur/art-4.png", "/thalambur/art-5.png"],
+      images: ["/thalambur/art-6.png", "/thalambur/art-2.png", "/thalambur/art-3.png", "/thalambur/art-4.png", "/thalambur/art-5.png"],
       reverse: true,
     },
     {
@@ -43,13 +43,13 @@ const galleryData = {
     {
       title: "Project",
       description: "Project work is an integral part of the school curriculum which is held class wise to bring out the aesthetic and latent potential of every student. Projects build team spirit, leadership qualities, conflict resolving skills and creativity among the students.",
-      images: ["/thalambur/project-1.png", "/thalambur/pro-1.png", "/thalambur/pro-2.png", "/thalambur/project-4.png", "/thalambur/pro-3.png"],
+      images: ["/thalambur/project-6.png", "/thalambur/pro-1.png", "/thalambur/pro-2.png", "/thalambur/project-4.png", "/thalambur/pro-3.png"],
       reverse: true,
     },
     {
       title: "Western Music & Dance",
       description: "Students learn notation, sight reading, chords, and lead playing in Western Classical and light music while developing rhythm and performance skills. Western Dance training enhances coordination, flexibility, stage confidence, and creative expression through contemporary and modern dance forms.",
-      images: ["/thalambur/western-1.png", "/thalambur/western-2.png", "/thalambur/western-3.png", "/thalambur/western-4.png", "/thalambur/western-5.png"],
+      images: ["/thalambur/western-7.png", "/thalambur/western-2.png", "/thalambur/western-3.png", "/thalambur/western-6.png", "/thalambur/western-5.png"],
     },
     {
       title: "Sports & Games",
@@ -76,12 +76,25 @@ const galleryData = {
       description: "Learning by doing forms the basis for all activities in the lab. The Maths Lab enhances conceptual understanding through laboratory activities.",
       images: ["/thalambur/math-1.png", "/thalambur/math-2.png", "/thalambur/math-3.png", "/thalambur/math-4.png", "/thalambur/math-5.png"],
     },
-    {
-      title: "Smart Class",
-      description: "The technology-enabled programme ensures effective and enriching learning experiences. The regularly updated inputs and a wide range of video clippings are accessed from the knowledge centre. Difficult and abstract concepts too become clear to the students when viewed on the digital boards provided in the classrooms. The facility is also useful for other purposes like Guest lectures, electronic voting and General Assembly programmes. In essence, each class room is an audio-visual room.",
-      images: ["/thalambur/sm-1.png", "/thalambur/sm-2.png", "/thalambur/sm-3.png", "/thalambur/sm-4.png", "/thalambur/sm-5.png"],
-      reverse: true,
-    },
+   {
+  title: "Smart Class",
+  description: [
+    "Smart Class facilities are available for students of all grades.",
+    "Every classroom is equipped with an interactive digital board to support technology-enabled learning.",
+    "Teachers use videos, animations, simulations, and multimedia resources to simplify complex concepts.",
+    "Digital content is aligned with the curriculum to make lessons engaging and interactive.",
+    "Technology-enhanced teaching improves conceptual understanding, participation, and digital literacy.",
+    "Every classroom provides an audio-visual learning environment that enriches the overall learning experience."
+  ],
+  images: [
+    "/thalambur/sm-1.png",
+    "/thalambur/sm-2.png",
+    "/thalambur/sm-3.png",
+    "/thalambur/sm-4.png",
+    "/thalambur/sm-5.png"
+  ],
+  reverse: true,
+},
     {
       title: "Clean Class Award",
       description: "A clean class promotes positivity in the learning atmosphere. To instill this sense of cleanliness, the Clean Class Award has been instituted for Classes I to VII. The classes are judged on various parameters of cleanliness and the award is given once a term.",

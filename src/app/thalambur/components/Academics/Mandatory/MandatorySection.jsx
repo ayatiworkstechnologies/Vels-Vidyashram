@@ -7,7 +7,7 @@ const ITEMS = [
   {
     id: 1,
     title: "Land & Trust Certificate",
-    pdf: "/thalambur/pdf/Trustandlandcertificate.pdf",
+    pdf: "/thalambur/pdf/01_LAND_CERTIFICATE_2025.pdf",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const ITEMS = [
   {
     id: 3,
     title: "CBSE Affiliation",
-    pdf: "/thalambur/pdf/Affiliation-Extension-2022-2027-VVT.pdf",
+    pdf: "/thalambur/pdf/03_CBSE_Affiliation.pdf",
   },
   {
     id: 4,
@@ -27,22 +27,22 @@ const ITEMS = [
   {
     id: 5,
     title: "NOC",
-    pdf: "/thalambur/pdf/NOC.pdf",
+    pdf: "/thalambur/pdf/05_NOC2026.pdf",
   },
   {
     id: 6,
     title: "Recognition",
-    pdf: "/thalambur/pdf/RECOGNITION.pdf",
+    pdf: "/thalambur/pdf/06_Recoginition.pdf",
   },
   {
     id: 7,
     title: "Building Safety",
-    pdf: "/thalambur/pdf/05-Building-Safety-Certifiacte.pdf",
+    pdf: "/thalambur/pdf/07_BuildingSafety.pdf",
   },
   {
     id: 8,
     title: "Fire Safety",
-    pdf: "/thalambur/pdf/fire-safety-certificate.pdf",
+    pdf: "/thalambur/pdf/08_Fire.pdf",
   },
   {
     id: 9,
@@ -52,12 +52,12 @@ const ITEMS = [
   {
     id: 10,
     title: "Calendar for Students",
-    pdf: "/thalambur/pdf/academic-calendar-2025-2026.pdf",
+    pdf: "/thalambur/pdf/10_StudentAcademicCalendar2026-27.pdf",
   },
   {
     id: 11,
     title: "Fee Structure",
-    pdf: "/thalambur/pdf/Fee.pdf",
+    pdf: "/thalambur/pdf/11_Fee.pdf",
   },
   {
     id: 12,
@@ -67,12 +67,12 @@ const ITEMS = [
   {
     id: 13,
     title: "PTA Association",
-    pdf: "/thalambur/pdf/11-PTA.pdf",
+    pdf: "/thalambur/pdf/13_PTA.pdf",
   },
   {
     id: 14,
     title: "Board Results",
-    pdf: "/thalambur/pdf/Board-results.pdf",
+    pdf: "/thalambur/pdf/14_Results.pdf",
   },
 ];
 

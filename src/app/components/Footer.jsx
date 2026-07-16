@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 
 const Footer = () => {
   const campuses = [
@@ -32,10 +34,24 @@ const Footer = () => {
         <div className="w-full h-[1px] bg-white/20 mb-8" />
 
         {/* Copyright */}
-        <div className="text-center text-[11px] md:text-sm font-light opacity-90 tracking-wide leading-relaxed px-4">
+       <div className="text-center text-[11px] md:text-sm font-light opacity-90 tracking-wide leading-relaxed px-4">
           Copyright ©2026 Vels Vidyashram - All Rights Reserved |
-          <span className="block sm:inline sm:ml-1">
-            Designed & Developed by Ayatiworks
+          <span className="inline-flex items-center justify-center gap-2 mt-1 sm:mt-0 sm:ml-2">
+            Designed & Developed by
+            <Link
+              href="https://ayatiworks.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src="/ayati-logo.png" // Replace with your logo path
+                alt="Ayatiworks"
+                width={90}
+                height={24}
+                className="h-10 w-auto"
+              />
+            </Link>
           </span>
         </div>
       </div>

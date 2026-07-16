@@ -6,31 +6,31 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nKinder Garten School - Cantonment",
-    image: "/cantonment/banner/banner-1.png",
+    image: "/cantonment/banner/w-b-1.png",
     mobileImage: "/cantonment/banner/1.png", 
   },
   {
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
-    image: "/cantonment/banner/banner2.jpg",
+    image: "/cantonment/banner/w-b-2.png",
     mobileImage: "/cantonment/banner/2.png",
   },
   {
     title: "Global Standards",
     subtitle: "World Class Infrastructure\n& Modern Learning",
-    image: "/cantonment/banner/banner3.jpg",
+    image: "/cantonment/banner/w-b-3.png",
     mobileImage: "/cantonment/banner/3.png",
   },
   {
     title: "Beyond Academics",
     subtitle: "Developing Talents\nIn Sports and Arts",
-    image: "/cantonment/banner/banner4.jpg",
+    image: "/cantonment/banner/w-b-4.png",
     mobileImage: "/cantonment/banner/4.png",
   },
   {
     title: "Future-ready learning",
     subtitle: "Preparing Children for\nTomorrow's Opportunities Today",
-    image: "/cantonment/banner/banner5.jpg",
+    image: "/cantonment/banner/w-b-5.png",
     mobileImage: "/cantonment/banner/5.png",
   },
 ];

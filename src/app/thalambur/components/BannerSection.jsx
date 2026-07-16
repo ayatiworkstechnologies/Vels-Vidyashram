@@ -6,25 +6,25 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Thalambur",
-    image: "/thalambur/banner/thalambur-banner-1.png",
+    image: "/thalambur/banner/w-b-1.png",
     mobileImage: "/thalambur/banner/1.png",
   },
   {
     title: "Welcome to",
     subtitle: "Wisdom, Integrity, Excellence\nVels Vidyashram - Thalambur",
-    image: "/thalambur/banner/thalambur-banner.png",
+    image: "/thalambur/banner/w-b-3.png",
     mobileImage: "/thalambur/banner/8.png",
   },
   {
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
-    image: "/thalambur/banner/thalambur-banner-2.png",
+    image: "/thalambur/banner/w-b-2.png",
     mobileImage: "/thalambur/banner/2.png",
   },
   {
     title: "Global Standards",
     subtitle: "World Class Infrastructure\n& Modern Learning",
-    image: "/thalambur/banner/banner-3.png",
+    image: "/thalambur/banner/w-b-4.png",
     mobileImage: "/thalambur/banner/mob-3.png",
   },
   // {

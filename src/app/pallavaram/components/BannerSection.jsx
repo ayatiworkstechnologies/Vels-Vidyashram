@@ -6,26 +6,26 @@ const slides = [
   {
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Pallavaram",
-    image: "/pallavaram/banner/pallavaram-banner-1.png",
+    image: "/pallavaram/banner/w-b-1.png",
     mobileImage: "/pallavaram/banner/mob-banner-1.png",
   },
   {
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
-    image: "/pallavaram/banner/Pallavaram-banner-3.jpg",
+    image: "/pallavaram/banner/w-b-3.png",
     mobileImage: "/pallavaram/banner/mob-banner-3.jpg",
   },
   {
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
-    image: "/pallavaram/banner/pallavaram-banner.png",
+    image: "/pallavaram/banner/w-b-4.png",
     mobileImage: "/pallavaram/banner/mob-pala.png",
   },
 
   {
     title: "Beyond Academics",
     subtitle: "Developing Talents\nIn Sports and Arts",
-    image: "/pallavaram/banner/banner-4.png",
+    image: "/pallavaram/banner/w-b-5.png",
     mobileImage: "/pallavaram/banner/mob-4.png",
   },
 ];

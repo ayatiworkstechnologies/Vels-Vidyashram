@@ -50,21 +50,21 @@ const navItems = [
       { label: "Transport", href: "/thalambur/transport" },
     ],
   },
-  {
-    label: "R&D@Vels",
-    href: "#",
-    submenu: [
-      { label: "Genesis", href: "/thalambur/genesis" },
-      { label: "About KKIC", href: "/thalambur/about-kkic" },
-      {
-        label: "Centre for Professional Development",
-        href: "/thalambur/centre-for-professional-development",
-      },
-      { label: "VSkill", href: "/thalambur/vskill" },
-      { label: "CICTL", href: "/thalambur/cictl" },
-      { label: "Newsletter", href: "/thalambur/pdf/newsletter.pdf" },
-    ],
-  },
+  // {
+  //   label: "R&D@Vels",
+  //   href: "#",
+  //   submenu: [
+  //     { label: "Genesis", href: "/thalambur/genesis" },
+  //     { label: "About KKIC", href: "/thalambur/about-kkic" },
+  //     {
+  //       label: "Centre for Professional Development",
+  //       href: "/thalambur/centre-for-professional-development",
+  //     },
+  //     { label: "VSkill", href: "/thalambur/vskill" },
+  //     { label: "CICTL", href: "/thalambur/cictl" },
+  //     { label: "Newsletter", href: "/thalambur/pdf/newsletter.pdf" },
+  //   ],
+  // },
   {
     label: "Gallery",
     href: "#",

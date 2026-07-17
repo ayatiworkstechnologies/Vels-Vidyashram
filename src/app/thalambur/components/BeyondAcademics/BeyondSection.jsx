@@ -79,12 +79,19 @@ const galleryData = {
    {
   title: "Smart Class",
   description: [
-    "Smart Class facilities are available for students of all grades.",
-    "Every classroom is equipped with an interactive digital board to support technology-enabled learning.",
-    "Teachers use videos, animations, simulations, and multimedia resources to simplify complex concepts.",
-    "Digital content is aligned with the curriculum to make lessons engaging and interactive.",
-    "Technology-enhanced teaching improves conceptual understanding, participation, and digital literacy.",
-    "Every classroom provides an audio-visual learning environment that enriches the overall learning experience."
+  <>
+    <ul className="list-disc ml-4">
+      <li>Smart Class facilities are available for students of all grades. </li>
+      <li> Every classroom is equipped with an interactive digital board to support technology-enabled learning.</li>
+      <li>Teachers use videos, animations, simulations, and multimedia resources to simplify complex concepts.</li>
+      <li>Digital content is aligned with the curriculum to make lessons engaging and interactive. </li>
+      <li>Technology-enhanced teaching improves conceptual understanding, participation, and digital literacy.</li>
+      <li>Every classroom provides an audio-visual learning environment that enriches the overall learning experience.</li>
+
+    
+        </ul>
+      </>
+
   ],
   images: [
     "/thalambur/sm-1.png",
@@ -98,11 +105,21 @@ const galleryData = {
     {
       title: "Clean Class Award",
       description: "A clean class promotes positivity in the learning atmosphere. To instill this sense of cleanliness, the Clean Class Award has been instituted for Classes I to VII. The classes are judged on various parameters of cleanliness and the award is given once a term.",
-      images: ["/thalambur/clean-1.png", "/thalambur/clean-2.png", "/thalambur/clean-3.png", "/thalambur/clean-4.png", "/thalambur/award-5.jpg"],
+      images: ["/thalambur/clean-1.png", "/thalambur/clean-2.png", "/thalambur/clean-3.png", "/thalambur/clean-4.png", "/thalambur/clean-6.png"],
     },
     {
       title: "Innovation Lab",
-      description: "Innovation labs dedicated to robotics aim to foster creativity, hands-on learning, and innovation in robotics and related fields like AI and machine learning. These labs provide students with tools, resources, and structured programs to explore and experiment with robotics, potentially leading to real-world applications and problem-solving skills.",
+      description: <>
+                <ul className="list-disc ml-4">
+                  <li>Dedicated Innovation Lab for students across all grades to explore creativity and innovation.</li>
+                  <li> Hands-on learning in Robotics, Artificial Intelligence , and emerging technologies.</li>
+                  <li>Well-equipped with modern tools, kits, and learning resources for practical exploration.</li>
+                  <li>Encourages design thinking, problem-solving, coding, and experimentation.</li>
+                  <li>Develops critical thinking, collaboration, and real-world application skills.</li>
+                  <li>Provides opportunities to participate in innovation projects, competitions, and STEM activities.</li>
+                </ul>
+
+      </>,
       images: ["/thalambur/invo-1.png", "/thalambur/invo-2.png", "/thalambur/invo-3.png", "/thalambur/invo-4.png", "/thalambur/invo-5.png"],
       reverse: true,
     },
@@ -123,12 +140,12 @@ const galleryData = {
     {
       title: "Literary Club",
       description: "The objectives are to enhance the following skills: Oratory, Writing, Debating, Reading.",
-      images: ["/thalambur/li-1.jpg", "/thalambur/li-2.jpg", "/thalambur/li-3.jpg", "/thalambur/li-4.jpg", "/thalambur/li-5.jpg"],
+      images: ["/thalambur/li-6.jpg", "/thalambur/li-7.jpeg", "/thalambur/li-8.jpeg", "/thalambur/li-8.jpeg", "/thalambur/li-6.jpg"],
     },
     {
       title: "Reading Club",
       description: "The objective is to inculcate the habit of reading.",
-      images: ["/thalambur/R-1.jpg", "/thalambur/R-2.jpg", "/thalambur/R-3.jpg", "/thalambur/R-4.jpg", "/thalambur/R-5.jpg"],
+      images: ["/thalambur/R-6.jpg", "/thalambur/R-7.jpg", "/thalambur/R-8.jpg", "/thalambur/R-9.jpg", "/thalambur/R-8.jpg"],
       reverse: true,
     },
     {
@@ -139,7 +156,7 @@ const galleryData = {
     {
       title: "Hindi Club",
       description: "Main aim of the Hindi club is to create interest among the students for language, to make them creative in speech and writing. Important activities are celebrations of important days and programmes for enrichment of Hindi language like poetry recitation, speech, essay writing, skits, quiz, debates etc.",
-      images: ["/thalambur/h-1.jpg", "/thalambur/h-2.jpg", "/thalambur/h-3.jpg", "/thalambur/h-4.jpg", "/thalambur/h-5.jpg"],
+      images: ["/thalambur/h-6.jpeg", "/thalambur/h-9.jpeg", "/thalambur/h-8.jpeg", "/thalambur/h-9.jpeg", "/thalambur/h-6.jpeg"],
       reverse: true,
     },
     {
@@ -172,7 +189,7 @@ const galleryData = {
     {
       title: "Yuva and Heritage Club",
       description: "Aims to cultivate interest and responsibility in India's natural and cultural heritage among children and youth.",
-      images: ["/thalambur/y-1.jpg", "/thalambur/y-2.jpg", "/thalambur/y-3.jpg", "/thalambur/y-4.jpg", "/thalambur/y-5.jpg"],
+      images: ["/thalambur/y-6.jpg", "/thalambur/y-7.jpg", "/thalambur/y-3.jpg", "/thalambur/y-5.jpg", "/thalambur/y-6.jpg"],
     },
     {
       title: "TECH IT OUT Club",
@@ -194,7 +211,7 @@ const galleryData = {
     {
       title: "Cyber Security Club",
       description: "Aim to educate the students about emerging technologies in Cyber Security trends and regularly updating security measures for students to effectively ease cyber risks and safeguard digital assets.",
-      images: ["/thalambur/computer-1.jpg", "/thalambur/computer-2.jpg", "/thalambur/computer-3.jpg", "/thalambur/computer-4.jpg", "/thalambur/computer-5.jpg"],
+      images: ["/thalambur/computer-6.jpg", "/thalambur/computer-7.jpg", "/thalambur/computer-6.jpg", "/thalambur/computer-7.jpg", "/thalambur/computer.png"],
     },
   ],
 

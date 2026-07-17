@@ -6,7 +6,7 @@ import { MapPin, ShieldCheck, Users } from 'lucide-react';
 const routes = [
   "Thiruporur", "Egatoor", "Sholinganallur", "Pudhupakkam", "Injambakkam",
   "Perumbakkam", "Kelambakkam", "Medavakkam", "Mambakkam", "Sithalapakkam",
-  "Thalambur", "Navalur", "Ponmar", "Padur", "Siruseri", "Natham link road", "Semmenchery"
+  "Thalambur", "Navalur", "Ponmar", "Padur", "Siruseri", "Natham link road", "Semmenchery","Ottiyambakkam"
 ];
 
 const TransportSection = () => {

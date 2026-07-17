@@ -6,14 +6,15 @@ import { createPortal } from "react-dom";
 const ITEMS = [
   {
     id: 1,
-    title: "Land & Trust Certificate",
-    pdf: "/thalambur/pdf/01_LAND_CERTIFICATE_2025.pdf",
-  },
-  {
-    id: 2,
     title: "CBSE Mandatory Disclosure",
     pdf: "/thalambur/pdf/Mandatory-Disclosure.pdf",
   },
+  {
+    id: 2,
+    title: "Land & Trust Certificate",
+    pdf: "/thalambur/pdf/01_LAND_CERTIFICATE_2025.pdf",
+  },
+  
   {
     id: 3,
     title: "CBSE Affiliation",
@@ -113,7 +114,7 @@ function PdfModal({ openPdf, onClose, isMobile }) {
             {openPdf.title}
           </h3>
 
-          <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
+          {/*<div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
             <a
               href={openPdf.pdf}
               download
@@ -170,7 +171,7 @@ function PdfModal({ openPdf, onClose, isMobile }) {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* PDF preview */}

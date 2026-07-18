@@ -57,7 +57,7 @@ const ITEMS = [
   {
     id: 11,
     title: "Recognition",
-    pdf: "/dargaroad/pdf/Recognition.pdf",
+    pdf: "/dargaroad/pdf/CERTIFICATE_OF_RECOGNITION.pdf",
   },
   {
     id: 12,

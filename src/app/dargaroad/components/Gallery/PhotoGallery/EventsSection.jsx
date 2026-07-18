@@ -8,8 +8,32 @@ const EVENTS_DATA = {
   eventsByYear: {
     '2026-2027': [
       {
+        title: "International Yoga Day Awareness Rally",  
+      id: 4,
+      size: 'medium',
+      images: [
+        "/dargaroad/events/yoga-4.jpeg",
+        "/dargaroad/events/yoga-2.jpeg",
+        "/dargaroad/events/yoga-3.jpeg", 
+        "/dargaroad/events/yoga-1.jpeg",
+        "/dargaroad/events/yoga-1.jpeg",
+
+      ],
+       },
+      {
+        title: "Animal Adoption",  
+      id: 3,
+      size: 'medium',
+      images: [
+        "/dargaroad/events/animal-4.jpeg",
+        "/dargaroad/events/animal-2.jpeg",
+        "/dargaroad/events/animal-3.jpeg", 
+        "/dargaroad/events/animal-1.jpeg",
+      ],
+       },
+      {
         title: "Father's Day Celebration",  
-      id: 1,
+      id: 2,
       size: 'medium',
       images: [
         "/dargaroad/events/father-1.jpeg",
@@ -21,7 +45,7 @@ const EVENTS_DATA = {
        },
        {
         title: "Investiture Ceremony",
-        id: 2,
+        id: 1,
         size: 'small',
         images: [
           "/dargaroad/events/inves-1.jpeg",

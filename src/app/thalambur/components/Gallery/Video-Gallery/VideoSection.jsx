@@ -13,10 +13,10 @@ import {
 
 
 const VIDEO_DATA = {
-    years: ['2026-2027','2025-2026'],
+  years: ["2026-2027", "2025-2026"],
   videosByYear: {
     "2026 - 2027": [
-           {
+      {
         id: 1,
         title: "My First day at Kindergarten",
         thumbnail: "/thalambur/thumbnail/first-day-Kindergarden.jpg",
@@ -60,7 +60,7 @@ const VIDEO_DATA = {
       },
       {
         id: 8,
-        title: "Nobel world record for the largest human formation representing Vrikshasana ",
+        title: "Nobel world record for the largest human formation representing Vrikshasana ",
         thumbnail: "/thalambur/thumbnail/Nobel-world-record.jpg",
         videoUrl: "https://youtu.be/JH6H58uppzA"
       },
@@ -89,280 +89,268 @@ const VIDEO_DATA = {
         videoUrl: "https://youtu.be/btKTP84_E9Y?si=ZIPEzaG754Jibjun"
       },
     ],
-   "2025 - 2026": [
-           {
+    "2025 - 2026": [
+      {
         id: 32,
         title: "Vels Football club Inauguration",
         thumbnail: "/thalambur/thumbnail/thum-32.jpg",
         videoUrl: "https://www.youtube.com/embed/fPgGO-yCNWE?si=arUjBcyXwAYk-L4l"
       },
-                 {
+      {
         id: 33,
         title: "No-Bag Day 2025",
         thumbnail: "/thalambur/thumbnail/thum-33.jpg",
         videoUrl: "https://www.youtube.com/embed/aMH9OWNBmww?si=NV_vsHSo7u4kJ3qV"
       },
-                    {
+      {
         id: 34,
         title: "EVS Culmination day Grade I & II",
         thumbnail: "/thalambur/thumbnail/thum-34.jpg",
         videoUrl: "https://www.youtube.com/embed/sbImD_yjKJc?si=bsp0SM9GgHg75nrB"
       },
-                      {
+      {
         id: 35,
         title: "KG- Culmination day 2025",
         thumbnail: "/thalambur/thumbnail/thum-35.jpg",
         videoUrl: "https://www.youtube.com/embed/R5KPASt5FLQ?si=SV3qgoVfWpSOP8fL"
       },
-                        {
+      {
         id: 36,
         title: "Grade IX-XII field trip",
         thumbnail: "/thalambur/thumbnail/thum-36.jpg",
         videoUrl: "https://www.youtube.com/embed/-TvogdGuf40?si=y_OgFZaPw6IECltf"
       },
-                         {
+      {
         id: 37,
         title: "Grade VI-VIII field trip",
         thumbnail: "/thalambur/thumbnail/thum-37.jpg",
         videoUrl: "https://www.youtube.com/embed/4zc-NoB6e-0?si=FsH4XBnWF4rUipmU"
       },
-                          {
+      {
         id: 38,
         title: "Grade III-V field trip",
         thumbnail: "/thalambur/thumbnail/thum-38.jpg",
         videoUrl: "https://www.youtube.com/embed/eNWYoOH6jG8?si=3hDNvwA6qyG3kPZS"
       },
-                           {
+      {
         id: 39,
         title: "Diwali celebration",
         thumbnail: "/thalambur/thumbnail/thum-39.jpg",
         videoUrl: "https://www.youtube.com/embed/wmZ2yCDQuhs?si=wgnxZliIXMu07eLY"
       },
-                            {
+      {
         id: 40,
         title: "Happy Vidyarambham",
         thumbnail: "/thalambur/thumbnail/thum-40.jpg",
         videoUrl: "https://www.youtube.com/embed/Lw_NpnD95EE?si=gdyUF6iXHwlEMP65"
       },
-                               {
+      {
         id: 41,
         title: "Innovatia 2026",
         thumbnail: "/thalambur/thumbnail/thum-41.jpg",
         videoUrl: "https://www.youtube.com/embed/PcfIEJ_JoAo?si=NefpMegsrnay2_R1"
       },
-                               {
+      {
         id: 42,
         title: "Pre-KG Culmination Day",
         thumbnail: "/thalambur/thumbnail/thum-42.jpg",
         videoUrl: "https://www.youtube.com/embed/4aP6FFX0oYM?si=fhOteFxbfrNOF7WK"
       },
-                               {
+      {
         id: 43,
         title: "LKG Culmination Day",
         thumbnail: "/thalambur/thumbnail/thum-43.jpg",
         videoUrl: "https://www.youtube.com/embed/Cwfwm2u9dTI?si=6vqeoPy11hLatdL4"
       },
       {
-        id: 1,
+        id: 101,
         title: "Independence day celebration",
         thumbnail: "/thalambur/thumbnail/thum-1.jpg",
         videoUrl: "https://www.youtube.com/embed/PaQUt0qDKyo?si=HjVBJxIKdQkVlTY_"
       },
       {
-        id: 2,
+        id: 102,
         title: "KG- Yellow day celebration ",
         thumbnail: "/thalambur/thumbnail/thum-2.jpg",
         videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTW"
       },
       {
-        id: 3,
+        id: 103,
         title: "KG- Red day celebration",
         thumbnail: "/thalambur/thumbnail/thum-3.jpg",
         videoUrl: "https://www.youtube.com/embed/AVH_Dkse7LY?si=adTVbrSBeQ3LjvEC"
       },
       {
-        id: 4,
+        id: 104,
         title: "Empowering educators through STEM",
         thumbnail: "/thalambur/thumbnail/thum-4.jpg",
         videoUrl: "https://www.youtube.com/embed/wia-jhd6dTA?si=OkT91GpEw7DpBjLa"
       },
       {
-        id: 5,
+        id: 105,
         title: "No Bag day ",
         thumbnail: "/thalambur/thumbnail/thum-5.jpg",
         videoUrl: "https://www.youtube.com/embed/zSJivDnKOBM?si=8xqNiMbnCKyrCA0L"
       },
       {
-        id: 6,
+        id: 106,
         title: "Investiture ceremony",
         thumbnail: "/thalambur/thumbnail/thum-6.jpg",
         videoUrl: "https://www.youtube.com/embed/rkxadX1MFa8?si=SPeHF_OSe_5lFGYQ"
       },
       {
-        id: 7,
+        id: 107,
         title: "Campus visit to Vels Medical College & Hospital",
         thumbnail: "/thalambur/thumbnail/thum-7.jpg",
         videoUrl: "https://www.youtube.com/embed/_IxOrTmWF4Y?si=YXND2SdpVG4h-W-S"
       },
       {
-        id: 8,
+        id: 108,
         title: "Father's Day celebration",
         thumbnail: "/thalambur/thumbnail/thum-8.jpg",
         videoUrl: "https://www.youtube.com/embed/jFrVGTsUFsQ?si=aqCrdY-wEo5ra5jp"
       },
       {
-        id: 9,
+        id: 109,
         title: "Vels Football club Inauguration",
         thumbnail: "/thalambur/thumbnail/thum-9.jpg",
         videoUrl: "https://www.youtube.com/embed/fPgGO-yCNWE?si=EiLl1TqIDA9Oie6q"
       },
       {
-        id: 10,
+        id: 110,
         title: "No-Bag Day 2025",
         thumbnail: "/thalambur/thumbnail/thum-10.jpg",
         videoUrl: "https://www.youtube.com/embed/aMH9OWNBmww?si=iLziC4utO1v3rAcY"
       },
-   
       {
-        id: 11,
+        id: 111,
         title: "EVS Culmination day Grade I & II",
         thumbnail: "/thalambur/thumbnail/thum-11.jpg",
         videoUrl: "https://www.youtube.com/embed/sbImD_yjKJc?si=ILy7kA9A1nU7GNMQ"
       },
       {
-        id: 12,
+        id: 112,
         title: "KG- Culmination day 2025 ",
         thumbnail: "/thalambur/thumbnail/thum-12.jpg",
         videoUrl: "https://www.youtube.com/embed/R5KPASt5FLQ?si=DkIQs70ZQXk47ThQ"
-     
       },
       {
-         id: 13,
+        id: 113,
         title: "Grade IX-XII field trip ",
         thumbnail: "/thalambur/thumbnail/thum-13.jpg",
         videoUrl: "https://www.youtube.com/embed/-TvogdGuf40?si=3XFfla0QsHCdxr05"
- 
       },
       {
-        id: 14,
+        id: 114,
         title: "Grade VI-VIII field trip ",
         thumbnail: "/thalambur/thumbnail/thum-14.jpg",
         videoUrl: "https://www.youtube.com/embed/4zc-NoB6e-0?si=NoY7htZ4IAQVt6Oi"
       },
       {
-        id: 15,
+        id: 115,
         title: "Grade III-V field trip",
         thumbnail: "/thalambur/thumbnail/thum-15.jpg",
         videoUrl: "https://www.youtube.com/embed/eNWYoOH6jG8?si=36Dt8pajlOa9b_Co"
       },
-     
       {
-        id: 16,
+        id: 116,
         title: "Diwali celebration",
         thumbnail: "/thalambur/thumbnail/thum-16.jpg",
         videoUrl: "https://www.youtube.com/embed/wmZ2yCDQuhs?si=nu9Z2v3C0hHPKwCA"
       },
       {
-        id: 17,
+        id: 117,
         title: "Happy Vidyarambham",
         thumbnail: "/thalambur/thumbnail/thum-17.jpg",
         videoUrl: "https://www.youtube.com/embed/Lw_NpnD95EE?si=YTEq_T7PeDuzyZYx"
       },
       {
-        id: 18,
+        id: 118,
         title: "Pongal celebration 2026",
         thumbnail: "/thalambur/thumbnail/thum-18.jpg",
         videoUrl: "https://www.youtube.com/embed/m45zSDBJ6Ng?si=xJGsIKGxztIRWInj"
- 
       },
       {
-        id: 19,
+        id: 119,
         title: "Interschool sports meet 2025-26",
         thumbnail: "/thalambur/thumbnail/thum-19.jpg",
         videoUrl: "https://www.youtube.com/embed/oXcKnuoKoYA?si=NEWQkq_w0h4Q-JXj"
       },
       {
-        id: 20,
+        id: 120,
         title: "Sandhai celebration",
         thumbnail: "/thalambur/thumbnail/thum-20.jpg",
         videoUrl: "https://www.youtube.com/embed/2GvMTDKJVEA?si=TeweIstQyM4pFE4C"
       },
       {
-        id: 21,
+        id: 121,
         title: "Grandparents Day ",
         thumbnail: "/thalambur/thumbnail/thum-21.jpg",
         videoUrl: "https://www.youtube.com/embed/h7hY0DPRs4Y?si=84eh1lbIBjWyRVDv"
- 
       },
       {
-        id: 22,
+        id: 122,
         title: "KG- Purple day celebration ",
         thumbnail: "/thalambur/thumbnail/thum-22.jpg",
         videoUrl: "https://www.youtube.com/embed/rLNjxQA00xM?si=UAEIjSI9_XiBcF8k"
-     
       },
       {
-        id: 23,
+        id: 123,
         title: "Melange 2025- Interschool competition ",
         thumbnail: "/thalambur/thumbnail/thum-23.jpg",
         videoUrl: "https://www.youtube.com/embed/PYcqsCFPjgM?si=r8kTmGCRN4kdrTMy"
       },
       {
-        id: 24,
+        id: 124,
         title: "International Yoga day",
         thumbnail: "/thalambur/thumbnail/thum-24.jpg",
         videoUrl: "https://www.youtube.com/embed/CDfbwO-t768?si=F9aklcYL_c4IWZJB"
       },
       {
-        id: 25,
+        id: 125,
         title: "Voices of tomorrow: Student council nominees 2025",
         thumbnail: "/thalambur/thumbnail/thum-25.jpg",
         videoUrl: "https://www.youtube.com/embed/3A9ITGjlJFw?si=0-mcYAZCCSH-PoG1"
       },
       {
-        id: 26,
+        id: 126,
         title: "Step Orientation",
         thumbnail: "/thalambur/thumbnail/thum-26.jpg",
         videoUrl: "https://www.youtube.com/embed/TaDylNNBBfc?si=9LLjsl_v7FBFT2nE"
-     
       },
       {
-        id: 27,
+        id: 127,
         title: "Personal safety education session",
         thumbnail: "/thalambur/thumbnail/thum-27.jpg",
         videoUrl: "https://www.youtube.com/embed/d07ky5ErJSs?si=bobuw53eX9YGnj7e"
       },
       {
-        id: 28,
+        id: 128,
         title: "World scholar's cup - Chennai round 2025",
         thumbnail: "/thalambur/thumbnail/thum-28.jpg",
         videoUrl: "https://www.youtube.com/embed/WPh7s296eYw?si=zSB-YMELED5Sv1mZ"
       },
       {
-        id: 29,
+        id: 129,
         title: "Parent orientation program 2025-26",
         thumbnail: "/thalambur/thumbnail/thum-29.jpg",
         videoUrl: "https://www.youtube.com/embed/6HvW_x8hTNo?si=raRcolcwTssop9hI"
       },
       {
-        id: 30,
+        id: 130,
         title: "Salangai poojai",
         thumbnail: "/thalambur/thumbnail/thum-30.jpg",
         videoUrl: "https://www.youtube.com/embed/kBTEl5PdV-4?si=bJzD4NfGAgXUQlhE"
       },
       {
-        id: 31,
+        id: 131,
         title: "KG Graduation day 2025 & Annual proficiency award cerem",
         thumbnail: "/thalambur/thumbnail/thum-31.jpg",
         videoUrl: "https://www.youtube.com/embed/KtybeWopBQU?si=SMr5cieWxl4nQd4e"
       }
- 
-       
     ],
   },
-}
- 
- testimonialSections: [
+  testimonialSections: [
     {
       category: "Parents Testimonials during Grade 1 and 2 Culmination Day",
       icon: <GraduationCap className="w-5 h-5" />,
@@ -372,23 +360,21 @@ const VIDEO_DATA = {
           thumbnail: "/thalambur/thumbnail/pa-1.jpg",
           videoUrl: "https://www.youtube.com/embed/HQ6m896ITKU?si=rWbhrjbZQMvTNYsq"
         },
-          {
+        {
           id: 2,
           thumbnail: "/thalambur/thumbnail/pa-2.jpg",
           videoUrl: "https://www.youtube.com/embed/x1fqOjjOd4A?si=twzzPHcnFeeJQmXs"
         },
-          {
-          id: 3,  
+        {
+          id: 3,
           thumbnail: "/thalambur/thumbnail/pa-3.jpg",
           videoUrl: "https://www.youtube.com/embed/0zeoiCyu9zQ?si=ySITJhctN3fvkQTA"
         },
-
         {
           id: 4,
           thumbnail: "/thalambur/thumbnail/pa-4.jpg",
           videoUrl: "https://www.youtube.com/embed/9o8dw-ps4wI?si=yUiDNTcdvACylbPd"
         },
-         
       ]
     },
     {
@@ -403,7 +389,6 @@ const VIDEO_DATA = {
         },
         {
           id: 2,
-        
           thumbnail: "/thalambur/thumbnail/pa-6.jpg",
           videoUrl: "https://www.youtube.com/embed/F160MLpfsx0?si=95RNj3d95v89zkzu"
         },
@@ -414,19 +399,17 @@ const VIDEO_DATA = {
         },
       ]
     },
-     {
+    {
       category: "Grand Parents Testimonials",
       icon: <GraduationCap className="w-5 h-5" />,
       items: [
         {
           id: 1,
-          
           thumbnail: "/thalambur/thumbnail/pa-8.jpg",
           videoUrl: "https://www.youtube.com/embed/ESa8Ql5Uil8?si=DVnuWpGWpMRPDiaq"
         },
         {
           id: 2,
-        
           thumbnail: "/thalambur/thumbnail/pa-9.jpg",
           videoUrl: "https://www.youtube.com/embed/89wS-6RkrLI?si=c_xj4DneQEzdrN1G"
         },
@@ -447,19 +430,17 @@ const VIDEO_DATA = {
         },
       ]
     },
-        {
+    {
       category: "Parent Testimonials",
       icon: <GraduationCap className="w-5 h-5" />,
       items: [
         {
           id: 1,
-          
           thumbnail: "/thalambur/thumbnail/pa-13.jpg",
           videoUrl: "https://www.youtube.com/embed/Le89xfMjlak?si=9Nf5O4yYfFIJ_y8K"
         },
         {
           id: 2,
-        
           thumbnail: "/thalambur/thumbnail/pa-14.jpg",
           videoUrl: "https://www.youtube.com/embed/dd8RTTRaB7E?si=m3ztpt5iUgtn-1GL"
         },
@@ -478,32 +459,32 @@ const VIDEO_DATA = {
           thumbnail: "/thalambur/thumbnail/pa-17.jpg",
           videoUrl: "https://www.youtube.com/embed/hN2ZN-9NTqA?si=AHNlnKckeD5cMDyG"
         },
-         {
+        {
           id: 6,
           thumbnail: "/thalambur/thumbnail/pa-18.jpg",
           videoUrl: "https://www.youtube.com/embed/IYc9yhmtu5M?si=mTQDbqCyroKdopbT"
         },
-         {
+        {
           id: 7,
           thumbnail: "/thalambur/thumbnail/pa-19.jpg",
           videoUrl: "https://www.youtube.com/embed/pCgxX3pwGUA?si=s9rcjOQeqPV1aTTa"
         },
-         {
+        {
           id: 8,
           thumbnail: "/thalambur/thumbnail/pa-20.jpg",
           videoUrl: "https://www.youtube.com/embed/-_8wKbk2bo4?si=8UarC7Zbv_vbKj9S"
         },
-         {
+        {
           id: 9,
           thumbnail: "/thalambur/thumbnail/pa-21.jpg",
           videoUrl: "https://www.youtube.com/embed/4Aacp5u7EqM?si=kN05Sup7bGqqQVXS"
         },
-         {
+        {
           id: 10,
           thumbnail: "/thalambur/thumbnail/pa-22.jpg",
           videoUrl: "https://www.youtube.com/embed/HQxZa3tjJBI?si=_W4gJwacoZ3sAPZ8"
         },
-         {
+        {
           id: 11,
           thumbnail: "/thalambur/thumbnail/pa-23.jpg",
           videoUrl: "https://www.youtube.com/embed/frYed5_rnzA?si=-QJo8qfwjId0Ew-0"
@@ -511,7 +492,7 @@ const VIDEO_DATA = {
       ]
     },
   ]
-
+};
 
 export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("videos");

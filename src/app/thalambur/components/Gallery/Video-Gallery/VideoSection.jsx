@@ -11,9 +11,85 @@ import {
   GraduationCap,
 } from "lucide-react";
 
+
 const VIDEO_DATA = {
+    years: ['2026-2027','2025-2026'],
   videosByYear: {
-    "2025 - 2026": [
+    "2026 - 2027": [
+           {
+        id: 1,
+        title: "My First day at Kindergarten",
+        thumbnail: "/thalambur/thumbnail/first-day-Kindergarden.jpg",
+        videoUrl: "https://youtu.be/S1wsO058LSI?si=6txvMV_X8a7kx6--"
+      },
+      {
+        id: 2,
+        title: "The Blueprint for success",
+        thumbnail: "/thalambur/thumbnail/The-Blueprint-for-success.jpg",
+        videoUrl: "https://youtube.com/shorts/Jl7ch4a4-Tk?si=l8nyMRrTxAVfWWRy"
+      },
+      {
+        id: 3,
+        title: "The Blueprint for success",
+        thumbnail: "/thalambur/thumbnail/Blueprint-for-success.jpg",
+        videoUrl: "https://youtube.com/shorts/74-feCp8kTg?si=aYPNC_fgcin_PWK9"
+      },
+      {
+        id: 4,
+        title: "English Language Day",
+        thumbnail: "/thalambur/thumbnail/English-LanguageDay.jpg",
+        videoUrl: "https://youtu.be/IoILQPxa7wI?si=VqrmShX_dQw_x0ro"
+      },
+      {
+        id: 5,
+        title: "New year, new minds to inspire",
+        thumbnail: "/thalambur/thumbnail/New_year.jpg",
+        videoUrl: "https://youtu.be/zXKXNM-fpC8"
+      },
+      {
+        id: 6,
+        title: "LEAD Symposium 2026",
+        thumbnail: "/thalambur/thumbnail/LEAD-Symposium-2026.jpg",
+        videoUrl: "https://youtu.be/FHb17y_GxEY"
+      },
+      {
+        id: 7,
+        title: "New parent orientation",
+        thumbnail: "/thalambur/thumbnail/New-parent-orientation.jpg",
+        videoUrl: "https://youtu.be/zu6YCcI6JWA?si=bSKCAbUGx1SPR1S9"
+      },
+      {
+        id: 8,
+        title: "Nobel world record for the largest human formation representing Vrikshasana ",
+        thumbnail: "/thalambur/thumbnail/Nobel-world-record.jpg",
+        videoUrl: "https://youtu.be/JH6H58uppzA"
+      },
+      {
+        id: 9,
+        title: "Father's Day celebration",
+        thumbnail: "/thalambur/thumbnail/Fathers-Day-celebration.jpg",
+        videoUrl: "https://youtu.be/MoKiSC7EZng?si=9gbwirtT6fqjLgeC"
+      },
+      {
+        id: 10,
+        title: "Rising to lead, Ready to serve- Investiture 2026",
+        thumbnail: "/thalambur/thumbnail/Rising-to-lead.jpg",
+        videoUrl: "https://youtube.com/shorts/OxGFZdIw2oI?si=bedYZttHxMcqr-BX"
+      },
+      {
+        id: 11,
+        title: "Investiture ceremony 2026",
+        thumbnail: "/thalambur/thumbnail/Investiture-ceremony.jpg",
+        videoUrl: "https://youtube.com/shorts/jmfGGuLcE_g?feature=share"
+      },
+      {
+        id: 12,
+        title: "Sensory Exploration day",
+        thumbnail: "/thalambur/thumbnail/Sensory-Exploration-day.jpg",
+        videoUrl: "https://youtu.be/btKTP84_E9Y?si=ZIPEzaG754Jibjun"
+      },
+    ],
+   "2025 - 2026": [
            {
         id: 32,
         title: "Vels Football club Inauguration",
@@ -284,6 +360,7 @@ const VIDEO_DATA = {
        
     ],
   },
+}
  
  testimonialSections: [
     {
@@ -434,7 +511,7 @@ const VIDEO_DATA = {
       ]
     },
   ]
-};
+
 
 export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("videos");

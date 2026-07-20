@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Footer = () => {
   const campuses = [
-    { name: "Pallavaram Campus", url: "/pallavaram" },
+    //{ name: "Pallavaram Campus", url: "/pallavaram" },
     { name: "Cantonment Campus", url: "/cantonment" },
     { name: "Thalambur Campus", url: "/thalambur" },
     { name: "Dargaroad Campus", url: "/dargaroad" },

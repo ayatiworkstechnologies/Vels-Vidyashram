@@ -269,6 +269,26 @@ export default function ChancellorProfile() {
 
   return (
     <>
+    {/* Mobile chairman portrait */}
+      <div
+        className="
+          flex w-full
+          items-center justify-center
+          bg-white
+          px-4 py-8 pb-2
+          sm:hidden
+        "
+      >
+        <img
+          src={MOBILE_PORTRAIT_SRC}
+          alt="Dr. Ishari K. Ganesh"
+          className="
+            h-auto w-auto
+            max-w-[420px]
+            object-contain
+          "
+        />
+      </div>
       <section
         ref={sectionRef}
         className="relative w-full bg-white"
@@ -561,26 +581,7 @@ export default function ChancellorProfile() {
         </div>
       </section>
 
-      {/* Mobile chairman portrait */}
-      <div
-        className="
-          flex w-full
-          items-center justify-center
-          bg-white
-          px-4 py-8
-          sm:hidden
-        "
-      >
-        <img
-          src={MOBILE_PORTRAIT_SRC}
-          alt="Dr. Ishari K. Ganesh"
-          className="
-            h-auto w-full
-            max-w-[420px]
-            object-contain
-          "
-        />
-      </div>
+      
     </>
   );
 }

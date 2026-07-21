@@ -1,159 +1,170 @@
 "use client";
+
 import React, { useState, useMemo, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, Quote, X, ChevronDown, Calendar, GraduationCap } from "lucide-react";
+import {
+  Play,
+  X,
+  ChevronDown,
+  Calendar,
+  GraduationCap,
+} from "lucide-react";
 
 const VIDEO_DATA = {
+  years: ["2026 - 2027", "2025 - 2026"],
   videosByYear: {
+    "2026 - 2027": [
+      {
+        id: 1,
+        title: "Inter School Bhajan Competition",
+        thumbnail: "/dargaroad/thumbnail/thumbnail-1.jpg",
+        videoUrl: "https://youtu.be/BLvhUK8BlU8"
+      },
+      {
+        id: 2,
+        title: "No Bag Day",
+        thumbnail: "/dargaroad/thumbnail/thumbnail-2.jpg",
+        videoUrl: "https://www.youtube.com/embed/BY8o1-qeFag?si=MYnR9u43saf-s3Cb"
+      },
+    ],
     "2025 - 2026": [
-       {
-        id: 21,
+      {
+        id: 121,
         title: "April GLIMPSES",
         thumbnail: "/dargaroad/thumbnail/thum-21.jpg",
         videoUrl: "https://www.youtube.com/embed/BY8o1-qeFag?si=MYnR9u43saf-s3Cb"
       },
-           {
-        id: 22,
+      {
+        id: 122,
         title: "June GLIMPSES",
         thumbnail: "/dargaroad/thumbnail/thum-22.jpg",
         videoUrl: "https://www.youtube.com/embed/qNtzwRiNLYM?si=0aLlyuKR5Knwow5X"
       },
-     {
-        id: 20,
+      {
+        id: 120,
         title: "Academic Excellence Awards – Grade X 2026",
         thumbnail: "/dargaroad/thumbnail/thum-20.jpg",
         videoUrl: "https://www.youtube.com/embed/gUOEBDkTBeU?si=3L8ESXgighm7Qhtt"
       },
-      
-     {
-        id: 19,
+      {
+        id: 119,
         title: "KG Graduation Ceremony",
         thumbnail: "/dargaroad/thumbnail/thum-19.jpg",
         videoUrl: "https://www.youtube.com/embed/FSBB7N4ZF2A?si=XRagT01vd8ZMhblm"
       },
-      
       {
-        id: 3,
+        id: 103,
         title: "Vels expo @ vels",
         thumbnail: "/dargaroad/thumbnail/thumb3.jpg",
         videoUrl: "https://www.youtube.com/embed/TSmlvNCpFZo?si=vYw6jbP8NeyxhT06"
       },
-         {
-        id: 18,
+      {
+        id: 118,
         title: "Japanese Tea Ceremony",
         thumbnail: "/dargaroad/thumbnail/thum-18.jpg",
         videoUrl: "https://www.youtube.com/embed/kldlbAtt8B0?si=4FjDlbg2huhKyav3"
       },
       {
-        id: 2,
+        id: 102,
         title: "Christmas Celebration",
         thumbnail: "/dargaroad/thumbnail/thumb2.jpg",
-        videoUrl: "https://www.youtube.com/embed/Ib3Cr8KOxOQ?si=g5wP7RSzGDNk2TTWhttps://www.youtube.com/embed/xdB1WsU96Yg?si=lGck3mTKXn3SbN3n"
+        videoUrl: "https://www.youtube.com/embed/xdB1WsU96Yg?si=lGck3mTKXn3SbN3n"
       },
-      
       {
-        id: 6,
+        id: 106,
         title: "Dandiya Raas",
         thumbnail: "/dargaroad/thumbnail/thumb6.jpg",
         videoUrl: "https://www.youtube.com/embed/DmjUNSnGxmY?si=4zsue6jiadpEZ5ag"
       },
       {
-        id: 1,
+        id: 101,
         title: "Grandparents Day",
         thumbnail: "/dargaroad/thumbnail/thumb1.jpg",
         videoUrl: "https://www.youtube.com/embed/GpN7BEemT8k?si=y-8zMppSQPsNEV-m"
       },
       {
-        id: 5,
+        id: 105,
         title: "Navarasa navaratri @Vels",
         thumbnail: "/dargaroad/thumbnail/thumb5.jpg",
         videoUrl: "https://www.youtube.com/embed/SJoxRUBASoY?si=4j81h81jwsUNJxmX"
       },
       {
-        id: 9,
-        title: " Continuous Professional Development 2025",
+        id: 109,
+        title: "Continuous Professional Development 2025",
         thumbnail: "/dargaroad/thumbnail/thumb9.jpg",
         videoUrl: "https://www.youtube.com/embed/rsUah1Jzl58?si=N_u2fn0jBCdXAoCR"
       },
-       {
-        id: 4,
+      {
+        id: 104,
         title: "December Glimpses",
         thumbnail: "/dargaroad/thumbnail/thumb4.jpg",
         videoUrl: "https://www.youtube.com/embed/4C8tLUzbslo?si=HdjdBdte1fG7GVhN"
       },
       {
-        id: 8,
+        id: 108,
         title: "July Glimpses 2025",
         thumbnail: "/dargaroad/thumbnail/thumb8.jpg",
         videoUrl: "https://www.youtube.com/embed/FiL-3Aa7yfE?si=8M0OdlTRLlj8rb-H"
       },
-     
       {
-        id: 12,
+        id: 112,
         title: "Investiture Ceremony",
         thumbnail: "/dargaroad/thumbnail/thumb12.jpg",
         videoUrl: "https://www.youtube.com/embed/1vnkxsP0Umc?si=ACf9WoyrWCTtoGZm"
-     
       },
-       {
-        id: 7,
+      {
+        id: 107,
         title: "November Glimpses",
         thumbnail: "/dargaroad/thumbnail/thumb7.jpg",
         videoUrl: "https://www.youtube.com/embed/npJnTyObAAs?si=RZck9_WmHUlcyVhN"
       },
-     
-       {
-        id: 11,
+      {
+        id: 111,
         title: "April Glimpses",
         thumbnail: "/dargaroad/thumbnail/thumb11.jpg",
         videoUrl: "https://www.youtube.com/embed/96zGdwfuH34?si=yKIOgEYwj8qCcZTj"
       },
       {
-        id: 15,
+        id: 115,
         title: "June Glimpses 2025",
         thumbnail: "/dargaroad/thumbnail/thumb15.jpg",
         videoUrl: "https://www.youtube.com/embed/4u5ZB6IYW6c?si=6WMYwu--auagN6d_"
       },
-       {
-        id: 10,
+      {
+        id: 110,
         title: "AARAMBH 2025",
         thumbnail: "/dargaroad/thumbnail/thumb10.jpg",
         videoUrl: "https://www.youtube.com/embed/unrYcfP9oZk?si=RrvcK3ejbrghWb_w"
       },
       {
-        id: 14,
+        id: 114,
         title: "August Glimpses 2025",
         thumbnail: "/dargaroad/thumbnail/thumb14.jpg",
         videoUrl: "https://www.youtube.com/embed/hFbu2g2nNok?si=GhAMB6JmJLY1OxUr"
       },
       {
-         id: 13,
+        id: 113,
         title: "Inter School Bhajan Competition",
         thumbnail: "/dargaroad/thumbnail/thumb13.jpg",
         videoUrl: "https://www.youtube.com/embed/1XqYAZIuuk0?si=vj0vYFsiyeUR4nYw"
- 
       },
       {
-        id: 16,
+        id: 116,
         title: "Diwali Celebration",
         thumbnail: "/dargaroad/thumbnail/thumb16.jpg",
         videoUrl: "https://www.youtube.com/embed/GvKCD9ytSdo?si=Cu3wt4djiW3v12n4"
       },
       {
-        id: 17,
+        id: 117,
         title: "Awareness on oil-free cooking and healthy living",
         thumbnail: "/dargaroad/thumbnail/thumb17.jpg",
         videoUrl: "https://www.youtube.com/embed/N-mxgDKNcbs?si=mQ_pSGk6pkuKA5bC"
       },
- 
-       
     ],
- 
-  
   },
- 
- testimonialSections: [
-  {
+  testimonialSections: [
+    {
       category: "Parents Testimonials - Fathers Day Celebration",
       icon: <GraduationCap className="w-5 h-5" />,
       items: [
@@ -173,17 +184,16 @@ const VIDEO_DATA = {
           thumbnail: "/dargaroad/thumbnail/parent-1.jpg",
           videoUrl: "https://www.youtube.com/embed/XQtaPJniX4k?si=rrQiMLopeEgPF0mE"
         },
-          {
+        {
           id: 2,
           thumbnail: "/dargaroad/thumbnail/parent-2.jpg",
           videoUrl: "https://www.youtube.com/embed/dkV2EX0Pf64?si=SQMbiL4NiWRNLTA_"
         },
-          {
-          id: 3,  
+        {
+          id: 3,
           thumbnail: "/dargaroad/thumbnail/parent-3.jpg",
           videoUrl: "https://www.youtube.com/embed/rWeIvOah2-U?si=B6qLKBlTdRY0Zcdt"
         },
-
         {
           id: 4,
           thumbnail: "/dargaroad/thumbnail/parent-4.jpg",
@@ -197,14 +207,10 @@ const VIDEO_DATA = {
         {
           id: 6,
           thumbnail: "/dargaroad/thumbnail/parent-6.jpg",
-          videoUrl: "https://www.youtube.com/embed/xts7oOWlqGc?si=k1nE0aqm7VE6cBie",
+          videoUrl: "https://www.youtube.com/embed/xts7oOWlqGc?si=k1nE0aqm7VE6cBie"
         }
-         
       ]
     },
-   
-   
-  
   ]
 };
 

@@ -19,13 +19,19 @@ const VIDEO_DATA = {
         id: 1,
         title: "Inter School Bhajan Competition",
         thumbnail: "/dargaroad/thumbnail/thumbnail-1.jpg",
-        videoUrl: "https://youtu.be/BLvhUK8BlU8"
+        videoUrl: "https://www.youtube.com/embed/BLvhUK8BlU8?si=PUGpiabvS9oLPH3W"
       },
-      {
-        id: 2,
-        title: "No Bag Day",
-        thumbnail: "/dargaroad/thumbnail/thumbnail-2.jpg",
-        videoUrl: "https://www.youtube.com/embed/BY8o1-qeFag?si=MYnR9u43saf-s3Cb"
+      // {
+      //   id: 2,
+      //   title: "No Bag Day",
+      //   thumbnail: "/dargaroad/thumbnail/thumbnail-2.jpg",
+      //   videoUrl: "https://www.youtube.com/embed/cAM-qIw6pnk=RF5byBtiLMfBdI0p"
+      // },
+       {
+        id: 3,
+        title: "International Yoga Day",
+        thumbnail: "/dargaroad/thumbnail/thumbnail-3.jpg",
+        videoUrl: "https://www.youtube.com/embed/uT6_cPMj7RQ?si=sobSU4gdB2XwereL"
       },
     ],
     "2025 - 2026": [

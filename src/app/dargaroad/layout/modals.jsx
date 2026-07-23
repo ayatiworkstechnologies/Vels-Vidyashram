@@ -40,7 +40,7 @@ export default function Modal() {
 
         {/* 3. The Image Component (Dynamic Size + Custom Border) */}
         <img 
-          src="/dargaroad/banner/popup.jpeg" 
+          src="/dargaroad/banner/dargaroad_popup.jpeg" 
           alt="School Admissions Announcement" 
         
           className="w-full h-auto max-h-[85vh] object-contain border-4 border-[#ffb74d] rounded-xl shadow-2xl"

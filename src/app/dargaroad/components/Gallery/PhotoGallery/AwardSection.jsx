@@ -5,9 +5,37 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const AWARDS_DATA = {
   awards: [
+    {
+      title: "GRADE XI - I MID TERM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 23,
+      images: [
+        "/dargaroad/awards/GRADE_XI-I_MIDTERM1.jpeg", "/dargaroad/awards/GRADE_XI-I_MIDTERM2.jpeg",
+      ],
+    },
+    {
+      title: "GRADE XII - III MID TERM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 22,
+      images: [
+        "/dargaroad/awards/GRADE_XII-III_MIDTERM.jpeg", 
+      ],
+    },
+    {
+      title: "GRADE X - III MID TERM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 21,
+      images: [
+        "/dargaroad/awards/GRADE_X-III_MIDTERM.jpeg", 
+      ],
+    },
+    {
+      title: "GRADE IX - II MID TERM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 20,
+      images: [
+        "/dargaroad/awards/GRADE_IX-II_MIDTERM.jpeg", 
+      ],
+    },
      {
       title: "Grade X - I Mid Term Proficiency Holders",
-      id: 18,
+      id: 19,
       images: [
         "/dargaroad/awards/term-1.jpeg","/dargaroad/awards/term-2.jpeg", "/dargaroad/awards/term-3.jpeg","/dargaroad/awards/term-4.jpeg", "/dargaroad/awards/term-5.jpeg"
       ],

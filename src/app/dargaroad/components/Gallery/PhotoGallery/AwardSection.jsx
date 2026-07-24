@@ -5,6 +5,70 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const AWARDS_DATA = {
   awards: [
+      {
+      title: "GRADE I - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/grade-i-pt1-1.jpeg","/dargaroad/awards/grade-i-pt1-2.jpeg","/dargaroad/awards/grade-i-pt1-3.jpeg",
+      ],
+    },
+    {
+      title: "GRADE II - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/grade-ii-pt1-1.jpeg","/dargaroad/awards/grade-ii-pt1-2.jpeg",
+      ],
+    },
+  
+    {
+      title: "GRADE III - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/grade-iii-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE IV - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/grade-iv-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE V - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 27,
+      images: [
+        "/dargaroad/awards/grade-v-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE VI - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 27,
+      images: [
+        "/dargaroad/awards/grade-vi-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE VII - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 26,
+      images: [
+        "/dargaroad/awards/grade-vii-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE VIII - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 25,
+      images: [
+        "/dargaroad/awards/grade-viii-pt1.jpeg",
+      ],
+    },
+    {
+      title: "Inter School Bhajan Competition",
+      id: 24,
+      images: [
+        "/dargaroad/awards/Bhajan-1.jpeg", "/dargaroad/awards/Bhajan-2.jpg","/dargaroad/awards/Bhajan-3.jpg","/dargaroad/awards/Bhajan-4.jpg","/dargaroad/awards/Bhajan-5.jpg","/dargaroad/awards/Bhajan-6.jpg",
+      ],
+    },
     {
       title: "GRADE XI - I MID TERM PROFICIENCY CERTIFICATE HOLDERS",
       id: 23,

@@ -21,12 +21,12 @@ const VIDEO_DATA = {
         thumbnail: "/dargaroad/thumbnail/thumbnail-1.jpg",
         videoUrl: "https://www.youtube.com/embed/BLvhUK8BlU8?si=PUGpiabvS9oLPH3W"
       },
-      // {
-      //   id: 2,
-      //   title: "No Bag Day",
-      //   thumbnail: "/dargaroad/thumbnail/thumbnail-2.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/cAM-qIw6pnk=RF5byBtiLMfBdI0p"
-      // },
+      {
+        id: 2,
+        title: "No Bag Day",
+        thumbnail: "/dargaroad/thumbnail/thumbnail-2.jpg",
+        videoUrl: "https://www.youtube.com/embed/OkxSnJQB9qA?si=VMJrUTriaR22VwaL"
+      },
        {
         id: 3,
         title: "International Yoga Day",

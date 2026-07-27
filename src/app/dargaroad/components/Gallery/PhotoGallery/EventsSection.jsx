@@ -8,6 +8,40 @@ const EVENTS_DATA = {
   eventsByYear: {
     '2026-2027': [
       {
+      title: "INTER SCHOOL SPORTS MEET – 2026",
+      id: 7,
+      images: [
+        "/dargaroad/events/sports-meet-1.jpeg", 
+        "/dargaroad/events/sports-meet-2.jpeg",
+        "/dargaroad/events/sports-meet-3.jpeg",
+        "/dargaroad/events/sports-meet-4.jpeg",
+        "/dargaroad/events/sports-meet-5.jpeg",
+      ],
+    },
+      {
+      title: "No Bag Day",
+      id: 6,
+      images: [
+        "/dargaroad/events/no-bag-1.jpeg", 
+        "/dargaroad/events/no-bag-2.jpg",
+        "/dargaroad/events/no-bag-3.jpg",
+        "/dargaroad/events/no-bag-4.jpg",
+        "/dargaroad/events/no-bag-5.jpg",
+      ],
+    },
+      {
+      title: "Inter School Bhajan Competition",
+      id: 5,
+      images: [
+        "/dargaroad/awards/Bhajan-1.jpeg", 
+        "/dargaroad/awards/Bhajan-2.jpg",
+        "/dargaroad/awards/Bhajan-3.jpg",
+        "/dargaroad/awards/Bhajan-4.jpg",
+        "/dargaroad/awards/Bhajan-5.jpg",
+        "/dargaroad/awards/Bhajan-6.jpg",
+      ],
+    },
+      {
         title: "International Yoga Day Awareness Rally",  
       id: 4,
       size: 'medium',

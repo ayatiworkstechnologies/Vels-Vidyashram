@@ -7,6 +7,17 @@ const EVENTS_DATA = {
   years: ['2026-2027', '2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+       {
+      title: "Vels Sandhai",
+      id: 7,
+      images: [
+        "/dargaroad/events/Sandhai-1.jpeg", 
+        "/dargaroad/events/Sandhai-2.jpg",
+        "/dargaroad/events/Sandhai-3.jpg",
+        "/dargaroad/events/Sandhai-4.jpg",
+        "/dargaroad/events/Sandhai-5.jpg",
+      ],
+    },
       {
       title: "INTER SCHOOL SPORTS MEET – 2026",
       id: 7,

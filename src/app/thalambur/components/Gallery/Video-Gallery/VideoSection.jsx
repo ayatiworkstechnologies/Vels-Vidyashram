@@ -23,18 +23,18 @@ const VIDEO_DATA = {
         videoUrl: "https://www.youtube.com/embed/S1wsO058LSI?si=iRO728tS8tel0WmG"
       },
       
-      // {
-      //   id: 4,
-      //   title: "English Language Day",
-      //   thumbnail: "/thalambur/thumbnail/English-LanguageDay.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/IoILQPxa7wI?si=A1sxg4_anp_hGT8N"
-      // },
-      // {
-      //   id: 5,
-      //   title: "New year, new minds to inspire",
-      //   thumbnail: "/thalambur/thumbnail/New_year.jpg",
-      //   videoUrl: "https://www.youtube.com/embed/zXKXNM-fpC8?si=5hX9kMSZvtuFe_GQ"
-      // },
+      {
+        id: 4,
+        title: "English Language Day",
+        thumbnail: "/thalambur/thumbnail/English-LanguageDay.jpg",
+        videoUrl: "https://www.youtube.com/embed/IoILQPxa7wI?si=A1sxg4_anp_hGT8N"
+      },
+      {
+        id: 5,
+        title: "New year, new minds to inspire",
+        thumbnail: "/thalambur/thumbnail/New_year.jpg",
+        videoUrl: "https://www.youtube.com/embed/zXKXNM-fpC8?si=5hX9kMSZvtuFe_GQ"
+      },
       {
         id: 6,
         title: "LEAD Symposium 2026",

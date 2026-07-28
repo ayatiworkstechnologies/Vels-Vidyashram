@@ -16,6 +16,12 @@ const VIDEO_DATA = {
   videosByYear: {
     "2026 - 2027": [
       {
+        id: 4,
+        title: "Tmt. PUSHPA ISARI VELAN MEMORIAL TROPHY - INTER SCHOOL SPORTS MEET – 2026",
+        thumbnail: "/dargaroad/thumbnail/thumbnail-4.jpg",
+        videoUrl: "https://www.youtube.com/embed/S7or6EV_WW4?si=1267yy6xMt45Q-SY"
+      },
+      {
         id: 1,
         title: "Inter School Bhajan Competition",
         thumbnail: "/dargaroad/thumbnail/thumbnail-1.jpg",

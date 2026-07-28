@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function BridgeCourseBanner() {
+export default function BridgeCourseBanner({ registerHref = "https://velsplus.com/" }) {
   return (
     /*
       Outer section — light/white page background, provides the
@@ -60,7 +61,6 @@ export default function BridgeCourseBanner() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="flex flex-col justify-center gap-3 pl-7 pr-6 py-7 shrink-0"
-              
             >
               {/* Heading */}
               <h2
@@ -84,18 +84,19 @@ export default function BridgeCourseBanner() {
                 JEE&nbsp;/&nbsp;NEET&nbsp;/&nbsp;CBSE
               </p>
 
-              {/* Register Now — white pill button */}
-              {/* <button
+              {/* Register Now — white pill button, linked */}
+              <Link
+                href={registerHref}
                 className="mt-1 flex items-center gap-2 rounded-full bg-white font-semibold transition-transform duration-150 hover:scale-[1.03] active:scale-[0.97] w-max"
                 style={{
-                  color: "#232A95
+                  color: "#232A95",
                   fontSize: "clamp(11px, 1.3vw, 13px)",
                   padding: "8px 22px",
                 }}
               >
                 Register Now
                 <span aria-hidden="true" style={{ fontSize: "1em" }}>→</span>
-              </button> */}
+              </Link>
             </motion.div>
 
             {/* ── MIDDLE BLOCK: Hurry! Admissions Open ── */}
@@ -120,10 +121,7 @@ export default function BridgeCourseBanner() {
                     className="shrink-0"
                     style={{ height: "1px", width: "clamp(28px, 4vw, 48px)", background: "rgba(255,255,255,0.35)" }}
                   />
-                  <span
-                    className="italic font-light text-white font-size-[30px] font-weight-200"
-                    
-                  >
+                  <span className="italic font-light text-white font-size-[30px] font-weight-200">
                     Hurry!
                   </span>
                 </div>

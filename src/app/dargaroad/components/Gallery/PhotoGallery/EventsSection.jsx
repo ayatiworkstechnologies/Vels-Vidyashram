@@ -8,6 +8,17 @@ const EVENTS_DATA = {
   eventsByYear: {
     '2026-2027': [
        {
+      title: "International Yoga Day",
+      id: 8,
+      images: [
+        "/dargaroad/events/yoga_day-1.jpeg", 
+        "/dargaroad/events/yoga_day-2.jpeg",
+        "/dargaroad/events/yoga_day-3.jpeg",
+        "/dargaroad/events/yoga_day-4.jpeg",
+        "/dargaroad/events/yoga_day-5.jpeg",
+      ],
+    },
+       {
       title: "Vels Sandhai",
       id: 7,
       images: [

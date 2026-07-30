@@ -4,7 +4,7 @@ const ITEMS = [
   {
     id: 1,
     title: "Mandatory Disclosure",
-    pdf: "/dargaroad/pdf/mandatory.pdf",
+    pdf: "/dargaroad/pdf/1_MANDATORYPUBLICDISCLOSURE2026-27.pdf",
   },
   {
     id: 2,

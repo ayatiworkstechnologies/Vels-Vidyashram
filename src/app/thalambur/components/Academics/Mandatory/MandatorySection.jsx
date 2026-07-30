@@ -19,12 +19,12 @@ const ITEMS = [
   {
     id: 4,
     title: "Self Certification",
-    pdf: "/thalambur/pdf/Self-declaration.pdf",
+    pdf: "/thalambur/pdf/Self_certificate.pdf",
   },
   {
     id: 5,
     title: "NOC",
-    pdf: "/thalambur/pdf/05_NOC2026.pdf",
+    pdf: "/thalambur/pdf/05_NOC.pdf",
   },
   {
     id: 6,
@@ -44,7 +44,7 @@ const ITEMS = [
   {
     id: 9,
     title: "Sanitary Certificate",
-    pdf: "/thalambur/pdf/sanitary-certificate.pdf",
+    pdf: "/thalambur/pdf/09_Sanitary.pdf",
   },
   {
     id: 10,
@@ -59,7 +59,7 @@ const ITEMS = [
   {
     id: 12,
     title: "SMC",
-    pdf: "/thalambur/pdf/10-SMC.pdf",
+    pdf: "/thalambur/pdf/12_SMC.pdf",
   },
   {
     id: 13,
@@ -70,6 +70,16 @@ const ITEMS = [
     id: 14,
     title: "Board Results",
     pdf: "/thalambur/pdf/14_Results.pdf",
+  },
+  {
+    id: 15,
+    title: "Strength Details",
+    pdf: "/thalambur/pdf/15_Students_Strength.pdf",
+  },
+  {
+    id: 16,
+    title: "Teachers Details",
+    pdf: "/thalambur/pdf/16_Teachers_Deatils.pdf",
   },
 ];
 

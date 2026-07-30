@@ -7,6 +7,7 @@ const EVENTS_DATA = {
   years: ['2026-2027', '2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+     
        {
       title: "International Yoga Day",
       id: 8,

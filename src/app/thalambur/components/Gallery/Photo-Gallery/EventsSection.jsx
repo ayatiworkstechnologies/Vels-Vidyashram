@@ -8,6 +8,9 @@ const EVENTS_DATA = {
   years: ['2026-2027','2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+      { title: "CAREER GUIDANCE SESSION", id: 17, size: 'small', images: ["/thalambur/CAREER_GUIDANCE-1.jpg","/thalambur/CAREER_GUIDANCE-2.jpg","/thalambur/CAREER_GUIDANCE-3.jpg","/thalambur/CAREER_GUIDANCE-4.jpg","/thalambur/CAREER_GUIDANCE-5.jpg", "/thalambur/CAREER_GUIDANCE-6.jpg"] },
+      { title: "KARGIL DIWAS", id: 16, size: 'small', images: ["/thalambur/KARGIL_DIWAS-1.jpeg","/thalambur/KARGIL_DIWAS-2.jpeg","/thalambur/KARGIL_DIWAS-3.jpeg","/thalambur/KARGIL_DIWAS-4.jpeg","/thalambur/KARGIL_DIWAS-5.jpeg","/thalambur/KARGIL_DIWAS-6.jpeg"] },
+      { title: "Census 2027 & Process of Census Enumeration awareness to students", id: 15, size: 'small', images: ["/thalambur/Fw_Census-1.png","/thalambur/Fw_Census-2.png","/thalambur/Fw_Census-3.jpeg"] },
       { title: "INVESTITURE CEREMONY 2026", id: 14, size: 'small', images: ["/thalambur/inves_1.jpg","/thalambur/inves_2.jpg","/thalambur/inves_3.jpg","/thalambur/inves_4.jpg","/thalambur/inves_5.jpg"] },
       { title: "Yoga Day", id: 13, size: 'small', images: ["/thalambur/yo-1.png","/thalambur/yo-2.png","/thalambur/yo-3.png","/thalambur/yo-4.png","/thalambur/yo-5.png"] },
       { title: "Fathers Day", id: 12, size: 'small', images: ["/thalambur/father-1.png","/thalambur/father-2.png","/thalambur/father-3.png", "/thalambur/father-4.png", "/thalambur/father-5.png"] },

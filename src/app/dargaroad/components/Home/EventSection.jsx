@@ -5,63 +5,105 @@ import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer
 const allScheduleData = [
   // --- JUNE EVENTS ---
   {
-    date: "11",
-    monthYear: "June",
+    date: "06",
+    monthYear: "August",
     title: "General Assembly (Thursday)",
-    tag: "Events",
-    isHighlighted: true
-  },
-  {
-    date: "12",
-    monthYear: "June",
-    title: "Readers Day (Friday)",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "18",
-    monthYear: "June",
-    title: "Club Activities (Thursday)",
+    date: "13",
+    monthYear: "August",
+    title: "Annual Sports Day (Thursday)",
+    tag: "Events",
+    isHighlighted: true
+  },
+  {
+    date: "15",
+    monthYear: "August",
+    title: "Independence Day (Friday)",
     tag: "Events",
     isHighlighted: false
   },
   {
     date: "20",
-    monthYear: "June",
-    title: "International Yoga Day (Saturday)",
+    monthYear: "August",
+    title: "General Assembly (Thursday)",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "24",
+    monthYear: "August",
+    title: "EVS Culmination 1 (STD I) (Monday)",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "25",
+    monthYear: "August",
+    title: "EVS Culmination 1 (STD II), Onam Celebration - KG, Sanskrit Day IV - VIII (Tuesday)",
     tag: "Events",
     isHighlighted: true
   },
   {
-    date: "25",
-    monthYear: "June",
-    title: "General Assembly (Thursday)",
+    date: "28",
+    monthYear: "August",
+    title: "Back Walking Day - KG (Friday)",
     tag: "Events",
     isHighlighted: false
   },
 
   // --- JUNE EXAMS ---
   {
-    date: "06",
-    monthYear: "June",
-    title: "Midterm Exam Starts for IX, X & XII (Saturday)",
+    date: "04",
+    monthYear: "August",
+    title: "Periodic Test 2 Exam Starts for (Std IV - VIII) (Tuesday)",
     tag: "Exams",
     isHighlighted: true
   },
   {
-    date: "15",
-    monthYear: "June",
-    title: "Midterm Exam Ends for IX, X & XII (Monday)",
+    date: "05",
+    monthYear: "August",
+    title: "Quarterly Practicals Starts (Wednesday)",
+    tag: "Exams",
+    isHighlighted: false
+  },
+  {
+    date: "06",
+    monthYear: "August",
+    title: "Periodic Test 2 Exam Starts for (Std III) (Thursday)",
+    tag: "Exams",
+    isHighlighted: true
+  },
+  {
+    date: "07",
+    monthYear: "August",
+    title: "Periodic Test 2 Exam Starts for (Std II) (Friday)",
+    tag: "Exams",
+    isHighlighted: false
+  },
+  {
+    date: "12",
+    monthYear: "August",
+    title: "Periodic Test 2 Exam Ends for (Std I - VIII)(Wednesday)",
+    tag: "Exams",
+    isHighlighted: false
+  },
+   {
+    date: "20",
+    monthYear: "August",
+    title: "Quarterly Practicals Ends(Thursday)",
     tag: "Exams",
     isHighlighted: false
   },
   {
     date: "29",
-    monthYear: "June",
-    title: "PT 1 Starts for STD IV - VIII (Monday)",
+    monthYear: "August",
+    title: "Quarterly Exam Starts (Std IX - XII)(Saturday)",
     tag: "Exams",
-    isHighlighted: true
-  }
+    isHighlighted: false
+  },
 ];
 
 export default function EventsSchedule() {

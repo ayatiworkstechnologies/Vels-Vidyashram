@@ -15,6 +15,8 @@ const MessageSection = () => {
       { month: "April", link: "/dargaroad/pdf/april-message.pdf" },
       { month: "May", link: "/dargaroad/pdf/may-message.pdf" },
       { month: "June", link: "/dargaroad/pdf/june-message.pdf" },
+      { month: "July", link: "/dargaroad/pdf/july-message.pdf" },
+
 
 
 

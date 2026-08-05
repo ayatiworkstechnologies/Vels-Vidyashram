@@ -15,6 +15,12 @@ const VIDEO_DATA = {
   years: ["2026 - 2027", "2025 - 2026"],
   videosByYear: {
     "2026 - 2027": [
+       {
+        id: 5,
+        title: "JULY GLIMPSES",
+        thumbnail: "/dargaroad/thumbnail/thumbnail-5.jpg",
+        videoUrl: "https://www.youtube.com/embed/88jU32c2a_k?si=kMMF8zJ1f5UP5ds2"
+      },
       {
         id: 4,
         title: "Tmt. PUSHPA ISARI VELAN MEMORIAL TROPHY - INTER SCHOOL SPORTS MEET – 2026",

@@ -44,7 +44,7 @@ const ITEMS = [
   {
     id: 9,
     title: "Sanitary Certificate",
-    pdf: "/thalambur/pdf/09_Sanitary.pdf",
+    pdf: "/thalambur/pdf/SANITATION_2026.pdf",
   },
   {
     id: 10,
@@ -78,8 +78,33 @@ const ITEMS = [
   },
   {
     id: 16,
-    title: "Teachers Details",
-    pdf: "/thalambur/pdf/16_Teachers_Deatils.pdf",
+    title: "Teachers Details-PGT",
+    pdf: "/thalambur/pdf/LIST_OF_TEACHERS-PGT.pdf",
+  },
+  {
+    id: 17,
+    title: "Teachers Details-TGT",
+    pdf: "/thalambur/pdf/LIST_OF_TEACHERS-TGT.pdf",
+  },
+  {
+    id: 18,
+    title: "Teachers Details-PRT",
+    pdf: "/thalambur/pdf/LIST_OF_TEACHERS-PRT.pdf",
+  },
+  {
+    id: 19,
+    title: "SPECIAL EDUCATOR: Ms.ANIS FATHIMA",
+    // no pdf -> row will render as a single merged cell, no "View" link
+  },
+  {
+    id: 20,
+    title: "COUNSELING & WELLNESS TEACHER : Ms. FATHIMA ROSHAN M",
+    // no pdf -> row will render as a single merged cell, no "View" link
+  },
+  {
+    id: 21,
+    title: "CAREER COUNSELOR : Ms. SUBHALAKSHMI S",
+    // no pdf -> row will render as a single merged cell, no "View" link
   },
 ];
 
@@ -162,32 +187,46 @@ export default function MandatorySection() {
                       {index + 1}
                     </td>
 
-                    <td
-                      className="
-                        border-r border-[#E5E1F2] px-4 py-2.5
-                        font-secondary text-[16px] text-gray-900
-                      "
-                    >
-                      {item.title}
-                    </td>
+                    {item.pdf ? (
+                      <>
+                        <td
+                          className="
+                            border-r border-[#E5E1F2] px-4 py-2.5
+                            font-secondary text-[16px] text-gray-900
+                          "
+                        >
+                          {item.title}
+                        </td>
 
-                    <td className="px-4 py-2.5 text-center">
-                      <a
-                        href={item.pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        <td className="px-4 py-2.5 text-center">
+                          <a
+                            href={item.pdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="
+                              font-secondary text-[16px] font-medium
+                              text-[#2B158F] underline
+                              decoration-[#2B158F] underline-offset-2
+                              transition-colors duration-200
+                              hover:text-[#FF8700]
+                              hover:decoration-[#FF8700]
+                            "
+                          >
+                            View
+                          </a>
+                        </td>
+                      </>
+                    ) : (
+                      <td
+                        colSpan={2}
                         className="
-                          font-secondary text-[16px] font-medium
-                          text-[#2B158F] underline
-                          decoration-[#2B158F] underline-offset-2
-                          transition-colors duration-200
-                          hover:text-[#FF8700]
-                          hover:decoration-[#FF8700]
+                          px-4 py-2.5
+                          font-secondary text-[16px] text-gray-900
                         "
                       >
-                        View
-                      </a>
-                    </td>
+                        {item.title}
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
@@ -213,38 +252,52 @@ export default function MandatorySection() {
             {ITEMS.map((item, index) => (
               <div
                 key={item.id}
-                className="
-                  grid grid-cols-[55px_1fr_70px]
+                className={`
+                  grid ${item.pdf ? "grid-cols-[55px_1fr_70px]" : "grid-cols-[55px_1fr]"}
                   border-b border-[#E5E1F2] bg-white
                   transition-colors duration-200
                   last:border-b-0 hover:bg-[#F8F6FF]
-                "
+                `}
               >
-                <div className="flex items-center justify-center border-r border-[#E5E1F2] px-1 py-3 font-secondary text-sm text-gray-900">
+                <div
+                  className={`
+                    flex items-center justify-center px-1 py-3
+                    font-secondary text-sm text-gray-900
+                    ${item.pdf ? "border-r border-[#E5E1F2]" : ""}
+                  `}
+                >
                   {index + 1}
                 </div>
 
-                <div className="flex items-center border-r border-[#E5E1F2] px-3 py-3 font-secondary text-sm leading-5 text-gray-900">
+                <div
+                  className={`
+                    flex items-center px-3 py-3
+                    font-secondary text-sm leading-5 text-gray-900
+                    ${item.pdf ? "border-r border-[#E5E1F2]" : ""}
+                  `}
+                >
                   {item.title}
                 </div>
 
-                <div className="flex items-center justify-center px-2 py-3">
-                  <a
-                    href={item.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      font-secondary text-sm font-medium
-                      text-[#2B158F] underline
-                      decoration-[#2B158F] underline-offset-2
-                      transition-colors duration-200
-                      hover:text-[#FF8700]
-                      hover:decoration-[#FF8700]
-                    "
-                  >
-                    View
-                  </a>
-                </div>
+                {item.pdf && (
+                  <div className="flex items-center justify-center px-2 py-3">
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        font-secondary text-sm font-medium
+                        text-[#2B158F] underline
+                        decoration-[#2B158F] underline-offset-2
+                        transition-colors duration-200
+                        hover:text-[#FF8700]
+                        hover:decoration-[#FF8700]
+                      "
+                    >
+                      View
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>

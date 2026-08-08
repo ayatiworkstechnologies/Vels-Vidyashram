@@ -65,20 +65,20 @@ export default function OurMottoSection() {
     <section ref={sectionRef} className="max-w-7xl mx-auto px-6 py-12 md:py-20">
       {/* TOP TEXT */}
       <div className="mb-8 md:mb-12">
-        <span
+        {/* <span
           className={`inline-block text-xs font-semibold text-secondary bg-orange-50 px-3 py-1 rounded-full mb-4 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
           }`}
         >
           Our motto
-        </span>
+        </span> */}
 
         <h2
           className={`text-3xl md:text-5xl font-regular font-primary text-gray-900 leading-tight max-w-2xl transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
           }`}
         >
-          The Motto of the School is <br />
+          {/* The Motto of the School is <br /> */}
           Wisdom is Strength.
         </h2>
       </div>

@@ -5,15 +5,15 @@ import Link from "next/link";
 const slides = [
   {
     id: 1,
-    image: "/dargaroad/banner/des-banner-1.png",
-    mobileImage: "/dargaroad/banner/mob-banner-1.png",
+    image: "/dargaroad/banner/desk-banner-1.jpg",
+    mobileImage: "/dargaroad/banner/mobile-banner-1.png",
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Dargaroad",
   },
   {
     id: 2,
-    image: "/dargaroad/banner/des-banner-2.png",
-    mobileImage: "/dargaroad/banner/mob-banner-2.png",
+    image: "/dargaroad/banner/desk-banner-2.jpg",
+    mobileImage: "/dargaroad/banner/mobile-banner-2.png",
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
   },
@@ -27,8 +27,8 @@ const slides = [
   },
   {
     id: 5,
-    image: "/dargaroad/banner/des-banner-4.png",
-    mobileImage: "/dargaroad/banner/mob-banner-4.png",
+    image: "/dargaroad/banner/desk-banner-3.jpg",
+    mobileImage: "/dargaroad/banner/mobile-banner-4.png",
     title: "Future-ready learning",
     subtitle: "Preparing Children for\nTomorrow's Opportunities Today",
   }

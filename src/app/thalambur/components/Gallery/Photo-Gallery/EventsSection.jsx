@@ -8,6 +8,10 @@ const EVENTS_DATA = {
   years: ['2026-2027','2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+      { title: "FIELD TRIP (GRADE VI TO VIII)", id: 21, size: 'small', images: ["/thalambur/field_trip1.jpeg","/thalambur/field_trip2.jpeg","/thalambur/field_trip3.jpeg","/thalambur/field_trip4.jpeg","/thalambur/field_trip5.jpeg","/thalambur/field_trip6.jpeg"] },
+      { title: "TAMIL DEPARTMENT PRESENTATION", id: 20, size: 'small', images: ["/thalambur/tamil_dep1.jpeg","/thalambur/tamil_dep2.jpeg","/thalambur/tamil_dep3.jpeg","/thalambur/tamil_dep4.jpeg","/thalambur/tamil_dep5.jpeg"] },
+      { title: "ENGLISH DEPARTMENT PRESENTATION", id: 19, size: 'small', images: ["/thalambur/eng_dep1.jpeg","/thalambur/eng_dep2.jpeg","/thalambur/eng_dep3.jpeg","/thalambur/eng_dep4.jpeg","/thalambur/eng_dep5.jpeg"] },
+      { title: "PUBERTY EDUCATION", id: 18, size: 'small', images: ["/thalambur/puberty_edu1.jpeg","/thalambur/puberty_edu2.jpeg","/thalambur/puberty_edu3.jpeg","/thalambur/puberty_edu4.jpeg","/thalambur/puberty_edu5.jpeg", "/thalambur/puberty_edu6.jpeg"] },
       { title: "CAREER GUIDANCE SESSION", id: 17, size: 'small', images: ["/thalambur/CAREER_GUIDANCE-1.jpg","/thalambur/CAREER_GUIDANCE-2.jpg","/thalambur/CAREER_GUIDANCE-3.jpg","/thalambur/CAREER_GUIDANCE-4.jpg","/thalambur/CAREER_GUIDANCE-5.jpg", "/thalambur/CAREER_GUIDANCE-6.jpg"] },
       { title: "KARGIL DIWAS", id: 16, size: 'small', images: ["/thalambur/KARGIL_DIWAS-1.jpeg","/thalambur/KARGIL_DIWAS-2.jpeg","/thalambur/KARGIL_DIWAS-3.jpeg","/thalambur/KARGIL_DIWAS-4.jpeg","/thalambur/KARGIL_DIWAS-5.jpeg","/thalambur/KARGIL_DIWAS-6.jpeg"] },
       { title: "Census 2027 & Process of Census Enumeration awareness to students", id: 15, size: 'small', images: ["/thalambur/Fw_Census-1.png","/thalambur/Fw_Census-2.png","/thalambur/Fw_Census-3.jpeg"] },

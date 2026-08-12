@@ -1,7 +1,7 @@
 "use client";
 
 const ITEMS = [
-  { id: 1,  title: "CBSE Mandatory Disclosure",      pdf: "/thalambur/pdf/Mandatory-Disclosure.pdf" },
+  { id: 1,  title: "CBSE Mandatory Disclosure",      pdf: "/thalambur/pdf/Mandatory_Disclosure_Details.pdf" },
   { id: 2,  title: "Land & Trust Certificate",       pdf: "/thalambur/pdf/01_LAND_CERTIFICATE_2025.pdf" },
   { id: 3,  title: "CBSE Affiliation",               pdf: "/thalambur/pdf/03_CBSE_Affiliation.pdf" },
   { id: 4,  title: "Self Certification",             pdf: "/thalambur/pdf/Self_certificate.pdf" },

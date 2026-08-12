@@ -1,7 +1,7 @@
 "use client";
 
 const ITEMS = [
-  { id: 1,  title: "CBSE Mandatory Disclosure",     pdf: "/thalambur/pdf/Mandatory-Disclosure.pdf" },
+  { id: 1,  title: "CBSE Mandatory Disclosure",      pdf: "/thalambur/pdf/Mandatory-Disclosure.pdf" },
   { id: 2,  title: "Land & Trust Certificate",       pdf: "/thalambur/pdf/01_LAND_CERTIFICATE_2025.pdf" },
   { id: 3,  title: "CBSE Affiliation",               pdf: "/thalambur/pdf/03_CBSE_Affiliation.pdf" },
   { id: 4,  title: "Self Certification",             pdf: "/thalambur/pdf/Self_certificate.pdf" },
@@ -20,6 +20,7 @@ const ITEMS = [
     id: 16,
     type: "teacher-group",
     title: "Teachers Details",
+    pdf: "/thalambur/pdf/TEACHERS_LIST_AFFILATION(26-27).pdf",
     subItems: [
       { label: "a. PGT", pdf: "/thalambur/pdf/LIST_OF_TEACHERS-PGT.pdf" },
       { label: "b. TGT", pdf: "/thalambur/pdf/LIST_OF_TEACHERS-TGT.pdf" },
@@ -29,6 +30,8 @@ const ITEMS = [
   { id: 17, title: "SPECIAL EDUCATOR: Ms. ANIS FATHIMA" },
   { id: 18, title: "COUNSELING & WELLNESS TEACHER : Ms. FATHIMA ROSHAN M" },
   { id: 19, title: "CAREER COUNSELOR : Ms. SUBHALAKSHMI S" },
+  { id: 20, title: "Sample TC Format",               pdf: "/thalambur/pdf/TRANSFER_CERTIFICATE_FORMAT.pdf" },
+
 ];
 
 function ViewLink({ href, size = "base" }) {
@@ -92,7 +95,7 @@ export default function MandatorySection() {
                   if (item.type === "teacher-group") {
                     return (
                       <>
-                        {/* Parent row: serial | "Teachers Details" (spans Info+View) */}
+                        {/* Parent row: serial | "Teachers Details" | View (own pdf) */}
                         <tr
                           key={`${item.id}-parent`}
                           className="border-b border-[#E5E1F2] bg-white"
@@ -100,11 +103,11 @@ export default function MandatorySection() {
                           <td className="border-r border-[#E5E1F2] px-4 py-2.5 text-center font-secondary text-[16px] text-gray-900">
                             {serial}
                           </td>
-                          <td
-                            colSpan={2}
-                            className="px-4 py-2.5 font-secondary text-[16px] font-semibold text-gray-900"
-                          >
+                          <td className="border-r border-[#E5E1F2] px-4 py-2.5 font-secondary text-[16px] text-gray-900">
                             {item.title}
+                          </td>
+                          <td className="px-4 py-2.5 text-center">
+                            {item.pdf ? <ViewLink href={item.pdf} /> : null}
                           </td>
                         </tr>
 
@@ -202,12 +205,15 @@ export default function MandatorySection() {
                   <div key={item.id} className="border-b border-[#E5E1F2] last:border-b-0">
 
                     {/* Parent row */}
-                    <div className="grid grid-cols-[44px_1fr] bg-white">
+                    <div className="grid grid-cols-[44px_1fr_60px] bg-white">
                       <div className="flex items-center justify-center border-r border-[#E5E1F2] px-1 py-3 font-secondary text-sm text-gray-900">
                         {serial}
                       </div>
-                      <div className="flex items-center px-3 py-3 font-secondary text-sm font-semibold leading-5 text-gray-900">
+                      <div className="flex items-center border-r border-[#E5E1F2] px-3 py-3 font-secondary text-sm leading-5 text-gray-900">
                         {item.title}
+                      </div>
+                      <div className="flex items-center justify-center px-2 py-3">
+                        {item.pdf ? <ViewLink href={item.pdf} size="sm" /> : null}
                       </div>
                     </div>
 

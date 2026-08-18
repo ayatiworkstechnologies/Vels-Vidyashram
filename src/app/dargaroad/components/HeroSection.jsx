@@ -5,33 +5,54 @@ import Link from "next/link";
 const slides = [
   {
     id: 1,
-    image: "/dargaroad/banner/desktopbanner-1.jpg",
-    mobileImage: "/dargaroad/banner/Mobilebanner-1.png",
+    image: "/dargaroad/banner/desk-banner-1.jpg",
+    mobileImage: "/dargaroad/banner/mobile-banner-1.png",
     title: "Welcome to",
     subtitle: "Vels Vidyashram\nSenior Secondary School - Dargaroad",
   },
   {
     id: 2,
-    image: "/dargaroad/banner/desktopbanner-2.jpg",
-    mobileImage: "/dargaroad/banner/Mobilebanner-2.png",
+    image: "/dargaroad/banner/desk-banner-2.jpg",
+    mobileImage: "/dargaroad/banner/mobile-banner-2.png",
     title: "Nurturing Excellence",
     subtitle: "Empowering Students\nThrough Holistic Education",
   },
 
   {
-    id: 4,
-    image: "/dargaroad/banner/desktopbanner-3.jpg",
-    mobileImage: "/dargaroad/banner/Mobilebanner-3.png",
+    id: 3,
+    image: "/dargaroad/banner/des-banner-3.png",
+    mobileImage: "/dargaroad/banner/mob-banner-3.png",
     title: "Beyond Academics",
     subtitle: "Developing Talents\nIn Sports and Arts",
   },
   {
-    id: 5,
+    id: 4,
     image: "/dargaroad/banner/desk-banner-3.jpg",
-    mobileImage: "/dargaroad/banner/mobile-banner-4.png",
+    mobileImage: "/dargaroad/banner/mob-banner-4.png",
     title: "Future-ready learning",
-    subtitle: "Preparing Children for\nTomorrow's Opportunities Today",
-  }
+    subtitle: "Preparing Children for\n Tomorrow's Opportunities Today",
+  },
+  {
+    id: 5,
+    image: "/dargaroad/banner/desktopbanner-1.jpg",
+    mobileImage: "/dargaroad/banner/Mobilebanner-1.png",
+    title: "School Activities",
+    subtitle: "Inspiring students through learning,\n creativity, sports, and meaningful experiences.",
+  },
+  {
+    id: 6,
+    image: "/dargaroad/banner/desktopbanner-2.jpg",
+    mobileImage: "/dargaroad/banner/Mobilebanner-2.png",
+    title: "Beyond the Classroom",
+    subtitle: "Exploring talents, building confidence,\n and creating memorable learning experiences.",
+  },
+  {
+    id: 7,
+    image: "/dargaroad/banner/desktopbanner-3.jpg",
+    mobileImage: "/dargaroad/banner/Mobilebanner-3.png",
+    title: "Learning Through Activities",
+    subtitle: "Encouraging participation, teamwork,\n creativity, and holistic development.",
+  },
   
 ];
 

@@ -7,6 +7,20 @@ const EVENTS_DATA = {
   years: ['2026-2027', '2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+       {
+      title: "Annual sports meet",
+      id: 8,
+      images: [
+        "/dargaroad/events/sports_meet1.JPG", 
+        "/dargaroad/events/sports_meet2.jpg",
+        "/dargaroad/events/sports_meet3.jpg",
+        "/dargaroad/events/sports_meet4.jpg",
+        "/dargaroad/events/sports_meet5.jpg",
+        "/dargaroad/events/sports_meet6.jpg",
+        "/dargaroad/events/sports_meet7.jpg",
+        "/dargaroad/events/sports_meet8.jpg",
+      ],
+    },
      
        {
       title: "International Yoga Day",

@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/node": "26.2.0",
     "babel-plugin-react-compiler": "1.0.0",
     "baseline-browser-mapping": "^2.10.43",
     "eslint": "^9",

@@ -10,7 +10,7 @@ const EVENTS_DATA = {
        {
       title: "Annual sports meet",
       id: 8,
-      images: [
+      images: [ 
         "/dargaroad/events/sports_meet1.JPG", 
         "/dargaroad/events/sports_meet2.jpg",
         "/dargaroad/events/sports_meet3.jpg",
@@ -39,8 +39,8 @@ const EVENTS_DATA = {
       images: [
         "/dargaroad/events/Sandhai-1.jpeg", 
         "/dargaroad/events/Sandhai-2.jpg",
-        "/dargaroad/events/Sandhai-3.jpg",
-        "/dargaroad/events/Sandhai-4.jpg",
+        "/dargaroad/events/Sandhai-3.JPG",
+        "/dargaroad/events/Sandhai-4.JPG",
         "/dargaroad/events/Sandhai-5.jpg",
       ],
     },

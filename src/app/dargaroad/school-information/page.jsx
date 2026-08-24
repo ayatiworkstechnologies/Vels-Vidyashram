@@ -1,4 +1,4 @@
-import Hero from "@/app/thalambur/components/About/School-Information/Hero";
+import Hero from "../components/About/SchoolInformation/Hero";
 import SchoolInfoPage from "../components/About/SchoolInformation/SchoolInfo";
 
 

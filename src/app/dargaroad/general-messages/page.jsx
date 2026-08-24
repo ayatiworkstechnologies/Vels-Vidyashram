@@ -1,4 +1,4 @@
-import Hero from "@/app/thalambur/components/Academics/Messages/Hero";
+import Hero from "../components/Academics/Messages/Hero";
 import MessageSection from "../components/Academics/Messages/MessageSection";
 
 

@@ -1,4 +1,4 @@
-import Hero from "@/app/thalambur/components/Academics/Circular/Hero";
+import Hero from "../components/Academics/Circular/Hero";
 import CircularSection from "../components/Academics/Circular/CircularSection";
 
 

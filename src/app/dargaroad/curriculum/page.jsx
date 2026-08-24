@@ -1,6 +1,6 @@
 
 
-import Hero from '@/app/thalambur/components/Academics/Curriculum/Hero';
+import Hero from '../components/Academics/Curriculum/Hero';
 import CurriculumSection from '../components/Academics/Curriculum/CurriculumPage';
 
 const siteTitle = "Curriculum - Vels Vidyashram";

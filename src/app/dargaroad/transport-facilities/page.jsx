@@ -8,6 +8,7 @@ const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 
 export const metadata = {
+  alternates: { canonical: "https://velsvidyashram.ac.in/dargaroad/transport-facilities" },
   title: siteTitle,
   description: siteDescription,
   openGraph: {

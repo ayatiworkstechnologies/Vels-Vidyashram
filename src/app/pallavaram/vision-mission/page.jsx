@@ -11,6 +11,7 @@ const siteUrl = "https://yourwebsite.com";
 const siteImage = "https://yourwebsite.com/default-share-image.jpg";
 
 export const metadata = {
+  alternates: { canonical: "https://velsvidyashram.ac.in/pallavaram/vision-mission" },
   title: siteTitle,
   description: siteDescription,
   openGraph: {

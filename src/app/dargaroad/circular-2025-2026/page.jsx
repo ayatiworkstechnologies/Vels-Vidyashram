@@ -9,6 +9,7 @@ const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 
 export const metadata = {
+  alternates: { canonical: "https://velsvidyashram.ac.in/dargaroad/circular-2025-2026" },
     title: siteTitle,
     description: siteDescription,
     openGraph: {

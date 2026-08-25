@@ -23,6 +23,7 @@ const siteImage = "https://yourwebsite.com/default-share-image.jpg";
    METADATA (NEXT.JS)
 ====================== */
 export const metadata = {
+  alternates: { canonical: "https://velsvidyashram.ac.in/" },
   title: siteTitle,
   description: siteDescription,
   openGraph: {

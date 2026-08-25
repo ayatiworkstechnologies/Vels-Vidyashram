@@ -12,6 +12,7 @@ const siteUrl = 'https://yourwebsite.com';
 const siteImage = 'https://yourwebsite.com/default-share-image.jpg';
 
 export const metadata = {
+  alternates: { canonical: "https://velsvidyashram.ac.in/dargaroad/video-gallery" },
     title: siteTitle,
     description: siteDescription,
     openGraph: {

@@ -52,7 +52,7 @@ export default function Modal() {
 
         {/* Image */}
         <img
-          src="/pallavaram/popup.jpeg"
+          src="/pallavaram/Vijayadhasami.jpeg"
           alt="School Admissions Announcement"
           className="w-full h-auto max-h-[85vh] object-contain border-4 border-[#ffb74d] rounded-xl shadow-2xl"
         />

@@ -4,7 +4,7 @@ const ITEMS = [
   {
     id: 1,
     title: "Mandatory Disclosure",
-    pdf: "/pallavaram/pdf/mandatory-public-disclosure.pdf",
+    pdf: "/pallavaram/mandatory-disclosure/Mandatory_public_disclosure.pdf",
   },
   {
     id: 2,
@@ -33,8 +33,8 @@ const ITEMS = [
   },
   {
     id: 8,
-    title: "Fire",
-    pdf: "/pallavaram/pdf/fire.pdf",
+    title: "Fire Certificate",
+    pdf: "/pallavaram/mandatory-disclosure/FIRE_CERTIFICATE.pdf",
   },
   {
     id: 9,

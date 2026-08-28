@@ -6,8 +6,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 const EVENTS_DATA = {
-  years: ["2025-2026", "2024-2025"],
+  years: ["2026-2027","2025-2026", "2024-2025"],
   eventsByYear: {
+    "2026-2027": [
+      {
+        title: "Annual Day Celebration",
+        id: 1,
+        size: "small",
+        images: [
+          "/pallavaram/events/Annual1.jpg",
+          "/pallavaram/events/Annual2.jpg",
+          "/pallavaram/events/Annual3.jpg",
+          "/pallavaram/events/Annual4.jpg",
+          "/pallavaram/events/Annual5.jpg",
+          "/pallavaram/events/Annual6.jpg",
+          "/pallavaram/events/Annual7.jpg",
+          "/pallavaram/events/Annual8.jpg",
+          
+        ],
+      },
+
+    ],
     "2025-2026": [
       {
         title: "Graduation day",
@@ -275,7 +294,7 @@ const EVENTS_DATA = {
 };
 
 export default function EventsGallery() {
-  const [selectedYear, setSelectedYear] = useState("2025-2026");
+  const [selectedYear, setSelectedYear] = useState("2026-2027");
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [carouselStates, setCarouselStates] = useState({});
   const [activeEventImages, setActiveEventImages] = useState([]);

@@ -22,7 +22,7 @@ const navItems = [
       { label: "Curriculum", href: "/dargaroad/curriculum" },
       { label: "Circular", href: "/dargaroad/circular-2025-2026" },
       { label: "Messages", href: "/dargaroad/general-messages" },
-      { label: "List of Books", href: "/dargaroad/pdf/listofbooks.pdf" },
+      { label: "List of Books", href: "/dargaroad/pdf/LIST_OF_BOOKS.pdf" },
       { label: "Home Work Policy", href: "/dargaroad/pdf/HOME-WORK-POLICY_2026-27.pdf" },
       { label: "Annual Report", href: "/dargaroad/pdf/annual-26.pdf" },
       { label: "Strength Details", href: "/dargaroad/pdf/JULY_2026_STRENGTH.pdf" },

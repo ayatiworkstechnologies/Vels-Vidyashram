@@ -7,8 +7,9 @@ import Footer from './components/Footer';
 import LetterSection from './components/LetterSection';
 import EmpoweringYoungMinds from './components/EmpoweringYoungMinds';
 import WhyChose from './components/WhyChose';
-import ExperienceTheFuture from './components/ExperienceTheFuture'
-import LearningForTommorrow from './components/LearningForTommorrow'
+import ExperienceTheFuture from './components/ExperienceTheFuture';
+import LearningForTommorrow from './components/LearningForTommorrow';
+//import DocumentSearch from './components/DocumentSearch';
 
 /* ======================
    SEO CONSTANTS
@@ -56,6 +57,8 @@ export default function Home() {
     <main>
       <HeroSection />
       <LetterSection />
+      {/* Report card module
+      < DocumentSearch /> */}
       <EmpoweringYoungMinds />
       <WhyChose />
       <About />

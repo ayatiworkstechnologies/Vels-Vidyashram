@@ -25,6 +25,7 @@ const inter = Inter({
 export const metadata = {
   title: "Vels Vidyashram",
   description: "Vels Vidyashram Official Website",
+  canonical: "https://velsvidyashram.ac.in"
 };
 
 export default function RootLayout({ children }) {

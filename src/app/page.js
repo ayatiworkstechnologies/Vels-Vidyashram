@@ -57,8 +57,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <LetterSection />
-      {/* Report card module
-      < DocumentSearch /> */}
+      {/* < DocumentSearch />  */}
       <EmpoweringYoungMinds />
       <WhyChose />
       <About />

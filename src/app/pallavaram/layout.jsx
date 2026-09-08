@@ -10,6 +10,10 @@ export const metadata = {
   description: "Best school in Chennai",
   canonical: "https://velsvidyashram.ac.in",
 };
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function RootLayout({ children }) {
   return (

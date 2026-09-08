@@ -7,22 +7,30 @@ import FloatingActions from "./layout/FloatingIcons";
 
 export const metadata = {
   title: "Vels Vidyashram",
-  description: "best school in Chennai",
-  canonical: "https://velsvidyashram.ac.in",
+  description: "Best school in Chennai",
+  alternates: {
+    canonical: "https://velsvidyashram.ac.in",
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
     <>
-        <Header />
-        <Modal />
-        <FloatingActions />
-        <main className="relative z-0" style={{ overflowX: "clip" }}>
-          {children}
-        </main>
-        <ScrollToTop />
+      <Header />
+      <Modal />
+      <FloatingActions />
 
-        <Footer />
+      <main className="relative z-0 overflow-x-clip">
+        {children}
+      </main>
+
+      <ScrollToTop />
+      <Footer />
     </>
   );
 }

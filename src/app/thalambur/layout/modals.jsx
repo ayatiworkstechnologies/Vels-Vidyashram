@@ -52,7 +52,7 @@ export default function Modal() {
 
         {/* Image */}
         <img
-          src="/thalambur/thalambur-popup.jpeg"
+          src="/thalambur/thalambur-popup-new.jpg"
           alt="School Admissions Announcement"
           className="block max-h-[85vh] w-full rounded-xl border-4 border-[#ffb74d] object-contain shadow-2xl"
         />

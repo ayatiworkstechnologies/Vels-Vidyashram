@@ -29,9 +29,9 @@ const EVENTS_DATA = {
       { title: "Grade XII Results 2026", id: 3, size: 'small', images: ["/thalambur/image-13.png","/thalambur/image-14.png","/thalambur/image-15.png"] },
       { title: "Tamil New Year Celebration", id: 2, size: 'medium', images: ["/thalambur/image-1.png","/thalambur/image-2.png","/thalambur/image-3.png","/thalambur/image-5.png"] },
       { title: "Grade X Results 2026", id: 1, size: 'large', images: ["/thalambur/image-6.png", "/thalambur/image-7.png","/thalambur/image-8.png"] },
-
-    
-    ],    
+      { title: "ANNUAL SPORTS MEET", id: 21, size: "small", images: ["/thalambur/a-1.jpg","/thalambur/a-2.jpg","/thalambur/a-3.jpg","/thalambur/a-4.jpg","/thalambur/a-5.jpg","/thalambur/a-6.jpg","/thalambur/a-7.jpg","/thalambur/a-8.jpg","/thalambur/a-9.jpg","/thalambur/a-10.jpg","/thalambur/a-11.jpg","/thalambur/a-12.jpg","/thalambur/a-13.jpg","/thalambur/a-14.jpg","/thalambur/a-15.jpg","/thalambur/a-16.jpg","/thalambur/a-17.jpg","/thalambur/a-18.jpg","/thalambur/a-19.jpg","/thalambur/a-20.jpg","/thalambur/a-21.jpg","/thalambur/a-22.jpg","/thalambur/a-23.jpg","/thalambur/a-24.jpg","/thalambur/a-25.jpg","/thalambur/a-26.jpg"] },
+    ],  
+      
     '2025-2026': [
       { title: "WINNERS OF THE NATIONAL LEVEL ART COMPETITION", id: 1, size: 'large', images: ["/thalambur/winner.jpg"] },
       { title: "No bag day II", id: 2, size: 'medium', images: ["/thalambur/bag-1.jpg","/thalambur/bag-2.jpg","/thalambur/bag-3.jpg","/thalambur/bag-4.jpg","/thalambur/bag-5.jpg","/thalambur/bag-6.jpg","/thalambur/bag-7.jpg"] },

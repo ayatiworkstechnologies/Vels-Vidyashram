@@ -4,121 +4,86 @@ import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer
 
 const allScheduleData = [
   // =========================
-  // JULY EVENTS
+  // SEPTEMBER EVENTS
   // =========================
   {
     date: "03",
-    monthYear: "July, 2026",
-    title: "KG SENSE BOOTH DAY",
+    monthYear: "September, 2026",
+    title: "TEACHERS DAY CELEBRATION / KRISHNA JAYANTHI CELEBRATION - KG",
     tag: "Events",
     isHighlighted: false,
   },
   {
-    date: "07",
-    monthYear: "July, 2026",
-    title: "INVESTITURE CEREMONY",
+    date: "08",
+    monthYear: "September, 2026",
+    title: "INTERNATIONAL LITERACY DAY FOR GRADE I - VIII",
     tag: "Events",
     isHighlighted: true,
   },
   {
-    date: "10",
-    monthYear: "July, 2026",
-    title: "RED DAY - KG",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "17",
-    monthYear: "July, 2026",
-    title: "NO BAG DAY - TERM I",
-    tag: "Events",
-    isHighlighted: true,
-  },
-  {
-    date: "17",
-    monthYear: "July, 2026",
-    title: "YELLOW DAY / MANGO DAY / WORLD EMOJI DAY",
+    date: "11",
+    monthYear: "September, 2026",
+    title: "HINDI DIWAS CELEBRATION GRADE I - VIII / VINAYAKAR CHATHURTHI CELEBRATION - KG",
     tag: "Events",
     isHighlighted: false,
   },
   {
     date: "18",
-    monthYear: "July, 2026",
-    title: "PTM FOR GRADE KG - XII",
+    monthYear: "September, 2026",
+    title: "GENERAL ASSEMBLY / GRADE VIII - World Tourism Day",
     tag: "Events",
     isHighlighted: true,
   },
   {
-    date: "18",
-    monthYear: "July, 2026",
-    title: "PROFESSIONAL DEVELOPMENT SESSION",
+    date: "19",
+    monthYear: "September, 2026",
+    title: "PTM FOR GRADE IX- XII / PROFESSIONAL DEVELOPMENT SESSION",
     tag: "Events",
     isHighlighted: false,
   },
   {
-    date: "24",
-    monthYear: "July, 2026",
-    title: "GENERAL ASSEMBLY - GRADE XI (KARGIL VIJAY DIWAS)",
+    date: "25",
+    monthYear: "September, 2026",
+    title: "DEPARTMENT PRESENTATION (SCIENCE)",
     tag: "Events",
     isHighlighted: true,
-  },
-  {
-    date: "29",
-    monthYear: "July, 2026",
-    title: "INTERNATIONAL TIGER DAY - GRADE KG",
-    tag: "Events",
-    isHighlighted: false,
-  },
-  {
-    date: "31",
-    monthYear: "July, 2026",
-    title: "FRIENDSHIP DAY CELEBRATION - KG",
-    tag: "Events",
-    isHighlighted: true,
-  },
-  {
-    date: "31",
-    monthYear: "July, 2026",
-    title: "DEPARTMENT PRESENTATION (MATH)",
-    tag: "Events",
-    isHighlighted: false,
   },
 
   // =========================
-  // JULY EXAMS
+  // SEPTEMBER EXAMS
   // =========================
   {
-    date: "01",
-    monthYear: "July, 2026",
-    title: "PERIODIC TEST I - GRADE III STARTS",
+    date: "05",
+    monthYear: "September, 2026",
+    title: "QUARTERLY EXAM FOR GRADE IX- XII STARTS",
     tag: "Exams",
     isHighlighted: false,
   },
   {
-    date: "02",
-    monthYear: "July, 2026",
-    title: "PERIODIC TEST I - GRADE I & II STARTS",
+    date: "11",
+    monthYear: "September, 2026",
+    title: "QUARTERLY EXAM FOR GRADE IX- XII ENDS",
     tag: "Exams",
     isHighlighted: true,
   },
   {
-    date: "02",
-    monthYear: "July, 2026",
-    title: "MID TERM STARTS FOR GRADE IX - XII",
+    date: "25",
+    monthYear: "September, 2026",
+    title: "TERMINAL 1 EXAM STARTS GRADE IV- VIII",
     tag: "Exams",
     isHighlighted: false,
   },
   {
-    date: "07",
-    monthYear: "July, 2026",
-    title: "PERIODIC TEST I ENDS - GRADE I - VIII",
+    date: "29",
+    monthYear: "September, 2026",
+    title: "KG ASSESSMENT STARTS",
     tag: "Exams",
     isHighlighted: true,
   },
   {
-    date: "09",
-    monthYear: "July, 2026",
-    title: "MID TERM ENDS FOR GRADE IX - XII",
+    date: "30",
+    monthYear: "September, 2026",
+    title: "TERMINAL 1 EXAM STARTS GRADE III / REVISION 1 FOR GRADE X & XII STARTS",
     tag: "Exams",
     isHighlighted: false,
   },
@@ -240,7 +205,7 @@ export default function EventsSchedule() {
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Upcoming {activeTab} -  July
+          Upcoming {activeTab} -  September
         </motion.h2>
 
         <div className="relative max-w-2xl">

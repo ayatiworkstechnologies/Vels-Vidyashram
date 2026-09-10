@@ -4,7 +4,7 @@ import Footer from "./layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingActions from "./layout/FloatingIcons";
 import Modal from "./layout/modals";
-
+  
 export const metadata = {
   title: "Vels Vidyashram",
   description: "Best school in Chennai",

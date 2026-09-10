@@ -13,25 +13,53 @@ const AWARDS_DATA = {
       ],
     },
     {
+      title: "GRADE I - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/g-1-pt-1-1.jpeg","/dargaroad/awards/g-1-pt-1-2.jpeg","/dargaroad/awards/g-1-pt-1-3.jpeg",
+      ],
+    },
+    {
       title: "GRADE II - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
       id: 28,
       images: [
         "/dargaroad/awards/grade-ii-pt1-1.jpeg","/dargaroad/awards/grade-ii-pt1-2.jpeg",
       ],
     },
-  
+    {
+      title: "GRADE II - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/g-2-pt-2-1.jpeg","/dargaroad/awards/g-2-pt-2-2.jpeg","/dargaroad/awards/g-2-pt-2-3.jpeg",
+      ],
+    },
     {
       title: "GRADE III - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
       id: 28,
       images: [
-        "/dargaroad/awards/grade-iii-pt1.jpeg",
+        "/dargaroad/awards/grade-2-p-2-1.jpeg","/dargaroad/awards/grade-2-p-2-.jpeg","/dargaroad/awards/grade-2-p-2-3.jpeg",
       ],
     },
+    {
+      title: "GRADE III - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/g-3-pt-2-1.jpeg",
+      ],
+    },
+    
     {
       title: "GRADE IV - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
       id: 28,
       images: [
         "/dargaroad/awards/grade-iv-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE IV - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 28,
+      images: [
+        "/dargaroad/awards/g-4-pt-2-1.jpeg",
       ],
     },
     {
@@ -42,10 +70,25 @@ const AWARDS_DATA = {
       ],
     },
     {
+      title: "GRADE V - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 27,
+      images: [
+        "/dargaroad/awards/g-5-pt-2-1.jpeg",
+      ],
+    },
+    
+    {
       title: "GRADE VI - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
       id: 27,
       images: [
         "/dargaroad/awards/grade-vi-pt1.jpeg",
+      ],
+    },
+{
+      title: "GRADE VI - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 27,
+      images: [
+        "/dargaroad/awards/g-6-pt-2-1.jpeg",
       ],
     },
     {
@@ -56,10 +99,24 @@ const AWARDS_DATA = {
       ],
     },
     {
+      title: "GRADE VII - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 26,
+      images: [
+        "/dargaroad/awards/g-7-pt-2-1.jpeg",
+      ],
+    },
+    {
       title: "GRADE VIII - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
       id: 25,
       images: [
         "/dargaroad/awards/grade-viii-pt1.jpeg",
+      ],
+    },
+    {
+      title: "GRADE VIII - PT 2 PROFICIENCY CERTIFICATE HOLDERS",
+      id: 25,
+      images: [
+        "/dargaroad/awards/g-8-pt-2-1.jpeg",
       ],
     },
     {

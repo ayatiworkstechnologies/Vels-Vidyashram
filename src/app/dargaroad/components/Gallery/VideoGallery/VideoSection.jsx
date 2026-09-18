@@ -15,6 +15,12 @@ const VIDEO_DATA = {
   years: ["2026 - 2027", "2025 - 2026"],
   videosByYear: {
     "2026 - 2027": [
+      {
+        id: 6,
+        title: "AUGUST GLIMPSES" ,
+        thumbnail: "/dargaroad/thumbnail/thumbnail-5.jpg",
+        videoUrl: "https://www.youtube.com/embed/88jU32c2a_k?si=kMMF8zJ1f5UP5ds2"
+      },
        {
         id: 5,
         title: "JULY GLIMPSES",
@@ -51,7 +57,7 @@ const VIDEO_DATA = {
         id: 121,
         title: "April GLIMPSES",
         thumbnail: "/dargaroad/thumbnail/thum-21.jpg",
-        videoUrl: "https://www.youtube.com/embed/BY8o1-qeFag?si=MYnR9u43saf-s3Cb"
+        videoUrl: "https://youtu.be/RIQBio1TSVk"
       },
       {
         id: 122,

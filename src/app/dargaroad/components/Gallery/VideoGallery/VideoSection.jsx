@@ -16,6 +16,18 @@ const VIDEO_DATA = {
   videosByYear: {
     "2026 - 2027": [
       {
+        id: 8,
+        title: "VINAYAGAR CHATHURTHI CELEBRATION" ,
+        thumbnail: "/dargaroad/thumbnail/thumbnail_08.jpg",
+        videoUrl: "https://youtu.be/qtBKXfAGbxA"
+      },
+      {
+        id: 7,
+        title: "KRISHNA JAYANTHI CELEBRATION" ,
+        thumbnail: "/dargaroad/thumbnail/thumbnail_07.jpg",
+        videoUrl: "https://youtu.be/rYfn9mBC4tY"
+      },
+      {
         id: 6,
         title: "AUGUST GLIMPSES" ,
         thumbnail: "/dargaroad/thumbnail/thumbnail_6.jpg",

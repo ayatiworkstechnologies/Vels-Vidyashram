@@ -18,7 +18,7 @@ const VIDEO_DATA = {
       {
         id: 6,
         title: "AUGUST GLIMPSES" ,
-        thumbnail: "/dargaroad/thumbnail/thumbnail-5.jpg",
+        thumbnail: "/dargaroad/thumbnail/thumbnail_6.jpg",
         videoUrl: "https://www.youtube.com/embed/88jU32c2a_k?si=kMMF8zJ1f5UP5ds2"
       },
        {

@@ -19,13 +19,13 @@ const VIDEO_DATA = {
         id: 8,
         title: "VINAYAGAR CHATHURTHI CELEBRATION" ,
         thumbnail: "/dargaroad/thumbnail/thumbnail_08.jpg",
-        videoUrl: "https://youtu.be/qtBKXfAGbxA"
+        videoUrl: "https://www.youtube.com/embed/qtBKXfAGbxA"
       },
       {
         id: 7,
         title: "KRISHNA JAYANTHI CELEBRATION" ,
         thumbnail: "/dargaroad/thumbnail/thumbnail_07.jpg",
-        videoUrl: "https://youtu.be/rYfn9mBC4tY"
+        videoUrl: "https://www.youtube.com/embed/rYfn9mBC4tY"
       },
       {
         id: 6,

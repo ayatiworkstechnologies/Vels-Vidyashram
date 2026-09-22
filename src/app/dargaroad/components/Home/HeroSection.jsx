@@ -79,10 +79,12 @@ export default function HeroSection() {
           <li className="text-black font-medium capitalize">Event Section</li>
         </ol>
       </div>
+      
 
   
 
    
     </>
+    
   );
 }

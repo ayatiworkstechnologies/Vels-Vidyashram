@@ -9,6 +9,8 @@ import EventsSchedule from './components/Home/EventSection';
 import AboutSchool from './components/AboutSchool';
 import VideoSection from './components/VideoSection';
 import InspireSection from './components/InspireSection';
+import StatsSection from "./components/Home/StatsSection";
+import PartnersSection from "./components/Home/PartnersSection";
 
 
 const siteTitle = "Best CBSE School in Chennai, Dargaroad - Vels Vidyashram";
@@ -48,6 +50,8 @@ export default function Dargaroad() {
         <OurMottoSection />
         <VideoSection />
         <GalleryGrid />
+        <StatsSection />
+        <PartnersSection />
 
        
     </main>

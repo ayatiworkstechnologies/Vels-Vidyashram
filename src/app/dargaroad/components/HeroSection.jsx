@@ -53,6 +53,13 @@ const slides = [
     title: "Learning Through Activities",
     subtitle: "Encouraging participation, teamwork,\n creativity, and holistic development.",
   },
+  {
+    id: 8,
+    image: "/dargaroad/banner/Desktopbanner-4.jpeg",
+    mobileImage: "/dargaroad/banner/Mobile_banner_4.png",
+    title: "A Proud Moment of Excellence",
+    subtitle: "Times Education Icons 2025–26,\n Excellent School (National) award.",
+  },
   
 ];
 

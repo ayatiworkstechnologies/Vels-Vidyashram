@@ -5,51 +5,72 @@ import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer
 const allScheduleData = [
   // --- JUNE EVENTS ---
   {
-    date: "06",
-    monthYear: "August",
-    title: "General Assembly (Thursday)",
+    date: "03",
+    monthYear: "September",
+    title: "JANMASHTAMI CELEBRATION - KG , GENERAL ASSEMBLY(Thursday)",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "13",
-    monthYear: "August",
-    title: "Annual Sports Day (Thursday)",
+    date: "05",
+    monthYear: "September",
+    title: "TEACHERS DAY CELEBRATION (Saturday)",
     tag: "Events",
     isHighlighted: true
+  },
+  {
+    date: "09",
+    monthYear: "September",
+    title: "INTERNATIONAL LITERACY DAY I - VIII (Wednesday)",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "10",
+    monthYear: "September",
+    title: "CLUB ACTIVITIES(Thursday)",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "11",
+    monthYear: "September",
+    title: "VINAYAKAR CHATHURTHI CELEBRATION - KG , HINDI DIWAS I - VIII(Friday)",
+    tag: "Events",
+    isHighlighted: false
   },
   {
     date: "15",
-    monthYear: "August",
-    title: "Independence Day (Friday)",
+    monthYear: "September",
+    title: "COMMUNITY HELPERS DAY - KG (Tuesday)",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "20",
-    monthYear: "August",
-    title: "General Assembly (Thursday)",
+    date: "17",
+    monthYear: "September",
+    title: "GENERAL ASSEMBLY (Thursday)",
     tag: "Events",
     isHighlighted: false
   },
   {
-    date: "24",
-    monthYear: "August",
-    title: "EVS Culmination 1 (STD I) (Monday)",
-    tag: "Events",
-    isHighlighted: false
-  },
-  {
-    date: "25",
-    monthYear: "August",
-    title: "EVS Culmination 1 (STD II), Onam Celebration - KG, Sanskrit Day IV - VIII (Tuesday)",
+    date: "18",
+    monthYear: "September",
+    title: "VELS PHONICS SHOW - KG(Friday)",
     tag: "Events",
     isHighlighted: true
   },
   {
-    date: "28",
-    monthYear: "August",
-    title: "Back Walking Day - KG (Friday)",
+    date: "24",
+    monthYear: "September",
+    title: "CLUB ACTIVITIES (Thursday)",
+    tag: "Events",
+    isHighlighted: false
+  },
+  {
+    date: "29",
+    monthYear: "September",
+    title: "MY CAMPUS - MY BEAUTIFUL WORLD - KG(Tuesday)",
     tag: "Events",
     isHighlighted: false
   },

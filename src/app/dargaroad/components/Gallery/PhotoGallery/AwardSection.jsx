@@ -5,7 +5,21 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const AWARDS_DATA = {
   awards: [
-      {
+    {
+      title: " Teachers Receiving Vels Excellence Award",
+      id: 30,
+      images: [
+        "/dargaroad/awards/img_1.png",
+      ],
+    },  
+    {
+      title: "Best Teacher Award Given by Tambaram Corporation 17th ward Public Welfare Association.",
+      id: 29,
+      images: [
+        "/dargaroad/awards/img_2.jpeg","/dargaroad/awards/img_3.jpeg",
+      ],
+    },  
+    {
       title: "GRADE I - PT 1 PROFICIENCY CERTIFICATE HOLDERS",
       id: 28,
       images: [

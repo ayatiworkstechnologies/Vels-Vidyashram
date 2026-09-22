@@ -3,7 +3,7 @@ import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 
 const allScheduleData = [
-  // --- JUNE EVENTS ---
+  // --- SEPTEMBER EVENTS ---
   {
     date: "03",
     monthYear: "September",
@@ -243,7 +243,7 @@ export default function EventsSchedule() {
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Upcoming {activeTab} - June
+          Upcoming {activeTab} - September
         </motion.h2>
 
         <div className="relative max-w-2xl">

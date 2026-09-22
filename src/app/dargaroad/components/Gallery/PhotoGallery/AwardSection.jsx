@@ -6,6 +6,48 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 const AWARDS_DATA = {
   awards: [
     {
+      title: "Yuva Legacy Awards, The Tamil Nadu Legacy Summit 2025 15th October 2025",
+      id: 36,
+      images: [
+        "/dargaroad/awards/image-8.png",
+      ],
+    },
+    {
+      title: "State Shooting Championship Vijayalakshmi Kandavel of Class 12 (NIOS) won 15 Gold Medals in 15 categories",
+      id: 35,
+      images: [
+        "/dargaroad/awards/image-5.png","/dargaroad/awards/image-6.png",
+      ],
+    },
+    {
+      title: "Madhubun Publications - Hindi Diwas award",
+      id: 34,
+      images: [
+        "/dargaroad/awards/image-4.png",
+      ],
+    },
+    {
+      title: "Shreshta Acharya Award by the Hindu Educational &amp ; Charitable trust Avadi",
+      id: 33,
+      images: [
+        "/dargaroad/awards/image-3.png",
+      ],
+    },
+    {
+      title: " THE MOHINI BAKSHIT PRIZE 2025-26",
+      id: 32,
+      images: [
+        "/dargaroad/awards/image-2.png",
+      ],
+    },
+    {
+      title: "Excellent School – National South Zone by Times Education Icons 2025-26, Chennai!",
+      id: 31,
+      images: [
+        "/dargaroad/awards/image-7.png",
+      ],
+    }, 
+    {
       title: " Teachers Receiving Vels Excellence Award",
       id: 30,
       images: [
@@ -16,7 +58,7 @@ const AWARDS_DATA = {
       title: "Best Teacher Award Given by Tambaram Corporation 17th ward Public Welfare Association.",
       id: 29,
       images: [
-        "/dargaroad/awards/img_2.jpeg","/dargaroad/awards/img_3.jpeg",
+        "/dargaroad/awards/img_2.png","/dargaroad/awards/img_3.png",
       ],
     },  
     {

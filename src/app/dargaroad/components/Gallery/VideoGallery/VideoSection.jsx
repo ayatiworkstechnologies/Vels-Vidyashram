@@ -16,6 +16,18 @@ const VIDEO_DATA = {
   videosByYear: {
     "2026 - 2027": [
       {
+        id: 10,
+        title: "VELS KG EXPLORATION DAY - LKG",
+        thumbnail: "/dargaroad/thumbnail/thumbnail_10.jpg",
+        videoUrl: "https://www.youtube.com/embed/f60LUFOqMYY"
+      },
+      {
+        id: 9,
+        title: "VELS KG EXPLORATION DAY - PRE KG" ,
+        thumbnail: "/dargaroad/thumbnail/thumbnail_09.jpg",
+        videoUrl: "https://www.youtube.com/embed/jz55I2jlZdo"
+      },
+      {
         id: 8,
         title: "VINAYAGAR CHATHURTHI CELEBRATION" ,
         thumbnail: "/dargaroad/thumbnail/thumbnail_08.jpg",

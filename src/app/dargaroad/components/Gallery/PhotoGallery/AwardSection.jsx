@@ -6,6 +6,41 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 const AWARDS_DATA = {
   awards: [
     {
+      title: "TEACHER RECEIVING BEST TEACHING AWARD FROM CSSC ZONE 4 CLUSTER ",
+      id: 41,
+      images: [
+        "/dargaroad/awards/img_14.jpeg",
+      ],
+    },
+    {
+      title: "GRADE XII - QUARTERLY EXAM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 40,
+      images: [
+        "/dargaroad/awards/img_13.jpeg",
+      ],
+    },
+    {
+      title: "GRADE IX - QUARTERLY EXAM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 39,
+      images: [
+        "/dargaroad/awards/img_11.jpeg",,"/dargaroad/awards/img_12.jpeg",
+      ],
+    },
+    {
+      title: "GRADE XI - QUARTERLY EXAM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 38,
+      images: [
+        "/dargaroad/awards/img_10.jpeg",
+      ],
+    },
+    {
+      title: " QUARTERLY EXAM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 37,
+      images: [
+        "/dargaroad/awards/img_09.jpeg",
+      ],
+    },
+    {
       title: "Yuva Legacy Awards, The Tamil Nadu Legacy Summit 2025 15th October 2025",
       id: 36,
       images: [

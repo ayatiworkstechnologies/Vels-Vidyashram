@@ -8,6 +8,7 @@ const EVENTS_DATA = {
   years: ['2026-2027','2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+      { title: "BLUE DAY", id: 22, size: "small", images: ["/thalambur/LKG_B.jpg","/thalambur/LKG_D.jpg","/thalambur/LKG_C.jpg","/thalambur/PreKG_C.jpg","/thalambur/LKG_E.jpg","/thalambur/UKG_A.jpg","/thalambur/PreKG_B.jpg","/thalambur/UKG_C.jpg","/thalambur/UKG_D.jpg","/thalambur/UKG_B.jpg","/thalambur/UKG_E.jpg",] },
       { title: "ANNUAL SPORTS MEET", id: 21, size: "small", images: ["/thalambur/a-1.jpg","/thalambur/a-2.jpg","/thalambur/a-3.jpg","/thalambur/a-4.jpg","/thalambur/a-5.jpg","/thalambur/a-6.jpg","/thalambur/a-7.jpg","/thalambur/a-8.jpg","/thalambur/a-9.jpg","/thalambur/a-10.jpg","/thalambur/a-11.jpg","/thalambur/a-12.jpg","/thalambur/a-13.jpg","/thalambur/a-14.jpg","/thalambur/a-15.jpg","/thalambur/a-16.jpg","/thalambur/a-17.jpg","/thalambur/a-18.jpg","/thalambur/a-19.jpg","/thalambur/a-20.jpg","/thalambur/a-21.jpg","/thalambur/a-22.jpg","/thalambur/a-23.jpg","/thalambur/a-24.jpg","/thalambur/a-25.jpg","/thalambur/a-26.jpg"] },
       { title: "FIELD TRIP (GRADE VI TO VIII)", id: 21, size: 'small', images: ["/thalambur/field_trip1.jpeg","/thalambur/field_trip2.jpeg","/thalambur/field_trip3.jpeg","/thalambur/field_trip4.jpeg","/thalambur/field_trip5.jpeg","/thalambur/field_trip6.jpeg"] },
       { title: "TAMIL DEPARTMENT PRESENTATION", id: 20, size: 'small', images: ["/thalambur/tamil_dep1.jpeg","/thalambur/tamil_dep2.jpeg","/thalambur/tamil_dep3.jpeg","/thalambur/tamil_dep4.jpeg","/thalambur/tamil_dep5.jpeg"] },

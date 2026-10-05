@@ -1,6 +1,5 @@
 
 import HeroSection from '../dargaroad/components/HeroSection'
-
 import LetterSection from './components/LetterSection';
 import OurMottoSection from './components/OurMottoSection';
 import VelsDargaroad from './components/VelsDargaroad';

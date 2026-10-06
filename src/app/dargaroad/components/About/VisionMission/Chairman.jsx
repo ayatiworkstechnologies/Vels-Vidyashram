@@ -290,7 +290,7 @@ export default function Chairman() {
                   curriculum, co-curricular programmes, and community
                   engagement.
                 </p>
-
+ 
                 <p>
                   Through meaningful experiences, students develop the
                   knowledge, skills, and dispositions required to contribute

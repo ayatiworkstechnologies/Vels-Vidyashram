@@ -10,7 +10,7 @@ export default function DocumentSearch() {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
-    const cleanEmail = email.trim().toLowerCase();
+    const cleanEmail = email.trim().toLowerCase();F
 
     if (!cleanEmail) {
       setMessage("Please enter your email.");

@@ -65,7 +65,7 @@ const navItems = [
     label: "Parent Login",
     href: "#",
     submenu: [
-      { label: "Login", href: "https://parent.neverskip.com/" },
+      { label: "Login", href: "https://www.parentsalarmapp.com/" },
       {
         label: "Student’s Do’s and Don’t",
         href: "/cantonment/pdf/Final-Students-Dos-and-donts-of-Google-classroom-21-22.pdf",

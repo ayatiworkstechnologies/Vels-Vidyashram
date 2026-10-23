@@ -76,7 +76,7 @@ const navItems = [
   {
     label: "Parent Login",
     href: "#",
-    submenu: [{ label: "Login", href: "https://parent.neverskip.com/" }],
+    submenu: [{ label: "Login", href: "https://www.parentsalarmapp.com/" }],
   },
   { label: "Contact us", href: "/thalambur/contact-us" },
 ];

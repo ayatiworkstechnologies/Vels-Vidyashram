@@ -77,7 +77,7 @@ const navItems = [
     label: "Parent Login",
     href: "#",
     submenu: [
-      { label: "Login", href: "https://parent.neverskip.com/" },
+      { label: "Login", href: "https://www.parentsalarmapp.com/" },
       { label: "Student’s Do’s and Don’t", href: "/pallavaram/pdf/students-dos.pdf" },
       { label: "Parent’s Do’s and Don’t", href: "/pallavaram/pdf/parents-dos.pdf" },
       { label: "PC Do’s", href: "/pallavaram/pdf/pc.pdf" },

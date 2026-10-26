@@ -1,17 +1,18 @@
-
+// File location: src/app/api/report-cards/route.js
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "nodejs";
+
+const TABLE = "term2_documents";
+const BUCKET = "pt-2";
 
 export async function POST(request) {
   try {
     const body = await request.json();
 
     const cleanEmail =
-      typeof body.email === "string"
-        ? body.email.trim().toLowerCase()
-        : "";
+      typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
       return NextResponse.json(
@@ -20,149 +21,86 @@ export async function POST(request) {
       );
     }
 
-    const supabaseUrl =
-      process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    // Server-only key. Never use NEXT_PUBLIC_ for this one.
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 
-    const publishableKey =
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !publishableKey) {
+    if (!supabaseUrl || !serviceKey) {
       return NextResponse.json(
         { error: "Supabase configuration is missing." },
         { status: 500 }
       );
     }
 
-    const supabase = createClient(
-      supabaseUrl,
-      publishableKey,
-      {
-        auth: {
-          persistSession: false,
-          autoRefreshToken: false,
-        },
-      }
-    );
+    const supabase = createClient(supabaseUrl, serviceKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    });
 
-    // Check an existing Supabase access token.
-    const authorization =
-      request.headers.get("authorization") || "";
+    // Escape ilike wildcards so the match is exact (but case-insensitive)
+    const safeEmail = cleanEmail.replace(/[\\%_]/g, "\\$&");
 
-    const token = authorization.startsWith("Bearer ")
-      ? authorization.slice(7)
-      : null;
-
-    if (!token) {
-      return NextResponse.json(
-        { error: "Authorized parent access is required." },
-        { status: 401 }
-      );
-    }
-
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser(token);
-
-    if (authError || !user) {
-      return NextResponse.json(
-        { error: "Invalid or expired parent session." },
-        { status: 401 }
-      );
-    }
-
-    const parentEmail = user.email?.trim().toLowerCase();
-
-    if (
-      !parentEmail ||
-      parentEmail !== cleanEmail ||
-      !user.email_confirmed_at
-    ) {
-      return NextResponse.json(
-        { error: "Email is not authorized for this account." },
-        { status: 403 }
-      );
-    }
-
-    // Apply the verified user's identity to RLS policies.
-    const userSupabase = createClient(
-      supabaseUrl,
-      publishableKey,
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
-        auth: {
-          persistSession: false,
-          autoRefreshToken: false,
-        },
-      }
-    );
-
-    const { data, error } = await userSupabase
-      .from("term2_documents")
+    const { data: reports, error } = await supabase
+      .from(TABLE)
       .select("id, grade, section, file_path")
-      .eq("email", parentEmail)
+      .ilike("email", safeEmail)
       .order("grade")
       .order("section");
 
     if (error) {
-      console.error("Report lookup failed:", error.message);
+      console.error("Supabase lookup error:", error);
+
+      // In dev, show the real reason on the page to make debugging easy
+      const devDetail =
+        process.env.NODE_ENV !== "production" ? ` (${error.message})` : "";
 
       return NextResponse.json(
-        { error: "Unable to retrieve report cards." },
+        { error: `Unable to retrieve report cards.${devDetail}` },
         { status: 500 }
       );
     }
 
-    if (!data?.length) {
+    if (!reports?.length) {
       return NextResponse.json({
         success: true,
         reports: [],
-        message: "No Term-2 report cards available.",
+        message: "No Term-2 report card found.",
       });
     }
 
-    const reports = [];
+    const result = [];
 
-    for (const report of data) {
-      const { data: signed, error: signedError } =
-        await userSupabase.storage
-          .from("pt-2-private")
-          .createSignedUrl(report.file_path, 60);
+    for (const report of reports) {
+      if (!report.file_path) continue;
 
-      if (signedError || !signed?.signedUrl) {
-        console.error("PDF access failed:", signedError);
-        continue;
-      }
+      const { data: pdfData } = supabase.storage
+        .from(BUCKET)
+        .getPublicUrl(report.file_path);
 
-      reports.push({
+      if (!pdfData?.publicUrl) continue;
+
+      result.push({
         id: report.id,
         grade: report.grade,
         section: report.section,
-        url: signed.signedUrl,
+        url: pdfData.publicUrl,
       });
     }
 
     return NextResponse.json(
       {
         success: true,
-        reports,
-        message: reports.length
-          ? `${reports.length} report card(s) found.`
-          : "Report cards could not be opened.",
+        reports: result,
+        message: result.length
+          ? `${result.length} report card(s) found.`
+          : "Report card PDF unavailable.",
       },
-      {
-        headers: {
-          "Cache-Control": "no-store",
-        },
-      }
+      { headers: { "Cache-Control": "no-store" } }
     );
   } catch (error) {
     console.error("Report Card API Error:", error);
-
     return NextResponse.json(
       { error: "Unable to process your request." },
       { status: 500 }

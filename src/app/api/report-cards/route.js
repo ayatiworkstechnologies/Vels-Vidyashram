@@ -66,7 +66,7 @@ export async function POST(request) {
       return NextResponse.json({
         success: true,
         reports: [],
-        message: "No Term-2 report card found.",
+        message: "No Periodic Test report card found.",
       });
     }
 

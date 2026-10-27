@@ -46,7 +46,7 @@ export default function DocumentSearch() {
 
       if (!result.reports?.length) {
         pdfTab?.close();
-        setMessage("No Term-2 report card found for this email.");
+        setMessage("No Periodic Test report card found for this email.");
         return;
       }
 
@@ -76,7 +76,7 @@ export default function DocumentSearch() {
     <section className="flex justify-center bg-white px-4 py-20">
       <div className="w-full max-w-2xl rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm sm:p-10">
         <h2 className="text-center text-xl font-bold leading-snug text-slate-900 sm:text-2xl">
-          Enter your mail ID to get the Term-2 Results
+          Enter your mail ID to get the PT-2 Results
           <span className="block">(Pallavaram)</span>
         </h2>
 

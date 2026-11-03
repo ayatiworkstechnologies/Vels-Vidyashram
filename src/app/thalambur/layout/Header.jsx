@@ -76,7 +76,7 @@ const navItems = [
   {
     label: "Parent Login",
     href: "#",
-    submenu: [{ label: "Login", href: "https://www.parentsalarmapp.com/" }],
+    submenu: [{ label: "Login", href: "https://student.schoolcanvas.com/vis" }],
   },
   { label: "Contact us", href: "/thalambur/contact-us" },
 ];

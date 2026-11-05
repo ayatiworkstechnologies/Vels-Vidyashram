@@ -57,7 +57,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <LetterSection />
-    <DocumentSearch /> 
+    {/* <DocumentSearch />  */}
       <EmpoweringYoungMinds />
       <WhyChose />
       <About />

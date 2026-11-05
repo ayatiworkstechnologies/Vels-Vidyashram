@@ -10,6 +10,7 @@ import MapSection from "./components/MapSection";
 import InspireSection from "./components/InspireSection";
 import AboutSchool from "./components/AboutSchool";
 import BridgeCourseBanner from "./components/BridgeCourse";
+import DocumentSearch from "../components/DocumentSearch";
 
 const siteTitle = "Best CBSE School in OMR | Vels Vidyashram Thalambur, OMR, Chennai";
 const siteDescription = "Vels Vidyashram, The best CBSE School in OMR Thalambur tops the list of best schools in and around Thalambur for its best quality education to its students.";
@@ -47,7 +48,8 @@ export default function Thalambur() {
   return (
     <main>
       <BannerSlider />
-      <LetterSection />
+      <LetterSection /> 
+      <DocumentSearch />
       <AboutSchool />
       <InspireSection />
       <VelsThalamburSection />

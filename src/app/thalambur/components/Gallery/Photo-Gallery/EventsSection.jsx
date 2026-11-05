@@ -8,6 +8,8 @@ const EVENTS_DATA = {
   years: ['2026-2027','2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+      { title: "EVS CULMINATION-GRADE 2", id: 25, size: "small", images: ["/thalambur/evs-term2-1.jpeg","/thalambur/evs-term2-2.jpeg","/thalambur/evs-term2-3.jpeg","/thalambur/evs-term2-4.jpeg","/thalambur/evs-term2-5.jpeg","/thalambur/evs-term2-6.jpeg", ] },
+      { title: "EVS CULMINATION-GRADE 1", id: 25, size: "small", images: ["/thalambur/evs-term1-1.jpeg","/thalambur/evs-term1-2.jpeg","/thalambur/evs-term1-3.jpeg","/thalambur/evs-term1-4.jpeg","/thalambur/evs-term1-5.jpeg","/thalambur/evs-term1-6.jpeg", ] },
       { title: "GANESH CHATHURTHI", id: 25, size: "small", images: ["/thalambur/ganesh_1.jpg","/thalambur/ganesh_2.jpg","/thalambur/ganesh_3.jpg","/thalambur/ganesh_4.jpg", ] },
       { title: "KRISHNA JAYANTHI", id: 24, size: "small", images: ["/thalambur/krishna_1.jpg","/thalambur/krishna_2.jpg","/thalambur/krishna_3.jpg","/thalambur/krishna_4.jpg","/thalambur/krishna_5.jpg","/thalambur/krishna_6.jpg"] },
       { title: "KG EXPLORATION DAY", id: 23, size: "small", images: ["/thalambur/kg_1.jpeg","/thalambur/kg_2.jpeg","/thalambur/kg_3.jpeg","/thalambur/kg_4.jpeg","/thalambur/kg_5.jpeg","/thalambur/kg_6.jpeg","/thalambur/kg_7.jpeg","/thalambur/kg_8.jpeg","/thalambur/kg_9.jpeg","/thalambur/kg_10.jpeg","/thalambur/kg_11.jpeg","/thalambur/kg_12.jpeg","/thalambur/kg_13.jpeg"] },

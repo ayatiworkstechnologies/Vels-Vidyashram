@@ -7,6 +7,7 @@ import BridgeCourseBanner from "./components/BridgeCourse";
 import AboutSchool from "./components/AboutSchool";
 import InspireSection from "./components/InspireSection";
 import VelsStaticOverlaySection from "./components/VelsPallavaramSection";
+import DocumentSearch from "../components/DocumentSearch";
 
 
 const siteTitle = "Best CBSE School in Chennai, Pallavaram - Vels Vidyashram";
@@ -47,6 +48,7 @@ export default function Pallavaram() {
       {/* <Modal /> */}
       <BannerSlider />
       <LetterSection />
+      <DocumentSearch />
       <AboutSchool />
       <InspireSection />
       <VelsStaticOverlaySection />

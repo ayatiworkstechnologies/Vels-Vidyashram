@@ -49,7 +49,7 @@ export default function Thalambur() {
     <main>
       <BannerSlider />
       <LetterSection /> 
-      <DocumentSearch />
+      {/* <DocumentSearch /> */}
       <AboutSchool />
       <InspireSection />
       <VelsThalamburSection />

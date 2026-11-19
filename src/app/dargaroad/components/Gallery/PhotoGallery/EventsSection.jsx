@@ -7,9 +7,101 @@ const EVENTS_DATA = {
   years: ['2026-2027', '2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+
+      {
+      title: "GRADE XII - REVISION 1 & 2 EXAM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 19,
+      images: [ 
+        "/dargaroad/events/grade12-1.jpeg", 
+
+      ],
+    },
+
+       {
+      title: "GRADE XI - III MID TERM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 18,
+      images: [ 
+        "/dargaroad/events/grade11-1.jpeg", 
+
+      ],
+    },
+
+      {
+      title: "GRADE IX - III MID TERM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 17,
+      images: [ 
+        "/dargaroad/events/grade9-1.jpeg", 
+
+      ],
+    },
+
+       {
+      title: "GRADE VIII - TERMINAL 1 EXAM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 16,
+      images: [ 
+        "/dargaroad/events/grade8-1.jpeg", 
+
+      ],
+    },
+
+       {
+      title: "GRADE VII - TERMINAL 1 EXAM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 15,
+      images: [ 
+        "/dargaroad/events/grade7-1.jpeg", 
+
+      ],
+    },
+
+      {
+      title: "VELS PLUS - GRADE VI to X - TERMINAL 1 / III MID TERM / REVISION 1 & 2 EXAM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 14,
+      images: [ 
+        "/dargaroad/events/velsplus-1.jpeg", 
+        "/dargaroad/events/velsplus-2.jpeg",
+        "/dargaroad/events/velsplus-3.jpeg",
+        "/dargaroad/events/velsplus-4.jpeg",
+        "/dargaroad/events/velsplus-5.jpeg",
+        
+      ],
+    },
+
+      {
+      title: "GRADE VI - TERMINAL 1 EXAM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 13,
+      images: [ 
+        "/dargaroad/events/grade6-1.jpeg", 
+
+      ],
+    },
+        {
+      title: "GRADE III - V - TERMINAL 1 EXAM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 12,
+      images: [ 
+        "/dargaroad/events/grade3-1.jpeg", 
+        "/dargaroad/events/grade3-2.jpeg",
+        "/dargaroad/events/grade3-3.jpeg",
+
+        
+      ],
+    },
+
+        {
+      title: "GRADE X - REVISION 1 & 2 EXAM PROFICIENCY CERTIFICATE HOLDERS",
+      id: 11,
+      images: [ 
+        "/dargaroad/events/x-1.jpeg", 
+        "/dargaroad/events/x-2.jpeg",
+        "/dargaroad/events/x-3.jpeg",
+        "/dargaroad/events/x-4.jpeg",
+        "/dargaroad/events/x-5.jpeg",
+        
+      ],
+    },
+
        {
       title: "Annual sports meet",
-      id: 8,
+      id: 10,
       images: [ 
         "/dargaroad/events/sports_meet1.JPG", 
         "/dargaroad/events/sports_meet2.jpg",
@@ -24,7 +116,7 @@ const EVENTS_DATA = {
      
        {
       title: "International Yoga Day",
-      id: 8,
+      id: 9,
       images: [
         "/dargaroad/events/yoga_day-1.jpeg", 
         "/dargaroad/events/yoga_day-2.jpeg",
@@ -35,7 +127,7 @@ const EVENTS_DATA = {
     },
        {
       title: "Vels Sandhai",
-      id: 7,
+      id: 8,
       images: [
         "/dargaroad/events/Sandhai-1.jpeg", 
         "/dargaroad/events/Sandhai-2.jpg",

@@ -16,6 +16,33 @@ const VIDEO_DATA = {
   videosByYear: {
     "2026 - 2027": [
       {
+        id: 14,
+        title: "CHILDREN'S DAY CELEBRATION 2026",
+        thumbnail: "/dargaroad/thumbnail/childrens-day-2026.png",
+        videoUrl: "https://www.youtube.com/embed/FBO8e-7ox1M?si=NtzuHqLznMFIKO1K"
+      },
+
+      {
+        id: 13,
+        title: "RIDS Project Inauguration 2026",
+        thumbnail: "/dargaroad/thumbnail/rids-inauguration-2026.png",
+        videoUrl: "https://www.youtube.com/embed/40qw0FMoZAY?si=YlHIQ0y1Y_hCH26j"
+      },
+
+      {
+        id: 12,
+        title: "OCTOBER GLIMPSES",
+        thumbnail: "/dargaroad/thumbnail/oct-glimpsees.png",
+        videoUrl: "https://www.youtube.com/embed/LXeIofk9O4I?si=YXexLiuuYPzhGZfJ"
+      },
+
+      {
+        id: 11,
+        title: "SEPTEMBER GLIMPSES",
+        thumbnail: "/dargaroad/thumbnail/sep-glimpsees.png",
+        videoUrl: "https://www.youtube.com/embed/-wc5IzXi5Lk?si=ZY5ctDs4bq9CwxaZ"
+      },
+      {
         id: 10,
         title: "VELS KG EXPLORATION DAY - LKG",
         thumbnail: "/dargaroad/thumbnail/thumbnail_10.jpg",

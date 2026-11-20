@@ -2,6 +2,8 @@ import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 /* ======================
    GOOGLE FONTS (NEXT/FONT)
 ====================== */
@@ -41,7 +43,9 @@ export default function RootLayout({ children }) {
         />
           {children}
         </main>
+
       </body>
+      <GoogleAnalytics gaId="G-B6PJF83EW1" />
     </html>
   );
 }

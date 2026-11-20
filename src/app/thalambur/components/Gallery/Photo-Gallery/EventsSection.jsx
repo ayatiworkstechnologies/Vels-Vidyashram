@@ -8,6 +8,7 @@ const EVENTS_DATA = {
   years: ['2026-2027','2025-2026', '2024-2025'],
   eventsByYear: {
     '2026-2027': [
+      { title: "CHILDREN'S DAY 26", id: 31, size: "small", images: ["/thalambur/chil-1.jpeg","/thalambur/chil-2.jpeg","/thalambur/chil-3.jpeg","/thalambur/chil-4.jpeg","/thalambur/chil-5.jpeg" ] },
       { title: "STORY TELLING SESSION BY GRANDPARENTS", id: 30, size: "small", images: ["/thalambur/st-1.jpeg","/thalambur/st-2.jpeg","/thalambur/st-3.jpeg","/thalambur/st-4.jpeg","/thalambur/st-5.jpeg" ] },
       { title: "HALLOWEEN", id: 29, size: "small", images: ["/thalambur/halloween-1.jpeg","/thalambur/halloween-2.jpeg","/thalambur/halloween-3.jpeg","/thalambur/halloween-4.jpeg", ] },
       { title: "EVS CULMINATION-GRADE 2", id: 28, size: "small", images: ["/thalambur/evs-term2-1.jpeg","/thalambur/evs-term2-2.jpeg","/thalambur/evs-term2-3.jpeg","/thalambur/evs-term2-4.jpeg","/thalambur/evs-term2-5.jpeg","/thalambur/evs-term2-6.jpeg", ] },
@@ -71,6 +72,18 @@ const EVENTS_DATA = {
       { title: "EVS CULMINATION II GRADE II", id: 5, size: 'small', images: ["/thalambur/g-1.jpg","/thalambur/g-2.jpg","/thalambur/g-3.jpg","/thalambur/g-4.jpg"] },
     ],
   }
+};
+
+const getCarouselKey = (year, eventId) => `${year}-${eventId}`;
+
+const createInitialCarouselStates = () => {
+  const states = {};
+  Object.entries(EVENTS_DATA.eventsByYear).forEach(([year, events]) => {
+    events.forEach((event) => {
+      if (event.images?.length > 1) states[getCarouselKey(year, event.id)] = 0;
+    });
+  });
+  return states;
 };
 
 // ── Portal Lightbox ───────────────────────────────────────────────────────────
@@ -169,39 +182,22 @@ export default function EventsGallery() {
   const [selectedYear, setSelectedYear]         = useState("2026-2027");
   const [selectedIndex, setSelectedIndex]       = useState(null);
   const [activeEventImages, setActiveEventImages] = useState([]);
-  const [carouselStates, setCarouselStates]     = useState({});
+  const [carouselStates, setCarouselStates]     = useState(createInitialCarouselStates);
   const [isDropdownOpen, setIsDropdownOpen]     = useState(false);
-  const [mounted, setMounted]                   = useState(false);
   const dropdownRef = useRef(null);
-
-  useEffect(() => { setMounted(true); }, []);
-
-  // Init carousel state with unique IDs (fixed duplicate IDs in original data)
-  useEffect(() => {
-    const states = {};
-    Object.values(EVENTS_DATA.eventsByYear).forEach((yearEvents) => {
-      yearEvents.forEach((event) => {
-        if (event.images?.length > 1) states[event.id] = 0;
-      });
-    });
-    setCarouselStates(states);
-  }, []);
 
   // Auto-advance carousels
   useEffect(() => {
     const interval = setInterval(() => {
       setCarouselStates((prev) => {
         const next = { ...prev };
-        Object.keys(next).forEach((key) => {
-          const id = parseInt(key);
-          let event = null;
-          Object.values(EVENTS_DATA.eventsByYear).forEach((yearEvents) => {
-            const found = yearEvents.find((e) => e.id === id);
-            if (found) event = found;
-          });
+        Object.entries(EVENTS_DATA.eventsByYear).forEach(([year, events]) => {
+          events.forEach((event) => {
+            const key = getCarouselKey(year, event.id);
           if (event?.images?.length > 1) {
             next[key] = (next[key] + 1) % event.images.length;
           }
+          });
         });
         return next;
       });
@@ -243,11 +239,12 @@ export default function EventsGallery() {
     e.stopPropagation();
     const event = EVENTS_DATA.eventsByYear[selectedYear].find((ev) => ev.id === eventId);
     if (!event?.images || event.images.length <= 1) return;
+    const carouselKey = getCarouselKey(selectedYear, eventId);
     setCarouselStates((prev) => ({
       ...prev,
-      [eventId]: direction === "next"
-        ? (prev[eventId] + 1) % event.images.length
-        : (prev[eventId] - 1 + event.images.length) % event.images.length,
+      [carouselKey]: direction === "next"
+        ? (prev[carouselKey] + 1) % event.images.length
+        : (prev[carouselKey] - 1 + event.images.length) % event.images.length,
     }));
   };
 
@@ -298,7 +295,8 @@ export default function EventsGallery() {
         {EVENTS_DATA.eventsByYear[selectedYear].map((event) => {
           const images = event.images || [];
           const hasMultiple = images.length > 1;
-          const currentIndex = carouselStates[event.id] || 0;
+          const carouselKey = getCarouselKey(selectedYear, event.id);
+          const currentIndex = carouselStates[carouselKey] || 0;
           const currentImage = images[currentIndex] || images[0];
 
           return (
@@ -354,7 +352,7 @@ export default function EventsGallery() {
       </div>
 
       {/* Lightbox — Portal on document.body */}
-      {mounted && selectedIndex !== null && (
+      {selectedIndex !== null && (
         <AnimatePresence>
           <Lightbox
             images={activeEventImages}

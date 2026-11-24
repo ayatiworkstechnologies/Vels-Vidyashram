@@ -9,6 +9,18 @@ const EVENTS_DATA = {
     '2026-2027': [
 
       {
+      title: "GRADE I & II - TERMINAL 1 EXAM - PROFICIENCY CERTIFICATE HOLDERS",
+      id: 20,
+      images: [ 
+        "/dargaroad/events/pch-1.jpeg", 
+        "/dargaroad/events/pch-2.jpeg",
+        "/dargaroad/events/pch-3.jpeg",
+        "/dargaroad/events/pch-4.jpeg",
+
+      ],
+    },
+
+      {
       title: "GRADE XII - REVISION 1 & 2 EXAM PROFICIENCY CERTIFICATE HOLDERS",
       id: 19,
       images: [ 

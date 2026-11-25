@@ -48,7 +48,7 @@ export default function Pallavaram() {
       {/* <Modal /> */}
       <BannerSlider />
       <LetterSection />
-      <DocumentSearch />
+      {/* <DocumentSearch /> */}
       <AboutSchool />
       <InspireSection />
       <VelsStaticOverlaySection />
@@ -56,8 +56,6 @@ export default function Pallavaram() {
       <InfrastructureSlider />
       <BridgeCourseBanner />
       <GalleryGrid />
-   
-     
     </main>
   );
 }

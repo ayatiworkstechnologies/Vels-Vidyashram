@@ -132,6 +132,14 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-3 ml-auto">
+                   <Link
+                  href="https://forms.gle/ZgwkosmVxpDvU3Ty9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white/40 text-white px-5 py-2 rounded-full font-bold text-xs whitespace-nowrap hover:bg-white hover:text-[#2B158F] transition"
+                >
+                  Field Trip Feedback
+                </Link>
                 <Link
                   href="https://erp.vistas.ac.in/velsonline/online/velsfeepayment.jsp"
                   target="_blank"
@@ -140,6 +148,8 @@ export default function Header() {
                 >
                   Online Fees Payment
                 </Link>
+
+             
 
                 <div className="relative hidden lg:block group">
                   <button className="border border-white/40 text-white px-5 py-2 rounded-full font-bold text-xs whitespace-nowrap hover:bg-white hover:text-[#2B158F] transition">

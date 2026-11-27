@@ -15,6 +15,12 @@ const VIDEO_DATA = {
   years: ["2026 - 2027", "2025 - 2026"],
   videosByYear: {
     "2026 - 2027": [
+        {
+        id: 15,
+        title: "RANG RAAS DANDIYA 2026",
+        thumbnail: "/dargaroad/thumbnail/thumb-15.jpg",
+        videoUrl: "https://www.youtube.com/embed/0XCkUYYxTZM?si=uFeg7OrlKImcxkNE"
+      },
       {
         id: 14,
         title: "CHILDREN'S DAY CELEBRATION 2026",
